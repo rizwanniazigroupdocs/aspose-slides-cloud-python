@@ -118,12 +118,56 @@ class PostSlideSaveAsRequest(object):
         self.out_path = out_path
         self.fonts_folder = fonts_folder
 
+class PostSlidesAddRequest(object):
+
+    def __init__(self, name, position = None, password = None, folder = None, storage = None, layout_alias = None):
+        self.name = name
+        self.position = position
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+        self.layout_alias = layout_alias
+
+class PostSlidesCopyRequest(object):
+
+    def __init__(self, name, slide_to_copy, position = None, source = None, source_password = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_to_copy = slide_to_copy
+        self.position = position
+        self.source = source
+        self.source_password = source_password
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PostSlidesReorderRequest(object):
+
+    def __init__(self, name, slide_index, new_position, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.new_position = new_position
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PostSlidesReorderManyRequest(object):
+
+    def __init__(self, name, old_positions = None, new_positions = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.old_positions = old_positions
+        self.new_positions = new_positions
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class PostSlidesReorderPositionRequest(object):
 
-    def __init__(self, name, old_position = None, new_position = None, slide_to_copy = None, position = None, slide_to_clone = None, source = None, password = None, folder = None, storage = None, layout_alias = None):
+    def __init__(self, name, old_position = None, new_position = None, old_positions = None, new_positions = None, slide_to_copy = None, position = None, slide_to_clone = None, source = None, password = None, folder = None, storage = None, layout_alias = None):
         self.name = name
         self.old_position = old_position
         self.new_position = new_position
+        self.old_positions = old_positions
+        self.new_positions = new_positions
         self.slide_to_copy = slide_to_copy
         self.position = position
         self.slide_to_clone = slide_to_clone

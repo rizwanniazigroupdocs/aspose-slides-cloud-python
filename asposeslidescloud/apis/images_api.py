@@ -41,7 +41,7 @@ class ImagesApi(ApiBase):
         super(ImagesApi, self).__init__(configuration, app_sid, app_key)
 
     def get_slides_image_with_format(self, request, **kwargs):  # noqa: E501
-        """Gets image in specified format.  # noqa: E501
+        """Get image in specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -62,7 +62,7 @@ class ImagesApi(ApiBase):
             return data
 
     def get_slides_image_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets image in specified format.  # noqa: E501
+        """Get image in specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True

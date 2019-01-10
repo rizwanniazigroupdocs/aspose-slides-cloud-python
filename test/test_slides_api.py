@@ -1087,6 +1087,494 @@ class TestSlidesApi(BaseTest):
         fonts_folder = self.get_test_value('post_slide_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostSlideSaveAsRequest(name, slide_index, format, options, width, height, password, folder, storage, out_path, fonts_folder)
 
+    def test_post_slides_add(self):
+        """Test case for post_slides_add
+        """
+        request = self.__prepare_post_slides_add_request()
+        self.initialize('post_slides_add', None, None)
+        response = None
+        ok = False
+        try:
+            response = self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_successful_exception(ex, 'post_slides_add')
+        if ok:
+            self.assertTrue(response.code == 200 or response.code == 201)
+
+    def test_post_slides_add_invalid_name(self):
+        """Test case for post_slides_add with invalid name
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.name = self.get_invalid_test_value('name', request.name, 'str')
+        self.initialize('post_slides_add', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'name')
+
+    def test_post_slides_add_invalid_position(self):
+        """Test case for post_slides_add with invalid position
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.position = self.get_invalid_test_value('position', request.position, 'int')
+        self.initialize('post_slides_add', 'position', request.position)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'position', request.position)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'position')
+
+    def test_post_slides_add_invalid_password(self):
+        """Test case for post_slides_add with invalid password
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.password = self.get_invalid_test_value('password', request.password, 'str')
+        self.initialize('post_slides_add', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'password')
+
+    def test_post_slides_add_invalid_folder(self):
+        """Test case for post_slides_add with invalid folder
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.folder = self.get_invalid_test_value('folder', request.folder, 'str')
+        self.initialize('post_slides_add', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'folder')
+
+    def test_post_slides_add_invalid_storage(self):
+        """Test case for post_slides_add with invalid storage
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.storage = self.get_invalid_test_value('storage', request.storage, 'str')
+        self.initialize('post_slides_add', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'storage')
+
+    def test_post_slides_add_invalid_layout_alias(self):
+        """Test case for post_slides_add with invalid layout_alias
+        """
+        request = self.__prepare_post_slides_add_request()
+        request.layout_alias = self.get_invalid_test_value('layout_alias', request.layout_alias, 'str')
+        self.initialize('post_slides_add', 'layout_alias', request.layout_alias)
+        ok = False
+        try:
+            self.api.post_slides_add(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_add', 'layout_alias', request.layout_alias)
+        if ok:
+            self.assert_no_exception('post_slides_add', 'layout_alias')
+
+    def __prepare_post_slides_add_request(self):
+        name = self.get_test_value('post_slides_add', 'name', 'str')
+        position = self.get_test_value('post_slides_add', 'position', 'int')
+        password = self.get_test_value('post_slides_add', 'password', 'str')
+        folder = self.get_test_value('post_slides_add', 'folder', 'str')
+        storage = self.get_test_value('post_slides_add', 'storage', 'str')
+        layout_alias = self.get_test_value('post_slides_add', 'layout_alias', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesAddRequest(name, position, password, folder, storage, layout_alias)
+
+    def test_post_slides_copy(self):
+        """Test case for post_slides_copy
+        """
+        request = self.__prepare_post_slides_copy_request()
+        self.initialize('post_slides_copy', None, None)
+        response = None
+        ok = False
+        try:
+            response = self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_successful_exception(ex, 'post_slides_copy')
+        if ok:
+            self.assertTrue(response.code == 200 or response.code == 201)
+
+    def test_post_slides_copy_invalid_name(self):
+        """Test case for post_slides_copy with invalid name
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.name = self.get_invalid_test_value('name', request.name, 'str')
+        self.initialize('post_slides_copy', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'name')
+
+    def test_post_slides_copy_invalid_slide_to_copy(self):
+        """Test case for post_slides_copy with invalid slide_to_copy
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.slide_to_copy = self.get_invalid_test_value('slide_to_copy', request.slide_to_copy, 'int')
+        self.initialize('post_slides_copy', 'slide_to_copy', request.slide_to_copy)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'slide_to_copy', request.slide_to_copy)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'slide_to_copy')
+
+    def test_post_slides_copy_invalid_position(self):
+        """Test case for post_slides_copy with invalid position
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.position = self.get_invalid_test_value('position', request.position, 'int')
+        self.initialize('post_slides_copy', 'position', request.position)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'position', request.position)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'position')
+
+    def test_post_slides_copy_invalid_source(self):
+        """Test case for post_slides_copy with invalid source
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.source = self.get_invalid_test_value('source', request.source, 'str')
+        self.initialize('post_slides_copy', 'source', request.source)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'source', request.source)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'source')
+
+    def test_post_slides_copy_invalid_source_password(self):
+        """Test case for post_slides_copy with invalid source_password
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.source_password = self.get_invalid_test_value('source_password', request.source_password, 'str')
+        self.initialize('post_slides_copy', 'source_password', request.source_password)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'source_password', request.source_password)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'source_password')
+
+    def test_post_slides_copy_invalid_password(self):
+        """Test case for post_slides_copy with invalid password
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.password = self.get_invalid_test_value('password', request.password, 'str')
+        self.initialize('post_slides_copy', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'password')
+
+    def test_post_slides_copy_invalid_folder(self):
+        """Test case for post_slides_copy with invalid folder
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.folder = self.get_invalid_test_value('folder', request.folder, 'str')
+        self.initialize('post_slides_copy', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'folder')
+
+    def test_post_slides_copy_invalid_storage(self):
+        """Test case for post_slides_copy with invalid storage
+        """
+        request = self.__prepare_post_slides_copy_request()
+        request.storage = self.get_invalid_test_value('storage', request.storage, 'str')
+        self.initialize('post_slides_copy', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_slides_copy(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_copy', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_slides_copy', 'storage')
+
+    def __prepare_post_slides_copy_request(self):
+        name = self.get_test_value('post_slides_copy', 'name', 'str')
+        slide_to_copy = self.get_test_value('post_slides_copy', 'slide_to_copy', 'int')
+        position = self.get_test_value('post_slides_copy', 'position', 'int')
+        source = self.get_test_value('post_slides_copy', 'source', 'str')
+        source_password = self.get_test_value('post_slides_copy', 'source_password', 'str')
+        password = self.get_test_value('post_slides_copy', 'password', 'str')
+        folder = self.get_test_value('post_slides_copy', 'folder', 'str')
+        storage = self.get_test_value('post_slides_copy', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesCopyRequest(name, slide_to_copy, position, source, source_password, password, folder, storage)
+
+    def test_post_slides_reorder(self):
+        """Test case for post_slides_reorder
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        self.initialize('post_slides_reorder', None, None)
+        response = None
+        ok = False
+        try:
+            response = self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_successful_exception(ex, 'post_slides_reorder')
+        if ok:
+            self.assertTrue(response.code == 200 or response.code == 201)
+
+    def test_post_slides_reorder_invalid_name(self):
+        """Test case for post_slides_reorder with invalid name
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.name = self.get_invalid_test_value('name', request.name, 'str')
+        self.initialize('post_slides_reorder', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'name')
+
+    def test_post_slides_reorder_invalid_slide_index(self):
+        """Test case for post_slides_reorder with invalid slide_index
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.slide_index = self.get_invalid_test_value('slide_index', request.slide_index, 'int')
+        self.initialize('post_slides_reorder', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'slide_index')
+
+    def test_post_slides_reorder_invalid_new_position(self):
+        """Test case for post_slides_reorder with invalid new_position
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.new_position = self.get_invalid_test_value('new_position', request.new_position, 'int')
+        self.initialize('post_slides_reorder', 'new_position', request.new_position)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'new_position', request.new_position)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'new_position')
+
+    def test_post_slides_reorder_invalid_password(self):
+        """Test case for post_slides_reorder with invalid password
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.password = self.get_invalid_test_value('password', request.password, 'str')
+        self.initialize('post_slides_reorder', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'password')
+
+    def test_post_slides_reorder_invalid_folder(self):
+        """Test case for post_slides_reorder with invalid folder
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.folder = self.get_invalid_test_value('folder', request.folder, 'str')
+        self.initialize('post_slides_reorder', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'folder')
+
+    def test_post_slides_reorder_invalid_storage(self):
+        """Test case for post_slides_reorder with invalid storage
+        """
+        request = self.__prepare_post_slides_reorder_request()
+        request.storage = self.get_invalid_test_value('storage', request.storage, 'str')
+        self.initialize('post_slides_reorder', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_slides_reorder(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_slides_reorder', 'storage')
+
+    def __prepare_post_slides_reorder_request(self):
+        name = self.get_test_value('post_slides_reorder', 'name', 'str')
+        slide_index = self.get_test_value('post_slides_reorder', 'slide_index', 'int')
+        new_position = self.get_test_value('post_slides_reorder', 'new_position', 'int')
+        password = self.get_test_value('post_slides_reorder', 'password', 'str')
+        folder = self.get_test_value('post_slides_reorder', 'folder', 'str')
+        storage = self.get_test_value('post_slides_reorder', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesReorderRequest(name, slide_index, new_position, password, folder, storage)
+
+    def test_post_slides_reorder_many(self):
+        """Test case for post_slides_reorder_many
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        self.initialize('post_slides_reorder_many', None, None)
+        response = None
+        ok = False
+        try:
+            response = self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_successful_exception(ex, 'post_slides_reorder_many')
+        if ok:
+            self.assertTrue(response.code == 200 or response.code == 201)
+
+    def test_post_slides_reorder_many_invalid_name(self):
+        """Test case for post_slides_reorder_many with invalid name
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.name = self.get_invalid_test_value('name', request.name, 'str')
+        self.initialize('post_slides_reorder_many', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'name')
+
+    def test_post_slides_reorder_many_invalid_old_positions(self):
+        """Test case for post_slides_reorder_many with invalid old_positions
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.old_positions = self.get_invalid_test_value('old_positions', request.old_positions, 'list[int]')
+        self.initialize('post_slides_reorder_many', 'old_positions', request.old_positions)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'old_positions', request.old_positions)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'old_positions')
+
+    def test_post_slides_reorder_many_invalid_new_positions(self):
+        """Test case for post_slides_reorder_many with invalid new_positions
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.new_positions = self.get_invalid_test_value('new_positions', request.new_positions, 'list[int]')
+        self.initialize('post_slides_reorder_many', 'new_positions', request.new_positions)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'new_positions', request.new_positions)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'new_positions')
+
+    def test_post_slides_reorder_many_invalid_password(self):
+        """Test case for post_slides_reorder_many with invalid password
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.password = self.get_invalid_test_value('password', request.password, 'str')
+        self.initialize('post_slides_reorder_many', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'password')
+
+    def test_post_slides_reorder_many_invalid_folder(self):
+        """Test case for post_slides_reorder_many with invalid folder
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.folder = self.get_invalid_test_value('folder', request.folder, 'str')
+        self.initialize('post_slides_reorder_many', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'folder')
+
+    def test_post_slides_reorder_many_invalid_storage(self):
+        """Test case for post_slides_reorder_many with invalid storage
+        """
+        request = self.__prepare_post_slides_reorder_many_request()
+        request.storage = self.get_invalid_test_value('storage', request.storage, 'str')
+        self.initialize('post_slides_reorder_many', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_slides_reorder_many(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_many', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_many', 'storage')
+
+    def __prepare_post_slides_reorder_many_request(self):
+        name = self.get_test_value('post_slides_reorder_many', 'name', 'str')
+        old_positions = self.get_test_value('post_slides_reorder_many', 'old_positions', 'list[int]')
+        new_positions = self.get_test_value('post_slides_reorder_many', 'new_positions', 'list[int]')
+        password = self.get_test_value('post_slides_reorder_many', 'password', 'str')
+        folder = self.get_test_value('post_slides_reorder_many', 'folder', 'str')
+        storage = self.get_test_value('post_slides_reorder_many', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesReorderManyRequest(name, old_positions, new_positions, password, folder, storage)
+
     def test_post_slides_reorder_position(self):
         """Test case for post_slides_reorder_position
         """
@@ -1146,6 +1634,36 @@ class TestSlidesApi(BaseTest):
             self.assert_exception(ex, 'post_slides_reorder_position', 'new_position', request.new_position)
         if ok:
             self.assert_no_exception('post_slides_reorder_position', 'new_position')
+
+    def test_post_slides_reorder_position_invalid_old_positions(self):
+        """Test case for post_slides_reorder_position with invalid old_positions
+        """
+        request = self.__prepare_post_slides_reorder_position_request()
+        request.old_positions = self.get_invalid_test_value('old_positions', request.old_positions, 'list[int]')
+        self.initialize('post_slides_reorder_position', 'old_positions', request.old_positions)
+        ok = False
+        try:
+            self.api.post_slides_reorder_position(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_position', 'old_positions', request.old_positions)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_position', 'old_positions')
+
+    def test_post_slides_reorder_position_invalid_new_positions(self):
+        """Test case for post_slides_reorder_position with invalid new_positions
+        """
+        request = self.__prepare_post_slides_reorder_position_request()
+        request.new_positions = self.get_invalid_test_value('new_positions', request.new_positions, 'list[int]')
+        self.initialize('post_slides_reorder_position', 'new_positions', request.new_positions)
+        ok = False
+        try:
+            self.api.post_slides_reorder_position(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_reorder_position', 'new_positions', request.new_positions)
+        if ok:
+            self.assert_no_exception('post_slides_reorder_position', 'new_positions')
 
     def test_post_slides_reorder_position_invalid_slide_to_copy(self):
         """Test case for post_slides_reorder_position with invalid slide_to_copy
@@ -1271,6 +1789,8 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_slides_reorder_position', 'name', 'str')
         old_position = self.get_test_value('post_slides_reorder_position', 'old_position', 'int')
         new_position = self.get_test_value('post_slides_reorder_position', 'new_position', 'int')
+        old_positions = self.get_test_value('post_slides_reorder_position', 'old_positions', 'list[int]')
+        new_positions = self.get_test_value('post_slides_reorder_position', 'new_positions', 'list[int]')
         slide_to_copy = self.get_test_value('post_slides_reorder_position', 'slide_to_copy', 'int')
         position = self.get_test_value('post_slides_reorder_position', 'position', 'int')
         slide_to_clone = self.get_test_value('post_slides_reorder_position', 'slide_to_clone', 'int')
@@ -1279,7 +1799,7 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('post_slides_reorder_position', 'folder', 'str')
         storage = self.get_test_value('post_slides_reorder_position', 'storage', 'str')
         layout_alias = self.get_test_value('post_slides_reorder_position', 'layout_alias', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesReorderPositionRequest(name, old_position, new_position, slide_to_copy, position, slide_to_clone, source, password, folder, storage, layout_alias)
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesReorderPositionRequest(name, old_position, new_position, old_positions, new_positions, slide_to_copy, position, slide_to_clone, source, password, folder, storage, layout_alias)
 
     def test_put_slides_slide(self):
         """Test case for put_slides_slide

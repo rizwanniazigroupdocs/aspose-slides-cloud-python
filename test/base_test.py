@@ -87,10 +87,16 @@ class BaseTest(unittest.TestCase):
         BaseTest.storage_api.put_create(os.path.join(self.folder_name, self.file_name), file)
 
         if function_name == "post_slides_document":
+            with open(os.path.join(self.test_data_path, "templateCV.pptx"), 'rb') as f:
+                file = f.read()
+            BaseTest.storage_api.put_create(os.path.join(self.folder_name, "templateCV.pptx"), file)
+
             BaseTest.storage_api.delete_file(os.path.join(self.folder_name, self.file_name))
         if invalid_parameter_name == "folder":
             BaseTest.storage_api.delete_file(os.path.join(invalid_parameter_value, self.file_name))
-        if function_name == "put_new_presentation":
+        if invalid_parameter_name == "name":
+            BaseTest.storage_api.delete_file(os.path.join(self.folder_name, invalid_parameter_value))
+        if function_name == "put_new_presentation" or function_name == "post_slides_document":
             BaseTest.storage_api.delete_file(os.path.join(self.folder_name + "invalid", self.changed_file_name))
             BaseTest.storage_api.delete_file(os.path.join(self.folder_name, self.changed_file_name))
 
@@ -102,7 +108,13 @@ class BaseTest(unittest.TestCase):
                 return 3
             return 1
         if field_type == 'list[int]':
+            if field_name == 'old_positions':
+                return [1, 2]
+            if field_name == 'new_positions':
+                return [2, 1]
             return None
+        if field_type == 'bool':
+            return True
         if field_name.endswith('storage') \
             or field_name == 'out_path' \
             or field_name == 'jpeg_quality' \
@@ -117,15 +129,19 @@ class BaseTest(unittest.TestCase):
         if field_name == 'name':
             if function_name == 'put_new_presentation':
                 return self.changed_file_name
-            if function_name == 'delete_slides_clean_slides_list' or function_name == "put_slides_slide":
+            if function_name == 'delete_slides_clean_slides_list' \
+                or function_name == "put_slides_slide" \
+                or function_name == "post_slides_add":
                 return "test-unprotected.ppt"
             return self.file_name
         if field_name == 'property_name':
             return "testProperty"
-        if field_name == "template_path" or field_name == "clone_from":
+        if field_name == "template_path" or field_name == "clone_from" or field_name == "source":
             return self.folder_name + "/" + self.file_name
         if field_name.endswith('password'):
-            if function_name == 'delete_slides_clean_slides_list' or function_name == "put_slides_slide":
+            if function_name == 'delete_slides_clean_slides_list' \
+                or function_name == "put_slides_slide" \
+                or function_name == "post_slides_add":
                 return None
             return self.file_password
         if field_name == 'format':
@@ -196,100 +212,116 @@ class BaseTest(unittest.TestCase):
         if not field_name == 'files' and field_value is None:
             return 'invalid'
         if isinstance(field_value, str):
+            if field_name == 'name':
+                return 'invalid' + field_value
             return field_value + 'invalid'
         return None
 
     def assert_exception(self, ex, function_name, field_name, field_value):
-        if function_name != "post_slides_document":
-            if field_name == 'path' and function_name.endswith("add_new_shape"):
-                self.assertEqual(405, ex.status)
-            elif field_name == 'options':
-                self.assertEqual(500, ex.status)
-            elif (field_name == 'name' or field_name == 'property_name' or field_name == 'folder' or field_name == 'clone_from') \
-                and not (function_name == 'put_new_presentation' \
-                    or function_name == 'put_slides_document_from_html' \
-                    or function_name == 'post_add_notes_slide'):
-                self.assertEqual(404, ex.status)
-                if field_name == "property_name":
-                    self.assertTrue(ex.body.startswith("Property " + field_value + " not found"))
-                else:
-                    self.assertTrue(ex.body.startswith("AmazonS3 exception: Error 'The specified key does not exist.'"))
+        if field_name == 'path' and function_name.endswith("add_new_shape"):
+            self.assertEqual(405, ex.status)
+        elif field_name == 'options':
+            self.assertEqual(500, ex.status)
+        elif (field_name == 'name' \
+                or field_name == 'property_name' \
+                or field_name == 'folder' \
+                or field_name == 'clone_from' \
+                or field_name == 'source') \
+            and not (function_name == 'put_new_presentation' \
+                or function_name == 'put_slides_document_from_html' \
+                or function_name == 'post_slides_document' \
+                or function_name == 'post_add_notes_slide'):
+            self.assertEqual(404, ex.status)
+            if field_name == "property_name":
+                self.assertTrue(ex.body.startswith("Property " + field_value + " not found"))
             else:
-                self.assertEqual(400, ex.status)
-                if field_name == 'storage':
-                    if not (function_name == 'put_new_presentation' \
-                        or function_name == 'put_slides_document_from_html' \
-                        or function_name == 'post_add_notes_slide'):
-                        self.assertTrue(ex.body.startswith("The specified storage was not found or is not associated with the application."))
-                    else:
-                        self.assertTrue(ex.body.startswith("Object reference not set to an instance of an object"))
-                elif field_name == "clone_from_storage":
+                self.assertTrue(ex.body.startswith("AmazonS3 exception: Error 'The specified key does not exist.'"))
+        else:
+            self.assertEqual(400, ex.status)
+            if field_name == 'storage':
+                if not (function_name == 'put_new_presentation' \
+                    or function_name == 'put_slides_document_from_html' \
+                    or function_name == 'post_slides_document' \
+                    or function_name == 'post_add_notes_slide'):
                     self.assertTrue(ex.body.startswith("The specified storage was not found or is not associated with the application."))
-                elif field_name.endswith('password'):
-                    if function_name == 'put_slides_document_from_html' \
-                        or function_name == 'post_add_notes_slide' \
-                        or (function_name == 'put_new_presentation' and field_name == 'template_password'):
-                        self.assertTrue(ex.body.startswith("Object reference not set to an instance of an object"))
-                    elif function_name == 'delete_slides_clean_slides_list' or function_name == "put_slides_slide":
-                        self.assertTrue(ex.body.startswith("An attempt was made to move the position before the beginning of the stream."))
-                    else:
-                        self.assertTrue(ex.body.startswith("Invalid password."))
-                elif field_name == 'to':
-                    self.assertTrue(ex.body.startswith("Invalid 'to' parameter"))
-                elif (field_name == 'slide_index' \
-                        and (function_name.startswith('get_notes_slide') and not function_name.startswith('get_notes_slide_shape')) \
-                        or function_name == "get_slides_slide_comments") \
-                    or field_name == 'clone_from_position' \
-                    or field_name == 'shape_to_clone':
-                    self.assertTrue(ex.body.startswith("Invalid index"))
-                elif field_name == 'index':
-                    self.assertTrue(ex.body.startswith("Specified argument was out of the range of valid values."))
-                elif field_name == 'slide_index' or field_name == 'slides':
-                    self.assertTrue(ex.body.startswith("Wrong slide index."))
-                elif field_name == 'shape_index' or field_name == 'shapes':
-                    self.assertTrue(ex.body.startswith("Wrong shape index."))
-                elif field_name == 'paragraph_index' or field_name == 'paragraphs':
-                    self.assertTrue(ex.body.startswith("Wrong paragraph index."))
-                elif field_name == 'portion_index' or field_name == 'portions':
-                    self.assertTrue(ex.body.startswith("Wrong portion index."))
-                elif field_name == 'placeholder_index':
-                    self.assertTrue(ex.body.startswith("Placeholder with specified index doesn't exist"))
-                elif field_name == 'position':
-                    self.assertTrue(ex.body.startswith("Index must be within the bounds of the List"))
-                elif field_name == 'new_position':
-                    self.assertTrue(ex.body.startswith("Specified argument was out of the range of valid values"))
-                elif field_name == 'old_position':
-                    self.assertTrue(ex.body.startswith("Index was out of range"))
-                elif field_name == 'color':
-                    self.assertTrue(ex.body.startswith("Color must be in format"))
-                elif field_name == 'path':
-                    if function_name.endswith("shapes"):
-                        self.assertTrue(ex.body.startswith("The request is invalid"))
-                    else:
-                        self.assertTrue(ex.body.startswith("The HTTP resource that matches the request URI"))
-                elif field_name == 'format':
-                    self.assertTrue(ex.body.startswith("Format " + field_value + " is not supported."))
-                elif field_name == 'pipeline':
-                    #TODO: correct spelling error
-                    self.assertTrue(ex.body.startswith("Pipeline dto expected."))
-                elif field_name == 'dto':
-                    if function_name.endswith('add_new_paragraph') \
-                        or function_name.endswith('set_paragraph_properties') \
-                        or function_name.endswith('set_paragraph_portion_properties') \
-                        or function_name.endswith('slide_shape_info') \
-                        or function_name.endswith('add_new_paragraph') \
-                        or function_name.startswith('put_update_notes_slide_shape'):
-                        self.assertTrue(ex.body.startswith("Shape dto is not specified"))
-                    elif function_name.endswith('add_new_portion') or function_name.endswith('add_new_shape'):
-                        self.assertTrue(ex.body.startswith("Invalid shape's path."))
-                    else:
-                        self.assertTrue(ex.body.startswith("Value cannot be null"))
-                elif field_name == 'slide_dto':
-                    self.assertTrue(ex.body.startswith("DTO of the slide expected in request body"))
-                elif field_name == 'document':
-                    self.assertTrue(ex.body.startswith("The stream is empty."))
                 else:
                     self.assertTrue(ex.body.startswith("Object reference not set to an instance of an object"))
+            elif field_name == "clone_from_storage":
+                self.assertTrue(ex.body.startswith("The specified storage was not found or is not associated with the application."))
+            elif field_name.endswith('password'):
+                if function_name == 'put_slides_document_from_html' \
+                    or function_name == 'post_add_notes_slide' \
+                    or function_name == 'post_slides_document' \
+                    or (function_name == 'put_new_presentation' and field_name == 'template_password'):
+                    self.assertTrue(ex.body.startswith("Object reference not set to an instance of an object"))
+                elif function_name == 'delete_slides_clean_slides_list' \
+                    or function_name == "put_slides_slide" \
+                    or function_name == "post_slides_add":
+                    self.assertTrue(ex.body.startswith("An attempt was made to move the position before the beginning of the stream."))
+                else:
+                    self.assertTrue(ex.body.startswith("Invalid password."))
+            elif field_name == 'to':
+                self.assertTrue(ex.body.startswith("Invalid 'to' parameter"))
+            elif (field_name == 'slide_index' \
+                    and (function_name.startswith('get_notes_slide') and not function_name.startswith('get_notes_slide_shape')) \
+                    or function_name == "get_slides_slide_comments") \
+                or field_name == 'clone_from_position' \
+                or field_name == 'shape_to_clone':
+                self.assertTrue(ex.body.startswith("Invalid index"))
+            elif field_name == 'index' \
+                or (field_name == 'position' \
+                    and (function_name == 'post_slides_reorder_position' \
+                        or function_name == 'post_slides_add' \
+                        or function_name == 'post_slides_copy')):
+                self.assertTrue(ex.body.startswith("Specified argument was out of the range of valid values."))
+            elif field_name == 'slide_index' or field_name == 'slides':
+                if function_name == 'post_slides_reorder':
+                    self.assertTrue(ex.body.startswith("Index was out of range"))
+                else:
+                    self.assertTrue(ex.body.startswith("Wrong slide index."))
+            elif field_name == 'shape_index' or field_name == 'shapes':
+                self.assertTrue(ex.body.startswith("Wrong shape index."))
+            elif field_name == 'paragraph_index' or field_name == 'paragraphs':
+                self.assertTrue(ex.body.startswith("Wrong paragraph index."))
+            elif field_name == 'portion_index' or field_name == 'portions':
+                self.assertTrue(ex.body.startswith("Wrong portion index."))
+            elif field_name == 'placeholder_index':
+                self.assertTrue(ex.body.startswith("Placeholder with specified index doesn't exist"))
+            elif field_name == 'position':
+                self.assertTrue(ex.body.startswith("Index must be within the bounds of the List"))
+            elif field_name == 'new_position' or field_name == 'old_positions' or field_name == 'new_positions':
+                self.assertTrue(ex.body.startswith("Specified argument was out of the range of valid values"))
+            elif field_name == 'old_position' or field_name == 'slide_to_copy':
+                self.assertTrue(ex.body.startswith("Index was out of range"))
+            elif field_name == 'color':
+                self.assertTrue(ex.body.startswith("Color must be in format"))
+            elif field_name == 'path':
+                if function_name.endswith("shapes"):
+                    self.assertTrue(ex.body.startswith("The request is invalid"))
+                else:
+                    self.assertTrue(ex.body.startswith("The HTTP resource that matches the request URI"))
+            elif field_name == 'format':
+                self.assertTrue(ex.body.startswith("Format " + field_value + " is not supported."))
+            elif field_name == 'pipeline':
+                self.assertTrue(ex.body.startswith("Pipeline dto expected."))
+            elif field_name == 'dto':
+                if function_name.endswith('add_new_paragraph') \
+                    or function_name.endswith('set_paragraph_properties') \
+                    or function_name.endswith('set_paragraph_portion_properties') \
+                    or function_name.endswith('slide_shape_info') \
+                    or function_name.endswith('add_new_paragraph') \
+                    or function_name.startswith('put_update_notes_slide_shape'):
+                    self.assertTrue(ex.body.startswith("Shape dto is not specified"))
+                elif function_name.endswith('add_new_portion') or function_name.endswith('add_new_shape'):
+                    self.assertTrue(ex.body.startswith("Invalid shape's path."))
+                else:
+                    self.assertTrue(ex.body.startswith("Value cannot be null"))
+            elif field_name == 'slide_dto':
+                self.assertTrue(ex.body.startswith("DTO of the slide expected in request body"))
+            elif field_name == 'document':
+                self.assertTrue(ex.body.startswith("The stream is empty."))
+            else:
+                self.assertTrue(ex.body.startswith("Object reference not set to an instance of an object"))
 
     def assert_no_exception(self, function_name, field_name):
         if field_name != 'fonts_folder' \
@@ -317,9 +349,12 @@ class BaseTest(unittest.TestCase):
             and field_name != 'ignore_case' \
             and field_name != 'old_value' \
             and field_name != 'new_value' \
+            and field_name != 'old_positions' \
+            and field_name != 'new_positions' \
             and not (function_name == 'put_slides_set_document_property' and field_name == 'property_name') \
-            and not (function_name == 'put_new_presentation' and (field_name == 'password' or field_name == 'folder')) \
-            and not (function_name == 'put_slides_document_from_html' and field_name == 'folder') \
+            and not (function_name == 'put_new_presentation' and (field_name == 'password' or field_name == 'folder' or field_name == 'name')) \
+            and not (function_name == 'post_slides_document' and field_name == 'name') \
+            and not (function_name == 'put_slides_document_from_html' and (field_name == 'folder' or field_name == 'name')) \
             and not (function_name == 'post_add_notes_slide' and field_name == 'dto') \
             and not (function_name == 'post_slides_reorder_position' and (field_name == 'position' or field_name == 'slide_to_clone')):
             self.fail("Must have failed")

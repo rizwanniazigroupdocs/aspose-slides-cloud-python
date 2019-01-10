@@ -41,7 +41,7 @@ class SlidesApi(ApiBase):
         super(SlidesApi, self).__init__(configuration, app_sid, app_key)
 
     def delete_slide_by_index(self, request, **kwargs):  # noqa: E501
-        """Delete presentation slide by its index.  # noqa: E501
+        """Delete a presentation slide by its index.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -62,7 +62,7 @@ class SlidesApi(ApiBase):
             return data
 
     def delete_slide_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Delete presentation slide by its index.  # noqa: E501
+        """Delete a presentation slide by its index.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -208,15 +208,15 @@ class SlidesApi(ApiBase):
         path_params['name'] = request.name  # noqa: E501
 
         query_params = []
+        if request.slides:
+            query_params.append(('slides', request.slides))  # noqa: E501
+            collection_formats['slides'] = ''  # noqa: E501
         if request.password:
             query_params.append(('password', request.password))  # noqa: E501
         if request.folder:
             query_params.append(('folder', request.folder))  # noqa: E501
         if request.storage:
             query_params.append(('storage', request.storage))  # noqa: E501
-        if request.slides:
-            query_params.append(('slides', request.slides))  # noqa: E501
-            collection_formats['slides'] = ''  # noqa: E501
 
         header_params = {}
 
@@ -254,7 +254,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def delete_slides_slide_background(self, request, **kwargs):  # noqa: E501
-        """Remove presentation slide background color.  # noqa: E501
+        """Remove background from a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -275,7 +275,7 @@ class SlidesApi(ApiBase):
             return data
 
     def delete_slides_slide_background_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Remove presentation slide background color.  # noqa: E501
+        """Remove background from a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -361,7 +361,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def get_slide_with_format(self, request, **kwargs):  # noqa: E501
-        """Convert slide to some format.  # noqa: E501
+        """Convert a slide to some format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -382,7 +382,7 @@ class SlidesApi(ApiBase):
             return data
 
     def get_slide_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Convert slide to some format.  # noqa: E501
+        """Convert a slide to some format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -480,7 +480,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def get_slides_slide(self, request, **kwargs):  # noqa: E501
-        """Read slide info.  # noqa: E501
+        """Read a slide info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -501,7 +501,7 @@ class SlidesApi(ApiBase):
             return data
 
     def get_slides_slide_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Read slide info.  # noqa: E501
+        """Read a slide info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -587,7 +587,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def get_slides_slide_background(self, request, **kwargs):  # noqa: E501
-        """Read presentation slide background color type.  # noqa: E501
+        """Read background info for a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -608,7 +608,7 @@ class SlidesApi(ApiBase):
             return data
 
     def get_slides_slide_background_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Read presentation slide background color type.  # noqa: E501
+        """Read background info for a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -904,7 +904,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def post_slide_save_as(self, request, **kwargs):  # noqa: E501
-        """Convert slide to some format.  # noqa: E501
+        """Convert a slide to some format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -925,7 +925,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slide_save_as_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Convert slide to some format.  # noqa: E501
+        """Convert a slide to some format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1024,8 +1024,450 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_slides_reorder_position(self, request, **kwargs):  # noqa: E501
+    def post_slides_add(self, request, **kwargs):  # noqa: E501
         """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_add(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_addRequest request: post_slides_add request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_slides_add_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_slides_add_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_slides_add_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_add_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_addRequest request: post_slides_add request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_slides_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_slides_add`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.position:
+            query_params.append(('position', request.position))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.layout_alias:
+            query_params.append(('layoutAlias', request.layout_alias))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+
+        files = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/add', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='SlideListResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_slides_copy(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_copy(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_copyRequest request: post_slides_copy request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_slides_copy_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_slides_copy_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_slides_copy_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_copy_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_copyRequest request: post_slides_copy request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_slides_copy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_slides_copy`")  # noqa: E501
+        # verify the required parameter 'slide_to_copy' is set
+        if not request.slide_to_copy:
+            raise ValueError("Missing the required parameter `request.slide_to_copy` when calling `post_slides_copy`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.slide_to_copy:
+            query_params.append(('slideToCopy', request.slide_to_copy))  # noqa: E501
+        if request.position:
+            query_params.append(('position', request.position))  # noqa: E501
+        if request.source:
+            query_params.append(('source', request.source))  # noqa: E501
+        if request.source_password:
+            query_params.append(('sourcePassword', request.source_password))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+
+        files = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/copy', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='SlideListResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_slides_reorder(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_reorder(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_reorderRequest request: post_slides_reorder request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_slides_reorder_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_slides_reorder_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_slides_reorder_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_reorder_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_reorderRequest request: post_slides_reorder request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_slides_reorder" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_slides_reorder`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_slides_reorder`")  # noqa: E501
+        # verify the required parameter 'new_position' is set
+        if not request.new_position:
+            raise ValueError("Missing the required parameter `request.new_position` when calling `post_slides_reorder`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.new_position:
+            query_params.append(('newPosition', request.new_position))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+
+        files = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/move', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='SlideListResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_slides_reorder_many(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_reorder_many(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_reorder_manyRequest request: post_slides_reorder_many request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_slides_reorder_many_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_slides_reorder_many_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_slides_reorder_many_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reorder presentation slide position  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_slides_reorder_many_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_slides_reorder_manyRequest request: post_slides_reorder_many request object
+        :return: SlideListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_slides_reorder_many" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_slides_reorder_many`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.old_positions:
+            query_params.append(('oldPositions', request.old_positions))  # noqa: E501
+            collection_formats['oldPositions'] = ''  # noqa: E501
+        if request.new_positions:
+            query_params.append(('newPositions', request.new_positions))  # noqa: E501
+            collection_formats['newPositions'] = ''  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+
+        files = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/reorder', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='SlideListResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_slides_reorder_position(self, request, **kwargs):  # noqa: E501
+        """Create, copy or reorder presentation slides.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1046,7 +1488,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slides_reorder_position_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Create, copy or reorder presentation slides.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1089,6 +1531,12 @@ class SlidesApi(ApiBase):
             query_params.append(('oldPosition', request.old_position))  # noqa: E501
         if request.new_position:
             query_params.append(('newPosition', request.new_position))  # noqa: E501
+        if request.old_positions:
+            query_params.append(('oldPositions', request.old_positions))  # noqa: E501
+            collection_formats['oldPositions'] = ''  # noqa: E501
+        if request.new_positions:
+            query_params.append(('newPositions', request.new_positions))  # noqa: E501
+            collection_formats['newPositions'] = ''  # noqa: E501
         if request.slide_to_copy:
             query_params.append(('slideToCopy', request.slide_to_copy))  # noqa: E501
         if request.position:
@@ -1142,7 +1590,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def put_slides_slide(self, request, **kwargs):  # noqa: E501
-        """Update slide properties.  # noqa: E501
+        """Update a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1163,7 +1611,7 @@ class SlidesApi(ApiBase):
             return data
 
     def put_slides_slide_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Update slide properties.  # noqa: E501
+        """Update a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1251,7 +1699,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def put_slides_slide_background(self, request, **kwargs):  # noqa: E501
-        """Set presentation slide background color.  # noqa: E501
+        """Set background for a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1272,7 +1720,7 @@ class SlidesApi(ApiBase):
             return data
 
     def put_slides_slide_background_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Set presentation slide background color.  # noqa: E501
+        """Set background for a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True

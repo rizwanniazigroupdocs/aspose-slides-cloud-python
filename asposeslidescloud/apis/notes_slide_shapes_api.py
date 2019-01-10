@@ -226,15 +226,15 @@ class NotesSlideShapesApi(ApiBase):
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
+        if request.paragraphs:
+            query_params.append(('paragraphs', request.paragraphs))  # noqa: E501
+            collection_formats['paragraphs'] = ''  # noqa: E501
         if request.password:
             query_params.append(('password', request.password))  # noqa: E501
         if request.folder:
             query_params.append(('folder', request.folder))  # noqa: E501
         if request.storage:
             query_params.append(('storage', request.storage))  # noqa: E501
-        if request.paragraphs:
-            query_params.append(('paragraphs', request.paragraphs))  # noqa: E501
-            collection_formats['paragraphs'] = ''  # noqa: E501
 
         header_params = {}
 
@@ -465,15 +465,15 @@ class NotesSlideShapesApi(ApiBase):
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
         query_params = []
+        if request.portions:
+            query_params.append(('portions', request.portions))  # noqa: E501
+            collection_formats['portions'] = ''  # noqa: E501
         if request.password:
             query_params.append(('password', request.password))  # noqa: E501
         if request.folder:
             query_params.append(('folder', request.folder))  # noqa: E501
         if request.storage:
             query_params.append(('storage', request.storage))  # noqa: E501
-        if request.portions:
-            query_params.append(('portions', request.portions))  # noqa: E501
-            collection_formats['portions'] = ''  # noqa: E501
 
         header_params = {}
 
@@ -688,15 +688,15 @@ class NotesSlideShapesApi(ApiBase):
         path_params['path'] = request.path  # noqa: E501
 
         query_params = []
+        if request.shapes:
+            query_params.append(('shapes', request.shapes))  # noqa: E501
+            collection_formats['shapes'] = ''  # noqa: E501
         if request.password:
             query_params.append(('password', request.password))  # noqa: E501
         if request.folder:
             query_params.append(('folder', request.folder))  # noqa: E501
         if request.storage:
             query_params.append(('storage', request.storage))  # noqa: E501
-        if request.shapes:
-            query_params.append(('shapes', request.shapes))  # noqa: E501
-            collection_formats['shapes'] = ''  # noqa: E501
 
         header_params = {}
 

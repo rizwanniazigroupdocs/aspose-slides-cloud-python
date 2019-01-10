@@ -75,6 +75,7 @@ class Save(Task):
     def format(self):
         """Gets the format of this Save.  # noqa: E501
 
+        Format.  # noqa: E501
 
         :return: The format of this Save.  # noqa: E501
         :rtype: ExportFormat
@@ -85,6 +86,7 @@ class Save(Task):
     def format(self, format):
         """Sets the format of this Save.
 
+        Format.  # noqa: E501
 
         :param format: The format of this Save.  # noqa: E501
         :type: ExportFormat
@@ -96,6 +98,7 @@ class Save(Task):
     def output(self):
         """Gets the output of this Save.  # noqa: E501
 
+        Output file.  # noqa: E501
 
         :return: The output of this Save.  # noqa: E501
         :rtype: OutputFile
@@ -106,6 +109,7 @@ class Save(Task):
     def output(self, output):
         """Sets the output of this Save.
 
+        Output file.  # noqa: E501
 
         :param output: The output of this Save.  # noqa: E501
         :type: OutputFile
@@ -117,6 +121,7 @@ class Save(Task):
     def options(self):
         """Gets the options of this Save.  # noqa: E501
 
+        Save options.  # noqa: E501
 
         :return: The options of this Save.  # noqa: E501
         :rtype: ExportOptions
@@ -127,6 +132,7 @@ class Save(Task):
     def options(self, options):
         """Sets the options of this Save.
 
+        Save options.  # noqa: E501
 
         :param options: The options of this Save.  # noqa: E501
         :type: ExportOptions
