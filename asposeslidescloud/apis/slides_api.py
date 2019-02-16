@@ -1025,7 +1025,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def post_slides_add(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Create a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1046,7 +1046,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slides_add_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Create a slide.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1132,7 +1132,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def post_slides_copy(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Copy a slide from the current or another presentation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1153,7 +1153,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slides_copy_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Copy a slide from the current or another presentation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1246,7 +1246,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def post_slides_reorder(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Reorder presentation slide position.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1267,7 +1267,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slides_reorder_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Reorder presentation slide position.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1358,7 +1358,7 @@ class SlidesApi(ApiBase):
             collection_formats=collection_formats)
 
     def post_slides_reorder_many(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Reorder presentation slides positions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1379,7 +1379,7 @@ class SlidesApi(ApiBase):
             return data
 
     def post_slides_reorder_many_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reorder presentation slide position  # noqa: E501
+        """Reorder presentation slides positions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True

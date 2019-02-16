@@ -44,6 +44,7 @@ from asposeslidescloud.models.chart_type import ChartType
 from asposeslidescloud.models.chart_wall import ChartWall
 from asposeslidescloud.models.combined_shape_type import CombinedShapeType
 from asposeslidescloud.models.comments_positions import CommentsPositions
+from asposeslidescloud.models.conformance import Conformance
 from asposeslidescloud.models.crosses_type import CrossesType
 from asposeslidescloud.models.custom_dash_pattern import CustomDashPattern
 from asposeslidescloud.models.display_unit_type import DisplayUnitType
@@ -207,6 +208,7 @@ from asposeslidescloud.models.portion import Portion
 from asposeslidescloud.models.portion_list import PortionList
 from asposeslidescloud.models.portion_list_response import PortionListResponse
 from asposeslidescloud.models.portion_response import PortionResponse
+from asposeslidescloud.models.pptx_export_options import PptxExportOptions
 from asposeslidescloud.models.remove_shape import RemoveShape
 from asposeslidescloud.models.remove_slide import RemoveSlide
 from asposeslidescloud.models.reorder_slide import ReorderSlide

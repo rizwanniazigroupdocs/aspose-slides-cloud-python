@@ -90,6 +90,7 @@ class GradientFill(FillFormat):
     def direction(self):
         """Gets the direction of this GradientFill.  # noqa: E501
 
+        Gradient style.  # noqa: E501
 
         :return: The direction of this GradientFill.  # noqa: E501
         :rtype: GradientDirection
@@ -100,6 +101,7 @@ class GradientFill(FillFormat):
     def direction(self, direction):
         """Sets the direction of this GradientFill.
 
+        Gradient style.  # noqa: E501
 
         :param direction: The direction of this GradientFill.  # noqa: E501
         :type: GradientDirection
@@ -111,6 +113,7 @@ class GradientFill(FillFormat):
     def shape(self):
         """Gets the shape of this GradientFill.  # noqa: E501
 
+        Gradient shape.  # noqa: E501
 
         :return: The shape of this GradientFill.  # noqa: E501
         :rtype: GradientShapeType
@@ -121,6 +124,7 @@ class GradientFill(FillFormat):
     def shape(self, shape):
         """Sets the shape of this GradientFill.
 
+        Gradient shape.  # noqa: E501
 
         :param shape: The shape of this GradientFill.  # noqa: E501
         :type: GradientShapeType
@@ -132,6 +136,7 @@ class GradientFill(FillFormat):
     def stops(self):
         """Gets the stops of this GradientFill.  # noqa: E501
 
+        Gradient stops.  # noqa: E501
 
         :return: The stops of this GradientFill.  # noqa: E501
         :rtype: list[GradientFillStop]
@@ -142,6 +147,7 @@ class GradientFill(FillFormat):
     def stops(self, stops):
         """Sets the stops of this GradientFill.
 
+        Gradient stops.  # noqa: E501
 
         :param stops: The stops of this GradientFill.  # noqa: E501
         :type: list[GradientFillStop]
@@ -153,6 +159,7 @@ class GradientFill(FillFormat):
     def linear_angle(self):
         """Gets the linear_angle of this GradientFill.  # noqa: E501
 
+        Gradient angle.  # noqa: E501
 
         :return: The linear_angle of this GradientFill.  # noqa: E501
         :rtype: float
@@ -163,6 +170,7 @@ class GradientFill(FillFormat):
     def linear_angle(self, linear_angle):
         """Sets the linear_angle of this GradientFill.
 
+        Gradient angle.  # noqa: E501
 
         :param linear_angle: The linear_angle of this GradientFill.  # noqa: E501
         :type: float
@@ -174,6 +182,7 @@ class GradientFill(FillFormat):
     def is_scaled(self):
         """Gets the is_scaled of this GradientFill.  # noqa: E501
 
+        True if the gradient is scaled.  # noqa: E501
 
         :return: The is_scaled of this GradientFill.  # noqa: E501
         :rtype: bool
@@ -184,6 +193,7 @@ class GradientFill(FillFormat):
     def is_scaled(self, is_scaled):
         """Sets the is_scaled of this GradientFill.
 
+        True if the gradient is scaled.  # noqa: E501
 
         :param is_scaled: The is_scaled of this GradientFill.  # noqa: E501
         :type: bool
@@ -195,6 +205,7 @@ class GradientFill(FillFormat):
     def tile_flip(self):
         """Gets the tile_flip of this GradientFill.  # noqa: E501
 
+        Gradient flipping mode.  # noqa: E501
 
         :return: The tile_flip of this GradientFill.  # noqa: E501
         :rtype: GradientTileFlip
@@ -205,6 +216,7 @@ class GradientFill(FillFormat):
     def tile_flip(self, tile_flip):
         """Sets the tile_flip of this GradientFill.
 
+        Gradient flipping mode.  # noqa: E501
 
         :param tile_flip: The tile_flip of this GradientFill.  # noqa: E501
         :type: GradientTileFlip

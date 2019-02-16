@@ -31,8 +31,14 @@ import re  # noqa: F401
 import six
 
 
-class TableRow(object):
+class Conformance(object):
 
+    """
+    allowed enum values
+    """
+    ECMA376_2006 = "Ecma376_2006"
+    ISO29500_2008_TRANSITIONAL = "Iso29500_2008_Transitional"
+    ISO29500_2008_STRICT = "Iso29500_2008_Strict"
 
     """
     Attributes:
@@ -42,101 +48,13 @@ class TableRow(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cells': 'list[TableCell]',
-        'minimal_height': 'float',
-        'height': 'float'
     }
 
     attribute_map = {
-        'cells': 'Cells',
-        'minimal_height': 'MinimalHeight',
-        'height': 'Height'
     }
 
-    def __init__(self, cells=None, minimal_height=None, height=None):  # noqa: E501
-        """TableRow - a model defined in Swagger"""  # noqa: E501
-
-        self._cells = None
-        self._minimal_height = None
-        self._height = None
-
-        if cells is not None:
-            self.cells = cells
-        self.minimal_height = minimal_height
-        self.height = height
-
-    @property
-    def cells(self):
-        """Gets the cells of this TableRow.  # noqa: E501
-
-        Cells for the row.  # noqa: E501
-
-        :return: The cells of this TableRow.  # noqa: E501
-        :rtype: list[TableCell]
-        """
-        return self._cells
-
-    @cells.setter
-    def cells(self, cells):
-        """Sets the cells of this TableRow.
-
-        Cells for the row.  # noqa: E501
-
-        :param cells: The cells of this TableRow.  # noqa: E501
-        :type: list[TableCell]
-        """
-
-        self._cells = cells
-
-    @property
-    def minimal_height(self):
-        """Gets the minimal_height of this TableRow.  # noqa: E501
-
-        Minimal height of the row.  # noqa: E501
-
-        :return: The minimal_height of this TableRow.  # noqa: E501
-        :rtype: float
-        """
-        return self._minimal_height
-
-    @minimal_height.setter
-    def minimal_height(self, minimal_height):
-        """Sets the minimal_height of this TableRow.
-
-        Minimal height of the row.  # noqa: E501
-
-        :param minimal_height: The minimal_height of this TableRow.  # noqa: E501
-        :type: float
-        """
-        if minimal_height is None:
-            raise ValueError("Invalid value for `minimal_height`, must not be `None`")  # noqa: E501
-
-        self._minimal_height = minimal_height
-
-    @property
-    def height(self):
-        """Gets the height of this TableRow.  # noqa: E501
-
-        Height of the row.  # noqa: E501
-
-        :return: The height of this TableRow.  # noqa: E501
-        :rtype: float
-        """
-        return self._height
-
-    @height.setter
-    def height(self, height):
-        """Sets the height of this TableRow.
-
-        Height of the row.  # noqa: E501
-
-        :param height: The height of this TableRow.  # noqa: E501
-        :type: float
-        """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-
-        self._height = height
+    def __init__(self):  # noqa: E501
+        """Conformance - a model defined in Swagger"""  # noqa: E501
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -172,7 +90,7 @@ class TableRow(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, TableRow):
+        if not isinstance(other, Conformance):
             return False
 
         return self.__dict__ == other.__dict__
