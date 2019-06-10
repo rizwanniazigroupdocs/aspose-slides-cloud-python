@@ -54,7 +54,7 @@ class AddLayoutSlide(Task):
         'clone_from_position': 'CloneFromPosition'
     }
 
-    def __init__(self, type='Enum:TaskType.AddLayoutSlide', clone_from_file=None, clone_from_position=None):  # noqa: E501
+    def __init__(self, type='AddLayoutSlide', clone_from_file=None, clone_from_position=None):  # noqa: E501
         """AddLayoutSlide - a model defined in Swagger"""  # noqa: E501
         super(AddLayoutSlide, self).__init__(type)
 
@@ -63,8 +63,7 @@ class AddLayoutSlide(Task):
 
         if clone_from_file is not None:
             self.clone_from_file = clone_from_file
-        if clone_from_position is not None:
-            self.clone_from_position = clone_from_position
+        self.clone_from_position = clone_from_position
 
     @property
     def clone_from_file(self):
@@ -84,7 +83,6 @@ class AddLayoutSlide(Task):
         :param clone_from_file: The clone_from_file of this AddLayoutSlide.  # noqa: E501
         :type: InputFile
         """
-
         self._clone_from_file = clone_from_file
 
     @property
@@ -105,7 +103,6 @@ class AddLayoutSlide(Task):
         :param clone_from_position: The clone_from_position of this AddLayoutSlide.  # noqa: E501
         :type: int
         """
-
         self._clone_from_position = clone_from_position
 
     def to_dict(self):

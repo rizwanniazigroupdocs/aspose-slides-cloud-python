@@ -45,7 +45,6 @@ class MasterSlide(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'name': 'str',
         'layout_slides': 'list[ResourceUriElement]',
         'depending_slides': 'list[ResourceUriElement]'
@@ -54,15 +53,14 @@ class MasterSlide(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'name': 'Name',
         'layout_slides': 'LayoutSlides',
         'depending_slides': 'DependingSlides'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, name=None, layout_slides=None, depending_slides=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, layout_slides=None, depending_slides=None):  # noqa: E501
         """MasterSlide - a model defined in Swagger"""  # noqa: E501
-        super(MasterSlide, self).__init__(self_uri, alternate_links, links)
+        super(MasterSlide, self).__init__(self_uri, alternate_links)
 
         self._name = None
         self._layout_slides = None
@@ -93,7 +91,6 @@ class MasterSlide(ResourceBase):
         :param name: The name of this MasterSlide.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -114,7 +111,6 @@ class MasterSlide(ResourceBase):
         :param layout_slides: The layout_slides of this MasterSlide.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._layout_slides = layout_slides
 
     @property
@@ -135,7 +131,6 @@ class MasterSlide(ResourceBase):
         :param depending_slides: The depending_slides of this MasterSlide.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._depending_slides = depending_slides
 
     def to_dict(self):

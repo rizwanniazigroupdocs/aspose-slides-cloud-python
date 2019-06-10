@@ -87,7 +87,6 @@ class PresentationToMerge(object):
         :param path: The path of this PresentationToMerge.  # noqa: E501
         :type: str
         """
-
         self._path = path
 
     @property
@@ -110,7 +109,6 @@ class PresentationToMerge(object):
         :param password: The password of this PresentationToMerge.  # noqa: E501
         :type: str
         """
-
         self._password = password
 
     @property
@@ -133,7 +131,6 @@ class PresentationToMerge(object):
         :param slides: The slides of this PresentationToMerge.  # noqa: E501
         :type: list[int]
         """
-
         self._slides = slides
 
     def to_dict(self):

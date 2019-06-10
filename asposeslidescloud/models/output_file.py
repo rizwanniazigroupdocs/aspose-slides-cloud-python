@@ -42,7 +42,7 @@ class OutputFile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'OutputFileType'
+        'type': 'str'
     }
 
     attribute_map = {
@@ -54,16 +54,16 @@ class OutputFile(object):
 
         self._type = None
 
-        self.type = type
+        if type is not None:
+            self.type = type
 
     @property
     def type(self):
         """Gets the type of this OutputFile.  # noqa: E501
 
-        Gets type of output destination.  # noqa: E501
 
         :return: The type of this OutputFile.  # noqa: E501
-        :rtype: OutputFileType
+        :rtype: str
         """
         return self._type
 
@@ -71,14 +71,17 @@ class OutputFile(object):
     def type(self, type):
         """Sets the type of this OutputFile.
 
-        Gets type of output destination.  # noqa: E501
 
         :param type: The type of this OutputFile.  # noqa: E501
-        :type: OutputFileType
+        :type: str
         """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
+        if type is not None:
+            allowed_values = ["Path", "Response"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     def to_dict(self):

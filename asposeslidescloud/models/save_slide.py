@@ -45,7 +45,7 @@ class SaveSlide(Task):
     swagger_types = {
         'type': 'str',
         'output': 'OutputFile',
-        'format': 'SlideExportFormat',
+        'format': 'str',
         'options': 'ExportOptions',
         'width': 'int',
         'height': 'int',
@@ -62,7 +62,7 @@ class SaveSlide(Task):
         'position': 'Position'
     }
 
-    def __init__(self, type='Enum:TaskType.SaveSlide', output=None, format=None, options=None, width=None, height=None, position=None):  # noqa: E501
+    def __init__(self, type='SaveSlide', output=None, format=None, options=None, width=None, height=None, position=None):  # noqa: E501
         """SaveSlide - a model defined in Swagger"""  # noqa: E501
         super(SaveSlide, self).__init__(type)
 
@@ -75,16 +75,14 @@ class SaveSlide(Task):
 
         if output is not None:
             self.output = output
-        if format is not None:
-            self.format = format
+        self.format = format
         if options is not None:
             self.options = options
         if width is not None:
             self.width = width
         if height is not None:
             self.height = height
-        if position is not None:
-            self.position = position
+        self.position = position
 
     @property
     def output(self):
@@ -106,7 +104,6 @@ class SaveSlide(Task):
         :param output: The output of this SaveSlide.  # noqa: E501
         :type: OutputFile
         """
-
         self._output = output
 
     @property
@@ -116,7 +113,7 @@ class SaveSlide(Task):
         Save format.  # noqa: E501
 
         :return: The format of this SaveSlide.  # noqa: E501
-        :rtype: SlideExportFormat
+        :rtype: str
         """
         return self._format
 
@@ -127,9 +124,15 @@ class SaveSlide(Task):
         Save format.  # noqa: E501
 
         :param format: The format of this SaveSlide.  # noqa: E501
-        :type: SlideExportFormat
+        :type: str
         """
-
+        if format is not None:
+            allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Html", "Pdf", "Xps", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Potm", "Svg"]  # noqa: E501
+            if format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(format, allowed_values)
+                )
         self._format = format
 
     @property
@@ -152,7 +155,6 @@ class SaveSlide(Task):
         :param options: The options of this SaveSlide.  # noqa: E501
         :type: ExportOptions
         """
-
         self._options = options
 
     @property
@@ -175,7 +177,6 @@ class SaveSlide(Task):
         :param width: The width of this SaveSlide.  # noqa: E501
         :type: int
         """
-
         self._width = width
 
     @property
@@ -198,7 +199,6 @@ class SaveSlide(Task):
         :param height: The height of this SaveSlide.  # noqa: E501
         :type: int
         """
-
         self._height = height
 
     @property
@@ -221,7 +221,6 @@ class SaveSlide(Task):
         :param position: The position of this SaveSlide.  # noqa: E501
         :type: int
         """
-
         self._position = position
 
     def to_dict(self):

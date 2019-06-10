@@ -49,8 +49,8 @@ class TableCell(object):
         'margin_right': 'float',
         'margin_left': 'float',
         'margin_bottom': 'float',
-        'text_anchor_type': 'TextAnchorType',
-        'text_vertical_type': 'TextVerticalType',
+        'text_anchor_type': 'str',
+        'text_vertical_type': 'str',
         'fill_format': 'FillFormat',
         'border_top': 'LineFormat',
         'border_right': 'LineFormat',
@@ -144,7 +144,6 @@ class TableCell(object):
         :param text: The text of this TableCell.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -167,9 +166,6 @@ class TableCell(object):
         :param row_span: The row_span of this TableCell.  # noqa: E501
         :type: int
         """
-        if row_span is None:
-            raise ValueError("Invalid value for `row_span`, must not be `None`")  # noqa: E501
-
         self._row_span = row_span
 
     @property
@@ -192,9 +188,6 @@ class TableCell(object):
         :param col_span: The col_span of this TableCell.  # noqa: E501
         :type: int
         """
-        if col_span is None:
-            raise ValueError("Invalid value for `col_span`, must not be `None`")  # noqa: E501
-
         self._col_span = col_span
 
     @property
@@ -217,9 +210,6 @@ class TableCell(object):
         :param margin_top: The margin_top of this TableCell.  # noqa: E501
         :type: float
         """
-        if margin_top is None:
-            raise ValueError("Invalid value for `margin_top`, must not be `None`")  # noqa: E501
-
         self._margin_top = margin_top
 
     @property
@@ -242,9 +232,6 @@ class TableCell(object):
         :param margin_right: The margin_right of this TableCell.  # noqa: E501
         :type: float
         """
-        if margin_right is None:
-            raise ValueError("Invalid value for `margin_right`, must not be `None`")  # noqa: E501
-
         self._margin_right = margin_right
 
     @property
@@ -267,9 +254,6 @@ class TableCell(object):
         :param margin_left: The margin_left of this TableCell.  # noqa: E501
         :type: float
         """
-        if margin_left is None:
-            raise ValueError("Invalid value for `margin_left`, must not be `None`")  # noqa: E501
-
         self._margin_left = margin_left
 
     @property
@@ -292,9 +276,6 @@ class TableCell(object):
         :param margin_bottom: The margin_bottom of this TableCell.  # noqa: E501
         :type: float
         """
-        if margin_bottom is None:
-            raise ValueError("Invalid value for `margin_bottom`, must not be `None`")  # noqa: E501
-
         self._margin_bottom = margin_bottom
 
     @property
@@ -304,7 +285,7 @@ class TableCell(object):
         Text anchor type.  # noqa: E501
 
         :return: The text_anchor_type of this TableCell.  # noqa: E501
-        :rtype: TextAnchorType
+        :rtype: str
         """
         return self._text_anchor_type
 
@@ -315,11 +296,15 @@ class TableCell(object):
         Text anchor type.  # noqa: E501
 
         :param text_anchor_type: The text_anchor_type of this TableCell.  # noqa: E501
-        :type: TextAnchorType
+        :type: str
         """
-        if text_anchor_type is None:
-            raise ValueError("Invalid value for `text_anchor_type`, must not be `None`")  # noqa: E501
-
+        if text_anchor_type is not None:
+            allowed_values = ["Top", "Center", "Bottom", "Justified", "Distributed", "NotDefined"]  # noqa: E501
+            if text_anchor_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_anchor_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_anchor_type, allowed_values)
+                )
         self._text_anchor_type = text_anchor_type
 
     @property
@@ -329,7 +314,7 @@ class TableCell(object):
         The type of vertical text.  # noqa: E501
 
         :return: The text_vertical_type of this TableCell.  # noqa: E501
-        :rtype: TextVerticalType
+        :rtype: str
         """
         return self._text_vertical_type
 
@@ -340,11 +325,15 @@ class TableCell(object):
         The type of vertical text.  # noqa: E501
 
         :param text_vertical_type: The text_vertical_type of this TableCell.  # noqa: E501
-        :type: TextVerticalType
+        :type: str
         """
-        if text_vertical_type is None:
-            raise ValueError("Invalid value for `text_vertical_type`, must not be `None`")  # noqa: E501
-
+        if text_vertical_type is not None:
+            allowed_values = ["Horizontal", "Vertical", "Vertical270", "WordArtVertical", "EastAsianVertical", "MongolianVertical", "WordArtVerticalRightToLeft", "NotDefined"]  # noqa: E501
+            if text_vertical_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_vertical_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_vertical_type, allowed_values)
+                )
         self._text_vertical_type = text_vertical_type
 
     @property
@@ -367,7 +356,6 @@ class TableCell(object):
         :param fill_format: The fill_format of this TableCell.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -390,7 +378,6 @@ class TableCell(object):
         :param border_top: The border_top of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_top = border_top
 
     @property
@@ -413,7 +400,6 @@ class TableCell(object):
         :param border_right: The border_right of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_right = border_right
 
     @property
@@ -436,7 +422,6 @@ class TableCell(object):
         :param border_left: The border_left of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_left = border_left
 
     @property
@@ -459,7 +444,6 @@ class TableCell(object):
         :param border_bottom: The border_bottom of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_bottom = border_bottom
 
     @property
@@ -482,7 +466,6 @@ class TableCell(object):
         :param border_diagonal_up: The border_diagonal_up of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_diagonal_up = border_diagonal_up
 
     @property
@@ -505,7 +488,6 @@ class TableCell(object):
         :param border_diagonal_down: The border_diagonal_down of this TableCell.  # noqa: E501
         :type: LineFormat
         """
-
         self._border_diagonal_down = border_diagonal_down
 
     def to_dict(self):

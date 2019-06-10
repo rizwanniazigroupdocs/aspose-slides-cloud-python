@@ -82,7 +82,6 @@ class PresentationsMergeRequest(object):
         :param presentation_paths: The presentation_paths of this PresentationsMergeRequest.  # noqa: E501
         :type: list[str]
         """
-
         self._presentation_paths = presentation_paths
 
     @property
@@ -105,7 +104,6 @@ class PresentationsMergeRequest(object):
         :param presentation_passwords: The presentation_passwords of this PresentationsMergeRequest.  # noqa: E501
         :type: list[str]
         """
-
         self._presentation_passwords = presentation_passwords
 
     def to_dict(self):

@@ -48,10 +48,10 @@ class HtmlExportOptions(ExportOptions):
         'sub_directory_name': 'str',
         'show_hidden_slides': 'bool',
         'jpeg_quality': 'int',
-        'pictures_compression': 'PicturesCompression',
+        'pictures_compression': 'str',
         'delete_pictures_cropped_areas': 'bool',
-        'notes_position': 'NotesPositions',
-        'comments_position': 'CommentsPositions',
+        'notes_position': 'str',
+        'comments_position': 'str',
         'comments_area_width': 'int',
         'comments_area_color': 'str',
         'show_comments_by_no_author': 'bool'
@@ -88,28 +88,20 @@ class HtmlExportOptions(ExportOptions):
         self._comments_area_color = None
         self._show_comments_by_no_author = None
 
-        if save_as_zip is not None:
-            self.save_as_zip = save_as_zip
+        self.save_as_zip = save_as_zip
         if sub_directory_name is not None:
             self.sub_directory_name = sub_directory_name
-        if show_hidden_slides is not None:
-            self.show_hidden_slides = show_hidden_slides
-        if jpeg_quality is not None:
-            self.jpeg_quality = jpeg_quality
+        self.show_hidden_slides = show_hidden_slides
+        self.jpeg_quality = jpeg_quality
         if pictures_compression is not None:
             self.pictures_compression = pictures_compression
-        if delete_pictures_cropped_areas is not None:
-            self.delete_pictures_cropped_areas = delete_pictures_cropped_areas
-        if notes_position is not None:
-            self.notes_position = notes_position
-        if comments_position is not None:
-            self.comments_position = comments_position
-        if comments_area_width is not None:
-            self.comments_area_width = comments_area_width
+        self.delete_pictures_cropped_areas = delete_pictures_cropped_areas
+        self.notes_position = notes_position
+        self.comments_position = comments_position
+        self.comments_area_width = comments_area_width
         if comments_area_color is not None:
             self.comments_area_color = comments_area_color
-        if show_comments_by_no_author is not None:
-            self.show_comments_by_no_author = show_comments_by_no_author
+        self.show_comments_by_no_author = show_comments_by_no_author
 
     @property
     def save_as_zip(self):
@@ -131,7 +123,6 @@ class HtmlExportOptions(ExportOptions):
         :param save_as_zip: The save_as_zip of this HtmlExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._save_as_zip = save_as_zip
 
     @property
@@ -154,7 +145,6 @@ class HtmlExportOptions(ExportOptions):
         :param sub_directory_name: The sub_directory_name of this HtmlExportOptions.  # noqa: E501
         :type: str
         """
-
         self._sub_directory_name = sub_directory_name
 
     @property
@@ -177,7 +167,6 @@ class HtmlExportOptions(ExportOptions):
         :param show_hidden_slides: The show_hidden_slides of this HtmlExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_hidden_slides = show_hidden_slides
 
     @property
@@ -200,7 +189,6 @@ class HtmlExportOptions(ExportOptions):
         :param jpeg_quality: The jpeg_quality of this HtmlExportOptions.  # noqa: E501
         :type: int
         """
-
         self._jpeg_quality = jpeg_quality
 
     @property
@@ -210,7 +198,7 @@ class HtmlExportOptions(ExportOptions):
         Represents the pictures compression level  # noqa: E501
 
         :return: The pictures_compression of this HtmlExportOptions.  # noqa: E501
-        :rtype: PicturesCompression
+        :rtype: str
         """
         return self._pictures_compression
 
@@ -221,9 +209,15 @@ class HtmlExportOptions(ExportOptions):
         Represents the pictures compression level  # noqa: E501
 
         :param pictures_compression: The pictures_compression of this HtmlExportOptions.  # noqa: E501
-        :type: PicturesCompression
+        :type: str
         """
-
+        if pictures_compression is not None:
+            allowed_values = ["Dpi330", "Dpi220", "Dpi150", "Dpi96", "Dpi72", "DocumentResolution"]  # noqa: E501
+            if pictures_compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(pictures_compression, allowed_values)
+                )
         self._pictures_compression = pictures_compression
 
     @property
@@ -246,7 +240,6 @@ class HtmlExportOptions(ExportOptions):
         :param delete_pictures_cropped_areas: The delete_pictures_cropped_areas of this HtmlExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._delete_pictures_cropped_areas = delete_pictures_cropped_areas
 
     @property
@@ -256,7 +249,7 @@ class HtmlExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :return: The notes_position of this HtmlExportOptions.  # noqa: E501
-        :rtype: NotesPositions
+        :rtype: str
         """
         return self._notes_position
 
@@ -267,9 +260,15 @@ class HtmlExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :param notes_position: The notes_position of this HtmlExportOptions.  # noqa: E501
-        :type: NotesPositions
+        :type: str
         """
-
+        if notes_position is not None:
+            allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(notes_position, allowed_values)
+                )
         self._notes_position = notes_position
 
     @property
@@ -279,7 +278,7 @@ class HtmlExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :return: The comments_position of this HtmlExportOptions.  # noqa: E501
-        :rtype: CommentsPositions
+        :rtype: str
         """
         return self._comments_position
 
@@ -290,9 +289,15 @@ class HtmlExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :param comments_position: The comments_position of this HtmlExportOptions.  # noqa: E501
-        :type: CommentsPositions
+        :type: str
         """
-
+        if comments_position is not None:
+            allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comments_position, allowed_values)
+                )
         self._comments_position = comments_position
 
     @property
@@ -315,7 +320,6 @@ class HtmlExportOptions(ExportOptions):
         :param comments_area_width: The comments_area_width of this HtmlExportOptions.  # noqa: E501
         :type: int
         """
-
         self._comments_area_width = comments_area_width
 
     @property
@@ -338,7 +342,6 @@ class HtmlExportOptions(ExportOptions):
         :param comments_area_color: The comments_area_color of this HtmlExportOptions.  # noqa: E501
         :type: str
         """
-
         self._comments_area_color = comments_area_color
 
     @property
@@ -361,7 +364,6 @@ class HtmlExportOptions(ExportOptions):
         :param show_comments_by_no_author: The show_comments_by_no_author of this HtmlExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_comments_by_no_author = show_comments_by_no_author
 
     def to_dict(self):

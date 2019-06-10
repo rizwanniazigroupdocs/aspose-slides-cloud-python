@@ -42,11 +42,11 @@ class LineFormat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alignment': 'LineAlignment',
-        'cap_style': 'LineCapStyle',
-        'dash_style': 'LineDashStyle',
-        'join_style': 'LineJoinStyle',
-        'style': 'LineStyle',
+        'alignment': 'str',
+        'cap_style': 'str',
+        'dash_style': 'str',
+        'join_style': 'str',
+        'style': 'str',
         'begin_arrow_head': 'ArrowHeadProperties',
         'end_arrow_head': 'ArrowHeadProperties',
         'custom_dash_pattern': 'CustomDashPattern',
@@ -106,7 +106,7 @@ class LineFormat(object):
 
 
         :return: The alignment of this LineFormat.  # noqa: E501
-        :rtype: LineAlignment
+        :rtype: str
         """
         return self._alignment
 
@@ -116,11 +116,15 @@ class LineFormat(object):
 
 
         :param alignment: The alignment of this LineFormat.  # noqa: E501
-        :type: LineAlignment
+        :type: str
         """
-        if alignment is None:
-            raise ValueError("Invalid value for `alignment`, must not be `None`")  # noqa: E501
-
+        if alignment is not None:
+            allowed_values = ["Center", "Inset", "NotDefined"]  # noqa: E501
+            if alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(alignment, allowed_values)
+                )
         self._alignment = alignment
 
     @property
@@ -129,7 +133,7 @@ class LineFormat(object):
 
 
         :return: The cap_style of this LineFormat.  # noqa: E501
-        :rtype: LineCapStyle
+        :rtype: str
         """
         return self._cap_style
 
@@ -139,11 +143,15 @@ class LineFormat(object):
 
 
         :param cap_style: The cap_style of this LineFormat.  # noqa: E501
-        :type: LineCapStyle
+        :type: str
         """
-        if cap_style is None:
-            raise ValueError("Invalid value for `cap_style`, must not be `None`")  # noqa: E501
-
+        if cap_style is not None:
+            allowed_values = ["Round", "Square", "Flat", "NotDefined"]  # noqa: E501
+            if cap_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `cap_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(cap_style, allowed_values)
+                )
         self._cap_style = cap_style
 
     @property
@@ -152,7 +160,7 @@ class LineFormat(object):
 
 
         :return: The dash_style of this LineFormat.  # noqa: E501
-        :rtype: LineDashStyle
+        :rtype: str
         """
         return self._dash_style
 
@@ -162,11 +170,15 @@ class LineFormat(object):
 
 
         :param dash_style: The dash_style of this LineFormat.  # noqa: E501
-        :type: LineDashStyle
+        :type: str
         """
-        if dash_style is None:
-            raise ValueError("Invalid value for `dash_style`, must not be `None`")  # noqa: E501
-
+        if dash_style is not None:
+            allowed_values = ["Solid", "Dot", "Dash", "LargeDash", "DashDot", "LargeDashDot", "LargeDashDotDot", "SystemDash", "SystemDot", "SystemDashDot", "SystemDashDotDot", "Custom", "NotDefined"]  # noqa: E501
+            if dash_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dash_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dash_style, allowed_values)
+                )
         self._dash_style = dash_style
 
     @property
@@ -175,7 +187,7 @@ class LineFormat(object):
 
 
         :return: The join_style of this LineFormat.  # noqa: E501
-        :rtype: LineJoinStyle
+        :rtype: str
         """
         return self._join_style
 
@@ -185,11 +197,15 @@ class LineFormat(object):
 
 
         :param join_style: The join_style of this LineFormat.  # noqa: E501
-        :type: LineJoinStyle
+        :type: str
         """
-        if join_style is None:
-            raise ValueError("Invalid value for `join_style`, must not be `None`")  # noqa: E501
-
+        if join_style is not None:
+            allowed_values = ["Round", "Bevel", "Miter", "NotDefined"]  # noqa: E501
+            if join_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `join_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(join_style, allowed_values)
+                )
         self._join_style = join_style
 
     @property
@@ -198,7 +214,7 @@ class LineFormat(object):
 
 
         :return: The style of this LineFormat.  # noqa: E501
-        :rtype: LineStyle
+        :rtype: str
         """
         return self._style
 
@@ -208,11 +224,15 @@ class LineFormat(object):
 
 
         :param style: The style of this LineFormat.  # noqa: E501
-        :type: LineStyle
+        :type: str
         """
-        if style is None:
-            raise ValueError("Invalid value for `style`, must not be `None`")  # noqa: E501
-
+        if style is not None:
+            allowed_values = ["Single", "ThinThin", "ThinThick", "ThickThin", "ThickBetweenThin", "NotDefined"]  # noqa: E501
+            if style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(style, allowed_values)
+                )
         self._style = style
 
     @property
@@ -233,7 +253,6 @@ class LineFormat(object):
         :param begin_arrow_head: The begin_arrow_head of this LineFormat.  # noqa: E501
         :type: ArrowHeadProperties
         """
-
         self._begin_arrow_head = begin_arrow_head
 
     @property
@@ -254,7 +273,6 @@ class LineFormat(object):
         :param end_arrow_head: The end_arrow_head of this LineFormat.  # noqa: E501
         :type: ArrowHeadProperties
         """
-
         self._end_arrow_head = end_arrow_head
 
     @property
@@ -275,7 +293,6 @@ class LineFormat(object):
         :param custom_dash_pattern: The custom_dash_pattern of this LineFormat.  # noqa: E501
         :type: CustomDashPattern
         """
-
         self._custom_dash_pattern = custom_dash_pattern
 
     @property
@@ -296,7 +313,6 @@ class LineFormat(object):
         :param fill_format: The fill_format of this LineFormat.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -317,9 +333,6 @@ class LineFormat(object):
         :param miter_limit: The miter_limit of this LineFormat.  # noqa: E501
         :type: float
         """
-        if miter_limit is None:
-            raise ValueError("Invalid value for `miter_limit`, must not be `None`")  # noqa: E501
-
         self._miter_limit = miter_limit
 
     @property
@@ -340,9 +353,6 @@ class LineFormat(object):
         :param width: The width of this LineFormat.  # noqa: E501
         :type: float
         """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-
         self._width = width
 
     def to_dict(self):

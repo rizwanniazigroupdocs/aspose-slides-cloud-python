@@ -50,7 +50,7 @@ class ResponseOutputFile(OutputFile):
         'type': 'Type'
     }
 
-    def __init__(self, type='Enum:OutputFileType.Response'):  # noqa: E501
+    def __init__(self, type='Response'):  # noqa: E501
         """ResponseOutputFile - a model defined in Swagger"""  # noqa: E501
         super(ResponseOutputFile, self).__init__(type)
 

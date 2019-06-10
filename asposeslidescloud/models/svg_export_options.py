@@ -50,9 +50,9 @@ class SvgExportOptions(ExportOptions):
         'disable_gradient_split': 'bool',
         'disable_line_end_cropping': 'bool',
         'jpeg_quality': 'int',
-        'pictures_compression': 'PicturesCompression',
+        'pictures_compression': 'str',
         'delete_pictures_cropped_areas': 'bool',
-        'external_fonts_handling': 'ExternalFontsHandling'
+        'external_fonts_handling': 'str'
     }
 
     attribute_map = {
@@ -82,24 +82,15 @@ class SvgExportOptions(ExportOptions):
         self._delete_pictures_cropped_areas = None
         self._external_fonts_handling = None
 
-        if vectorize_text is not None:
-            self.vectorize_text = vectorize_text
-        if metafile_rasterization_dpi is not None:
-            self.metafile_rasterization_dpi = metafile_rasterization_dpi
-        if disable3_d_text is not None:
-            self.disable3_d_text = disable3_d_text
-        if disable_gradient_split is not None:
-            self.disable_gradient_split = disable_gradient_split
-        if disable_line_end_cropping is not None:
-            self.disable_line_end_cropping = disable_line_end_cropping
-        if jpeg_quality is not None:
-            self.jpeg_quality = jpeg_quality
-        if pictures_compression is not None:
-            self.pictures_compression = pictures_compression
-        if delete_pictures_cropped_areas is not None:
-            self.delete_pictures_cropped_areas = delete_pictures_cropped_areas
-        if external_fonts_handling is not None:
-            self.external_fonts_handling = external_fonts_handling
+        self.vectorize_text = vectorize_text
+        self.metafile_rasterization_dpi = metafile_rasterization_dpi
+        self.disable3_d_text = disable3_d_text
+        self.disable_gradient_split = disable_gradient_split
+        self.disable_line_end_cropping = disable_line_end_cropping
+        self.jpeg_quality = jpeg_quality
+        self.pictures_compression = pictures_compression
+        self.delete_pictures_cropped_areas = delete_pictures_cropped_areas
+        self.external_fonts_handling = external_fonts_handling
 
     @property
     def vectorize_text(self):
@@ -121,7 +112,6 @@ class SvgExportOptions(ExportOptions):
         :param vectorize_text: The vectorize_text of this SvgExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._vectorize_text = vectorize_text
 
     @property
@@ -144,7 +134,6 @@ class SvgExportOptions(ExportOptions):
         :param metafile_rasterization_dpi: The metafile_rasterization_dpi of this SvgExportOptions.  # noqa: E501
         :type: int
         """
-
         self._metafile_rasterization_dpi = metafile_rasterization_dpi
 
     @property
@@ -167,7 +156,6 @@ class SvgExportOptions(ExportOptions):
         :param disable3_d_text: The disable3_d_text of this SvgExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._disable3_d_text = disable3_d_text
 
     @property
@@ -190,7 +178,6 @@ class SvgExportOptions(ExportOptions):
         :param disable_gradient_split: The disable_gradient_split of this SvgExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._disable_gradient_split = disable_gradient_split
 
     @property
@@ -213,7 +200,6 @@ class SvgExportOptions(ExportOptions):
         :param disable_line_end_cropping: The disable_line_end_cropping of this SvgExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._disable_line_end_cropping = disable_line_end_cropping
 
     @property
@@ -236,7 +222,6 @@ class SvgExportOptions(ExportOptions):
         :param jpeg_quality: The jpeg_quality of this SvgExportOptions.  # noqa: E501
         :type: int
         """
-
         self._jpeg_quality = jpeg_quality
 
     @property
@@ -246,7 +231,7 @@ class SvgExportOptions(ExportOptions):
         Represents the pictures compression level  # noqa: E501
 
         :return: The pictures_compression of this SvgExportOptions.  # noqa: E501
-        :rtype: PicturesCompression
+        :rtype: str
         """
         return self._pictures_compression
 
@@ -257,9 +242,15 @@ class SvgExportOptions(ExportOptions):
         Represents the pictures compression level  # noqa: E501
 
         :param pictures_compression: The pictures_compression of this SvgExportOptions.  # noqa: E501
-        :type: PicturesCompression
+        :type: str
         """
-
+        if pictures_compression is not None:
+            allowed_values = ["Dpi330", "Dpi220", "Dpi150", "Dpi96", "Dpi72", "DocumentResolution"]  # noqa: E501
+            if pictures_compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(pictures_compression, allowed_values)
+                )
         self._pictures_compression = pictures_compression
 
     @property
@@ -282,7 +273,6 @@ class SvgExportOptions(ExportOptions):
         :param delete_pictures_cropped_areas: The delete_pictures_cropped_areas of this SvgExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._delete_pictures_cropped_areas = delete_pictures_cropped_areas
 
     @property
@@ -292,7 +282,7 @@ class SvgExportOptions(ExportOptions):
         Determines a way of handling externally loaded fonts.  # noqa: E501
 
         :return: The external_fonts_handling of this SvgExportOptions.  # noqa: E501
-        :rtype: ExternalFontsHandling
+        :rtype: str
         """
         return self._external_fonts_handling
 
@@ -303,9 +293,15 @@ class SvgExportOptions(ExportOptions):
         Determines a way of handling externally loaded fonts.  # noqa: E501
 
         :param external_fonts_handling: The external_fonts_handling of this SvgExportOptions.  # noqa: E501
-        :type: ExternalFontsHandling
+        :type: str
         """
-
+        if external_fonts_handling is not None:
+            allowed_values = ["AddLinksToFontFiles", "Embed", "Vectorize"]  # noqa: E501
+            if external_fonts_handling not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `external_fonts_handling` ({0}), must be one of {1}"  # noqa: E501
+                    .format(external_fonts_handling, allowed_values)
+                )
         self._external_fonts_handling = external_fonts_handling
 
     def to_dict(self):

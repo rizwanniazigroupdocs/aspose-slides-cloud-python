@@ -43,22 +43,22 @@ class PathInputFile(InputFile):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
         'password': 'str',
+        'type': 'str',
         'path': 'str',
         'storage': 'str'
     }
 
     attribute_map = {
-        'type': 'Type',
         'password': 'Password',
+        'type': 'Type',
         'path': 'Path',
         'storage': 'Storage'
     }
 
-    def __init__(self, type='Enum:InputFileType.Path', password=None, path=None, storage=None):  # noqa: E501
+    def __init__(self, password=None, type='Path', path=None, storage=None):  # noqa: E501
         """PathInputFile - a model defined in Swagger"""  # noqa: E501
-        super(PathInputFile, self).__init__(type, password)
+        super(PathInputFile, self).__init__(password, type)
 
         self._path = None
         self._storage = None
@@ -88,7 +88,6 @@ class PathInputFile(InputFile):
         :param path: The path of this PathInputFile.  # noqa: E501
         :type: str
         """
-
         self._path = path
 
     @property
@@ -111,7 +110,6 @@ class PathInputFile(InputFile):
         :param storage: The storage of this PathInputFile.  # noqa: E501
         :type: str
         """
-
         self._storage = storage
 
     def to_dict(self):

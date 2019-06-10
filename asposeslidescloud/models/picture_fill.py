@@ -52,7 +52,7 @@ class PictureFill(FillFormat):
         'image': 'ResourceUriElement',
         'base64_data': 'str',
         'svg_data': 'str',
-        'picture_fill_mode': 'PictureFillMode'
+        'picture_fill_mode': 'str'
     }
 
     attribute_map = {
@@ -68,7 +68,7 @@ class PictureFill(FillFormat):
         'picture_fill_mode': 'PictureFillMode'
     }
 
-    def __init__(self, type='Enum:FillType.Picture', crop_bottom=None, crop_left=None, crop_right=None, crop_top=None, dpi=None, image=None, base64_data=None, svg_data=None, picture_fill_mode=None):  # noqa: E501
+    def __init__(self, type='Picture', crop_bottom=None, crop_left=None, crop_right=None, crop_top=None, dpi=None, image=None, base64_data=None, svg_data=None, picture_fill_mode=None):  # noqa: E501
         """PictureFill - a model defined in Swagger"""  # noqa: E501
         super(PictureFill, self).__init__(type)
 
@@ -82,24 +82,18 @@ class PictureFill(FillFormat):
         self._svg_data = None
         self._picture_fill_mode = None
 
-        if crop_bottom is not None:
-            self.crop_bottom = crop_bottom
-        if crop_left is not None:
-            self.crop_left = crop_left
-        if crop_right is not None:
-            self.crop_right = crop_right
-        if crop_top is not None:
-            self.crop_top = crop_top
-        if dpi is not None:
-            self.dpi = dpi
+        self.crop_bottom = crop_bottom
+        self.crop_left = crop_left
+        self.crop_right = crop_right
+        self.crop_top = crop_top
+        self.dpi = dpi
         if image is not None:
             self.image = image
         if base64_data is not None:
             self.base64_data = base64_data
         if svg_data is not None:
             self.svg_data = svg_data
-        if picture_fill_mode is not None:
-            self.picture_fill_mode = picture_fill_mode
+        self.picture_fill_mode = picture_fill_mode
 
     @property
     def crop_bottom(self):
@@ -119,7 +113,6 @@ class PictureFill(FillFormat):
         :param crop_bottom: The crop_bottom of this PictureFill.  # noqa: E501
         :type: float
         """
-
         self._crop_bottom = crop_bottom
 
     @property
@@ -140,7 +133,6 @@ class PictureFill(FillFormat):
         :param crop_left: The crop_left of this PictureFill.  # noqa: E501
         :type: float
         """
-
         self._crop_left = crop_left
 
     @property
@@ -161,7 +153,6 @@ class PictureFill(FillFormat):
         :param crop_right: The crop_right of this PictureFill.  # noqa: E501
         :type: float
         """
-
         self._crop_right = crop_right
 
     @property
@@ -182,7 +173,6 @@ class PictureFill(FillFormat):
         :param crop_top: The crop_top of this PictureFill.  # noqa: E501
         :type: float
         """
-
         self._crop_top = crop_top
 
     @property
@@ -203,7 +193,6 @@ class PictureFill(FillFormat):
         :param dpi: The dpi of this PictureFill.  # noqa: E501
         :type: int
         """
-
         self._dpi = dpi
 
     @property
@@ -224,7 +213,6 @@ class PictureFill(FillFormat):
         :param image: The image of this PictureFill.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._image = image
 
     @property
@@ -245,7 +233,6 @@ class PictureFill(FillFormat):
         :param base64_data: The base64_data of this PictureFill.  # noqa: E501
         :type: str
         """
-
         self._base64_data = base64_data
 
     @property
@@ -266,7 +253,6 @@ class PictureFill(FillFormat):
         :param svg_data: The svg_data of this PictureFill.  # noqa: E501
         :type: str
         """
-
         self._svg_data = svg_data
 
     @property
@@ -275,7 +261,7 @@ class PictureFill(FillFormat):
 
 
         :return: The picture_fill_mode of this PictureFill.  # noqa: E501
-        :rtype: PictureFillMode
+        :rtype: str
         """
         return self._picture_fill_mode
 
@@ -285,9 +271,15 @@ class PictureFill(FillFormat):
 
 
         :param picture_fill_mode: The picture_fill_mode of this PictureFill.  # noqa: E501
-        :type: PictureFillMode
+        :type: str
         """
-
+        if picture_fill_mode is not None:
+            allowed_values = ["Tile", "Stretch"]  # noqa: E501
+            if picture_fill_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `picture_fill_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(picture_fill_mode, allowed_values)
+                )
         self._picture_fill_mode = picture_fill_mode
 
     def to_dict(self):

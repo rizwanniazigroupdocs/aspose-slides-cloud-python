@@ -77,7 +77,6 @@ class OrderedMergeRequest(object):
         :param presentations: The presentations of this OrderedMergeRequest.  # noqa: E501
         :type: list[PresentationToMerge]
         """
-
         self._presentations = presentations
 
     def to_dict(self):

@@ -45,27 +45,26 @@ class Portion(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'text': 'str',
-        'font_bold': 'NullableBool',
-        'font_italic': 'NullableBool',
-        'font_underline': 'TextUnderlineType',
-        'strikethrough_type': 'TextStrikethroughType',
-        'text_cap_type': 'TextCapType',
+        'font_bold': 'str',
+        'font_italic': 'str',
+        'font_underline': 'str',
+        'strikethrough_type': 'str',
+        'text_cap_type': 'str',
         'escapement': 'float',
         'spacing': 'float',
         'font_color': 'str',
         'highlight_color': 'str',
         'font_height': 'float',
-        'normalise_height': 'NullableBool',
-        'proof_disabled': 'NullableBool',
+        'normalise_height': 'str',
+        'proof_disabled': 'str',
         'smart_tag_clean': 'bool',
         'kerning_minimal_size': 'float',
-        'kumimoji': 'NullableBool',
+        'kumimoji': 'str',
         'language_id': 'str',
         'alternative_language_id': 'str',
-        'is_hard_underline_fill': 'NullableBool',
-        'is_hard_underline_line': 'NullableBool',
+        'is_hard_underline_fill': 'str',
+        'is_hard_underline_line': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
@@ -76,7 +75,6 @@ class Portion(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'text': 'Text',
         'font_bold': 'FontBold',
         'font_italic': 'FontItalic',
@@ -104,9 +102,9 @@ class Portion(ResourceBase):
         'underline_line_format': 'UnderlineLineFormat'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, text=None, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, text=None, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None):  # noqa: E501
         """Portion - a model defined in Swagger"""  # noqa: E501
-        super(Portion, self).__init__(self_uri, alternate_links, links)
+        super(Portion, self).__init__(self_uri, alternate_links)
 
         self._text = None
         self._font_bold = None
@@ -203,7 +201,6 @@ class Portion(ResourceBase):
         :param text: The text of this Portion.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -212,7 +209,7 @@ class Portion(ResourceBase):
 
 
         :return: The font_bold of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._font_bold
 
@@ -222,9 +219,15 @@ class Portion(ResourceBase):
 
 
         :param font_bold: The font_bold of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if font_bold is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if font_bold not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `font_bold` ({0}), must be one of {1}"  # noqa: E501
+                    .format(font_bold, allowed_values)
+                )
         self._font_bold = font_bold
 
     @property
@@ -233,7 +236,7 @@ class Portion(ResourceBase):
 
 
         :return: The font_italic of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._font_italic
 
@@ -243,9 +246,15 @@ class Portion(ResourceBase):
 
 
         :param font_italic: The font_italic of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if font_italic is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if font_italic not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `font_italic` ({0}), must be one of {1}"  # noqa: E501
+                    .format(font_italic, allowed_values)
+                )
         self._font_italic = font_italic
 
     @property
@@ -254,7 +263,7 @@ class Portion(ResourceBase):
 
 
         :return: The font_underline of this Portion.  # noqa: E501
-        :rtype: TextUnderlineType
+        :rtype: str
         """
         return self._font_underline
 
@@ -264,9 +273,15 @@ class Portion(ResourceBase):
 
 
         :param font_underline: The font_underline of this Portion.  # noqa: E501
-        :type: TextUnderlineType
+        :type: str
         """
-
+        if font_underline is not None:
+            allowed_values = ["None", "Words", "Single", "Double", "Heavy", "Dotted", "HeavyDotted", "Dashed", "HeavyDashed", "LongDashed", "HeavyLongDashed", "DotDash", "HeavyDotDash", "DotDotDash", "HeavyDotDotDash", "Wavy", "HeavyWavy", "DoubleWavy", "NotDefined"]  # noqa: E501
+            if font_underline not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `font_underline` ({0}), must be one of {1}"  # noqa: E501
+                    .format(font_underline, allowed_values)
+                )
         self._font_underline = font_underline
 
     @property
@@ -275,7 +290,7 @@ class Portion(ResourceBase):
 
 
         :return: The strikethrough_type of this Portion.  # noqa: E501
-        :rtype: TextStrikethroughType
+        :rtype: str
         """
         return self._strikethrough_type
 
@@ -285,9 +300,15 @@ class Portion(ResourceBase):
 
 
         :param strikethrough_type: The strikethrough_type of this Portion.  # noqa: E501
-        :type: TextStrikethroughType
+        :type: str
         """
-
+        if strikethrough_type is not None:
+            allowed_values = ["None", "Single", "Double", "NotDefined"]  # noqa: E501
+            if strikethrough_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `strikethrough_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(strikethrough_type, allowed_values)
+                )
         self._strikethrough_type = strikethrough_type
 
     @property
@@ -296,7 +317,7 @@ class Portion(ResourceBase):
 
 
         :return: The text_cap_type of this Portion.  # noqa: E501
-        :rtype: TextCapType
+        :rtype: str
         """
         return self._text_cap_type
 
@@ -306,9 +327,15 @@ class Portion(ResourceBase):
 
 
         :param text_cap_type: The text_cap_type of this Portion.  # noqa: E501
-        :type: TextCapType
+        :type: str
         """
-
+        if text_cap_type is not None:
+            allowed_values = ["None", "Small", "All", "NotDefined"]  # noqa: E501
+            if text_cap_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_cap_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_cap_type, allowed_values)
+                )
         self._text_cap_type = text_cap_type
 
     @property
@@ -329,7 +356,6 @@ class Portion(ResourceBase):
         :param escapement: The escapement of this Portion.  # noqa: E501
         :type: float
         """
-
         self._escapement = escapement
 
     @property
@@ -350,7 +376,6 @@ class Portion(ResourceBase):
         :param spacing: The spacing of this Portion.  # noqa: E501
         :type: float
         """
-
         self._spacing = spacing
 
     @property
@@ -371,7 +396,6 @@ class Portion(ResourceBase):
         :param font_color: The font_color of this Portion.  # noqa: E501
         :type: str
         """
-
         self._font_color = font_color
 
     @property
@@ -392,7 +416,6 @@ class Portion(ResourceBase):
         :param highlight_color: The highlight_color of this Portion.  # noqa: E501
         :type: str
         """
-
         self._highlight_color = highlight_color
 
     @property
@@ -413,7 +436,6 @@ class Portion(ResourceBase):
         :param font_height: The font_height of this Portion.  # noqa: E501
         :type: float
         """
-
         self._font_height = font_height
 
     @property
@@ -422,7 +444,7 @@ class Portion(ResourceBase):
 
 
         :return: The normalise_height of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._normalise_height
 
@@ -432,9 +454,15 @@ class Portion(ResourceBase):
 
 
         :param normalise_height: The normalise_height of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if normalise_height is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if normalise_height not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `normalise_height` ({0}), must be one of {1}"  # noqa: E501
+                    .format(normalise_height, allowed_values)
+                )
         self._normalise_height = normalise_height
 
     @property
@@ -443,7 +471,7 @@ class Portion(ResourceBase):
 
 
         :return: The proof_disabled of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._proof_disabled
 
@@ -453,9 +481,15 @@ class Portion(ResourceBase):
 
 
         :param proof_disabled: The proof_disabled of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if proof_disabled is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if proof_disabled not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `proof_disabled` ({0}), must be one of {1}"  # noqa: E501
+                    .format(proof_disabled, allowed_values)
+                )
         self._proof_disabled = proof_disabled
 
     @property
@@ -476,7 +510,6 @@ class Portion(ResourceBase):
         :param smart_tag_clean: The smart_tag_clean of this Portion.  # noqa: E501
         :type: bool
         """
-
         self._smart_tag_clean = smart_tag_clean
 
     @property
@@ -497,7 +530,6 @@ class Portion(ResourceBase):
         :param kerning_minimal_size: The kerning_minimal_size of this Portion.  # noqa: E501
         :type: float
         """
-
         self._kerning_minimal_size = kerning_minimal_size
 
     @property
@@ -506,7 +538,7 @@ class Portion(ResourceBase):
 
 
         :return: The kumimoji of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._kumimoji
 
@@ -516,9 +548,15 @@ class Portion(ResourceBase):
 
 
         :param kumimoji: The kumimoji of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if kumimoji is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if kumimoji not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `kumimoji` ({0}), must be one of {1}"  # noqa: E501
+                    .format(kumimoji, allowed_values)
+                )
         self._kumimoji = kumimoji
 
     @property
@@ -539,7 +577,6 @@ class Portion(ResourceBase):
         :param language_id: The language_id of this Portion.  # noqa: E501
         :type: str
         """
-
         self._language_id = language_id
 
     @property
@@ -560,7 +597,6 @@ class Portion(ResourceBase):
         :param alternative_language_id: The alternative_language_id of this Portion.  # noqa: E501
         :type: str
         """
-
         self._alternative_language_id = alternative_language_id
 
     @property
@@ -569,7 +605,7 @@ class Portion(ResourceBase):
 
 
         :return: The is_hard_underline_fill of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._is_hard_underline_fill
 
@@ -579,9 +615,15 @@ class Portion(ResourceBase):
 
 
         :param is_hard_underline_fill: The is_hard_underline_fill of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if is_hard_underline_fill is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if is_hard_underline_fill not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `is_hard_underline_fill` ({0}), must be one of {1}"  # noqa: E501
+                    .format(is_hard_underline_fill, allowed_values)
+                )
         self._is_hard_underline_fill = is_hard_underline_fill
 
     @property
@@ -590,7 +632,7 @@ class Portion(ResourceBase):
 
 
         :return: The is_hard_underline_line of this Portion.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._is_hard_underline_line
 
@@ -600,9 +642,15 @@ class Portion(ResourceBase):
 
 
         :param is_hard_underline_line: The is_hard_underline_line of this Portion.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if is_hard_underline_line is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if is_hard_underline_line not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `is_hard_underline_line` ({0}), must be one of {1}"  # noqa: E501
+                    .format(is_hard_underline_line, allowed_values)
+                )
         self._is_hard_underline_line = is_hard_underline_line
 
     @property
@@ -623,7 +671,6 @@ class Portion(ResourceBase):
         :param fill_format: The fill_format of this Portion.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -644,7 +691,6 @@ class Portion(ResourceBase):
         :param effect_format: The effect_format of this Portion.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -665,7 +711,6 @@ class Portion(ResourceBase):
         :param line_format: The line_format of this Portion.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     @property
@@ -686,7 +731,6 @@ class Portion(ResourceBase):
         :param underline_fill_format: The underline_fill_format of this Portion.  # noqa: E501
         :type: FillFormat
         """
-
         self._underline_fill_format = underline_fill_format
 
     @property
@@ -707,7 +751,6 @@ class Portion(ResourceBase):
         :param underline_line_format: The underline_line_format of this Portion.  # noqa: E501
         :type: LineFormat
         """
-
         self._underline_line_format = underline_line_format
 
     def to_dict(self):

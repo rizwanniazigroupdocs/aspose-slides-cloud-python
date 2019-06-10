@@ -52,14 +52,13 @@ class RemoveSlide(Task):
         'position': 'Position'
     }
 
-    def __init__(self, type='Enum:TaskType.RemoveSlide', position=None):  # noqa: E501
+    def __init__(self, type='RemoveSlide', position=None):  # noqa: E501
         """RemoveSlide - a model defined in Swagger"""  # noqa: E501
         super(RemoveSlide, self).__init__(type)
 
         self._position = None
 
-        if position is not None:
-            self.position = position
+        self.position = position
 
     @property
     def position(self):
@@ -79,7 +78,6 @@ class RemoveSlide(Task):
         :param position: The position of this RemoveSlide.  # noqa: E501
         :type: int
         """
-
         self._position = position
 
     def to_dict(self):

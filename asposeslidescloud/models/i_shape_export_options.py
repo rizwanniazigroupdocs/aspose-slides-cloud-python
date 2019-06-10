@@ -75,7 +75,6 @@ class IShapeExportOptions(object):
         :param format: The format of this IShapeExportOptions.  # noqa: E501
         :type: str
         """
-
         self._format = format
 
     def to_dict(self):

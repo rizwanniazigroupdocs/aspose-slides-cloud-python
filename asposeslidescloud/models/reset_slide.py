@@ -52,14 +52,13 @@ class ResetSlide(Task):
         'position': 'Position'
     }
 
-    def __init__(self, type='Enum:TaskType.ResetSlide', position=None):  # noqa: E501
+    def __init__(self, type='ResetSlide', position=None):  # noqa: E501
         """ResetSlide - a model defined in Swagger"""  # noqa: E501
         super(ResetSlide, self).__init__(type)
 
         self._position = None
 
-        if position is not None:
-            self.position = position
+        self.position = position
 
     @property
     def position(self):
@@ -79,7 +78,6 @@ class ResetSlide(Task):
         :param position: The position of this ResetSlide.  # noqa: E501
         :type: int
         """
-
         self._position = position
 
     def to_dict(self):

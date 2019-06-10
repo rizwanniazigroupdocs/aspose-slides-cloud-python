@@ -46,7 +46,7 @@ class SmartArtNode(object):
         'shapes': 'ResourceUriElement',
         'is_assistant': 'bool',
         'text': 'str',
-        'org_chart_layout': 'OrganizationChartLayoutType'
+        'org_chart_layout': 'str'
     }
 
     attribute_map = {
@@ -95,7 +95,6 @@ class SmartArtNode(object):
         :param nodes: The nodes of this SmartArtNode.  # noqa: E501
         :type: list[SmartArtNode]
         """
-
         self._nodes = nodes
 
     @property
@@ -118,7 +117,6 @@ class SmartArtNode(object):
         :param shapes: The shapes of this SmartArtNode.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._shapes = shapes
 
     @property
@@ -141,9 +139,6 @@ class SmartArtNode(object):
         :param is_assistant: The is_assistant of this SmartArtNode.  # noqa: E501
         :type: bool
         """
-        if is_assistant is None:
-            raise ValueError("Invalid value for `is_assistant`, must not be `None`")  # noqa: E501
-
         self._is_assistant = is_assistant
 
     @property
@@ -166,7 +161,6 @@ class SmartArtNode(object):
         :param text: The text of this SmartArtNode.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -176,7 +170,7 @@ class SmartArtNode(object):
         Organization chart layout type associated with current node.  # noqa: E501
 
         :return: The org_chart_layout of this SmartArtNode.  # noqa: E501
-        :rtype: OrganizationChartLayoutType
+        :rtype: str
         """
         return self._org_chart_layout
 
@@ -187,11 +181,15 @@ class SmartArtNode(object):
         Organization chart layout type associated with current node.  # noqa: E501
 
         :param org_chart_layout: The org_chart_layout of this SmartArtNode.  # noqa: E501
-        :type: OrganizationChartLayoutType
+        :type: str
         """
-        if org_chart_layout is None:
-            raise ValueError("Invalid value for `org_chart_layout`, must not be `None`")  # noqa: E501
-
+        if org_chart_layout is not None:
+            allowed_values = ["Initial", "Standart", "BothHanging", "LeftHanging", "RightHanging"]  # noqa: E501
+            if org_chart_layout not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `org_chart_layout` ({0}), must be one of {1}"  # noqa: E501
+                    .format(org_chart_layout, allowed_values)
+                )
         self._org_chart_layout = org_chart_layout
 
     def to_dict(self):

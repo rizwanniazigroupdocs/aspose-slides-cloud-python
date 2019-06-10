@@ -45,9 +45,6 @@ class Chart(ShapeBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,7 +57,9 @@ class Chart(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'chart_type': 'ChartType',
+        'type': 'str',
+        'shape_type': 'str',
+        'chart_type': 'str',
         'series': 'list[Series]',
         'categories': 'list[str]',
         'title': 'ChartTitle',
@@ -75,9 +74,6 @@ class Chart(ShapeBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -90,6 +86,8 @@ class Chart(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'chart_type': 'ChartType',
         'series': 'Series',
         'categories': 'Categories',
@@ -102,9 +100,9 @@ class Chart(ShapeBase):
         'plot_area': 'PlotArea'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.Chart', shape_type='Enum:CombinedShapeType.Chart', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, chart_type=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', shape_type='Chart', chart_type=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
         """Chart - a model defined in Swagger"""  # noqa: E501
-        super(Chart, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format)
+        super(Chart, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._chart_type = None
         self._series = None
@@ -117,8 +115,7 @@ class Chart(ShapeBase):
         self._axes = None
         self._plot_area = None
 
-        if chart_type is not None:
-            self.chart_type = chart_type
+        self.chart_type = chart_type
         if series is not None:
             self.series = series
         if categories is not None:
@@ -145,7 +142,7 @@ class Chart(ShapeBase):
         Gets or sets the type of the chart.  # noqa: E501
 
         :return: The chart_type of this Chart.  # noqa: E501
-        :rtype: ChartType
+        :rtype: str
         """
         return self._chart_type
 
@@ -156,9 +153,15 @@ class Chart(ShapeBase):
         Gets or sets the type of the chart.  # noqa: E501
 
         :param chart_type: The chart_type of this Chart.  # noqa: E501
-        :type: ChartType
+        :type: str
         """
-
+        if chart_type is not None:
+            allowed_values = ["ClusteredColumn", "StackedColumn", "PercentsStackedColumn", "ClusteredColumn3D", "StackedColumn3D", "PercentsStackedColumn3D", "Column3D", "ClusteredCylinder", "StackedCylinder", "PercentsStackedCylinder", "Cylinder3D", "ClusteredCone", "StackedCone", "PercentsStackedCone", "Cone3D", "ClusteredPyramid", "StackedPyramid", "PercentsStackedPyramid", "Pyramid3D", "Line", "StackedLine", "PercentsStackedLine", "LineWithMarkers", "StackedLineWithMarkers", "PercentsStackedLineWithMarkers", "Line3D", "Pie", "Pie3D", "PieOfPie", "ExplodedPie", "ExplodedPie3D", "BarOfPie", "PercentsStackedBar", "ClusteredBar3D", "ClusteredBar", "StackedBar", "StackedBar3D", "PercentsStackedBar3D", "ClusteredHorizontalCylinder", "StackedHorizontalCylinder", "PercentsStackedHorizontalCylinder", "ClusteredHorizontalCone", "StackedHorizontalCone", "PercentsStackedHorizontalCone", "ClusteredHorizontalPyramid", "StackedHorizontalPyramid", "PercentsStackedHorizontalPyramid", "Area", "StackedArea", "PercentsStackedArea", "Area3D", "StackedArea3D", "PercentsStackedArea3D", "ScatterWithMarkers", "ScatterWithSmoothLinesAndMarkers", "ScatterWithSmoothLines", "ScatterWithStraightLinesAndMarkers", "ScatterWithStraightLines", "HighLowClose", "OpenHighLowClose", "VolumeHighLowClose", "VolumeOpenHighLowClose", "Surface3D", "WireframeSurface3D", "Contour", "WireframeContour", "Doughnut", "ExplodedDoughnut", "Bubble", "BubbleWith3D", "Radar", "RadarWithMarkers", "FilledRadar", "SeriesOfMixedTypes"]  # noqa: E501
+            if chart_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `chart_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(chart_type, allowed_values)
+                )
         self._chart_type = chart_type
 
     @property
@@ -181,7 +184,6 @@ class Chart(ShapeBase):
         :param series: The series of this Chart.  # noqa: E501
         :type: list[Series]
         """
-
         self._series = series
 
     @property
@@ -204,7 +206,6 @@ class Chart(ShapeBase):
         :param categories: The categories of this Chart.  # noqa: E501
         :type: list[str]
         """
-
         self._categories = categories
 
     @property
@@ -227,7 +228,6 @@ class Chart(ShapeBase):
         :param title: The title of this Chart.  # noqa: E501
         :type: ChartTitle
         """
-
         self._title = title
 
     @property
@@ -250,7 +250,6 @@ class Chart(ShapeBase):
         :param back_wall: The back_wall of this Chart.  # noqa: E501
         :type: ChartWall
         """
-
         self._back_wall = back_wall
 
     @property
@@ -273,7 +272,6 @@ class Chart(ShapeBase):
         :param side_wall: The side_wall of this Chart.  # noqa: E501
         :type: ChartWall
         """
-
         self._side_wall = side_wall
 
     @property
@@ -296,7 +294,6 @@ class Chart(ShapeBase):
         :param floor: The floor of this Chart.  # noqa: E501
         :type: ChartWall
         """
-
         self._floor = floor
 
     @property
@@ -319,7 +316,6 @@ class Chart(ShapeBase):
         :param legend: The legend of this Chart.  # noqa: E501
         :type: Legend
         """
-
         self._legend = legend
 
     @property
@@ -342,7 +338,6 @@ class Chart(ShapeBase):
         :param axes: The axes of this Chart.  # noqa: E501
         :type: Axes
         """
-
         self._axes = axes
 
     @property
@@ -365,7 +360,6 @@ class Chart(ShapeBase):
         :param plot_area: The plot_area of this Chart.  # noqa: E501
         :type: PlotArea
         """
-
         self._plot_area = plot_area
 
     def to_dict(self):

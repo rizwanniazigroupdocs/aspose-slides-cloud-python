@@ -33,16 +33,4 @@ from __future__ import absolute_import
 from test.base_test import BaseTest
 from test.test_pipeline import TestPipeline
 
-from test.test_document_api import TestDocumentApi
-from test.test_images_api import TestImagesApi
-from test.test_layout_slides_api import TestLayoutSlidesApi
-from test.test_master_slides_api import TestMasterSlidesApi
-from test.test_merge_document_api import TestMergeDocumentApi
-from test.test_notes_slide_api import TestNotesSlideApi
-from test.test_notes_slide_shapes_api import TestNotesSlideShapesApi
-from test.test_placeholders_api import TestPlaceholdersApi
-from test.test_properties_api import TestPropertiesApi
-from test.test_shapes_api import TestShapesApi
 from test.test_slides_api import TestSlidesApi
-from test.test_text_api import TestTextApi
-from test.test_theme_api import TestThemeApi

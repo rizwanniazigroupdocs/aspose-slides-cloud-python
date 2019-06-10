@@ -45,18 +45,16 @@ class Placeholder(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'index': 'int',
-        'orientation': 'PlaceholderOrientation',
-        'size': 'PlaceholderSize',
-        'type': 'PlaceholderType',
+        'orientation': 'str',
+        'size': 'str',
+        'type': 'str',
         'shape': 'ResourceUriElement'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'index': 'Index',
         'orientation': 'Orientation',
         'size': 'Size',
@@ -64,9 +62,9 @@ class Placeholder(ResourceBase):
         'shape': 'Shape'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, index=None, orientation=None, size=None, type=None, shape=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, index=None, orientation=None, size=None, type=None, shape=None):  # noqa: E501
         """Placeholder - a model defined in Swagger"""  # noqa: E501
-        super(Placeholder, self).__init__(self_uri, alternate_links, links)
+        super(Placeholder, self).__init__(self_uri, alternate_links)
 
         self._index = None
         self._orientation = None
@@ -74,14 +72,10 @@ class Placeholder(ResourceBase):
         self._type = None
         self._shape = None
 
-        if index is not None:
-            self.index = index
-        if orientation is not None:
-            self.orientation = orientation
-        if size is not None:
-            self.size = size
-        if type is not None:
-            self.type = type
+        self.index = index
+        self.orientation = orientation
+        self.size = size
+        self.type = type
         if shape is not None:
             self.shape = shape
 
@@ -103,7 +97,6 @@ class Placeholder(ResourceBase):
         :param index: The index of this Placeholder.  # noqa: E501
         :type: int
         """
-
         self._index = index
 
     @property
@@ -112,7 +105,7 @@ class Placeholder(ResourceBase):
 
 
         :return: The orientation of this Placeholder.  # noqa: E501
-        :rtype: PlaceholderOrientation
+        :rtype: str
         """
         return self._orientation
 
@@ -122,9 +115,15 @@ class Placeholder(ResourceBase):
 
 
         :param orientation: The orientation of this Placeholder.  # noqa: E501
-        :type: PlaceholderOrientation
+        :type: str
         """
-
+        if orientation is not None:
+            allowed_values = ["Horizontal", "Vertical"]  # noqa: E501
+            if orientation not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
+                    .format(orientation, allowed_values)
+                )
         self._orientation = orientation
 
     @property
@@ -133,7 +132,7 @@ class Placeholder(ResourceBase):
 
 
         :return: The size of this Placeholder.  # noqa: E501
-        :rtype: PlaceholderSize
+        :rtype: str
         """
         return self._size
 
@@ -143,9 +142,15 @@ class Placeholder(ResourceBase):
 
 
         :param size: The size of this Placeholder.  # noqa: E501
-        :type: PlaceholderSize
+        :type: str
         """
-
+        if size is not None:
+            allowed_values = ["Full", "Half", "Quarter"]  # noqa: E501
+            if size not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `size` ({0}), must be one of {1}"  # noqa: E501
+                    .format(size, allowed_values)
+                )
         self._size = size
 
     @property
@@ -154,7 +159,7 @@ class Placeholder(ResourceBase):
 
 
         :return: The type of this Placeholder.  # noqa: E501
-        :rtype: PlaceholderType
+        :rtype: str
         """
         return self._type
 
@@ -164,9 +169,15 @@ class Placeholder(ResourceBase):
 
 
         :param type: The type of this Placeholder.  # noqa: E501
-        :type: PlaceholderType
+        :type: str
         """
-
+        if type is not None:
+            allowed_values = ["Title", "Body", "CenteredTitle", "Subtitle", "DateAndTime", "SlideNumber", "Footer", "Header", "Object", "Chart", "Table", "ClipArt", "Diagram", "Media", "SlideImage", "Picture"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     @property
@@ -187,7 +198,6 @@ class Placeholder(ResourceBase):
         :param shape: The shape of this Placeholder.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._shape = shape
 
     def to_dict(self):

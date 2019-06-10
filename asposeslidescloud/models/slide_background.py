@@ -45,8 +45,7 @@ class SlideBackground(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'FillType',
+        'type': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat'
     }
@@ -54,22 +53,20 @@ class SlideBackground(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'type': 'Type',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type=None, fill_format=None, effect_format=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, type=None, fill_format=None, effect_format=None):  # noqa: E501
         """SlideBackground - a model defined in Swagger"""  # noqa: E501
-        super(SlideBackground, self).__init__(self_uri, alternate_links, links)
+        super(SlideBackground, self).__init__(self_uri, alternate_links)
 
         self._type = None
         self._fill_format = None
         self._effect_format = None
 
-        if type is not None:
-            self.type = type
+        self.type = type
         if fill_format is not None:
             self.fill_format = fill_format
         if effect_format is not None:
@@ -81,7 +78,7 @@ class SlideBackground(ResourceBase):
 
 
         :return: The type of this SlideBackground.  # noqa: E501
-        :rtype: FillType
+        :rtype: str
         """
         return self._type
 
@@ -91,9 +88,15 @@ class SlideBackground(ResourceBase):
 
 
         :param type: The type of this SlideBackground.  # noqa: E501
-        :type: FillType
+        :type: str
         """
-
+        if type is not None:
+            allowed_values = ["NoFill", "Solid", "Gradient", "Pattern", "Picture", "NotDefined"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     @property
@@ -114,7 +117,6 @@ class SlideBackground(ResourceBase):
         :param fill_format: The fill_format of this SlideBackground.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -135,7 +137,6 @@ class SlideBackground(ResourceBase):
         :param effect_format: The effect_format of this SlideBackground.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     def to_dict(self):

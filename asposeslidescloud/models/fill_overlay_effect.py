@@ -42,7 +42,7 @@ class FillOverlayEffect(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'blend': 'FillBlendMode'
+        'blend': 'str'
     }
 
     attribute_map = {
@@ -63,7 +63,7 @@ class FillOverlayEffect(object):
         blend mode  # noqa: E501
 
         :return: The blend of this FillOverlayEffect.  # noqa: E501
-        :rtype: FillBlendMode
+        :rtype: str
         """
         return self._blend
 
@@ -74,11 +74,15 @@ class FillOverlayEffect(object):
         blend mode  # noqa: E501
 
         :param blend: The blend of this FillOverlayEffect.  # noqa: E501
-        :type: FillBlendMode
+        :type: str
         """
-        if blend is None:
-            raise ValueError("Invalid value for `blend`, must not be `None`")  # noqa: E501
-
+        if blend is not None:
+            allowed_values = ["Darken", "Lighten", "Multiply", "Overlay", "Screen"]  # noqa: E501
+            if blend not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `blend` ({0}), must be one of {1}"  # noqa: E501
+                    .format(blend, allowed_values)
+                )
         self._blend = blend
 
     def to_dict(self):

@@ -45,7 +45,6 @@ class DocumentProperty(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'name': 'str',
         'value': 'str',
         'built_in': 'bool'
@@ -54,15 +53,14 @@ class DocumentProperty(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'name': 'Name',
         'value': 'Value',
         'built_in': 'BuiltIn'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, name=None, value=None, built_in=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, value=None, built_in=None):  # noqa: E501
         """DocumentProperty - a model defined in Swagger"""  # noqa: E501
-        super(DocumentProperty, self).__init__(self_uri, alternate_links, links)
+        super(DocumentProperty, self).__init__(self_uri, alternate_links)
 
         self._name = None
         self._value = None
@@ -72,8 +70,7 @@ class DocumentProperty(ResourceBase):
             self.name = name
         if value is not None:
             self.value = value
-        if built_in is not None:
-            self.built_in = built_in
+        self.built_in = built_in
 
     @property
     def name(self):
@@ -93,7 +90,6 @@ class DocumentProperty(ResourceBase):
         :param name: The name of this DocumentProperty.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -114,7 +110,6 @@ class DocumentProperty(ResourceBase):
         :param value: The value of this DocumentProperty.  # noqa: E501
         :type: str
         """
-
         self._value = value
 
     @property
@@ -135,7 +130,6 @@ class DocumentProperty(ResourceBase):
         :param built_in: The built_in of this DocumentProperty.  # noqa: E501
         :type: bool
         """
-
         self._built_in = built_in
 
     def to_dict(self):

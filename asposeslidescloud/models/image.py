@@ -45,7 +45,6 @@ class Image(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'width': 'int',
         'height': 'int',
         'content_type': 'str'
@@ -54,24 +53,21 @@ class Image(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'width': 'Width',
         'height': 'Height',
         'content_type': 'ContentType'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, width=None, height=None, content_type=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, width=None, height=None, content_type=None):  # noqa: E501
         """Image - a model defined in Swagger"""  # noqa: E501
-        super(Image, self).__init__(self_uri, alternate_links, links)
+        super(Image, self).__init__(self_uri, alternate_links)
 
         self._width = None
         self._height = None
         self._content_type = None
 
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
+        self.width = width
+        self.height = height
         if content_type is not None:
             self.content_type = content_type
 
@@ -95,7 +91,6 @@ class Image(ResourceBase):
         :param width: The width of this Image.  # noqa: E501
         :type: int
         """
-
         self._width = width
 
     @property
@@ -118,7 +113,6 @@ class Image(ResourceBase):
         :param height: The height of this Image.  # noqa: E501
         :type: int
         """
-
         self._height = height
 
     @property
@@ -141,7 +135,6 @@ class Image(ResourceBase):
         :param content_type: The content_type of this Image.  # noqa: E501
         :type: str
         """
-
         self._content_type = content_type
 
     def to_dict(self):

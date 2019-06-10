@@ -50,7 +50,7 @@ class NoFill(FillFormat):
         'type': 'Type'
     }
 
-    def __init__(self, type='Enum:FillType.NoFill'):  # noqa: E501
+    def __init__(self, type='NoFill'):  # noqa: E501
         """NoFill - a model defined in Swagger"""  # noqa: E501
         super(NoFill, self).__init__(type)
 

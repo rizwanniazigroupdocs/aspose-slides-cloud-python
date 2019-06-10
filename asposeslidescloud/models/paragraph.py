@@ -45,33 +45,31 @@ class Paragraph(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'margin_left': 'float',
         'margin_right': 'float',
         'space_before': 'float',
         'space_after': 'float',
         'space_within': 'float',
         'indent': 'float',
-        'alignment': 'TextAlignment',
-        'font_alignment': 'FontAlignment',
+        'alignment': 'str',
+        'font_alignment': 'str',
         'default_tab_size': 'float',
         'depth': 'int',
         'bullet_char': 'str',
         'bullet_height': 'float',
-        'bullet_type': 'BulletType',
+        'bullet_type': 'str',
         'numbered_bullet_start_with': 'int',
-        'numbered_bullet_style': 'NumberedBulletStyle',
-        'hanging_punctuation': 'NullableBool',
-        'east_asian_line_break': 'NullableBool',
-        'latin_line_break': 'NullableBool',
-        'right_to_left': 'NullableBool',
+        'numbered_bullet_style': 'str',
+        'hanging_punctuation': 'str',
+        'east_asian_line_break': 'str',
+        'latin_line_break': 'str',
+        'right_to_left': 'str',
         'portion_list': 'list[ResourceUriElement]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'margin_left': 'MarginLeft',
         'margin_right': 'MarginRight',
         'space_before': 'SpaceBefore',
@@ -94,9 +92,9 @@ class Paragraph(ResourceBase):
         'portion_list': 'PortionList'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, margin_left=None, margin_right=None, space_before=None, space_after=None, space_within=None, indent=None, alignment=None, font_alignment=None, default_tab_size=None, depth=None, bullet_char=None, bullet_height=None, bullet_type=None, numbered_bullet_start_with=None, numbered_bullet_style=None, hanging_punctuation=None, east_asian_line_break=None, latin_line_break=None, right_to_left=None, portion_list=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, margin_left=None, margin_right=None, space_before=None, space_after=None, space_within=None, indent=None, alignment=None, font_alignment=None, default_tab_size=None, depth=None, bullet_char=None, bullet_height=None, bullet_type=None, numbered_bullet_start_with=None, numbered_bullet_style=None, hanging_punctuation=None, east_asian_line_break=None, latin_line_break=None, right_to_left=None, portion_list=None):  # noqa: E501
         """Paragraph - a model defined in Swagger"""  # noqa: E501
-        super(Paragraph, self).__init__(self_uri, alternate_links, links)
+        super(Paragraph, self).__init__(self_uri, alternate_links)
 
         self._margin_left = None
         self._margin_right = None
@@ -178,7 +176,6 @@ class Paragraph(ResourceBase):
         :param margin_left: The margin_left of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._margin_left = margin_left
 
     @property
@@ -199,7 +196,6 @@ class Paragraph(ResourceBase):
         :param margin_right: The margin_right of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._margin_right = margin_right
 
     @property
@@ -220,7 +216,6 @@ class Paragraph(ResourceBase):
         :param space_before: The space_before of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._space_before = space_before
 
     @property
@@ -241,7 +236,6 @@ class Paragraph(ResourceBase):
         :param space_after: The space_after of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._space_after = space_after
 
     @property
@@ -262,7 +256,6 @@ class Paragraph(ResourceBase):
         :param space_within: The space_within of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._space_within = space_within
 
     @property
@@ -283,7 +276,6 @@ class Paragraph(ResourceBase):
         :param indent: The indent of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._indent = indent
 
     @property
@@ -292,7 +284,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The alignment of this Paragraph.  # noqa: E501
-        :rtype: TextAlignment
+        :rtype: str
         """
         return self._alignment
 
@@ -302,9 +294,15 @@ class Paragraph(ResourceBase):
 
 
         :param alignment: The alignment of this Paragraph.  # noqa: E501
-        :type: TextAlignment
+        :type: str
         """
-
+        if alignment is not None:
+            allowed_values = ["Left", "Center", "Right", "Justify", "JustifyLow", "Distributed", "NotDefined"]  # noqa: E501
+            if alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(alignment, allowed_values)
+                )
         self._alignment = alignment
 
     @property
@@ -313,7 +311,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The font_alignment of this Paragraph.  # noqa: E501
-        :rtype: FontAlignment
+        :rtype: str
         """
         return self._font_alignment
 
@@ -323,9 +321,15 @@ class Paragraph(ResourceBase):
 
 
         :param font_alignment: The font_alignment of this Paragraph.  # noqa: E501
-        :type: FontAlignment
+        :type: str
         """
-
+        if font_alignment is not None:
+            allowed_values = ["Automatic", "Top", "Center", "Bottom", "Baseline", "Default"]  # noqa: E501
+            if font_alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `font_alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(font_alignment, allowed_values)
+                )
         self._font_alignment = font_alignment
 
     @property
@@ -346,7 +350,6 @@ class Paragraph(ResourceBase):
         :param default_tab_size: The default_tab_size of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._default_tab_size = default_tab_size
 
     @property
@@ -367,7 +370,6 @@ class Paragraph(ResourceBase):
         :param depth: The depth of this Paragraph.  # noqa: E501
         :type: int
         """
-
         self._depth = depth
 
     @property
@@ -388,7 +390,6 @@ class Paragraph(ResourceBase):
         :param bullet_char: The bullet_char of this Paragraph.  # noqa: E501
         :type: str
         """
-
         self._bullet_char = bullet_char
 
     @property
@@ -409,7 +410,6 @@ class Paragraph(ResourceBase):
         :param bullet_height: The bullet_height of this Paragraph.  # noqa: E501
         :type: float
         """
-
         self._bullet_height = bullet_height
 
     @property
@@ -418,7 +418,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The bullet_type of this Paragraph.  # noqa: E501
-        :rtype: BulletType
+        :rtype: str
         """
         return self._bullet_type
 
@@ -428,9 +428,15 @@ class Paragraph(ResourceBase):
 
 
         :param bullet_type: The bullet_type of this Paragraph.  # noqa: E501
-        :type: BulletType
+        :type: str
         """
-
+        if bullet_type is not None:
+            allowed_values = ["None", "Symbol", "Numbered", "Picture", "NotDefined"]  # noqa: E501
+            if bullet_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `bullet_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(bullet_type, allowed_values)
+                )
         self._bullet_type = bullet_type
 
     @property
@@ -451,7 +457,6 @@ class Paragraph(ResourceBase):
         :param numbered_bullet_start_with: The numbered_bullet_start_with of this Paragraph.  # noqa: E501
         :type: int
         """
-
         self._numbered_bullet_start_with = numbered_bullet_start_with
 
     @property
@@ -460,7 +465,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The numbered_bullet_style of this Paragraph.  # noqa: E501
-        :rtype: NumberedBulletStyle
+        :rtype: str
         """
         return self._numbered_bullet_style
 
@@ -470,9 +475,15 @@ class Paragraph(ResourceBase):
 
 
         :param numbered_bullet_style: The numbered_bullet_style of this Paragraph.  # noqa: E501
-        :type: NumberedBulletStyle
+        :type: str
         """
-
+        if numbered_bullet_style is not None:
+            allowed_values = ["BulletAlphaLCPeriod", "BulletAlphaUCPeriod", "BulletArabicParenRight", "BulletArabicPeriod", "BulletRomanLCParenBoth", "BulletRomanLCParenRight", "BulletRomanLCPeriod", "BulletRomanUCPeriod", "BulletAlphaLCParenBoth", "BulletAlphaLCParenRight", "BulletAlphaUCParenBoth", "BulletAlphaUCParenRight", "BulletArabicParenBoth", "BulletArabicPlain", "BulletRomanUCParenBoth", "BulletRomanUCParenRight", "BulletSimpChinPlain", "BulletSimpChinPeriod", "BulletCircleNumDBPlain", "BulletCircleNumWDWhitePlain", "BulletCircleNumWDBlackPlain", "BulletTradChinPlain", "BulletTradChinPeriod", "BulletArabicAlphaDash", "BulletArabicAbjadDash", "BulletHebrewAlphaDash", "BulletKanjiKoreanPlain", "BulletKanjiKoreanPeriod", "BulletArabicDBPlain", "BulletArabicDBPeriod", "BulletThaiAlphaPeriod", "BulletThaiAlphaParenRight", "BulletThaiAlphaParenBoth", "BulletThaiNumPeriod", "BulletThaiNumParenRight", "BulletThaiNumParenBoth", "BulletHindiAlphaPeriod", "BulletHindiNumPeriod", "BulletKanjiSimpChinDBPeriod", "BulletHindiNumParenRight", "BulletHindiAlpha1Period", "NotDefined"]  # noqa: E501
+            if numbered_bullet_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `numbered_bullet_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(numbered_bullet_style, allowed_values)
+                )
         self._numbered_bullet_style = numbered_bullet_style
 
     @property
@@ -481,7 +492,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The hanging_punctuation of this Paragraph.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._hanging_punctuation
 
@@ -491,9 +502,15 @@ class Paragraph(ResourceBase):
 
 
         :param hanging_punctuation: The hanging_punctuation of this Paragraph.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if hanging_punctuation is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if hanging_punctuation not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `hanging_punctuation` ({0}), must be one of {1}"  # noqa: E501
+                    .format(hanging_punctuation, allowed_values)
+                )
         self._hanging_punctuation = hanging_punctuation
 
     @property
@@ -502,7 +519,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The east_asian_line_break of this Paragraph.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._east_asian_line_break
 
@@ -512,9 +529,15 @@ class Paragraph(ResourceBase):
 
 
         :param east_asian_line_break: The east_asian_line_break of this Paragraph.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if east_asian_line_break is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if east_asian_line_break not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `east_asian_line_break` ({0}), must be one of {1}"  # noqa: E501
+                    .format(east_asian_line_break, allowed_values)
+                )
         self._east_asian_line_break = east_asian_line_break
 
     @property
@@ -523,7 +546,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The latin_line_break of this Paragraph.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._latin_line_break
 
@@ -533,9 +556,15 @@ class Paragraph(ResourceBase):
 
 
         :param latin_line_break: The latin_line_break of this Paragraph.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if latin_line_break is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if latin_line_break not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `latin_line_break` ({0}), must be one of {1}"  # noqa: E501
+                    .format(latin_line_break, allowed_values)
+                )
         self._latin_line_break = latin_line_break
 
     @property
@@ -544,7 +573,7 @@ class Paragraph(ResourceBase):
 
 
         :return: The right_to_left of this Paragraph.  # noqa: E501
-        :rtype: NullableBool
+        :rtype: str
         """
         return self._right_to_left
 
@@ -554,9 +583,15 @@ class Paragraph(ResourceBase):
 
 
         :param right_to_left: The right_to_left of this Paragraph.  # noqa: E501
-        :type: NullableBool
+        :type: str
         """
-
+        if right_to_left is not None:
+            allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if right_to_left not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `right_to_left` ({0}), must be one of {1}"  # noqa: E501
+                    .format(right_to_left, allowed_values)
+                )
         self._right_to_left = right_to_left
 
     @property
@@ -577,7 +612,6 @@ class Paragraph(ResourceBase):
         :param portion_list: The portion_list of this Paragraph.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._portion_list = portion_list
 
     def to_dict(self):

@@ -52,7 +52,7 @@ class SolidFill(FillFormat):
         'color': 'Color'
     }
 
-    def __init__(self, type='Enum:FillType.Solid', color=None):  # noqa: E501
+    def __init__(self, type='Solid', color=None):  # noqa: E501
         """SolidFill - a model defined in Swagger"""  # noqa: E501
         super(SolidFill, self).__init__(type)
 
@@ -79,7 +79,6 @@ class SolidFill(FillFormat):
         :param color: The color of this SolidFill.  # noqa: E501
         :type: str
         """
-
         self._color = color
 
     def to_dict(self):

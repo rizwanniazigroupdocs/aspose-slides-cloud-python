@@ -45,9 +45,6 @@ class Shape(GeometryShape):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'CombinedShapeType',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,7 +57,9 @@ class Shape(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'geometry_shape_type': 'GeometryShapeType',
+        'type': 'str',
+        'shape_type': 'str',
+        'geometry_shape_type': 'str',
         'text': 'str',
         'paragraphs': 'ResourceUriElement'
     }
@@ -68,9 +67,6 @@ class Shape(GeometryShape):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -83,14 +79,16 @@ class Shape(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'geometry_shape_type': 'GeometryShapeType',
         'text': 'Text',
         'paragraphs': 'Paragraphs'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.Shape', shape_type=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, geometry_shape_type=None, text=None, paragraphs=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Shape', shape_type=None, geometry_shape_type=None, text=None, paragraphs=None):  # noqa: E501
         """Shape - a model defined in Swagger"""  # noqa: E501
-        super(Shape, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, geometry_shape_type)
+        super(Shape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._text = None
         self._paragraphs = None
@@ -120,7 +118,6 @@ class Shape(GeometryShape):
         :param text: The text of this Shape.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -143,7 +140,6 @@ class Shape(GeometryShape):
         :param paragraphs: The paragraphs of this Shape.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._paragraphs = paragraphs
 
     def to_dict(self):

@@ -42,7 +42,7 @@ class FillFormat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'FillType'
+        'type': 'str'
     }
 
     attribute_map = {
@@ -54,7 +54,8 @@ class FillFormat(object):
 
         self._type = None
 
-        self.type = type
+        if type is not None:
+            self.type = type
 
     @property
     def type(self):
@@ -62,7 +63,7 @@ class FillFormat(object):
 
 
         :return: The type of this FillFormat.  # noqa: E501
-        :rtype: FillType
+        :rtype: str
         """
         return self._type
 
@@ -72,11 +73,15 @@ class FillFormat(object):
 
 
         :param type: The type of this FillFormat.  # noqa: E501
-        :type: FillType
+        :type: str
         """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
+        if type is not None:
+            allowed_values = ["NoFill", "Solid", "Gradient", "Pattern", "Picture", "NotDefined"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     def to_dict(self):

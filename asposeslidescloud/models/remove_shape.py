@@ -52,7 +52,7 @@ class RemoveShape(Task):
         'shape_path': 'ShapePath'
     }
 
-    def __init__(self, type='Enum:TaskType.RemoveShape', shape_path=None):  # noqa: E501
+    def __init__(self, type='RemoveShape', shape_path=None):  # noqa: E501
         """RemoveShape - a model defined in Swagger"""  # noqa: E501
         super(RemoveShape, self).__init__(type)
 
@@ -79,7 +79,6 @@ class RemoveShape(Task):
         :param shape_path: The shape_path of this RemoveShape.  # noqa: E501
         :type: str
         """
-
         self._shape_path = shape_path
 
     def to_dict(self):

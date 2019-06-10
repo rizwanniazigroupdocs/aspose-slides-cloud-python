@@ -45,7 +45,6 @@ class FontScheme(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'major': 'FontSet',
         'minor': 'FontSet',
         'name': 'str'
@@ -54,15 +53,14 @@ class FontScheme(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'major': 'Major',
         'minor': 'Minor',
         'name': 'Name'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, major=None, minor=None, name=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, major=None, minor=None, name=None):  # noqa: E501
         """FontScheme - a model defined in Swagger"""  # noqa: E501
-        super(FontScheme, self).__init__(self_uri, alternate_links, links)
+        super(FontScheme, self).__init__(self_uri, alternate_links)
 
         self._major = None
         self._minor = None
@@ -95,7 +93,6 @@ class FontScheme(ResourceBase):
         :param major: The major of this FontScheme.  # noqa: E501
         :type: FontSet
         """
-
         self._major = major
 
     @property
@@ -118,7 +115,6 @@ class FontScheme(ResourceBase):
         :param minor: The minor of this FontScheme.  # noqa: E501
         :type: FontSet
         """
-
         self._minor = minor
 
     @property
@@ -141,7 +137,6 @@ class FontScheme(ResourceBase):
         :param name: The name of this FontScheme.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     def to_dict(self):

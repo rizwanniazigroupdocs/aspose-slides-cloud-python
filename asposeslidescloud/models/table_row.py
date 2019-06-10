@@ -85,7 +85,6 @@ class TableRow(object):
         :param cells: The cells of this TableRow.  # noqa: E501
         :type: list[TableCell]
         """
-
         self._cells = cells
 
     @property
@@ -108,9 +107,6 @@ class TableRow(object):
         :param minimal_height: The minimal_height of this TableRow.  # noqa: E501
         :type: float
         """
-        if minimal_height is None:
-            raise ValueError("Invalid value for `minimal_height`, must not be `None`")  # noqa: E501
-
         self._minimal_height = minimal_height
 
     @property
@@ -133,9 +129,6 @@ class TableRow(object):
         :param height: The height of this TableRow.  # noqa: E501
         :type: float
         """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-
         self._height = height
 
     def to_dict(self):

@@ -44,7 +44,7 @@ class PptxExportOptions(ExportOptions):
     """
     swagger_types = {
         'format': 'str',
-        'conformance': 'Conformance'
+        'conformance': 'str'
     }
 
     attribute_map = {
@@ -58,17 +58,16 @@ class PptxExportOptions(ExportOptions):
 
         self._conformance = None
 
-        if conformance is not None:
-            self.conformance = conformance
+        self.conformance = conformance
 
     @property
     def conformance(self):
         """Gets the conformance of this PptxExportOptions.  # noqa: E501
 
-        The conformance class to which the PresentationML document conforms. Read/write .  # noqa: E501
+        The conformance class to which the PresentationML document conforms. Read/write Conformance.  # noqa: E501
 
         :return: The conformance of this PptxExportOptions.  # noqa: E501
-        :rtype: Conformance
+        :rtype: str
         """
         return self._conformance
 
@@ -76,12 +75,18 @@ class PptxExportOptions(ExportOptions):
     def conformance(self, conformance):
         """Sets the conformance of this PptxExportOptions.
 
-        The conformance class to which the PresentationML document conforms. Read/write .  # noqa: E501
+        The conformance class to which the PresentationML document conforms. Read/write Conformance.  # noqa: E501
 
         :param conformance: The conformance of this PptxExportOptions.  # noqa: E501
-        :type: Conformance
+        :type: str
         """
-
+        if conformance is not None:
+            allowed_values = ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict"]  # noqa: E501
+            if conformance not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `conformance` ({0}), must be one of {1}"  # noqa: E501
+                    .format(conformance, allowed_values)
+                )
         self._conformance = conformance
 
     def to_dict(self):

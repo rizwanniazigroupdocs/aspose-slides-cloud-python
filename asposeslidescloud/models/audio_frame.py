@@ -45,9 +45,6 @@ class AudioFrame(GeometryShape):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,7 +57,9 @@ class AudioFrame(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'geometry_shape_type': 'GeometryShapeType',
+        'type': 'str',
+        'shape_type': 'str',
+        'geometry_shape_type': 'str',
         'audio_cd_end_track': 'int',
         'audio_cd_end_track_time': 'int',
         'audio_cd_start_track': 'int',
@@ -68,17 +67,14 @@ class AudioFrame(GeometryShape):
         'embedded': 'bool',
         'hide_at_showing': 'bool',
         'play_loop_mode': 'bool',
-        'play_mode': 'AudioPlayModePreset',
-        'volume': 'AudioVolumeMode',
+        'play_mode': 'str',
+        'volume': 'str',
         'base64_data': 'str'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -91,6 +87,8 @@ class AudioFrame(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'geometry_shape_type': 'GeometryShapeType',
         'audio_cd_end_track': 'AudioCdEndTrack',
         'audio_cd_end_track_time': 'AudioCdEndTrackTime',
@@ -104,9 +102,9 @@ class AudioFrame(GeometryShape):
         'base64_data': 'Base64Data'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.AudioFrame', shape_type='Enum:CombinedShapeType.AudioFrame', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, geometry_shape_type=None, audio_cd_end_track=None, audio_cd_end_track_time=None, audio_cd_start_track=None, audio_cd_start_track_time=None, embedded=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, volume=None, base64_data=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='AudioFrame', shape_type='AudioFrame', geometry_shape_type=None, audio_cd_end_track=None, audio_cd_end_track_time=None, audio_cd_start_track=None, audio_cd_start_track_time=None, embedded=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, volume=None, base64_data=None):  # noqa: E501
         """AudioFrame - a model defined in Swagger"""  # noqa: E501
-        super(AudioFrame, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, geometry_shape_type)
+        super(AudioFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._audio_cd_end_track = None
         self._audio_cd_end_track_time = None
@@ -160,7 +158,6 @@ class AudioFrame(GeometryShape):
         :param audio_cd_end_track: The audio_cd_end_track of this AudioFrame.  # noqa: E501
         :type: int
         """
-
         self._audio_cd_end_track = audio_cd_end_track
 
     @property
@@ -183,7 +180,6 @@ class AudioFrame(GeometryShape):
         :param audio_cd_end_track_time: The audio_cd_end_track_time of this AudioFrame.  # noqa: E501
         :type: int
         """
-
         self._audio_cd_end_track_time = audio_cd_end_track_time
 
     @property
@@ -206,7 +202,6 @@ class AudioFrame(GeometryShape):
         :param audio_cd_start_track: The audio_cd_start_track of this AudioFrame.  # noqa: E501
         :type: int
         """
-
         self._audio_cd_start_track = audio_cd_start_track
 
     @property
@@ -229,7 +224,6 @@ class AudioFrame(GeometryShape):
         :param audio_cd_start_track_time: The audio_cd_start_track_time of this AudioFrame.  # noqa: E501
         :type: int
         """
-
         self._audio_cd_start_track_time = audio_cd_start_track_time
 
     @property
@@ -252,7 +246,6 @@ class AudioFrame(GeometryShape):
         :param embedded: The embedded of this AudioFrame.  # noqa: E501
         :type: bool
         """
-
         self._embedded = embedded
 
     @property
@@ -275,7 +268,6 @@ class AudioFrame(GeometryShape):
         :param hide_at_showing: The hide_at_showing of this AudioFrame.  # noqa: E501
         :type: bool
         """
-
         self._hide_at_showing = hide_at_showing
 
     @property
@@ -298,7 +290,6 @@ class AudioFrame(GeometryShape):
         :param play_loop_mode: The play_loop_mode of this AudioFrame.  # noqa: E501
         :type: bool
         """
-
         self._play_loop_mode = play_loop_mode
 
     @property
@@ -308,7 +299,7 @@ class AudioFrame(GeometryShape):
         Returns or sets the audio play mode.  # noqa: E501
 
         :return: The play_mode of this AudioFrame.  # noqa: E501
-        :rtype: AudioPlayModePreset
+        :rtype: str
         """
         return self._play_mode
 
@@ -319,9 +310,15 @@ class AudioFrame(GeometryShape):
         Returns or sets the audio play mode.  # noqa: E501
 
         :param play_mode: The play_mode of this AudioFrame.  # noqa: E501
-        :type: AudioPlayModePreset
+        :type: str
         """
-
+        if play_mode is not None:
+            allowed_values = ["Auto", "OnClick", "AllSlides", "Mixed"]  # noqa: E501
+            if play_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `play_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(play_mode, allowed_values)
+                )
         self._play_mode = play_mode
 
     @property
@@ -331,7 +328,7 @@ class AudioFrame(GeometryShape):
         Returns or sets the audio volume.  # noqa: E501
 
         :return: The volume of this AudioFrame.  # noqa: E501
-        :rtype: AudioVolumeMode
+        :rtype: str
         """
         return self._volume
 
@@ -342,9 +339,15 @@ class AudioFrame(GeometryShape):
         Returns or sets the audio volume.  # noqa: E501
 
         :param volume: The volume of this AudioFrame.  # noqa: E501
-        :type: AudioVolumeMode
+        :type: str
         """
-
+        if volume is not None:
+            allowed_values = ["Mute", "Low", "Medium", "Loud", "Mixed"]  # noqa: E501
+            if volume not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `volume` ({0}), must be one of {1}"  # noqa: E501
+                    .format(volume, allowed_values)
+                )
         self._volume = volume
 
     @property
@@ -367,7 +370,6 @@ class AudioFrame(GeometryShape):
         :param base64_data: The base64_data of this AudioFrame.  # noqa: E501
         :type: str
         """
-
         self._base64_data = base64_data
 
     def to_dict(self):

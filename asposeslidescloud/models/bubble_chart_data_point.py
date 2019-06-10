@@ -60,8 +60,7 @@ class BubbleChartDataPoint(ScatterChartDataPoint):
 
         self._bubble_size = None
 
-        if bubble_size is not None:
-            self.bubble_size = bubble_size
+        self.bubble_size = bubble_size
 
     @property
     def bubble_size(self):
@@ -81,7 +80,6 @@ class BubbleChartDataPoint(ScatterChartDataPoint):
         :param bubble_size: The bubble_size of this BubbleChartDataPoint.  # noqa: E501
         :type: float
         """
-
         self._bubble_size = bubble_size
 
     def to_dict(self):

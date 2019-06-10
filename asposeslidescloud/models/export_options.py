@@ -75,7 +75,6 @@ class ExportOptions(object):
         :param format: The format of this ExportOptions.  # noqa: E501
         :type: str
         """
-
         self._format = format
 
     def to_dict(self):

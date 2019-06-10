@@ -64,12 +64,9 @@ class XpsExportOptions(ExportOptions):
         self._save_metafiles_as_png = None
         self._draw_slides_frame = None
 
-        if show_hidden_slides is not None:
-            self.show_hidden_slides = show_hidden_slides
-        if save_metafiles_as_png is not None:
-            self.save_metafiles_as_png = save_metafiles_as_png
-        if draw_slides_frame is not None:
-            self.draw_slides_frame = draw_slides_frame
+        self.show_hidden_slides = show_hidden_slides
+        self.save_metafiles_as_png = save_metafiles_as_png
+        self.draw_slides_frame = draw_slides_frame
 
     @property
     def show_hidden_slides(self):
@@ -91,7 +88,6 @@ class XpsExportOptions(ExportOptions):
         :param show_hidden_slides: The show_hidden_slides of this XpsExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_hidden_slides = show_hidden_slides
 
     @property
@@ -114,7 +110,6 @@ class XpsExportOptions(ExportOptions):
         :param save_metafiles_as_png: The save_metafiles_as_png of this XpsExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._save_metafiles_as_png = save_metafiles_as_png
 
     @property
@@ -137,7 +132,6 @@ class XpsExportOptions(ExportOptions):
         :param draw_slides_frame: The draw_slides_frame of this XpsExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._draw_slides_frame = draw_slides_frame
 
     def to_dict(self):

@@ -54,17 +54,15 @@ class ReorderSlide(Task):
         'new_position': 'NewPosition'
     }
 
-    def __init__(self, type='Enum:TaskType.ReoderSlide', old_position=None, new_position=None):  # noqa: E501
+    def __init__(self, type='ReoderSlide', old_position=None, new_position=None):  # noqa: E501
         """ReorderSlide - a model defined in Swagger"""  # noqa: E501
         super(ReorderSlide, self).__init__(type)
 
         self._old_position = None
         self._new_position = None
 
-        if old_position is not None:
-            self.old_position = old_position
-        if new_position is not None:
-            self.new_position = new_position
+        self.old_position = old_position
+        self.new_position = new_position
 
     @property
     def old_position(self):
@@ -84,7 +82,6 @@ class ReorderSlide(Task):
         :param old_position: The old_position of this ReorderSlide.  # noqa: E501
         :type: int
         """
-
         self._old_position = old_position
 
     @property
@@ -105,7 +102,6 @@ class ReorderSlide(Task):
         :param new_position: The new_position of this ReorderSlide.  # noqa: E501
         :type: int
         """
-
         self._new_position = new_position
 
     def to_dict(self):

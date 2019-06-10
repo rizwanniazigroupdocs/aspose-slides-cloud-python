@@ -45,7 +45,6 @@ class FormatScheme(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'background_styles': 'list[ResourceUri]',
         'effect_styles': 'list[ResourceUri]',
         'fill_styles': 'list[ResourceUri]',
@@ -55,16 +54,15 @@ class FormatScheme(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'background_styles': 'BackgroundStyles',
         'effect_styles': 'EffectStyles',
         'fill_styles': 'FillStyles',
         'line_styles': 'LineStyles'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, background_styles=None, effect_styles=None, fill_styles=None, line_styles=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, background_styles=None, effect_styles=None, fill_styles=None, line_styles=None):  # noqa: E501
         """FormatScheme - a model defined in Swagger"""  # noqa: E501
-        super(FormatScheme, self).__init__(self_uri, alternate_links, links)
+        super(FormatScheme, self).__init__(self_uri, alternate_links)
 
         self._background_styles = None
         self._effect_styles = None
@@ -98,7 +96,6 @@ class FormatScheme(ResourceBase):
         :param background_styles: The background_styles of this FormatScheme.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._background_styles = background_styles
 
     @property
@@ -119,7 +116,6 @@ class FormatScheme(ResourceBase):
         :param effect_styles: The effect_styles of this FormatScheme.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._effect_styles = effect_styles
 
     @property
@@ -140,7 +136,6 @@ class FormatScheme(ResourceBase):
         :param fill_styles: The fill_styles of this FormatScheme.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._fill_styles = fill_styles
 
     @property
@@ -161,7 +156,6 @@ class FormatScheme(ResourceBase):
         :param line_styles: The line_styles of this FormatScheme.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._line_styles = line_styles
 
     def to_dict(self):

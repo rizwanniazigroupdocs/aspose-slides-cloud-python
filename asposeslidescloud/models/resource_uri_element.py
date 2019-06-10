@@ -75,7 +75,6 @@ class ResourceUriElement(object):
         :param uri: The uri of this ResourceUriElement.  # noqa: E501
         :type: ResourceUri
         """
-
         self._uri = uri
 
     def to_dict(self):

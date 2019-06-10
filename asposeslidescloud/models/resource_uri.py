@@ -92,7 +92,6 @@ class ResourceUri(object):
         :param href: The href of this ResourceUri.  # noqa: E501
         :type: str
         """
-
         self._href = href
 
     @property
@@ -115,7 +114,6 @@ class ResourceUri(object):
         :param relation: The relation of this ResourceUri.  # noqa: E501
         :type: str
         """
-
         self._relation = relation
 
     @property
@@ -138,7 +136,6 @@ class ResourceUri(object):
         :param link_type: The link_type of this ResourceUri.  # noqa: E501
         :type: str
         """
-
         self._link_type = link_type
 
     @property
@@ -161,7 +158,6 @@ class ResourceUri(object):
         :param title: The title of this ResourceUri.  # noqa: E501
         :type: str
         """
-
         self._title = title
 
     def to_dict(self):

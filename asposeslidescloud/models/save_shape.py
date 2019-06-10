@@ -44,7 +44,7 @@ class SaveShape(Task):
     """
     swagger_types = {
         'type': 'str',
-        'format': 'ShapeExportFormat',
+        'format': 'str',
         'shape_path': 'str',
         'output': 'OutputFile',
         'options': 'IShapeExportOptions'
@@ -58,7 +58,7 @@ class SaveShape(Task):
         'options': 'Options'
     }
 
-    def __init__(self, type='Enum:TaskType.SaveShape', format=None, shape_path=None, output=None, options=None):  # noqa: E501
+    def __init__(self, type='SaveShape', format=None, shape_path=None, output=None, options=None):  # noqa: E501
         """SaveShape - a model defined in Swagger"""  # noqa: E501
         super(SaveShape, self).__init__(type)
 
@@ -67,8 +67,7 @@ class SaveShape(Task):
         self._output = None
         self._options = None
 
-        if format is not None:
-            self.format = format
+        self.format = format
         if shape_path is not None:
             self.shape_path = shape_path
         if output is not None:
@@ -83,7 +82,7 @@ class SaveShape(Task):
         Format.  # noqa: E501
 
         :return: The format of this SaveShape.  # noqa: E501
-        :rtype: ShapeExportFormat
+        :rtype: str
         """
         return self._format
 
@@ -94,9 +93,15 @@ class SaveShape(Task):
         Format.  # noqa: E501
 
         :param format: The format of this SaveShape.  # noqa: E501
-        :type: ShapeExportFormat
+        :type: str
         """
-
+        if format is not None:
+            allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Svg"]  # noqa: E501
+            if format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(format, allowed_values)
+                )
         self._format = format
 
     @property
@@ -119,7 +124,6 @@ class SaveShape(Task):
         :param shape_path: The shape_path of this SaveShape.  # noqa: E501
         :type: str
         """
-
         self._shape_path = shape_path
 
     @property
@@ -142,7 +146,6 @@ class SaveShape(Task):
         :param output: The output of this SaveShape.  # noqa: E501
         :type: OutputFile
         """
-
         self._output = output
 
     @property
@@ -165,7 +168,6 @@ class SaveShape(Task):
         :param options: The options of this SaveShape.  # noqa: E501
         :type: IShapeExportOptions
         """
-
         self._options = options
 
     def to_dict(self):

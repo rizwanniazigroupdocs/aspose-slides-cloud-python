@@ -85,7 +85,6 @@ class FontSet(object):
         :param complex_script: The complex_script of this FontSet.  # noqa: E501
         :type: str
         """
-
         self._complex_script = complex_script
 
     @property
@@ -106,7 +105,6 @@ class FontSet(object):
         :param east_asian: The east_asian of this FontSet.  # noqa: E501
         :type: str
         """
-
         self._east_asian = east_asian
 
     @property
@@ -127,7 +125,6 @@ class FontSet(object):
         :param latin: The latin of this FontSet.  # noqa: E501
         :type: str
         """
-
         self._latin = latin
 
     def to_dict(self):

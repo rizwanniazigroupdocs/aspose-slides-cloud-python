@@ -58,7 +58,7 @@ class ReplaceText(Task):
         'slide_position': 'SlidePosition'
     }
 
-    def __init__(self, type='Enum:TaskType.ReplaceText', old_text=None, new_text=None, ignore_case=None, slide_position=None):  # noqa: E501
+    def __init__(self, type='ReplaceText', old_text=None, new_text=None, ignore_case=None, slide_position=None):  # noqa: E501
         """ReplaceText - a model defined in Swagger"""  # noqa: E501
         super(ReplaceText, self).__init__(type)
 
@@ -71,10 +71,8 @@ class ReplaceText(Task):
             self.old_text = old_text
         if new_text is not None:
             self.new_text = new_text
-        if ignore_case is not None:
-            self.ignore_case = ignore_case
-        if slide_position is not None:
-            self.slide_position = slide_position
+        self.ignore_case = ignore_case
+        self.slide_position = slide_position
 
     @property
     def old_text(self):
@@ -96,7 +94,6 @@ class ReplaceText(Task):
         :param old_text: The old_text of this ReplaceText.  # noqa: E501
         :type: str
         """
-
         self._old_text = old_text
 
     @property
@@ -119,7 +116,6 @@ class ReplaceText(Task):
         :param new_text: The new_text of this ReplaceText.  # noqa: E501
         :type: str
         """
-
         self._new_text = new_text
 
     @property
@@ -142,7 +138,6 @@ class ReplaceText(Task):
         :param ignore_case: The ignore_case of this ReplaceText.  # noqa: E501
         :type: bool
         """
-
         self._ignore_case = ignore_case
 
     @property
@@ -165,7 +160,6 @@ class ReplaceText(Task):
         :param slide_position: The slide_position of this ReplaceText.  # noqa: E501
         :type: int
         """
-
         self._slide_position = slide_position
 
     def to_dict(self):

@@ -87,7 +87,6 @@ class Input(object):
         :param template: The template of this Input.  # noqa: E501
         :type: InputFile
         """
-
         self._template = template
 
     @property
@@ -110,7 +109,6 @@ class Input(object):
         :param html_data: The html_data of this Input.  # noqa: E501
         :type: InputFile
         """
-
         self._html_data = html_data
 
     @property
@@ -133,7 +131,6 @@ class Input(object):
         :param template_data: The template_data of this Input.  # noqa: E501
         :type: InputFile
         """
-
         self._template_data = template_data
 
     def to_dict(self):

@@ -45,7 +45,6 @@ class Slide(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'width': 'float',
         'height': 'float',
         'show_master_shapes': 'bool',
@@ -62,7 +61,6 @@ class Slide(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'width': 'Width',
         'height': 'Height',
         'show_master_shapes': 'ShowMasterShapes',
@@ -76,9 +74,9 @@ class Slide(ResourceBase):
         'notes_slide': 'NotesSlide'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, width=None, height=None, show_master_shapes=None, layout_slide=None, shapes=None, theme=None, placeholders=None, images=None, comments=None, background=None, notes_slide=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, width=None, height=None, show_master_shapes=None, layout_slide=None, shapes=None, theme=None, placeholders=None, images=None, comments=None, background=None, notes_slide=None):  # noqa: E501
         """Slide - a model defined in Swagger"""  # noqa: E501
-        super(Slide, self).__init__(self_uri, alternate_links, links)
+        super(Slide, self).__init__(self_uri, alternate_links)
 
         self._width = None
         self._height = None
@@ -92,12 +90,9 @@ class Slide(ResourceBase):
         self._background = None
         self._notes_slide = None
 
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
-        if show_master_shapes is not None:
-            self.show_master_shapes = show_master_shapes
+        self.width = width
+        self.height = height
+        self.show_master_shapes = show_master_shapes
         if layout_slide is not None:
             self.layout_slide = layout_slide
         if shapes is not None:
@@ -135,7 +130,6 @@ class Slide(ResourceBase):
         :param width: The width of this Slide.  # noqa: E501
         :type: float
         """
-
         self._width = width
 
     @property
@@ -158,7 +152,6 @@ class Slide(ResourceBase):
         :param height: The height of this Slide.  # noqa: E501
         :type: float
         """
-
         self._height = height
 
     @property
@@ -181,7 +174,6 @@ class Slide(ResourceBase):
         :param show_master_shapes: The show_master_shapes of this Slide.  # noqa: E501
         :type: bool
         """
-
         self._show_master_shapes = show_master_shapes
 
     @property
@@ -204,7 +196,6 @@ class Slide(ResourceBase):
         :param layout_slide: The layout_slide of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._layout_slide = layout_slide
 
     @property
@@ -227,7 +218,6 @@ class Slide(ResourceBase):
         :param shapes: The shapes of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._shapes = shapes
 
     @property
@@ -250,7 +240,6 @@ class Slide(ResourceBase):
         :param theme: The theme of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._theme = theme
 
     @property
@@ -273,7 +262,6 @@ class Slide(ResourceBase):
         :param placeholders: The placeholders of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._placeholders = placeholders
 
     @property
@@ -296,7 +284,6 @@ class Slide(ResourceBase):
         :param images: The images of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._images = images
 
     @property
@@ -319,7 +306,6 @@ class Slide(ResourceBase):
         :param comments: The comments of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._comments = comments
 
     @property
@@ -342,7 +328,6 @@ class Slide(ResourceBase):
         :param background: The background of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._background = background
 
     @property
@@ -365,7 +350,6 @@ class Slide(ResourceBase):
         :param notes_slide: The notes_slide of this Slide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._notes_slide = notes_slide
 
     def to_dict(self):

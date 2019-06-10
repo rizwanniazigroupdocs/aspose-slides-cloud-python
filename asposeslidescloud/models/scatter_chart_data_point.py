@@ -80,9 +80,6 @@ class ScatterChartDataPoint(object):
         :param x_value: The x_value of this ScatterChartDataPoint.  # noqa: E501
         :type: float
         """
-        if x_value is None:
-            raise ValueError("Invalid value for `x_value`, must not be `None`")  # noqa: E501
-
         self._x_value = x_value
 
     @property
@@ -105,9 +102,6 @@ class ScatterChartDataPoint(object):
         :param y_value: The y_value of this ScatterChartDataPoint.  # noqa: E501
         :type: float
         """
-        if y_value is None:
-            raise ValueError("Invalid value for `y_value`, must not be `None`")  # noqa: E501
-
         self._y_value = y_value
 
     def to_dict(self):

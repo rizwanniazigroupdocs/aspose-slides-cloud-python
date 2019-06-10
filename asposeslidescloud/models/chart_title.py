@@ -81,7 +81,6 @@ class ChartTitle(object):
         :param text: The text of this ChartTitle.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -104,9 +103,6 @@ class ChartTitle(object):
         :param has_title: The has_title of this ChartTitle.  # noqa: E501
         :type: bool
         """
-        if has_title is None:
-            raise ValueError("Invalid value for `has_title`, must not be `None`")  # noqa: E501
-
         self._has_title = has_title
 
     def to_dict(self):

@@ -42,9 +42,9 @@ class ArrowHeadProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'length': 'LineArrowheadLength',
-        'style': 'LineArrowheadStyle',
-        'width': 'LineArrowheadWidth'
+        'length': 'str',
+        'style': 'str',
+        'width': 'str'
     }
 
     attribute_map = {
@@ -70,7 +70,7 @@ class ArrowHeadProperties(object):
 
 
         :return: The length of this ArrowHeadProperties.  # noqa: E501
-        :rtype: LineArrowheadLength
+        :rtype: str
         """
         return self._length
 
@@ -80,11 +80,15 @@ class ArrowHeadProperties(object):
 
 
         :param length: The length of this ArrowHeadProperties.  # noqa: E501
-        :type: LineArrowheadLength
+        :type: str
         """
-        if length is None:
-            raise ValueError("Invalid value for `length`, must not be `None`")  # noqa: E501
-
+        if length is not None:
+            allowed_values = ["Short", "Medium", "Long", "NotDefined"]  # noqa: E501
+            if length not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `length` ({0}), must be one of {1}"  # noqa: E501
+                    .format(length, allowed_values)
+                )
         self._length = length
 
     @property
@@ -93,7 +97,7 @@ class ArrowHeadProperties(object):
 
 
         :return: The style of this ArrowHeadProperties.  # noqa: E501
-        :rtype: LineArrowheadStyle
+        :rtype: str
         """
         return self._style
 
@@ -103,11 +107,15 @@ class ArrowHeadProperties(object):
 
 
         :param style: The style of this ArrowHeadProperties.  # noqa: E501
-        :type: LineArrowheadStyle
+        :type: str
         """
-        if style is None:
-            raise ValueError("Invalid value for `style`, must not be `None`")  # noqa: E501
-
+        if style is not None:
+            allowed_values = ["None", "Triangle", "Stealth", "Diamond", "Oval", "Open", "NotDefined"]  # noqa: E501
+            if style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(style, allowed_values)
+                )
         self._style = style
 
     @property
@@ -116,7 +124,7 @@ class ArrowHeadProperties(object):
 
 
         :return: The width of this ArrowHeadProperties.  # noqa: E501
-        :rtype: LineArrowheadWidth
+        :rtype: str
         """
         return self._width
 
@@ -126,11 +134,15 @@ class ArrowHeadProperties(object):
 
 
         :param width: The width of this ArrowHeadProperties.  # noqa: E501
-        :type: LineArrowheadWidth
+        :type: str
         """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-
+        if width is not None:
+            allowed_values = ["Narrow", "Medium", "Wide", "NotDefined"]  # noqa: E501
+            if width not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `width` ({0}), must be one of {1}"  # noqa: E501
+                    .format(width, allowed_values)
+                )
         self._width = width
 
     def to_dict(self):

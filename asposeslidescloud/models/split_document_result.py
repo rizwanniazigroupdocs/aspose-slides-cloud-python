@@ -45,20 +45,18 @@ class SplitDocumentResult(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'slides': 'list[ResourceUri]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'slides': 'Slides'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, slides=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, slides=None):  # noqa: E501
         """SplitDocumentResult - a model defined in Swagger"""  # noqa: E501
-        super(SplitDocumentResult, self).__init__(self_uri, alternate_links, links)
+        super(SplitDocumentResult, self).__init__(self_uri, alternate_links)
 
         self._slides = None
 
@@ -83,7 +81,6 @@ class SplitDocumentResult(ResourceBase):
         :param slides: The slides of this SplitDocumentResult.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._slides = slides
 
     def to_dict(self):

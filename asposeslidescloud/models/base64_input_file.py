@@ -43,20 +43,20 @@ class Base64InputFile(InputFile):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
         'password': 'str',
+        'type': 'str',
         'data': 'str'
     }
 
     attribute_map = {
-        'type': 'Type',
         'password': 'Password',
+        'type': 'Type',
         'data': 'Data'
     }
 
-    def __init__(self, type='Enum:InputFileType.Base64', password=None, data=None):  # noqa: E501
+    def __init__(self, password=None, type='Base64', data=None):  # noqa: E501
         """Base64InputFile - a model defined in Swagger"""  # noqa: E501
-        super(Base64InputFile, self).__init__(type, password)
+        super(Base64InputFile, self).__init__(password, type)
 
         self._data = None
 
@@ -83,7 +83,6 @@ class Base64InputFile(InputFile):
         :param data: The data of this Base64InputFile.  # noqa: E501
         :type: str
         """
-
         self._data = data
 
     def to_dict(self):

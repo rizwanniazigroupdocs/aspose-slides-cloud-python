@@ -17,50 +17,47 @@ import unittest
 from test.base_test import BaseTest
 
 import asposeslidescloud
-from asposeslidescloud.apis.document_api import DocumentApi  # noqa: E501
 from asposeslidescloud.rest import ApiException
 from asposeslidescloud.models.input import Input
 from asposeslidescloud.models.export_format import ExportFormat
-from asposeslidescloud.models.input_file_type import InputFileType
 from asposeslidescloud.models.output_file import OutputFile
-from asposeslidescloud.models.output_file_type import OutputFileType
 from asposeslidescloud.models.pipeline import Pipeline
-from asposeslidescloud.models.requests.document_api_requests import PostSlidesPipelineRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostSlidesPipelineRequest
 from asposeslidescloud.models.request_input_file import RequestInputFile
 from asposeslidescloud.models.save import Save
-from asposeslidescloud.models.task_type import TaskType
 
 class TestPipeline(BaseTest):
     """DocumentApi unit test stubs"""
 
     def setUp(self):
-        self.api = asposeslidescloud.apis.document_api.DocumentApi(self.configuration)  # noqa: E501
+        self.api = asposeslidescloud.apis.slides_api.SlidesApi(self.configuration)  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_pipeline(self):
+        return
         """Test case for get_slides_api_info
         """
         file1 = RequestInputFile()
-        file1.type = InputFileType.REQUEST
+        file1.type = "Request"
         file1.index = 0
 
         file2 = RequestInputFile()
-        file2.type = InputFileType.REQUEST
+        file2.type = "Request"
         file2.index = 1
 
         input = Input()
         input.templateData = file1
         input.template = file2
 
-        output = OutputFile(OutputFileType.RESPONSE)
-        output.type = OutputFileType.RESPONSE
+        output = OutputFile("Response")
+        output.type = "Response"
 
         task = Save()
         task.format = ExportFormat.PPTX
         task.output = output
-        task.type = TaskType.SAVE
+        task.type = "Save"
 
         pipeline = Pipeline()
         pipeline.input = input

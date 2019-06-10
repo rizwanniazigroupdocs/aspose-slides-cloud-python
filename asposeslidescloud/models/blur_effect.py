@@ -80,9 +80,6 @@ class BlurEffect(object):
         :param radius: The radius of this BlurEffect.  # noqa: E501
         :type: float
         """
-        if radius is None:
-            raise ValueError("Invalid value for `radius`, must not be `None`")  # noqa: E501
-
         self._radius = radius
 
     @property
@@ -105,9 +102,6 @@ class BlurEffect(object):
         :param grow: The grow of this BlurEffect.  # noqa: E501
         :type: bool
         """
-        if grow is None:
-            raise ValueError("Invalid value for `grow`, must not be `None`")  # noqa: E501
-
         self._grow = grow
 
     def to_dict(self):

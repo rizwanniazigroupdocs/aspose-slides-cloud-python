@@ -54,7 +54,7 @@ class UpdateBackground(Task):
         'background': 'Background'
     }
 
-    def __init__(self, type='Enum:TaskType.UpdateBackground', slides=None, background=None):  # noqa: E501
+    def __init__(self, type='UpdateBackground', slides=None, background=None):  # noqa: E501
         """UpdateBackground - a model defined in Swagger"""  # noqa: E501
         super(UpdateBackground, self).__init__(type)
 
@@ -84,7 +84,6 @@ class UpdateBackground(Task):
         :param slides: The slides of this UpdateBackground.  # noqa: E501
         :type: list[int]
         """
-
         self._slides = slides
 
     @property
@@ -105,7 +104,6 @@ class UpdateBackground(Task):
         :param background: The background of this UpdateBackground.  # noqa: E501
         :type: SlideBackground
         """
-
         self._background = background
 
     def to_dict(self):

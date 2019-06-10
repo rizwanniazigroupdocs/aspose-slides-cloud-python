@@ -45,9 +45,6 @@ class ShapeBase(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'ShapeType',
-        'shape_type': 'CombinedShapeType',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -59,15 +56,14 @@ class ShapeBase(ResourceBase):
         'shapes': 'ResourceUriElement',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'type': 'str',
+        'shape_type': 'str'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -79,15 +75,15 @@ class ShapeBase(ResourceBase):
         'shapes': 'Shapes',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type=None, shape_type=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None, shape_type=None):  # noqa: E501
         """ShapeBase - a model defined in Swagger"""  # noqa: E501
-        super(ShapeBase, self).__init__(self_uri, alternate_links, links)
+        super(ShapeBase, self).__init__(self_uri, alternate_links)
 
-        self._type = None
-        self._shape_type = None
         self._name = None
         self._width = None
         self._height = None
@@ -100,11 +96,9 @@ class ShapeBase(ResourceBase):
         self._fill_format = None
         self._effect_format = None
         self._line_format = None
+        self._type = None
+        self._shape_type = None
 
-        if type is not None:
-            self.type = type
-        if shape_type is not None:
-            self.shape_type = shape_type
         if name is not None:
             self.name = name
         if width is not None:
@@ -119,8 +113,7 @@ class ShapeBase(ResourceBase):
             self.x = x
         if y is not None:
             self.y = y
-        if z_order_position is not None:
-            self.z_order_position = z_order_position
+        self.z_order_position = z_order_position
         if shapes is not None:
             self.shapes = shapes
         if fill_format is not None:
@@ -129,50 +122,10 @@ class ShapeBase(ResourceBase):
             self.effect_format = effect_format
         if line_format is not None:
             self.line_format = line_format
-
-    @property
-    def type(self):
-        """Gets the type of this ShapeBase.  # noqa: E501
-
-
-        :return: The type of this ShapeBase.  # noqa: E501
-        :rtype: ShapeType
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ShapeBase.
-
-
-        :param type: The type of this ShapeBase.  # noqa: E501
-        :type: ShapeType
-        """
-
-        self._type = type
-
-    @property
-    def shape_type(self):
-        """Gets the shape_type of this ShapeBase.  # noqa: E501
-
-        Gets or sets the type of the shape.  # noqa: E501
-
-        :return: The shape_type of this ShapeBase.  # noqa: E501
-        :rtype: CombinedShapeType
-        """
-        return self._shape_type
-
-    @shape_type.setter
-    def shape_type(self, shape_type):
-        """Sets the shape_type of this ShapeBase.
-
-        Gets or sets the type of the shape.  # noqa: E501
-
-        :param shape_type: The shape_type of this ShapeBase.  # noqa: E501
-        :type: CombinedShapeType
-        """
-
-        self._shape_type = shape_type
+        if type is not None:
+            self.type = type
+        if shape_type is not None:
+            self.shape_type = shape_type
 
     @property
     def name(self):
@@ -194,7 +147,6 @@ class ShapeBase(ResourceBase):
         :param name: The name of this ShapeBase.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -217,7 +169,6 @@ class ShapeBase(ResourceBase):
         :param width: The width of this ShapeBase.  # noqa: E501
         :type: float
         """
-
         self._width = width
 
     @property
@@ -240,7 +191,6 @@ class ShapeBase(ResourceBase):
         :param height: The height of this ShapeBase.  # noqa: E501
         :type: float
         """
-
         self._height = height
 
     @property
@@ -263,14 +213,13 @@ class ShapeBase(ResourceBase):
         :param alternative_text: The alternative_text of this ShapeBase.  # noqa: E501
         :type: str
         """
-
         self._alternative_text = alternative_text
 
     @property
     def hidden(self):
         """Gets the hidden of this ShapeBase.  # noqa: E501
 
-        Gets or sets a value indicating whether this  is hidden.  # noqa: E501
+        Gets or sets a value indicating whether this ShapeBase is hidden.  # noqa: E501
 
         :return: The hidden of this ShapeBase.  # noqa: E501
         :rtype: bool
@@ -281,12 +230,11 @@ class ShapeBase(ResourceBase):
     def hidden(self, hidden):
         """Sets the hidden of this ShapeBase.
 
-        Gets or sets a value indicating whether this  is hidden.  # noqa: E501
+        Gets or sets a value indicating whether this ShapeBase is hidden.  # noqa: E501
 
         :param hidden: The hidden of this ShapeBase.  # noqa: E501
         :type: bool
         """
-
         self._hidden = hidden
 
     @property
@@ -309,7 +257,6 @@ class ShapeBase(ResourceBase):
         :param x: The x of this ShapeBase.  # noqa: E501
         :type: float
         """
-
         self._x = x
 
     @property
@@ -332,7 +279,6 @@ class ShapeBase(ResourceBase):
         :param y: The y of this ShapeBase.  # noqa: E501
         :type: float
         """
-
         self._y = y
 
     @property
@@ -355,7 +301,6 @@ class ShapeBase(ResourceBase):
         :param z_order_position: The z_order_position of this ShapeBase.  # noqa: E501
         :type: int
         """
-
         self._z_order_position = z_order_position
 
     @property
@@ -378,7 +323,6 @@ class ShapeBase(ResourceBase):
         :param shapes: The shapes of this ShapeBase.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._shapes = shapes
 
     @property
@@ -401,7 +345,6 @@ class ShapeBase(ResourceBase):
         :param fill_format: The fill_format of this ShapeBase.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -424,7 +367,6 @@ class ShapeBase(ResourceBase):
         :param effect_format: The effect_format of this ShapeBase.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -447,8 +389,61 @@ class ShapeBase(ResourceBase):
         :param line_format: The line_format of this ShapeBase.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
+
+    @property
+    def type(self):
+        """Gets the type of this ShapeBase.  # noqa: E501
+
+
+        :return: The type of this ShapeBase.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ShapeBase.
+
+
+        :param type: The type of this ShapeBase.  # noqa: E501
+        :type: str
+        """
+        if type is not None:
+            allowed_values = ["Shape", "Chart", "Table", "PictureFrame", "VideoFrame", "AudioFrame", "SmartArt", "OleObjectFrame", "GroupShape", "GraphicalObject", "Connector", "SmartArtShape"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
+        self._type = type
+
+    @property
+    def shape_type(self):
+        """Gets the shape_type of this ShapeBase.  # noqa: E501
+
+
+        :return: The shape_type of this ShapeBase.  # noqa: E501
+        :rtype: str
+        """
+        return self._shape_type
+
+    @shape_type.setter
+    def shape_type(self, shape_type):
+        """Sets the shape_type of this ShapeBase.
+
+
+        :param shape_type: The shape_type of this ShapeBase.  # noqa: E501
+        :type: str
+        """
+        if shape_type is not None:
+            allowed_values = ["Custom", "Line", "LineInverse", "Triangle", "RightTriangle", "Rectangle", "Diamond", "Parallelogram", "Trapezoid", "NonIsoscelesTrapezoid", "Pentagon", "Hexagon", "Heptagon", "Octagon", "Decagon", "Dodecagon", "FourPointedStar", "FivePointedStar", "SixPointedStar", "SevenPointedStar", "EightPointedStar", "TenPointedStar", "TwelvePointedStar", "SixteenPointedStar", "TwentyFourPointedStar", "ThirtyTwoPointedStar", "RoundCornerRectangle", "OneRoundCornerRectangle", "TwoSamesideRoundCornerRectangle", "TwoDiagonalRoundCornerRectangle", "OneSnipOneRoundCornerRectangle", "OneSnipCornerRectangle", "TwoSamesideSnipCornerRectangle", "TwoDiagonalSnipCornerRectangle", "Plaque", "Ellipse", "Teardrop", "HomePlate", "Chevron", "PieWedge", "Pie", "BlockArc", "Donut", "NoSmoking", "RightArrow", "LeftArrow", "UpArrow", "DownArrow", "StripedRightArrow", "NotchedRightArrow", "BentUpArrow", "LeftRightArrow", "UpDownArrow", "LeftUpArrow", "LeftRightUpArrow", "QuadArrow", "CalloutLeftArrow", "CalloutRightArrow", "CalloutUpArrow", "CalloutDownArrow", "CalloutLeftRightArrow", "CalloutUpDownArrow", "CalloutQuadArrow", "BentArrow", "UTurnArrow", "CircularArrow", "LeftCircularArrow", "LeftRightCircularArrow", "CurvedRightArrow", "CurvedLeftArrow", "CurvedUpArrow", "CurvedDownArrow", "SwooshArrow", "Cube", "Can", "LightningBolt", "Heart", "Sun", "Moon", "SmileyFace", "IrregularSeal1", "IrregularSeal2", "FoldedCorner", "Bevel", "Frame", "HalfFrame", "Corner", "DiagonalStripe", "Chord", "CurvedArc", "LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "BracketPair", "BracePair", "StraightConnector1", "BentConnector2", "BentConnector3", "BentConnector4", "BentConnector5", "CurvedConnector2", "CurvedConnector3", "CurvedConnector4", "CurvedConnector5", "Callout1", "Callout2", "Callout3", "Callout1WithAccent", "Callout2WithAccent", "Callout3WithAccent", "Callout1WithBorder", "Callout2WithBorder", "Callout3WithBorder", "Callout1WithBorderAndAccent", "Callout2WithBorderAndAccent", "Callout3WithBorderAndAccent", "CalloutWedgeRectangle", "CalloutWedgeRoundRectangle", "CalloutWedgeEllipse", "CalloutCloud", "Cloud", "Ribbon", "Ribbon2", "EllipseRibbon", "EllipseRibbon2", "LeftRightRibbon", "VerticalScroll", "HorizontalScroll", "Wave", "DoubleWave", "Plus", "ProcessFlow", "DecisionFlow", "InputOutputFlow", "PredefinedProcessFlow", "InternalStorageFlow", "DocumentFlow", "MultiDocumentFlow", "TerminatorFlow", "PreparationFlow", "ManualInputFlow", "ManualOperationFlow", "ConnectorFlow", "PunchedCardFlow", "PunchedTapeFlow", "SummingJunctionFlow", "OrFlow", "CollateFlow", "SortFlow", "ExtractFlow", "MergeFlow", "OfflineStorageFlow", "OnlineStorageFlow", "MagneticTapeFlow", "MagneticDiskFlow", "MagneticDrumFlow", "DisplayFlow", "DelayFlow", "AlternateProcessFlow", "OffPageConnectorFlow", "BlankButton", "HomeButton", "HelpButton", "InformationButton", "ForwardOrNextButton", "BackOrPreviousButton", "EndButton", "BeginningButton", "ReturnButton", "DocumentButton", "SoundButton", "MovieButton", "Gear6", "Gear9", "Funnel", "PlusMath", "MinusMath", "MultiplyMath", "DivideMath", "EqualMath", "NotEqualMath", "CornerTabs", "SquareTabs", "PlaqueTabs", "ChartX", "ChartStar", "ChartPlus", "Chart", "Table", "PictureFrame", "VideoFrame", "AudioFrame", "Diagram", "OleObjectFrame", "GroupShape", "GraphicalObject", "NotDefined"]  # noqa: E501
+            if shape_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `shape_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(shape_type, allowed_values)
+                )
+        self._shape_type = shape_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

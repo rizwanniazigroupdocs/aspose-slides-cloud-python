@@ -44,7 +44,7 @@ class PresetShadowEffect(object):
     swagger_types = {
         'direction': 'float',
         'distance': 'float',
-        'preset': 'PresetShadowType',
+        'preset': 'str',
         'shadow_color': 'str'
     }
 
@@ -89,9 +89,6 @@ class PresetShadowEffect(object):
         :param direction: The direction of this PresetShadowEffect.  # noqa: E501
         :type: float
         """
-        if direction is None:
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
-
         self._direction = direction
 
     @property
@@ -114,9 +111,6 @@ class PresetShadowEffect(object):
         :param distance: The distance of this PresetShadowEffect.  # noqa: E501
         :type: float
         """
-        if distance is None:
-            raise ValueError("Invalid value for `distance`, must not be `None`")  # noqa: E501
-
         self._distance = distance
 
     @property
@@ -126,7 +120,7 @@ class PresetShadowEffect(object):
         preset  # noqa: E501
 
         :return: The preset of this PresetShadowEffect.  # noqa: E501
-        :rtype: PresetShadowType
+        :rtype: str
         """
         return self._preset
 
@@ -137,11 +131,15 @@ class PresetShadowEffect(object):
         preset  # noqa: E501
 
         :param preset: The preset of this PresetShadowEffect.  # noqa: E501
-        :type: PresetShadowType
+        :type: str
         """
-        if preset is None:
-            raise ValueError("Invalid value for `preset`, must not be `None`")  # noqa: E501
-
+        if preset is not None:
+            allowed_values = ["TopLeftDropShadow", "TopLeftLargeDropShadow", "BackLeftLongPerspectiveShadow", "BackRightLongPerspectiveShadow", "TopLeftDoubleDropShadow", "BottomRightSmallDropShadow", "FrontLeftLongPerspectiveShadow", "FrontRightLongPerspectiveShadow", "OuterBoxShadow3D", "InnerBoxShadow3D", "BackCenterPerspectiveShadow", "TopRightDropShadow", "FrontBottomShadow", "BackLeftPerspectiveShadow", "BackRightPerspectiveShadow", "BottomLeftDropShadow", "BottomRightDropShadow", "FrontLeftPerspectiveShadow", "FrontRightPerspectiveShadow", "TopLeftSmallDropShadow"]  # noqa: E501
+            if preset not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `preset` ({0}), must be one of {1}"  # noqa: E501
+                    .format(preset, allowed_values)
+                )
         self._preset = preset
 
     @property
@@ -164,7 +162,6 @@ class PresetShadowEffect(object):
         :param shadow_color: The shadow_color of this PresetShadowEffect.  # noqa: E501
         :type: str
         """
-
         self._shadow_color = shadow_color
 
     def to_dict(self):

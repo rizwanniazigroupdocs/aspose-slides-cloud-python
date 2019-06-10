@@ -56,7 +56,7 @@ class AddMasterSlide(Task):
         'apply_to_all': 'ApplyToAll'
     }
 
-    def __init__(self, type='Enum:TaskType.AddMasterSlide', clone_from_file=None, clone_from_position=None, apply_to_all=None):  # noqa: E501
+    def __init__(self, type='AddMasterSlide', clone_from_file=None, clone_from_position=None, apply_to_all=None):  # noqa: E501
         """AddMasterSlide - a model defined in Swagger"""  # noqa: E501
         super(AddMasterSlide, self).__init__(type)
 
@@ -66,10 +66,8 @@ class AddMasterSlide(Task):
 
         if clone_from_file is not None:
             self.clone_from_file = clone_from_file
-        if clone_from_position is not None:
-            self.clone_from_position = clone_from_position
-        if apply_to_all is not None:
-            self.apply_to_all = apply_to_all
+        self.clone_from_position = clone_from_position
+        self.apply_to_all = apply_to_all
 
     @property
     def clone_from_file(self):
@@ -91,7 +89,6 @@ class AddMasterSlide(Task):
         :param clone_from_file: The clone_from_file of this AddMasterSlide.  # noqa: E501
         :type: InputFile
         """
-
         self._clone_from_file = clone_from_file
 
     @property
@@ -114,7 +111,6 @@ class AddMasterSlide(Task):
         :param clone_from_position: The clone_from_position of this AddMasterSlide.  # noqa: E501
         :type: int
         """
-
         self._clone_from_position = clone_from_position
 
     @property
@@ -137,7 +133,6 @@ class AddMasterSlide(Task):
         :param apply_to_all: The apply_to_all of this AddMasterSlide.  # noqa: E501
         :type: bool
         """
-
         self._apply_to_all = apply_to_all
 
     def to_dict(self):

@@ -45,20 +45,18 @@ class TextItems(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'items': 'list[TextItem]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'items': 'Items'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, items=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, items=None):  # noqa: E501
         """TextItems - a model defined in Swagger"""  # noqa: E501
-        super(TextItems, self).__init__(self_uri, alternate_links, links)
+        super(TextItems, self).__init__(self_uri, alternate_links)
 
         self._items = None
 
@@ -85,7 +83,6 @@ class TextItems(ResourceBase):
         :param items: The items of this TextItems.  # noqa: E501
         :type: list[TextItem]
         """
-
         self._items = items
 
     def to_dict(self):

@@ -42,49 +42,25 @@ class InputFile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'InputFileType',
-        'password': 'str'
+        'password': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'type': 'Type',
-        'password': 'Password'
+        'password': 'Password',
+        'type': 'Type'
     }
 
-    def __init__(self, type=None, password=None):  # noqa: E501
+    def __init__(self, password=None, type=None):  # noqa: E501
         """InputFile - a model defined in Swagger"""  # noqa: E501
 
-        self._type = None
         self._password = None
+        self._type = None
 
-        self.type = type
         if password is not None:
             self.password = password
-
-    @property
-    def type(self):
-        """Gets the type of this InputFile.  # noqa: E501
-
-        Gets type of input source.  # noqa: E501
-
-        :return: The type of this InputFile.  # noqa: E501
-        :rtype: InputFileType
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this InputFile.
-
-        Gets type of input source.  # noqa: E501
-
-        :param type: The type of this InputFile.  # noqa: E501
-        :type: InputFileType
-        """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
-        self._type = type
+        if type is not None:
+            self.type = type
 
     @property
     def password(self):
@@ -106,8 +82,34 @@ class InputFile(object):
         :param password: The password of this InputFile.  # noqa: E501
         :type: str
         """
-
         self._password = password
+
+    @property
+    def type(self):
+        """Gets the type of this InputFile.  # noqa: E501
+
+
+        :return: The type of this InputFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this InputFile.
+
+
+        :param type: The type of this InputFile.  # noqa: E501
+        :type: str
+        """
+        if type is not None:
+            allowed_values = ["Path", "Request", "Base64"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

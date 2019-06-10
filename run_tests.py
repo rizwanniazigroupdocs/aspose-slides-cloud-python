@@ -29,16 +29,10 @@ from __future__ import absolute_import
 
 import sys
 import unittest
+import pprint
 import xmlrunner
 
 if __name__ == '__main__':
-    tests = unittest.TestLoader().discover('.')
-    duplicate_tests = []
-    for test in tests._tests:
-        # Tests are duplicated due to base_test inheritance. The first test suite duplicates all the rest and should be removed. May be a more elegant way to solve this will be found some day.
-        duplicate_tests.append(test)
-        break
-    for duplicate_test in duplicate_tests:
-        tests._tests.remove(duplicate_test)
+    tests = unittest.TestLoader().loadTestsFromName('test')
     testResult = xmlrunner.XMLTestRunner(output='test-reports').run(tests)
     sys.exit(not testResult.wasSuccessful())

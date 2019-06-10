@@ -45,20 +45,18 @@ class SlideComments(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'list': 'list[SlideComment]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'list': 'List'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, list=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, list=None):  # noqa: E501
         """SlideComments - a model defined in Swagger"""  # noqa: E501
-        super(SlideComments, self).__init__(self_uri, alternate_links, links)
+        super(SlideComments, self).__init__(self_uri, alternate_links)
 
         self._list = None
 
@@ -83,7 +81,6 @@ class SlideComments(ResourceBase):
         :param list: The list of this SlideComments.  # noqa: E501
         :type: list[SlideComment]
         """
-
         self._list = list
 
     def to_dict(self):

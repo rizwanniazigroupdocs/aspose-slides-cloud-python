@@ -46,7 +46,7 @@ class PatternFill(FillFormat):
         'type': 'str',
         'back_color': 'str',
         'fore_color': 'str',
-        'style': 'PatternStyle'
+        'style': 'str'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class PatternFill(FillFormat):
         'style': 'Style'
     }
 
-    def __init__(self, type='Enum:FillType.Pattern', back_color=None, fore_color=None, style=None):  # noqa: E501
+    def __init__(self, type='Pattern', back_color=None, fore_color=None, style=None):  # noqa: E501
         """PatternFill - a model defined in Swagger"""  # noqa: E501
         super(PatternFill, self).__init__(type)
 
@@ -68,8 +68,7 @@ class PatternFill(FillFormat):
             self.back_color = back_color
         if fore_color is not None:
             self.fore_color = fore_color
-        if style is not None:
-            self.style = style
+        self.style = style
 
     @property
     def back_color(self):
@@ -91,7 +90,6 @@ class PatternFill(FillFormat):
         :param back_color: The back_color of this PatternFill.  # noqa: E501
         :type: str
         """
-
         self._back_color = back_color
 
     @property
@@ -114,7 +112,6 @@ class PatternFill(FillFormat):
         :param fore_color: The fore_color of this PatternFill.  # noqa: E501
         :type: str
         """
-
         self._fore_color = fore_color
 
     @property
@@ -124,7 +121,7 @@ class PatternFill(FillFormat):
         Gets or sets the style of pattern fill.  # noqa: E501
 
         :return: The style of this PatternFill.  # noqa: E501
-        :rtype: PatternStyle
+        :rtype: str
         """
         return self._style
 
@@ -135,9 +132,15 @@ class PatternFill(FillFormat):
         Gets or sets the style of pattern fill.  # noqa: E501
 
         :param style: The style of this PatternFill.  # noqa: E501
-        :type: PatternStyle
+        :type: str
         """
-
+        if style is not None:
+            allowed_values = ["Unknown", "Percent05", "Percent10", "Percent20", "Percent25", "Percent30", "Percent40", "Percent50", "Percent60", "Percent70", "Percent75", "Percent80", "Percent90", "DarkHorizontal", "DarkVertical", "DarkDownwardDiagonal", "DarkUpwardDiagonal", "SmallCheckerBoard", "Trellis", "LightHorizontal", "LightVertical", "LightDownwardDiagonal", "LightUpwardDiagonal", "SmallGrid", "DottedDiamond", "WideDownwardDiagonal", "WideUpwardDiagonal", "DashedUpwardDiagonal", "DashedDownwardDiagonal", "NarrowVertical", "NarrowHorizontal", "DashedVertical", "DashedHorizontal", "LargeConfetti", "LargeGrid", "HorizontalBrick", "LargeCheckerBoard", "SmallConfetti", "Zigzag", "SolidDiamond", "DiagonalBrick", "OutlinedDiamond", "Plaid", "Sphere", "Weave", "DottedGrid", "Divot", "Shingle", "Wave", "Horizontal", "Vertical", "Cross", "DownwardDiagonal", "UpwardDiagonal", "DiagonalCross", "NotDefined"]  # noqa: E501
+            if style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(style, allowed_values)
+                )
         self._style = style
 
     def to_dict(self):

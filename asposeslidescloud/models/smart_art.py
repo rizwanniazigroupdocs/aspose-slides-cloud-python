@@ -45,9 +45,6 @@ class SmartArt(ShapeBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,9 +57,11 @@ class SmartArt(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'layout': 'SmartArtLayoutType',
-        'quick_style': 'SmartArtQuickStyleType',
-        'color_style': 'SmartArtColorType',
+        'type': 'str',
+        'shape_type': 'str',
+        'layout': 'str',
+        'quick_style': 'str',
+        'color_style': 'str',
         'nodes': 'list[SmartArtNode]',
         'is_reversed': 'bool'
     }
@@ -70,9 +69,6 @@ class SmartArt(ShapeBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -85,6 +81,8 @@ class SmartArt(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'layout': 'Layout',
         'quick_style': 'QuickStyle',
         'color_style': 'ColorStyle',
@@ -92,9 +90,9 @@ class SmartArt(ShapeBase):
         'is_reversed': 'IsReversed'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.SmartArt', shape_type='Enum:CombinedShapeType.Diagram', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='SmartArt', shape_type='Diagram', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
         """SmartArt - a model defined in Swagger"""  # noqa: E501
-        super(SmartArt, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format)
+        super(SmartArt, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._layout = None
         self._quick_style = None
@@ -102,16 +100,12 @@ class SmartArt(ShapeBase):
         self._nodes = None
         self._is_reversed = None
 
-        if layout is not None:
-            self.layout = layout
-        if quick_style is not None:
-            self.quick_style = quick_style
-        if color_style is not None:
-            self.color_style = color_style
+        self.layout = layout
+        self.quick_style = quick_style
+        self.color_style = color_style
         if nodes is not None:
             self.nodes = nodes
-        if is_reversed is not None:
-            self.is_reversed = is_reversed
+        self.is_reversed = is_reversed
 
     @property
     def layout(self):
@@ -120,7 +114,7 @@ class SmartArt(ShapeBase):
         Layout type.  # noqa: E501
 
         :return: The layout of this SmartArt.  # noqa: E501
-        :rtype: SmartArtLayoutType
+        :rtype: str
         """
         return self._layout
 
@@ -131,9 +125,15 @@ class SmartArt(ShapeBase):
         Layout type.  # noqa: E501
 
         :param layout: The layout of this SmartArt.  # noqa: E501
-        :type: SmartArtLayoutType
+        :type: str
         """
-
+        if layout is not None:
+            allowed_values = ["AccentProcess", "AccentedPicture", "AlternatingFlow", "AlternatingHexagons", "AlternatingPictureBlocks", "AlternatingPictureCircles", "ArrowRibbon", "AscendingPictureAccentProcess", "Balance", "BasicBendingProcess", "BasicBlockList", "BasicChevronProcess", "BasicCycle", "BasicMatrix", "BasicPie", "BasicProcess", "BasicPyramid", "BasicRadial", "BasicTarget", "BasicTimeline", "BasicVenn", "BendingPictureAccentList", "BendingPictureBlocks", "BendingPictureCaption", "BendingPictureCaptionList", "BendingPictureSemiTransparentText", "BlockCycle", "BubblePictureList", "CaptionedPictures", "ChevronList", "CircleAccentTimeline", "CircleArrowProcess", "CirclePictureHierarchy", "CircleRelationship", "CircularBendingProcess", "CircularPictureCallout", "ClosedChevronProcess", "ContinuousArrowProcess", "ContinuousBlockProcess", "ContinuousCycle", "ContinuousPictureList", "ConvergingArrows", "ConvergingRadial", "CounterbalanceArrows", "CycleMatrix", "DescendingBlockList", "DescendingProcess", "DetailedProcess", "DivergingArrows", "DivergingRadial", "Equation", "FramedTextPicture", "Funnel", "Gear", "GridMatrix", "GroupedList", "HalfCircleOrganizationChart", "HexagonCluster", "Hierarchy", "HierarchyList", "HorizontalBulletList", "HorizontalHierarchy", "HorizontalLabeledHierarchy", "HorizontalMultiLevelHierarchy", "HorizontalOrganizationChart", "HorizontalPictureList", "IncreasingArrowsProcess", "IncreasingCircleProcess", "InvertedPyramid", "LabeledHierarchy", "LinearVenn", "LinedList", "MultidirectionalCycle", "NameandTitleOrganizationChart", "NestedTarget", "NondirectionalCycle", "OpposingArrows", "OpposingIdeas", "OrganizationChart", "PhasedProcess", "PictureAccentBlocks", "PictureAccentList", "PictureAccentProcess", "PictureCaptionList", "PictureGrid", "PictureLineup", "PictureStrips", "PieProcess", "PlusandMinus", "ProcessArrows", "ProcessList", "PyramidList", "RadialCluster", "RadialCycle", "RadialList", "RadialVenn", "RandomToResultProcess", "RepeatingBendingProcess", "ReverseList", "SegmentedCycle", "SegmentedProcess", "SegmentedPyramid", "SnapshotPictureList", "SpiralPicture", "SquareAccentList", "StackedList", "StackedVenn", "StaggeredProcess", "StepDownProcess", "StepUpProcess", "SubStepProcess", "TableHierarchy", "TableList", "TargetList", "TextCycle", "TitlePictureLineup", "TitledMatrix", "TitledPictureAccentList", "TitledPictureBlocks", "TrapezoidList", "UpwardArrow", "VerticalAccentList", "VerticalArrowList", "VerticalBendingProcess", "VerticalBlockList", "VerticalBoxList", "VerticalBulletList", "VerticalChevronList", "VerticalCircleList", "VerticalCurvedList", "VerticalEquation", "VerticalPictureAccentList", "VerticalPictureList", "VerticalProcess", "Custom", "PictureOrganizationChart"]  # noqa: E501
+            if layout not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `layout` ({0}), must be one of {1}"  # noqa: E501
+                    .format(layout, allowed_values)
+                )
         self._layout = layout
 
     @property
@@ -143,7 +143,7 @@ class SmartArt(ShapeBase):
         Quick style.  # noqa: E501
 
         :return: The quick_style of this SmartArt.  # noqa: E501
-        :rtype: SmartArtQuickStyleType
+        :rtype: str
         """
         return self._quick_style
 
@@ -154,9 +154,15 @@ class SmartArt(ShapeBase):
         Quick style.  # noqa: E501
 
         :param quick_style: The quick_style of this SmartArt.  # noqa: E501
-        :type: SmartArtQuickStyleType
+        :type: str
         """
-
+        if quick_style is not None:
+            allowed_values = ["SimpleFill", "WhiteOutline", "SubtleEffect", "ModerateEffect", "IntenceEffect", "Polished", "Inset", "Cartoon", "Powder", "BrickScene", "FlatScene", "MetallicScene", "SunsetScene", "BirdsEyeScene"]  # noqa: E501
+            if quick_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `quick_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(quick_style, allowed_values)
+                )
         self._quick_style = quick_style
 
     @property
@@ -166,7 +172,7 @@ class SmartArt(ShapeBase):
         Color style.  # noqa: E501
 
         :return: The color_style of this SmartArt.  # noqa: E501
-        :rtype: SmartArtColorType
+        :rtype: str
         """
         return self._color_style
 
@@ -177,9 +183,15 @@ class SmartArt(ShapeBase):
         Color style.  # noqa: E501
 
         :param color_style: The color_style of this SmartArt.  # noqa: E501
-        :type: SmartArtColorType
+        :type: str
         """
-
+        if color_style is not None:
+            allowed_values = ["Dark1Outline", "Dark2Outline", "DarkFill", "ColorfulAccentColors", "ColorfulAccentColors2to3", "ColorfulAccentColors3to4", "ColorfulAccentColors4to5", "ColorfulAccentColors5to6", "ColoredOutlineAccent1", "ColoredFillAccent1", "GradientRangeAccent1", "GradientLoopAccent1", "TransparentGradientRangeAccent1", "ColoredOutlineAccent2", "ColoredFillAccent2", "GradientRangeAccent2", "GradientLoopAccent2", "TransparentGradientRangeAccent2", "ColoredOutlineAccent3", "ColoredFillAccent3", "GradientRangeAccent3", "GradientLoopAccent3", "TransparentGradientRangeAccent3", "ColoredOutlineAccent4", "ColoredFillAccent4", "GradientRangeAccent4", "GradientLoopAccent4", "TransparentGradientRangeAccent4", "ColoredOutlineAccent5", "ColoredFillAccent5", "GradientRangeAccent5", "GradientLoopAccent5", "TransparentGradientRangeAccent5", "ColoredOutlineAccent6", "ColoredFillAccent6", "GradientRangeAccent6", "GradientLoopAccent6", "TransparentGradientRangeAccent6"]  # noqa: E501
+            if color_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(color_style, allowed_values)
+                )
         self._color_style = color_style
 
     @property
@@ -202,7 +214,6 @@ class SmartArt(ShapeBase):
         :param nodes: The nodes of this SmartArt.  # noqa: E501
         :type: list[SmartArtNode]
         """
-
         self._nodes = nodes
 
     @property
@@ -225,7 +236,6 @@ class SmartArt(ShapeBase):
         :param is_reversed: The is_reversed of this SmartArt.  # noqa: E501
         :type: bool
         """
-
         self._is_reversed = is_reversed
 
     def to_dict(self):

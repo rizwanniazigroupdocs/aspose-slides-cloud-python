@@ -44,15 +44,15 @@ class TiffExportOptions(ExportOptions):
     """
     swagger_types = {
         'format': 'str',
-        'compression': 'TiffCompressionType',
+        'compression': 'str',
         'width': 'int',
         'height': 'int',
         'dpi_x': 'int',
         'dpi_y': 'int',
         'show_hidden_slides': 'bool',
-        'pixel_format': 'ImagePixelFormat',
-        'notes_position': 'NotesPositions',
-        'comments_position': 'CommentsPositions',
+        'pixel_format': 'str',
+        'notes_position': 'str',
+        'comments_position': 'str',
         'comments_area_width': 'int',
         'comments_area_color': 'str',
         'show_comments_by_no_author': 'bool'
@@ -91,8 +91,7 @@ class TiffExportOptions(ExportOptions):
         self._comments_area_color = None
         self._show_comments_by_no_author = None
 
-        if compression is not None:
-            self.compression = compression
+        self.compression = compression
         if width is not None:
             self.width = width
         if height is not None:
@@ -101,20 +100,14 @@ class TiffExportOptions(ExportOptions):
             self.dpi_x = dpi_x
         if dpi_y is not None:
             self.dpi_y = dpi_y
-        if show_hidden_slides is not None:
-            self.show_hidden_slides = show_hidden_slides
-        if pixel_format is not None:
-            self.pixel_format = pixel_format
-        if notes_position is not None:
-            self.notes_position = notes_position
-        if comments_position is not None:
-            self.comments_position = comments_position
-        if comments_area_width is not None:
-            self.comments_area_width = comments_area_width
+        self.show_hidden_slides = show_hidden_slides
+        self.pixel_format = pixel_format
+        self.notes_position = notes_position
+        self.comments_position = comments_position
+        self.comments_area_width = comments_area_width
         if comments_area_color is not None:
             self.comments_area_color = comments_area_color
-        if show_comments_by_no_author is not None:
-            self.show_comments_by_no_author = show_comments_by_no_author
+        self.show_comments_by_no_author = show_comments_by_no_author
 
     @property
     def compression(self):
@@ -122,7 +115,7 @@ class TiffExportOptions(ExportOptions):
 
 
         :return: The compression of this TiffExportOptions.  # noqa: E501
-        :rtype: TiffCompressionType
+        :rtype: str
         """
         return self._compression
 
@@ -132,9 +125,15 @@ class TiffExportOptions(ExportOptions):
 
 
         :param compression: The compression of this TiffExportOptions.  # noqa: E501
-        :type: TiffCompressionType
+        :type: str
         """
-
+        if compression is not None:
+            allowed_values = ["Default", "None", "CCITT3", "CCITT4", "LZW", "RLE"]  # noqa: E501
+            if compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(compression, allowed_values)
+                )
         self._compression = compression
 
     @property
@@ -155,7 +154,6 @@ class TiffExportOptions(ExportOptions):
         :param width: The width of this TiffExportOptions.  # noqa: E501
         :type: int
         """
-
         self._width = width
 
     @property
@@ -176,7 +174,6 @@ class TiffExportOptions(ExportOptions):
         :param height: The height of this TiffExportOptions.  # noqa: E501
         :type: int
         """
-
         self._height = height
 
     @property
@@ -197,7 +194,6 @@ class TiffExportOptions(ExportOptions):
         :param dpi_x: The dpi_x of this TiffExportOptions.  # noqa: E501
         :type: int
         """
-
         self._dpi_x = dpi_x
 
     @property
@@ -218,7 +214,6 @@ class TiffExportOptions(ExportOptions):
         :param dpi_y: The dpi_y of this TiffExportOptions.  # noqa: E501
         :type: int
         """
-
         self._dpi_y = dpi_y
 
     @property
@@ -241,17 +236,16 @@ class TiffExportOptions(ExportOptions):
         :param show_hidden_slides: The show_hidden_slides of this TiffExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_hidden_slides = show_hidden_slides
 
     @property
     def pixel_format(self):
         """Gets the pixel_format of this TiffExportOptions.  # noqa: E501
 
-        Specifies the pixel format for the generated images. Read/write .  # noqa: E501
+        Specifies the pixel format for the generated images. Read/write ImagePixelFormat.  # noqa: E501
 
         :return: The pixel_format of this TiffExportOptions.  # noqa: E501
-        :rtype: ImagePixelFormat
+        :rtype: str
         """
         return self._pixel_format
 
@@ -259,12 +253,18 @@ class TiffExportOptions(ExportOptions):
     def pixel_format(self, pixel_format):
         """Sets the pixel_format of this TiffExportOptions.
 
-        Specifies the pixel format for the generated images. Read/write .  # noqa: E501
+        Specifies the pixel format for the generated images. Read/write ImagePixelFormat.  # noqa: E501
 
         :param pixel_format: The pixel_format of this TiffExportOptions.  # noqa: E501
-        :type: ImagePixelFormat
+        :type: str
         """
-
+        if pixel_format is not None:
+            allowed_values = ["Format1bppIndexed", "Format4bppIndexed", "Format8bppIndexed", "Format24bppRgb", "Format32bppArgb"]  # noqa: E501
+            if pixel_format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `pixel_format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(pixel_format, allowed_values)
+                )
         self._pixel_format = pixel_format
 
     @property
@@ -274,7 +274,7 @@ class TiffExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :return: The notes_position of this TiffExportOptions.  # noqa: E501
-        :rtype: NotesPositions
+        :rtype: str
         """
         return self._notes_position
 
@@ -285,9 +285,15 @@ class TiffExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :param notes_position: The notes_position of this TiffExportOptions.  # noqa: E501
-        :type: NotesPositions
+        :type: str
         """
-
+        if notes_position is not None:
+            allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(notes_position, allowed_values)
+                )
         self._notes_position = notes_position
 
     @property
@@ -297,7 +303,7 @@ class TiffExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :return: The comments_position of this TiffExportOptions.  # noqa: E501
-        :rtype: CommentsPositions
+        :rtype: str
         """
         return self._comments_position
 
@@ -308,9 +314,15 @@ class TiffExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :param comments_position: The comments_position of this TiffExportOptions.  # noqa: E501
-        :type: CommentsPositions
+        :type: str
         """
-
+        if comments_position is not None:
+            allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comments_position, allowed_values)
+                )
         self._comments_position = comments_position
 
     @property
@@ -333,7 +345,6 @@ class TiffExportOptions(ExportOptions):
         :param comments_area_width: The comments_area_width of this TiffExportOptions.  # noqa: E501
         :type: int
         """
-
         self._comments_area_width = comments_area_width
 
     @property
@@ -356,7 +367,6 @@ class TiffExportOptions(ExportOptions):
         :param comments_area_color: The comments_area_color of this TiffExportOptions.  # noqa: E501
         :type: str
         """
-
         self._comments_area_color = comments_area_color
 
     @property
@@ -379,7 +389,6 @@ class TiffExportOptions(ExportOptions):
         :param show_comments_by_no_author: The show_comments_by_no_author of this TiffExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_comments_by_no_author = show_comments_by_no_author
 
     def to_dict(self):

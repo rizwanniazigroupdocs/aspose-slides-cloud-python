@@ -103,9 +103,6 @@ class PlotArea(object):
         :param x: The x of this PlotArea.  # noqa: E501
         :type: float
         """
-        if x is None:
-            raise ValueError("Invalid value for `x`, must not be `None`")  # noqa: E501
-
         self._x = x
 
     @property
@@ -128,9 +125,6 @@ class PlotArea(object):
         :param y: The y of this PlotArea.  # noqa: E501
         :type: float
         """
-        if y is None:
-            raise ValueError("Invalid value for `y`, must not be `None`")  # noqa: E501
-
         self._y = y
 
     @property
@@ -153,9 +147,6 @@ class PlotArea(object):
         :param width: The width of this PlotArea.  # noqa: E501
         :type: float
         """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-
         self._width = width
 
     @property
@@ -178,9 +169,6 @@ class PlotArea(object):
         :param height: The height of this PlotArea.  # noqa: E501
         :type: float
         """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-
         self._height = height
 
     @property
@@ -203,7 +191,6 @@ class PlotArea(object):
         :param fill_format: The fill_format of this PlotArea.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -226,7 +213,6 @@ class PlotArea(object):
         :param effect_format: The effect_format of this PlotArea.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -249,7 +235,6 @@ class PlotArea(object):
         :param line_format: The line_format of this PlotArea.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     def to_dict(self):

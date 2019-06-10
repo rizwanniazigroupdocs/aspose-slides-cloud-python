@@ -43,29 +43,24 @@ class ResourceBase(object):
     """
     swagger_types = {
         'self_uri': 'ResourceUri',
-        'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]'
+        'alternate_links': 'list[ResourceUri]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'links': 'Links'
+        'alternate_links': 'AlternateLinks'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None):  # noqa: E501
         """ResourceBase - a model defined in Swagger"""  # noqa: E501
 
         self._self_uri = None
         self._alternate_links = None
-        self._links = None
 
         if self_uri is not None:
             self.self_uri = self_uri
         if alternate_links is not None:
             self.alternate_links = alternate_links
-        if links is not None:
-            self.links = links
 
     @property
     def self_uri(self):
@@ -87,7 +82,6 @@ class ResourceBase(object):
         :param self_uri: The self_uri of this ResourceBase.  # noqa: E501
         :type: ResourceUri
         """
-
         self._self_uri = self_uri
 
     @property
@@ -108,31 +102,7 @@ class ResourceBase(object):
         :param alternate_links: The alternate_links of this ResourceBase.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._alternate_links = alternate_links
-
-    @property
-    def links(self):
-        """Gets the links of this ResourceBase.  # noqa: E501
-
-        A list of links that originate from this document.  # noqa: E501
-
-        :return: The links of this ResourceBase.  # noqa: E501
-        :rtype: list[ResourceUri]
-        """
-        return self._links
-
-    @links.setter
-    def links(self, links):
-        """Sets the links of this ResourceBase.
-
-        A list of links that originate from this document.  # noqa: E501
-
-        :param links: The links of this ResourceBase.  # noqa: E501
-        :type: list[ResourceUri]
-        """
-
-        self._links = links
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -68,7 +68,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.1.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.5.0'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
@@ -158,7 +158,9 @@ class ApiClient(object):
                                      _preload_content=_preload_content,
                                      _request_timeout=_request_timeout)
             except ApiException as ex:
-                if ex.status == 401 and self.__refresh_token(header_params, _request_timeout):
+                if ex.status == 401:
+                    self.configuration.access_token = None
+                    self.__authenticate(header_params, _request_timeout)
                     return self.request(method, url,
                                      query_params=query_params,
                                      headers=header_params,
@@ -168,7 +170,7 @@ class ApiClient(object):
                 raise ex
         except ApiException as ex:
             if ex.body:
-                message = self.__deserialize(json.loads(ex.body), "ErrorMessage")
+                message = self.deserialize_model(json.loads(ex.body), "ErrorMessage")
                 self.__set_exception_message(ex, message)
             raise ex
 
@@ -186,25 +188,14 @@ class ApiClient(object):
                 'client_id': self.configuration.app_sid,
                 'client_secret': self.configuration.app_key
             }
-            self.__do_token_request(post_params, _request_timeout)
+            config = self.configuration
+            token_response = self.request(
+                'POST', config.auth_base_url + "/connect/token", post_params=post_params, _request_timeout=_request_timeout)
+            token_data = json.loads(token_response.data)
+            token_klass = getattr(oauth_response, "OAuthResponse")
+            token = self.__deserialize_model(token_data, token_klass)
+            config.access_token = token.access_token
         header_params["Authorization"] = "Bearer " + self.configuration.access_token
-
-    def __refresh_token(self, header_params, _request_timeout):
-        if self.configuration.refresh_token:
-            post_params = { 'grant_type': 'refresh_token', 'refresh_token': self.configuration.refresh_token }
-            self.__do_token_request(post_params, _request_timeout)
-            header_params["Authorization"] = "Bearer " + self.configuration.access_token
-            return True
-
-    def __do_token_request(self, post_params, _request_timeout):
-        config = self.configuration
-        token_response = self.request(
-            'POST', config.base_url + "/oauth2/token", post_params=post_params, _request_timeout=_request_timeout)
-        token_data = json.loads(token_response.data)
-        token_klass = getattr(oauth_response, "OAuthResponse")
-        token = self.__deserialize_model(token_data, token_klass)
-        config.access_token = token.access_token
-        config.refresh_token = token.refresh_token
 
     def sanitize_for_serialization(self, obj):
         """
@@ -270,9 +261,9 @@ class ApiClient(object):
         except ValueError:
             data = response.data
 
-        return self.__deserialize(data, response_type)
+        return self.deserialize_model(data, response_type)
 
-    def __deserialize(self, data, klass):
+    def deserialize_model(self, data, klass):
         """
         Deserializes dict, list, str into an object.
 
@@ -287,12 +278,12 @@ class ApiClient(object):
         if type(klass) == str:
             if klass.startswith('list['):
                 sub_kls = re.match('list\[(.*)\]', klass).group(1)
-                return [self.__deserialize(sub_data, sub_kls)
+                return [self.deserialize_model(sub_data, sub_kls)
                         for sub_data in data]
 
             if klass.startswith('dict('):
                 sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
-                return {k: self.__deserialize(v, sub_kls)
+                return {k: self.deserialize_model(v, sub_kls)
                         for k, v in iteritems(data)}
 
             # convert str to class
@@ -656,7 +647,7 @@ class ApiClient(object):
             for attr, attr_type in iteritems(klass.swagger_types):
                 if data is not None and klass.attribute_map[attr] in data and isinstance(data, (list, dict)):
                     value = data[klass.attribute_map[attr]]
-                    args[attr] = self.__deserialize(value, attr_type)
+                    args[attr] = self.deserialize_model(value, attr_type)
             base_klass = klass.__bases__[0]
             if not base_klass == object:
                 self.__fill_model_args(args, data, base_klass)

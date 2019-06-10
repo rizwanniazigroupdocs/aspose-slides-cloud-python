@@ -75,7 +75,6 @@ class CustomDashPattern(object):
         :param items: The items of this CustomDashPattern.  # noqa: E501
         :type: list[float]
         """
-
         self._items = items
 
     def to_dict(self):

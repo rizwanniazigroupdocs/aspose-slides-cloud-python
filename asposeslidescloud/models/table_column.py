@@ -74,9 +74,6 @@ class TableColumn(object):
         :param width: The width of this TableColumn.  # noqa: E501
         :type: float
         """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-
         self._width = width
 
     def to_dict(self):

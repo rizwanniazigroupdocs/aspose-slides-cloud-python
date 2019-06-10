@@ -44,12 +44,12 @@ class GradientFill(FillFormat):
     """
     swagger_types = {
         'type': 'str',
-        'direction': 'GradientDirection',
-        'shape': 'GradientShapeType',
+        'direction': 'str',
+        'shape': 'str',
         'stops': 'list[GradientFillStop]',
         'linear_angle': 'float',
         'is_scaled': 'bool',
-        'tile_flip': 'GradientTileFlip'
+        'tile_flip': 'str'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class GradientFill(FillFormat):
         'tile_flip': 'TileFlip'
     }
 
-    def __init__(self, type='Enum:FillType.Gradient', direction=None, shape=None, stops=None, linear_angle=None, is_scaled=None, tile_flip=None):  # noqa: E501
+    def __init__(self, type='Gradient', direction=None, shape=None, stops=None, linear_angle=None, is_scaled=None, tile_flip=None):  # noqa: E501
         """GradientFill - a model defined in Swagger"""  # noqa: E501
         super(GradientFill, self).__init__(type)
 
@@ -73,18 +73,13 @@ class GradientFill(FillFormat):
         self._is_scaled = None
         self._tile_flip = None
 
-        if direction is not None:
-            self.direction = direction
-        if shape is not None:
-            self.shape = shape
+        self.direction = direction
+        self.shape = shape
         if stops is not None:
             self.stops = stops
-        if linear_angle is not None:
-            self.linear_angle = linear_angle
-        if is_scaled is not None:
-            self.is_scaled = is_scaled
-        if tile_flip is not None:
-            self.tile_flip = tile_flip
+        self.linear_angle = linear_angle
+        self.is_scaled = is_scaled
+        self.tile_flip = tile_flip
 
     @property
     def direction(self):
@@ -93,7 +88,7 @@ class GradientFill(FillFormat):
         Gradient style.  # noqa: E501
 
         :return: The direction of this GradientFill.  # noqa: E501
-        :rtype: GradientDirection
+        :rtype: str
         """
         return self._direction
 
@@ -104,9 +99,15 @@ class GradientFill(FillFormat):
         Gradient style.  # noqa: E501
 
         :param direction: The direction of this GradientFill.  # noqa: E501
-        :type: GradientDirection
+        :type: str
         """
-
+        if direction is not None:
+            allowed_values = ["FromCorner1", "FromCorner2", "FromCorner3", "FromCorner4", "FromCenter", "NotDefined"]  # noqa: E501
+            if direction not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                    .format(direction, allowed_values)
+                )
         self._direction = direction
 
     @property
@@ -116,7 +117,7 @@ class GradientFill(FillFormat):
         Gradient shape.  # noqa: E501
 
         :return: The shape of this GradientFill.  # noqa: E501
-        :rtype: GradientShapeType
+        :rtype: str
         """
         return self._shape
 
@@ -127,9 +128,15 @@ class GradientFill(FillFormat):
         Gradient shape.  # noqa: E501
 
         :param shape: The shape of this GradientFill.  # noqa: E501
-        :type: GradientShapeType
+        :type: str
         """
-
+        if shape is not None:
+            allowed_values = ["Linear", "Rectangle", "Radial", "Path", "NotDefined"]  # noqa: E501
+            if shape not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `shape` ({0}), must be one of {1}"  # noqa: E501
+                    .format(shape, allowed_values)
+                )
         self._shape = shape
 
     @property
@@ -152,7 +159,6 @@ class GradientFill(FillFormat):
         :param stops: The stops of this GradientFill.  # noqa: E501
         :type: list[GradientFillStop]
         """
-
         self._stops = stops
 
     @property
@@ -175,7 +181,6 @@ class GradientFill(FillFormat):
         :param linear_angle: The linear_angle of this GradientFill.  # noqa: E501
         :type: float
         """
-
         self._linear_angle = linear_angle
 
     @property
@@ -198,7 +203,6 @@ class GradientFill(FillFormat):
         :param is_scaled: The is_scaled of this GradientFill.  # noqa: E501
         :type: bool
         """
-
         self._is_scaled = is_scaled
 
     @property
@@ -208,7 +212,7 @@ class GradientFill(FillFormat):
         Gradient flipping mode.  # noqa: E501
 
         :return: The tile_flip of this GradientFill.  # noqa: E501
-        :rtype: GradientTileFlip
+        :rtype: str
         """
         return self._tile_flip
 
@@ -219,9 +223,15 @@ class GradientFill(FillFormat):
         Gradient flipping mode.  # noqa: E501
 
         :param tile_flip: The tile_flip of this GradientFill.  # noqa: E501
-        :type: GradientTileFlip
+        :type: str
         """
-
+        if tile_flip is not None:
+            allowed_values = ["NoFlip", "FlipX", "FlipY", "FlipBoth", "NotDefined"]  # noqa: E501
+            if tile_flip not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `tile_flip` ({0}), must be one of {1}"  # noqa: E501
+                    .format(tile_flip, allowed_values)
+                )
         self._tile_flip = tile_flip
 
     def to_dict(self):

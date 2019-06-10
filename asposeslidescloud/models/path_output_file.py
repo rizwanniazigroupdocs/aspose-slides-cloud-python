@@ -54,7 +54,7 @@ class PathOutputFile(OutputFile):
         'storage': 'Storage'
     }
 
-    def __init__(self, type='Enum:OutputFileType.Path', path=None, storage=None):  # noqa: E501
+    def __init__(self, type='Path', path=None, storage=None):  # noqa: E501
         """PathOutputFile - a model defined in Swagger"""  # noqa: E501
         super(PathOutputFile, self).__init__(type)
 
@@ -86,7 +86,6 @@ class PathOutputFile(OutputFile):
         :param path: The path of this PathOutputFile.  # noqa: E501
         :type: str
         """
-
         self._path = path
 
     @property
@@ -109,7 +108,6 @@ class PathOutputFile(OutputFile):
         :param storage: The storage of this PathOutputFile.  # noqa: E501
         :type: str
         """
-
         self._storage = storage
 
     def to_dict(self):

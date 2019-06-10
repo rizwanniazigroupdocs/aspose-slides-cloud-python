@@ -46,7 +46,7 @@ class ChartWall(object):
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'thickness': 'int',
-        'picture_type': 'PictureType'
+        'picture_type': 'str'
     }
 
     attribute_map = {
@@ -95,7 +95,6 @@ class ChartWall(object):
         :param fill_format: The fill_format of this ChartWall.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -118,7 +117,6 @@ class ChartWall(object):
         :param effect_format: The effect_format of this ChartWall.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -141,7 +139,6 @@ class ChartWall(object):
         :param line_format: The line_format of this ChartWall.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     @property
@@ -164,9 +161,6 @@ class ChartWall(object):
         :param thickness: The thickness of this ChartWall.  # noqa: E501
         :type: int
         """
-        if thickness is None:
-            raise ValueError("Invalid value for `thickness`, must not be `None`")  # noqa: E501
-
         self._thickness = thickness
 
     @property
@@ -176,7 +170,7 @@ class ChartWall(object):
         Get or sets mode of bar picture filling.  # noqa: E501
 
         :return: The picture_type of this ChartWall.  # noqa: E501
-        :rtype: PictureType
+        :rtype: str
         """
         return self._picture_type
 
@@ -187,11 +181,15 @@ class ChartWall(object):
         Get or sets mode of bar picture filling.  # noqa: E501
 
         :param picture_type: The picture_type of this ChartWall.  # noqa: E501
-        :type: PictureType
+        :type: str
         """
-        if picture_type is None:
-            raise ValueError("Invalid value for `picture_type`, must not be `None`")  # noqa: E501
-
+        if picture_type is not None:
+            allowed_values = ["Stack", "StackScale", "Stretch", "NotDefined"]  # noqa: E501
+            if picture_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `picture_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(picture_type, allowed_values)
+                )
         self._picture_type = picture_type
 
     def to_dict(self):

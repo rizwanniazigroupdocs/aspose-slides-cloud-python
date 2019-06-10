@@ -92,7 +92,6 @@ class Axes(object):
         :param horizontal_axis: The horizontal_axis of this Axes.  # noqa: E501
         :type: Axis
         """
-
         self._horizontal_axis = horizontal_axis
 
     @property
@@ -115,7 +114,6 @@ class Axes(object):
         :param vertical_axis: The vertical_axis of this Axes.  # noqa: E501
         :type: Axis
         """
-
         self._vertical_axis = vertical_axis
 
     @property
@@ -138,7 +136,6 @@ class Axes(object):
         :param secondary_horizontal_axis: The secondary_horizontal_axis of this Axes.  # noqa: E501
         :type: Axis
         """
-
         self._secondary_horizontal_axis = secondary_horizontal_axis
 
     @property
@@ -161,7 +158,6 @@ class Axes(object):
         :param secondary_vertical_axis: The secondary_vertical_axis of this Axes.  # noqa: E501
         :type: Axis
         """
-
         self._secondary_vertical_axis = secondary_vertical_axis
 
     def to_dict(self):

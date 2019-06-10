@@ -82,7 +82,6 @@ class TextItem(object):
         :param uri: The uri of this TextItem.  # noqa: E501
         :type: ResourceUri
         """
-
         self._uri = uri
 
     @property
@@ -105,7 +104,6 @@ class TextItem(object):
         :param text: The text of this TextItem.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     def to_dict(self):

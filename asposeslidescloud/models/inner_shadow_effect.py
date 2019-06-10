@@ -89,9 +89,6 @@ class InnerShadowEffect(object):
         :param direction: The direction of this InnerShadowEffect.  # noqa: E501
         :type: float
         """
-        if direction is None:
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
-
         self._direction = direction
 
     @property
@@ -114,9 +111,6 @@ class InnerShadowEffect(object):
         :param distance: The distance of this InnerShadowEffect.  # noqa: E501
         :type: float
         """
-        if distance is None:
-            raise ValueError("Invalid value for `distance`, must not be `None`")  # noqa: E501
-
         self._distance = distance
 
     @property
@@ -139,9 +133,6 @@ class InnerShadowEffect(object):
         :param blur_radius: The blur_radius of this InnerShadowEffect.  # noqa: E501
         :type: float
         """
-        if blur_radius is None:
-            raise ValueError("Invalid value for `blur_radius`, must not be `None`")  # noqa: E501
-
         self._blur_radius = blur_radius
 
     @property
@@ -164,7 +155,6 @@ class InnerShadowEffect(object):
         :param shadow_color: The shadow_color of this InnerShadowEffect.  # noqa: E501
         :type: str
         """
-
         self._shadow_color = shadow_color
 
     def to_dict(self):

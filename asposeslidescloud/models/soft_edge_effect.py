@@ -76,9 +76,6 @@ class SoftEdgeEffect(object):
         :param radius: The radius of this SoftEdgeEffect.  # noqa: E501
         :type: float
         """
-        if radius is None:
-            raise ValueError("Invalid value for `radius`, must not be `None`")  # noqa: E501
-
         self._radius = radius
 
     def to_dict(self):

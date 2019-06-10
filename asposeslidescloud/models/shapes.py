@@ -45,20 +45,18 @@ class Shapes(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'shapes_links': 'list[ResourceUriElement]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'shapes_links': 'ShapesLinks'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, shapes_links=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, shapes_links=None):  # noqa: E501
         """Shapes - a model defined in Swagger"""  # noqa: E501
-        super(Shapes, self).__init__(self_uri, alternate_links, links)
+        super(Shapes, self).__init__(self_uri, alternate_links)
 
         self._shapes_links = None
 
@@ -83,7 +81,6 @@ class Shapes(ResourceBase):
         :param shapes_links: The shapes_links of this Shapes.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._shapes_links = shapes_links
 
     def to_dict(self):

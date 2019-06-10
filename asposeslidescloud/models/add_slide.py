@@ -58,7 +58,7 @@ class AddSlide(Task):
         'layout_alias': 'LayoutAlias'
     }
 
-    def __init__(self, type='Enum:TaskType.AddSlide', clone_from_file=None, clone_from_position=None, position=None, layout_alias=None):  # noqa: E501
+    def __init__(self, type='AddSlide', clone_from_file=None, clone_from_position=None, position=None, layout_alias=None):  # noqa: E501
         """AddSlide - a model defined in Swagger"""  # noqa: E501
         super(AddSlide, self).__init__(type)
 
@@ -69,10 +69,8 @@ class AddSlide(Task):
 
         if clone_from_file is not None:
             self.clone_from_file = clone_from_file
-        if clone_from_position is not None:
-            self.clone_from_position = clone_from_position
-        if position is not None:
-            self.position = position
+        self.clone_from_position = clone_from_position
+        self.position = position
         if layout_alias is not None:
             self.layout_alias = layout_alias
 
@@ -96,7 +94,6 @@ class AddSlide(Task):
         :param clone_from_file: The clone_from_file of this AddSlide.  # noqa: E501
         :type: InputFile
         """
-
         self._clone_from_file = clone_from_file
 
     @property
@@ -119,7 +116,6 @@ class AddSlide(Task):
         :param clone_from_position: The clone_from_position of this AddSlide.  # noqa: E501
         :type: int
         """
-
         self._clone_from_position = clone_from_position
 
     @property
@@ -142,7 +138,6 @@ class AddSlide(Task):
         :param position: The position of this AddSlide.  # noqa: E501
         :type: int
         """
-
         self._position = position
 
     @property
@@ -165,7 +160,6 @@ class AddSlide(Task):
         :param layout_alias: The layout_alias of this AddSlide.  # noqa: E501
         :type: str
         """
-
         self._layout_alias = layout_alias
 
     def to_dict(self):

@@ -85,7 +85,6 @@ class SlideComment(object):
         :param author: The author of this SlideComment.  # noqa: E501
         :type: str
         """
-
         self._author = author
 
     @property
@@ -106,7 +105,6 @@ class SlideComment(object):
         :param text: The text of this SlideComment.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -127,7 +125,6 @@ class SlideComment(object):
         :param created_time: The created_time of this SlideComment.  # noqa: E501
         :type: str
         """
-
         self._created_time = created_time
 
     def to_dict(self):

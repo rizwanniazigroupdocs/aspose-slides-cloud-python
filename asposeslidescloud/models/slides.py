@@ -45,20 +45,18 @@ class Slides(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'slide_list': 'list[ResourceUriElement]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'slide_list': 'SlideList'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, slide_list=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, slide_list=None):  # noqa: E501
         """Slides - a model defined in Swagger"""  # noqa: E501
-        super(Slides, self).__init__(self_uri, alternate_links, links)
+        super(Slides, self).__init__(self_uri, alternate_links)
 
         self._slide_list = None
 
@@ -83,7 +81,6 @@ class Slides(ResourceBase):
         :param slide_list: The slide_list of this Slides.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._slide_list = slide_list
 
     def to_dict(self):

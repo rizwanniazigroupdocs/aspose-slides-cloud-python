@@ -45,9 +45,6 @@ class VideoFrame(GeometryShape):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,22 +57,21 @@ class VideoFrame(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'geometry_shape_type': 'GeometryShapeType',
+        'type': 'str',
+        'shape_type': 'str',
+        'geometry_shape_type': 'str',
         'full_screen_mode': 'bool',
         'hide_at_showing': 'bool',
         'play_loop_mode': 'bool',
-        'play_mode': 'VideoPlayModePreset',
+        'play_mode': 'str',
         'rewind_video': 'bool',
-        'volume': 'AudioVolumeMode',
+        'volume': 'str',
         'base64_data': 'str'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -88,6 +84,8 @@ class VideoFrame(GeometryShape):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'geometry_shape_type': 'GeometryShapeType',
         'full_screen_mode': 'FullScreenMode',
         'hide_at_showing': 'HideAtShowing',
@@ -98,9 +96,9 @@ class VideoFrame(GeometryShape):
         'base64_data': 'Base64Data'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.VideoFrame', shape_type='Enum:CombinedShapeType.VideoFrame', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='VideoFrame', shape_type='VideoFrame', geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501
         """VideoFrame - a model defined in Swagger"""  # noqa: E501
-        super(VideoFrame, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, geometry_shape_type)
+        super(VideoFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._full_screen_mode = None
         self._hide_at_showing = None
@@ -145,7 +143,6 @@ class VideoFrame(GeometryShape):
         :param full_screen_mode: The full_screen_mode of this VideoFrame.  # noqa: E501
         :type: bool
         """
-
         self._full_screen_mode = full_screen_mode
 
     @property
@@ -168,7 +165,6 @@ class VideoFrame(GeometryShape):
         :param hide_at_showing: The hide_at_showing of this VideoFrame.  # noqa: E501
         :type: bool
         """
-
         self._hide_at_showing = hide_at_showing
 
     @property
@@ -191,7 +187,6 @@ class VideoFrame(GeometryShape):
         :param play_loop_mode: The play_loop_mode of this VideoFrame.  # noqa: E501
         :type: bool
         """
-
         self._play_loop_mode = play_loop_mode
 
     @property
@@ -201,7 +196,7 @@ class VideoFrame(GeometryShape):
         Returns or sets the video play mode.    # noqa: E501
 
         :return: The play_mode of this VideoFrame.  # noqa: E501
-        :rtype: VideoPlayModePreset
+        :rtype: str
         """
         return self._play_mode
 
@@ -212,9 +207,15 @@ class VideoFrame(GeometryShape):
         Returns or sets the video play mode.    # noqa: E501
 
         :param play_mode: The play_mode of this VideoFrame.  # noqa: E501
-        :type: VideoPlayModePreset
+        :type: str
         """
-
+        if play_mode is not None:
+            allowed_values = ["Auto", "OnClick", "AllSlides", "Mixed"]  # noqa: E501
+            if play_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `play_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(play_mode, allowed_values)
+                )
         self._play_mode = play_mode
 
     @property
@@ -237,7 +238,6 @@ class VideoFrame(GeometryShape):
         :param rewind_video: The rewind_video of this VideoFrame.  # noqa: E501
         :type: bool
         """
-
         self._rewind_video = rewind_video
 
     @property
@@ -247,7 +247,7 @@ class VideoFrame(GeometryShape):
         Returns or sets the audio volume.  # noqa: E501
 
         :return: The volume of this VideoFrame.  # noqa: E501
-        :rtype: AudioVolumeMode
+        :rtype: str
         """
         return self._volume
 
@@ -258,9 +258,15 @@ class VideoFrame(GeometryShape):
         Returns or sets the audio volume.  # noqa: E501
 
         :param volume: The volume of this VideoFrame.  # noqa: E501
-        :type: AudioVolumeMode
+        :type: str
         """
-
+        if volume is not None:
+            allowed_values = ["Mute", "Low", "Medium", "Loud", "Mixed"]  # noqa: E501
+            if volume not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `volume` ({0}), must be one of {1}"  # noqa: E501
+                    .format(volume, allowed_values)
+                )
         self._volume = volume
 
     @property
@@ -283,7 +289,6 @@ class VideoFrame(GeometryShape):
         :param base64_data: The base64_data of this VideoFrame.  # noqa: E501
         :type: str
         """
-
         self._base64_data = base64_data
 
     def to_dict(self):

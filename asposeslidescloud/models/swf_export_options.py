@@ -59,8 +59,8 @@ class SwfExportOptions(ExportOptions):
         'logo_image': 'str',
         'logo_link': 'str',
         'jpeg_quality': 'int',
-        'notes_position': 'NotesPositions',
-        'comments_position': 'CommentsPositions',
+        'notes_position': 'str',
+        'comments_position': 'str',
         'comments_area_width': 'int',
         'comments_area_color': 'str',
         'show_comments_by_no_author': 'bool'
@@ -115,46 +115,29 @@ class SwfExportOptions(ExportOptions):
         self._comments_area_color = None
         self._show_comments_by_no_author = None
 
-        if show_hidden_slides is not None:
-            self.show_hidden_slides = show_hidden_slides
-        if compressed is not None:
-            self.compressed = compressed
-        if viewer_included is not None:
-            self.viewer_included = viewer_included
-        if show_page_border is not None:
-            self.show_page_border = show_page_border
-        if show_full_screen is not None:
-            self.show_full_screen = show_full_screen
-        if show_page_stepper is not None:
-            self.show_page_stepper = show_page_stepper
-        if show_search is not None:
-            self.show_search = show_search
-        if show_top_pane is not None:
-            self.show_top_pane = show_top_pane
-        if show_bottom_pane is not None:
-            self.show_bottom_pane = show_bottom_pane
-        if show_left_pane is not None:
-            self.show_left_pane = show_left_pane
-        if start_open_left_pane is not None:
-            self.start_open_left_pane = start_open_left_pane
-        if enable_context_menu is not None:
-            self.enable_context_menu = enable_context_menu
+        self.show_hidden_slides = show_hidden_slides
+        self.compressed = compressed
+        self.viewer_included = viewer_included
+        self.show_page_border = show_page_border
+        self.show_full_screen = show_full_screen
+        self.show_page_stepper = show_page_stepper
+        self.show_search = show_search
+        self.show_top_pane = show_top_pane
+        self.show_bottom_pane = show_bottom_pane
+        self.show_left_pane = show_left_pane
+        self.start_open_left_pane = start_open_left_pane
+        self.enable_context_menu = enable_context_menu
         if logo_image is not None:
             self.logo_image = logo_image
         if logo_link is not None:
             self.logo_link = logo_link
-        if jpeg_quality is not None:
-            self.jpeg_quality = jpeg_quality
-        if notes_position is not None:
-            self.notes_position = notes_position
-        if comments_position is not None:
-            self.comments_position = comments_position
-        if comments_area_width is not None:
-            self.comments_area_width = comments_area_width
+        self.jpeg_quality = jpeg_quality
+        self.notes_position = notes_position
+        self.comments_position = comments_position
+        self.comments_area_width = comments_area_width
         if comments_area_color is not None:
             self.comments_area_color = comments_area_color
-        if show_comments_by_no_author is not None:
-            self.show_comments_by_no_author = show_comments_by_no_author
+        self.show_comments_by_no_author = show_comments_by_no_author
 
     @property
     def show_hidden_slides(self):
@@ -176,7 +159,6 @@ class SwfExportOptions(ExportOptions):
         :param show_hidden_slides: The show_hidden_slides of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_hidden_slides = show_hidden_slides
 
     @property
@@ -199,7 +181,6 @@ class SwfExportOptions(ExportOptions):
         :param compressed: The compressed of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._compressed = compressed
 
     @property
@@ -222,7 +203,6 @@ class SwfExportOptions(ExportOptions):
         :param viewer_included: The viewer_included of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._viewer_included = viewer_included
 
     @property
@@ -245,7 +225,6 @@ class SwfExportOptions(ExportOptions):
         :param show_page_border: The show_page_border of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_page_border = show_page_border
 
     @property
@@ -268,7 +247,6 @@ class SwfExportOptions(ExportOptions):
         :param show_full_screen: The show_full_screen of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_full_screen = show_full_screen
 
     @property
@@ -291,7 +269,6 @@ class SwfExportOptions(ExportOptions):
         :param show_page_stepper: The show_page_stepper of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_page_stepper = show_page_stepper
 
     @property
@@ -314,7 +291,6 @@ class SwfExportOptions(ExportOptions):
         :param show_search: The show_search of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_search = show_search
 
     @property
@@ -337,7 +313,6 @@ class SwfExportOptions(ExportOptions):
         :param show_top_pane: The show_top_pane of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_top_pane = show_top_pane
 
     @property
@@ -360,7 +335,6 @@ class SwfExportOptions(ExportOptions):
         :param show_bottom_pane: The show_bottom_pane of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_bottom_pane = show_bottom_pane
 
     @property
@@ -383,7 +357,6 @@ class SwfExportOptions(ExportOptions):
         :param show_left_pane: The show_left_pane of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_left_pane = show_left_pane
 
     @property
@@ -406,7 +379,6 @@ class SwfExportOptions(ExportOptions):
         :param start_open_left_pane: The start_open_left_pane of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._start_open_left_pane = start_open_left_pane
 
     @property
@@ -429,7 +401,6 @@ class SwfExportOptions(ExportOptions):
         :param enable_context_menu: The enable_context_menu of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._enable_context_menu = enable_context_menu
 
     @property
@@ -452,14 +423,13 @@ class SwfExportOptions(ExportOptions):
         :param logo_image: The logo_image of this SwfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._logo_image = logo_image
 
     @property
     def logo_link(self):
         """Gets the logo_link of this SwfExportOptions.  # noqa: E501
 
-        Gets or sets the full hyperlink address for a logo. Has an effect only if a  is specified.   # noqa: E501
+        Gets or sets the full hyperlink address for a logo. Has an effect only if a LogoImage is specified.   # noqa: E501
 
         :return: The logo_link of this SwfExportOptions.  # noqa: E501
         :rtype: str
@@ -470,12 +440,11 @@ class SwfExportOptions(ExportOptions):
     def logo_link(self, logo_link):
         """Sets the logo_link of this SwfExportOptions.
 
-        Gets or sets the full hyperlink address for a logo. Has an effect only if a  is specified.   # noqa: E501
+        Gets or sets the full hyperlink address for a logo. Has an effect only if a LogoImage is specified.   # noqa: E501
 
         :param logo_link: The logo_link of this SwfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._logo_link = logo_link
 
     @property
@@ -498,7 +467,6 @@ class SwfExportOptions(ExportOptions):
         :param jpeg_quality: The jpeg_quality of this SwfExportOptions.  # noqa: E501
         :type: int
         """
-
         self._jpeg_quality = jpeg_quality
 
     @property
@@ -508,7 +476,7 @@ class SwfExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :return: The notes_position of this SwfExportOptions.  # noqa: E501
-        :rtype: NotesPositions
+        :rtype: str
         """
         return self._notes_position
 
@@ -519,9 +487,15 @@ class SwfExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :param notes_position: The notes_position of this SwfExportOptions.  # noqa: E501
-        :type: NotesPositions
+        :type: str
         """
-
+        if notes_position is not None:
+            allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(notes_position, allowed_values)
+                )
         self._notes_position = notes_position
 
     @property
@@ -531,7 +505,7 @@ class SwfExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :return: The comments_position of this SwfExportOptions.  # noqa: E501
-        :rtype: CommentsPositions
+        :rtype: str
         """
         return self._comments_position
 
@@ -542,9 +516,15 @@ class SwfExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :param comments_position: The comments_position of this SwfExportOptions.  # noqa: E501
-        :type: CommentsPositions
+        :type: str
         """
-
+        if comments_position is not None:
+            allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comments_position, allowed_values)
+                )
         self._comments_position = comments_position
 
     @property
@@ -567,7 +547,6 @@ class SwfExportOptions(ExportOptions):
         :param comments_area_width: The comments_area_width of this SwfExportOptions.  # noqa: E501
         :type: int
         """
-
         self._comments_area_width = comments_area_width
 
     @property
@@ -590,7 +569,6 @@ class SwfExportOptions(ExportOptions):
         :param comments_area_color: The comments_area_color of this SwfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._comments_area_color = comments_area_color
 
     @property
@@ -613,7 +591,6 @@ class SwfExportOptions(ExportOptions):
         :param show_comments_by_no_author: The show_comments_by_no_author of this SwfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_comments_by_no_author = show_comments_by_no_author
 
     def to_dict(self):

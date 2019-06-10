@@ -82,7 +82,6 @@ class Pipeline(object):
         :param input: The input of this Pipeline.  # noqa: E501
         :type: Input
         """
-
         self._input = input
 
     @property
@@ -105,7 +104,6 @@ class Pipeline(object):
         :param tasks: The tasks of this Pipeline.  # noqa: E501
         :type: list[Task]
         """
-
         self._tasks = tasks
 
     def to_dict(self):

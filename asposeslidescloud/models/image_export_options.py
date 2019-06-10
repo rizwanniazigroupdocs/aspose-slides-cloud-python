@@ -44,8 +44,8 @@ class ImageExportOptions(ExportOptions):
     """
     swagger_types = {
         'format': 'str',
-        'notes_position': 'NotesPositions',
-        'comments_position': 'CommentsPositions',
+        'notes_position': 'str',
+        'comments_position': 'str',
         'comments_area_width': 'int',
         'comments_area_color': 'str'
     }
@@ -67,12 +67,9 @@ class ImageExportOptions(ExportOptions):
         self._comments_area_width = None
         self._comments_area_color = None
 
-        if notes_position is not None:
-            self.notes_position = notes_position
-        if comments_position is not None:
-            self.comments_position = comments_position
-        if comments_area_width is not None:
-            self.comments_area_width = comments_area_width
+        self.notes_position = notes_position
+        self.comments_position = comments_position
+        self.comments_area_width = comments_area_width
         if comments_area_color is not None:
             self.comments_area_color = comments_area_color
 
@@ -83,7 +80,7 @@ class ImageExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :return: The notes_position of this ImageExportOptions.  # noqa: E501
-        :rtype: NotesPositions
+        :rtype: str
         """
         return self._notes_position
 
@@ -94,9 +91,15 @@ class ImageExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :param notes_position: The notes_position of this ImageExportOptions.  # noqa: E501
-        :type: NotesPositions
+        :type: str
         """
-
+        if notes_position is not None:
+            allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(notes_position, allowed_values)
+                )
         self._notes_position = notes_position
 
     @property
@@ -106,7 +109,7 @@ class ImageExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :return: The comments_position of this ImageExportOptions.  # noqa: E501
-        :rtype: CommentsPositions
+        :rtype: str
         """
         return self._comments_position
 
@@ -117,9 +120,15 @@ class ImageExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :param comments_position: The comments_position of this ImageExportOptions.  # noqa: E501
-        :type: CommentsPositions
+        :type: str
         """
-
+        if comments_position is not None:
+            allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comments_position, allowed_values)
+                )
         self._comments_position = comments_position
 
     @property
@@ -142,7 +151,6 @@ class ImageExportOptions(ExportOptions):
         :param comments_area_width: The comments_area_width of this ImageExportOptions.  # noqa: E501
         :type: int
         """
-
         self._comments_area_width = comments_area_width
 
     @property
@@ -165,7 +173,6 @@ class ImageExportOptions(ExportOptions):
         :param comments_area_color: The comments_area_color of this ImageExportOptions.  # noqa: E501
         :type: str
         """
-
         self._comments_area_color = comments_area_color
 
     def to_dict(self):

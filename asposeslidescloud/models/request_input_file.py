@@ -43,25 +43,24 @@ class RequestInputFile(InputFile):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
         'password': 'str',
+        'type': 'str',
         'index': 'int'
     }
 
     attribute_map = {
-        'type': 'Type',
         'password': 'Password',
+        'type': 'Type',
         'index': 'Index'
     }
 
-    def __init__(self, type='Enum:InputFileType.Request', password=None, index=None):  # noqa: E501
+    def __init__(self, password=None, type='Request', index=None):  # noqa: E501
         """RequestInputFile - a model defined in Swagger"""  # noqa: E501
-        super(RequestInputFile, self).__init__(type, password)
+        super(RequestInputFile, self).__init__(password, type)
 
         self._index = None
 
-        if index is not None:
-            self.index = index
+        self.index = index
 
     @property
     def index(self):
@@ -83,7 +82,6 @@ class RequestInputFile(InputFile):
         :param index: The index of this RequestInputFile.  # noqa: E501
         :type: int
         """
-
         self._index = index
 
     def to_dict(self):

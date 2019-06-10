@@ -45,9 +45,6 @@ class GroupShape(ShapeBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -59,15 +56,14 @@ class GroupShape(ShapeBase):
         'shapes': 'ResourceUriElement',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'type': 'str',
+        'shape_type': 'str'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -79,12 +75,14 @@ class GroupShape(ShapeBase):
         'shapes': 'Shapes',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.GroupShape', shape_type='Enum:CombinedShapeType.GroupShape', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='GroupShape', shape_type='GroupShape'):  # noqa: E501
         """GroupShape - a model defined in Swagger"""  # noqa: E501
-        super(GroupShape, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format)
+        super(GroupShape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

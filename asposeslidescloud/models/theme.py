@@ -45,7 +45,6 @@ class Theme(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'name': 'str',
         'color_scheme': 'ResourceUriElement',
         'font_scheme': 'ResourceUriElement',
@@ -55,16 +54,15 @@ class Theme(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'name': 'Name',
         'color_scheme': 'ColorScheme',
         'font_scheme': 'FontScheme',
         'format_scheme': 'FormatScheme'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, name=None, color_scheme=None, font_scheme=None, format_scheme=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, color_scheme=None, font_scheme=None, format_scheme=None):  # noqa: E501
         """Theme - a model defined in Swagger"""  # noqa: E501
-        super(Theme, self).__init__(self_uri, alternate_links, links)
+        super(Theme, self).__init__(self_uri, alternate_links)
 
         self._name = None
         self._color_scheme = None
@@ -98,7 +96,6 @@ class Theme(ResourceBase):
         :param name: The name of this Theme.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -119,7 +116,6 @@ class Theme(ResourceBase):
         :param color_scheme: The color_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._color_scheme = color_scheme
 
     @property
@@ -140,7 +136,6 @@ class Theme(ResourceBase):
         :param font_scheme: The font_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._font_scheme = font_scheme
 
     @property
@@ -161,7 +156,6 @@ class Theme(ResourceBase):
         :param format_scheme: The format_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._format_scheme = format_scheme
 
     def to_dict(self):

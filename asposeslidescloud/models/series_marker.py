@@ -43,7 +43,7 @@ class SeriesMarker(object):
     """
     swagger_types = {
         'size': 'int',
-        'symbol': 'MarkerStyleType',
+        'symbol': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat'
@@ -95,9 +95,6 @@ class SeriesMarker(object):
         :param size: The size of this SeriesMarker.  # noqa: E501
         :type: int
         """
-        if size is None:
-            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
-
         self._size = size
 
     @property
@@ -107,7 +104,7 @@ class SeriesMarker(object):
         symbol  # noqa: E501
 
         :return: The symbol of this SeriesMarker.  # noqa: E501
-        :rtype: MarkerStyleType
+        :rtype: str
         """
         return self._symbol
 
@@ -118,11 +115,15 @@ class SeriesMarker(object):
         symbol  # noqa: E501
 
         :param symbol: The symbol of this SeriesMarker.  # noqa: E501
-        :type: MarkerStyleType
+        :type: str
         """
-        if symbol is None:
-            raise ValueError("Invalid value for `symbol`, must not be `None`")  # noqa: E501
-
+        if symbol is not None:
+            allowed_values = ["Circle", "Dash", "Diamond", "Dot", "None", "Picture", "Plus", "Square", "Star", "Triangle", "X", "NotDefined"]  # noqa: E501
+            if symbol not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `symbol` ({0}), must be one of {1}"  # noqa: E501
+                    .format(symbol, allowed_values)
+                )
         self._symbol = symbol
 
     @property
@@ -145,7 +146,6 @@ class SeriesMarker(object):
         :param fill_format: The fill_format of this SeriesMarker.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -168,7 +168,6 @@ class SeriesMarker(object):
         :param effect_format: The effect_format of this SeriesMarker.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -191,7 +190,6 @@ class SeriesMarker(object):
         :param line_format: The line_format of this SeriesMarker.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     def to_dict(self):

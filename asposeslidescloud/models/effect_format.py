@@ -112,7 +112,6 @@ class EffectFormat(object):
         :param blur: The blur of this EffectFormat.  # noqa: E501
         :type: BlurEffect
         """
-
         self._blur = blur
 
     @property
@@ -135,7 +134,6 @@ class EffectFormat(object):
         :param glow: The glow of this EffectFormat.  # noqa: E501
         :type: GlowEffect
         """
-
         self._glow = glow
 
     @property
@@ -158,7 +156,6 @@ class EffectFormat(object):
         :param inner_shadow: The inner_shadow of this EffectFormat.  # noqa: E501
         :type: InnerShadowEffect
         """
-
         self._inner_shadow = inner_shadow
 
     @property
@@ -181,7 +178,6 @@ class EffectFormat(object):
         :param outer_shadow: The outer_shadow of this EffectFormat.  # noqa: E501
         :type: OuterShadowEffect
         """
-
         self._outer_shadow = outer_shadow
 
     @property
@@ -204,7 +200,6 @@ class EffectFormat(object):
         :param preset_shadow: The preset_shadow of this EffectFormat.  # noqa: E501
         :type: PresetShadowEffect
         """
-
         self._preset_shadow = preset_shadow
 
     @property
@@ -227,7 +222,6 @@ class EffectFormat(object):
         :param soft_edge: The soft_edge of this EffectFormat.  # noqa: E501
         :type: SoftEdgeEffect
         """
-
         self._soft_edge = soft_edge
 
     @property
@@ -250,7 +244,6 @@ class EffectFormat(object):
         :param reflection: The reflection of this EffectFormat.  # noqa: E501
         :type: ReflectionEffect
         """
-
         self._reflection = reflection
 
     @property
@@ -273,7 +266,6 @@ class EffectFormat(object):
         :param fill_overlay: The fill_overlay of this EffectFormat.  # noqa: E501
         :type: FillOverlayEffect
         """
-
         self._fill_overlay = fill_overlay
 
     def to_dict(self):

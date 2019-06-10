@@ -74,9 +74,6 @@ class OneValueChartDataPoint(object):
         :param value: The value of this OneValueChartDataPoint.  # noqa: E501
         :type: float
         """
-        if value is None:
-            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
-
         self._value = value
 
     def to_dict(self):

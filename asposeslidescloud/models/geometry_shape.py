@@ -45,9 +45,6 @@ class GeometryShape(ShapeBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'ShapeType',
-        'shape_type': 'CombinedShapeType',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,15 +57,14 @@ class GeometryShape(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'geometry_shape_type': 'GeometryShapeType'
+        'type': 'str',
+        'shape_type': 'str',
+        'geometry_shape_type': 'str'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -81,17 +77,18 @@ class GeometryShape(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'geometry_shape_type': 'GeometryShapeType'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type=None, shape_type=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, geometry_shape_type=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None, shape_type=None, geometry_shape_type=None):  # noqa: E501
         """GeometryShape - a model defined in Swagger"""  # noqa: E501
-        super(GeometryShape, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format)
+        super(GeometryShape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._geometry_shape_type = None
 
-        if geometry_shape_type is not None:
-            self.geometry_shape_type = geometry_shape_type
+        self.geometry_shape_type = geometry_shape_type
 
     @property
     def geometry_shape_type(self):
@@ -99,7 +96,7 @@ class GeometryShape(ShapeBase):
 
 
         :return: The geometry_shape_type of this GeometryShape.  # noqa: E501
-        :rtype: GeometryShapeType
+        :rtype: str
         """
         return self._geometry_shape_type
 
@@ -109,9 +106,15 @@ class GeometryShape(ShapeBase):
 
 
         :param geometry_shape_type: The geometry_shape_type of this GeometryShape.  # noqa: E501
-        :type: GeometryShapeType
+        :type: str
         """
-
+        if geometry_shape_type is not None:
+            allowed_values = ["Custom", "Line", "LineInverse", "Triangle", "RightTriangle", "Rectangle", "Diamond", "Parallelogram", "Trapezoid", "NonIsoscelesTrapezoid", "Pentagon", "Hexagon", "Heptagon", "Octagon", "Decagon", "Dodecagon", "FourPointedStar", "FivePointedStar", "SixPointedStar", "SevenPointedStar", "EightPointedStar", "TenPointedStar", "TwelvePointedStar", "SixteenPointedStar", "TwentyFourPointedStar", "ThirtyTwoPointedStar", "RoundCornerRectangle", "OneRoundCornerRectangle", "TwoSamesideRoundCornerRectangle", "TwoDiagonalRoundCornerRectangle", "OneSnipOneRoundCornerRectangle", "OneSnipCornerRectangle", "TwoSamesideSnipCornerRectangle", "TwoDiagonalSnipCornerRectangle", "Plaque", "Ellipse", "Teardrop", "HomePlate", "Chevron", "PieWedge", "Pie", "BlockArc", "Donut", "NoSmoking", "RightArrow", "LeftArrow", "UpArrow", "DownArrow", "StripedRightArrow", "NotchedRightArrow", "BentUpArrow", "LeftRightArrow", "UpDownArrow", "LeftUpArrow", "LeftRightUpArrow", "QuadArrow", "CalloutLeftArrow", "CalloutRightArrow", "CalloutUpArrow", "CalloutDownArrow", "CalloutLeftRightArrow", "CalloutUpDownArrow", "CalloutQuadArrow", "BentArrow", "UTurnArrow", "CircularArrow", "LeftCircularArrow", "LeftRightCircularArrow", "CurvedRightArrow", "CurvedLeftArrow", "CurvedUpArrow", "CurvedDownArrow", "SwooshArrow", "Cube", "Can", "LightningBolt", "Heart", "Sun", "Moon", "SmileyFace", "IrregularSeal1", "IrregularSeal2", "FoldedCorner", "Bevel", "Frame", "HalfFrame", "Corner", "DiagonalStripe", "Chord", "CurvedArc", "LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "BracketPair", "BracePair", "StraightConnector1", "BentConnector2", "BentConnector3", "BentConnector4", "BentConnector5", "CurvedConnector2", "CurvedConnector3", "CurvedConnector4", "CurvedConnector5", "Callout1", "Callout2", "Callout3", "Callout1WithAccent", "Callout2WithAccent", "Callout3WithAccent", "Callout1WithBorder", "Callout2WithBorder", "Callout3WithBorder", "Callout1WithBorderAndAccent", "Callout2WithBorderAndAccent", "Callout3WithBorderAndAccent", "CalloutWedgeRectangle", "CalloutWedgeRoundRectangle", "CalloutWedgeEllipse", "CalloutCloud", "Cloud", "Ribbon", "Ribbon2", "EllipseRibbon", "EllipseRibbon2", "LeftRightRibbon", "VerticalScroll", "HorizontalScroll", "Wave", "DoubleWave", "Plus", "ProcessFlow", "DecisionFlow", "InputOutputFlow", "PredefinedProcessFlow", "InternalStorageFlow", "DocumentFlow", "MultiDocumentFlow", "TerminatorFlow", "PreparationFlow", "ManualInputFlow", "ManualOperationFlow", "ConnectorFlow", "PunchedCardFlow", "PunchedTapeFlow", "SummingJunctionFlow", "OrFlow", "CollateFlow", "SortFlow", "ExtractFlow", "MergeFlow", "OfflineStorageFlow", "OnlineStorageFlow", "MagneticTapeFlow", "MagneticDiskFlow", "MagneticDrumFlow", "DisplayFlow", "DelayFlow", "AlternateProcessFlow", "OffPageConnectorFlow", "BlankButton", "HomeButton", "HelpButton", "InformationButton", "ForwardOrNextButton", "BackOrPreviousButton", "EndButton", "BeginningButton", "ReturnButton", "DocumentButton", "SoundButton", "MovieButton", "Gear6", "Gear9", "Funnel", "PlusMath", "MinusMath", "MultiplyMath", "DivideMath", "EqualMath", "NotEqualMath", "CornerTabs", "SquareTabs", "PlaqueTabs", "ChartX", "ChartStar", "ChartPlus", "NotDefined"]  # noqa: E501
+            if geometry_shape_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `geometry_shape_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(geometry_shape_type, allowed_values)
+                )
         self._geometry_shape_type = geometry_shape_type
 
     def to_dict(self):

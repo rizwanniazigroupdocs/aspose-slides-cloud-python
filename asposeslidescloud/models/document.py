@@ -45,7 +45,6 @@ class Document(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'document_properties': 'ResourceUriElement',
         'slides': 'ResourceUriElement',
         'images': 'ResourceUriElement',
@@ -56,7 +55,6 @@ class Document(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'document_properties': 'DocumentProperties',
         'slides': 'Slides',
         'images': 'Images',
@@ -64,9 +62,9 @@ class Document(ResourceBase):
         'master_slides': 'MasterSlides'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, document_properties=None, slides=None, images=None, layout_slides=None, master_slides=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, document_properties=None, slides=None, images=None, layout_slides=None, master_slides=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
-        super(Document, self).__init__(self_uri, alternate_links, links)
+        super(Document, self).__init__(self_uri, alternate_links)
 
         self._document_properties = None
         self._slides = None
@@ -105,7 +103,6 @@ class Document(ResourceBase):
         :param document_properties: The document_properties of this Document.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._document_properties = document_properties
 
     @property
@@ -128,7 +125,6 @@ class Document(ResourceBase):
         :param slides: The slides of this Document.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._slides = slides
 
     @property
@@ -151,7 +147,6 @@ class Document(ResourceBase):
         :param images: The images of this Document.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._images = images
 
     @property
@@ -174,7 +169,6 @@ class Document(ResourceBase):
         :param layout_slides: The layout_slides of this Document.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._layout_slides = layout_slides
 
     @property
@@ -197,7 +191,6 @@ class Document(ResourceBase):
         :param master_slides: The master_slides of this Document.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._master_slides = master_slides
 
     def to_dict(self):

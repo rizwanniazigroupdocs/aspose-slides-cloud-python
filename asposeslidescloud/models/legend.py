@@ -42,7 +42,7 @@ class Legend(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'position': 'LegendPositionType',
+        'position': 'str',
         'x': 'float',
         'y': 'float',
         'width': 'float',
@@ -98,7 +98,7 @@ class Legend(object):
         position  # noqa: E501
 
         :return: The position of this Legend.  # noqa: E501
-        :rtype: LegendPositionType
+        :rtype: str
         """
         return self._position
 
@@ -109,11 +109,15 @@ class Legend(object):
         position  # noqa: E501
 
         :param position: The position of this Legend.  # noqa: E501
-        :type: LegendPositionType
+        :type: str
         """
-        if position is None:
-            raise ValueError("Invalid value for `position`, must not be `None`")  # noqa: E501
-
+        if position is not None:
+            allowed_values = ["Bottom", "Left", "Right", "Top", "TopRight"]  # noqa: E501
+            if position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(position, allowed_values)
+                )
         self._position = position
 
     @property
@@ -136,9 +140,6 @@ class Legend(object):
         :param x: The x of this Legend.  # noqa: E501
         :type: float
         """
-        if x is None:
-            raise ValueError("Invalid value for `x`, must not be `None`")  # noqa: E501
-
         self._x = x
 
     @property
@@ -161,9 +162,6 @@ class Legend(object):
         :param y: The y of this Legend.  # noqa: E501
         :type: float
         """
-        if y is None:
-            raise ValueError("Invalid value for `y`, must not be `None`")  # noqa: E501
-
         self._y = y
 
     @property
@@ -186,9 +184,6 @@ class Legend(object):
         :param width: The width of this Legend.  # noqa: E501
         :type: float
         """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-
         self._width = width
 
     @property
@@ -211,9 +206,6 @@ class Legend(object):
         :param height: The height of this Legend.  # noqa: E501
         :type: float
         """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-
         self._height = height
 
     @property
@@ -236,9 +228,6 @@ class Legend(object):
         :param overlay: The overlay of this Legend.  # noqa: E501
         :type: bool
         """
-        if overlay is None:
-            raise ValueError("Invalid value for `overlay`, must not be `None`")  # noqa: E501
-
         self._overlay = overlay
 
     @property
@@ -261,7 +250,6 @@ class Legend(object):
         :param fill_format: The fill_format of this Legend.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -284,7 +272,6 @@ class Legend(object):
         :param effect_format: The effect_format of this Legend.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -307,7 +294,6 @@ class Legend(object):
         :param line_format: The line_format of this Legend.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     def to_dict(self):

@@ -45,20 +45,18 @@ class Placeholders(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'placeholder_links': 'list[ResourceUri]'
     }
 
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'placeholder_links': 'PlaceholderLinks'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, placeholder_links=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, placeholder_links=None):  # noqa: E501
         """Placeholders - a model defined in Swagger"""  # noqa: E501
-        super(Placeholders, self).__init__(self_uri, alternate_links, links)
+        super(Placeholders, self).__init__(self_uri, alternate_links)
 
         self._placeholder_links = None
 
@@ -83,7 +81,6 @@ class Placeholders(ResourceBase):
         :param placeholder_links: The placeholder_links of this Placeholders.  # noqa: E501
         :type: list[ResourceUri]
         """
-
         self._placeholder_links = placeholder_links
 
     def to_dict(self):

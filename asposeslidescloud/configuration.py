@@ -42,8 +42,8 @@ class Configuration(object):
         """
         # Default Base url
         self.base_url = "https://api.aspose.cloud"
-        # Default Base url
-        self.version = "v1.1"
+        self.auth_base_url = "https://api.aspose.cloud"
+        self.version = "v3.0"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -56,9 +56,6 @@ class Configuration(object):
 
         # access token for OAuth
         self.access_token = ""
-
-        # refresh token for OAuth
-        self.refresh_token = ""
 
         # Logging Settings
         self.logger = {}
@@ -88,7 +85,7 @@ class Configuration(object):
         # Proxy URL
         self.proxy = None
         # Safe chars for path_param
-        self.safe_chars_for_path_param = ''
+        self.safe_chars_for_path_param = '/'
 
     @property
     def host(self):
@@ -194,6 +191,6 @@ class Configuration(object):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 1.1\n"\
-               "SDK Package Version: 19.1.0".\
+               "Version of the API: 3.0\n"\
+               "SDK Package Version: 19.5.0".\
                format(env=sys.platform, pyversion=sys.version)

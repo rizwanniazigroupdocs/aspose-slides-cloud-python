@@ -44,7 +44,7 @@ class ShapeImageExportOptions(object):
     swagger_types = {
         'scale_x': 'float',
         'scale_y': 'float',
-        'thumbnail_bounds': 'ShapeThumbnailBounds',
+        'thumbnail_bounds': 'str',
         'format': 'str'
     }
 
@@ -89,9 +89,6 @@ class ShapeImageExportOptions(object):
         :param scale_x: The scale_x of this ShapeImageExportOptions.  # noqa: E501
         :type: float
         """
-        if scale_x is None:
-            raise ValueError("Invalid value for `scale_x`, must not be `None`")  # noqa: E501
-
         self._scale_x = scale_x
 
     @property
@@ -114,9 +111,6 @@ class ShapeImageExportOptions(object):
         :param scale_y: The scale_y of this ShapeImageExportOptions.  # noqa: E501
         :type: float
         """
-        if scale_y is None:
-            raise ValueError("Invalid value for `scale_y`, must not be `None`")  # noqa: E501
-
         self._scale_y = scale_y
 
     @property
@@ -126,7 +120,7 @@ class ShapeImageExportOptions(object):
         Get or sets thumbnail bounds  # noqa: E501
 
         :return: The thumbnail_bounds of this ShapeImageExportOptions.  # noqa: E501
-        :rtype: ShapeThumbnailBounds
+        :rtype: str
         """
         return self._thumbnail_bounds
 
@@ -137,11 +131,15 @@ class ShapeImageExportOptions(object):
         Get or sets thumbnail bounds  # noqa: E501
 
         :param thumbnail_bounds: The thumbnail_bounds of this ShapeImageExportOptions.  # noqa: E501
-        :type: ShapeThumbnailBounds
+        :type: str
         """
-        if thumbnail_bounds is None:
-            raise ValueError("Invalid value for `thumbnail_bounds`, must not be `None`")  # noqa: E501
-
+        if thumbnail_bounds is not None:
+            allowed_values = ["Slide", "Shape", "Appearance"]  # noqa: E501
+            if thumbnail_bounds not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `thumbnail_bounds` ({0}), must be one of {1}"  # noqa: E501
+                    .format(thumbnail_bounds, allowed_values)
+                )
         self._thumbnail_bounds = thumbnail_bounds
 
     @property
@@ -164,7 +162,6 @@ class ShapeImageExportOptions(object):
         :param format: The format of this ShapeImageExportOptions.  # noqa: E501
         :type: str
         """
-
         self._format = format
 
     def to_dict(self):

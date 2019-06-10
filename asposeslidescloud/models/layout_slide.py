@@ -45,9 +45,8 @@ class LayoutSlide(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'name': 'str',
-        'type': 'LayoutSlideType',
+        'type': 'str',
         'master_slide': 'ResourceUriElement',
         'depending_slides': 'list[ResourceUriElement]'
     }
@@ -55,16 +54,15 @@ class LayoutSlide(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'name': 'Name',
         'type': 'Type',
         'master_slide': 'MasterSlide',
         'depending_slides': 'DependingSlides'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, name=None, type=None, master_slide=None, depending_slides=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, type=None, master_slide=None, depending_slides=None):  # noqa: E501
         """LayoutSlide - a model defined in Swagger"""  # noqa: E501
-        super(LayoutSlide, self).__init__(self_uri, alternate_links, links)
+        super(LayoutSlide, self).__init__(self_uri, alternate_links)
 
         self._name = None
         self._type = None
@@ -73,8 +71,7 @@ class LayoutSlide(ResourceBase):
 
         if name is not None:
             self.name = name
-        if type is not None:
-            self.type = type
+        self.type = type
         if master_slide is not None:
             self.master_slide = master_slide
         if depending_slides is not None:
@@ -98,7 +95,6 @@ class LayoutSlide(ResourceBase):
         :param name: The name of this LayoutSlide.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -107,7 +103,7 @@ class LayoutSlide(ResourceBase):
 
 
         :return: The type of this LayoutSlide.  # noqa: E501
-        :rtype: LayoutSlideType
+        :rtype: str
         """
         return self._type
 
@@ -117,9 +113,15 @@ class LayoutSlide(ResourceBase):
 
 
         :param type: The type of this LayoutSlide.  # noqa: E501
-        :type: LayoutSlideType
+        :type: str
         """
-
+        if type is not None:
+            allowed_values = ["Title", "Text", "TwoColumnText", "Table", "TextAndChart", "ChartAndText", "Diagram", "Chart", "TextAndClipArt", "ClipArtAndText", "TitleOnly", "Blank", "TextAndObject", "ObjectAndText", "Object", "TitleAndObject", "TextAndMedia", "MediaAndText", "ObjectOverText", "TextOverObject", "TextAndTwoObjects", "TwoObjectsAndText", "TwoObjectsOverText", "FourObjects", "VerticalText", "ClipArtAndVerticalText", "VerticalTitleAndText", "VerticalTitleAndTextOverChart", "TwoObjects", "ObjectAndTwoObject", "TwoObjectsAndObject", "SectionHeader", "TwoTextAndTwoObjects", "TitleObjectAndCaption", "PictureAndCaption", "Custom"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     @property
@@ -140,7 +142,6 @@ class LayoutSlide(ResourceBase):
         :param master_slide: The master_slide of this LayoutSlide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._master_slide = master_slide
 
     @property
@@ -161,7 +162,6 @@ class LayoutSlide(ResourceBase):
         :param depending_slides: The depending_slides of this LayoutSlide.  # noqa: E501
         :type: list[ResourceUriElement]
         """
-
         self._depending_slides = depending_slides
 
     def to_dict(self):

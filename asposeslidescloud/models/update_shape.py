@@ -54,7 +54,7 @@ class UpdateShape(Task):
         'shape_path': 'ShapePath'
     }
 
-    def __init__(self, type='Enum:TaskType.UpdateShape', shape=None, shape_path=None):  # noqa: E501
+    def __init__(self, type='UpdateShape', shape=None, shape_path=None):  # noqa: E501
         """UpdateShape - a model defined in Swagger"""  # noqa: E501
         super(UpdateShape, self).__init__(type)
 
@@ -84,7 +84,6 @@ class UpdateShape(Task):
         :param shape: The shape of this UpdateShape.  # noqa: E501
         :type: ShapeBase
         """
-
         self._shape = shape
 
     @property
@@ -105,7 +104,6 @@ class UpdateShape(Task):
         :param shape_path: The shape_path of this UpdateShape.  # noqa: E501
         :type: str
         """
-
         self._shape_path = shape_path
 
     def to_dict(self):

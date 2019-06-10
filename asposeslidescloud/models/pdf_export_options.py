@@ -44,9 +44,9 @@ class PdfExportOptions(ExportOptions):
     """
     swagger_types = {
         'format': 'str',
-        'text_compression': 'PdfTextCompression',
+        'text_compression': 'str',
         'embed_full_fonts': 'bool',
-        'compliance': 'PdfCompliance',
+        'compliance': 'str',
         'sufficient_resolution': 'float',
         'jpeg_quality': 'int',
         'draw_slides_frame': 'bool',
@@ -55,8 +55,8 @@ class PdfExportOptions(ExportOptions):
         'password': 'str',
         'embed_true_type_fonts_for_ascii': 'bool',
         'additional_common_font_families': 'list[str]',
-        'notes_position': 'NotesPositions',
-        'comments_position': 'CommentsPositions',
+        'notes_position': 'str',
+        'comments_position': 'str',
         'comments_area_width': 'int',
         'comments_area_color': 'str',
         'show_comments_by_no_author': 'bool',
@@ -109,42 +109,28 @@ class PdfExportOptions(ExportOptions):
         self._image_transparent_color = None
         self._apply_image_transparent = None
 
-        if text_compression is not None:
-            self.text_compression = text_compression
-        if embed_full_fonts is not None:
-            self.embed_full_fonts = embed_full_fonts
-        if compliance is not None:
-            self.compliance = compliance
-        if sufficient_resolution is not None:
-            self.sufficient_resolution = sufficient_resolution
-        if jpeg_quality is not None:
-            self.jpeg_quality = jpeg_quality
-        if draw_slides_frame is not None:
-            self.draw_slides_frame = draw_slides_frame
-        if show_hidden_slides is not None:
-            self.show_hidden_slides = show_hidden_slides
-        if save_metafiles_as_png is not None:
-            self.save_metafiles_as_png = save_metafiles_as_png
+        self.text_compression = text_compression
+        self.embed_full_fonts = embed_full_fonts
+        self.compliance = compliance
+        self.sufficient_resolution = sufficient_resolution
+        self.jpeg_quality = jpeg_quality
+        self.draw_slides_frame = draw_slides_frame
+        self.show_hidden_slides = show_hidden_slides
+        self.save_metafiles_as_png = save_metafiles_as_png
         if password is not None:
             self.password = password
-        if embed_true_type_fonts_for_ascii is not None:
-            self.embed_true_type_fonts_for_ascii = embed_true_type_fonts_for_ascii
+        self.embed_true_type_fonts_for_ascii = embed_true_type_fonts_for_ascii
         if additional_common_font_families is not None:
             self.additional_common_font_families = additional_common_font_families
-        if notes_position is not None:
-            self.notes_position = notes_position
-        if comments_position is not None:
-            self.comments_position = comments_position
-        if comments_area_width is not None:
-            self.comments_area_width = comments_area_width
+        self.notes_position = notes_position
+        self.comments_position = comments_position
+        self.comments_area_width = comments_area_width
         if comments_area_color is not None:
             self.comments_area_color = comments_area_color
-        if show_comments_by_no_author is not None:
-            self.show_comments_by_no_author = show_comments_by_no_author
+        self.show_comments_by_no_author = show_comments_by_no_author
         if image_transparent_color is not None:
             self.image_transparent_color = image_transparent_color
-        if apply_image_transparent is not None:
-            self.apply_image_transparent = apply_image_transparent
+        self.apply_image_transparent = apply_image_transparent
 
     @property
     def text_compression(self):
@@ -153,7 +139,7 @@ class PdfExportOptions(ExportOptions):
         Specifies compression type to be used for all textual content in the document.  # noqa: E501
 
         :return: The text_compression of this PdfExportOptions.  # noqa: E501
-        :rtype: PdfTextCompression
+        :rtype: str
         """
         return self._text_compression
 
@@ -164,9 +150,15 @@ class PdfExportOptions(ExportOptions):
         Specifies compression type to be used for all textual content in the document.  # noqa: E501
 
         :param text_compression: The text_compression of this PdfExportOptions.  # noqa: E501
-        :type: PdfTextCompression
+        :type: str
         """
-
+        if text_compression is not None:
+            allowed_values = ["None", "Flate"]  # noqa: E501
+            if text_compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_compression, allowed_values)
+                )
         self._text_compression = text_compression
 
     @property
@@ -189,7 +181,6 @@ class PdfExportOptions(ExportOptions):
         :param embed_full_fonts: The embed_full_fonts of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._embed_full_fonts = embed_full_fonts
 
     @property
@@ -199,7 +190,7 @@ class PdfExportOptions(ExportOptions):
         Desired conformance level for generated PDF document.  # noqa: E501
 
         :return: The compliance of this PdfExportOptions.  # noqa: E501
-        :rtype: PdfCompliance
+        :rtype: str
         """
         return self._compliance
 
@@ -210,16 +201,22 @@ class PdfExportOptions(ExportOptions):
         Desired conformance level for generated PDF document.  # noqa: E501
 
         :param compliance: The compliance of this PdfExportOptions.  # noqa: E501
-        :type: PdfCompliance
+        :type: str
         """
-
+        if compliance is not None:
+            allowed_values = ["Pdf15", "PdfA1b"]  # noqa: E501
+            if compliance not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compliance` ({0}), must be one of {1}"  # noqa: E501
+                    .format(compliance, allowed_values)
+                )
         self._compliance = compliance
 
     @property
     def sufficient_resolution(self):
         """Gets the sufficient_resolution of this PdfExportOptions.  # noqa: E501
 
-        Returns or sets a value determining resolution of images inside PDF document. Property affects on file size, time of export and image quality.The default value is 96.  # noqa: E501
+        Returns or sets a value determining resolution of images inside PDF document.  Property affects on file size, time of export and image quality. The default value is 96.  # noqa: E501
 
         :return: The sufficient_resolution of this PdfExportOptions.  # noqa: E501
         :rtype: float
@@ -230,12 +227,11 @@ class PdfExportOptions(ExportOptions):
     def sufficient_resolution(self, sufficient_resolution):
         """Sets the sufficient_resolution of this PdfExportOptions.
 
-        Returns or sets a value determining resolution of images inside PDF document. Property affects on file size, time of export and image quality.The default value is 96.  # noqa: E501
+        Returns or sets a value determining resolution of images inside PDF document.  Property affects on file size, time of export and image quality. The default value is 96.  # noqa: E501
 
         :param sufficient_resolution: The sufficient_resolution of this PdfExportOptions.  # noqa: E501
         :type: float
         """
-
         self._sufficient_resolution = sufficient_resolution
 
     @property
@@ -258,7 +254,6 @@ class PdfExportOptions(ExportOptions):
         :param jpeg_quality: The jpeg_quality of this PdfExportOptions.  # noqa: E501
         :type: int
         """
-
         self._jpeg_quality = jpeg_quality
 
     @property
@@ -281,7 +276,6 @@ class PdfExportOptions(ExportOptions):
         :param draw_slides_frame: The draw_slides_frame of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._draw_slides_frame = draw_slides_frame
 
     @property
@@ -304,7 +298,6 @@ class PdfExportOptions(ExportOptions):
         :param show_hidden_slides: The show_hidden_slides of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_hidden_slides = show_hidden_slides
 
     @property
@@ -327,7 +320,6 @@ class PdfExportOptions(ExportOptions):
         :param save_metafiles_as_png: The save_metafiles_as_png of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._save_metafiles_as_png = save_metafiles_as_png
 
     @property
@@ -350,7 +342,6 @@ class PdfExportOptions(ExportOptions):
         :param password: The password of this PdfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._password = password
 
     @property
@@ -373,7 +364,6 @@ class PdfExportOptions(ExportOptions):
         :param embed_true_type_fonts_for_ascii: The embed_true_type_fonts_for_ascii of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._embed_true_type_fonts_for_ascii = embed_true_type_fonts_for_ascii
 
     @property
@@ -396,7 +386,6 @@ class PdfExportOptions(ExportOptions):
         :param additional_common_font_families: The additional_common_font_families of this PdfExportOptions.  # noqa: E501
         :type: list[str]
         """
-
         self._additional_common_font_families = additional_common_font_families
 
     @property
@@ -406,7 +395,7 @@ class PdfExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :return: The notes_position of this PdfExportOptions.  # noqa: E501
-        :rtype: NotesPositions
+        :rtype: str
         """
         return self._notes_position
 
@@ -417,9 +406,15 @@ class PdfExportOptions(ExportOptions):
         Gets or sets the position of the notes on the page.  # noqa: E501
 
         :param notes_position: The notes_position of this PdfExportOptions.  # noqa: E501
-        :type: NotesPositions
+        :type: str
         """
-
+        if notes_position is not None:
+            allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(notes_position, allowed_values)
+                )
         self._notes_position = notes_position
 
     @property
@@ -429,7 +424,7 @@ class PdfExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :return: The comments_position of this PdfExportOptions.  # noqa: E501
-        :rtype: CommentsPositions
+        :rtype: str
         """
         return self._comments_position
 
@@ -440,9 +435,15 @@ class PdfExportOptions(ExportOptions):
         Gets or sets the position of the comments on the page.  # noqa: E501
 
         :param comments_position: The comments_position of this PdfExportOptions.  # noqa: E501
-        :type: CommentsPositions
+        :type: str
         """
-
+        if comments_position is not None:
+            allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comments_position, allowed_values)
+                )
         self._comments_position = comments_position
 
     @property
@@ -465,7 +466,6 @@ class PdfExportOptions(ExportOptions):
         :param comments_area_width: The comments_area_width of this PdfExportOptions.  # noqa: E501
         :type: int
         """
-
         self._comments_area_width = comments_area_width
 
     @property
@@ -488,7 +488,6 @@ class PdfExportOptions(ExportOptions):
         :param comments_area_color: The comments_area_color of this PdfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._comments_area_color = comments_area_color
 
     @property
@@ -511,7 +510,6 @@ class PdfExportOptions(ExportOptions):
         :param show_comments_by_no_author: The show_comments_by_no_author of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._show_comments_by_no_author = show_comments_by_no_author
 
     @property
@@ -534,14 +532,13 @@ class PdfExportOptions(ExportOptions):
         :param image_transparent_color: The image_transparent_color of this PdfExportOptions.  # noqa: E501
         :type: str
         """
-
         self._image_transparent_color = image_transparent_color
 
     @property
     def apply_image_transparent(self):
         """Gets the apply_image_transparent of this PdfExportOptions.  # noqa: E501
 
-        True to apply specified   to an image.  # noqa: E501
+        True to apply specified ImageTransparentColor  to an image.  # noqa: E501
 
         :return: The apply_image_transparent of this PdfExportOptions.  # noqa: E501
         :rtype: bool
@@ -552,12 +549,11 @@ class PdfExportOptions(ExportOptions):
     def apply_image_transparent(self, apply_image_transparent):
         """Sets the apply_image_transparent of this PdfExportOptions.
 
-        True to apply specified   to an image.  # noqa: E501
+        True to apply specified ImageTransparentColor  to an image.  # noqa: E501
 
         :param apply_image_transparent: The apply_image_transparent of this PdfExportOptions.  # noqa: E501
         :type: bool
         """
-
         self._apply_image_transparent = apply_image_transparent
 
     def to_dict(self):

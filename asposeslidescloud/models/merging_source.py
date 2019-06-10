@@ -80,7 +80,6 @@ class MergingSource(object):
         :param input: The input of this MergingSource.  # noqa: E501
         :type: InputFile
         """
-
         self._input = input
 
     @property
@@ -101,7 +100,6 @@ class MergingSource(object):
         :param slides: The slides of this MergingSource.  # noqa: E501
         :type: list[int]
         """
-
         self._slides = slides
 
     def to_dict(self):

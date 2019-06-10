@@ -45,7 +45,6 @@ class NotesSlide(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'text': 'str',
         'shapes': 'ResourceUriElement'
     }
@@ -53,14 +52,13 @@ class NotesSlide(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'text': 'Text',
         'shapes': 'Shapes'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, text=None, shapes=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, text=None, shapes=None):  # noqa: E501
         """NotesSlide - a model defined in Swagger"""  # noqa: E501
-        super(NotesSlide, self).__init__(self_uri, alternate_links, links)
+        super(NotesSlide, self).__init__(self_uri, alternate_links)
 
         self._text = None
         self._shapes = None
@@ -90,7 +88,6 @@ class NotesSlide(ResourceBase):
         :param text: The text of this NotesSlide.  # noqa: E501
         :type: str
         """
-
         self._text = text
 
     @property
@@ -113,7 +110,6 @@ class NotesSlide(ResourceBase):
         :param shapes: The shapes of this NotesSlide.  # noqa: E501
         :type: ResourceUriElement
         """
-
         self._shapes = shapes
 
     def to_dict(self):

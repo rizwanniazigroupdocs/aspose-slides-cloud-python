@@ -54,7 +54,7 @@ class ReflectionEffect(object):
         'end_pos_alpha': 'float',
         'start_reflection_opacity': 'float',
         'end_reflection_opacity': 'float',
-        'rectangle_align': 'RectangleAlignment',
+        'rectangle_align': 'str',
         'rotate_shadow_with_shape': 'bool'
     }
 
@@ -128,9 +128,6 @@ class ReflectionEffect(object):
         :param direction: The direction of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if direction is None:
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
-
         self._direction = direction
 
     @property
@@ -153,9 +150,6 @@ class ReflectionEffect(object):
         :param fade_direction: The fade_direction of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if fade_direction is None:
-            raise ValueError("Invalid value for `fade_direction`, must not be `None`")  # noqa: E501
-
         self._fade_direction = fade_direction
 
     @property
@@ -178,9 +172,6 @@ class ReflectionEffect(object):
         :param distance: The distance of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if distance is None:
-            raise ValueError("Invalid value for `distance`, must not be `None`")  # noqa: E501
-
         self._distance = distance
 
     @property
@@ -203,9 +194,6 @@ class ReflectionEffect(object):
         :param blur_radius: The blur_radius of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if blur_radius is None:
-            raise ValueError("Invalid value for `blur_radius`, must not be `None`")  # noqa: E501
-
         self._blur_radius = blur_radius
 
     @property
@@ -228,9 +216,6 @@ class ReflectionEffect(object):
         :param scale_horizontal: The scale_horizontal of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if scale_horizontal is None:
-            raise ValueError("Invalid value for `scale_horizontal`, must not be `None`")  # noqa: E501
-
         self._scale_horizontal = scale_horizontal
 
     @property
@@ -253,9 +238,6 @@ class ReflectionEffect(object):
         :param scale_vertical: The scale_vertical of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if scale_vertical is None:
-            raise ValueError("Invalid value for `scale_vertical`, must not be `None`")  # noqa: E501
-
         self._scale_vertical = scale_vertical
 
     @property
@@ -278,9 +260,6 @@ class ReflectionEffect(object):
         :param skew_horizontal: The skew_horizontal of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if skew_horizontal is None:
-            raise ValueError("Invalid value for `skew_horizontal`, must not be `None`")  # noqa: E501
-
         self._skew_horizontal = skew_horizontal
 
     @property
@@ -303,9 +282,6 @@ class ReflectionEffect(object):
         :param skew_vertical: The skew_vertical of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if skew_vertical is None:
-            raise ValueError("Invalid value for `skew_vertical`, must not be `None`")  # noqa: E501
-
         self._skew_vertical = skew_vertical
 
     @property
@@ -328,9 +304,6 @@ class ReflectionEffect(object):
         :param start_pos_alpha: The start_pos_alpha of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if start_pos_alpha is None:
-            raise ValueError("Invalid value for `start_pos_alpha`, must not be `None`")  # noqa: E501
-
         self._start_pos_alpha = start_pos_alpha
 
     @property
@@ -353,9 +326,6 @@ class ReflectionEffect(object):
         :param end_pos_alpha: The end_pos_alpha of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if end_pos_alpha is None:
-            raise ValueError("Invalid value for `end_pos_alpha`, must not be `None`")  # noqa: E501
-
         self._end_pos_alpha = end_pos_alpha
 
     @property
@@ -378,9 +348,6 @@ class ReflectionEffect(object):
         :param start_reflection_opacity: The start_reflection_opacity of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if start_reflection_opacity is None:
-            raise ValueError("Invalid value for `start_reflection_opacity`, must not be `None`")  # noqa: E501
-
         self._start_reflection_opacity = start_reflection_opacity
 
     @property
@@ -403,9 +370,6 @@ class ReflectionEffect(object):
         :param end_reflection_opacity: The end_reflection_opacity of this ReflectionEffect.  # noqa: E501
         :type: float
         """
-        if end_reflection_opacity is None:
-            raise ValueError("Invalid value for `end_reflection_opacity`, must not be `None`")  # noqa: E501
-
         self._end_reflection_opacity = end_reflection_opacity
 
     @property
@@ -415,7 +379,7 @@ class ReflectionEffect(object):
         rectangle alignment  # noqa: E501
 
         :return: The rectangle_align of this ReflectionEffect.  # noqa: E501
-        :rtype: RectangleAlignment
+        :rtype: str
         """
         return self._rectangle_align
 
@@ -426,11 +390,15 @@ class ReflectionEffect(object):
         rectangle alignment  # noqa: E501
 
         :param rectangle_align: The rectangle_align of this ReflectionEffect.  # noqa: E501
-        :type: RectangleAlignment
+        :type: str
         """
-        if rectangle_align is None:
-            raise ValueError("Invalid value for `rectangle_align`, must not be `None`")  # noqa: E501
-
+        if rectangle_align is not None:
+            allowed_values = ["TopLeft", "Top", "TopRight", "Left", "Center", "Right", "BottomLeft", "Bottom", "BottomRight", "NotDefined"]  # noqa: E501
+            if rectangle_align not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `rectangle_align` ({0}), must be one of {1}"  # noqa: E501
+                    .format(rectangle_align, allowed_values)
+                )
         self._rectangle_align = rectangle_align
 
     @property
@@ -453,9 +421,6 @@ class ReflectionEffect(object):
         :param rotate_shadow_with_shape: The rotate_shadow_with_shape of this ReflectionEffect.  # noqa: E501
         :type: bool
         """
-        if rotate_shadow_with_shape is None:
-            raise ValueError("Invalid value for `rotate_shadow_with_shape`, must not be `None`")  # noqa: E501
-
         self._rotate_shadow_with_shape = rotate_shadow_with_shape
 
     def to_dict(self):

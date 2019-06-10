@@ -42,8 +42,7 @@ class Series(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data_point_type': 'ChartDataPointType',
-        'type': 'ChartType',
+        'type': 'str',
         'name': 'str',
         'is_color_varied': 'bool',
         'inverted_solid_fill_color': 'str',
@@ -63,7 +62,6 @@ class Series(object):
     }
 
     attribute_map = {
-        'data_point_type': 'DataPointType',
         'type': 'Type',
         'name': 'Name',
         'is_color_varied': 'IsColorVaried',
@@ -83,10 +81,9 @@ class Series(object):
         'line_format': 'LineFormat'
     }
 
-    def __init__(self, data_point_type=None, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
         """Series - a model defined in Swagger"""  # noqa: E501
 
-        self._data_point_type = None
         self._type = None
         self._name = None
         self._is_color_varied = None
@@ -105,7 +102,6 @@ class Series(object):
         self._effect_format = None
         self._line_format = None
 
-        self.data_point_type = data_point_type
         self.type = type
         if name is not None:
             self.name = name
@@ -135,38 +131,13 @@ class Series(object):
             self.line_format = line_format
 
     @property
-    def data_point_type(self):
-        """Gets the data_point_type of this Series.  # noqa: E501
-
-        Data point type.  # noqa: E501
-
-        :return: The data_point_type of this Series.  # noqa: E501
-        :rtype: ChartDataPointType
-        """
-        return self._data_point_type
-
-    @data_point_type.setter
-    def data_point_type(self, data_point_type):
-        """Sets the data_point_type of this Series.
-
-        Data point type.  # noqa: E501
-
-        :param data_point_type: The data_point_type of this Series.  # noqa: E501
-        :type: ChartDataPointType
-        """
-        if data_point_type is None:
-            raise ValueError("Invalid value for `data_point_type`, must not be `None`")  # noqa: E501
-
-        self._data_point_type = data_point_type
-
-    @property
     def type(self):
         """Gets the type of this Series.  # noqa: E501
 
         Series type.  # noqa: E501
 
         :return: The type of this Series.  # noqa: E501
-        :rtype: ChartType
+        :rtype: str
         """
         return self._type
 
@@ -177,11 +148,15 @@ class Series(object):
         Series type.  # noqa: E501
 
         :param type: The type of this Series.  # noqa: E501
-        :type: ChartType
+        :type: str
         """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
+        if type is not None:
+            allowed_values = ["ClusteredColumn", "StackedColumn", "PercentsStackedColumn", "ClusteredColumn3D", "StackedColumn3D", "PercentsStackedColumn3D", "Column3D", "ClusteredCylinder", "StackedCylinder", "PercentsStackedCylinder", "Cylinder3D", "ClusteredCone", "StackedCone", "PercentsStackedCone", "Cone3D", "ClusteredPyramid", "StackedPyramid", "PercentsStackedPyramid", "Pyramid3D", "Line", "StackedLine", "PercentsStackedLine", "LineWithMarkers", "StackedLineWithMarkers", "PercentsStackedLineWithMarkers", "Line3D", "Pie", "Pie3D", "PieOfPie", "ExplodedPie", "ExplodedPie3D", "BarOfPie", "PercentsStackedBar", "ClusteredBar3D", "ClusteredBar", "StackedBar", "StackedBar3D", "PercentsStackedBar3D", "ClusteredHorizontalCylinder", "StackedHorizontalCylinder", "PercentsStackedHorizontalCylinder", "ClusteredHorizontalCone", "StackedHorizontalCone", "PercentsStackedHorizontalCone", "ClusteredHorizontalPyramid", "StackedHorizontalPyramid", "PercentsStackedHorizontalPyramid", "Area", "StackedArea", "PercentsStackedArea", "Area3D", "StackedArea3D", "PercentsStackedArea3D", "ScatterWithMarkers", "ScatterWithSmoothLinesAndMarkers", "ScatterWithSmoothLines", "ScatterWithStraightLinesAndMarkers", "ScatterWithStraightLines", "HighLowClose", "OpenHighLowClose", "VolumeHighLowClose", "VolumeOpenHighLowClose", "Surface3D", "WireframeSurface3D", "Contour", "WireframeContour", "Doughnut", "ExplodedDoughnut", "Bubble", "BubbleWith3D", "Radar", "RadarWithMarkers", "FilledRadar", "SeriesOfMixedTypes"]  # noqa: E501
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values)
+                )
         self._type = type
 
     @property
@@ -204,7 +179,6 @@ class Series(object):
         :param name: The name of this Series.  # noqa: E501
         :type: str
         """
-
         self._name = name
 
     @property
@@ -227,9 +201,6 @@ class Series(object):
         :param is_color_varied: The is_color_varied of this Series.  # noqa: E501
         :type: bool
         """
-        if is_color_varied is None:
-            raise ValueError("Invalid value for `is_color_varied`, must not be `None`")  # noqa: E501
-
         self._is_color_varied = is_color_varied
 
     @property
@@ -252,7 +223,6 @@ class Series(object):
         :param inverted_solid_fill_color: The inverted_solid_fill_color of this Series.  # noqa: E501
         :type: str
         """
-
         self._inverted_solid_fill_color = inverted_solid_fill_color
 
     @property
@@ -275,9 +245,6 @@ class Series(object):
         :param smooth: The smooth of this Series.  # noqa: E501
         :type: bool
         """
-        if smooth is None:
-            raise ValueError("Invalid value for `smooth`, must not be `None`")  # noqa: E501
-
         self._smooth = smooth
 
     @property
@@ -300,9 +267,6 @@ class Series(object):
         :param plot_on_second_axis: The plot_on_second_axis of this Series.  # noqa: E501
         :type: bool
         """
-        if plot_on_second_axis is None:
-            raise ValueError("Invalid value for `plot_on_second_axis`, must not be `None`")  # noqa: E501
-
         self._plot_on_second_axis = plot_on_second_axis
 
     @property
@@ -325,9 +289,6 @@ class Series(object):
         :param order: The order of this Series.  # noqa: E501
         :type: int
         """
-        if order is None:
-            raise ValueError("Invalid value for `order`, must not be `None`")  # noqa: E501
-
         self._order = order
 
     @property
@@ -350,7 +311,6 @@ class Series(object):
         :param number_format_of_y_values: The number_format_of_y_values of this Series.  # noqa: E501
         :type: str
         """
-
         self._number_format_of_y_values = number_format_of_y_values
 
     @property
@@ -373,7 +333,6 @@ class Series(object):
         :param number_format_of_x_values: The number_format_of_x_values of this Series.  # noqa: E501
         :type: str
         """
-
         self._number_format_of_x_values = number_format_of_x_values
 
     @property
@@ -396,7 +355,6 @@ class Series(object):
         :param number_format_of_values: The number_format_of_values of this Series.  # noqa: E501
         :type: str
         """
-
         self._number_format_of_values = number_format_of_values
 
     @property
@@ -419,7 +377,6 @@ class Series(object):
         :param number_format_of_bubble_sizes: The number_format_of_bubble_sizes of this Series.  # noqa: E501
         :type: str
         """
-
         self._number_format_of_bubble_sizes = number_format_of_bubble_sizes
 
     @property
@@ -442,9 +399,6 @@ class Series(object):
         :param invert_if_negative: The invert_if_negative of this Series.  # noqa: E501
         :type: bool
         """
-        if invert_if_negative is None:
-            raise ValueError("Invalid value for `invert_if_negative`, must not be `None`")  # noqa: E501
-
         self._invert_if_negative = invert_if_negative
 
     @property
@@ -467,9 +421,6 @@ class Series(object):
         :param explosion: The explosion of this Series.  # noqa: E501
         :type: int
         """
-        if explosion is None:
-            raise ValueError("Invalid value for `explosion`, must not be `None`")  # noqa: E501
-
         self._explosion = explosion
 
     @property
@@ -492,7 +443,6 @@ class Series(object):
         :param marker: The marker of this Series.  # noqa: E501
         :type: SeriesMarker
         """
-
         self._marker = marker
 
     @property
@@ -515,7 +465,6 @@ class Series(object):
         :param fill_format: The fill_format of this Series.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -538,7 +487,6 @@ class Series(object):
         :param effect_format: The effect_format of this Series.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -561,7 +509,6 @@ class Series(object):
         :param line_format: The line_format of this Series.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     def to_dict(self):

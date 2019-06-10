@@ -45,9 +45,6 @@ class Table(ShapeBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
-        'type': 'str',
-        'shape_type': 'str',
         'name': 'str',
         'width': 'float',
         'height': 'float',
@@ -60,7 +57,9 @@ class Table(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'style': 'TableStylePreset',
+        'type': 'str',
+        'shape_type': 'str',
+        'style': 'str',
         'rows': 'list[TableRow]',
         'columns': 'list[TableColumn]',
         'first_col': 'bool',
@@ -75,9 +74,6 @@ class Table(ShapeBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
         'name': 'Name',
         'width': 'Width',
         'height': 'Height',
@@ -90,6 +86,8 @@ class Table(ShapeBase):
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
+        'type': 'Type',
+        'shape_type': 'ShapeType',
         'style': 'Style',
         'rows': 'Rows',
         'columns': 'Columns',
@@ -102,9 +100,9 @@ class Table(ShapeBase):
         'vertical_banding': 'VerticalBanding'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, type='Enum:ShapeType.Table', shape_type='Enum:CombinedShapeType.Table', name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Table', shape_type='Table', style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
         """Table - a model defined in Swagger"""  # noqa: E501
-        super(Table, self).__init__(self_uri, alternate_links, links, type, shape_type, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format)
+        super(Table, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._style = None
         self._rows = None
@@ -117,26 +115,18 @@ class Table(ShapeBase):
         self._right_to_left = None
         self._vertical_banding = None
 
-        if style is not None:
-            self.style = style
+        self.style = style
         if rows is not None:
             self.rows = rows
         if columns is not None:
             self.columns = columns
-        if first_col is not None:
-            self.first_col = first_col
-        if first_row is not None:
-            self.first_row = first_row
-        if horizontal_banding is not None:
-            self.horizontal_banding = horizontal_banding
-        if last_col is not None:
-            self.last_col = last_col
-        if last_row is not None:
-            self.last_row = last_row
-        if right_to_left is not None:
-            self.right_to_left = right_to_left
-        if vertical_banding is not None:
-            self.vertical_banding = vertical_banding
+        self.first_col = first_col
+        self.first_row = first_row
+        self.horizontal_banding = horizontal_banding
+        self.last_col = last_col
+        self.last_row = last_row
+        self.right_to_left = right_to_left
+        self.vertical_banding = vertical_banding
 
     @property
     def style(self):
@@ -145,7 +135,7 @@ class Table(ShapeBase):
         Builtin table style.  # noqa: E501
 
         :return: The style of this Table.  # noqa: E501
-        :rtype: TableStylePreset
+        :rtype: str
         """
         return self._style
 
@@ -156,9 +146,15 @@ class Table(ShapeBase):
         Builtin table style.  # noqa: E501
 
         :param style: The style of this Table.  # noqa: E501
-        :type: TableStylePreset
+        :type: str
         """
-
+        if style is not None:
+            allowed_values = ["None", "MediumStyle2Accent1", "MediumStyle2", "NoStyleNoGrid", "ThemedStyle1Accent1", "ThemedStyle1Accent2", "ThemedStyle1Accent3", "ThemedStyle1Accent4", "ThemedStyle1Accent5", "ThemedStyle1Accent6", "NoStyleTableGrid", "ThemedStyle2Accent1", "ThemedStyle2Accent2", "ThemedStyle2Accent3", "ThemedStyle2Accent4", "ThemedStyle2Accent5", "ThemedStyle2Accent6", "LightStyle1", "LightStyle1Accent1", "LightStyle1Accent2", "LightStyle1Accent3", "LightStyle1Accent4", "LightStyle2Accent5", "LightStyle1Accent6", "LightStyle2", "LightStyle2Accent1", "LightStyle2Accent2", "LightStyle2Accent3", "MediumStyle2Accent3", "MediumStyle2Accent4", "MediumStyle2Accent5", "LightStyle2Accent6", "LightStyle2Accent4", "LightStyle3", "LightStyle3Accent1", "MediumStyle2Accent2", "LightStyle3Accent2", "LightStyle3Accent3", "LightStyle3Accent4", "LightStyle3Accent5", "LightStyle3Accent6", "MediumStyle1", "MediumStyle1Accent1", "MediumStyle1Accent2", "MediumStyle1Accent3", "MediumStyle1Accent4", "MediumStyle1Accent5", "MediumStyle1Accent6", "MediumStyle2Accent6", "MediumStyle3", "MediumStyle3Accent1", "MediumStyle3Accent2", "MediumStyle3Accent3", "MediumStyle3Accent4", "MediumStyle3Accent5", "MediumStyle3Accent6", "MediumStyle4", "MediumStyle4Accent1", "MediumStyle4Accent2", "MediumStyle4Accent3", "MediumStyle4Accent4", "MediumStyle4Accent5", "MediumStyle4Accent6", "DarkStyle1", "DarkStyle1Accent1", "DarkStyle1Accent2", "DarkStyle1Accent3", "DarkStyle1Accent4", "DarkStyle1Accent5", "DarkStyle1Accent6", "DarkStyle2", "DarkStyle2Accent1Accent2", "DarkStyle2Accent3Accent4", "DarkStyle2Accent5Accent6", "LightStyle1Accent5", "Custom"]  # noqa: E501
+            if style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(style, allowed_values)
+                )
         self._style = style
 
     @property
@@ -181,7 +177,6 @@ class Table(ShapeBase):
         :param rows: The rows of this Table.  # noqa: E501
         :type: list[TableRow]
         """
-
         self._rows = rows
 
     @property
@@ -204,7 +199,6 @@ class Table(ShapeBase):
         :param columns: The columns of this Table.  # noqa: E501
         :type: list[TableColumn]
         """
-
         self._columns = columns
 
     @property
@@ -227,7 +221,6 @@ class Table(ShapeBase):
         :param first_col: The first_col of this Table.  # noqa: E501
         :type: bool
         """
-
         self._first_col = first_col
 
     @property
@@ -250,7 +243,6 @@ class Table(ShapeBase):
         :param first_row: The first_row of this Table.  # noqa: E501
         :type: bool
         """
-
         self._first_row = first_row
 
     @property
@@ -273,7 +265,6 @@ class Table(ShapeBase):
         :param horizontal_banding: The horizontal_banding of this Table.  # noqa: E501
         :type: bool
         """
-
         self._horizontal_banding = horizontal_banding
 
     @property
@@ -296,7 +287,6 @@ class Table(ShapeBase):
         :param last_col: The last_col of this Table.  # noqa: E501
         :type: bool
         """
-
         self._last_col = last_col
 
     @property
@@ -319,7 +309,6 @@ class Table(ShapeBase):
         :param last_row: The last_row of this Table.  # noqa: E501
         :type: bool
         """
-
         self._last_row = last_row
 
     @property
@@ -342,7 +331,6 @@ class Table(ShapeBase):
         :param right_to_left: The right_to_left of this Table.  # noqa: E501
         :type: bool
         """
-
         self._right_to_left = right_to_left
 
     @property
@@ -365,7 +353,6 @@ class Table(ShapeBase):
         :param vertical_banding: The vertical_banding of this Table.  # noqa: E501
         :type: bool
         """
-
         self._vertical_banding = vertical_banding
 
     def to_dict(self):

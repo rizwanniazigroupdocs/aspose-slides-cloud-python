@@ -79,7 +79,6 @@ class GradientFillStop(object):
         :param color: The color of this GradientFillStop.  # noqa: E501
         :type: str
         """
-
         self._color = color
 
     @property
@@ -100,9 +99,6 @@ class GradientFillStop(object):
         :param position: The position of this GradientFillStop.  # noqa: E501
         :type: float
         """
-        if position is None:
-            raise ValueError("Invalid value for `position`, must not be `None`")  # noqa: E501
-
         self._position = position
 
     def to_dict(self):

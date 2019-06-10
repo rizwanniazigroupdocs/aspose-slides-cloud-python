@@ -45,7 +45,6 @@ class ColorScheme(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'links': 'list[ResourceUri]',
         'accent1': 'str',
         'accent2': 'str',
         'accent3': 'str',
@@ -63,7 +62,6 @@ class ColorScheme(ResourceBase):
     attribute_map = {
         'self_uri': 'SelfUri',
         'alternate_links': 'AlternateLinks',
-        'links': 'Links',
         'accent1': 'Accent1',
         'accent2': 'Accent2',
         'accent3': 'Accent3',
@@ -78,9 +76,9 @@ class ColorScheme(ResourceBase):
         'light2': 'Light2'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, links=None, accent1=None, accent2=None, accent3=None, accent4=None, accent5=None, accent6=None, dark1=None, dark2=None, followed_hyperlink=None, hyperlink=None, light1=None, light2=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, accent1=None, accent2=None, accent3=None, accent4=None, accent5=None, accent6=None, dark1=None, dark2=None, followed_hyperlink=None, hyperlink=None, light1=None, light2=None):  # noqa: E501
         """ColorScheme - a model defined in Swagger"""  # noqa: E501
-        super(ColorScheme, self).__init__(self_uri, alternate_links, links)
+        super(ColorScheme, self).__init__(self_uri, alternate_links)
 
         self._accent1 = None
         self._accent2 = None
@@ -138,7 +136,6 @@ class ColorScheme(ResourceBase):
         :param accent1: The accent1 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent1 = accent1
 
     @property
@@ -159,7 +156,6 @@ class ColorScheme(ResourceBase):
         :param accent2: The accent2 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent2 = accent2
 
     @property
@@ -180,7 +176,6 @@ class ColorScheme(ResourceBase):
         :param accent3: The accent3 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent3 = accent3
 
     @property
@@ -201,7 +196,6 @@ class ColorScheme(ResourceBase):
         :param accent4: The accent4 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent4 = accent4
 
     @property
@@ -222,7 +216,6 @@ class ColorScheme(ResourceBase):
         :param accent5: The accent5 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent5 = accent5
 
     @property
@@ -243,7 +236,6 @@ class ColorScheme(ResourceBase):
         :param accent6: The accent6 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._accent6 = accent6
 
     @property
@@ -264,7 +256,6 @@ class ColorScheme(ResourceBase):
         :param dark1: The dark1 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._dark1 = dark1
 
     @property
@@ -285,7 +276,6 @@ class ColorScheme(ResourceBase):
         :param dark2: The dark2 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._dark2 = dark2
 
     @property
@@ -306,7 +296,6 @@ class ColorScheme(ResourceBase):
         :param followed_hyperlink: The followed_hyperlink of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._followed_hyperlink = followed_hyperlink
 
     @property
@@ -327,7 +316,6 @@ class ColorScheme(ResourceBase):
         :param hyperlink: The hyperlink of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._hyperlink = hyperlink
 
     @property
@@ -348,7 +336,6 @@ class ColorScheme(ResourceBase):
         :param light1: The light1 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._light1 = light1
 
     @property
@@ -369,7 +356,6 @@ class ColorScheme(ResourceBase):
         :param light2: The light2 of this ColorScheme.  # noqa: E501
         :type: str
         """
-
         self._light2 = light2
 
     def to_dict(self):

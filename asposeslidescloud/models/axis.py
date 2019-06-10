@@ -44,36 +44,36 @@ class Axis(object):
     swagger_types = {
         'is_visible': 'bool',
         'has_title': 'bool',
-        'position': 'AxisPositionType',
-        'display_unit': 'DisplayUnitType',
-        'base_unit_scale': 'TimeUnitType',
+        'position': 'str',
+        'display_unit': 'str',
+        'base_unit_scale': 'str',
         'is_automatic_major_unit': 'bool',
         'major_unit': 'float',
-        'major_unit_scale': 'TimeUnitType',
-        'major_tick_mark': 'TickMarkType',
+        'major_unit_scale': 'str',
+        'major_tick_mark': 'str',
         'is_automatic_minor_unit': 'bool',
         'minor_unit': 'float',
-        'minor_unit_scale': 'TimeUnitType',
-        'minor_tick_mark': 'TickMarkType',
+        'minor_unit_scale': 'str',
+        'minor_tick_mark': 'str',
         'is_automatic_max_value': 'bool',
         'max_value': 'float',
         'is_automatic_min_value': 'bool',
         'min_value': 'float',
         'is_logarithmic': 'bool',
         'log_base': 'float',
-        'category_axis_type': 'CategoryAxisType',
+        'category_axis_type': 'str',
         'axis_between_categories': 'bool',
         'label_offset': 'int',
         'is_plot_order_reversed': 'bool',
         'is_number_format_linked_to_source': 'bool',
         'number_format': 'str',
-        'cross_type': 'CrossesType',
+        'cross_type': 'str',
         'cross_at': 'float',
         'is_automatic_tick_marks_spacing': 'bool',
         'tick_marks_spacing': 'int',
         'is_automatic_tick_label_spacing': 'bool',
         'tick_label_spacing': 'int',
-        'tick_label_position': 'TickLabelPositionType',
+        'tick_label_position': 'str',
         'tick_label_rotation_angle': 'float',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
@@ -220,9 +220,6 @@ class Axis(object):
         :param is_visible: The is_visible of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_visible is None:
-            raise ValueError("Invalid value for `is_visible`, must not be `None`")  # noqa: E501
-
         self._is_visible = is_visible
 
     @property
@@ -245,9 +242,6 @@ class Axis(object):
         :param has_title: The has_title of this Axis.  # noqa: E501
         :type: bool
         """
-        if has_title is None:
-            raise ValueError("Invalid value for `has_title`, must not be `None`")  # noqa: E501
-
         self._has_title = has_title
 
     @property
@@ -257,7 +251,7 @@ class Axis(object):
         Axis position  # noqa: E501
 
         :return: The position of this Axis.  # noqa: E501
-        :rtype: AxisPositionType
+        :rtype: str
         """
         return self._position
 
@@ -268,11 +262,15 @@ class Axis(object):
         Axis position  # noqa: E501
 
         :param position: The position of this Axis.  # noqa: E501
-        :type: AxisPositionType
+        :type: str
         """
-        if position is None:
-            raise ValueError("Invalid value for `position`, must not be `None`")  # noqa: E501
-
+        if position is not None:
+            allowed_values = ["Bottom", "Left", "Right", "Top"]  # noqa: E501
+            if position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(position, allowed_values)
+                )
         self._position = position
 
     @property
@@ -282,7 +280,7 @@ class Axis(object):
         The scaling value of the display units for the value axis  # noqa: E501
 
         :return: The display_unit of this Axis.  # noqa: E501
-        :rtype: DisplayUnitType
+        :rtype: str
         """
         return self._display_unit
 
@@ -293,11 +291,15 @@ class Axis(object):
         The scaling value of the display units for the value axis  # noqa: E501
 
         :param display_unit: The display_unit of this Axis.  # noqa: E501
-        :type: DisplayUnitType
+        :type: str
         """
-        if display_unit is None:
-            raise ValueError("Invalid value for `display_unit`, must not be `None`")  # noqa: E501
-
+        if display_unit is not None:
+            allowed_values = ["None", "Hundreds", "Thousands", "TenThousands", "HundredThousands", "Millions", "TenMillions", "HundredMillions", "Billions", "Trillions", "CustomValue"]  # noqa: E501
+            if display_unit not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `display_unit` ({0}), must be one of {1}"  # noqa: E501
+                    .format(display_unit, allowed_values)
+                )
         self._display_unit = display_unit
 
     @property
@@ -307,7 +309,7 @@ class Axis(object):
         The smallest time unit that is represented on the date axis  # noqa: E501
 
         :return: The base_unit_scale of this Axis.  # noqa: E501
-        :rtype: TimeUnitType
+        :rtype: str
         """
         return self._base_unit_scale
 
@@ -318,11 +320,15 @@ class Axis(object):
         The smallest time unit that is represented on the date axis  # noqa: E501
 
         :param base_unit_scale: The base_unit_scale of this Axis.  # noqa: E501
-        :type: TimeUnitType
+        :type: str
         """
-        if base_unit_scale is None:
-            raise ValueError("Invalid value for `base_unit_scale`, must not be `None`")  # noqa: E501
-
+        if base_unit_scale is not None:
+            allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if base_unit_scale not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `base_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                    .format(base_unit_scale, allowed_values)
+                )
         self._base_unit_scale = base_unit_scale
 
     @property
@@ -345,9 +351,6 @@ class Axis(object):
         :param is_automatic_major_unit: The is_automatic_major_unit of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_major_unit is None:
-            raise ValueError("Invalid value for `is_automatic_major_unit`, must not be `None`")  # noqa: E501
-
         self._is_automatic_major_unit = is_automatic_major_unit
 
     @property
@@ -370,9 +373,6 @@ class Axis(object):
         :param major_unit: The major_unit of this Axis.  # noqa: E501
         :type: float
         """
-        if major_unit is None:
-            raise ValueError("Invalid value for `major_unit`, must not be `None`")  # noqa: E501
-
         self._major_unit = major_unit
 
     @property
@@ -382,7 +382,7 @@ class Axis(object):
         The major unit scale for the date axis  # noqa: E501
 
         :return: The major_unit_scale of this Axis.  # noqa: E501
-        :rtype: TimeUnitType
+        :rtype: str
         """
         return self._major_unit_scale
 
@@ -393,11 +393,15 @@ class Axis(object):
         The major unit scale for the date axis  # noqa: E501
 
         :param major_unit_scale: The major_unit_scale of this Axis.  # noqa: E501
-        :type: TimeUnitType
+        :type: str
         """
-        if major_unit_scale is None:
-            raise ValueError("Invalid value for `major_unit_scale`, must not be `None`")  # noqa: E501
-
+        if major_unit_scale is not None:
+            allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if major_unit_scale not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `major_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                    .format(major_unit_scale, allowed_values)
+                )
         self._major_unit_scale = major_unit_scale
 
     @property
@@ -407,7 +411,7 @@ class Axis(object):
         The type of major tick mark for the specified axis  # noqa: E501
 
         :return: The major_tick_mark of this Axis.  # noqa: E501
-        :rtype: TickMarkType
+        :rtype: str
         """
         return self._major_tick_mark
 
@@ -418,11 +422,15 @@ class Axis(object):
         The type of major tick mark for the specified axis  # noqa: E501
 
         :param major_tick_mark: The major_tick_mark of this Axis.  # noqa: E501
-        :type: TickMarkType
+        :type: str
         """
-        if major_tick_mark is None:
-            raise ValueError("Invalid value for `major_tick_mark`, must not be `None`")  # noqa: E501
-
+        if major_tick_mark is not None:
+            allowed_values = ["Cross", "Inside", "None", "Outside"]  # noqa: E501
+            if major_tick_mark not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `major_tick_mark` ({0}), must be one of {1}"  # noqa: E501
+                    .format(major_tick_mark, allowed_values)
+                )
         self._major_tick_mark = major_tick_mark
 
     @property
@@ -445,9 +453,6 @@ class Axis(object):
         :param is_automatic_minor_unit: The is_automatic_minor_unit of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_minor_unit is None:
-            raise ValueError("Invalid value for `is_automatic_minor_unit`, must not be `None`")  # noqa: E501
-
         self._is_automatic_minor_unit = is_automatic_minor_unit
 
     @property
@@ -470,9 +475,6 @@ class Axis(object):
         :param minor_unit: The minor_unit of this Axis.  # noqa: E501
         :type: float
         """
-        if minor_unit is None:
-            raise ValueError("Invalid value for `minor_unit`, must not be `None`")  # noqa: E501
-
         self._minor_unit = minor_unit
 
     @property
@@ -482,7 +484,7 @@ class Axis(object):
         The minor unit scale for the date axis  # noqa: E501
 
         :return: The minor_unit_scale of this Axis.  # noqa: E501
-        :rtype: TimeUnitType
+        :rtype: str
         """
         return self._minor_unit_scale
 
@@ -493,11 +495,15 @@ class Axis(object):
         The minor unit scale for the date axis  # noqa: E501
 
         :param minor_unit_scale: The minor_unit_scale of this Axis.  # noqa: E501
-        :type: TimeUnitType
+        :type: str
         """
-        if minor_unit_scale is None:
-            raise ValueError("Invalid value for `minor_unit_scale`, must not be `None`")  # noqa: E501
-
+        if minor_unit_scale is not None:
+            allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if minor_unit_scale not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `minor_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                    .format(minor_unit_scale, allowed_values)
+                )
         self._minor_unit_scale = minor_unit_scale
 
     @property
@@ -507,7 +513,7 @@ class Axis(object):
         The type of minor tick mark for the specified axis  # noqa: E501
 
         :return: The minor_tick_mark of this Axis.  # noqa: E501
-        :rtype: TickMarkType
+        :rtype: str
         """
         return self._minor_tick_mark
 
@@ -518,11 +524,15 @@ class Axis(object):
         The type of minor tick mark for the specified axis  # noqa: E501
 
         :param minor_tick_mark: The minor_tick_mark of this Axis.  # noqa: E501
-        :type: TickMarkType
+        :type: str
         """
-        if minor_tick_mark is None:
-            raise ValueError("Invalid value for `minor_tick_mark`, must not be `None`")  # noqa: E501
-
+        if minor_tick_mark is not None:
+            allowed_values = ["Cross", "Inside", "None", "Outside"]  # noqa: E501
+            if minor_tick_mark not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `minor_tick_mark` ({0}), must be one of {1}"  # noqa: E501
+                    .format(minor_tick_mark, allowed_values)
+                )
         self._minor_tick_mark = minor_tick_mark
 
     @property
@@ -545,9 +555,6 @@ class Axis(object):
         :param is_automatic_max_value: The is_automatic_max_value of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_max_value is None:
-            raise ValueError("Invalid value for `is_automatic_max_value`, must not be `None`")  # noqa: E501
-
         self._is_automatic_max_value = is_automatic_max_value
 
     @property
@@ -570,9 +577,6 @@ class Axis(object):
         :param max_value: The max_value of this Axis.  # noqa: E501
         :type: float
         """
-        if max_value is None:
-            raise ValueError("Invalid value for `max_value`, must not be `None`")  # noqa: E501
-
         self._max_value = max_value
 
     @property
@@ -595,9 +599,6 @@ class Axis(object):
         :param is_automatic_min_value: The is_automatic_min_value of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_min_value is None:
-            raise ValueError("Invalid value for `is_automatic_min_value`, must not be `None`")  # noqa: E501
-
         self._is_automatic_min_value = is_automatic_min_value
 
     @property
@@ -620,9 +621,6 @@ class Axis(object):
         :param min_value: The min_value of this Axis.  # noqa: E501
         :type: float
         """
-        if min_value is None:
-            raise ValueError("Invalid value for `min_value`, must not be `None`")  # noqa: E501
-
         self._min_value = min_value
 
     @property
@@ -645,9 +643,6 @@ class Axis(object):
         :param is_logarithmic: The is_logarithmic of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_logarithmic is None:
-            raise ValueError("Invalid value for `is_logarithmic`, must not be `None`")  # noqa: E501
-
         self._is_logarithmic = is_logarithmic
 
     @property
@@ -670,9 +665,6 @@ class Axis(object):
         :param log_base: The log_base of this Axis.  # noqa: E501
         :type: float
         """
-        if log_base is None:
-            raise ValueError("Invalid value for `log_base`, must not be `None`")  # noqa: E501
-
         self._log_base = log_base
 
     @property
@@ -682,7 +674,7 @@ class Axis(object):
         The type of the category axis  # noqa: E501
 
         :return: The category_axis_type of this Axis.  # noqa: E501
-        :rtype: CategoryAxisType
+        :rtype: str
         """
         return self._category_axis_type
 
@@ -693,11 +685,15 @@ class Axis(object):
         The type of the category axis  # noqa: E501
 
         :param category_axis_type: The category_axis_type of this Axis.  # noqa: E501
-        :type: CategoryAxisType
+        :type: str
         """
-        if category_axis_type is None:
-            raise ValueError("Invalid value for `category_axis_type`, must not be `None`")  # noqa: E501
-
+        if category_axis_type is not None:
+            allowed_values = ["Text", "Date"]  # noqa: E501
+            if category_axis_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `category_axis_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(category_axis_type, allowed_values)
+                )
         self._category_axis_type = category_axis_type
 
     @property
@@ -720,9 +716,6 @@ class Axis(object):
         :param axis_between_categories: The axis_between_categories of this Axis.  # noqa: E501
         :type: bool
         """
-        if axis_between_categories is None:
-            raise ValueError("Invalid value for `axis_between_categories`, must not be `None`")  # noqa: E501
-
         self._axis_between_categories = axis_between_categories
 
     @property
@@ -745,9 +738,6 @@ class Axis(object):
         :param label_offset: The label_offset of this Axis.  # noqa: E501
         :type: int
         """
-        if label_offset is None:
-            raise ValueError("Invalid value for `label_offset`, must not be `None`")  # noqa: E501
-
         self._label_offset = label_offset
 
     @property
@@ -770,9 +760,6 @@ class Axis(object):
         :param is_plot_order_reversed: The is_plot_order_reversed of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_plot_order_reversed is None:
-            raise ValueError("Invalid value for `is_plot_order_reversed`, must not be `None`")  # noqa: E501
-
         self._is_plot_order_reversed = is_plot_order_reversed
 
     @property
@@ -795,9 +782,6 @@ class Axis(object):
         :param is_number_format_linked_to_source: The is_number_format_linked_to_source of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_number_format_linked_to_source is None:
-            raise ValueError("Invalid value for `is_number_format_linked_to_source`, must not be `None`")  # noqa: E501
-
         self._is_number_format_linked_to_source = is_number_format_linked_to_source
 
     @property
@@ -820,7 +804,6 @@ class Axis(object):
         :param number_format: The number_format of this Axis.  # noqa: E501
         :type: str
         """
-
         self._number_format = number_format
 
     @property
@@ -830,7 +813,7 @@ class Axis(object):
         The CrossType on the specified axis where the other axis crosses  # noqa: E501
 
         :return: The cross_type of this Axis.  # noqa: E501
-        :rtype: CrossesType
+        :rtype: str
         """
         return self._cross_type
 
@@ -841,11 +824,15 @@ class Axis(object):
         The CrossType on the specified axis where the other axis crosses  # noqa: E501
 
         :param cross_type: The cross_type of this Axis.  # noqa: E501
-        :type: CrossesType
+        :type: str
         """
-        if cross_type is None:
-            raise ValueError("Invalid value for `cross_type`, must not be `None`")  # noqa: E501
-
+        if cross_type is not None:
+            allowed_values = ["AxisCrossesAtZero", "Maximum", "Custom"]  # noqa: E501
+            if cross_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `cross_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(cross_type, allowed_values)
+                )
         self._cross_type = cross_type
 
     @property
@@ -868,9 +855,6 @@ class Axis(object):
         :param cross_at: The cross_at of this Axis.  # noqa: E501
         :type: float
         """
-        if cross_at is None:
-            raise ValueError("Invalid value for `cross_at`, must not be `None`")  # noqa: E501
-
         self._cross_at = cross_at
 
     @property
@@ -893,9 +877,6 @@ class Axis(object):
         :param is_automatic_tick_marks_spacing: The is_automatic_tick_marks_spacing of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_tick_marks_spacing is None:
-            raise ValueError("Invalid value for `is_automatic_tick_marks_spacing`, must not be `None`")  # noqa: E501
-
         self._is_automatic_tick_marks_spacing = is_automatic_tick_marks_spacing
 
     @property
@@ -918,9 +899,6 @@ class Axis(object):
         :param tick_marks_spacing: The tick_marks_spacing of this Axis.  # noqa: E501
         :type: int
         """
-        if tick_marks_spacing is None:
-            raise ValueError("Invalid value for `tick_marks_spacing`, must not be `None`")  # noqa: E501
-
         self._tick_marks_spacing = tick_marks_spacing
 
     @property
@@ -943,9 +921,6 @@ class Axis(object):
         :param is_automatic_tick_label_spacing: The is_automatic_tick_label_spacing of this Axis.  # noqa: E501
         :type: bool
         """
-        if is_automatic_tick_label_spacing is None:
-            raise ValueError("Invalid value for `is_automatic_tick_label_spacing`, must not be `None`")  # noqa: E501
-
         self._is_automatic_tick_label_spacing = is_automatic_tick_label_spacing
 
     @property
@@ -968,9 +943,6 @@ class Axis(object):
         :param tick_label_spacing: The tick_label_spacing of this Axis.  # noqa: E501
         :type: int
         """
-        if tick_label_spacing is None:
-            raise ValueError("Invalid value for `tick_label_spacing`, must not be `None`")  # noqa: E501
-
         self._tick_label_spacing = tick_label_spacing
 
     @property
@@ -980,7 +952,7 @@ class Axis(object):
         The position of tick-mark labels on the specified axis.  # noqa: E501
 
         :return: The tick_label_position of this Axis.  # noqa: E501
-        :rtype: TickLabelPositionType
+        :rtype: str
         """
         return self._tick_label_position
 
@@ -991,11 +963,15 @@ class Axis(object):
         The position of tick-mark labels on the specified axis.  # noqa: E501
 
         :param tick_label_position: The tick_label_position of this Axis.  # noqa: E501
-        :type: TickLabelPositionType
+        :type: str
         """
-        if tick_label_position is None:
-            raise ValueError("Invalid value for `tick_label_position`, must not be `None`")  # noqa: E501
-
+        if tick_label_position is not None:
+            allowed_values = ["High", "Low", "NextTo", "None"]  # noqa: E501
+            if tick_label_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `tick_label_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(tick_label_position, allowed_values)
+                )
         self._tick_label_position = tick_label_position
 
     @property
@@ -1018,9 +994,6 @@ class Axis(object):
         :param tick_label_rotation_angle: The tick_label_rotation_angle of this Axis.  # noqa: E501
         :type: float
         """
-        if tick_label_rotation_angle is None:
-            raise ValueError("Invalid value for `tick_label_rotation_angle`, must not be `None`")  # noqa: E501
-
         self._tick_label_rotation_angle = tick_label_rotation_angle
 
     @property
@@ -1043,7 +1016,6 @@ class Axis(object):
         :param fill_format: The fill_format of this Axis.  # noqa: E501
         :type: FillFormat
         """
-
         self._fill_format = fill_format
 
     @property
@@ -1066,7 +1038,6 @@ class Axis(object):
         :param effect_format: The effect_format of this Axis.  # noqa: E501
         :type: EffectFormat
         """
-
         self._effect_format = effect_format
 
     @property
@@ -1089,7 +1060,6 @@ class Axis(object):
         :param line_format: The line_format of this Axis.  # noqa: E501
         :type: LineFormat
         """
-
         self._line_format = line_format
 
     def to_dict(self):

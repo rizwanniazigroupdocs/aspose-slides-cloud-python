@@ -52,7 +52,7 @@ class Merge(Task):
         'presentations': 'Presentations'
     }
 
-    def __init__(self, type='Enum:TaskType.Merge', presentations=None):  # noqa: E501
+    def __init__(self, type='Merge', presentations=None):  # noqa: E501
         """Merge - a model defined in Swagger"""  # noqa: E501
         super(Merge, self).__init__(type)
 
@@ -81,7 +81,6 @@ class Merge(Task):
         :param presentations: The presentations of this Merge.  # noqa: E501
         :type: list[MergingSource]
         """
-
         self._presentations = presentations
 
     def to_dict(self):

@@ -44,7 +44,7 @@ class Save(Task):
     """
     swagger_types = {
         'type': 'str',
-        'format': 'ExportFormat',
+        'format': 'str',
         'output': 'OutputFile',
         'options': 'ExportOptions'
     }
@@ -56,7 +56,7 @@ class Save(Task):
         'options': 'Options'
     }
 
-    def __init__(self, type='Enum:TaskType.Save', format=None, output=None, options=None):  # noqa: E501
+    def __init__(self, type='Save', format=None, output=None, options=None):  # noqa: E501
         """Save - a model defined in Swagger"""  # noqa: E501
         super(Save, self).__init__(type)
 
@@ -64,8 +64,7 @@ class Save(Task):
         self._output = None
         self._options = None
 
-        if format is not None:
-            self.format = format
+        self.format = format
         if output is not None:
             self.output = output
         if options is not None:
@@ -78,7 +77,7 @@ class Save(Task):
         Format.  # noqa: E501
 
         :return: The format of this Save.  # noqa: E501
-        :rtype: ExportFormat
+        :rtype: str
         """
         return self._format
 
@@ -89,9 +88,15 @@ class Save(Task):
         Format.  # noqa: E501
 
         :param format: The format of this Save.  # noqa: E501
-        :type: ExportFormat
+        :type: str
         """
-
+        if format is not None:
+            allowed_values = ["Pdf", "Xps", "Tiff", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Potm", "Html", "Swf", "Svg", "Jpeg", "Png", "Gif", "Bmp"]  # noqa: E501
+            if format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(format, allowed_values)
+                )
         self._format = format
 
     @property
@@ -114,7 +119,6 @@ class Save(Task):
         :param output: The output of this Save.  # noqa: E501
         :type: OutputFile
         """
-
         self._output = output
 
     @property
@@ -137,7 +141,6 @@ class Save(Task):
         :param options: The options of this Save.  # noqa: E501
         :type: ExportOptions
         """
-
         self._options = options
 
     def to_dict(self):
