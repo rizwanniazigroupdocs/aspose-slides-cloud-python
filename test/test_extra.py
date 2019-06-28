@@ -17,16 +17,18 @@ import unittest
 from test.base_test import BaseTest
 
 import asposeslidescloud
+from asposeslidescloud.configuration import Configuration
 from asposeslidescloud.rest import ApiException
 from asposeslidescloud.models.input import Input
 from asposeslidescloud.models.export_format import ExportFormat
 from asposeslidescloud.models.output_file import OutputFile
 from asposeslidescloud.models.pipeline import Pipeline
 from asposeslidescloud.models.requests.slides_api_requests import PostSlidesPipelineRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostSlideSaveAsRequest
 from asposeslidescloud.models.request_input_file import RequestInputFile
 from asposeslidescloud.models.save import Save
 
-class TestPipeline(BaseTest):
+class TestExtra(BaseTest):
     """DocumentApi unit test stubs"""
 
     def setUp(self):
@@ -74,6 +76,20 @@ class TestPipeline(BaseTest):
         result = self.api.post_slides_pipeline(request)
         self.assertTrue(isinstance(result, str))
         self.assertTrue(len(result) > 0)
+
+    def test_timeout(self):
+        return # unstable test
+        self.initialize('post_slide_save_as', None, None)
+        config = Configuration()
+        config.app_sid = self.configuration.app_sid
+        config.app_key = self.configuration.app_key
+        config.base_url = self.configuration.base_url
+        config.auth_base_url = self.configuration.auth_base_url
+        config.debug = self.configuration.debug
+        config.timeout = 1
+        api = asposeslidescloud.apis.slides_api.SlidesApi(config)  # noqa: E501
+        request = PostSlideSaveAsRequest("test.ppt", 1, "svg", None, None, None, "password", "TempSlidesSDK", None, None)
+        result = api.post_slide_save_as(request)
 
 if __name__ == '__main__':
     unittest.main()

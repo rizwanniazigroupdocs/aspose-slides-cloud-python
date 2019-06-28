@@ -40,8 +40,8 @@ class ErrorMessage(object):
     }
 
     attribute_map = {
-        'message': 'Message',
-        'error': 'Error'
+        'message': 'message',
+        'error': 'error'
     }
 
     def __init__(self, message = None, error = None):  # noqa: E501

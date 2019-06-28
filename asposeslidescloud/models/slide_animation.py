@@ -72,6 +72,7 @@ class SlideAnimation(ResourceBase):
     def main_sequence(self):
         """Gets the main_sequence of this SlideAnimation.  # noqa: E501
 
+        Main sequence.  # noqa: E501
 
         :return: The main_sequence of this SlideAnimation.  # noqa: E501
         :rtype: list[Effect]
@@ -82,6 +83,7 @@ class SlideAnimation(ResourceBase):
     def main_sequence(self, main_sequence):
         """Sets the main_sequence of this SlideAnimation.
 
+        Main sequence.  # noqa: E501
 
         :param main_sequence: The main_sequence of this SlideAnimation.  # noqa: E501
         :type: list[Effect]
@@ -92,6 +94,7 @@ class SlideAnimation(ResourceBase):
     def interactive_sequences(self):
         """Gets the interactive_sequences of this SlideAnimation.  # noqa: E501
 
+        Interactive sequence list.  # noqa: E501
 
         :return: The interactive_sequences of this SlideAnimation.  # noqa: E501
         :rtype: list[InteractiveSequence]
@@ -102,6 +105,7 @@ class SlideAnimation(ResourceBase):
     def interactive_sequences(self, interactive_sequences):
         """Sets the interactive_sequences of this SlideAnimation.
 
+        Interactive sequence list.  # noqa: E501
 
         :param interactive_sequences: The interactive_sequences of this SlideAnimation.  # noqa: E501
         :type: list[InteractiveSequence]

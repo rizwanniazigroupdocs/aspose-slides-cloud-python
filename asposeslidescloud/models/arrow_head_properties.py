@@ -68,6 +68,7 @@ class ArrowHeadProperties(object):
     def length(self):
         """Gets the length of this ArrowHeadProperties.  # noqa: E501
 
+        Length.  # noqa: E501
 
         :return: The length of this ArrowHeadProperties.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class ArrowHeadProperties(object):
     def length(self, length):
         """Sets the length of this ArrowHeadProperties.
 
+        Length.  # noqa: E501
 
         :param length: The length of this ArrowHeadProperties.  # noqa: E501
         :type: str
@@ -95,6 +97,7 @@ class ArrowHeadProperties(object):
     def style(self):
         """Gets the style of this ArrowHeadProperties.  # noqa: E501
 
+        Style.  # noqa: E501
 
         :return: The style of this ArrowHeadProperties.  # noqa: E501
         :rtype: str
@@ -105,6 +108,7 @@ class ArrowHeadProperties(object):
     def style(self, style):
         """Sets the style of this ArrowHeadProperties.
 
+        Style.  # noqa: E501
 
         :param style: The style of this ArrowHeadProperties.  # noqa: E501
         :type: str
@@ -122,6 +126,7 @@ class ArrowHeadProperties(object):
     def width(self):
         """Gets the width of this ArrowHeadProperties.  # noqa: E501
 
+        Width.  # noqa: E501
 
         :return: The width of this ArrowHeadProperties.  # noqa: E501
         :rtype: str
@@ -132,6 +137,7 @@ class ArrowHeadProperties(object):
     def width(self, width):
         """Sets the width of this ArrowHeadProperties.
 
+        Width.  # noqa: E501
 
         :param width: The width of this ArrowHeadProperties.  # noqa: E501
         :type: str

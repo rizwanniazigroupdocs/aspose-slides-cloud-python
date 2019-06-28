@@ -67,6 +67,7 @@ class DocumentProperties(ResourceBase):
     def list(self):
         """Gets the list of this DocumentProperties.  # noqa: E501
 
+        Document property list.  # noqa: E501
 
         :return: The list of this DocumentProperties.  # noqa: E501
         :rtype: list[DocumentProperty]
@@ -77,6 +78,7 @@ class DocumentProperties(ResourceBase):
     def list(self, list):
         """Sets the list of this DocumentProperties.
 
+        Document property list.  # noqa: E501
 
         :param list: The list of this DocumentProperties.  # noqa: E501
         :type: list[DocumentProperty]

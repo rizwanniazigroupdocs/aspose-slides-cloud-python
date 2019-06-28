@@ -76,6 +76,7 @@ class DocumentProperty(ResourceBase):
     def name(self):
         """Gets the name of this DocumentProperty.  # noqa: E501
 
+        Name.  # noqa: E501
 
         :return: The name of this DocumentProperty.  # noqa: E501
         :rtype: str
@@ -86,6 +87,7 @@ class DocumentProperty(ResourceBase):
     def name(self, name):
         """Sets the name of this DocumentProperty.
 
+        Name.  # noqa: E501
 
         :param name: The name of this DocumentProperty.  # noqa: E501
         :type: str
@@ -96,6 +98,7 @@ class DocumentProperty(ResourceBase):
     def value(self):
         """Gets the value of this DocumentProperty.  # noqa: E501
 
+        Value.  # noqa: E501
 
         :return: The value of this DocumentProperty.  # noqa: E501
         :rtype: str
@@ -106,6 +109,7 @@ class DocumentProperty(ResourceBase):
     def value(self, value):
         """Sets the value of this DocumentProperty.
 
+        Value.  # noqa: E501
 
         :param value: The value of this DocumentProperty.  # noqa: E501
         :type: str
@@ -116,6 +120,7 @@ class DocumentProperty(ResourceBase):
     def built_in(self):
         """Gets the built_in of this DocumentProperty.  # noqa: E501
 
+        True for builtin property.  # noqa: E501
 
         :return: The built_in of this DocumentProperty.  # noqa: E501
         :rtype: bool
@@ -126,6 +131,7 @@ class DocumentProperty(ResourceBase):
     def built_in(self, built_in):
         """Sets the built_in of this DocumentProperty.
 
+        True for builtin property.  # noqa: E501
 
         :param built_in: The built_in of this DocumentProperty.  # noqa: E501
         :type: bool

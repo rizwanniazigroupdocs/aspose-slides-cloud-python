@@ -31,17 +31,14 @@ import re  # noqa: F401
 import six
 
 
-class ShapeExportFormat2(object):
+class ShapeThumbnailBounds(object):
 
     """
     allowed enum values
     """
-    JPEG = "Jpeg"
-    PNG = "Png"
-    GIF = "Gif"
-    BMP = "Bmp"
-    TIFF = "Tiff"
-    SVG = "Svg"
+    SLIDE = "Slide"
+    SHAPE = "Shape"
+    APPEARANCE = "Appearance"
 
     """
     Attributes:
@@ -57,7 +54,7 @@ class ShapeExportFormat2(object):
     }
 
     def __init__(self):  # noqa: E501
-        """ShapeExportFormat2 - a model defined in Swagger"""  # noqa: E501
+        """ShapeThumbnailBounds - a model defined in Swagger"""  # noqa: E501
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -93,7 +90,7 @@ class ShapeExportFormat2(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ShapeExportFormat2):
+        if not isinstance(other, ShapeThumbnailBounds):
             return False
 
         return self.__dict__ == other.__dict__

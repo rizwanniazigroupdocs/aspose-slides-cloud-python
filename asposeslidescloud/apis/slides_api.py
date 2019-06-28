@@ -335,7 +335,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/storage/folder/{path}', 'POST',
+            '/slides/storage/folder/{path}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -14485,7 +14485,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/storage/file/{path}', 'POST',
+            '/slides/storage/file/{path}', 'PUT',
             path_params,
             query_params,
             header_params,

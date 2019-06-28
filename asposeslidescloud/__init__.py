@@ -87,9 +87,9 @@ from asposeslidescloud.models.scale_type import ScaleType
 from asposeslidescloud.models.scatter_chart_data_point import ScatterChartDataPoint
 from asposeslidescloud.models.series import Series
 from asposeslidescloud.models.series_marker import SeriesMarker
-from asposeslidescloud.models.shape_export_format2 import ShapeExportFormat2
+from asposeslidescloud.models.shape_export_format import ShapeExportFormat
 from asposeslidescloud.models.shape_image_export_options import ShapeImageExportOptions
-from asposeslidescloud.models.shape_thumbnail_bounds2 import ShapeThumbnailBounds2
+from asposeslidescloud.models.shape_thumbnail_bounds import ShapeThumbnailBounds
 from asposeslidescloud.models.size_type import SizeType
 from asposeslidescloud.models.slide_comment import SlideComment
 from asposeslidescloud.models.slide_export_format import SlideExportFormat

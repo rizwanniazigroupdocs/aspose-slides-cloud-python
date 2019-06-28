@@ -57,6 +57,8 @@ class Configuration(object):
         # access token for OAuth
         self.access_token = ""
 
+        self.timeout = 0
+
         # Logging Settings
         self.logger = {}
         self.logger["package_logger"] = logging.getLogger("asposeslidescloud")
@@ -192,5 +194,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.0\n"\
-               "SDK Package Version: 19.5.0".\
+               "SDK Package Version: 19.6.0".\
                format(env=sys.platform, pyversion=sys.version)

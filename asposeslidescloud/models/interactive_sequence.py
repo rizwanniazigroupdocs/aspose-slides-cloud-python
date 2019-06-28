@@ -65,6 +65,7 @@ class InteractiveSequence(object):
     def effects(self):
         """Gets the effects of this InteractiveSequence.  # noqa: E501
 
+        Effect list.  # noqa: E501
 
         :return: The effects of this InteractiveSequence.  # noqa: E501
         :rtype: list[Effect]
@@ -75,6 +76,7 @@ class InteractiveSequence(object):
     def effects(self, effects):
         """Sets the effects of this InteractiveSequence.
 
+        Effect list.  # noqa: E501
 
         :param effects: The effects of this InteractiveSequence.  # noqa: E501
         :type: list[Effect]
@@ -85,6 +87,7 @@ class InteractiveSequence(object):
     def trigger_shape_index(self):
         """Gets the trigger_shape_index of this InteractiveSequence.  # noqa: E501
 
+        Index of the shape that triggers the sequence.  # noqa: E501
 
         :return: The trigger_shape_index of this InteractiveSequence.  # noqa: E501
         :rtype: int
@@ -95,6 +98,7 @@ class InteractiveSequence(object):
     def trigger_shape_index(self, trigger_shape_index):
         """Sets the trigger_shape_index of this InteractiveSequence.
 
+        Index of the shape that triggers the sequence.  # noqa: E501
 
         :param trigger_shape_index: The trigger_shape_index of this InteractiveSequence.  # noqa: E501
         :type: int
