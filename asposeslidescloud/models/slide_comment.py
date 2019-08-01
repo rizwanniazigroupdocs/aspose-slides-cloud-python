@@ -44,21 +44,24 @@ class SlideComment(object):
     swagger_types = {
         'author': 'str',
         'text': 'str',
-        'created_time': 'str'
+        'created_time': 'str',
+        'child_comments': 'list[SlideComment]'
     }
 
     attribute_map = {
         'author': 'Author',
         'text': 'Text',
-        'created_time': 'CreatedTime'
+        'created_time': 'CreatedTime',
+        'child_comments': 'ChildComments'
     }
 
-    def __init__(self, author=None, text=None, created_time=None):  # noqa: E501
+    def __init__(self, author=None, text=None, created_time=None, child_comments=None):  # noqa: E501
         """SlideComment - a model defined in Swagger"""  # noqa: E501
 
         self._author = None
         self._text = None
         self._created_time = None
+        self._child_comments = None
 
         if author is not None:
             self.author = author
@@ -66,11 +69,14 @@ class SlideComment(object):
             self.text = text
         if created_time is not None:
             self.created_time = created_time
+        if child_comments is not None:
+            self.child_comments = child_comments
 
     @property
     def author(self):
         """Gets the author of this SlideComment.  # noqa: E501
 
+        Author.  # noqa: E501
 
         :return: The author of this SlideComment.  # noqa: E501
         :rtype: str
@@ -81,6 +87,7 @@ class SlideComment(object):
     def author(self, author):
         """Sets the author of this SlideComment.
 
+        Author.  # noqa: E501
 
         :param author: The author of this SlideComment.  # noqa: E501
         :type: str
@@ -91,6 +98,7 @@ class SlideComment(object):
     def text(self):
         """Gets the text of this SlideComment.  # noqa: E501
 
+        Text.  # noqa: E501
 
         :return: The text of this SlideComment.  # noqa: E501
         :rtype: str
@@ -101,6 +109,7 @@ class SlideComment(object):
     def text(self, text):
         """Sets the text of this SlideComment.
 
+        Text.  # noqa: E501
 
         :param text: The text of this SlideComment.  # noqa: E501
         :type: str
@@ -111,6 +120,7 @@ class SlideComment(object):
     def created_time(self):
         """Gets the created_time of this SlideComment.  # noqa: E501
 
+        Creation time.  # noqa: E501
 
         :return: The created_time of this SlideComment.  # noqa: E501
         :rtype: str
@@ -121,11 +131,34 @@ class SlideComment(object):
     def created_time(self, created_time):
         """Sets the created_time of this SlideComment.
 
+        Creation time.  # noqa: E501
 
         :param created_time: The created_time of this SlideComment.  # noqa: E501
         :type: str
         """
         self._created_time = created_time
+
+    @property
+    def child_comments(self):
+        """Gets the child_comments of this SlideComment.  # noqa: E501
+
+        Child comments.  # noqa: E501
+
+        :return: The child_comments of this SlideComment.  # noqa: E501
+        :rtype: list[SlideComment]
+        """
+        return self._child_comments
+
+    @child_comments.setter
+    def child_comments(self, child_comments):
+        """Sets the child_comments of this SlideComment.
+
+        Child comments.  # noqa: E501
+
+        :param child_comments: The child_comments of this SlideComment.  # noqa: E501
+        :type: list[SlideComment]
+        """
+        self._child_comments = child_comments
 
     def to_dict(self):
         """Returns the model properties as a dict"""

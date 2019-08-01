@@ -67,6 +67,7 @@ class SlideComments(ResourceBase):
     def list(self):
         """Gets the list of this SlideComments.  # noqa: E501
 
+        Slide comment list.  # noqa: E501
 
         :return: The list of this SlideComments.  # noqa: E501
         :rtype: list[SlideComment]
@@ -77,6 +78,7 @@ class SlideComments(ResourceBase):
     def list(self, list):
         """Sets the list of this SlideComments.
 
+        Slide comment list.  # noqa: E501
 
         :param list: The list of this SlideComments.  # noqa: E501
         :type: list[SlideComment]

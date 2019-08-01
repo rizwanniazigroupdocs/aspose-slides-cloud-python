@@ -67,6 +67,7 @@ class SplitDocumentResult(ResourceBase):
     def slides(self):
         """Gets the slides of this SplitDocumentResult.  # noqa: E501
 
+        List of slide links.  # noqa: E501
 
         :return: The slides of this SplitDocumentResult.  # noqa: E501
         :rtype: list[ResourceUri]
@@ -77,6 +78,7 @@ class SplitDocumentResult(ResourceBase):
     def slides(self, slides):
         """Sets the slides of this SplitDocumentResult.
 
+        List of slide links.  # noqa: E501
 
         :param slides: The slides of this SplitDocumentResult.  # noqa: E501
         :type: list[ResourceUri]

@@ -91,7 +91,7 @@ class Save(Task):
         :type: str
         """
         if format is not None:
-            allowed_values = ["Pdf", "Xps", "Tiff", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Potm", "Html", "Swf", "Svg", "Jpeg", "Png", "Gif", "Bmp"]  # noqa: E501
+            allowed_values = ["Pdf", "Xps", "Tiff", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Pot", "Potx", "Potm", "Html", "Swf", "Svg", "Jpeg", "Png", "Gif", "Bmp"]  # noqa: E501
             if format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

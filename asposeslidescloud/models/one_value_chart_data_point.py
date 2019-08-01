@@ -60,6 +60,7 @@ class OneValueChartDataPoint(object):
     def value(self):
         """Gets the value of this OneValueChartDataPoint.  # noqa: E501
 
+        Value.  # noqa: E501
 
         :return: The value of this OneValueChartDataPoint.  # noqa: E501
         :rtype: float
@@ -70,6 +71,7 @@ class OneValueChartDataPoint(object):
     def value(self, value):
         """Sets the value of this OneValueChartDataPoint.
 
+        Value.  # noqa: E501
 
         :param value: The value of this OneValueChartDataPoint.  # noqa: E501
         :type: float

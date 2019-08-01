@@ -83,6 +83,7 @@ class Placeholder(ResourceBase):
     def index(self):
         """Gets the index of this Placeholder.  # noqa: E501
 
+        Index.  # noqa: E501
 
         :return: The index of this Placeholder.  # noqa: E501
         :rtype: int
@@ -93,6 +94,7 @@ class Placeholder(ResourceBase):
     def index(self, index):
         """Sets the index of this Placeholder.
 
+        Index.  # noqa: E501
 
         :param index: The index of this Placeholder.  # noqa: E501
         :type: int
@@ -103,6 +105,7 @@ class Placeholder(ResourceBase):
     def orientation(self):
         """Gets the orientation of this Placeholder.  # noqa: E501
 
+        Orientation.  # noqa: E501
 
         :return: The orientation of this Placeholder.  # noqa: E501
         :rtype: str
@@ -113,6 +116,7 @@ class Placeholder(ResourceBase):
     def orientation(self, orientation):
         """Sets the orientation of this Placeholder.
 
+        Orientation.  # noqa: E501
 
         :param orientation: The orientation of this Placeholder.  # noqa: E501
         :type: str
@@ -130,6 +134,7 @@ class Placeholder(ResourceBase):
     def size(self):
         """Gets the size of this Placeholder.  # noqa: E501
 
+        Size.  # noqa: E501
 
         :return: The size of this Placeholder.  # noqa: E501
         :rtype: str
@@ -140,6 +145,7 @@ class Placeholder(ResourceBase):
     def size(self, size):
         """Sets the size of this Placeholder.
 
+        Size.  # noqa: E501
 
         :param size: The size of this Placeholder.  # noqa: E501
         :type: str
@@ -157,6 +163,7 @@ class Placeholder(ResourceBase):
     def type(self):
         """Gets the type of this Placeholder.  # noqa: E501
 
+        Placeholder type.  # noqa: E501
 
         :return: The type of this Placeholder.  # noqa: E501
         :rtype: str
@@ -167,6 +174,7 @@ class Placeholder(ResourceBase):
     def type(self, type):
         """Sets the type of this Placeholder.
 
+        Placeholder type.  # noqa: E501
 
         :param type: The type of this Placeholder.  # noqa: E501
         :type: str
@@ -184,6 +192,7 @@ class Placeholder(ResourceBase):
     def shape(self):
         """Gets the shape of this Placeholder.  # noqa: E501
 
+        Shape link.  # noqa: E501
 
         :return: The shape of this Placeholder.  # noqa: E501
         :rtype: ResourceUriElement
@@ -194,6 +203,7 @@ class Placeholder(ResourceBase):
     def shape(self, shape):
         """Sets the shape of this Placeholder.
 
+        Shape link.  # noqa: E501
 
         :param shape: The shape of this Placeholder.  # noqa: E501
         :type: ResourceUriElement

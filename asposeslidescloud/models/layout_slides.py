@@ -67,6 +67,7 @@ class LayoutSlides(ResourceBase):
     def slide_list(self):
         """Gets the slide_list of this LayoutSlides.  # noqa: E501
 
+        List of layout slide links.  # noqa: E501
 
         :return: The slide_list of this LayoutSlides.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -77,6 +78,7 @@ class LayoutSlides(ResourceBase):
     def slide_list(self, slide_list):
         """Sets the slide_list of this LayoutSlides.
 
+        List of layout slide links.  # noqa: E501
 
         :param slide_list: The slide_list of this LayoutSlides.  # noqa: E501
         :type: list[ResourceUriElement]

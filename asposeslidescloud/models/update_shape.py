@@ -70,6 +70,7 @@ class UpdateShape(Task):
     def shape(self):
         """Gets the shape of this UpdateShape.  # noqa: E501
 
+        Shape DTO.  # noqa: E501
 
         :return: The shape of this UpdateShape.  # noqa: E501
         :rtype: ShapeBase
@@ -80,6 +81,7 @@ class UpdateShape(Task):
     def shape(self, shape):
         """Sets the shape of this UpdateShape.
 
+        Shape DTO.  # noqa: E501
 
         :param shape: The shape of this UpdateShape.  # noqa: E501
         :type: ShapeBase
@@ -90,6 +92,7 @@ class UpdateShape(Task):
     def shape_path(self):
         """Gets the shape_path of this UpdateShape.  # noqa: E501
 
+        Shape path for a grouped or SmartArt shape.  # noqa: E501
 
         :return: The shape_path of this UpdateShape.  # noqa: E501
         :rtype: str
@@ -100,6 +103,7 @@ class UpdateShape(Task):
     def shape_path(self, shape_path):
         """Sets the shape_path of this UpdateShape.
 
+        Shape path for a grouped or SmartArt shape.  # noqa: E501
 
         :param shape_path: The shape_path of this UpdateShape.  # noqa: E501
         :type: str

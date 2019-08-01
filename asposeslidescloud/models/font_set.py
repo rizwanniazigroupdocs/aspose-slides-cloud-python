@@ -71,6 +71,7 @@ class FontSet(object):
     def complex_script(self):
         """Gets the complex_script of this FontSet.  # noqa: E501
 
+        Complex script font.  # noqa: E501
 
         :return: The complex_script of this FontSet.  # noqa: E501
         :rtype: str
@@ -81,6 +82,7 @@ class FontSet(object):
     def complex_script(self, complex_script):
         """Sets the complex_script of this FontSet.
 
+        Complex script font.  # noqa: E501
 
         :param complex_script: The complex_script of this FontSet.  # noqa: E501
         :type: str
@@ -91,6 +93,7 @@ class FontSet(object):
     def east_asian(self):
         """Gets the east_asian of this FontSet.  # noqa: E501
 
+        East Asian font.  # noqa: E501
 
         :return: The east_asian of this FontSet.  # noqa: E501
         :rtype: str
@@ -101,6 +104,7 @@ class FontSet(object):
     def east_asian(self, east_asian):
         """Sets the east_asian of this FontSet.
 
+        East Asian font.  # noqa: E501
 
         :param east_asian: The east_asian of this FontSet.  # noqa: E501
         :type: str
@@ -111,6 +115,7 @@ class FontSet(object):
     def latin(self):
         """Gets the latin of this FontSet.  # noqa: E501
 
+        Latin font.  # noqa: E501
 
         :return: The latin of this FontSet.  # noqa: E501
         :rtype: str
@@ -121,6 +126,7 @@ class FontSet(object):
     def latin(self, latin):
         """Sets the latin of this FontSet.
 
+        Latin font.  # noqa: E501
 
         :param latin: The latin of this FontSet.  # noqa: E501
         :type: str

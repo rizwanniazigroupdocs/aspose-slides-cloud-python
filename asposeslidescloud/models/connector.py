@@ -49,6 +49,7 @@ class Connector(GeometryShape):
         'width': 'float',
         'height': 'float',
         'alternative_text': 'str',
+        'alternative_text_title': 'str',
         'hidden': 'bool',
         'x': 'float',
         'y': 'float',
@@ -73,6 +74,7 @@ class Connector(GeometryShape):
         'width': 'Width',
         'height': 'Height',
         'alternative_text': 'AlternativeText',
+        'alternative_text_title': 'AlternativeTextTitle',
         'hidden': 'Hidden',
         'x': 'X',
         'y': 'Y',
@@ -90,9 +92,9 @@ class Connector(GeometryShape):
         'end_shape_connected_to_index': 'EndShapeConnectedToIndex'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Connector', shape_type=None, geometry_shape_type=None, start_shape_connected_to=None, start_shape_connected_to_index=None, end_shape_connected_to=None, end_shape_connected_to_index=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Connector', shape_type=None, geometry_shape_type=None, start_shape_connected_to=None, start_shape_connected_to_index=None, end_shape_connected_to=None, end_shape_connected_to_index=None):  # noqa: E501
         """Connector - a model defined in Swagger"""  # noqa: E501
-        super(Connector, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
+        super(Connector, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._start_shape_connected_to = None
         self._start_shape_connected_to_index = None
@@ -112,6 +114,7 @@ class Connector(GeometryShape):
     def start_shape_connected_to(self):
         """Gets the start_shape_connected_to of this Connector.  # noqa: E501
 
+        Start shape link.  # noqa: E501
 
         :return: The start_shape_connected_to of this Connector.  # noqa: E501
         :rtype: ResourceUri
@@ -122,6 +125,7 @@ class Connector(GeometryShape):
     def start_shape_connected_to(self, start_shape_connected_to):
         """Sets the start_shape_connected_to of this Connector.
 
+        Start shape link.  # noqa: E501
 
         :param start_shape_connected_to: The start_shape_connected_to of this Connector.  # noqa: E501
         :type: ResourceUri
@@ -132,6 +136,7 @@ class Connector(GeometryShape):
     def start_shape_connected_to_index(self):
         """Gets the start_shape_connected_to_index of this Connector.  # noqa: E501
 
+        Start shape index.  # noqa: E501
 
         :return: The start_shape_connected_to_index of this Connector.  # noqa: E501
         :rtype: int
@@ -142,6 +147,7 @@ class Connector(GeometryShape):
     def start_shape_connected_to_index(self, start_shape_connected_to_index):
         """Sets the start_shape_connected_to_index of this Connector.
 
+        Start shape index.  # noqa: E501
 
         :param start_shape_connected_to_index: The start_shape_connected_to_index of this Connector.  # noqa: E501
         :type: int
@@ -152,6 +158,7 @@ class Connector(GeometryShape):
     def end_shape_connected_to(self):
         """Gets the end_shape_connected_to of this Connector.  # noqa: E501
 
+        End shape link.  # noqa: E501
 
         :return: The end_shape_connected_to of this Connector.  # noqa: E501
         :rtype: ResourceUri
@@ -162,6 +169,7 @@ class Connector(GeometryShape):
     def end_shape_connected_to(self, end_shape_connected_to):
         """Sets the end_shape_connected_to of this Connector.
 
+        End shape link.  # noqa: E501
 
         :param end_shape_connected_to: The end_shape_connected_to of this Connector.  # noqa: E501
         :type: ResourceUri
@@ -172,6 +180,7 @@ class Connector(GeometryShape):
     def end_shape_connected_to_index(self):
         """Gets the end_shape_connected_to_index of this Connector.  # noqa: E501
 
+        End shape index.  # noqa: E501
 
         :return: The end_shape_connected_to_index of this Connector.  # noqa: E501
         :rtype: int
@@ -182,6 +191,7 @@ class Connector(GeometryShape):
     def end_shape_connected_to_index(self, end_shape_connected_to_index):
         """Sets the end_shape_connected_to_index of this Connector.
 
+        End shape index.  # noqa: E501
 
         :param end_shape_connected_to_index: The end_shape_connected_to_index of this Connector.  # noqa: E501
         :type: int

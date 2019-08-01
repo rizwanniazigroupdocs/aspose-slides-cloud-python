@@ -67,6 +67,7 @@ class Images(ResourceBase):
     def list(self):
         """Gets the list of this Images.  # noqa: E501
 
+        Image list.  # noqa: E501
 
         :return: The list of this Images.  # noqa: E501
         :rtype: list[Image]
@@ -77,6 +78,7 @@ class Images(ResourceBase):
     def list(self, list):
         """Sets the list of this Images.
 
+        Image list.  # noqa: E501
 
         :param list: The list of this Images.  # noqa: E501
         :type: list[Image]

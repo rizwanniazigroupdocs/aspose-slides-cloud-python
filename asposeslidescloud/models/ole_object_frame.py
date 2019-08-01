@@ -49,6 +49,7 @@ class OleObjectFrame(ShapeBase):
         'width': 'float',
         'height': 'float',
         'alternative_text': 'str',
+        'alternative_text_title': 'str',
         'hidden': 'bool',
         'x': 'float',
         'y': 'float',
@@ -58,7 +59,9 @@ class OleObjectFrame(ShapeBase):
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
-        'shape_type': 'str'
+        'shape_type': 'str',
+        'is_object_icon': 'bool',
+        'substitute_picture_title': 'str'
     }
 
     attribute_map = {
@@ -68,6 +71,7 @@ class OleObjectFrame(ShapeBase):
         'width': 'Width',
         'height': 'Height',
         'alternative_text': 'AlternativeText',
+        'alternative_text_title': 'AlternativeTextTitle',
         'hidden': 'Hidden',
         'x': 'X',
         'y': 'Y',
@@ -77,12 +81,65 @@ class OleObjectFrame(ShapeBase):
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'Type',
-        'shape_type': 'ShapeType'
+        'shape_type': 'ShapeType',
+        'is_object_icon': 'IsObjectIcon',
+        'substitute_picture_title': 'SubstitutePictureTitle'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', shape_type='OleObjectFrame'):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', shape_type='OleObjectFrame', is_object_icon=None, substitute_picture_title=None):  # noqa: E501
         """OleObjectFrame - a model defined in Swagger"""  # noqa: E501
-        super(OleObjectFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        super(OleObjectFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+
+        self._is_object_icon = None
+        self._substitute_picture_title = None
+
+        self.is_object_icon = is_object_icon
+        if substitute_picture_title is not None:
+            self.substitute_picture_title = substitute_picture_title
+
+    @property
+    def is_object_icon(self):
+        """Gets the is_object_icon of this OleObjectFrame.  # noqa: E501
+
+        True if an object is visible as icon.  # noqa: E501
+
+        :return: The is_object_icon of this OleObjectFrame.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_object_icon
+
+    @is_object_icon.setter
+    def is_object_icon(self, is_object_icon):
+        """Sets the is_object_icon of this OleObjectFrame.
+
+        True if an object is visible as icon.  # noqa: E501
+
+        :param is_object_icon: The is_object_icon of this OleObjectFrame.  # noqa: E501
+        :type: bool
+        """
+        self._is_object_icon = is_object_icon
+
+    @property
+    def substitute_picture_title(self):
+        """Gets the substitute_picture_title of this OleObjectFrame.  # noqa: E501
+
+        The title for OleObject icon.               # noqa: E501
+
+        :return: The substitute_picture_title of this OleObjectFrame.  # noqa: E501
+        :rtype: str
+        """
+        return self._substitute_picture_title
+
+    @substitute_picture_title.setter
+    def substitute_picture_title(self, substitute_picture_title):
+        """Sets the substitute_picture_title of this OleObjectFrame.
+
+        The title for OleObject icon.               # noqa: E501
+
+        :param substitute_picture_title: The substitute_picture_title of this OleObjectFrame.  # noqa: E501
+        :type: str
+        """
+        self._substitute_picture_title = substitute_picture_title
 
     def to_dict(self):
         """Returns the model properties as a dict"""

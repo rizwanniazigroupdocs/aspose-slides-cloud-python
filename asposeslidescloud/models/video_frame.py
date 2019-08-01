@@ -49,6 +49,7 @@ class VideoFrame(GeometryShape):
         'width': 'float',
         'height': 'float',
         'alternative_text': 'str',
+        'alternative_text_title': 'str',
         'hidden': 'bool',
         'x': 'float',
         'y': 'float',
@@ -76,6 +77,7 @@ class VideoFrame(GeometryShape):
         'width': 'Width',
         'height': 'Height',
         'alternative_text': 'AlternativeText',
+        'alternative_text_title': 'AlternativeTextTitle',
         'hidden': 'Hidden',
         'x': 'X',
         'y': 'Y',
@@ -96,9 +98,9 @@ class VideoFrame(GeometryShape):
         'base64_data': 'Base64Data'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='VideoFrame', shape_type='VideoFrame', geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='VideoFrame', shape_type='VideoFrame', geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501
         """VideoFrame - a model defined in Swagger"""  # noqa: E501
-        super(VideoFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
+        super(VideoFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._full_screen_mode = None
         self._hide_at_showing = None

@@ -88,6 +88,7 @@ class ResourceBase(object):
     def alternate_links(self):
         """Gets the alternate_links of this ResourceBase.  # noqa: E501
 
+        List of alternate links.  # noqa: E501
 
         :return: The alternate_links of this ResourceBase.  # noqa: E501
         :rtype: list[ResourceUri]
@@ -98,6 +99,7 @@ class ResourceBase(object):
     def alternate_links(self, alternate_links):
         """Sets the alternate_links of this ResourceBase.
 
+        List of alternate links.  # noqa: E501
 
         :param alternate_links: The alternate_links of this ResourceBase.  # noqa: E501
         :type: list[ResourceUri]

@@ -69,6 +69,7 @@ class AddLayoutSlide(Task):
     def clone_from_file(self):
         """Gets the clone_from_file of this AddLayoutSlide.  # noqa: E501
 
+        Source file.  # noqa: E501
 
         :return: The clone_from_file of this AddLayoutSlide.  # noqa: E501
         :rtype: InputFile
@@ -79,6 +80,7 @@ class AddLayoutSlide(Task):
     def clone_from_file(self, clone_from_file):
         """Sets the clone_from_file of this AddLayoutSlide.
 
+        Source file.  # noqa: E501
 
         :param clone_from_file: The clone_from_file of this AddLayoutSlide.  # noqa: E501
         :type: InputFile
@@ -89,6 +91,7 @@ class AddLayoutSlide(Task):
     def clone_from_position(self):
         """Gets the clone_from_position of this AddLayoutSlide.  # noqa: E501
 
+        Source layout slide position.  # noqa: E501
 
         :return: The clone_from_position of this AddLayoutSlide.  # noqa: E501
         :rtype: int
@@ -99,6 +102,7 @@ class AddLayoutSlide(Task):
     def clone_from_position(self, clone_from_position):
         """Sets the clone_from_position of this AddLayoutSlide.
 
+        Source layout slide position.  # noqa: E501
 
         :param clone_from_position: The clone_from_position of this AddLayoutSlide.  # noqa: E501
         :type: int

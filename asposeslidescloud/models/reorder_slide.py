@@ -68,6 +68,7 @@ class ReorderSlide(Task):
     def old_position(self):
         """Gets the old_position of this ReorderSlide.  # noqa: E501
 
+        Old position.  # noqa: E501
 
         :return: The old_position of this ReorderSlide.  # noqa: E501
         :rtype: int
@@ -78,6 +79,7 @@ class ReorderSlide(Task):
     def old_position(self, old_position):
         """Sets the old_position of this ReorderSlide.
 
+        Old position.  # noqa: E501
 
         :param old_position: The old_position of this ReorderSlide.  # noqa: E501
         :type: int
@@ -88,6 +90,7 @@ class ReorderSlide(Task):
     def new_position(self):
         """Gets the new_position of this ReorderSlide.  # noqa: E501
 
+        New position.  # noqa: E501
 
         :return: The new_position of this ReorderSlide.  # noqa: E501
         :rtype: int
@@ -98,6 +101,7 @@ class ReorderSlide(Task):
     def new_position(self, new_position):
         """Sets the new_position of this ReorderSlide.
 
+        New position.  # noqa: E501
 
         :param new_position: The new_position of this ReorderSlide.  # noqa: E501
         :type: int

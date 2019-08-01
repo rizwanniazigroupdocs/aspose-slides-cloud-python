@@ -122,6 +122,7 @@ class ColorScheme(ResourceBase):
     def accent1(self):
         """Gets the accent1 of this ColorScheme.  # noqa: E501
 
+        First accent color.  # noqa: E501
 
         :return: The accent1 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -132,6 +133,7 @@ class ColorScheme(ResourceBase):
     def accent1(self, accent1):
         """Sets the accent1 of this ColorScheme.
 
+        First accent color.  # noqa: E501
 
         :param accent1: The accent1 of this ColorScheme.  # noqa: E501
         :type: str
@@ -142,6 +144,7 @@ class ColorScheme(ResourceBase):
     def accent2(self):
         """Gets the accent2 of this ColorScheme.  # noqa: E501
 
+        Second accent color.  # noqa: E501
 
         :return: The accent2 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -152,6 +155,7 @@ class ColorScheme(ResourceBase):
     def accent2(self, accent2):
         """Sets the accent2 of this ColorScheme.
 
+        Second accent color.  # noqa: E501
 
         :param accent2: The accent2 of this ColorScheme.  # noqa: E501
         :type: str
@@ -162,6 +166,7 @@ class ColorScheme(ResourceBase):
     def accent3(self):
         """Gets the accent3 of this ColorScheme.  # noqa: E501
 
+        Third accent color.  # noqa: E501
 
         :return: The accent3 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -172,6 +177,7 @@ class ColorScheme(ResourceBase):
     def accent3(self, accent3):
         """Sets the accent3 of this ColorScheme.
 
+        Third accent color.  # noqa: E501
 
         :param accent3: The accent3 of this ColorScheme.  # noqa: E501
         :type: str
@@ -182,6 +188,7 @@ class ColorScheme(ResourceBase):
     def accent4(self):
         """Gets the accent4 of this ColorScheme.  # noqa: E501
 
+        Fourth accent color.  # noqa: E501
 
         :return: The accent4 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -192,6 +199,7 @@ class ColorScheme(ResourceBase):
     def accent4(self, accent4):
         """Sets the accent4 of this ColorScheme.
 
+        Fourth accent color.  # noqa: E501
 
         :param accent4: The accent4 of this ColorScheme.  # noqa: E501
         :type: str
@@ -202,6 +210,7 @@ class ColorScheme(ResourceBase):
     def accent5(self):
         """Gets the accent5 of this ColorScheme.  # noqa: E501
 
+        Fifth accent color.  # noqa: E501
 
         :return: The accent5 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -212,6 +221,7 @@ class ColorScheme(ResourceBase):
     def accent5(self, accent5):
         """Sets the accent5 of this ColorScheme.
 
+        Fifth accent color.  # noqa: E501
 
         :param accent5: The accent5 of this ColorScheme.  # noqa: E501
         :type: str
@@ -222,6 +232,7 @@ class ColorScheme(ResourceBase):
     def accent6(self):
         """Gets the accent6 of this ColorScheme.  # noqa: E501
 
+        Sixth accent color.  # noqa: E501
 
         :return: The accent6 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -232,6 +243,7 @@ class ColorScheme(ResourceBase):
     def accent6(self, accent6):
         """Sets the accent6 of this ColorScheme.
 
+        Sixth accent color.  # noqa: E501
 
         :param accent6: The accent6 of this ColorScheme.  # noqa: E501
         :type: str
@@ -242,6 +254,7 @@ class ColorScheme(ResourceBase):
     def dark1(self):
         """Gets the dark1 of this ColorScheme.  # noqa: E501
 
+        First dark color.  # noqa: E501
 
         :return: The dark1 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -252,6 +265,7 @@ class ColorScheme(ResourceBase):
     def dark1(self, dark1):
         """Sets the dark1 of this ColorScheme.
 
+        First dark color.  # noqa: E501
 
         :param dark1: The dark1 of this ColorScheme.  # noqa: E501
         :type: str
@@ -262,6 +276,7 @@ class ColorScheme(ResourceBase):
     def dark2(self):
         """Gets the dark2 of this ColorScheme.  # noqa: E501
 
+        Second dark color.  # noqa: E501
 
         :return: The dark2 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -272,6 +287,7 @@ class ColorScheme(ResourceBase):
     def dark2(self, dark2):
         """Sets the dark2 of this ColorScheme.
 
+        Second dark color.  # noqa: E501
 
         :param dark2: The dark2 of this ColorScheme.  # noqa: E501
         :type: str
@@ -282,6 +298,7 @@ class ColorScheme(ResourceBase):
     def followed_hyperlink(self):
         """Gets the followed_hyperlink of this ColorScheme.  # noqa: E501
 
+        Visited hyperlink color.  # noqa: E501
 
         :return: The followed_hyperlink of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -292,6 +309,7 @@ class ColorScheme(ResourceBase):
     def followed_hyperlink(self, followed_hyperlink):
         """Sets the followed_hyperlink of this ColorScheme.
 
+        Visited hyperlink color.  # noqa: E501
 
         :param followed_hyperlink: The followed_hyperlink of this ColorScheme.  # noqa: E501
         :type: str
@@ -302,6 +320,7 @@ class ColorScheme(ResourceBase):
     def hyperlink(self):
         """Gets the hyperlink of this ColorScheme.  # noqa: E501
 
+        Hyperlink color/  # noqa: E501
 
         :return: The hyperlink of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -312,6 +331,7 @@ class ColorScheme(ResourceBase):
     def hyperlink(self, hyperlink):
         """Sets the hyperlink of this ColorScheme.
 
+        Hyperlink color/  # noqa: E501
 
         :param hyperlink: The hyperlink of this ColorScheme.  # noqa: E501
         :type: str
@@ -322,6 +342,7 @@ class ColorScheme(ResourceBase):
     def light1(self):
         """Gets the light1 of this ColorScheme.  # noqa: E501
 
+        First light color.  # noqa: E501
 
         :return: The light1 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -332,6 +353,7 @@ class ColorScheme(ResourceBase):
     def light1(self, light1):
         """Sets the light1 of this ColorScheme.
 
+        First light color.  # noqa: E501
 
         :param light1: The light1 of this ColorScheme.  # noqa: E501
         :type: str
@@ -342,6 +364,7 @@ class ColorScheme(ResourceBase):
     def light2(self):
         """Gets the light2 of this ColorScheme.  # noqa: E501
 
+        Second light color.  # noqa: E501
 
         :return: The light2 of this ColorScheme.  # noqa: E501
         :rtype: str
@@ -352,6 +375,7 @@ class ColorScheme(ResourceBase):
     def light2(self, light2):
         """Sets the light2 of this ColorScheme.
 
+        Second light color.  # noqa: E501
 
         :param light2: The light2 of this ColorScheme.  # noqa: E501
         :type: str

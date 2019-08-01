@@ -67,6 +67,7 @@ class Placeholders(ResourceBase):
     def placeholder_links(self):
         """Gets the placeholder_links of this Placeholders.  # noqa: E501
 
+        List for placeholder links.  # noqa: E501
 
         :return: The placeholder_links of this Placeholders.  # noqa: E501
         :rtype: list[ResourceUri]
@@ -77,6 +78,7 @@ class Placeholders(ResourceBase):
     def placeholder_links(self, placeholder_links):
         """Sets the placeholder_links of this Placeholders.
 
+        List for placeholder links.  # noqa: E501
 
         :param placeholder_links: The placeholder_links of this Placeholders.  # noqa: E501
         :type: list[ResourceUri]

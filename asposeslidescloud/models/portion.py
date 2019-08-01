@@ -187,6 +187,7 @@ class Portion(ResourceBase):
     def text(self):
         """Gets the text of this Portion.  # noqa: E501
 
+        Text.  # noqa: E501
 
         :return: The text of this Portion.  # noqa: E501
         :rtype: str
@@ -197,6 +198,7 @@ class Portion(ResourceBase):
     def text(self, text):
         """Sets the text of this Portion.
 
+        Text.  # noqa: E501
 
         :param text: The text of this Portion.  # noqa: E501
         :type: str
@@ -207,6 +209,7 @@ class Portion(ResourceBase):
     def font_bold(self):
         """Gets the font_bold of this Portion.  # noqa: E501
 
+        True for bold font.  # noqa: E501
 
         :return: The font_bold of this Portion.  # noqa: E501
         :rtype: str
@@ -217,6 +220,7 @@ class Portion(ResourceBase):
     def font_bold(self, font_bold):
         """Sets the font_bold of this Portion.
 
+        True for bold font.  # noqa: E501
 
         :param font_bold: The font_bold of this Portion.  # noqa: E501
         :type: str
@@ -234,6 +238,7 @@ class Portion(ResourceBase):
     def font_italic(self):
         """Gets the font_italic of this Portion.  # noqa: E501
 
+        True for italic font.  # noqa: E501
 
         :return: The font_italic of this Portion.  # noqa: E501
         :rtype: str
@@ -244,6 +249,7 @@ class Portion(ResourceBase):
     def font_italic(self, font_italic):
         """Sets the font_italic of this Portion.
 
+        True for italic font.  # noqa: E501
 
         :param font_italic: The font_italic of this Portion.  # noqa: E501
         :type: str
@@ -261,6 +267,7 @@ class Portion(ResourceBase):
     def font_underline(self):
         """Gets the font_underline of this Portion.  # noqa: E501
 
+        Text underline type.  # noqa: E501
 
         :return: The font_underline of this Portion.  # noqa: E501
         :rtype: str
@@ -271,6 +278,7 @@ class Portion(ResourceBase):
     def font_underline(self, font_underline):
         """Sets the font_underline of this Portion.
 
+        Text underline type.  # noqa: E501
 
         :param font_underline: The font_underline of this Portion.  # noqa: E501
         :type: str
@@ -288,6 +296,7 @@ class Portion(ResourceBase):
     def strikethrough_type(self):
         """Gets the strikethrough_type of this Portion.  # noqa: E501
 
+        Text strikethrough type.  # noqa: E501
 
         :return: The strikethrough_type of this Portion.  # noqa: E501
         :rtype: str
@@ -298,6 +307,7 @@ class Portion(ResourceBase):
     def strikethrough_type(self, strikethrough_type):
         """Sets the strikethrough_type of this Portion.
 
+        Text strikethrough type.  # noqa: E501
 
         :param strikethrough_type: The strikethrough_type of this Portion.  # noqa: E501
         :type: str
@@ -315,6 +325,7 @@ class Portion(ResourceBase):
     def text_cap_type(self):
         """Gets the text_cap_type of this Portion.  # noqa: E501
 
+        Text capitalization type.  # noqa: E501
 
         :return: The text_cap_type of this Portion.  # noqa: E501
         :rtype: str
@@ -325,6 +336,7 @@ class Portion(ResourceBase):
     def text_cap_type(self, text_cap_type):
         """Sets the text_cap_type of this Portion.
 
+        Text capitalization type.  # noqa: E501
 
         :param text_cap_type: The text_cap_type of this Portion.  # noqa: E501
         :type: str
@@ -342,6 +354,7 @@ class Portion(ResourceBase):
     def escapement(self):
         """Gets the escapement of this Portion.  # noqa: E501
 
+        Superscript or subscript of the text.  # noqa: E501
 
         :return: The escapement of this Portion.  # noqa: E501
         :rtype: float
@@ -352,6 +365,7 @@ class Portion(ResourceBase):
     def escapement(self, escapement):
         """Sets the escapement of this Portion.
 
+        Superscript or subscript of the text.  # noqa: E501
 
         :param escapement: The escapement of this Portion.  # noqa: E501
         :type: float
@@ -362,6 +376,7 @@ class Portion(ResourceBase):
     def spacing(self):
         """Gets the spacing of this Portion.  # noqa: E501
 
+        Intercharacter spacing increment.  # noqa: E501
 
         :return: The spacing of this Portion.  # noqa: E501
         :rtype: float
@@ -372,6 +387,7 @@ class Portion(ResourceBase):
     def spacing(self, spacing):
         """Sets the spacing of this Portion.
 
+        Intercharacter spacing increment.  # noqa: E501
 
         :param spacing: The spacing of this Portion.  # noqa: E501
         :type: float
@@ -382,6 +398,7 @@ class Portion(ResourceBase):
     def font_color(self):
         """Gets the font_color of this Portion.  # noqa: E501
 
+        Font color.  # noqa: E501
 
         :return: The font_color of this Portion.  # noqa: E501
         :rtype: str
@@ -392,6 +409,7 @@ class Portion(ResourceBase):
     def font_color(self, font_color):
         """Sets the font_color of this Portion.
 
+        Font color.  # noqa: E501
 
         :param font_color: The font_color of this Portion.  # noqa: E501
         :type: str
@@ -402,6 +420,7 @@ class Portion(ResourceBase):
     def highlight_color(self):
         """Gets the highlight_color of this Portion.  # noqa: E501
 
+        Highlight color.  # noqa: E501
 
         :return: The highlight_color of this Portion.  # noqa: E501
         :rtype: str
@@ -412,6 +431,7 @@ class Portion(ResourceBase):
     def highlight_color(self, highlight_color):
         """Sets the highlight_color of this Portion.
 
+        Highlight color.  # noqa: E501
 
         :param highlight_color: The highlight_color of this Portion.  # noqa: E501
         :type: str
@@ -422,6 +442,7 @@ class Portion(ResourceBase):
     def font_height(self):
         """Gets the font_height of this Portion.  # noqa: E501
 
+        Font height.  # noqa: E501
 
         :return: The font_height of this Portion.  # noqa: E501
         :rtype: float
@@ -432,6 +453,7 @@ class Portion(ResourceBase):
     def font_height(self, font_height):
         """Sets the font_height of this Portion.
 
+        Font height.  # noqa: E501
 
         :param font_height: The font_height of this Portion.  # noqa: E501
         :type: float
@@ -442,6 +464,7 @@ class Portion(ResourceBase):
     def normalise_height(self):
         """Gets the normalise_height of this Portion.  # noqa: E501
 
+        True to normalize the text.  # noqa: E501
 
         :return: The normalise_height of this Portion.  # noqa: E501
         :rtype: str
@@ -452,6 +475,7 @@ class Portion(ResourceBase):
     def normalise_height(self, normalise_height):
         """Sets the normalise_height of this Portion.
 
+        True to normalize the text.  # noqa: E501
 
         :param normalise_height: The normalise_height of this Portion.  # noqa: E501
         :type: str
@@ -469,6 +493,7 @@ class Portion(ResourceBase):
     def proof_disabled(self):
         """Gets the proof_disabled of this Portion.  # noqa: E501
 
+        True if the text proof should be disabled.  # noqa: E501
 
         :return: The proof_disabled of this Portion.  # noqa: E501
         :rtype: str
@@ -479,6 +504,7 @@ class Portion(ResourceBase):
     def proof_disabled(self, proof_disabled):
         """Sets the proof_disabled of this Portion.
 
+        True if the text proof should be disabled.  # noqa: E501
 
         :param proof_disabled: The proof_disabled of this Portion.  # noqa: E501
         :type: str
@@ -496,6 +522,7 @@ class Portion(ResourceBase):
     def smart_tag_clean(self):
         """Gets the smart_tag_clean of this Portion.  # noqa: E501
 
+        True if smart tag should be cleaned.  # noqa: E501
 
         :return: The smart_tag_clean of this Portion.  # noqa: E501
         :rtype: bool
@@ -506,6 +533,7 @@ class Portion(ResourceBase):
     def smart_tag_clean(self, smart_tag_clean):
         """Sets the smart_tag_clean of this Portion.
 
+        True if smart tag should be cleaned.  # noqa: E501
 
         :param smart_tag_clean: The smart_tag_clean of this Portion.  # noqa: E501
         :type: bool
@@ -516,6 +544,7 @@ class Portion(ResourceBase):
     def kerning_minimal_size(self):
         """Gets the kerning_minimal_size of this Portion.  # noqa: E501
 
+        Minimal font size for kerning.  # noqa: E501
 
         :return: The kerning_minimal_size of this Portion.  # noqa: E501
         :rtype: float
@@ -526,6 +555,7 @@ class Portion(ResourceBase):
     def kerning_minimal_size(self, kerning_minimal_size):
         """Sets the kerning_minimal_size of this Portion.
 
+        Minimal font size for kerning.  # noqa: E501
 
         :param kerning_minimal_size: The kerning_minimal_size of this Portion.  # noqa: E501
         :type: float
@@ -536,6 +566,7 @@ class Portion(ResourceBase):
     def kumimoji(self):
         """Gets the kumimoji of this Portion.  # noqa: E501
 
+        True if numbers should ignore East-Asian specific vertical text layout.  # noqa: E501
 
         :return: The kumimoji of this Portion.  # noqa: E501
         :rtype: str
@@ -546,6 +577,7 @@ class Portion(ResourceBase):
     def kumimoji(self, kumimoji):
         """Sets the kumimoji of this Portion.
 
+        True if numbers should ignore East-Asian specific vertical text layout.  # noqa: E501
 
         :param kumimoji: The kumimoji of this Portion.  # noqa: E501
         :type: str
@@ -563,6 +595,7 @@ class Portion(ResourceBase):
     def language_id(self):
         """Gets the language_id of this Portion.  # noqa: E501
 
+        Proving language ID.  # noqa: E501
 
         :return: The language_id of this Portion.  # noqa: E501
         :rtype: str
@@ -573,6 +606,7 @@ class Portion(ResourceBase):
     def language_id(self, language_id):
         """Sets the language_id of this Portion.
 
+        Proving language ID.  # noqa: E501
 
         :param language_id: The language_id of this Portion.  # noqa: E501
         :type: str
@@ -583,6 +617,7 @@ class Portion(ResourceBase):
     def alternative_language_id(self):
         """Gets the alternative_language_id of this Portion.  # noqa: E501
 
+        Alternative proving language ID.  # noqa: E501
 
         :return: The alternative_language_id of this Portion.  # noqa: E501
         :rtype: str
@@ -593,6 +628,7 @@ class Portion(ResourceBase):
     def alternative_language_id(self, alternative_language_id):
         """Sets the alternative_language_id of this Portion.
 
+        Alternative proving language ID.  # noqa: E501
 
         :param alternative_language_id: The alternative_language_id of this Portion.  # noqa: E501
         :type: str
@@ -603,6 +639,7 @@ class Portion(ResourceBase):
     def is_hard_underline_fill(self):
         """Gets the is_hard_underline_fill of this Portion.  # noqa: E501
 
+        True if underline style has own FillFormat properties.  # noqa: E501
 
         :return: The is_hard_underline_fill of this Portion.  # noqa: E501
         :rtype: str
@@ -613,6 +650,7 @@ class Portion(ResourceBase):
     def is_hard_underline_fill(self, is_hard_underline_fill):
         """Sets the is_hard_underline_fill of this Portion.
 
+        True if underline style has own FillFormat properties.  # noqa: E501
 
         :param is_hard_underline_fill: The is_hard_underline_fill of this Portion.  # noqa: E501
         :type: str
@@ -630,6 +668,7 @@ class Portion(ResourceBase):
     def is_hard_underline_line(self):
         """Gets the is_hard_underline_line of this Portion.  # noqa: E501
 
+        True if underline style has own LineFormat properties.  # noqa: E501
 
         :return: The is_hard_underline_line of this Portion.  # noqa: E501
         :rtype: str
@@ -640,6 +679,7 @@ class Portion(ResourceBase):
     def is_hard_underline_line(self, is_hard_underline_line):
         """Sets the is_hard_underline_line of this Portion.
 
+        True if underline style has own LineFormat properties.  # noqa: E501
 
         :param is_hard_underline_line: The is_hard_underline_line of this Portion.  # noqa: E501
         :type: str
@@ -657,6 +697,7 @@ class Portion(ResourceBase):
     def fill_format(self):
         """Gets the fill_format of this Portion.  # noqa: E501
 
+        Fill format.  # noqa: E501
 
         :return: The fill_format of this Portion.  # noqa: E501
         :rtype: FillFormat
@@ -667,6 +708,7 @@ class Portion(ResourceBase):
     def fill_format(self, fill_format):
         """Sets the fill_format of this Portion.
 
+        Fill format.  # noqa: E501
 
         :param fill_format: The fill_format of this Portion.  # noqa: E501
         :type: FillFormat
@@ -677,6 +719,7 @@ class Portion(ResourceBase):
     def effect_format(self):
         """Gets the effect_format of this Portion.  # noqa: E501
 
+        Effect format.  # noqa: E501
 
         :return: The effect_format of this Portion.  # noqa: E501
         :rtype: EffectFormat
@@ -687,6 +730,7 @@ class Portion(ResourceBase):
     def effect_format(self, effect_format):
         """Sets the effect_format of this Portion.
 
+        Effect format.  # noqa: E501
 
         :param effect_format: The effect_format of this Portion.  # noqa: E501
         :type: EffectFormat
@@ -697,6 +741,7 @@ class Portion(ResourceBase):
     def line_format(self):
         """Gets the line_format of this Portion.  # noqa: E501
 
+        Line format.  # noqa: E501
 
         :return: The line_format of this Portion.  # noqa: E501
         :rtype: LineFormat
@@ -707,6 +752,7 @@ class Portion(ResourceBase):
     def line_format(self, line_format):
         """Sets the line_format of this Portion.
 
+        Line format.  # noqa: E501
 
         :param line_format: The line_format of this Portion.  # noqa: E501
         :type: LineFormat
@@ -717,6 +763,7 @@ class Portion(ResourceBase):
     def underline_fill_format(self):
         """Gets the underline_fill_format of this Portion.  # noqa: E501
 
+        Underline fill format.  # noqa: E501
 
         :return: The underline_fill_format of this Portion.  # noqa: E501
         :rtype: FillFormat
@@ -727,6 +774,7 @@ class Portion(ResourceBase):
     def underline_fill_format(self, underline_fill_format):
         """Sets the underline_fill_format of this Portion.
 
+        Underline fill format.  # noqa: E501
 
         :param underline_fill_format: The underline_fill_format of this Portion.  # noqa: E501
         :type: FillFormat
@@ -737,6 +785,7 @@ class Portion(ResourceBase):
     def underline_line_format(self):
         """Gets the underline_line_format of this Portion.  # noqa: E501
 
+        Underline line format.  # noqa: E501
 
         :return: The underline_line_format of this Portion.  # noqa: E501
         :rtype: LineFormat
@@ -747,6 +796,7 @@ class Portion(ResourceBase):
     def underline_line_format(self, underline_line_format):
         """Sets the underline_line_format of this Portion.
 
+        Underline line format.  # noqa: E501
 
         :param underline_line_format: The underline_line_format of this Portion.  # noqa: E501
         :type: LineFormat

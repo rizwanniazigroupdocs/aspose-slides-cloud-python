@@ -65,6 +65,7 @@ class RemoveShape(Task):
     def shape_path(self):
         """Gets the shape_path of this RemoveShape.  # noqa: E501
 
+        Shape path for a grouped or smart art shape.  # noqa: E501
 
         :return: The shape_path of this RemoveShape.  # noqa: E501
         :rtype: str
@@ -75,6 +76,7 @@ class RemoveShape(Task):
     def shape_path(self, shape_path):
         """Sets the shape_path of this RemoveShape.
 
+        Shape path for a grouped or smart art shape.  # noqa: E501
 
         :param shape_path: The shape_path of this RemoveShape.  # noqa: E501
         :type: str

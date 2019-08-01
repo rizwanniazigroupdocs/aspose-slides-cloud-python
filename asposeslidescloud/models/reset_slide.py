@@ -64,6 +64,7 @@ class ResetSlide(Task):
     def position(self):
         """Gets the position of this ResetSlide.  # noqa: E501
 
+        Slide position.  # noqa: E501
 
         :return: The position of this ResetSlide.  # noqa: E501
         :rtype: int
@@ -74,6 +75,7 @@ class ResetSlide(Task):
     def position(self, position):
         """Sets the position of this ResetSlide.
 
+        Slide position.  # noqa: E501
 
         :param position: The position of this ResetSlide.  # noqa: E501
         :type: int

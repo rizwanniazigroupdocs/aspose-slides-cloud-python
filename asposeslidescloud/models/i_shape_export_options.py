@@ -61,6 +61,7 @@ class IShapeExportOptions(object):
     def format(self):
         """Gets the format of this IShapeExportOptions.  # noqa: E501
 
+        Export format.  # noqa: E501
 
         :return: The format of this IShapeExportOptions.  # noqa: E501
         :rtype: str
@@ -71,6 +72,7 @@ class IShapeExportOptions(object):
     def format(self, format):
         """Sets the format of this IShapeExportOptions.
 
+        Export format.  # noqa: E501
 
         :param format: The format of this IShapeExportOptions.  # noqa: E501
         :type: str

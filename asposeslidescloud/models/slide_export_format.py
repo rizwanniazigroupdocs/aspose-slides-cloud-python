@@ -53,6 +53,7 @@ class SlideExportFormat(object):
     PPTM = "Pptm"
     PPSM = "Ppsm"
     POTX = "Potx"
+    POT = "Pot"
     POTM = "Potm"
     SVG = "Svg"
 

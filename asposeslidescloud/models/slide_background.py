@@ -76,6 +76,7 @@ class SlideBackground(ResourceBase):
     def type(self):
         """Gets the type of this SlideBackground.  # noqa: E501
 
+        Fill type.  # noqa: E501
 
         :return: The type of this SlideBackground.  # noqa: E501
         :rtype: str
@@ -86,6 +87,7 @@ class SlideBackground(ResourceBase):
     def type(self, type):
         """Sets the type of this SlideBackground.
 
+        Fill type.  # noqa: E501
 
         :param type: The type of this SlideBackground.  # noqa: E501
         :type: str
@@ -103,6 +105,7 @@ class SlideBackground(ResourceBase):
     def fill_format(self):
         """Gets the fill_format of this SlideBackground.  # noqa: E501
 
+        Fill format.  # noqa: E501
 
         :return: The fill_format of this SlideBackground.  # noqa: E501
         :rtype: FillFormat
@@ -113,6 +116,7 @@ class SlideBackground(ResourceBase):
     def fill_format(self, fill_format):
         """Sets the fill_format of this SlideBackground.
 
+        Fill format.  # noqa: E501
 
         :param fill_format: The fill_format of this SlideBackground.  # noqa: E501
         :type: FillFormat
@@ -123,6 +127,7 @@ class SlideBackground(ResourceBase):
     def effect_format(self):
         """Gets the effect_format of this SlideBackground.  # noqa: E501
 
+        Effect format.  # noqa: E501
 
         :return: The effect_format of this SlideBackground.  # noqa: E501
         :rtype: EffectFormat
@@ -133,6 +138,7 @@ class SlideBackground(ResourceBase):
     def effect_format(self, effect_format):
         """Sets the effect_format of this SlideBackground.
 
+        Effect format.  # noqa: E501
 
         :param effect_format: The effect_format of this SlideBackground.  # noqa: E501
         :type: EffectFormat

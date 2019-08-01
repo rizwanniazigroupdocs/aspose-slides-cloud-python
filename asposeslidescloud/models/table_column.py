@@ -60,6 +60,7 @@ class TableColumn(object):
     def width(self):
         """Gets the width of this TableColumn.  # noqa: E501
 
+        Width.  # noqa: E501
 
         :return: The width of this TableColumn.  # noqa: E501
         :rtype: float
@@ -70,6 +71,7 @@ class TableColumn(object):
     def width(self, width):
         """Sets the width of this TableColumn.
 
+        Width.  # noqa: E501
 
         :param width: The width of this TableColumn.  # noqa: E501
         :type: float

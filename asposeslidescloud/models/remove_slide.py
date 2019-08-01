@@ -64,6 +64,7 @@ class RemoveSlide(Task):
     def position(self):
         """Gets the position of this RemoveSlide.  # noqa: E501
 
+        Position of slide to be removed.  # noqa: E501
 
         :return: The position of this RemoveSlide.  # noqa: E501
         :rtype: int
@@ -74,6 +75,7 @@ class RemoveSlide(Task):
     def position(self, position):
         """Sets the position of this RemoveSlide.
 
+        Position of slide to be removed.  # noqa: E501
 
         :param position: The position of this RemoveSlide.  # noqa: E501
         :type: int

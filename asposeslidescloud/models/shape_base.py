@@ -49,6 +49,7 @@ class ShapeBase(ResourceBase):
         'width': 'float',
         'height': 'float',
         'alternative_text': 'str',
+        'alternative_text_title': 'str',
         'hidden': 'bool',
         'x': 'float',
         'y': 'float',
@@ -68,6 +69,7 @@ class ShapeBase(ResourceBase):
         'width': 'Width',
         'height': 'Height',
         'alternative_text': 'AlternativeText',
+        'alternative_text_title': 'AlternativeTextTitle',
         'hidden': 'Hidden',
         'x': 'X',
         'y': 'Y',
@@ -80,7 +82,7 @@ class ShapeBase(ResourceBase):
         'shape_type': 'ShapeType'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None, shape_type=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None, shape_type=None):  # noqa: E501
         """ShapeBase - a model defined in Swagger"""  # noqa: E501
         super(ShapeBase, self).__init__(self_uri, alternate_links)
 
@@ -88,6 +90,7 @@ class ShapeBase(ResourceBase):
         self._width = None
         self._height = None
         self._alternative_text = None
+        self._alternative_text_title = None
         self._hidden = None
         self._x = None
         self._y = None
@@ -107,6 +110,8 @@ class ShapeBase(ResourceBase):
             self.height = height
         if alternative_text is not None:
             self.alternative_text = alternative_text
+        if alternative_text_title is not None:
+            self.alternative_text_title = alternative_text_title
         if hidden is not None:
             self.hidden = hidden
         if x is not None:
@@ -214,6 +219,28 @@ class ShapeBase(ResourceBase):
         :type: str
         """
         self._alternative_text = alternative_text
+
+    @property
+    def alternative_text_title(self):
+        """Gets the alternative_text_title of this ShapeBase.  # noqa: E501
+
+        The title of alternative text associated with the shape.  # noqa: E501
+
+        :return: The alternative_text_title of this ShapeBase.  # noqa: E501
+        :rtype: str
+        """
+        return self._alternative_text_title
+
+    @alternative_text_title.setter
+    def alternative_text_title(self, alternative_text_title):
+        """Sets the alternative_text_title of this ShapeBase.
+
+        The title of alternative text associated with the shape.  # noqa: E501
+
+        :param alternative_text_title: The alternative_text_title of this ShapeBase.  # noqa: E501
+        :type: str
+        """
+        self._alternative_text_title = alternative_text_title
 
     @property
     def hidden(self):

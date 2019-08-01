@@ -65,6 +65,7 @@ class GradientFillStop(object):
     def color(self):
         """Gets the color of this GradientFillStop.  # noqa: E501
 
+        Color.  # noqa: E501
 
         :return: The color of this GradientFillStop.  # noqa: E501
         :rtype: str
@@ -75,6 +76,7 @@ class GradientFillStop(object):
     def color(self, color):
         """Sets the color of this GradientFillStop.
 
+        Color.  # noqa: E501
 
         :param color: The color of this GradientFillStop.  # noqa: E501
         :type: str
@@ -85,6 +87,7 @@ class GradientFillStop(object):
     def position(self):
         """Gets the position of this GradientFillStop.  # noqa: E501
 
+        Stop position (0..1).  # noqa: E501
 
         :return: The position of this GradientFillStop.  # noqa: E501
         :rtype: float
@@ -95,6 +98,7 @@ class GradientFillStop(object):
     def position(self, position):
         """Sets the position of this GradientFillStop.
 
+        Stop position (0..1).  # noqa: E501
 
         :param position: The position of this GradientFillStop.  # noqa: E501
         :type: float

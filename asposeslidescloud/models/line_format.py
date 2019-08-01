@@ -104,6 +104,7 @@ class LineFormat(object):
     def alignment(self):
         """Gets the alignment of this LineFormat.  # noqa: E501
 
+        Alignment.  # noqa: E501
 
         :return: The alignment of this LineFormat.  # noqa: E501
         :rtype: str
@@ -114,6 +115,7 @@ class LineFormat(object):
     def alignment(self, alignment):
         """Sets the alignment of this LineFormat.
 
+        Alignment.  # noqa: E501
 
         :param alignment: The alignment of this LineFormat.  # noqa: E501
         :type: str
@@ -131,6 +133,7 @@ class LineFormat(object):
     def cap_style(self):
         """Gets the cap_style of this LineFormat.  # noqa: E501
 
+        Cap style.  # noqa: E501
 
         :return: The cap_style of this LineFormat.  # noqa: E501
         :rtype: str
@@ -141,6 +144,7 @@ class LineFormat(object):
     def cap_style(self, cap_style):
         """Sets the cap_style of this LineFormat.
 
+        Cap style.  # noqa: E501
 
         :param cap_style: The cap_style of this LineFormat.  # noqa: E501
         :type: str
@@ -158,6 +162,7 @@ class LineFormat(object):
     def dash_style(self):
         """Gets the dash_style of this LineFormat.  # noqa: E501
 
+        Dash style.  # noqa: E501
 
         :return: The dash_style of this LineFormat.  # noqa: E501
         :rtype: str
@@ -168,6 +173,7 @@ class LineFormat(object):
     def dash_style(self, dash_style):
         """Sets the dash_style of this LineFormat.
 
+        Dash style.  # noqa: E501
 
         :param dash_style: The dash_style of this LineFormat.  # noqa: E501
         :type: str
@@ -185,6 +191,7 @@ class LineFormat(object):
     def join_style(self):
         """Gets the join_style of this LineFormat.  # noqa: E501
 
+        Join style.  # noqa: E501
 
         :return: The join_style of this LineFormat.  # noqa: E501
         :rtype: str
@@ -195,6 +202,7 @@ class LineFormat(object):
     def join_style(self, join_style):
         """Sets the join_style of this LineFormat.
 
+        Join style.  # noqa: E501
 
         :param join_style: The join_style of this LineFormat.  # noqa: E501
         :type: str
@@ -212,6 +220,7 @@ class LineFormat(object):
     def style(self):
         """Gets the style of this LineFormat.  # noqa: E501
 
+        Style.  # noqa: E501
 
         :return: The style of this LineFormat.  # noqa: E501
         :rtype: str
@@ -222,6 +231,7 @@ class LineFormat(object):
     def style(self, style):
         """Sets the style of this LineFormat.
 
+        Style.  # noqa: E501
 
         :param style: The style of this LineFormat.  # noqa: E501
         :type: str
@@ -239,6 +249,7 @@ class LineFormat(object):
     def begin_arrow_head(self):
         """Gets the begin_arrow_head of this LineFormat.  # noqa: E501
 
+        Begin arrowhead.  # noqa: E501
 
         :return: The begin_arrow_head of this LineFormat.  # noqa: E501
         :rtype: ArrowHeadProperties
@@ -249,6 +260,7 @@ class LineFormat(object):
     def begin_arrow_head(self, begin_arrow_head):
         """Sets the begin_arrow_head of this LineFormat.
 
+        Begin arrowhead.  # noqa: E501
 
         :param begin_arrow_head: The begin_arrow_head of this LineFormat.  # noqa: E501
         :type: ArrowHeadProperties
@@ -259,6 +271,7 @@ class LineFormat(object):
     def end_arrow_head(self):
         """Gets the end_arrow_head of this LineFormat.  # noqa: E501
 
+        End arrowhead.  # noqa: E501
 
         :return: The end_arrow_head of this LineFormat.  # noqa: E501
         :rtype: ArrowHeadProperties
@@ -269,6 +282,7 @@ class LineFormat(object):
     def end_arrow_head(self, end_arrow_head):
         """Sets the end_arrow_head of this LineFormat.
 
+        End arrowhead.  # noqa: E501
 
         :param end_arrow_head: The end_arrow_head of this LineFormat.  # noqa: E501
         :type: ArrowHeadProperties
@@ -279,6 +293,7 @@ class LineFormat(object):
     def custom_dash_pattern(self):
         """Gets the custom_dash_pattern of this LineFormat.  # noqa: E501
 
+        Custom dash pattern.  # noqa: E501
 
         :return: The custom_dash_pattern of this LineFormat.  # noqa: E501
         :rtype: CustomDashPattern
@@ -289,6 +304,7 @@ class LineFormat(object):
     def custom_dash_pattern(self, custom_dash_pattern):
         """Sets the custom_dash_pattern of this LineFormat.
 
+        Custom dash pattern.  # noqa: E501
 
         :param custom_dash_pattern: The custom_dash_pattern of this LineFormat.  # noqa: E501
         :type: CustomDashPattern
@@ -299,6 +315,7 @@ class LineFormat(object):
     def fill_format(self):
         """Gets the fill_format of this LineFormat.  # noqa: E501
 
+        Fill format.  # noqa: E501
 
         :return: The fill_format of this LineFormat.  # noqa: E501
         :rtype: FillFormat
@@ -309,6 +326,7 @@ class LineFormat(object):
     def fill_format(self, fill_format):
         """Sets the fill_format of this LineFormat.
 
+        Fill format.  # noqa: E501
 
         :param fill_format: The fill_format of this LineFormat.  # noqa: E501
         :type: FillFormat
@@ -319,6 +337,7 @@ class LineFormat(object):
     def miter_limit(self):
         """Gets the miter_limit of this LineFormat.  # noqa: E501
 
+        Miter limit.  # noqa: E501
 
         :return: The miter_limit of this LineFormat.  # noqa: E501
         :rtype: float
@@ -329,6 +348,7 @@ class LineFormat(object):
     def miter_limit(self, miter_limit):
         """Sets the miter_limit of this LineFormat.
 
+        Miter limit.  # noqa: E501
 
         :param miter_limit: The miter_limit of this LineFormat.  # noqa: E501
         :type: float
@@ -339,6 +359,7 @@ class LineFormat(object):
     def width(self):
         """Gets the width of this LineFormat.  # noqa: E501
 
+        Width.  # noqa: E501
 
         :return: The width of this LineFormat.  # noqa: E501
         :rtype: float
@@ -349,6 +370,7 @@ class LineFormat(object):
     def width(self, width):
         """Sets the width of this LineFormat.
 
+        Width.  # noqa: E501
 
         :param width: The width of this LineFormat.  # noqa: E501
         :type: float

@@ -66,6 +66,7 @@ class MergingSource(object):
     def input(self):
         """Gets the input of this MergingSource.  # noqa: E501
 
+        Source file.  # noqa: E501
 
         :return: The input of this MergingSource.  # noqa: E501
         :rtype: InputFile
@@ -76,6 +77,7 @@ class MergingSource(object):
     def input(self, input):
         """Sets the input of this MergingSource.
 
+        Source file.  # noqa: E501
 
         :param input: The input of this MergingSource.  # noqa: E501
         :type: InputFile
@@ -86,6 +88,7 @@ class MergingSource(object):
     def slides(self):
         """Gets the slides of this MergingSource.  # noqa: E501
 
+        Indices of slides to be merged.  # noqa: E501
 
         :return: The slides of this MergingSource.  # noqa: E501
         :rtype: list[int]
@@ -96,6 +99,7 @@ class MergingSource(object):
     def slides(self, slides):
         """Sets the slides of this MergingSource.
 
+        Indices of slides to be merged.  # noqa: E501
 
         :param slides: The slides of this MergingSource.  # noqa: E501
         :type: list[int]

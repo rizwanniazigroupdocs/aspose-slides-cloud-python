@@ -47,6 +47,7 @@ class HtmlExportOptions(ExportOptions):
         'save_as_zip': 'bool',
         'sub_directory_name': 'str',
         'show_hidden_slides': 'bool',
+        'svg_responsive_layout': 'bool',
         'jpeg_quality': 'int',
         'pictures_compression': 'str',
         'delete_pictures_cropped_areas': 'bool',
@@ -62,6 +63,7 @@ class HtmlExportOptions(ExportOptions):
         'save_as_zip': 'SaveAsZip',
         'sub_directory_name': 'SubDirectoryName',
         'show_hidden_slides': 'ShowHiddenSlides',
+        'svg_responsive_layout': 'SvgResponsiveLayout',
         'jpeg_quality': 'JpegQuality',
         'pictures_compression': 'PicturesCompression',
         'delete_pictures_cropped_areas': 'DeletePicturesCroppedAreas',
@@ -72,13 +74,14 @@ class HtmlExportOptions(ExportOptions):
         'show_comments_by_no_author': 'ShowCommentsByNoAuthor'
     }
 
-    def __init__(self, format='html', save_as_zip=None, sub_directory_name=None, show_hidden_slides=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
+    def __init__(self, format='html', save_as_zip=None, sub_directory_name=None, show_hidden_slides=None, svg_responsive_layout=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
         """HtmlExportOptions - a model defined in Swagger"""  # noqa: E501
         super(HtmlExportOptions, self).__init__(format)
 
         self._save_as_zip = None
         self._sub_directory_name = None
         self._show_hidden_slides = None
+        self._svg_responsive_layout = None
         self._jpeg_quality = None
         self._pictures_compression = None
         self._delete_pictures_cropped_areas = None
@@ -92,6 +95,7 @@ class HtmlExportOptions(ExportOptions):
         if sub_directory_name is not None:
             self.sub_directory_name = sub_directory_name
         self.show_hidden_slides = show_hidden_slides
+        self.svg_responsive_layout = svg_responsive_layout
         self.jpeg_quality = jpeg_quality
         if pictures_compression is not None:
             self.pictures_compression = pictures_compression
@@ -168,6 +172,28 @@ class HtmlExportOptions(ExportOptions):
         :type: bool
         """
         self._show_hidden_slides = show_hidden_slides
+
+    @property
+    def svg_responsive_layout(self):
+        """Gets the svg_responsive_layout of this HtmlExportOptions.  # noqa: E501
+
+        True to make layout responsive by excluding width and height attributes from svg container.  # noqa: E501
+
+        :return: The svg_responsive_layout of this HtmlExportOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._svg_responsive_layout
+
+    @svg_responsive_layout.setter
+    def svg_responsive_layout(self, svg_responsive_layout):
+        """Sets the svg_responsive_layout of this HtmlExportOptions.
+
+        True to make layout responsive by excluding width and height attributes from svg container.  # noqa: E501
+
+        :param svg_responsive_layout: The svg_responsive_layout of this HtmlExportOptions.  # noqa: E501
+        :type: bool
+        """
+        self._svg_responsive_layout = svg_responsive_layout
 
     @property
     def jpeg_quality(self):

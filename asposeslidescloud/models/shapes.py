@@ -67,6 +67,7 @@ class Shapes(ResourceBase):
     def shapes_links(self):
         """Gets the shapes_links of this Shapes.  # noqa: E501
 
+        List of shape links.  # noqa: E501
 
         :return: The shapes_links of this Shapes.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -77,6 +78,7 @@ class Shapes(ResourceBase):
     def shapes_links(self, shapes_links):
         """Sets the shapes_links of this Shapes.
 
+        List of shape links.  # noqa: E501
 
         :param shapes_links: The shapes_links of this Shapes.  # noqa: E501
         :type: list[ResourceUriElement]

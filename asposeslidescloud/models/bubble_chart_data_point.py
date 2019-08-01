@@ -66,6 +66,7 @@ class BubbleChartDataPoint(ScatterChartDataPoint):
     def bubble_size(self):
         """Gets the bubble_size of this BubbleChartDataPoint.  # noqa: E501
 
+        Bubble size.  # noqa: E501
 
         :return: The bubble_size of this BubbleChartDataPoint.  # noqa: E501
         :rtype: float
@@ -76,6 +77,7 @@ class BubbleChartDataPoint(ScatterChartDataPoint):
     def bubble_size(self, bubble_size):
         """Sets the bubble_size of this BubbleChartDataPoint.
 
+        Bubble size.  # noqa: E501
 
         :param bubble_size: The bubble_size of this BubbleChartDataPoint.  # noqa: E501
         :type: float

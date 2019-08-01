@@ -81,6 +81,7 @@ class LayoutSlide(ResourceBase):
     def name(self):
         """Gets the name of this LayoutSlide.  # noqa: E501
 
+        Name.  # noqa: E501
 
         :return: The name of this LayoutSlide.  # noqa: E501
         :rtype: str
@@ -91,6 +92,7 @@ class LayoutSlide(ResourceBase):
     def name(self, name):
         """Sets the name of this LayoutSlide.
 
+        Name.  # noqa: E501
 
         :param name: The name of this LayoutSlide.  # noqa: E501
         :type: str
@@ -101,6 +103,7 @@ class LayoutSlide(ResourceBase):
     def type(self):
         """Gets the type of this LayoutSlide.  # noqa: E501
 
+        Layout slide type.  # noqa: E501
 
         :return: The type of this LayoutSlide.  # noqa: E501
         :rtype: str
@@ -111,6 +114,7 @@ class LayoutSlide(ResourceBase):
     def type(self, type):
         """Sets the type of this LayoutSlide.
 
+        Layout slide type.  # noqa: E501
 
         :param type: The type of this LayoutSlide.  # noqa: E501
         :type: str
@@ -128,6 +132,7 @@ class LayoutSlide(ResourceBase):
     def master_slide(self):
         """Gets the master_slide of this LayoutSlide.  # noqa: E501
 
+        Master slide link.  # noqa: E501
 
         :return: The master_slide of this LayoutSlide.  # noqa: E501
         :rtype: ResourceUriElement
@@ -138,6 +143,7 @@ class LayoutSlide(ResourceBase):
     def master_slide(self, master_slide):
         """Sets the master_slide of this LayoutSlide.
 
+        Master slide link.  # noqa: E501
 
         :param master_slide: The master_slide of this LayoutSlide.  # noqa: E501
         :type: ResourceUriElement
@@ -148,6 +154,7 @@ class LayoutSlide(ResourceBase):
     def depending_slides(self):
         """Gets the depending_slides of this LayoutSlide.  # noqa: E501
 
+        List of depending slides.  # noqa: E501
 
         :return: The depending_slides of this LayoutSlide.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -158,6 +165,7 @@ class LayoutSlide(ResourceBase):
     def depending_slides(self, depending_slides):
         """Sets the depending_slides of this LayoutSlide.
 
+        List of depending slides.  # noqa: E501
 
         :param depending_slides: The depending_slides of this LayoutSlide.  # noqa: E501
         :type: list[ResourceUriElement]

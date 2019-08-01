@@ -67,6 +67,7 @@ class Portions(ResourceBase):
     def portion_links(self):
         """Gets the portion_links of this Portions.  # noqa: E501
 
+        List of portion links.  # noqa: E501
 
         :return: The portion_links of this Portions.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -77,6 +78,7 @@ class Portions(ResourceBase):
     def portion_links(self, portion_links):
         """Sets the portion_links of this Portions.
 
+        List of portion links.  # noqa: E501
 
         :param portion_links: The portion_links of this Portions.  # noqa: E501
         :type: list[ResourceUriElement]

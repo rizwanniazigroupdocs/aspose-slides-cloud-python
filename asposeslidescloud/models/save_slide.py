@@ -127,7 +127,7 @@ class SaveSlide(Task):
         :type: str
         """
         if format is not None:
-            allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Html", "Pdf", "Xps", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Potm", "Svg"]  # noqa: E501
+            allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Html", "Pdf", "Xps", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Pot", "Potm", "Svg"]  # noqa: E501
             if format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

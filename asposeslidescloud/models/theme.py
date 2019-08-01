@@ -82,6 +82,7 @@ class Theme(ResourceBase):
     def name(self):
         """Gets the name of this Theme.  # noqa: E501
 
+        Name.  # noqa: E501
 
         :return: The name of this Theme.  # noqa: E501
         :rtype: str
@@ -92,6 +93,7 @@ class Theme(ResourceBase):
     def name(self, name):
         """Sets the name of this Theme.
 
+        Name.  # noqa: E501
 
         :param name: The name of this Theme.  # noqa: E501
         :type: str
@@ -102,6 +104,7 @@ class Theme(ResourceBase):
     def color_scheme(self):
         """Gets the color_scheme of this Theme.  # noqa: E501
 
+        Color scheme.  # noqa: E501
 
         :return: The color_scheme of this Theme.  # noqa: E501
         :rtype: ResourceUriElement
@@ -112,6 +115,7 @@ class Theme(ResourceBase):
     def color_scheme(self, color_scheme):
         """Sets the color_scheme of this Theme.
 
+        Color scheme.  # noqa: E501
 
         :param color_scheme: The color_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement
@@ -122,6 +126,7 @@ class Theme(ResourceBase):
     def font_scheme(self):
         """Gets the font_scheme of this Theme.  # noqa: E501
 
+        Font scheme.  # noqa: E501
 
         :return: The font_scheme of this Theme.  # noqa: E501
         :rtype: ResourceUriElement
@@ -132,6 +137,7 @@ class Theme(ResourceBase):
     def font_scheme(self, font_scheme):
         """Sets the font_scheme of this Theme.
 
+        Font scheme.  # noqa: E501
 
         :param font_scheme: The font_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement
@@ -142,6 +148,7 @@ class Theme(ResourceBase):
     def format_scheme(self):
         """Gets the format_scheme of this Theme.  # noqa: E501
 
+        Format scheme.  # noqa: E501
 
         :return: The format_scheme of this Theme.  # noqa: E501
         :rtype: ResourceUriElement
@@ -152,6 +159,7 @@ class Theme(ResourceBase):
     def format_scheme(self, format_scheme):
         """Sets the format_scheme of this Theme.
 
+        Format scheme.  # noqa: E501
 
         :param format_scheme: The format_scheme of this Theme.  # noqa: E501
         :type: ResourceUriElement

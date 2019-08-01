@@ -49,6 +49,7 @@ class Shape(GeometryShape):
         'width': 'float',
         'height': 'float',
         'alternative_text': 'str',
+        'alternative_text_title': 'str',
         'hidden': 'bool',
         'x': 'float',
         'y': 'float',
@@ -71,6 +72,7 @@ class Shape(GeometryShape):
         'width': 'Width',
         'height': 'Height',
         'alternative_text': 'AlternativeText',
+        'alternative_text_title': 'AlternativeTextTitle',
         'hidden': 'Hidden',
         'x': 'X',
         'y': 'Y',
@@ -86,9 +88,9 @@ class Shape(GeometryShape):
         'paragraphs': 'Paragraphs'
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Shape', shape_type=None, geometry_shape_type=None, text=None, paragraphs=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Shape', shape_type=None, geometry_shape_type=None, text=None, paragraphs=None):  # noqa: E501
         """Shape - a model defined in Swagger"""  # noqa: E501
-        super(Shape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
+        super(Shape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
 
         self._text = None
         self._paragraphs = None

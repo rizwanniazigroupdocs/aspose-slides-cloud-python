@@ -67,6 +67,7 @@ class Paragraphs(ResourceBase):
     def paragraph_links(self):
         """Gets the paragraph_links of this Paragraphs.  # noqa: E501
 
+        List of paragraph links.  # noqa: E501
 
         :return: The paragraph_links of this Paragraphs.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -77,6 +78,7 @@ class Paragraphs(ResourceBase):
     def paragraph_links(self, paragraph_links):
         """Sets the paragraph_links of this Paragraphs.
 
+        List of paragraph links.  # noqa: E501
 
         :param paragraph_links: The paragraph_links of this Paragraphs.  # noqa: E501
         :type: list[ResourceUriElement]

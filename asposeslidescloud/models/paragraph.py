@@ -162,6 +162,7 @@ class Paragraph(ResourceBase):
     def margin_left(self):
         """Gets the margin_left of this Paragraph.  # noqa: E501
 
+        Left margin.  # noqa: E501
 
         :return: The margin_left of this Paragraph.  # noqa: E501
         :rtype: float
@@ -172,6 +173,7 @@ class Paragraph(ResourceBase):
     def margin_left(self, margin_left):
         """Sets the margin_left of this Paragraph.
 
+        Left margin.  # noqa: E501
 
         :param margin_left: The margin_left of this Paragraph.  # noqa: E501
         :type: float
@@ -182,6 +184,7 @@ class Paragraph(ResourceBase):
     def margin_right(self):
         """Gets the margin_right of this Paragraph.  # noqa: E501
 
+        Right margin.  # noqa: E501
 
         :return: The margin_right of this Paragraph.  # noqa: E501
         :rtype: float
@@ -192,6 +195,7 @@ class Paragraph(ResourceBase):
     def margin_right(self, margin_right):
         """Sets the margin_right of this Paragraph.
 
+        Right margin.  # noqa: E501
 
         :param margin_right: The margin_right of this Paragraph.  # noqa: E501
         :type: float
@@ -202,6 +206,7 @@ class Paragraph(ResourceBase):
     def space_before(self):
         """Gets the space_before of this Paragraph.  # noqa: E501
 
+        Left spacing.  # noqa: E501
 
         :return: The space_before of this Paragraph.  # noqa: E501
         :rtype: float
@@ -212,6 +217,7 @@ class Paragraph(ResourceBase):
     def space_before(self, space_before):
         """Sets the space_before of this Paragraph.
 
+        Left spacing.  # noqa: E501
 
         :param space_before: The space_before of this Paragraph.  # noqa: E501
         :type: float
@@ -222,6 +228,7 @@ class Paragraph(ResourceBase):
     def space_after(self):
         """Gets the space_after of this Paragraph.  # noqa: E501
 
+        Right spacing.  # noqa: E501
 
         :return: The space_after of this Paragraph.  # noqa: E501
         :rtype: float
@@ -232,6 +239,7 @@ class Paragraph(ResourceBase):
     def space_after(self, space_after):
         """Sets the space_after of this Paragraph.
 
+        Right spacing.  # noqa: E501
 
         :param space_after: The space_after of this Paragraph.  # noqa: E501
         :type: float
@@ -242,6 +250,7 @@ class Paragraph(ResourceBase):
     def space_within(self):
         """Gets the space_within of this Paragraph.  # noqa: E501
 
+        Spacing between lines.  # noqa: E501
 
         :return: The space_within of this Paragraph.  # noqa: E501
         :rtype: float
@@ -252,6 +261,7 @@ class Paragraph(ResourceBase):
     def space_within(self, space_within):
         """Sets the space_within of this Paragraph.
 
+        Spacing between lines.  # noqa: E501
 
         :param space_within: The space_within of this Paragraph.  # noqa: E501
         :type: float
@@ -262,6 +272,7 @@ class Paragraph(ResourceBase):
     def indent(self):
         """Gets the indent of this Paragraph.  # noqa: E501
 
+        First line indent.  # noqa: E501
 
         :return: The indent of this Paragraph.  # noqa: E501
         :rtype: float
@@ -272,6 +283,7 @@ class Paragraph(ResourceBase):
     def indent(self, indent):
         """Sets the indent of this Paragraph.
 
+        First line indent.  # noqa: E501
 
         :param indent: The indent of this Paragraph.  # noqa: E501
         :type: float
@@ -282,6 +294,7 @@ class Paragraph(ResourceBase):
     def alignment(self):
         """Gets the alignment of this Paragraph.  # noqa: E501
 
+        Text alignment.  # noqa: E501
 
         :return: The alignment of this Paragraph.  # noqa: E501
         :rtype: str
@@ -292,6 +305,7 @@ class Paragraph(ResourceBase):
     def alignment(self, alignment):
         """Sets the alignment of this Paragraph.
 
+        Text alignment.  # noqa: E501
 
         :param alignment: The alignment of this Paragraph.  # noqa: E501
         :type: str
@@ -309,6 +323,7 @@ class Paragraph(ResourceBase):
     def font_alignment(self):
         """Gets the font_alignment of this Paragraph.  # noqa: E501
 
+        Font alignment.  # noqa: E501
 
         :return: The font_alignment of this Paragraph.  # noqa: E501
         :rtype: str
@@ -319,6 +334,7 @@ class Paragraph(ResourceBase):
     def font_alignment(self, font_alignment):
         """Sets the font_alignment of this Paragraph.
 
+        Font alignment.  # noqa: E501
 
         :param font_alignment: The font_alignment of this Paragraph.  # noqa: E501
         :type: str
@@ -336,6 +352,7 @@ class Paragraph(ResourceBase):
     def default_tab_size(self):
         """Gets the default_tab_size of this Paragraph.  # noqa: E501
 
+        Default tabulation size.  # noqa: E501
 
         :return: The default_tab_size of this Paragraph.  # noqa: E501
         :rtype: float
@@ -346,6 +363,7 @@ class Paragraph(ResourceBase):
     def default_tab_size(self, default_tab_size):
         """Sets the default_tab_size of this Paragraph.
 
+        Default tabulation size.  # noqa: E501
 
         :param default_tab_size: The default_tab_size of this Paragraph.  # noqa: E501
         :type: float
@@ -356,6 +374,7 @@ class Paragraph(ResourceBase):
     def depth(self):
         """Gets the depth of this Paragraph.  # noqa: E501
 
+        Depth.  # noqa: E501
 
         :return: The depth of this Paragraph.  # noqa: E501
         :rtype: int
@@ -366,6 +385,7 @@ class Paragraph(ResourceBase):
     def depth(self, depth):
         """Sets the depth of this Paragraph.
 
+        Depth.  # noqa: E501
 
         :param depth: The depth of this Paragraph.  # noqa: E501
         :type: int
@@ -376,6 +396,7 @@ class Paragraph(ResourceBase):
     def bullet_char(self):
         """Gets the bullet_char of this Paragraph.  # noqa: E501
 
+        Bullet char.  # noqa: E501
 
         :return: The bullet_char of this Paragraph.  # noqa: E501
         :rtype: str
@@ -386,6 +407,7 @@ class Paragraph(ResourceBase):
     def bullet_char(self, bullet_char):
         """Sets the bullet_char of this Paragraph.
 
+        Bullet char.  # noqa: E501
 
         :param bullet_char: The bullet_char of this Paragraph.  # noqa: E501
         :type: str
@@ -396,6 +418,7 @@ class Paragraph(ResourceBase):
     def bullet_height(self):
         """Gets the bullet_height of this Paragraph.  # noqa: E501
 
+        Bullet height.  # noqa: E501
 
         :return: The bullet_height of this Paragraph.  # noqa: E501
         :rtype: float
@@ -406,6 +429,7 @@ class Paragraph(ResourceBase):
     def bullet_height(self, bullet_height):
         """Sets the bullet_height of this Paragraph.
 
+        Bullet height.  # noqa: E501
 
         :param bullet_height: The bullet_height of this Paragraph.  # noqa: E501
         :type: float
@@ -416,6 +440,7 @@ class Paragraph(ResourceBase):
     def bullet_type(self):
         """Gets the bullet_type of this Paragraph.  # noqa: E501
 
+        Bullet type.  # noqa: E501
 
         :return: The bullet_type of this Paragraph.  # noqa: E501
         :rtype: str
@@ -426,6 +451,7 @@ class Paragraph(ResourceBase):
     def bullet_type(self, bullet_type):
         """Sets the bullet_type of this Paragraph.
 
+        Bullet type.  # noqa: E501
 
         :param bullet_type: The bullet_type of this Paragraph.  # noqa: E501
         :type: str
@@ -443,6 +469,7 @@ class Paragraph(ResourceBase):
     def numbered_bullet_start_with(self):
         """Gets the numbered_bullet_start_with of this Paragraph.  # noqa: E501
 
+        Starting number for a numbered bullet.  # noqa: E501
 
         :return: The numbered_bullet_start_with of this Paragraph.  # noqa: E501
         :rtype: int
@@ -453,6 +480,7 @@ class Paragraph(ResourceBase):
     def numbered_bullet_start_with(self, numbered_bullet_start_with):
         """Sets the numbered_bullet_start_with of this Paragraph.
 
+        Starting number for a numbered bullet.  # noqa: E501
 
         :param numbered_bullet_start_with: The numbered_bullet_start_with of this Paragraph.  # noqa: E501
         :type: int
@@ -463,6 +491,7 @@ class Paragraph(ResourceBase):
     def numbered_bullet_style(self):
         """Gets the numbered_bullet_style of this Paragraph.  # noqa: E501
 
+        Numbered bullet style.  # noqa: E501
 
         :return: The numbered_bullet_style of this Paragraph.  # noqa: E501
         :rtype: str
@@ -473,6 +502,7 @@ class Paragraph(ResourceBase):
     def numbered_bullet_style(self, numbered_bullet_style):
         """Sets the numbered_bullet_style of this Paragraph.
 
+        Numbered bullet style.  # noqa: E501
 
         :param numbered_bullet_style: The numbered_bullet_style of this Paragraph.  # noqa: E501
         :type: str
@@ -490,6 +520,7 @@ class Paragraph(ResourceBase):
     def hanging_punctuation(self):
         """Gets the hanging_punctuation of this Paragraph.  # noqa: E501
 
+        True if hanging punctuation is used with the paragraph.  # noqa: E501
 
         :return: The hanging_punctuation of this Paragraph.  # noqa: E501
         :rtype: str
@@ -500,6 +531,7 @@ class Paragraph(ResourceBase):
     def hanging_punctuation(self, hanging_punctuation):
         """Sets the hanging_punctuation of this Paragraph.
 
+        True if hanging punctuation is used with the paragraph.  # noqa: E501
 
         :param hanging_punctuation: The hanging_punctuation of this Paragraph.  # noqa: E501
         :type: str
@@ -517,6 +549,7 @@ class Paragraph(ResourceBase):
     def east_asian_line_break(self):
         """Gets the east_asian_line_break of this Paragraph.  # noqa: E501
 
+        True if East Asian line break is used with the paragraph.  # noqa: E501
 
         :return: The east_asian_line_break of this Paragraph.  # noqa: E501
         :rtype: str
@@ -527,6 +560,7 @@ class Paragraph(ResourceBase):
     def east_asian_line_break(self, east_asian_line_break):
         """Sets the east_asian_line_break of this Paragraph.
 
+        True if East Asian line break is used with the paragraph.  # noqa: E501
 
         :param east_asian_line_break: The east_asian_line_break of this Paragraph.  # noqa: E501
         :type: str
@@ -544,6 +578,7 @@ class Paragraph(ResourceBase):
     def latin_line_break(self):
         """Gets the latin_line_break of this Paragraph.  # noqa: E501
 
+        True if Latin line break is used with the paragraph.  # noqa: E501
 
         :return: The latin_line_break of this Paragraph.  # noqa: E501
         :rtype: str
@@ -554,6 +589,7 @@ class Paragraph(ResourceBase):
     def latin_line_break(self, latin_line_break):
         """Sets the latin_line_break of this Paragraph.
 
+        True if Latin line break is used with the paragraph.  # noqa: E501
 
         :param latin_line_break: The latin_line_break of this Paragraph.  # noqa: E501
         :type: str
@@ -571,6 +607,7 @@ class Paragraph(ResourceBase):
     def right_to_left(self):
         """Gets the right_to_left of this Paragraph.  # noqa: E501
 
+        True if right to left direction is used with the paragraph.  # noqa: E501
 
         :return: The right_to_left of this Paragraph.  # noqa: E501
         :rtype: str
@@ -581,6 +618,7 @@ class Paragraph(ResourceBase):
     def right_to_left(self, right_to_left):
         """Sets the right_to_left of this Paragraph.
 
+        True if right to left direction is used with the paragraph.  # noqa: E501
 
         :param right_to_left: The right_to_left of this Paragraph.  # noqa: E501
         :type: str
@@ -598,6 +636,7 @@ class Paragraph(ResourceBase):
     def portion_list(self):
         """Gets the portion_list of this Paragraph.  # noqa: E501
 
+        List of portion links.  # noqa: E501
 
         :return: The portion_list of this Paragraph.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -608,6 +647,7 @@ class Paragraph(ResourceBase):
     def portion_list(self, portion_list):
         """Sets the portion_list of this Paragraph.
 
+        List of portion links.  # noqa: E501
 
         :param portion_list: The portion_list of this Paragraph.  # noqa: E501
         :type: list[ResourceUriElement]

@@ -70,6 +70,7 @@ class UpdateBackground(Task):
     def slides(self):
         """Gets the slides of this UpdateBackground.  # noqa: E501
 
+        List of slide indices.  # noqa: E501
 
         :return: The slides of this UpdateBackground.  # noqa: E501
         :rtype: list[int]
@@ -80,6 +81,7 @@ class UpdateBackground(Task):
     def slides(self, slides):
         """Sets the slides of this UpdateBackground.
 
+        List of slide indices.  # noqa: E501
 
         :param slides: The slides of this UpdateBackground.  # noqa: E501
         :type: list[int]
@@ -90,6 +92,7 @@ class UpdateBackground(Task):
     def background(self):
         """Gets the background of this UpdateBackground.  # noqa: E501
 
+        Background DTO.  # noqa: E501
 
         :return: The background of this UpdateBackground.  # noqa: E501
         :rtype: SlideBackground
@@ -100,6 +103,7 @@ class UpdateBackground(Task):
     def background(self, background):
         """Sets the background of this UpdateBackground.
 
+        Background DTO.  # noqa: E501
 
         :param background: The background of this UpdateBackground.  # noqa: E501
         :type: SlideBackground

@@ -47,6 +47,7 @@ class ExportFormat(object):
     PPSX = "Ppsx"
     PPTM = "Pptm"
     PPSM = "Ppsm"
+    POT = "Pot"
     POTX = "Potx"
     POTM = "Potm"
     HTML = "Html"

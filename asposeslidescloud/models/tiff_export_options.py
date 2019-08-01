@@ -113,6 +113,7 @@ class TiffExportOptions(ExportOptions):
     def compression(self):
         """Gets the compression of this TiffExportOptions.  # noqa: E501
 
+        Compression type.  # noqa: E501
 
         :return: The compression of this TiffExportOptions.  # noqa: E501
         :rtype: str
@@ -123,6 +124,7 @@ class TiffExportOptions(ExportOptions):
     def compression(self, compression):
         """Sets the compression of this TiffExportOptions.
 
+        Compression type.  # noqa: E501
 
         :param compression: The compression of this TiffExportOptions.  # noqa: E501
         :type: str
@@ -140,6 +142,7 @@ class TiffExportOptions(ExportOptions):
     def width(self):
         """Gets the width of this TiffExportOptions.  # noqa: E501
 
+        Width.  # noqa: E501
 
         :return: The width of this TiffExportOptions.  # noqa: E501
         :rtype: int
@@ -150,6 +153,7 @@ class TiffExportOptions(ExportOptions):
     def width(self, width):
         """Sets the width of this TiffExportOptions.
 
+        Width.  # noqa: E501
 
         :param width: The width of this TiffExportOptions.  # noqa: E501
         :type: int
@@ -160,6 +164,7 @@ class TiffExportOptions(ExportOptions):
     def height(self):
         """Gets the height of this TiffExportOptions.  # noqa: E501
 
+        Height.  # noqa: E501
 
         :return: The height of this TiffExportOptions.  # noqa: E501
         :rtype: int
@@ -170,6 +175,7 @@ class TiffExportOptions(ExportOptions):
     def height(self, height):
         """Sets the height of this TiffExportOptions.
 
+        Height.  # noqa: E501
 
         :param height: The height of this TiffExportOptions.  # noqa: E501
         :type: int
@@ -180,6 +186,7 @@ class TiffExportOptions(ExportOptions):
     def dpi_x(self):
         """Gets the dpi_x of this TiffExportOptions.  # noqa: E501
 
+        Horizontal resolution, in dots per inch.  # noqa: E501
 
         :return: The dpi_x of this TiffExportOptions.  # noqa: E501
         :rtype: int
@@ -190,6 +197,7 @@ class TiffExportOptions(ExportOptions):
     def dpi_x(self, dpi_x):
         """Sets the dpi_x of this TiffExportOptions.
 
+        Horizontal resolution, in dots per inch.  # noqa: E501
 
         :param dpi_x: The dpi_x of this TiffExportOptions.  # noqa: E501
         :type: int
@@ -200,6 +208,7 @@ class TiffExportOptions(ExportOptions):
     def dpi_y(self):
         """Gets the dpi_y of this TiffExportOptions.  # noqa: E501
 
+        Vertical resolution, in dots per inch.  # noqa: E501
 
         :return: The dpi_y of this TiffExportOptions.  # noqa: E501
         :rtype: int
@@ -210,6 +219,7 @@ class TiffExportOptions(ExportOptions):
     def dpi_y(self, dpi_y):
         """Sets the dpi_y of this TiffExportOptions.
 
+        Vertical resolution, in dots per inch.  # noqa: E501
 
         :param dpi_y: The dpi_y of this TiffExportOptions.  # noqa: E501
         :type: int

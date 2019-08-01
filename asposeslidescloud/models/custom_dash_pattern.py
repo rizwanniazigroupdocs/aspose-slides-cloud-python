@@ -61,6 +61,7 @@ class CustomDashPattern(object):
     def items(self):
         """Gets the items of this CustomDashPattern.  # noqa: E501
 
+        Pattern items.  # noqa: E501
 
         :return: The items of this CustomDashPattern.  # noqa: E501
         :rtype: list[float]
@@ -71,6 +72,7 @@ class CustomDashPattern(object):
     def items(self, items):
         """Sets the items of this CustomDashPattern.
 
+        Pattern items.  # noqa: E501
 
         :param items: The items of this CustomDashPattern.  # noqa: E501
         :type: list[float]

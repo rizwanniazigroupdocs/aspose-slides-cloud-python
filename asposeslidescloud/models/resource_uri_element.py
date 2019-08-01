@@ -61,6 +61,7 @@ class ResourceUriElement(object):
     def uri(self):
         """Gets the uri of this ResourceUriElement.  # noqa: E501
 
+        Resource URI.  # noqa: E501
 
         :return: The uri of this ResourceUriElement.  # noqa: E501
         :rtype: ResourceUri
@@ -71,6 +72,7 @@ class ResourceUriElement(object):
     def uri(self, uri):
         """Sets the uri of this ResourceUriElement.
 
+        Resource URI.  # noqa: E501
 
         :param uri: The uri of this ResourceUriElement.  # noqa: E501
         :type: ResourceUri

@@ -67,6 +67,7 @@ class MasterSlides(ResourceBase):
     def slide_list(self):
         """Gets the slide_list of this MasterSlides.  # noqa: E501
 
+        List of slide links.  # noqa: E501
 
         :return: The slide_list of this MasterSlides.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -77,6 +78,7 @@ class MasterSlides(ResourceBase):
     def slide_list(self, slide_list):
         """Sets the slide_list of this MasterSlides.
 
+        List of slide links.  # noqa: E501
 
         :param slide_list: The slide_list of this MasterSlides.  # noqa: E501
         :type: list[ResourceUriElement]

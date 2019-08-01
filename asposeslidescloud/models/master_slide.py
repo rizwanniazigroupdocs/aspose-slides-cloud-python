@@ -77,6 +77,7 @@ class MasterSlide(ResourceBase):
     def name(self):
         """Gets the name of this MasterSlide.  # noqa: E501
 
+        Name.  # noqa: E501
 
         :return: The name of this MasterSlide.  # noqa: E501
         :rtype: str
@@ -87,6 +88,7 @@ class MasterSlide(ResourceBase):
     def name(self, name):
         """Sets the name of this MasterSlide.
 
+        Name.  # noqa: E501
 
         :param name: The name of this MasterSlide.  # noqa: E501
         :type: str
@@ -97,6 +99,7 @@ class MasterSlide(ResourceBase):
     def layout_slides(self):
         """Gets the layout_slides of this MasterSlide.  # noqa: E501
 
+        List of layout slide links.  # noqa: E501
 
         :return: The layout_slides of this MasterSlide.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -107,6 +110,7 @@ class MasterSlide(ResourceBase):
     def layout_slides(self, layout_slides):
         """Sets the layout_slides of this MasterSlide.
 
+        List of layout slide links.  # noqa: E501
 
         :param layout_slides: The layout_slides of this MasterSlide.  # noqa: E501
         :type: list[ResourceUriElement]
@@ -117,6 +121,7 @@ class MasterSlide(ResourceBase):
     def depending_slides(self):
         """Gets the depending_slides of this MasterSlide.  # noqa: E501
 
+        List of depending slide links.  # noqa: E501
 
         :return: The depending_slides of this MasterSlide.  # noqa: E501
         :rtype: list[ResourceUriElement]
@@ -127,6 +132,7 @@ class MasterSlide(ResourceBase):
     def depending_slides(self, depending_slides):
         """Sets the depending_slides of this MasterSlide.
 
+        List of depending slide links.  # noqa: E501
 
         :param depending_slides: The depending_slides of this MasterSlide.  # noqa: E501
         :type: list[ResourceUriElement]

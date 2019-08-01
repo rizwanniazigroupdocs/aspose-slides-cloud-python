@@ -99,6 +99,7 @@ class PictureFill(FillFormat):
     def crop_bottom(self):
         """Gets the crop_bottom of this PictureFill.  # noqa: E501
 
+        Percentage of image height that is cropped from the bottom.  # noqa: E501
 
         :return: The crop_bottom of this PictureFill.  # noqa: E501
         :rtype: float
@@ -109,6 +110,7 @@ class PictureFill(FillFormat):
     def crop_bottom(self, crop_bottom):
         """Sets the crop_bottom of this PictureFill.
 
+        Percentage of image height that is cropped from the bottom.  # noqa: E501
 
         :param crop_bottom: The crop_bottom of this PictureFill.  # noqa: E501
         :type: float
@@ -119,6 +121,7 @@ class PictureFill(FillFormat):
     def crop_left(self):
         """Gets the crop_left of this PictureFill.  # noqa: E501
 
+        Percentage of image height that is cropped from the left.  # noqa: E501
 
         :return: The crop_left of this PictureFill.  # noqa: E501
         :rtype: float
@@ -129,6 +132,7 @@ class PictureFill(FillFormat):
     def crop_left(self, crop_left):
         """Sets the crop_left of this PictureFill.
 
+        Percentage of image height that is cropped from the left.  # noqa: E501
 
         :param crop_left: The crop_left of this PictureFill.  # noqa: E501
         :type: float
@@ -139,6 +143,7 @@ class PictureFill(FillFormat):
     def crop_right(self):
         """Gets the crop_right of this PictureFill.  # noqa: E501
 
+        Percentage of image height that is cropped from the right.  # noqa: E501
 
         :return: The crop_right of this PictureFill.  # noqa: E501
         :rtype: float
@@ -149,6 +154,7 @@ class PictureFill(FillFormat):
     def crop_right(self, crop_right):
         """Sets the crop_right of this PictureFill.
 
+        Percentage of image height that is cropped from the right.  # noqa: E501
 
         :param crop_right: The crop_right of this PictureFill.  # noqa: E501
         :type: float
@@ -159,6 +165,7 @@ class PictureFill(FillFormat):
     def crop_top(self):
         """Gets the crop_top of this PictureFill.  # noqa: E501
 
+        Percentage of image height that is cropped from the top.  # noqa: E501
 
         :return: The crop_top of this PictureFill.  # noqa: E501
         :rtype: float
@@ -169,6 +176,7 @@ class PictureFill(FillFormat):
     def crop_top(self, crop_top):
         """Sets the crop_top of this PictureFill.
 
+        Percentage of image height that is cropped from the top.  # noqa: E501
 
         :param crop_top: The crop_top of this PictureFill.  # noqa: E501
         :type: float
@@ -179,6 +187,7 @@ class PictureFill(FillFormat):
     def dpi(self):
         """Gets the dpi of this PictureFill.  # noqa: E501
 
+        Picture resolution.  # noqa: E501
 
         :return: The dpi of this PictureFill.  # noqa: E501
         :rtype: int
@@ -189,6 +198,7 @@ class PictureFill(FillFormat):
     def dpi(self, dpi):
         """Sets the dpi of this PictureFill.
 
+        Picture resolution.  # noqa: E501
 
         :param dpi: The dpi of this PictureFill.  # noqa: E501
         :type: int
@@ -199,6 +209,7 @@ class PictureFill(FillFormat):
     def image(self):
         """Gets the image of this PictureFill.  # noqa: E501
 
+        Internal image link.  # noqa: E501
 
         :return: The image of this PictureFill.  # noqa: E501
         :rtype: ResourceUriElement
@@ -209,6 +220,7 @@ class PictureFill(FillFormat):
     def image(self, image):
         """Sets the image of this PictureFill.
 
+        Internal image link.  # noqa: E501
 
         :param image: The image of this PictureFill.  # noqa: E501
         :type: ResourceUriElement
@@ -219,6 +231,7 @@ class PictureFill(FillFormat):
     def base64_data(self):
         """Gets the base64_data of this PictureFill.  # noqa: E501
 
+        Base 64 image data.  # noqa: E501
 
         :return: The base64_data of this PictureFill.  # noqa: E501
         :rtype: str
@@ -229,6 +242,7 @@ class PictureFill(FillFormat):
     def base64_data(self, base64_data):
         """Sets the base64_data of this PictureFill.
 
+        Base 64 image data.  # noqa: E501
 
         :param base64_data: The base64_data of this PictureFill.  # noqa: E501
         :type: str
@@ -239,6 +253,7 @@ class PictureFill(FillFormat):
     def svg_data(self):
         """Gets the svg_data of this PictureFill.  # noqa: E501
 
+        SVG image data.  # noqa: E501
 
         :return: The svg_data of this PictureFill.  # noqa: E501
         :rtype: str
@@ -249,6 +264,7 @@ class PictureFill(FillFormat):
     def svg_data(self, svg_data):
         """Sets the svg_data of this PictureFill.
 
+        SVG image data.  # noqa: E501
 
         :param svg_data: The svg_data of this PictureFill.  # noqa: E501
         :type: str
@@ -259,6 +275,7 @@ class PictureFill(FillFormat):
     def picture_fill_mode(self):
         """Gets the picture_fill_mode of this PictureFill.  # noqa: E501
 
+        Fill mode.  # noqa: E501
 
         :return: The picture_fill_mode of this PictureFill.  # noqa: E501
         :rtype: str
@@ -269,6 +286,7 @@ class PictureFill(FillFormat):
     def picture_fill_mode(self, picture_fill_mode):
         """Sets the picture_fill_mode of this PictureFill.
 
+        Fill mode.  # noqa: E501
 
         :param picture_fill_mode: The picture_fill_mode of this PictureFill.  # noqa: E501
         :type: str

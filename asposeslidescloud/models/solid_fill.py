@@ -65,6 +65,7 @@ class SolidFill(FillFormat):
     def color(self):
         """Gets the color of this SolidFill.  # noqa: E501
 
+        Color.  # noqa: E501
 
         :return: The color of this SolidFill.  # noqa: E501
         :rtype: str
@@ -75,6 +76,7 @@ class SolidFill(FillFormat):
     def color(self, color):
         """Sets the color of this SolidFill.
 
+        Color.  # noqa: E501
 
         :param color: The color of this SolidFill.  # noqa: E501
         :type: str
