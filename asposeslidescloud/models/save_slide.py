@@ -53,13 +53,17 @@ class SaveSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'output': 'Output',
-        'format': 'Format',
-        'options': 'Options',
-        'width': 'Width',
-        'height': 'Height',
-        'position': 'Position'
+        'type': 'type',
+        'output': 'output',
+        'format': 'format',
+        'options': 'options',
+        'width': 'width',
+        'height': 'height',
+        'position': 'position'
+    }
+
+    type_determiners = {
+        'type': 'SaveSlide',
     }
 
     def __init__(self, type='SaveSlide', output=None, format=None, options=None, width=None, height=None, position=None):  # noqa: E501
@@ -72,6 +76,7 @@ class SaveSlide(Task):
         self._width = None
         self._height = None
         self._position = None
+        self.type: 'SaveSlide'
 
         if output is not None:
             self.output = output
@@ -128,6 +133,15 @@ class SaveSlide(Task):
         """
         if format is not None:
             allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Html", "Pdf", "Xps", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Potx", "Pot", "Potm", "Svg"]  # noqa: E501
+            if format.isdigit():
+                int_format = int(format)
+                if int_format < 0 or int_format >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                        .format(format, allowed_values)
+                    )
+                self._format = allowed_values[int_format]
+                return
             if format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

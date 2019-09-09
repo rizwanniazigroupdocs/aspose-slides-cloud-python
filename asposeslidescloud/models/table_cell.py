@@ -61,22 +61,25 @@ class TableCell(object):
     }
 
     attribute_map = {
-        'text': 'Text',
-        'row_span': 'RowSpan',
-        'col_span': 'ColSpan',
-        'margin_top': 'MarginTop',
-        'margin_right': 'MarginRight',
-        'margin_left': 'MarginLeft',
-        'margin_bottom': 'MarginBottom',
-        'text_anchor_type': 'TextAnchorType',
-        'text_vertical_type': 'TextVerticalType',
-        'fill_format': 'FillFormat',
-        'border_top': 'BorderTop',
-        'border_right': 'BorderRight',
-        'border_left': 'BorderLeft',
-        'border_bottom': 'BorderBottom',
-        'border_diagonal_up': 'BorderDiagonalUp',
-        'border_diagonal_down': 'BorderDiagonalDown'
+        'text': 'text',
+        'row_span': 'rowSpan',
+        'col_span': 'colSpan',
+        'margin_top': 'marginTop',
+        'margin_right': 'marginRight',
+        'margin_left': 'marginLeft',
+        'margin_bottom': 'marginBottom',
+        'text_anchor_type': 'textAnchorType',
+        'text_vertical_type': 'textVerticalType',
+        'fill_format': 'fillFormat',
+        'border_top': 'borderTop',
+        'border_right': 'borderRight',
+        'border_left': 'borderLeft',
+        'border_bottom': 'borderBottom',
+        'border_diagonal_up': 'borderDiagonalUp',
+        'border_diagonal_down': 'borderDiagonalDown'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, text=None, row_span=None, col_span=None, margin_top=None, margin_right=None, margin_left=None, margin_bottom=None, text_anchor_type=None, text_vertical_type=None, fill_format=None, border_top=None, border_right=None, border_left=None, border_bottom=None, border_diagonal_up=None, border_diagonal_down=None):  # noqa: E501
@@ -300,6 +303,15 @@ class TableCell(object):
         """
         if text_anchor_type is not None:
             allowed_values = ["Top", "Center", "Bottom", "Justified", "Distributed", "NotDefined"]  # noqa: E501
+            if text_anchor_type.isdigit():
+                int_text_anchor_type = int(text_anchor_type)
+                if int_text_anchor_type < 0 or int_text_anchor_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `text_anchor_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(text_anchor_type, allowed_values)
+                    )
+                self._text_anchor_type = allowed_values[int_text_anchor_type]
+                return
             if text_anchor_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_anchor_type` ({0}), must be one of {1}"  # noqa: E501
@@ -329,6 +341,15 @@ class TableCell(object):
         """
         if text_vertical_type is not None:
             allowed_values = ["Horizontal", "Vertical", "Vertical270", "WordArtVertical", "EastAsianVertical", "MongolianVertical", "WordArtVerticalRightToLeft", "NotDefined"]  # noqa: E501
+            if text_vertical_type.isdigit():
+                int_text_vertical_type = int(text_vertical_type)
+                if int_text_vertical_type < 0 or int_text_vertical_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `text_vertical_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(text_vertical_type, allowed_values)
+                    )
+                self._text_vertical_type = allowed_values[int_text_vertical_type]
+                return
             if text_vertical_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_vertical_type` ({0}), must be one of {1}"  # noqa: E501

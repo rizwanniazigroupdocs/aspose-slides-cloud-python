@@ -49,9 +49,12 @@ class Slides(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'slide_list': 'SlideList'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'slide_list': 'slideList'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, slide_list=None):  # noqa: E501

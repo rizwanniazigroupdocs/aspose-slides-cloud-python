@@ -47,8 +47,11 @@ class BlurEffect(object):
     }
 
     attribute_map = {
-        'radius': 'Radius',
-        'grow': 'Grow'
+        'radius': 'radius',
+        'grow': 'grow'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, radius=None, grow=None):  # noqa: E501

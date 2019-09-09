@@ -49,9 +49,12 @@ class Shapes(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'shapes_links': 'ShapesLinks'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'shapes_links': 'shapesLinks'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, shapes_links=None):  # noqa: E501

@@ -50,11 +50,14 @@ class SeriesMarker(object):
     }
 
     attribute_map = {
-        'size': 'Size',
-        'symbol': 'Symbol',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'size': 'size',
+        'symbol': 'symbol',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, size=None, symbol=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
@@ -119,6 +122,15 @@ class SeriesMarker(object):
         """
         if symbol is not None:
             allowed_values = ["Circle", "Dash", "Diamond", "Dot", "None", "Picture", "Plus", "Square", "Star", "Triangle", "X", "NotDefined"]  # noqa: E501
+            if symbol.isdigit():
+                int_symbol = int(symbol)
+                if int_symbol < 0 or int_symbol >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `symbol` ({0}), must be one of {1}"  # noqa: E501
+                        .format(symbol, allowed_values)
+                    )
+                self._symbol = allowed_values[int_symbol]
+                return
             if symbol not in allowed_values:
                 raise ValueError(
                     "Invalid value for `symbol` ({0}), must be one of {1}"  # noqa: E501

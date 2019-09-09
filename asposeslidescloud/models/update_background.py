@@ -49,9 +49,13 @@ class UpdateBackground(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'slides': 'Slides',
-        'background': 'Background'
+        'type': 'type',
+        'slides': 'slides',
+        'background': 'background'
+    }
+
+    type_determiners = {
+        'type': 'UpdateBackground',
     }
 
     def __init__(self, type='UpdateBackground', slides=None, background=None):  # noqa: E501
@@ -60,6 +64,7 @@ class UpdateBackground(Task):
 
         self._slides = None
         self._background = None
+        self.type: 'UpdateBackground'
 
         if slides is not None:
             self.slides = slides

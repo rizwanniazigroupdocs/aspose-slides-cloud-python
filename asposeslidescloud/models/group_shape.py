@@ -63,28 +63,35 @@ class GroupShape(ShapeBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType'
+    }
+
+    type_determiners = {
+        'type': 'GroupShape',
+        'shape_type': 'GroupShape',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='GroupShape', shape_type='GroupShape'):  # noqa: E501
         """GroupShape - a model defined in Swagger"""  # noqa: E501
         super(GroupShape, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        self.type: 'GroupShape'
+        self.shape_type: 'GroupShape'
 
     def to_dict(self):
         """Returns the model properties as a dict"""

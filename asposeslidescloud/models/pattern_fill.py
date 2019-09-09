@@ -50,10 +50,14 @@ class PatternFill(FillFormat):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'back_color': 'BackColor',
-        'fore_color': 'ForeColor',
-        'style': 'Style'
+        'type': 'type',
+        'back_color': 'backColor',
+        'fore_color': 'foreColor',
+        'style': 'style'
+    }
+
+    type_determiners = {
+        'type': 'Pattern',
     }
 
     def __init__(self, type='Pattern', back_color=None, fore_color=None, style=None):  # noqa: E501
@@ -63,6 +67,7 @@ class PatternFill(FillFormat):
         self._back_color = None
         self._fore_color = None
         self._style = None
+        self.type: 'Pattern'
 
         if back_color is not None:
             self.back_color = back_color
@@ -136,6 +141,15 @@ class PatternFill(FillFormat):
         """
         if style is not None:
             allowed_values = ["Unknown", "Percent05", "Percent10", "Percent20", "Percent25", "Percent30", "Percent40", "Percent50", "Percent60", "Percent70", "Percent75", "Percent80", "Percent90", "DarkHorizontal", "DarkVertical", "DarkDownwardDiagonal", "DarkUpwardDiagonal", "SmallCheckerBoard", "Trellis", "LightHorizontal", "LightVertical", "LightDownwardDiagonal", "LightUpwardDiagonal", "SmallGrid", "DottedDiamond", "WideDownwardDiagonal", "WideUpwardDiagonal", "DashedUpwardDiagonal", "DashedDownwardDiagonal", "NarrowVertical", "NarrowHorizontal", "DashedVertical", "DashedHorizontal", "LargeConfetti", "LargeGrid", "HorizontalBrick", "LargeCheckerBoard", "SmallConfetti", "Zigzag", "SolidDiamond", "DiagonalBrick", "OutlinedDiamond", "Plaid", "Sphere", "Weave", "DottedGrid", "Divot", "Shingle", "Wave", "Horizontal", "Vertical", "Cross", "DownwardDiagonal", "UpwardDiagonal", "DiagonalCross", "NotDefined"]  # noqa: E501
+            if style.isdigit():
+                int_style = int(style)
+                if int_style < 0 or int_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(style, allowed_values)
+                    )
+                self._style = allowed_values[int_style]
+                return
             if style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501

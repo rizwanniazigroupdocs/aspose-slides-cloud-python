@@ -53,13 +53,16 @@ class FileVersion(StorageFile):
     }
 
     attribute_map = {
-        'name': 'Name',
-        'is_folder': 'IsFolder',
-        'modified_date': 'ModifiedDate',
-        'size': 'Size',
-        'path': 'Path',
-        'version_id': 'VersionId',
-        'is_latest': 'IsLatest'
+        'name': 'name',
+        'is_folder': 'isFolder',
+        'modified_date': 'modifiedDate',
+        'size': 'size',
+        'path': 'path',
+        'version_id': 'versionId',
+        'is_latest': 'isLatest'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, name=None, is_folder=None, modified_date=None, size=None, path=None, version_id=None, is_latest=None):  # noqa: E501

@@ -59,20 +59,23 @@ class Effect(object):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'subtype': 'Subtype',
-        'preset_class_type': 'PresetClassType',
-        'shape_index': 'ShapeIndex',
-        'trigger_type': 'TriggerType',
-        'accelerate': 'Accelerate',
-        'auto_reverse': 'AutoReverse',
-        'decelerate': 'Decelerate',
-        'duration': 'Duration',
-        'repeat_count': 'RepeatCount',
-        'repeat_duration': 'RepeatDuration',
-        'restart': 'Restart',
-        'speed': 'Speed',
-        'trigger_delay_time': 'TriggerDelayTime'
+        'type': 'type',
+        'subtype': 'subtype',
+        'preset_class_type': 'presetClassType',
+        'shape_index': 'shapeIndex',
+        'trigger_type': 'triggerType',
+        'accelerate': 'accelerate',
+        'auto_reverse': 'autoReverse',
+        'decelerate': 'decelerate',
+        'duration': 'duration',
+        'repeat_count': 'repeatCount',
+        'repeat_duration': 'repeatDuration',
+        'restart': 'restart',
+        'speed': 'speed',
+        'trigger_delay_time': 'triggerDelayTime'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, type=None, subtype=None, preset_class_type=None, shape_index=None, trigger_type=None, accelerate=None, auto_reverse=None, decelerate=None, duration=None, repeat_count=None, repeat_duration=None, restart=None, speed=None, trigger_delay_time=None):  # noqa: E501
@@ -143,6 +146,15 @@ class Effect(object):
         """
         if type is not None:
             allowed_values = ["Appear", "CurveUpDown", "Ascend", "Blast", "Blinds", "Blink", "BoldFlash", "BoldReveal", "Boomerang", "Bounce", "Box", "BrushOnColor", "BrushOnUnderline", "CenterRevolve", "ChangeFillColor", "ChangeFont", "ChangeFontColor", "ChangeFontSize", "ChangeFontStyle", "ChangeLineColor", "Checkerboard", "Circle", "ColorBlend", "ColorTypewriter", "ColorWave", "ComplementaryColor", "ComplementaryColor2", "Compress", "ContrastingColor", "Crawl", "Credits", "Custom", "Darken", "Desaturate", "Descend", "Diamond", "Dissolve", "EaseInOut", "Expand", "Fade", "FadedSwivel", "FadedZoom", "FlashBulb", "FlashOnce", "Flicker", "Flip", "Float", "Fly", "Fold", "Glide", "GrowAndTurn", "GrowShrink", "GrowWithColor", "Lighten", "LightSpeed", "MediaPause", "MediaPlay", "MediaStop", "Path4PointStar", "Path5PointStar", "Path6PointStar", "Path8PointStar", "PathArcDown", "PathArcLeft", "PathArcRight", "PathArcUp", "PathBean", "PathBounceLeft", "PathBounceRight", "PathBuzzsaw", "PathCircle", "PathCrescentMoon", "PathCurvedSquare", "PathCurvedX", "PathCurvyLeft", "PathCurvyRight", "PathCurvyStar", "PathDecayingWave", "PathDiagonalDownRight", "PathDiagonalUpRight", "PathDiamond", "PathDown", "PathEqualTriangle", "PathFigure8Four", "PathFootball", "PathFunnel", "PathHeart", "PathHeartbeat", "PathHexagon", "PathHorizontalFigure8", "PathInvertedSquare", "PathInvertedTriangle", "PathLeft", "PathLoopdeLoop", "PathNeutron", "PathOctagon", "PathParallelogram", "PathPeanut", "PathPentagon", "PathPlus", "PathPointyStar", "PathRight", "PathRightTriangle", "PathSCurve1", "PathSCurve2", "PathSineWave", "PathSpiralLeft", "PathSpiralRight", "PathSpring", "PathSquare", "PathStairsDown", "PathSwoosh", "PathTeardrop", "PathTrapezoid", "PathTurnDown", "PathTurnRight", "PathTurnUp", "PathTurnUpRight", "PathUp", "PathUser", "PathVerticalFigure8", "PathWave", "PathZigzag", "Peek", "Pinwheel", "Plus", "RandomBars", "RandomEffects", "RiseUp", "Shimmer", "Sling", "Spin", "Spinner", "Spiral", "Split", "Stretch", "Strips", "StyleEmphasis", "Swish", "Swivel", "Teeter", "Thread", "Transparency", "Unfold", "VerticalGrow", "Wave", "Wedge", "Wheel", "Whip", "Wipe", "Magnify", "Zoom", "OLEObjectShow", "OLEObjectEdit", "OLEObjectOpen"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -172,6 +184,15 @@ class Effect(object):
         """
         if subtype is not None:
             allowed_values = ["None", "Across", "Bottom", "BottomLeft", "BottomRight", "Center", "Clockwise", "CounterClockwise", "GradualAndCycleClockwise", "GradualAndCycleCounterClockwise", "Down", "DownLeft", "DownRight", "FontAllCaps", "FontBold", "FontItalic", "FontShadow", "FontStrikethrough", "FontUnderline", "Gradual", "Horizontal", "HorizontalIn", "HorizontalOut", "In", "InBottom", "InCenter", "InSlightly", "Instant", "Left", "OrdinalMask", "Out", "OutBottom", "OutCenter", "OutSlightly", "Right", "Slightly", "Top", "TopLeft", "TopRight", "Up", "UpLeft", "UpRight", "Vertical", "VerticalIn", "VerticalOut", "Wheel1", "Wheel2", "Wheel3", "Wheel4", "Wheel8"]  # noqa: E501
+            if subtype.isdigit():
+                int_subtype = int(subtype)
+                if int_subtype < 0 or int_subtype >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `subtype` ({0}), must be one of {1}"  # noqa: E501
+                        .format(subtype, allowed_values)
+                    )
+                self._subtype = allowed_values[int_subtype]
+                return
             if subtype not in allowed_values:
                 raise ValueError(
                     "Invalid value for `subtype` ({0}), must be one of {1}"  # noqa: E501
@@ -201,6 +222,15 @@ class Effect(object):
         """
         if preset_class_type is not None:
             allowed_values = ["Entrance", "Exit", "Emphasis", "Path", "MediaCall", "OLEActionVerbs"]  # noqa: E501
+            if preset_class_type.isdigit():
+                int_preset_class_type = int(preset_class_type)
+                if int_preset_class_type < 0 or int_preset_class_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `preset_class_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(preset_class_type, allowed_values)
+                    )
+                self._preset_class_type = allowed_values[int_preset_class_type]
+                return
             if preset_class_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `preset_class_type` ({0}), must be one of {1}"  # noqa: E501
@@ -252,6 +282,15 @@ class Effect(object):
         """
         if trigger_type is not None:
             allowed_values = ["AfterPrevious", "OnClick", "WithPrevious"]  # noqa: E501
+            if trigger_type.isdigit():
+                int_trigger_type = int(trigger_type)
+                if int_trigger_type < 0 or int_trigger_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `trigger_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(trigger_type, allowed_values)
+                    )
+                self._trigger_type = allowed_values[int_trigger_type]
+                return
             if trigger_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `trigger_type` ({0}), must be one of {1}"  # noqa: E501
@@ -413,6 +452,15 @@ class Effect(object):
         """
         if restart is not None:
             allowed_values = ["Always", "WhenNotActive", "Never", "NotDefined"]  # noqa: E501
+            if restart.isdigit():
+                int_restart = int(restart)
+                if int_restart < 0 or int_restart >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `restart` ({0}), must be one of {1}"  # noqa: E501
+                        .format(restart, allowed_values)
+                    )
+                self._restart = allowed_values[int_restart]
+                return
             if restart not in allowed_values:
                 raise ValueError(
                     "Invalid value for `restart` ({0}), must be one of {1}"  # noqa: E501

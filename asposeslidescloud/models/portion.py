@@ -73,33 +73,36 @@ class Portion(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'text': 'Text',
-        'font_bold': 'FontBold',
-        'font_italic': 'FontItalic',
-        'font_underline': 'FontUnderline',
-        'strikethrough_type': 'StrikethroughType',
-        'text_cap_type': 'TextCapType',
-        'escapement': 'Escapement',
-        'spacing': 'Spacing',
-        'font_color': 'FontColor',
-        'highlight_color': 'HighlightColor',
-        'font_height': 'FontHeight',
-        'normalise_height': 'NormaliseHeight',
-        'proof_disabled': 'ProofDisabled',
-        'smart_tag_clean': 'SmartTagClean',
-        'kerning_minimal_size': 'KerningMinimalSize',
-        'kumimoji': 'Kumimoji',
-        'language_id': 'LanguageId',
-        'alternative_language_id': 'AlternativeLanguageId',
-        'is_hard_underline_fill': 'IsHardUnderlineFill',
-        'is_hard_underline_line': 'IsHardUnderlineLine',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'underline_fill_format': 'UnderlineFillFormat',
-        'underline_line_format': 'UnderlineLineFormat'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'text': 'text',
+        'font_bold': 'fontBold',
+        'font_italic': 'fontItalic',
+        'font_underline': 'fontUnderline',
+        'strikethrough_type': 'strikethroughType',
+        'text_cap_type': 'textCapType',
+        'escapement': 'escapement',
+        'spacing': 'spacing',
+        'font_color': 'fontColor',
+        'highlight_color': 'highlightColor',
+        'font_height': 'fontHeight',
+        'normalise_height': 'normaliseHeight',
+        'proof_disabled': 'proofDisabled',
+        'smart_tag_clean': 'smartTagClean',
+        'kerning_minimal_size': 'kerningMinimalSize',
+        'kumimoji': 'kumimoji',
+        'language_id': 'languageId',
+        'alternative_language_id': 'alternativeLanguageId',
+        'is_hard_underline_fill': 'isHardUnderlineFill',
+        'is_hard_underline_line': 'isHardUnderlineLine',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'underline_fill_format': 'underlineFillFormat',
+        'underline_line_format': 'underlineLineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, text=None, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None):  # noqa: E501
@@ -227,6 +230,15 @@ class Portion(ResourceBase):
         """
         if font_bold is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if font_bold.isdigit():
+                int_font_bold = int(font_bold)
+                if int_font_bold < 0 or int_font_bold >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `font_bold` ({0}), must be one of {1}"  # noqa: E501
+                        .format(font_bold, allowed_values)
+                    )
+                self._font_bold = allowed_values[int_font_bold]
+                return
             if font_bold not in allowed_values:
                 raise ValueError(
                     "Invalid value for `font_bold` ({0}), must be one of {1}"  # noqa: E501
@@ -256,6 +268,15 @@ class Portion(ResourceBase):
         """
         if font_italic is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if font_italic.isdigit():
+                int_font_italic = int(font_italic)
+                if int_font_italic < 0 or int_font_italic >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `font_italic` ({0}), must be one of {1}"  # noqa: E501
+                        .format(font_italic, allowed_values)
+                    )
+                self._font_italic = allowed_values[int_font_italic]
+                return
             if font_italic not in allowed_values:
                 raise ValueError(
                     "Invalid value for `font_italic` ({0}), must be one of {1}"  # noqa: E501
@@ -285,6 +306,15 @@ class Portion(ResourceBase):
         """
         if font_underline is not None:
             allowed_values = ["None", "Words", "Single", "Double", "Heavy", "Dotted", "HeavyDotted", "Dashed", "HeavyDashed", "LongDashed", "HeavyLongDashed", "DotDash", "HeavyDotDash", "DotDotDash", "HeavyDotDotDash", "Wavy", "HeavyWavy", "DoubleWavy", "NotDefined"]  # noqa: E501
+            if font_underline.isdigit():
+                int_font_underline = int(font_underline)
+                if int_font_underline < 0 or int_font_underline >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `font_underline` ({0}), must be one of {1}"  # noqa: E501
+                        .format(font_underline, allowed_values)
+                    )
+                self._font_underline = allowed_values[int_font_underline]
+                return
             if font_underline not in allowed_values:
                 raise ValueError(
                     "Invalid value for `font_underline` ({0}), must be one of {1}"  # noqa: E501
@@ -314,6 +344,15 @@ class Portion(ResourceBase):
         """
         if strikethrough_type is not None:
             allowed_values = ["None", "Single", "Double", "NotDefined"]  # noqa: E501
+            if strikethrough_type.isdigit():
+                int_strikethrough_type = int(strikethrough_type)
+                if int_strikethrough_type < 0 or int_strikethrough_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `strikethrough_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(strikethrough_type, allowed_values)
+                    )
+                self._strikethrough_type = allowed_values[int_strikethrough_type]
+                return
             if strikethrough_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `strikethrough_type` ({0}), must be one of {1}"  # noqa: E501
@@ -343,6 +382,15 @@ class Portion(ResourceBase):
         """
         if text_cap_type is not None:
             allowed_values = ["None", "Small", "All", "NotDefined"]  # noqa: E501
+            if text_cap_type.isdigit():
+                int_text_cap_type = int(text_cap_type)
+                if int_text_cap_type < 0 or int_text_cap_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `text_cap_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(text_cap_type, allowed_values)
+                    )
+                self._text_cap_type = allowed_values[int_text_cap_type]
+                return
             if text_cap_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_cap_type` ({0}), must be one of {1}"  # noqa: E501
@@ -482,6 +530,15 @@ class Portion(ResourceBase):
         """
         if normalise_height is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if normalise_height.isdigit():
+                int_normalise_height = int(normalise_height)
+                if int_normalise_height < 0 or int_normalise_height >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `normalise_height` ({0}), must be one of {1}"  # noqa: E501
+                        .format(normalise_height, allowed_values)
+                    )
+                self._normalise_height = allowed_values[int_normalise_height]
+                return
             if normalise_height not in allowed_values:
                 raise ValueError(
                     "Invalid value for `normalise_height` ({0}), must be one of {1}"  # noqa: E501
@@ -511,6 +568,15 @@ class Portion(ResourceBase):
         """
         if proof_disabled is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if proof_disabled.isdigit():
+                int_proof_disabled = int(proof_disabled)
+                if int_proof_disabled < 0 or int_proof_disabled >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `proof_disabled` ({0}), must be one of {1}"  # noqa: E501
+                        .format(proof_disabled, allowed_values)
+                    )
+                self._proof_disabled = allowed_values[int_proof_disabled]
+                return
             if proof_disabled not in allowed_values:
                 raise ValueError(
                     "Invalid value for `proof_disabled` ({0}), must be one of {1}"  # noqa: E501
@@ -584,6 +650,15 @@ class Portion(ResourceBase):
         """
         if kumimoji is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if kumimoji.isdigit():
+                int_kumimoji = int(kumimoji)
+                if int_kumimoji < 0 or int_kumimoji >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `kumimoji` ({0}), must be one of {1}"  # noqa: E501
+                        .format(kumimoji, allowed_values)
+                    )
+                self._kumimoji = allowed_values[int_kumimoji]
+                return
             if kumimoji not in allowed_values:
                 raise ValueError(
                     "Invalid value for `kumimoji` ({0}), must be one of {1}"  # noqa: E501
@@ -657,6 +732,15 @@ class Portion(ResourceBase):
         """
         if is_hard_underline_fill is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if is_hard_underline_fill.isdigit():
+                int_is_hard_underline_fill = int(is_hard_underline_fill)
+                if int_is_hard_underline_fill < 0 or int_is_hard_underline_fill >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `is_hard_underline_fill` ({0}), must be one of {1}"  # noqa: E501
+                        .format(is_hard_underline_fill, allowed_values)
+                    )
+                self._is_hard_underline_fill = allowed_values[int_is_hard_underline_fill]
+                return
             if is_hard_underline_fill not in allowed_values:
                 raise ValueError(
                     "Invalid value for `is_hard_underline_fill` ({0}), must be one of {1}"  # noqa: E501
@@ -686,6 +770,15 @@ class Portion(ResourceBase):
         """
         if is_hard_underline_line is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if is_hard_underline_line.isdigit():
+                int_is_hard_underline_line = int(is_hard_underline_line)
+                if int_is_hard_underline_line < 0 or int_is_hard_underline_line >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `is_hard_underline_line` ({0}), must be one of {1}"  # noqa: E501
+                        .format(is_hard_underline_line, allowed_values)
+                    )
+                self._is_hard_underline_line = allowed_values[int_is_hard_underline_line]
+                return
             if is_hard_underline_line not in allowed_values:
                 raise ValueError(
                     "Invalid value for `is_hard_underline_line` ({0}), must be one of {1}"  # noqa: E501

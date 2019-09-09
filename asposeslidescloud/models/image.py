@@ -51,11 +51,14 @@ class Image(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'width': 'Width',
-        'height': 'Height',
-        'content_type': 'ContentType'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'width': 'width',
+        'height': 'height',
+        'content_type': 'contentType'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, width=None, height=None, content_type=None):  # noqa: E501

@@ -50,10 +50,13 @@ class NotesSlide(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'text': 'Text',
-        'shapes': 'Shapes'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'text': 'text',
+        'shapes': 'shapes'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, text=None, shapes=None):  # noqa: E501

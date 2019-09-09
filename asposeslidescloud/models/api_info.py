@@ -47,8 +47,11 @@ class ApiInfo(object):
     }
 
     attribute_map = {
-        'name': 'Name',
-        'version': 'Version'
+        'name': 'name',
+        'version': 'version'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, name=None, version=None):  # noqa: E501

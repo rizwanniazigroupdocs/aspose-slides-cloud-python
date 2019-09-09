@@ -50,11 +50,14 @@ class StorageFile(object):
     }
 
     attribute_map = {
-        'name': 'Name',
-        'is_folder': 'IsFolder',
-        'modified_date': 'ModifiedDate',
-        'size': 'Size',
-        'path': 'Path'
+        'name': 'name',
+        'is_folder': 'isFolder',
+        'modified_date': 'modifiedDate',
+        'size': 'size',
+        'path': 'path'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, name=None, is_folder=None, modified_date=None, size=None, path=None):  # noqa: E501

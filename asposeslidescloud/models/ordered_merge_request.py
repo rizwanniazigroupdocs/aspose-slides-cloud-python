@@ -46,7 +46,10 @@ class OrderedMergeRequest(object):
     }
 
     attribute_map = {
-        'presentations': 'Presentations'
+        'presentations': 'presentations'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, presentations=None):  # noqa: E501

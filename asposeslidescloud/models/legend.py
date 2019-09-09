@@ -54,15 +54,18 @@ class Legend(object):
     }
 
     attribute_map = {
-        'position': 'Position',
-        'x': 'X',
-        'y': 'Y',
-        'width': 'Width',
-        'height': 'Height',
-        'overlay': 'Overlay',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'position': 'position',
+        'x': 'x',
+        'y': 'y',
+        'width': 'width',
+        'height': 'height',
+        'overlay': 'overlay',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, position=None, x=None, y=None, width=None, height=None, overlay=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
@@ -113,6 +116,15 @@ class Legend(object):
         """
         if position is not None:
             allowed_values = ["Bottom", "Left", "Right", "Top", "TopRight"]  # noqa: E501
+            if position.isdigit():
+                int_position = int(position)
+                if int_position < 0 or int_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(position, allowed_values)
+                    )
+                self._position = allowed_values[int_position]
+                return
             if position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501

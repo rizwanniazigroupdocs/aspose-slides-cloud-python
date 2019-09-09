@@ -68,28 +68,33 @@ class SmartArt(ShapeBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
-        'layout': 'Layout',
-        'quick_style': 'QuickStyle',
-        'color_style': 'ColorStyle',
-        'nodes': 'Nodes',
-        'is_reversed': 'IsReversed'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType',
+        'layout': 'layout',
+        'quick_style': 'quickStyle',
+        'color_style': 'colorStyle',
+        'nodes': 'nodes',
+        'is_reversed': 'isReversed'
+    }
+
+    type_determiners = {
+        'type': 'SmartArt',
+        'shape_type': 'Diagram',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='SmartArt', shape_type='Diagram', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
@@ -101,6 +106,8 @@ class SmartArt(ShapeBase):
         self._color_style = None
         self._nodes = None
         self._is_reversed = None
+        self.type: 'SmartArt'
+        self.shape_type: 'Diagram'
 
         self.layout = layout
         self.quick_style = quick_style
@@ -131,6 +138,15 @@ class SmartArt(ShapeBase):
         """
         if layout is not None:
             allowed_values = ["AccentProcess", "AccentedPicture", "AlternatingFlow", "AlternatingHexagons", "AlternatingPictureBlocks", "AlternatingPictureCircles", "ArrowRibbon", "AscendingPictureAccentProcess", "Balance", "BasicBendingProcess", "BasicBlockList", "BasicChevronProcess", "BasicCycle", "BasicMatrix", "BasicPie", "BasicProcess", "BasicPyramid", "BasicRadial", "BasicTarget", "BasicTimeline", "BasicVenn", "BendingPictureAccentList", "BendingPictureBlocks", "BendingPictureCaption", "BendingPictureCaptionList", "BendingPictureSemiTransparentText", "BlockCycle", "BubblePictureList", "CaptionedPictures", "ChevronList", "CircleAccentTimeline", "CircleArrowProcess", "CirclePictureHierarchy", "CircleRelationship", "CircularBendingProcess", "CircularPictureCallout", "ClosedChevronProcess", "ContinuousArrowProcess", "ContinuousBlockProcess", "ContinuousCycle", "ContinuousPictureList", "ConvergingArrows", "ConvergingRadial", "CounterbalanceArrows", "CycleMatrix", "DescendingBlockList", "DescendingProcess", "DetailedProcess", "DivergingArrows", "DivergingRadial", "Equation", "FramedTextPicture", "Funnel", "Gear", "GridMatrix", "GroupedList", "HalfCircleOrganizationChart", "HexagonCluster", "Hierarchy", "HierarchyList", "HorizontalBulletList", "HorizontalHierarchy", "HorizontalLabeledHierarchy", "HorizontalMultiLevelHierarchy", "HorizontalOrganizationChart", "HorizontalPictureList", "IncreasingArrowsProcess", "IncreasingCircleProcess", "InvertedPyramid", "LabeledHierarchy", "LinearVenn", "LinedList", "MultidirectionalCycle", "NameandTitleOrganizationChart", "NestedTarget", "NondirectionalCycle", "OpposingArrows", "OpposingIdeas", "OrganizationChart", "PhasedProcess", "PictureAccentBlocks", "PictureAccentList", "PictureAccentProcess", "PictureCaptionList", "PictureGrid", "PictureLineup", "PictureStrips", "PieProcess", "PlusandMinus", "ProcessArrows", "ProcessList", "PyramidList", "RadialCluster", "RadialCycle", "RadialList", "RadialVenn", "RandomToResultProcess", "RepeatingBendingProcess", "ReverseList", "SegmentedCycle", "SegmentedProcess", "SegmentedPyramid", "SnapshotPictureList", "SpiralPicture", "SquareAccentList", "StackedList", "StackedVenn", "StaggeredProcess", "StepDownProcess", "StepUpProcess", "SubStepProcess", "TableHierarchy", "TableList", "TargetList", "TextCycle", "TitlePictureLineup", "TitledMatrix", "TitledPictureAccentList", "TitledPictureBlocks", "TrapezoidList", "UpwardArrow", "VerticalAccentList", "VerticalArrowList", "VerticalBendingProcess", "VerticalBlockList", "VerticalBoxList", "VerticalBulletList", "VerticalChevronList", "VerticalCircleList", "VerticalCurvedList", "VerticalEquation", "VerticalPictureAccentList", "VerticalPictureList", "VerticalProcess", "Custom", "PictureOrganizationChart"]  # noqa: E501
+            if layout.isdigit():
+                int_layout = int(layout)
+                if int_layout < 0 or int_layout >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `layout` ({0}), must be one of {1}"  # noqa: E501
+                        .format(layout, allowed_values)
+                    )
+                self._layout = allowed_values[int_layout]
+                return
             if layout not in allowed_values:
                 raise ValueError(
                     "Invalid value for `layout` ({0}), must be one of {1}"  # noqa: E501
@@ -160,6 +176,15 @@ class SmartArt(ShapeBase):
         """
         if quick_style is not None:
             allowed_values = ["SimpleFill", "WhiteOutline", "SubtleEffect", "ModerateEffect", "IntenceEffect", "Polished", "Inset", "Cartoon", "Powder", "BrickScene", "FlatScene", "MetallicScene", "SunsetScene", "BirdsEyeScene"]  # noqa: E501
+            if quick_style.isdigit():
+                int_quick_style = int(quick_style)
+                if int_quick_style < 0 or int_quick_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `quick_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(quick_style, allowed_values)
+                    )
+                self._quick_style = allowed_values[int_quick_style]
+                return
             if quick_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `quick_style` ({0}), must be one of {1}"  # noqa: E501
@@ -189,6 +214,15 @@ class SmartArt(ShapeBase):
         """
         if color_style is not None:
             allowed_values = ["Dark1Outline", "Dark2Outline", "DarkFill", "ColorfulAccentColors", "ColorfulAccentColors2to3", "ColorfulAccentColors3to4", "ColorfulAccentColors4to5", "ColorfulAccentColors5to6", "ColoredOutlineAccent1", "ColoredFillAccent1", "GradientRangeAccent1", "GradientLoopAccent1", "TransparentGradientRangeAccent1", "ColoredOutlineAccent2", "ColoredFillAccent2", "GradientRangeAccent2", "GradientLoopAccent2", "TransparentGradientRangeAccent2", "ColoredOutlineAccent3", "ColoredFillAccent3", "GradientRangeAccent3", "GradientLoopAccent3", "TransparentGradientRangeAccent3", "ColoredOutlineAccent4", "ColoredFillAccent4", "GradientRangeAccent4", "GradientLoopAccent4", "TransparentGradientRangeAccent4", "ColoredOutlineAccent5", "ColoredFillAccent5", "GradientRangeAccent5", "GradientLoopAccent5", "TransparentGradientRangeAccent5", "ColoredOutlineAccent6", "ColoredFillAccent6", "GradientRangeAccent6", "GradientLoopAccent6", "TransparentGradientRangeAccent6"]  # noqa: E501
+            if color_style.isdigit():
+                int_color_style = int(color_style)
+                if int_color_style < 0 or int_color_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `color_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(color_style, allowed_values)
+                    )
+                self._color_style = allowed_values[int_color_style]
+                return
             if color_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `color_style` ({0}), must be one of {1}"  # noqa: E501

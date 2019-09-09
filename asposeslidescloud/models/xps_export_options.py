@@ -50,10 +50,14 @@ class XpsExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'show_hidden_slides': 'ShowHiddenSlides',
-        'save_metafiles_as_png': 'SaveMetafilesAsPng',
-        'draw_slides_frame': 'DrawSlidesFrame'
+        'format': 'format',
+        'show_hidden_slides': 'showHiddenSlides',
+        'save_metafiles_as_png': 'saveMetafilesAsPng',
+        'draw_slides_frame': 'drawSlidesFrame'
+    }
+
+    type_determiners = {
+        'format': 'xps',
     }
 
     def __init__(self, format='xps', show_hidden_slides=None, save_metafiles_as_png=None, draw_slides_frame=None):  # noqa: E501
@@ -63,6 +67,7 @@ class XpsExportOptions(ExportOptions):
         self._show_hidden_slides = None
         self._save_metafiles_as_png = None
         self._draw_slides_frame = None
+        self.format: 'xps'
 
         self.show_hidden_slides = show_hidden_slides
         self.save_metafiles_as_png = save_metafiles_as_png

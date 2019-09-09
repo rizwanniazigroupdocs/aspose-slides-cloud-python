@@ -65,25 +65,30 @@ class OleObjectFrame(ShapeBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
-        'is_object_icon': 'IsObjectIcon',
-        'substitute_picture_title': 'SubstitutePictureTitle'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType',
+        'is_object_icon': 'isObjectIcon',
+        'substitute_picture_title': 'substitutePictureTitle'
+    }
+
+    type_determiners = {
+        'type': 'OleObjectFrame',
+        'shape_type': 'OleObjectFrame',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', shape_type='OleObjectFrame', is_object_icon=None, substitute_picture_title=None):  # noqa: E501
@@ -92,6 +97,8 @@ class OleObjectFrame(ShapeBase):
 
         self._is_object_icon = None
         self._substitute_picture_title = None
+        self.type: 'OleObjectFrame'
+        self.shape_type: 'OleObjectFrame'
 
         self.is_object_icon = is_object_icon
         if substitute_picture_title is not None:

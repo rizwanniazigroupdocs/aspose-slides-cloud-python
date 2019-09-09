@@ -48,9 +48,12 @@ class ArrowHeadProperties(object):
     }
 
     attribute_map = {
-        'length': 'Length',
-        'style': 'Style',
-        'width': 'Width'
+        'length': 'length',
+        'style': 'style',
+        'width': 'width'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, length=None, style=None, width=None):  # noqa: E501
@@ -86,6 +89,15 @@ class ArrowHeadProperties(object):
         """
         if length is not None:
             allowed_values = ["Short", "Medium", "Long", "NotDefined"]  # noqa: E501
+            if length.isdigit():
+                int_length = int(length)
+                if int_length < 0 or int_length >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `length` ({0}), must be one of {1}"  # noqa: E501
+                        .format(length, allowed_values)
+                    )
+                self._length = allowed_values[int_length]
+                return
             if length not in allowed_values:
                 raise ValueError(
                     "Invalid value for `length` ({0}), must be one of {1}"  # noqa: E501
@@ -115,6 +127,15 @@ class ArrowHeadProperties(object):
         """
         if style is not None:
             allowed_values = ["None", "Triangle", "Stealth", "Diamond", "Oval", "Open", "NotDefined"]  # noqa: E501
+            if style.isdigit():
+                int_style = int(style)
+                if int_style < 0 or int_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(style, allowed_values)
+                    )
+                self._style = allowed_values[int_style]
+                return
             if style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
@@ -144,6 +165,15 @@ class ArrowHeadProperties(object):
         """
         if width is not None:
             allowed_values = ["Narrow", "Medium", "Wide", "NotDefined"]  # noqa: E501
+            if width.isdigit():
+                int_width = int(width)
+                if int_width < 0 or int_width >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `width` ({0}), must be one of {1}"  # noqa: E501
+                        .format(width, allowed_values)
+                    )
+                self._width = allowed_values[int_width]
+                return
             if width not in allowed_values:
                 raise ValueError(
                     "Invalid value for `width` ({0}), must be one of {1}"  # noqa: E501

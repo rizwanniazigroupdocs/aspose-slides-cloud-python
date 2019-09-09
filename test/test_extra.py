@@ -25,6 +25,7 @@ from asposeslidescloud.models.output_file import OutputFile
 from asposeslidescloud.models.pipeline import Pipeline
 from asposeslidescloud.models.requests.slides_api_requests import PostSlidesPipelineRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSlideSaveAsRequest
+from asposeslidescloud.models.requests.slides_api_requests import GetSlideShapeRequest
 from asposeslidescloud.models.request_input_file import RequestInputFile
 from asposeslidescloud.models.save import Save
 
@@ -90,6 +91,12 @@ class TestExtra(BaseTest):
         api = asposeslidescloud.apis.slides_api.SlidesApi(config)  # noqa: E501
         request = PostSlideSaveAsRequest("test.ppt", 1, "svg", None, None, None, "password", "TempSlidesSDK", None, None)
         result = api.post_slide_save_as(request)
+
+    def test_base_shape(self):
+        self.initialize('get_slide_shape', None, None)
+        request = GetSlideShapeRequest("test.ppt", 1, 1, "", "password", "TempSlidesSDK", None)
+        result = self.api.get_slide_shape(request)
+        self.assertEqual("1", result.text)
 
 if __name__ == '__main__':
     unittest.main()

@@ -51,11 +51,15 @@ class SaveShape(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'format': 'Format',
-        'shape_path': 'ShapePath',
-        'output': 'Output',
-        'options': 'Options'
+        'type': 'type',
+        'format': 'format',
+        'shape_path': 'shapePath',
+        'output': 'output',
+        'options': 'options'
+    }
+
+    type_determiners = {
+        'type': 'SaveShape',
     }
 
     def __init__(self, type='SaveShape', format=None, shape_path=None, output=None, options=None):  # noqa: E501
@@ -66,6 +70,7 @@ class SaveShape(Task):
         self._shape_path = None
         self._output = None
         self._options = None
+        self.type: 'SaveShape'
 
         self.format = format
         if shape_path is not None:
@@ -97,6 +102,15 @@ class SaveShape(Task):
         """
         if format is not None:
             allowed_values = ["Jpeg", "Png", "Gif", "Bmp", "Tiff", "Svg"]  # noqa: E501
+            if format.isdigit():
+                int_format = int(format)
+                if int_format < 0 or int_format >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                        .format(format, allowed_values)
+                    )
+                self._format = allowed_values[int_format]
+                return
             if format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

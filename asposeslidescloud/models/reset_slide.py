@@ -48,8 +48,12 @@ class ResetSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'position': 'Position'
+        'type': 'type',
+        'position': 'position'
+    }
+
+    type_determiners = {
+        'type': 'ResetSlide',
     }
 
     def __init__(self, type='ResetSlide', position=None):  # noqa: E501
@@ -57,6 +61,7 @@ class ResetSlide(Task):
         super(ResetSlide, self).__init__(type)
 
         self._position = None
+        self.type: 'ResetSlide'
 
         self.position = position
 

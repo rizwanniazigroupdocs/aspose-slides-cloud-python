@@ -53,13 +53,17 @@ class GradientFill(FillFormat):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'direction': 'Direction',
-        'shape': 'Shape',
-        'stops': 'Stops',
-        'linear_angle': 'LinearAngle',
-        'is_scaled': 'IsScaled',
-        'tile_flip': 'TileFlip'
+        'type': 'type',
+        'direction': 'direction',
+        'shape': 'shape',
+        'stops': 'stops',
+        'linear_angle': 'linearAngle',
+        'is_scaled': 'isScaled',
+        'tile_flip': 'tileFlip'
+    }
+
+    type_determiners = {
+        'type': 'Gradient',
     }
 
     def __init__(self, type='Gradient', direction=None, shape=None, stops=None, linear_angle=None, is_scaled=None, tile_flip=None):  # noqa: E501
@@ -72,6 +76,7 @@ class GradientFill(FillFormat):
         self._linear_angle = None
         self._is_scaled = None
         self._tile_flip = None
+        self.type: 'Gradient'
 
         self.direction = direction
         self.shape = shape
@@ -103,6 +108,15 @@ class GradientFill(FillFormat):
         """
         if direction is not None:
             allowed_values = ["FromCorner1", "FromCorner2", "FromCorner3", "FromCorner4", "FromCenter", "NotDefined"]  # noqa: E501
+            if direction.isdigit():
+                int_direction = int(direction)
+                if int_direction < 0 or int_direction >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                        .format(direction, allowed_values)
+                    )
+                self._direction = allowed_values[int_direction]
+                return
             if direction not in allowed_values:
                 raise ValueError(
                     "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
@@ -132,6 +146,15 @@ class GradientFill(FillFormat):
         """
         if shape is not None:
             allowed_values = ["Linear", "Rectangle", "Radial", "Path", "NotDefined"]  # noqa: E501
+            if shape.isdigit():
+                int_shape = int(shape)
+                if int_shape < 0 or int_shape >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `shape` ({0}), must be one of {1}"  # noqa: E501
+                        .format(shape, allowed_values)
+                    )
+                self._shape = allowed_values[int_shape]
+                return
             if shape not in allowed_values:
                 raise ValueError(
                     "Invalid value for `shape` ({0}), must be one of {1}"  # noqa: E501
@@ -227,6 +250,15 @@ class GradientFill(FillFormat):
         """
         if tile_flip is not None:
             allowed_values = ["NoFlip", "FlipX", "FlipY", "FlipBoth", "NotDefined"]  # noqa: E501
+            if tile_flip.isdigit():
+                int_tile_flip = int(tile_flip)
+                if int_tile_flip < 0 or int_tile_flip >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `tile_flip` ({0}), must be one of {1}"  # noqa: E501
+                        .format(tile_flip, allowed_values)
+                    )
+                self._tile_flip = allowed_values[int_tile_flip]
+                return
             if tile_flip not in allowed_values:
                 raise ValueError(
                     "Invalid value for `tile_flip` ({0}), must be one of {1}"  # noqa: E501

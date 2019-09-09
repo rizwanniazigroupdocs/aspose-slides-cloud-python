@@ -51,11 +51,15 @@ class ImageExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'notes_position': 'NotesPosition',
-        'comments_position': 'CommentsPosition',
-        'comments_area_width': 'CommentsAreaWidth',
-        'comments_area_color': 'CommentsAreaColor'
+        'format': 'format',
+        'notes_position': 'notesPosition',
+        'comments_position': 'commentsPosition',
+        'comments_area_width': 'commentsAreaWidth',
+        'comments_area_color': 'commentsAreaColor'
+    }
+
+    type_determiners = {
+        'format': 'image',
     }
 
     def __init__(self, format='image', notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None):  # noqa: E501
@@ -66,6 +70,7 @@ class ImageExportOptions(ExportOptions):
         self._comments_position = None
         self._comments_area_width = None
         self._comments_area_color = None
+        self.format: 'image'
 
         self.notes_position = notes_position
         self.comments_position = comments_position
@@ -95,6 +100,15 @@ class ImageExportOptions(ExportOptions):
         """
         if notes_position is not None:
             allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position.isdigit():
+                int_notes_position = int(notes_position)
+                if int_notes_position < 0 or int_notes_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(notes_position, allowed_values)
+                    )
+                self._notes_position = allowed_values[int_notes_position]
+                return
             if notes_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
@@ -124,6 +138,15 @@ class ImageExportOptions(ExportOptions):
         """
         if comments_position is not None:
             allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position.isdigit():
+                int_comments_position = int(comments_position)
+                if int_comments_position < 0 or int_comments_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(comments_position, allowed_values)
+                    )
+                self._comments_position = allowed_values[int_comments_position]
+                return
             if comments_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501

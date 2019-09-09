@@ -73,33 +73,38 @@ class Table(ShapeBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
-        'style': 'Style',
-        'rows': 'Rows',
-        'columns': 'Columns',
-        'first_col': 'FirstCol',
-        'first_row': 'FirstRow',
-        'horizontal_banding': 'HorizontalBanding',
-        'last_col': 'LastCol',
-        'last_row': 'LastRow',
-        'right_to_left': 'RightToLeft',
-        'vertical_banding': 'VerticalBanding'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType',
+        'style': 'style',
+        'rows': 'rows',
+        'columns': 'columns',
+        'first_col': 'firstCol',
+        'first_row': 'firstRow',
+        'horizontal_banding': 'horizontalBanding',
+        'last_col': 'lastCol',
+        'last_row': 'lastRow',
+        'right_to_left': 'rightToLeft',
+        'vertical_banding': 'verticalBanding'
+    }
+
+    type_determiners = {
+        'type': 'Table',
+        'shape_type': 'Table',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Table', shape_type='Table', style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
@@ -116,6 +121,8 @@ class Table(ShapeBase):
         self._last_row = None
         self._right_to_left = None
         self._vertical_banding = None
+        self.type: 'Table'
+        self.shape_type: 'Table'
 
         self.style = style
         if rows is not None:
@@ -152,6 +159,15 @@ class Table(ShapeBase):
         """
         if style is not None:
             allowed_values = ["None", "MediumStyle2Accent1", "MediumStyle2", "NoStyleNoGrid", "ThemedStyle1Accent1", "ThemedStyle1Accent2", "ThemedStyle1Accent3", "ThemedStyle1Accent4", "ThemedStyle1Accent5", "ThemedStyle1Accent6", "NoStyleTableGrid", "ThemedStyle2Accent1", "ThemedStyle2Accent2", "ThemedStyle2Accent3", "ThemedStyle2Accent4", "ThemedStyle2Accent5", "ThemedStyle2Accent6", "LightStyle1", "LightStyle1Accent1", "LightStyle1Accent2", "LightStyle1Accent3", "LightStyle1Accent4", "LightStyle2Accent5", "LightStyle1Accent6", "LightStyle2", "LightStyle2Accent1", "LightStyle2Accent2", "LightStyle2Accent3", "MediumStyle2Accent3", "MediumStyle2Accent4", "MediumStyle2Accent5", "LightStyle2Accent6", "LightStyle2Accent4", "LightStyle3", "LightStyle3Accent1", "MediumStyle2Accent2", "LightStyle3Accent2", "LightStyle3Accent3", "LightStyle3Accent4", "LightStyle3Accent5", "LightStyle3Accent6", "MediumStyle1", "MediumStyle1Accent1", "MediumStyle1Accent2", "MediumStyle1Accent3", "MediumStyle1Accent4", "MediumStyle1Accent5", "MediumStyle1Accent6", "MediumStyle2Accent6", "MediumStyle3", "MediumStyle3Accent1", "MediumStyle3Accent2", "MediumStyle3Accent3", "MediumStyle3Accent4", "MediumStyle3Accent5", "MediumStyle3Accent6", "MediumStyle4", "MediumStyle4Accent1", "MediumStyle4Accent2", "MediumStyle4Accent3", "MediumStyle4Accent4", "MediumStyle4Accent5", "MediumStyle4Accent6", "DarkStyle1", "DarkStyle1Accent1", "DarkStyle1Accent2", "DarkStyle1Accent3", "DarkStyle1Accent4", "DarkStyle1Accent5", "DarkStyle1Accent6", "DarkStyle2", "DarkStyle2Accent1Accent2", "DarkStyle2Accent3Accent4", "DarkStyle2Accent5Accent6", "LightStyle1Accent5", "Custom"]  # noqa: E501
+            if style.isdigit():
+                int_style = int(style)
+                if int_style < 0 or int_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(style, allowed_values)
+                    )
+                self._style = allowed_values[int_style]
+                return
             if style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501

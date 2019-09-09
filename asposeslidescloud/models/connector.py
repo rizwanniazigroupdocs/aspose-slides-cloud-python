@@ -68,28 +68,32 @@ class Connector(GeometryShape):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
-        'geometry_shape_type': 'GeometryShapeType',
-        'start_shape_connected_to': 'StartShapeConnectedTo',
-        'start_shape_connected_to_index': 'StartShapeConnectedToIndex',
-        'end_shape_connected_to': 'EndShapeConnectedTo',
-        'end_shape_connected_to_index': 'EndShapeConnectedToIndex'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType',
+        'geometry_shape_type': 'geometryShapeType',
+        'start_shape_connected_to': 'startShapeConnectedTo',
+        'start_shape_connected_to_index': 'startShapeConnectedToIndex',
+        'end_shape_connected_to': 'endShapeConnectedTo',
+        'end_shape_connected_to_index': 'endShapeConnectedToIndex'
+    }
+
+    type_determiners = {
+        'type': 'Connector',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Connector', shape_type=None, geometry_shape_type=None, start_shape_connected_to=None, start_shape_connected_to_index=None, end_shape_connected_to=None, end_shape_connected_to_index=None):  # noqa: E501
@@ -100,6 +104,7 @@ class Connector(GeometryShape):
         self._start_shape_connected_to_index = None
         self._end_shape_connected_to = None
         self._end_shape_connected_to_index = None
+        self.type: 'Connector'
 
         if start_shape_connected_to is not None:
             self.start_shape_connected_to = start_shape_connected_to

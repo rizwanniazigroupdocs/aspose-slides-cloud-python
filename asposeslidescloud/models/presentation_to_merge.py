@@ -48,9 +48,12 @@ class PresentationToMerge(object):
     }
 
     attribute_map = {
-        'path': 'Path',
-        'password': 'Password',
-        'slides': 'Slides'
+        'path': 'path',
+        'password': 'password',
+        'slides': 'slides'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, path=None, password=None, slides=None):  # noqa: E501

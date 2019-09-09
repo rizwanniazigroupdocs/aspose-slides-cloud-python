@@ -49,9 +49,12 @@ class Placeholders(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'placeholder_links': 'PlaceholderLinks'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'placeholder_links': 'placeholderLinks'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, placeholder_links=None):  # noqa: E501

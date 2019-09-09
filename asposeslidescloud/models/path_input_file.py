@@ -50,10 +50,14 @@ class PathInputFile(InputFile):
     }
 
     attribute_map = {
-        'password': 'Password',
-        'type': 'Type',
-        'path': 'Path',
-        'storage': 'Storage'
+        'password': 'password',
+        'type': 'type',
+        'path': 'path',
+        'storage': 'storage'
+    }
+
+    type_determiners = {
+        'type': 'Path',
     }
 
     def __init__(self, password=None, type='Path', path=None, storage=None):  # noqa: E501
@@ -62,6 +66,7 @@ class PathInputFile(InputFile):
 
         self._path = None
         self._storage = None
+        self.type: 'Path'
 
         if path is not None:
             self.path = path

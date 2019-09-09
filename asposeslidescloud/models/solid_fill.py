@@ -48,8 +48,12 @@ class SolidFill(FillFormat):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'color': 'Color'
+        'type': 'type',
+        'color': 'color'
+    }
+
+    type_determiners = {
+        'type': 'Solid',
     }
 
     def __init__(self, type='Solid', color=None):  # noqa: E501
@@ -57,6 +61,7 @@ class SolidFill(FillFormat):
         super(SolidFill, self).__init__(type)
 
         self._color = None
+        self.type: 'Solid'
 
         if color is not None:
             self.color = color

@@ -52,12 +52,15 @@ class Theme(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'color_scheme': 'ColorScheme',
-        'font_scheme': 'FontScheme',
-        'format_scheme': 'FormatScheme'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'color_scheme': 'colorScheme',
+        'font_scheme': 'fontScheme',
+        'format_scheme': 'formatScheme'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, color_scheme=None, font_scheme=None, format_scheme=None):  # noqa: E501

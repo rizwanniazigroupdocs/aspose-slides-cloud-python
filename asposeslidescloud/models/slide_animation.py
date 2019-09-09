@@ -50,10 +50,13 @@ class SlideAnimation(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'main_sequence': 'MainSequence',
-        'interactive_sequences': 'InteractiveSequences'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'main_sequence': 'mainSequence',
+        'interactive_sequences': 'interactiveSequences'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, main_sequence=None, interactive_sequences=None):  # noqa: E501

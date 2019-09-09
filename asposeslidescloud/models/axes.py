@@ -49,10 +49,13 @@ class Axes(object):
     }
 
     attribute_map = {
-        'horizontal_axis': 'HorizontalAxis',
-        'vertical_axis': 'VerticalAxis',
-        'secondary_horizontal_axis': 'SecondaryHorizontalAxis',
-        'secondary_vertical_axis': 'SecondaryVerticalAxis'
+        'horizontal_axis': 'horizontalAxis',
+        'vertical_axis': 'verticalAxis',
+        'secondary_horizontal_axis': 'secondaryHorizontalAxis',
+        'secondary_vertical_axis': 'secondaryVerticalAxis'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, horizontal_axis=None, vertical_axis=None, secondary_horizontal_axis=None, secondary_vertical_axis=None):  # noqa: E501

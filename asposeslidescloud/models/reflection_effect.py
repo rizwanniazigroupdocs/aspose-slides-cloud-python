@@ -59,20 +59,23 @@ class ReflectionEffect(object):
     }
 
     attribute_map = {
-        'direction': 'Direction',
-        'fade_direction': 'FadeDirection',
-        'distance': 'Distance',
-        'blur_radius': 'BlurRadius',
-        'scale_horizontal': 'ScaleHorizontal',
-        'scale_vertical': 'ScaleVertical',
-        'skew_horizontal': 'SkewHorizontal',
-        'skew_vertical': 'SkewVertical',
-        'start_pos_alpha': 'StartPosAlpha',
-        'end_pos_alpha': 'EndPosAlpha',
-        'start_reflection_opacity': 'StartReflectionOpacity',
-        'end_reflection_opacity': 'EndReflectionOpacity',
-        'rectangle_align': 'RectangleAlign',
-        'rotate_shadow_with_shape': 'RotateShadowWithShape'
+        'direction': 'direction',
+        'fade_direction': 'fadeDirection',
+        'distance': 'distance',
+        'blur_radius': 'blurRadius',
+        'scale_horizontal': 'scaleHorizontal',
+        'scale_vertical': 'scaleVertical',
+        'skew_horizontal': 'skewHorizontal',
+        'skew_vertical': 'skewVertical',
+        'start_pos_alpha': 'startPosAlpha',
+        'end_pos_alpha': 'endPosAlpha',
+        'start_reflection_opacity': 'startReflectionOpacity',
+        'end_reflection_opacity': 'endReflectionOpacity',
+        'rectangle_align': 'rectangleAlign',
+        'rotate_shadow_with_shape': 'rotateShadowWithShape'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, direction=None, fade_direction=None, distance=None, blur_radius=None, scale_horizontal=None, scale_vertical=None, skew_horizontal=None, skew_vertical=None, start_pos_alpha=None, end_pos_alpha=None, start_reflection_opacity=None, end_reflection_opacity=None, rectangle_align=None, rotate_shadow_with_shape=None):  # noqa: E501
@@ -394,6 +397,15 @@ class ReflectionEffect(object):
         """
         if rectangle_align is not None:
             allowed_values = ["TopLeft", "Top", "TopRight", "Left", "Center", "Right", "BottomLeft", "Bottom", "BottomRight", "NotDefined"]  # noqa: E501
+            if rectangle_align.isdigit():
+                int_rectangle_align = int(rectangle_align)
+                if int_rectangle_align < 0 or int_rectangle_align >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `rectangle_align` ({0}), must be one of {1}"  # noqa: E501
+                        .format(rectangle_align, allowed_values)
+                    )
+                self._rectangle_align = allowed_values[int_rectangle_align]
+                return
             if rectangle_align not in allowed_values:
                 raise ValueError(
                     "Invalid value for `rectangle_align` ({0}), must be one of {1}"  # noqa: E501

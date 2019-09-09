@@ -50,11 +50,14 @@ class SmartArtNode(object):
     }
 
     attribute_map = {
-        'nodes': 'Nodes',
-        'shapes': 'Shapes',
-        'is_assistant': 'IsAssistant',
-        'text': 'Text',
-        'org_chart_layout': 'OrgChartLayout'
+        'nodes': 'nodes',
+        'shapes': 'shapes',
+        'is_assistant': 'isAssistant',
+        'text': 'text',
+        'org_chart_layout': 'orgChartLayout'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, nodes=None, shapes=None, is_assistant=None, text=None, org_chart_layout=None):  # noqa: E501
@@ -185,6 +188,15 @@ class SmartArtNode(object):
         """
         if org_chart_layout is not None:
             allowed_values = ["Initial", "Standart", "BothHanging", "LeftHanging", "RightHanging"]  # noqa: E501
+            if org_chart_layout.isdigit():
+                int_org_chart_layout = int(org_chart_layout)
+                if int_org_chart_layout < 0 or int_org_chart_layout >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `org_chart_layout` ({0}), must be one of {1}"  # noqa: E501
+                        .format(org_chart_layout, allowed_values)
+                    )
+                self._org_chart_layout = allowed_values[int_org_chart_layout]
+                return
             if org_chart_layout not in allowed_values:
                 raise ValueError(
                     "Invalid value for `org_chart_layout` ({0}), must be one of {1}"  # noqa: E501

@@ -46,7 +46,10 @@ class ResourceUriElement(object):
     }
 
     attribute_map = {
-        'uri': 'Uri'
+        'uri': 'uri'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, uri=None):  # noqa: E501

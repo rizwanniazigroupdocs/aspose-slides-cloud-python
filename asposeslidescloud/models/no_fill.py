@@ -47,12 +47,17 @@ class NoFill(FillFormat):
     }
 
     attribute_map = {
-        'type': 'Type'
+        'type': 'type'
+    }
+
+    type_determiners = {
+        'type': 'NoFill',
     }
 
     def __init__(self, type='NoFill'):  # noqa: E501
         """NoFill - a model defined in Swagger"""  # noqa: E501
         super(NoFill, self).__init__(type)
+        self.type: 'NoFill'
 
     def to_dict(self):
         """Returns the model properties as a dict"""

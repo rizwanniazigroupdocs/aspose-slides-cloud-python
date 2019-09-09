@@ -48,8 +48,12 @@ class PptxExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'conformance': 'Conformance'
+        'format': 'format',
+        'conformance': 'conformance'
+    }
+
+    type_determiners = {
+        'format': 'pptx',
     }
 
     def __init__(self, format='pptx', conformance=None):  # noqa: E501
@@ -57,6 +61,7 @@ class PptxExportOptions(ExportOptions):
         super(PptxExportOptions, self).__init__(format)
 
         self._conformance = None
+        self.format: 'pptx'
 
         self.conformance = conformance
 
@@ -82,6 +87,15 @@ class PptxExportOptions(ExportOptions):
         """
         if conformance is not None:
             allowed_values = ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict"]  # noqa: E501
+            if conformance.isdigit():
+                int_conformance = int(conformance)
+                if int_conformance < 0 or int_conformance >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `conformance` ({0}), must be one of {1}"  # noqa: E501
+                        .format(conformance, allowed_values)
+                    )
+                self._conformance = allowed_values[int_conformance]
+                return
             if conformance not in allowed_values:
                 raise ValueError(
                     "Invalid value for `conformance` ({0}), must be one of {1}"  # noqa: E501

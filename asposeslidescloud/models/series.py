@@ -62,23 +62,26 @@ class Series(object):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'name': 'Name',
-        'is_color_varied': 'IsColorVaried',
-        'inverted_solid_fill_color': 'InvertedSolidFillColor',
-        'smooth': 'Smooth',
-        'plot_on_second_axis': 'PlotOnSecondAxis',
-        'order': 'Order',
-        'number_format_of_y_values': 'NumberFormatOfYValues',
-        'number_format_of_x_values': 'NumberFormatOfXValues',
-        'number_format_of_values': 'NumberFormatOfValues',
-        'number_format_of_bubble_sizes': 'NumberFormatOfBubbleSizes',
-        'invert_if_negative': 'InvertIfNegative',
-        'explosion': 'Explosion',
-        'marker': 'Marker',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'type': 'type',
+        'name': 'name',
+        'is_color_varied': 'isColorVaried',
+        'inverted_solid_fill_color': 'invertedSolidFillColor',
+        'smooth': 'smooth',
+        'plot_on_second_axis': 'plotOnSecondAxis',
+        'order': 'order',
+        'number_format_of_y_values': 'numberFormatOfYValues',
+        'number_format_of_x_values': 'numberFormatOfXValues',
+        'number_format_of_values': 'numberFormatOfValues',
+        'number_format_of_bubble_sizes': 'numberFormatOfBubbleSizes',
+        'invert_if_negative': 'invertIfNegative',
+        'explosion': 'explosion',
+        'marker': 'marker',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
@@ -152,6 +155,15 @@ class Series(object):
         """
         if type is not None:
             allowed_values = ["ClusteredColumn", "StackedColumn", "PercentsStackedColumn", "ClusteredColumn3D", "StackedColumn3D", "PercentsStackedColumn3D", "Column3D", "ClusteredCylinder", "StackedCylinder", "PercentsStackedCylinder", "Cylinder3D", "ClusteredCone", "StackedCone", "PercentsStackedCone", "Cone3D", "ClusteredPyramid", "StackedPyramid", "PercentsStackedPyramid", "Pyramid3D", "Line", "StackedLine", "PercentsStackedLine", "LineWithMarkers", "StackedLineWithMarkers", "PercentsStackedLineWithMarkers", "Line3D", "Pie", "Pie3D", "PieOfPie", "ExplodedPie", "ExplodedPie3D", "BarOfPie", "PercentsStackedBar", "ClusteredBar3D", "ClusteredBar", "StackedBar", "StackedBar3D", "PercentsStackedBar3D", "ClusteredHorizontalCylinder", "StackedHorizontalCylinder", "PercentsStackedHorizontalCylinder", "ClusteredHorizontalCone", "StackedHorizontalCone", "PercentsStackedHorizontalCone", "ClusteredHorizontalPyramid", "StackedHorizontalPyramid", "PercentsStackedHorizontalPyramid", "Area", "StackedArea", "PercentsStackedArea", "Area3D", "StackedArea3D", "PercentsStackedArea3D", "ScatterWithMarkers", "ScatterWithSmoothLinesAndMarkers", "ScatterWithSmoothLines", "ScatterWithStraightLinesAndMarkers", "ScatterWithStraightLines", "HighLowClose", "OpenHighLowClose", "VolumeHighLowClose", "VolumeOpenHighLowClose", "Surface3D", "WireframeSurface3D", "Contour", "WireframeContour", "Doughnut", "ExplodedDoughnut", "Bubble", "BubbleWith3D", "Radar", "RadarWithMarkers", "FilledRadar", "SeriesOfMixedTypes"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

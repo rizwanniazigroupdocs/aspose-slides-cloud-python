@@ -48,9 +48,12 @@ class TableRow(object):
     }
 
     attribute_map = {
-        'cells': 'Cells',
-        'minimal_height': 'MinimalHeight',
-        'height': 'Height'
+        'cells': 'cells',
+        'minimal_height': 'minimalHeight',
+        'height': 'height'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, cells=None, minimal_height=None, height=None):  # noqa: E501

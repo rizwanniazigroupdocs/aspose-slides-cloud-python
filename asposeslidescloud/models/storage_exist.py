@@ -46,7 +46,10 @@ class StorageExist(object):
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'exists': 'exists'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, exists=None):  # noqa: E501

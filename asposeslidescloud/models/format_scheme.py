@@ -52,12 +52,15 @@ class FormatScheme(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'background_styles': 'BackgroundStyles',
-        'effect_styles': 'EffectStyles',
-        'fill_styles': 'FillStyles',
-        'line_styles': 'LineStyles'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'background_styles': 'backgroundStyles',
+        'effect_styles': 'effectStyles',
+        'fill_styles': 'fillStyles',
+        'line_styles': 'lineStyles'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, background_styles=None, effect_styles=None, fill_styles=None, line_styles=None):  # noqa: E501

@@ -46,7 +46,10 @@ class CustomDashPattern(object):
     }
 
     attribute_map = {
-        'items': 'Items'
+        'items': 'items'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, items=None):  # noqa: E501

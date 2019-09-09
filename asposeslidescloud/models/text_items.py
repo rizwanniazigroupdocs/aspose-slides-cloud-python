@@ -49,9 +49,12 @@ class TextItems(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'items': 'Items'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'items': 'items'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, items=None):  # noqa: E501

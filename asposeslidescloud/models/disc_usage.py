@@ -47,8 +47,11 @@ class DiscUsage(object):
     }
 
     attribute_map = {
-        'used_size': 'UsedSize',
-        'total_size': 'TotalSize'
+        'used_size': 'usedSize',
+        'total_size': 'totalSize'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, used_size=None, total_size=None):  # noqa: E501

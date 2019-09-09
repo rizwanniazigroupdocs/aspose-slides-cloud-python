@@ -51,11 +51,14 @@ class SlideBackground(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'type': 'Type',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'type': 'type',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, type=None, fill_format=None, effect_format=None):  # noqa: E501
@@ -94,6 +97,15 @@ class SlideBackground(ResourceBase):
         """
         if type is not None:
             allowed_values = ["NoFill", "Solid", "Gradient", "Pattern", "Picture", "NotDefined"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

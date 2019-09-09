@@ -49,9 +49,12 @@ class BubbleChartDataPoint(ScatterChartDataPoint):
     }
 
     attribute_map = {
-        'x_value': 'XValue',
-        'y_value': 'YValue',
-        'bubble_size': 'BubbleSize'
+        'x_value': 'xValue',
+        'y_value': 'yValue',
+        'bubble_size': 'bubbleSize'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, x_value=None, y_value=None, bubble_size=None):  # noqa: E501

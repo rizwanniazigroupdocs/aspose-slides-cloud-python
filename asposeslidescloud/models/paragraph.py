@@ -68,28 +68,31 @@ class Paragraph(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'margin_left': 'MarginLeft',
-        'margin_right': 'MarginRight',
-        'space_before': 'SpaceBefore',
-        'space_after': 'SpaceAfter',
-        'space_within': 'SpaceWithin',
-        'indent': 'Indent',
-        'alignment': 'Alignment',
-        'font_alignment': 'FontAlignment',
-        'default_tab_size': 'DefaultTabSize',
-        'depth': 'Depth',
-        'bullet_char': 'BulletChar',
-        'bullet_height': 'BulletHeight',
-        'bullet_type': 'BulletType',
-        'numbered_bullet_start_with': 'NumberedBulletStartWith',
-        'numbered_bullet_style': 'NumberedBulletStyle',
-        'hanging_punctuation': 'HangingPunctuation',
-        'east_asian_line_break': 'EastAsianLineBreak',
-        'latin_line_break': 'LatinLineBreak',
-        'right_to_left': 'RightToLeft',
-        'portion_list': 'PortionList'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'margin_left': 'marginLeft',
+        'margin_right': 'marginRight',
+        'space_before': 'spaceBefore',
+        'space_after': 'spaceAfter',
+        'space_within': 'spaceWithin',
+        'indent': 'indent',
+        'alignment': 'alignment',
+        'font_alignment': 'fontAlignment',
+        'default_tab_size': 'defaultTabSize',
+        'depth': 'depth',
+        'bullet_char': 'bulletChar',
+        'bullet_height': 'bulletHeight',
+        'bullet_type': 'bulletType',
+        'numbered_bullet_start_with': 'numberedBulletStartWith',
+        'numbered_bullet_style': 'numberedBulletStyle',
+        'hanging_punctuation': 'hangingPunctuation',
+        'east_asian_line_break': 'eastAsianLineBreak',
+        'latin_line_break': 'latinLineBreak',
+        'right_to_left': 'rightToLeft',
+        'portion_list': 'portionList'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, margin_left=None, margin_right=None, space_before=None, space_after=None, space_within=None, indent=None, alignment=None, font_alignment=None, default_tab_size=None, depth=None, bullet_char=None, bullet_height=None, bullet_type=None, numbered_bullet_start_with=None, numbered_bullet_style=None, hanging_punctuation=None, east_asian_line_break=None, latin_line_break=None, right_to_left=None, portion_list=None):  # noqa: E501
@@ -312,6 +315,15 @@ class Paragraph(ResourceBase):
         """
         if alignment is not None:
             allowed_values = ["Left", "Center", "Right", "Justify", "JustifyLow", "Distributed", "NotDefined"]  # noqa: E501
+            if alignment.isdigit():
+                int_alignment = int(alignment)
+                if int_alignment < 0 or int_alignment >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
+                        .format(alignment, allowed_values)
+                    )
+                self._alignment = allowed_values[int_alignment]
+                return
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -341,6 +353,15 @@ class Paragraph(ResourceBase):
         """
         if font_alignment is not None:
             allowed_values = ["Automatic", "Top", "Center", "Bottom", "Baseline", "Default"]  # noqa: E501
+            if font_alignment.isdigit():
+                int_font_alignment = int(font_alignment)
+                if int_font_alignment < 0 or int_font_alignment >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `font_alignment` ({0}), must be one of {1}"  # noqa: E501
+                        .format(font_alignment, allowed_values)
+                    )
+                self._font_alignment = allowed_values[int_font_alignment]
+                return
             if font_alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `font_alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -458,6 +479,15 @@ class Paragraph(ResourceBase):
         """
         if bullet_type is not None:
             allowed_values = ["None", "Symbol", "Numbered", "Picture", "NotDefined"]  # noqa: E501
+            if bullet_type.isdigit():
+                int_bullet_type = int(bullet_type)
+                if int_bullet_type < 0 or int_bullet_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `bullet_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(bullet_type, allowed_values)
+                    )
+                self._bullet_type = allowed_values[int_bullet_type]
+                return
             if bullet_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `bullet_type` ({0}), must be one of {1}"  # noqa: E501
@@ -509,6 +539,15 @@ class Paragraph(ResourceBase):
         """
         if numbered_bullet_style is not None:
             allowed_values = ["BulletAlphaLCPeriod", "BulletAlphaUCPeriod", "BulletArabicParenRight", "BulletArabicPeriod", "BulletRomanLCParenBoth", "BulletRomanLCParenRight", "BulletRomanLCPeriod", "BulletRomanUCPeriod", "BulletAlphaLCParenBoth", "BulletAlphaLCParenRight", "BulletAlphaUCParenBoth", "BulletAlphaUCParenRight", "BulletArabicParenBoth", "BulletArabicPlain", "BulletRomanUCParenBoth", "BulletRomanUCParenRight", "BulletSimpChinPlain", "BulletSimpChinPeriod", "BulletCircleNumDBPlain", "BulletCircleNumWDWhitePlain", "BulletCircleNumWDBlackPlain", "BulletTradChinPlain", "BulletTradChinPeriod", "BulletArabicAlphaDash", "BulletArabicAbjadDash", "BulletHebrewAlphaDash", "BulletKanjiKoreanPlain", "BulletKanjiKoreanPeriod", "BulletArabicDBPlain", "BulletArabicDBPeriod", "BulletThaiAlphaPeriod", "BulletThaiAlphaParenRight", "BulletThaiAlphaParenBoth", "BulletThaiNumPeriod", "BulletThaiNumParenRight", "BulletThaiNumParenBoth", "BulletHindiAlphaPeriod", "BulletHindiNumPeriod", "BulletKanjiSimpChinDBPeriod", "BulletHindiNumParenRight", "BulletHindiAlpha1Period", "NotDefined"]  # noqa: E501
+            if numbered_bullet_style.isdigit():
+                int_numbered_bullet_style = int(numbered_bullet_style)
+                if int_numbered_bullet_style < 0 or int_numbered_bullet_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `numbered_bullet_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(numbered_bullet_style, allowed_values)
+                    )
+                self._numbered_bullet_style = allowed_values[int_numbered_bullet_style]
+                return
             if numbered_bullet_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `numbered_bullet_style` ({0}), must be one of {1}"  # noqa: E501
@@ -538,6 +577,15 @@ class Paragraph(ResourceBase):
         """
         if hanging_punctuation is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if hanging_punctuation.isdigit():
+                int_hanging_punctuation = int(hanging_punctuation)
+                if int_hanging_punctuation < 0 or int_hanging_punctuation >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `hanging_punctuation` ({0}), must be one of {1}"  # noqa: E501
+                        .format(hanging_punctuation, allowed_values)
+                    )
+                self._hanging_punctuation = allowed_values[int_hanging_punctuation]
+                return
             if hanging_punctuation not in allowed_values:
                 raise ValueError(
                     "Invalid value for `hanging_punctuation` ({0}), must be one of {1}"  # noqa: E501
@@ -567,6 +615,15 @@ class Paragraph(ResourceBase):
         """
         if east_asian_line_break is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if east_asian_line_break.isdigit():
+                int_east_asian_line_break = int(east_asian_line_break)
+                if int_east_asian_line_break < 0 or int_east_asian_line_break >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `east_asian_line_break` ({0}), must be one of {1}"  # noqa: E501
+                        .format(east_asian_line_break, allowed_values)
+                    )
+                self._east_asian_line_break = allowed_values[int_east_asian_line_break]
+                return
             if east_asian_line_break not in allowed_values:
                 raise ValueError(
                     "Invalid value for `east_asian_line_break` ({0}), must be one of {1}"  # noqa: E501
@@ -596,6 +653,15 @@ class Paragraph(ResourceBase):
         """
         if latin_line_break is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if latin_line_break.isdigit():
+                int_latin_line_break = int(latin_line_break)
+                if int_latin_line_break < 0 or int_latin_line_break >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `latin_line_break` ({0}), must be one of {1}"  # noqa: E501
+                        .format(latin_line_break, allowed_values)
+                    )
+                self._latin_line_break = allowed_values[int_latin_line_break]
+                return
             if latin_line_break not in allowed_values:
                 raise ValueError(
                     "Invalid value for `latin_line_break` ({0}), must be one of {1}"  # noqa: E501
@@ -625,6 +691,15 @@ class Paragraph(ResourceBase):
         """
         if right_to_left is not None:
             allowed_values = ["False", "True", "NotDefined"]  # noqa: E501
+            if right_to_left.isdigit():
+                int_right_to_left = int(right_to_left)
+                if int_right_to_left < 0 or int_right_to_left >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `right_to_left` ({0}), must be one of {1}"  # noqa: E501
+                        .format(right_to_left, allowed_values)
+                    )
+                self._right_to_left = allowed_values[int_right_to_left]
+                return
             if right_to_left not in allowed_values:
                 raise ValueError(
                     "Invalid value for `right_to_left` ({0}), must be one of {1}"  # noqa: E501

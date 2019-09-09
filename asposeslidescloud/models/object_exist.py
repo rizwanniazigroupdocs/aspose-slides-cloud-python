@@ -47,8 +47,11 @@ class ObjectExist(object):
     }
 
     attribute_map = {
-        'exists': 'Exists',
-        'is_folder': 'IsFolder'
+        'exists': 'exists',
+        'is_folder': 'isFolder'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, exists=None, is_folder=None):  # noqa: E501

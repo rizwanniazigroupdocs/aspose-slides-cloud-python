@@ -51,11 +51,15 @@ class ReplaceText(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'old_text': 'OldText',
-        'new_text': 'NewText',
-        'ignore_case': 'IgnoreCase',
-        'slide_position': 'SlidePosition'
+        'type': 'type',
+        'old_text': 'oldText',
+        'new_text': 'newText',
+        'ignore_case': 'ignoreCase',
+        'slide_position': 'slidePosition'
+    }
+
+    type_determiners = {
+        'type': 'ReplaceText',
     }
 
     def __init__(self, type='ReplaceText', old_text=None, new_text=None, ignore_case=None, slide_position=None):  # noqa: E501
@@ -66,6 +70,7 @@ class ReplaceText(Task):
         self._new_text = None
         self._ignore_case = None
         self._slide_position = None
+        self.type: 'ReplaceText'
 
         if old_text is not None:
             self.old_text = old_text

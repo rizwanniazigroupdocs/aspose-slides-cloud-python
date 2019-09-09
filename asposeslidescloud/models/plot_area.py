@@ -52,13 +52,16 @@ class PlotArea(object):
     }
 
     attribute_map = {
-        'x': 'X',
-        'y': 'Y',
-        'width': 'Width',
-        'height': 'Height',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'x': 'x',
+        'y': 'y',
+        'width': 'width',
+        'height': 'height',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, x=None, y=None, width=None, height=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501

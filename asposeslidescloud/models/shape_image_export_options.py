@@ -49,10 +49,13 @@ class ShapeImageExportOptions(object):
     }
 
     attribute_map = {
-        'scale_x': 'ScaleX',
-        'scale_y': 'ScaleY',
-        'thumbnail_bounds': 'ThumbnailBounds',
-        'format': 'Format'
+        'scale_x': 'scaleX',
+        'scale_y': 'scaleY',
+        'thumbnail_bounds': 'thumbnailBounds',
+        'format': 'format'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, scale_x=None, scale_y=None, thumbnail_bounds=None, format=None):  # noqa: E501
@@ -135,6 +138,15 @@ class ShapeImageExportOptions(object):
         """
         if thumbnail_bounds is not None:
             allowed_values = ["Slide", "Shape", "Appearance"]  # noqa: E501
+            if thumbnail_bounds.isdigit():
+                int_thumbnail_bounds = int(thumbnail_bounds)
+                if int_thumbnail_bounds < 0 or int_thumbnail_bounds >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `thumbnail_bounds` ({0}), must be one of {1}"  # noqa: E501
+                        .format(thumbnail_bounds, allowed_values)
+                    )
+                self._thumbnail_bounds = allowed_values[int_thumbnail_bounds]
+                return
             if thumbnail_bounds not in allowed_values:
                 raise ValueError(
                     "Invalid value for `thumbnail_bounds` ({0}), must be one of {1}"  # noqa: E501

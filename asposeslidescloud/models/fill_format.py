@@ -46,7 +46,10 @@ class FillFormat(object):
     }
 
     attribute_map = {
-        'type': 'Type'
+        'type': 'type'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, type=None):  # noqa: E501
@@ -77,6 +80,15 @@ class FillFormat(object):
         """
         if type is not None:
             allowed_values = ["NoFill", "Solid", "Gradient", "Pattern", "Picture", "NotDefined"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

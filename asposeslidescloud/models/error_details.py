@@ -47,8 +47,11 @@ class ErrorDetails(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'date': 'Date'
+        'request_id': 'requestId',
+        'date': 'date'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, request_id=None, date=None):  # noqa: E501

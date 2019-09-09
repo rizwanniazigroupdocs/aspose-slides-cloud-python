@@ -51,11 +51,14 @@ class MasterSlide(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'layout_slides': 'LayoutSlides',
-        'depending_slides': 'DependingSlides'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'layout_slides': 'layoutSlides',
+        'depending_slides': 'dependingSlides'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, layout_slides=None, depending_slides=None):  # noqa: E501

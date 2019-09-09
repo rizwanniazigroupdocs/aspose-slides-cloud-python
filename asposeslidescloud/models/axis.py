@@ -81,42 +81,45 @@ class Axis(object):
     }
 
     attribute_map = {
-        'is_visible': 'IsVisible',
-        'has_title': 'HasTitle',
-        'position': 'Position',
-        'display_unit': 'DisplayUnit',
-        'base_unit_scale': 'BaseUnitScale',
-        'is_automatic_major_unit': 'IsAutomaticMajorUnit',
-        'major_unit': 'MajorUnit',
-        'major_unit_scale': 'MajorUnitScale',
-        'major_tick_mark': 'MajorTickMark',
-        'is_automatic_minor_unit': 'IsAutomaticMinorUnit',
-        'minor_unit': 'MinorUnit',
-        'minor_unit_scale': 'MinorUnitScale',
-        'minor_tick_mark': 'MinorTickMark',
-        'is_automatic_max_value': 'IsAutomaticMaxValue',
-        'max_value': 'MaxValue',
-        'is_automatic_min_value': 'IsAutomaticMinValue',
-        'min_value': 'MinValue',
-        'is_logarithmic': 'IsLogarithmic',
-        'log_base': 'LogBase',
-        'category_axis_type': 'CategoryAxisType',
-        'axis_between_categories': 'AxisBetweenCategories',
-        'label_offset': 'LabelOffset',
-        'is_plot_order_reversed': 'IsPlotOrderReversed',
-        'is_number_format_linked_to_source': 'IsNumberFormatLinkedToSource',
-        'number_format': 'NumberFormat',
-        'cross_type': 'CrossType',
-        'cross_at': 'CrossAt',
-        'is_automatic_tick_marks_spacing': 'IsAutomaticTickMarksSpacing',
-        'tick_marks_spacing': 'TickMarksSpacing',
-        'is_automatic_tick_label_spacing': 'IsAutomaticTickLabelSpacing',
-        'tick_label_spacing': 'TickLabelSpacing',
-        'tick_label_position': 'TickLabelPosition',
-        'tick_label_rotation_angle': 'TickLabelRotationAngle',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'is_visible': 'isVisible',
+        'has_title': 'hasTitle',
+        'position': 'position',
+        'display_unit': 'displayUnit',
+        'base_unit_scale': 'baseUnitScale',
+        'is_automatic_major_unit': 'isAutomaticMajorUnit',
+        'major_unit': 'majorUnit',
+        'major_unit_scale': 'majorUnitScale',
+        'major_tick_mark': 'majorTickMark',
+        'is_automatic_minor_unit': 'isAutomaticMinorUnit',
+        'minor_unit': 'minorUnit',
+        'minor_unit_scale': 'minorUnitScale',
+        'minor_tick_mark': 'minorTickMark',
+        'is_automatic_max_value': 'isAutomaticMaxValue',
+        'max_value': 'maxValue',
+        'is_automatic_min_value': 'isAutomaticMinValue',
+        'min_value': 'minValue',
+        'is_logarithmic': 'isLogarithmic',
+        'log_base': 'logBase',
+        'category_axis_type': 'categoryAxisType',
+        'axis_between_categories': 'axisBetweenCategories',
+        'label_offset': 'labelOffset',
+        'is_plot_order_reversed': 'isPlotOrderReversed',
+        'is_number_format_linked_to_source': 'isNumberFormatLinkedToSource',
+        'number_format': 'numberFormat',
+        'cross_type': 'crossType',
+        'cross_at': 'crossAt',
+        'is_automatic_tick_marks_spacing': 'isAutomaticTickMarksSpacing',
+        'tick_marks_spacing': 'tickMarksSpacing',
+        'is_automatic_tick_label_spacing': 'isAutomaticTickLabelSpacing',
+        'tick_label_spacing': 'tickLabelSpacing',
+        'tick_label_position': 'tickLabelPosition',
+        'tick_label_rotation_angle': 'tickLabelRotationAngle',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, is_visible=None, has_title=None, position=None, display_unit=None, base_unit_scale=None, is_automatic_major_unit=None, major_unit=None, major_unit_scale=None, major_tick_mark=None, is_automatic_minor_unit=None, minor_unit=None, minor_unit_scale=None, minor_tick_mark=None, is_automatic_max_value=None, max_value=None, is_automatic_min_value=None, min_value=None, is_logarithmic=None, log_base=None, category_axis_type=None, axis_between_categories=None, label_offset=None, is_plot_order_reversed=None, is_number_format_linked_to_source=None, number_format=None, cross_type=None, cross_at=None, is_automatic_tick_marks_spacing=None, tick_marks_spacing=None, is_automatic_tick_label_spacing=None, tick_label_spacing=None, tick_label_position=None, tick_label_rotation_angle=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
@@ -266,6 +269,15 @@ class Axis(object):
         """
         if position is not None:
             allowed_values = ["Bottom", "Left", "Right", "Top"]  # noqa: E501
+            if position.isdigit():
+                int_position = int(position)
+                if int_position < 0 or int_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(position, allowed_values)
+                    )
+                self._position = allowed_values[int_position]
+                return
             if position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `position` ({0}), must be one of {1}"  # noqa: E501
@@ -295,6 +307,15 @@ class Axis(object):
         """
         if display_unit is not None:
             allowed_values = ["None", "Hundreds", "Thousands", "TenThousands", "HundredThousands", "Millions", "TenMillions", "HundredMillions", "Billions", "Trillions", "CustomValue"]  # noqa: E501
+            if display_unit.isdigit():
+                int_display_unit = int(display_unit)
+                if int_display_unit < 0 or int_display_unit >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `display_unit` ({0}), must be one of {1}"  # noqa: E501
+                        .format(display_unit, allowed_values)
+                    )
+                self._display_unit = allowed_values[int_display_unit]
+                return
             if display_unit not in allowed_values:
                 raise ValueError(
                     "Invalid value for `display_unit` ({0}), must be one of {1}"  # noqa: E501
@@ -324,6 +345,15 @@ class Axis(object):
         """
         if base_unit_scale is not None:
             allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if base_unit_scale.isdigit():
+                int_base_unit_scale = int(base_unit_scale)
+                if int_base_unit_scale < 0 or int_base_unit_scale >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `base_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                        .format(base_unit_scale, allowed_values)
+                    )
+                self._base_unit_scale = allowed_values[int_base_unit_scale]
+                return
             if base_unit_scale not in allowed_values:
                 raise ValueError(
                     "Invalid value for `base_unit_scale` ({0}), must be one of {1}"  # noqa: E501
@@ -397,6 +427,15 @@ class Axis(object):
         """
         if major_unit_scale is not None:
             allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if major_unit_scale.isdigit():
+                int_major_unit_scale = int(major_unit_scale)
+                if int_major_unit_scale < 0 or int_major_unit_scale >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `major_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                        .format(major_unit_scale, allowed_values)
+                    )
+                self._major_unit_scale = allowed_values[int_major_unit_scale]
+                return
             if major_unit_scale not in allowed_values:
                 raise ValueError(
                     "Invalid value for `major_unit_scale` ({0}), must be one of {1}"  # noqa: E501
@@ -426,6 +465,15 @@ class Axis(object):
         """
         if major_tick_mark is not None:
             allowed_values = ["Cross", "Inside", "None", "Outside"]  # noqa: E501
+            if major_tick_mark.isdigit():
+                int_major_tick_mark = int(major_tick_mark)
+                if int_major_tick_mark < 0 or int_major_tick_mark >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `major_tick_mark` ({0}), must be one of {1}"  # noqa: E501
+                        .format(major_tick_mark, allowed_values)
+                    )
+                self._major_tick_mark = allowed_values[int_major_tick_mark]
+                return
             if major_tick_mark not in allowed_values:
                 raise ValueError(
                     "Invalid value for `major_tick_mark` ({0}), must be one of {1}"  # noqa: E501
@@ -499,6 +547,15 @@ class Axis(object):
         """
         if minor_unit_scale is not None:
             allowed_values = ["Days", "Months", "Years"]  # noqa: E501
+            if minor_unit_scale.isdigit():
+                int_minor_unit_scale = int(minor_unit_scale)
+                if int_minor_unit_scale < 0 or int_minor_unit_scale >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `minor_unit_scale` ({0}), must be one of {1}"  # noqa: E501
+                        .format(minor_unit_scale, allowed_values)
+                    )
+                self._minor_unit_scale = allowed_values[int_minor_unit_scale]
+                return
             if minor_unit_scale not in allowed_values:
                 raise ValueError(
                     "Invalid value for `minor_unit_scale` ({0}), must be one of {1}"  # noqa: E501
@@ -528,6 +585,15 @@ class Axis(object):
         """
         if minor_tick_mark is not None:
             allowed_values = ["Cross", "Inside", "None", "Outside"]  # noqa: E501
+            if minor_tick_mark.isdigit():
+                int_minor_tick_mark = int(minor_tick_mark)
+                if int_minor_tick_mark < 0 or int_minor_tick_mark >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `minor_tick_mark` ({0}), must be one of {1}"  # noqa: E501
+                        .format(minor_tick_mark, allowed_values)
+                    )
+                self._minor_tick_mark = allowed_values[int_minor_tick_mark]
+                return
             if minor_tick_mark not in allowed_values:
                 raise ValueError(
                     "Invalid value for `minor_tick_mark` ({0}), must be one of {1}"  # noqa: E501
@@ -689,6 +755,15 @@ class Axis(object):
         """
         if category_axis_type is not None:
             allowed_values = ["Text", "Date"]  # noqa: E501
+            if category_axis_type.isdigit():
+                int_category_axis_type = int(category_axis_type)
+                if int_category_axis_type < 0 or int_category_axis_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `category_axis_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(category_axis_type, allowed_values)
+                    )
+                self._category_axis_type = allowed_values[int_category_axis_type]
+                return
             if category_axis_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `category_axis_type` ({0}), must be one of {1}"  # noqa: E501
@@ -828,6 +903,15 @@ class Axis(object):
         """
         if cross_type is not None:
             allowed_values = ["AxisCrossesAtZero", "Maximum", "Custom"]  # noqa: E501
+            if cross_type.isdigit():
+                int_cross_type = int(cross_type)
+                if int_cross_type < 0 or int_cross_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `cross_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(cross_type, allowed_values)
+                    )
+                self._cross_type = allowed_values[int_cross_type]
+                return
             if cross_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `cross_type` ({0}), must be one of {1}"  # noqa: E501
@@ -967,6 +1051,15 @@ class Axis(object):
         """
         if tick_label_position is not None:
             allowed_values = ["High", "Low", "NextTo", "None"]  # noqa: E501
+            if tick_label_position.isdigit():
+                int_tick_label_position = int(tick_label_position)
+                if int_tick_label_position < 0 or int_tick_label_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `tick_label_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(tick_label_position, allowed_values)
+                    )
+                self._tick_label_position = allowed_values[int_tick_label_position]
+                return
             if tick_label_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `tick_label_position` ({0}), must be one of {1}"  # noqa: E501

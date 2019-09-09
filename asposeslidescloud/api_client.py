@@ -26,6 +26,7 @@ from __future__ import absolute_import
 
 import os
 import re
+import inspect
 import json
 import logging
 import mimetypes
@@ -68,7 +69,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.7.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.8.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
        
@@ -293,7 +294,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(models, klass)
+                klass = self.__get_class(data, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
@@ -623,6 +624,21 @@ class ApiClient(object):
                 )
             )
 
+    def __get_class(self, data, klass):
+        klass = getattr(models, klass)
+        for key, obj in inspect.getmembers(models):
+            if inspect.isclass(obj) and issubclass(obj, klass) and self.__is_class_suitable(data, obj):
+                return obj
+        return klass
+
+    def __is_class_suitable(self, data, klass):
+        if not hasattr(klass, 'type_determiners') or not len(klass.type_determiners):
+            return False
+        for key, value in klass.type_determiners.items():
+            if not key in data.keys() or not data[key] == value:
+                return False
+        return True
+
     def __deserialize_model(self, data, klass):
         """
         Deserializes list or dict to model.
@@ -648,9 +664,15 @@ class ApiClient(object):
         """
         if klass.swagger_types is not None:
             for attr, attr_type in iteritems(klass.swagger_types):
-                if data is not None and klass.attribute_map[attr] in data and isinstance(data, (list, dict)):
-                    value = data[klass.attribute_map[attr]]
-                    args[attr] = self.deserialize_model(value, attr_type)
+                if data is not None and isinstance(data, (list, dict)):
+                    if klass.attribute_map[attr] in data:
+                        value = data[klass.attribute_map[attr]]
+                        args[attr] = self.deserialize_model(value, attr_type)
+                    else:
+                        attr_upper = klass.attribute_map[attr][0].upper() + klass.attribute_map[attr][1:]
+                        if attr_upper in data:
+                            value = data[attr_upper]
+                            args[attr] = self.deserialize_model(value, attr_type)
             base_klass = klass.__bases__[0]
             if not base_klass == object:
                 self.__fill_model_args(args, data, base_klass)

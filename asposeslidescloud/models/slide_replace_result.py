@@ -60,20 +60,23 @@ class SlideReplaceResult(Slide):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'width': 'Width',
-        'height': 'Height',
-        'show_master_shapes': 'ShowMasterShapes',
-        'layout_slide': 'LayoutSlide',
-        'shapes': 'Shapes',
-        'theme': 'Theme',
-        'placeholders': 'Placeholders',
-        'images': 'Images',
-        'comments': 'Comments',
-        'background': 'Background',
-        'notes_slide': 'NotesSlide',
-        'matches': 'Matches'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'width': 'width',
+        'height': 'height',
+        'show_master_shapes': 'showMasterShapes',
+        'layout_slide': 'layoutSlide',
+        'shapes': 'shapes',
+        'theme': 'theme',
+        'placeholders': 'placeholders',
+        'images': 'images',
+        'comments': 'comments',
+        'background': 'background',
+        'notes_slide': 'notesSlide',
+        'matches': 'matches'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, width=None, height=None, show_master_shapes=None, layout_slide=None, shapes=None, theme=None, placeholders=None, images=None, comments=None, background=None, notes_slide=None, matches=None):  # noqa: E501

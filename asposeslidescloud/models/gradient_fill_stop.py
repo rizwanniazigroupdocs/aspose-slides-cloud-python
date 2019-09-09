@@ -47,8 +47,11 @@ class GradientFillStop(object):
     }
 
     attribute_map = {
-        'color': 'Color',
-        'position': 'Position'
+        'color': 'color',
+        'position': 'position'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, color=None, position=None):  # noqa: E501

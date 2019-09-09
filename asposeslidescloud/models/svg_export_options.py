@@ -56,16 +56,20 @@ class SvgExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'vectorize_text': 'VectorizeText',
-        'metafile_rasterization_dpi': 'MetafileRasterizationDpi',
-        'disable3_d_text': 'Disable3DText',
-        'disable_gradient_split': 'DisableGradientSplit',
-        'disable_line_end_cropping': 'DisableLineEndCropping',
-        'jpeg_quality': 'JpegQuality',
-        'pictures_compression': 'PicturesCompression',
-        'delete_pictures_cropped_areas': 'DeletePicturesCroppedAreas',
-        'external_fonts_handling': 'ExternalFontsHandling'
+        'format': 'format',
+        'vectorize_text': 'vectorizeText',
+        'metafile_rasterization_dpi': 'metafileRasterizationDpi',
+        'disable3_d_text': 'disable3DText',
+        'disable_gradient_split': 'disableGradientSplit',
+        'disable_line_end_cropping': 'disableLineEndCropping',
+        'jpeg_quality': 'jpegQuality',
+        'pictures_compression': 'picturesCompression',
+        'delete_pictures_cropped_areas': 'deletePicturesCroppedAreas',
+        'external_fonts_handling': 'externalFontsHandling'
+    }
+
+    type_determiners = {
+        'format': 'svg',
     }
 
     def __init__(self, format='svg', vectorize_text=None, metafile_rasterization_dpi=None, disable3_d_text=None, disable_gradient_split=None, disable_line_end_cropping=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, external_fonts_handling=None):  # noqa: E501
@@ -81,6 +85,7 @@ class SvgExportOptions(ExportOptions):
         self._pictures_compression = None
         self._delete_pictures_cropped_areas = None
         self._external_fonts_handling = None
+        self.format: 'svg'
 
         self.vectorize_text = vectorize_text
         self.metafile_rasterization_dpi = metafile_rasterization_dpi
@@ -246,6 +251,15 @@ class SvgExportOptions(ExportOptions):
         """
         if pictures_compression is not None:
             allowed_values = ["Dpi330", "Dpi220", "Dpi150", "Dpi96", "Dpi72", "DocumentResolution"]  # noqa: E501
+            if pictures_compression.isdigit():
+                int_pictures_compression = int(pictures_compression)
+                if int_pictures_compression < 0 or int_pictures_compression >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                        .format(pictures_compression, allowed_values)
+                    )
+                self._pictures_compression = allowed_values[int_pictures_compression]
+                return
             if pictures_compression not in allowed_values:
                 raise ValueError(
                     "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
@@ -297,6 +311,15 @@ class SvgExportOptions(ExportOptions):
         """
         if external_fonts_handling is not None:
             allowed_values = ["AddLinksToFontFiles", "Embed", "Vectorize"]  # noqa: E501
+            if external_fonts_handling.isdigit():
+                int_external_fonts_handling = int(external_fonts_handling)
+                if int_external_fonts_handling < 0 or int_external_fonts_handling >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `external_fonts_handling` ({0}), must be one of {1}"  # noqa: E501
+                        .format(external_fonts_handling, allowed_values)
+                    )
+                self._external_fonts_handling = allowed_values[int_external_fonts_handling]
+                return
             if external_fonts_handling not in allowed_values:
                 raise ValueError(
                     "Invalid value for `external_fonts_handling` ({0}), must be one of {1}"  # noqa: E501

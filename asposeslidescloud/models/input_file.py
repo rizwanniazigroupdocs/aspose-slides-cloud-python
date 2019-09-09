@@ -47,8 +47,11 @@ class InputFile(object):
     }
 
     attribute_map = {
-        'password': 'Password',
-        'type': 'Type'
+        'password': 'password',
+        'type': 'type'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, password=None, type=None):  # noqa: E501
@@ -104,6 +107,15 @@ class InputFile(object):
         """
         if type is not None:
             allowed_values = ["Path", "Request", "Base64"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

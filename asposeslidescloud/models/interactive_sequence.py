@@ -47,8 +47,11 @@ class InteractiveSequence(object):
     }
 
     attribute_map = {
-        'effects': 'Effects',
-        'trigger_shape_index': 'TriggerShapeIndex'
+        'effects': 'effects',
+        'trigger_shape_index': 'triggerShapeIndex'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, effects=None, trigger_shape_index=None):  # noqa: E501

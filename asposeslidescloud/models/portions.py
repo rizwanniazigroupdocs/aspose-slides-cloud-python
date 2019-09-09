@@ -49,9 +49,12 @@ class Portions(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'portion_links': 'PortionLinks'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'portion_links': 'portionLinks'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, portion_links=None):  # noqa: E501

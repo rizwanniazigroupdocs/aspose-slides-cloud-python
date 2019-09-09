@@ -49,9 +49,12 @@ class SplitDocumentResult(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'slides': 'Slides'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'slides': 'slides'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, slides=None):  # noqa: E501

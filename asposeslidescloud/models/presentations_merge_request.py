@@ -47,8 +47,11 @@ class PresentationsMergeRequest(object):
     }
 
     attribute_map = {
-        'presentation_paths': 'PresentationPaths',
-        'presentation_passwords': 'PresentationPasswords'
+        'presentation_paths': 'presentationPaths',
+        'presentation_passwords': 'presentationPasswords'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, presentation_paths=None, presentation_passwords=None):  # noqa: E501

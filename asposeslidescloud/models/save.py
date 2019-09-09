@@ -50,10 +50,14 @@ class Save(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'format': 'Format',
-        'output': 'Output',
-        'options': 'Options'
+        'type': 'type',
+        'format': 'format',
+        'output': 'output',
+        'options': 'options'
+    }
+
+    type_determiners = {
+        'type': 'Save',
     }
 
     def __init__(self, type='Save', format=None, output=None, options=None):  # noqa: E501
@@ -63,6 +67,7 @@ class Save(Task):
         self._format = None
         self._output = None
         self._options = None
+        self.type: 'Save'
 
         self.format = format
         if output is not None:
@@ -92,6 +97,15 @@ class Save(Task):
         """
         if format is not None:
             allowed_values = ["Pdf", "Xps", "Tiff", "Pptx", "Odp", "Otp", "Ppt", "Pps", "Ppsx", "Pptm", "Ppsm", "Pot", "Potx", "Potm", "Html", "Swf", "Svg", "Jpeg", "Png", "Gif", "Bmp"]  # noqa: E501
+            if format.isdigit():
+                int_format = int(format)
+                if int_format < 0 or int_format >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                        .format(format, allowed_values)
+                    )
+                self._format = allowed_values[int_format]
+                return
             if format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

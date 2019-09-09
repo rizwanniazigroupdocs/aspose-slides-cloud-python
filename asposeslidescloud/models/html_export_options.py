@@ -59,19 +59,23 @@ class HtmlExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'save_as_zip': 'SaveAsZip',
-        'sub_directory_name': 'SubDirectoryName',
-        'show_hidden_slides': 'ShowHiddenSlides',
-        'svg_responsive_layout': 'SvgResponsiveLayout',
-        'jpeg_quality': 'JpegQuality',
-        'pictures_compression': 'PicturesCompression',
-        'delete_pictures_cropped_areas': 'DeletePicturesCroppedAreas',
-        'notes_position': 'NotesPosition',
-        'comments_position': 'CommentsPosition',
-        'comments_area_width': 'CommentsAreaWidth',
-        'comments_area_color': 'CommentsAreaColor',
-        'show_comments_by_no_author': 'ShowCommentsByNoAuthor'
+        'format': 'format',
+        'save_as_zip': 'saveAsZip',
+        'sub_directory_name': 'subDirectoryName',
+        'show_hidden_slides': 'showHiddenSlides',
+        'svg_responsive_layout': 'svgResponsiveLayout',
+        'jpeg_quality': 'jpegQuality',
+        'pictures_compression': 'picturesCompression',
+        'delete_pictures_cropped_areas': 'deletePicturesCroppedAreas',
+        'notes_position': 'notesPosition',
+        'comments_position': 'commentsPosition',
+        'comments_area_width': 'commentsAreaWidth',
+        'comments_area_color': 'commentsAreaColor',
+        'show_comments_by_no_author': 'showCommentsByNoAuthor'
+    }
+
+    type_determiners = {
+        'format': 'html',
     }
 
     def __init__(self, format='html', save_as_zip=None, sub_directory_name=None, show_hidden_slides=None, svg_responsive_layout=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
@@ -90,6 +94,7 @@ class HtmlExportOptions(ExportOptions):
         self._comments_area_width = None
         self._comments_area_color = None
         self._show_comments_by_no_author = None
+        self.format: 'html'
 
         self.save_as_zip = save_as_zip
         if sub_directory_name is not None:
@@ -239,6 +244,15 @@ class HtmlExportOptions(ExportOptions):
         """
         if pictures_compression is not None:
             allowed_values = ["Dpi330", "Dpi220", "Dpi150", "Dpi96", "Dpi72", "DocumentResolution"]  # noqa: E501
+            if pictures_compression.isdigit():
+                int_pictures_compression = int(pictures_compression)
+                if int_pictures_compression < 0 or int_pictures_compression >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                        .format(pictures_compression, allowed_values)
+                    )
+                self._pictures_compression = allowed_values[int_pictures_compression]
+                return
             if pictures_compression not in allowed_values:
                 raise ValueError(
                     "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
@@ -290,6 +304,15 @@ class HtmlExportOptions(ExportOptions):
         """
         if notes_position is not None:
             allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position.isdigit():
+                int_notes_position = int(notes_position)
+                if int_notes_position < 0 or int_notes_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(notes_position, allowed_values)
+                    )
+                self._notes_position = allowed_values[int_notes_position]
+                return
             if notes_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
@@ -319,6 +342,15 @@ class HtmlExportOptions(ExportOptions):
         """
         if comments_position is not None:
             allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position.isdigit():
+                int_comments_position = int(comments_position)
+                if int_comments_position < 0 or int_comments_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(comments_position, allowed_values)
+                    )
+                self._comments_position = allowed_values[int_comments_position]
+                return
             if comments_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501

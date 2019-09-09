@@ -48,9 +48,12 @@ class Input(object):
     }
 
     attribute_map = {
-        'template': 'Template',
-        'html_data': 'HtmlData',
-        'template_data': 'TemplateData'
+        'template': 'template',
+        'html_data': 'htmlData',
+        'template_data': 'templateData'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, template=None, html_data=None, template_data=None):  # noqa: E501

@@ -47,8 +47,11 @@ class TextItem(object):
     }
 
     attribute_map = {
-        'uri': 'Uri',
-        'text': 'Text'
+        'uri': 'uri',
+        'text': 'text'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, uri=None, text=None):  # noqa: E501

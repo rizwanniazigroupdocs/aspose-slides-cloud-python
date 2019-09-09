@@ -56,6 +56,9 @@ class ShapeExportFormat(object):
     attribute_map = {
     }
 
+    type_determiners = {
+    }
+
     def __init__(self):  # noqa: E501
         """ShapeExportFormat - a model defined in Swagger"""  # noqa: E501
 

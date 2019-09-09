@@ -56,16 +56,20 @@ class PictureFill(FillFormat):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'crop_bottom': 'CropBottom',
-        'crop_left': 'CropLeft',
-        'crop_right': 'CropRight',
-        'crop_top': 'CropTop',
-        'dpi': 'Dpi',
-        'image': 'Image',
-        'base64_data': 'Base64Data',
-        'svg_data': 'SvgData',
-        'picture_fill_mode': 'PictureFillMode'
+        'type': 'type',
+        'crop_bottom': 'cropBottom',
+        'crop_left': 'cropLeft',
+        'crop_right': 'cropRight',
+        'crop_top': 'cropTop',
+        'dpi': 'dpi',
+        'image': 'image',
+        'base64_data': 'base64Data',
+        'svg_data': 'svgData',
+        'picture_fill_mode': 'pictureFillMode'
+    }
+
+    type_determiners = {
+        'type': 'Picture',
     }
 
     def __init__(self, type='Picture', crop_bottom=None, crop_left=None, crop_right=None, crop_top=None, dpi=None, image=None, base64_data=None, svg_data=None, picture_fill_mode=None):  # noqa: E501
@@ -81,6 +85,7 @@ class PictureFill(FillFormat):
         self._base64_data = None
         self._svg_data = None
         self._picture_fill_mode = None
+        self.type: 'Picture'
 
         self.crop_bottom = crop_bottom
         self.crop_left = crop_left
@@ -293,6 +298,15 @@ class PictureFill(FillFormat):
         """
         if picture_fill_mode is not None:
             allowed_values = ["Tile", "Stretch"]  # noqa: E501
+            if picture_fill_mode.isdigit():
+                int_picture_fill_mode = int(picture_fill_mode)
+                if int_picture_fill_mode < 0 or int_picture_fill_mode >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `picture_fill_mode` ({0}), must be one of {1}"  # noqa: E501
+                        .format(picture_fill_mode, allowed_values)
+                    )
+                self._picture_fill_mode = allowed_values[int_picture_fill_mode]
+                return
             if picture_fill_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `picture_fill_mode` ({0}), must be one of {1}"  # noqa: E501

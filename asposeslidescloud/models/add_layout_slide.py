@@ -49,9 +49,13 @@ class AddLayoutSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'clone_from_file': 'CloneFromFile',
-        'clone_from_position': 'CloneFromPosition'
+        'type': 'type',
+        'clone_from_file': 'cloneFromFile',
+        'clone_from_position': 'cloneFromPosition'
+    }
+
+    type_determiners = {
+        'type': 'AddLayoutSlide',
     }
 
     def __init__(self, type='AddLayoutSlide', clone_from_file=None, clone_from_position=None):  # noqa: E501
@@ -60,6 +64,7 @@ class AddLayoutSlide(Task):
 
         self._clone_from_file = None
         self._clone_from_position = None
+        self.type: 'AddLayoutSlide'
 
         if clone_from_file is not None:
             self.clone_from_file = clone_from_file

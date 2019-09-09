@@ -49,10 +49,13 @@ class InnerShadowEffect(object):
     }
 
     attribute_map = {
-        'direction': 'Direction',
-        'distance': 'Distance',
-        'blur_radius': 'BlurRadius',
-        'shadow_color': 'ShadowColor'
+        'direction': 'direction',
+        'distance': 'distance',
+        'blur_radius': 'blurRadius',
+        'shadow_color': 'shadowColor'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, direction=None, distance=None, blur_radius=None, shadow_color=None):  # noqa: E501

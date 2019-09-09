@@ -47,8 +47,11 @@ class GlowEffect(object):
     }
 
     attribute_map = {
-        'radius': 'Radius',
-        'color': 'Color'
+        'radius': 'radius',
+        'color': 'color'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, radius=None, color=None):  # noqa: E501

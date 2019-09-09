@@ -49,10 +49,13 @@ class ResourceUri(object):
     }
 
     attribute_map = {
-        'href': 'Href',
-        'relation': 'Relation',
-        'link_type': 'LinkType',
-        'title': 'Title'
+        'href': 'href',
+        'relation': 'relation',
+        'link_type': 'linkType',
+        'title': 'title'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, href=None, relation=None, link_type=None, title=None):  # noqa: E501

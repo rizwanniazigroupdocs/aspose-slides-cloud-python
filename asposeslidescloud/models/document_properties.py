@@ -49,9 +49,12 @@ class DocumentProperties(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'list': 'List'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'list': 'list'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, list=None):  # noqa: E501

@@ -50,10 +50,14 @@ class AddMasterSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'clone_from_file': 'CloneFromFile',
-        'clone_from_position': 'CloneFromPosition',
-        'apply_to_all': 'ApplyToAll'
+        'type': 'type',
+        'clone_from_file': 'cloneFromFile',
+        'clone_from_position': 'cloneFromPosition',
+        'apply_to_all': 'applyToAll'
+    }
+
+    type_determiners = {
+        'type': 'AddMasterSlide',
     }
 
     def __init__(self, type='AddMasterSlide', clone_from_file=None, clone_from_position=None, apply_to_all=None):  # noqa: E501
@@ -63,6 +67,7 @@ class AddMasterSlide(Task):
         self._clone_from_file = None
         self._clone_from_position = None
         self._apply_to_all = None
+        self.type: 'AddMasterSlide'
 
         if clone_from_file is not None:
             self.clone_from_file = clone_from_file

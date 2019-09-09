@@ -60,20 +60,23 @@ class ColorScheme(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'accent1': 'Accent1',
-        'accent2': 'Accent2',
-        'accent3': 'Accent3',
-        'accent4': 'Accent4',
-        'accent5': 'Accent5',
-        'accent6': 'Accent6',
-        'dark1': 'Dark1',
-        'dark2': 'Dark2',
-        'followed_hyperlink': 'FollowedHyperlink',
-        'hyperlink': 'Hyperlink',
-        'light1': 'Light1',
-        'light2': 'Light2'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'accent1': 'accent1',
+        'accent2': 'accent2',
+        'accent3': 'accent3',
+        'accent4': 'accent4',
+        'accent5': 'accent5',
+        'accent6': 'accent6',
+        'dark1': 'dark1',
+        'dark2': 'dark2',
+        'followed_hyperlink': 'followedHyperlink',
+        'hyperlink': 'hyperlink',
+        'light1': 'light1',
+        'light2': 'light2'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, accent1=None, accent2=None, accent3=None, accent4=None, accent5=None, accent6=None, dark1=None, dark2=None, followed_hyperlink=None, hyperlink=None, light1=None, light2=None):  # noqa: E501

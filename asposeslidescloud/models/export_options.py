@@ -46,7 +46,10 @@ class ExportOptions(object):
     }
 
     attribute_map = {
-        'format': 'Format'
+        'format': 'format'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, format=None):  # noqa: E501

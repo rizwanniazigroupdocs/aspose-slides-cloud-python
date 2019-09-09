@@ -53,14 +53,17 @@ class EffectFormat(object):
     }
 
     attribute_map = {
-        'blur': 'Blur',
-        'glow': 'Glow',
-        'inner_shadow': 'InnerShadow',
-        'outer_shadow': 'OuterShadow',
-        'preset_shadow': 'PresetShadow',
-        'soft_edge': 'SoftEdge',
-        'reflection': 'Reflection',
-        'fill_overlay': 'FillOverlay'
+        'blur': 'blur',
+        'glow': 'glow',
+        'inner_shadow': 'innerShadow',
+        'outer_shadow': 'outerShadow',
+        'preset_shadow': 'presetShadow',
+        'soft_edge': 'softEdge',
+        'reflection': 'reflection',
+        'fill_overlay': 'fillOverlay'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, blur=None, glow=None, inner_shadow=None, outer_shadow=None, preset_shadow=None, soft_edge=None, reflection=None, fill_overlay=None):  # noqa: E501

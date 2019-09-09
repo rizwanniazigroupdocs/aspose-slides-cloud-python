@@ -47,8 +47,11 @@ class Pipeline(object):
     }
 
     attribute_map = {
-        'input': 'Input',
-        'tasks': 'Tasks'
+        'input': 'input',
+        'tasks': 'tasks'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, input=None, tasks=None):  # noqa: E501

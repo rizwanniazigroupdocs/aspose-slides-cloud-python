@@ -49,9 +49,13 @@ class ReorderSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'old_position': 'OldPosition',
-        'new_position': 'NewPosition'
+        'type': 'type',
+        'old_position': 'oldPosition',
+        'new_position': 'newPosition'
+    }
+
+    type_determiners = {
+        'type': 'ReoderSlide',
     }
 
     def __init__(self, type='ReoderSlide', old_position=None, new_position=None):  # noqa: E501
@@ -60,6 +64,7 @@ class ReorderSlide(Task):
 
         self._old_position = None
         self._new_position = None
+        self.type: 'ReoderSlide'
 
         self.old_position = old_position
         self.new_position = new_position

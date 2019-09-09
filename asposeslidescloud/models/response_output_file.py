@@ -47,12 +47,17 @@ class ResponseOutputFile(OutputFile):
     }
 
     attribute_map = {
-        'type': 'Type'
+        'type': 'type'
+    }
+
+    type_determiners = {
+        'type': 'Response',
     }
 
     def __init__(self, type='Response'):  # noqa: E501
         """ResponseOutputFile - a model defined in Swagger"""  # noqa: E501
         super(ResponseOutputFile, self).__init__(type)
+        self.type: 'Response'
 
     def to_dict(self):
         """Returns the model properties as a dict"""

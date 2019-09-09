@@ -59,19 +59,23 @@ class TiffExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'compression': 'Compression',
-        'width': 'Width',
-        'height': 'Height',
-        'dpi_x': 'DpiX',
-        'dpi_y': 'DpiY',
-        'show_hidden_slides': 'ShowHiddenSlides',
-        'pixel_format': 'PixelFormat',
-        'notes_position': 'NotesPosition',
-        'comments_position': 'CommentsPosition',
-        'comments_area_width': 'CommentsAreaWidth',
-        'comments_area_color': 'CommentsAreaColor',
-        'show_comments_by_no_author': 'ShowCommentsByNoAuthor'
+        'format': 'format',
+        'compression': 'compression',
+        'width': 'width',
+        'height': 'height',
+        'dpi_x': 'dpiX',
+        'dpi_y': 'dpiY',
+        'show_hidden_slides': 'showHiddenSlides',
+        'pixel_format': 'pixelFormat',
+        'notes_position': 'notesPosition',
+        'comments_position': 'commentsPosition',
+        'comments_area_width': 'commentsAreaWidth',
+        'comments_area_color': 'commentsAreaColor',
+        'show_comments_by_no_author': 'showCommentsByNoAuthor'
+    }
+
+    type_determiners = {
+        'format': 'tiff',
     }
 
     def __init__(self, format='tiff', compression=None, width=None, height=None, dpi_x=None, dpi_y=None, show_hidden_slides=None, pixel_format=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
@@ -90,6 +94,7 @@ class TiffExportOptions(ExportOptions):
         self._comments_area_width = None
         self._comments_area_color = None
         self._show_comments_by_no_author = None
+        self.format: 'tiff'
 
         self.compression = compression
         if width is not None:
@@ -131,6 +136,15 @@ class TiffExportOptions(ExportOptions):
         """
         if compression is not None:
             allowed_values = ["Default", "None", "CCITT3", "CCITT4", "LZW", "RLE"]  # noqa: E501
+            if compression.isdigit():
+                int_compression = int(compression)
+                if int_compression < 0 or int_compression >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `compression` ({0}), must be one of {1}"  # noqa: E501
+                        .format(compression, allowed_values)
+                    )
+                self._compression = allowed_values[int_compression]
+                return
             if compression not in allowed_values:
                 raise ValueError(
                     "Invalid value for `compression` ({0}), must be one of {1}"  # noqa: E501
@@ -270,6 +284,15 @@ class TiffExportOptions(ExportOptions):
         """
         if pixel_format is not None:
             allowed_values = ["Format1bppIndexed", "Format4bppIndexed", "Format8bppIndexed", "Format24bppRgb", "Format32bppArgb"]  # noqa: E501
+            if pixel_format.isdigit():
+                int_pixel_format = int(pixel_format)
+                if int_pixel_format < 0 or int_pixel_format >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `pixel_format` ({0}), must be one of {1}"  # noqa: E501
+                        .format(pixel_format, allowed_values)
+                    )
+                self._pixel_format = allowed_values[int_pixel_format]
+                return
             if pixel_format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `pixel_format` ({0}), must be one of {1}"  # noqa: E501
@@ -299,6 +322,15 @@ class TiffExportOptions(ExportOptions):
         """
         if notes_position is not None:
             allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position.isdigit():
+                int_notes_position = int(notes_position)
+                if int_notes_position < 0 or int_notes_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(notes_position, allowed_values)
+                    )
+                self._notes_position = allowed_values[int_notes_position]
+                return
             if notes_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
@@ -328,6 +360,15 @@ class TiffExportOptions(ExportOptions):
         """
         if comments_position is not None:
             allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position.isdigit():
+                int_comments_position = int(comments_position)
+                if int_comments_position < 0 or int_comments_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(comments_position, allowed_values)
+                    )
+                self._comments_position = allowed_values[int_comments_position]
+                return
             if comments_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501

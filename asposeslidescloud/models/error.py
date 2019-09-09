@@ -49,10 +49,13 @@ class Error(object):
     }
 
     attribute_map = {
-        'code': 'Code',
-        'message': 'Message',
-        'description': 'Description',
-        'inner_error': 'InnerError'
+        'code': 'code',
+        'message': 'message',
+        'description': 'description',
+        'inner_error': 'innerError'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, code=None, message=None, description=None, inner_error=None):  # noqa: E501

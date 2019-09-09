@@ -49,9 +49,13 @@ class AddShape(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'shape': 'Shape',
-        'shape_path': 'ShapePath'
+        'type': 'type',
+        'shape': 'shape',
+        'shape_path': 'shapePath'
+    }
+
+    type_determiners = {
+        'type': 'AddShape',
     }
 
     def __init__(self, type='AddShape', shape=None, shape_path=None):  # noqa: E501
@@ -60,6 +64,7 @@ class AddShape(Task):
 
         self._shape = None
         self._shape_path = None
+        self.type: 'AddShape'
 
         if shape is not None:
             self.shape = shape

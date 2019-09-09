@@ -48,8 +48,12 @@ class Merge(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'presentations': 'Presentations'
+        'type': 'type',
+        'presentations': 'presentations'
+    }
+
+    type_determiners = {
+        'type': 'Merge',
     }
 
     def __init__(self, type='Merge', presentations=None):  # noqa: E501
@@ -57,6 +61,7 @@ class Merge(Task):
         super(Merge, self).__init__(type)
 
         self._presentations = None
+        self.type: 'Merge'
 
         if presentations is not None:
             self.presentations = presentations

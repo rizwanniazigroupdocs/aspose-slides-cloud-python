@@ -47,8 +47,11 @@ class ScatterChartDataPoint(object):
     }
 
     attribute_map = {
-        'x_value': 'XValue',
-        'y_value': 'YValue'
+        'x_value': 'xValue',
+        'y_value': 'yValue'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, x_value=None, y_value=None):  # noqa: E501

@@ -50,11 +50,14 @@ class ChartWall(object):
     }
 
     attribute_map = {
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'thickness': 'Thickness',
-        'picture_type': 'PictureType'
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'thickness': 'thickness',
+        'picture_type': 'pictureType'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, fill_format=None, effect_format=None, line_format=None, thickness=None, picture_type=None):  # noqa: E501
@@ -185,6 +188,15 @@ class ChartWall(object):
         """
         if picture_type is not None:
             allowed_values = ["Stack", "StackScale", "Stretch", "NotDefined"]  # noqa: E501
+            if picture_type.isdigit():
+                int_picture_type = int(picture_type)
+                if int_picture_type < 0 or int_picture_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `picture_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(picture_type, allowed_values)
+                    )
+                self._picture_type = allowed_values[int_picture_type]
+                return
             if picture_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `picture_type` ({0}), must be one of {1}"  # noqa: E501

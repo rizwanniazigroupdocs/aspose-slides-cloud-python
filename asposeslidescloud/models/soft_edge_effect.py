@@ -46,7 +46,10 @@ class SoftEdgeEffect(object):
     }
 
     attribute_map = {
-        'radius': 'Radius'
+        'radius': 'radius'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, radius=None):  # noqa: E501

@@ -49,9 +49,13 @@ class Base64InputFile(InputFile):
     }
 
     attribute_map = {
-        'password': 'Password',
-        'type': 'Type',
-        'data': 'Data'
+        'password': 'password',
+        'type': 'type',
+        'data': 'data'
+    }
+
+    type_determiners = {
+        'type': 'Base64',
     }
 
     def __init__(self, password=None, type='Base64', data=None):  # noqa: E501
@@ -59,6 +63,7 @@ class Base64InputFile(InputFile):
         super(Base64InputFile, self).__init__(password, type)
 
         self._data = None
+        self.type: 'Base64'
 
         if data is not None:
             self.data = data

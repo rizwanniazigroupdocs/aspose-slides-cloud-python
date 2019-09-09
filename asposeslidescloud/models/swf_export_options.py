@@ -67,27 +67,31 @@ class SwfExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'show_hidden_slides': 'ShowHiddenSlides',
-        'compressed': 'Compressed',
-        'viewer_included': 'ViewerIncluded',
-        'show_page_border': 'ShowPageBorder',
-        'show_full_screen': 'ShowFullScreen',
-        'show_page_stepper': 'ShowPageStepper',
-        'show_search': 'ShowSearch',
-        'show_top_pane': 'ShowTopPane',
-        'show_bottom_pane': 'ShowBottomPane',
-        'show_left_pane': 'ShowLeftPane',
-        'start_open_left_pane': 'StartOpenLeftPane',
-        'enable_context_menu': 'EnableContextMenu',
-        'logo_image': 'LogoImage',
-        'logo_link': 'LogoLink',
-        'jpeg_quality': 'JpegQuality',
-        'notes_position': 'NotesPosition',
-        'comments_position': 'CommentsPosition',
-        'comments_area_width': 'CommentsAreaWidth',
-        'comments_area_color': 'CommentsAreaColor',
-        'show_comments_by_no_author': 'ShowCommentsByNoAuthor'
+        'format': 'format',
+        'show_hidden_slides': 'showHiddenSlides',
+        'compressed': 'compressed',
+        'viewer_included': 'viewerIncluded',
+        'show_page_border': 'showPageBorder',
+        'show_full_screen': 'showFullScreen',
+        'show_page_stepper': 'showPageStepper',
+        'show_search': 'showSearch',
+        'show_top_pane': 'showTopPane',
+        'show_bottom_pane': 'showBottomPane',
+        'show_left_pane': 'showLeftPane',
+        'start_open_left_pane': 'startOpenLeftPane',
+        'enable_context_menu': 'enableContextMenu',
+        'logo_image': 'logoImage',
+        'logo_link': 'logoLink',
+        'jpeg_quality': 'jpegQuality',
+        'notes_position': 'notesPosition',
+        'comments_position': 'commentsPosition',
+        'comments_area_width': 'commentsAreaWidth',
+        'comments_area_color': 'commentsAreaColor',
+        'show_comments_by_no_author': 'showCommentsByNoAuthor'
+    }
+
+    type_determiners = {
+        'format': 'swf',
     }
 
     def __init__(self, format='swf', show_hidden_slides=None, compressed=None, viewer_included=None, show_page_border=None, show_full_screen=None, show_page_stepper=None, show_search=None, show_top_pane=None, show_bottom_pane=None, show_left_pane=None, start_open_left_pane=None, enable_context_menu=None, logo_image=None, logo_link=None, jpeg_quality=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
@@ -114,6 +118,7 @@ class SwfExportOptions(ExportOptions):
         self._comments_area_width = None
         self._comments_area_color = None
         self._show_comments_by_no_author = None
+        self.format: 'swf'
 
         self.show_hidden_slides = show_hidden_slides
         self.compressed = compressed
@@ -491,6 +496,15 @@ class SwfExportOptions(ExportOptions):
         """
         if notes_position is not None:
             allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position.isdigit():
+                int_notes_position = int(notes_position)
+                if int_notes_position < 0 or int_notes_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(notes_position, allowed_values)
+                    )
+                self._notes_position = allowed_values[int_notes_position]
+                return
             if notes_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
@@ -520,6 +534,15 @@ class SwfExportOptions(ExportOptions):
         """
         if comments_position is not None:
             allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position.isdigit():
+                int_comments_position = int(comments_position)
+                if int_comments_position < 0 or int_comments_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(comments_position, allowed_values)
+                    )
+                self._comments_position = allowed_values[int_comments_position]
+                return
             if comments_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501

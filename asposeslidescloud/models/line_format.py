@@ -56,17 +56,20 @@ class LineFormat(object):
     }
 
     attribute_map = {
-        'alignment': 'Alignment',
-        'cap_style': 'CapStyle',
-        'dash_style': 'DashStyle',
-        'join_style': 'JoinStyle',
-        'style': 'Style',
-        'begin_arrow_head': 'BeginArrowHead',
-        'end_arrow_head': 'EndArrowHead',
-        'custom_dash_pattern': 'CustomDashPattern',
-        'fill_format': 'FillFormat',
-        'miter_limit': 'MiterLimit',
-        'width': 'Width'
+        'alignment': 'alignment',
+        'cap_style': 'capStyle',
+        'dash_style': 'dashStyle',
+        'join_style': 'joinStyle',
+        'style': 'style',
+        'begin_arrow_head': 'beginArrowHead',
+        'end_arrow_head': 'endArrowHead',
+        'custom_dash_pattern': 'customDashPattern',
+        'fill_format': 'fillFormat',
+        'miter_limit': 'miterLimit',
+        'width': 'width'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, alignment=None, cap_style=None, dash_style=None, join_style=None, style=None, begin_arrow_head=None, end_arrow_head=None, custom_dash_pattern=None, fill_format=None, miter_limit=None, width=None):  # noqa: E501
@@ -122,6 +125,15 @@ class LineFormat(object):
         """
         if alignment is not None:
             allowed_values = ["Center", "Inset", "NotDefined"]  # noqa: E501
+            if alignment.isdigit():
+                int_alignment = int(alignment)
+                if int_alignment < 0 or int_alignment >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
+                        .format(alignment, allowed_values)
+                    )
+                self._alignment = allowed_values[int_alignment]
+                return
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -151,6 +163,15 @@ class LineFormat(object):
         """
         if cap_style is not None:
             allowed_values = ["Round", "Square", "Flat", "NotDefined"]  # noqa: E501
+            if cap_style.isdigit():
+                int_cap_style = int(cap_style)
+                if int_cap_style < 0 or int_cap_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `cap_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(cap_style, allowed_values)
+                    )
+                self._cap_style = allowed_values[int_cap_style]
+                return
             if cap_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `cap_style` ({0}), must be one of {1}"  # noqa: E501
@@ -180,6 +201,15 @@ class LineFormat(object):
         """
         if dash_style is not None:
             allowed_values = ["Solid", "Dot", "Dash", "LargeDash", "DashDot", "LargeDashDot", "LargeDashDotDot", "SystemDash", "SystemDot", "SystemDashDot", "SystemDashDotDot", "Custom", "NotDefined"]  # noqa: E501
+            if dash_style.isdigit():
+                int_dash_style = int(dash_style)
+                if int_dash_style < 0 or int_dash_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `dash_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(dash_style, allowed_values)
+                    )
+                self._dash_style = allowed_values[int_dash_style]
+                return
             if dash_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `dash_style` ({0}), must be one of {1}"  # noqa: E501
@@ -209,6 +239,15 @@ class LineFormat(object):
         """
         if join_style is not None:
             allowed_values = ["Round", "Bevel", "Miter", "NotDefined"]  # noqa: E501
+            if join_style.isdigit():
+                int_join_style = int(join_style)
+                if int_join_style < 0 or int_join_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `join_style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(join_style, allowed_values)
+                    )
+                self._join_style = allowed_values[int_join_style]
+                return
             if join_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `join_style` ({0}), must be one of {1}"  # noqa: E501
@@ -238,6 +277,15 @@ class LineFormat(object):
         """
         if style is not None:
             allowed_values = ["Single", "ThinThin", "ThinThick", "ThickThin", "ThickBetweenThin", "NotDefined"]  # noqa: E501
+            if style.isdigit():
+                int_style = int(style)
+                if int_style < 0 or int_style >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501
+                        .format(style, allowed_values)
+                    )
+                self._style = allowed_values[int_style]
+                return
             if style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style` ({0}), must be one of {1}"  # noqa: E501

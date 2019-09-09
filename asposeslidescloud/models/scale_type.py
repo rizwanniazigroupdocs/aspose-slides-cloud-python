@@ -53,6 +53,9 @@ class ScaleType(object):
     attribute_map = {
     }
 
+    type_determiners = {
+    }
+
     def __init__(self):  # noqa: E501
         """ScaleType - a model defined in Swagger"""  # noqa: E501
 

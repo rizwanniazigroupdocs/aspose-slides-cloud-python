@@ -49,9 +49,13 @@ class RequestInputFile(InputFile):
     }
 
     attribute_map = {
-        'password': 'Password',
-        'type': 'Type',
-        'index': 'Index'
+        'password': 'password',
+        'type': 'type',
+        'index': 'index'
+    }
+
+    type_determiners = {
+        'type': 'Request',
     }
 
     def __init__(self, password=None, type='Request', index=None):  # noqa: E501
@@ -59,6 +63,7 @@ class RequestInputFile(InputFile):
         super(RequestInputFile, self).__init__(password, type)
 
         self._index = None
+        self.type: 'Request'
 
         self.index = index
 

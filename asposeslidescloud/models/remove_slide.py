@@ -48,8 +48,12 @@ class RemoveSlide(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'position': 'Position'
+        'type': 'type',
+        'position': 'position'
+    }
+
+    type_determiners = {
+        'type': 'RemoveSlide',
     }
 
     def __init__(self, type='RemoveSlide', position=None):  # noqa: E501
@@ -57,6 +61,7 @@ class RemoveSlide(Task):
         super(RemoveSlide, self).__init__(type)
 
         self._position = None
+        self.type: 'RemoveSlide'
 
         self.position = position
 

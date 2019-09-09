@@ -52,12 +52,15 @@ class LayoutSlide(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'type': 'Type',
-        'master_slide': 'MasterSlide',
-        'depending_slides': 'DependingSlides'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'type': 'type',
+        'master_slide': 'masterSlide',
+        'depending_slides': 'dependingSlides'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, type=None, master_slide=None, depending_slides=None):  # noqa: E501
@@ -121,6 +124,15 @@ class LayoutSlide(ResourceBase):
         """
         if type is not None:
             allowed_values = ["Title", "Text", "TwoColumnText", "Table", "TextAndChart", "ChartAndText", "Diagram", "Chart", "TextAndClipArt", "ClipArtAndText", "TitleOnly", "Blank", "TextAndObject", "ObjectAndText", "Object", "TitleAndObject", "TextAndMedia", "MediaAndText", "ObjectOverText", "TextOverObject", "TextAndTwoObjects", "TwoObjectsAndText", "TwoObjectsOverText", "FourObjects", "VerticalText", "ClipArtAndVerticalText", "VerticalTitleAndText", "VerticalTitleAndTextOverChart", "TwoObjects", "ObjectAndTwoObject", "TwoObjectsAndObject", "SectionHeader", "TwoTextAndTwoObjects", "TitleObjectAndCaption", "PictureAndCaption", "Custom"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

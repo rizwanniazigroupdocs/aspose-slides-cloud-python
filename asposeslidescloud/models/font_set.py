@@ -48,9 +48,12 @@ class FontSet(object):
     }
 
     attribute_map = {
-        'complex_script': 'ComplexScript',
-        'east_asian': 'EastAsian',
-        'latin': 'Latin'
+        'complex_script': 'complexScript',
+        'east_asian': 'eastAsian',
+        'latin': 'latin'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, complex_script=None, east_asian=None, latin=None):  # noqa: E501

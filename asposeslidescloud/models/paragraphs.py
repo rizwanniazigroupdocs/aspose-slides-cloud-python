@@ -49,9 +49,12 @@ class Paragraphs(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'paragraph_links': 'ParagraphLinks'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'paragraph_links': 'paragraphLinks'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, paragraph_links=None):  # noqa: E501

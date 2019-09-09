@@ -47,8 +47,11 @@ class ChartTitle(object):
     }
 
     attribute_map = {
-        'text': 'Text',
-        'has_title': 'HasTitle'
+        'text': 'text',
+        'has_title': 'hasTitle'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, text=None, has_title=None):  # noqa: E501

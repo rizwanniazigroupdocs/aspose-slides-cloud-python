@@ -54,14 +54,17 @@ class DocumentReplaceResult(Document):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'document_properties': 'DocumentProperties',
-        'slides': 'Slides',
-        'images': 'Images',
-        'layout_slides': 'LayoutSlides',
-        'master_slides': 'MasterSlides',
-        'matches': 'Matches'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'document_properties': 'documentProperties',
+        'slides': 'slides',
+        'images': 'images',
+        'layout_slides': 'layoutSlides',
+        'master_slides': 'masterSlides',
+        'matches': 'matches'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, document_properties=None, slides=None, images=None, layout_slides=None, master_slides=None, matches=None):  # noqa: E501

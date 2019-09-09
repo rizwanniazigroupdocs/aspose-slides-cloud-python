@@ -46,7 +46,10 @@ class TableColumn(object):
     }
 
     attribute_map = {
-        'width': 'Width'
+        'width': 'width'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, width=None):  # noqa: E501

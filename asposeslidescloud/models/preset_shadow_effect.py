@@ -49,10 +49,13 @@ class PresetShadowEffect(object):
     }
 
     attribute_map = {
-        'direction': 'Direction',
-        'distance': 'Distance',
-        'preset': 'Preset',
-        'shadow_color': 'ShadowColor'
+        'direction': 'direction',
+        'distance': 'distance',
+        'preset': 'preset',
+        'shadow_color': 'shadowColor'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, direction=None, distance=None, preset=None, shadow_color=None):  # noqa: E501
@@ -135,6 +138,15 @@ class PresetShadowEffect(object):
         """
         if preset is not None:
             allowed_values = ["TopLeftDropShadow", "TopLeftLargeDropShadow", "BackLeftLongPerspectiveShadow", "BackRightLongPerspectiveShadow", "TopLeftDoubleDropShadow", "BottomRightSmallDropShadow", "FrontLeftLongPerspectiveShadow", "FrontRightLongPerspectiveShadow", "OuterBoxShadow3D", "InnerBoxShadow3D", "BackCenterPerspectiveShadow", "TopRightDropShadow", "FrontBottomShadow", "BackLeftPerspectiveShadow", "BackRightPerspectiveShadow", "BottomLeftDropShadow", "BottomRightDropShadow", "FrontLeftPerspectiveShadow", "FrontRightPerspectiveShadow", "TopLeftSmallDropShadow"]  # noqa: E501
+            if preset.isdigit():
+                int_preset = int(preset)
+                if int_preset < 0 or int_preset >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `preset` ({0}), must be one of {1}"  # noqa: E501
+                        .format(preset, allowed_values)
+                    )
+                self._preset = allowed_values[int_preset]
+                return
             if preset not in allowed_values:
                 raise ValueError(
                     "Invalid value for `preset` ({0}), must be one of {1}"  # noqa: E501

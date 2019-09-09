@@ -53,6 +53,9 @@ class ShapeThumbnailBounds(object):
     attribute_map = {
     }
 
+    type_determiners = {
+    }
+
     def __init__(self):  # noqa: E501
         """ShapeThumbnailBounds - a model defined in Swagger"""  # noqa: E501
 

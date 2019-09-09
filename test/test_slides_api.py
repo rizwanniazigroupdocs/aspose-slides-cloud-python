@@ -5111,7 +5111,7 @@ class TestSlidesApi(BaseTest):
         """Test case for get_notes_slide_with_format with invalid format
         """
         request = self.__prepare_get_notes_slide_with_format_request()
-        request.format = self.get_invalid_test_value('get_notes_slide_with_format', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('get_notes_slide_with_format', 'format', request.format, 'str')
         self.initialize('get_notes_slide_with_format', 'format', request.format)
         ok = False
         try:
@@ -5229,7 +5229,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_get_notes_slide_with_format_request(self):
         name = self.get_test_value('get_notes_slide_with_format', 'name', 'str')
         slide_index = self.get_test_value('get_notes_slide_with_format', 'slide_index', 'int')
-        format = self.get_test_value('get_notes_slide_with_format', 'format', 'int')
+        format = self.get_test_value('get_notes_slide_with_format', 'format', 'str')
         width = self.get_test_value('get_notes_slide_with_format', 'width', 'int')
         height = self.get_test_value('get_notes_slide_with_format', 'height', 'int')
         password = self.get_test_value('get_notes_slide_with_format', 'password', 'str')
@@ -6658,7 +6658,7 @@ class TestSlidesApi(BaseTest):
         """Test case for get_slides_image_with_format with invalid format
         """
         request = self.__prepare_get_slides_image_with_format_request()
-        request.format = self.get_invalid_test_value('get_slides_image_with_format', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('get_slides_image_with_format', 'format', request.format, 'str')
         self.initialize('get_slides_image_with_format', 'format', request.format)
         ok = False
         try:
@@ -6725,7 +6725,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_get_slides_image_with_format_request(self):
         name = self.get_test_value('get_slides_image_with_format', 'name', 'str')
         index = self.get_test_value('get_slides_image_with_format', 'index', 'int')
-        format = self.get_test_value('get_slides_image_with_format', 'format', 'int')
+        format = self.get_test_value('get_slides_image_with_format', 'format', 'str')
         password = self.get_test_value('get_slides_image_with_format', 'password', 'str')
         folder = self.get_test_value('get_slides_image_with_format', 'folder', 'str')
         storage = self.get_test_value('get_slides_image_with_format', 'storage', 'str')
@@ -9979,7 +9979,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_notes_slide_shape_save_as with invalid format
         """
         request = self.__prepare_post_notes_slide_shape_save_as_request()
-        request.format = self.get_invalid_test_value('post_notes_slide_shape_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_notes_slide_shape_save_as', 'format', request.format, 'str')
         self.initialize('post_notes_slide_shape_save_as', 'format', request.format)
         ok = False
         try:
@@ -10115,7 +10115,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_notes_slide_shape_save_as with invalid bounds
         """
         request = self.__prepare_post_notes_slide_shape_save_as_request()
-        request.bounds = self.get_invalid_test_value('post_notes_slide_shape_save_as', 'bounds', request.bounds, 'int')
+        request.bounds = self.get_invalid_test_value('post_notes_slide_shape_save_as', 'bounds', request.bounds, 'str')
         self.initialize('post_notes_slide_shape_save_as', 'bounds', request.bounds)
         ok = False
         try:
@@ -10149,7 +10149,7 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_notes_slide_shape_save_as', 'name', 'str')
         slide_index = self.get_test_value('post_notes_slide_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('post_notes_slide_shape_save_as', 'shape_index', 'int')
-        format = self.get_test_value('post_notes_slide_shape_save_as', 'format', 'int')
+        format = self.get_test_value('post_notes_slide_shape_save_as', 'format', 'str')
         path = self.get_test_value('post_notes_slide_shape_save_as', 'path', 'str')
         options = self.get_test_value('post_notes_slide_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('post_notes_slide_shape_save_as', 'password', 'str')
@@ -10157,7 +10157,7 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_notes_slide_shape_save_as', 'storage', 'str')
         scale_x = self.get_test_value('post_notes_slide_shape_save_as', 'scale_x', 'float')
         scale_y = self.get_test_value('post_notes_slide_shape_save_as', 'scale_y', 'float')
-        bounds = self.get_test_value('post_notes_slide_shape_save_as', 'bounds', 'int')
+        bounds = self.get_test_value('post_notes_slide_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_notes_slide_shape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
@@ -10326,7 +10326,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_shape_save_as with invalid format
         """
         request = self.__prepare_post_shape_save_as_request()
-        request.format = self.get_invalid_test_value('post_shape_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_shape_save_as', 'format', request.format, 'str')
         self.initialize('post_shape_save_as', 'format', request.format)
         ok = False
         try:
@@ -10462,7 +10462,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_shape_save_as with invalid bounds
         """
         request = self.__prepare_post_shape_save_as_request()
-        request.bounds = self.get_invalid_test_value('post_shape_save_as', 'bounds', request.bounds, 'int')
+        request.bounds = self.get_invalid_test_value('post_shape_save_as', 'bounds', request.bounds, 'str')
         self.initialize('post_shape_save_as', 'bounds', request.bounds)
         ok = False
         try:
@@ -10496,7 +10496,7 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_shape_save_as', 'name', 'str')
         slide_index = self.get_test_value('post_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('post_shape_save_as', 'shape_index', 'int')
-        format = self.get_test_value('post_shape_save_as', 'format', 'int')
+        format = self.get_test_value('post_shape_save_as', 'format', 'str')
         path = self.get_test_value('post_shape_save_as', 'path', 'str')
         options = self.get_test_value('post_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('post_shape_save_as', 'password', 'str')
@@ -10504,7 +10504,7 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_shape_save_as', 'storage', 'str')
         scale_x = self.get_test_value('post_shape_save_as', 'scale_x', 'float')
         scale_y = self.get_test_value('post_shape_save_as', 'scale_y', 'float')
-        bounds = self.get_test_value('post_shape_save_as', 'bounds', 'int')
+        bounds = self.get_test_value('post_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_shape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostShapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
@@ -10930,7 +10930,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_slide_save_as with invalid format
         """
         request = self.__prepare_post_slide_save_as_request()
-        request.format = self.get_invalid_test_value('post_slide_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_slide_save_as', 'format', request.format, 'str')
         self.initialize('post_slide_save_as', 'format', request.format)
         ok = False
         try:
@@ -11065,7 +11065,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_post_slide_save_as_request(self):
         name = self.get_test_value('post_slide_save_as', 'name', 'str')
         slide_index = self.get_test_value('post_slide_save_as', 'slide_index', 'int')
-        format = self.get_test_value('post_slide_save_as', 'format', 'int')
+        format = self.get_test_value('post_slide_save_as', 'format', 'str')
         options = self.get_test_value('post_slide_save_as', 'options', 'ExportOptions')
         width = self.get_test_value('post_slide_save_as', 'width', 'int')
         height = self.get_test_value('post_slide_save_as', 'height', 'int')
@@ -11207,7 +11207,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_slides_convert with invalid format
         """
         request = self.__prepare_post_slides_convert_request()
-        request.format = self.get_invalid_test_value('post_slides_convert', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_slides_convert', 'format', request.format, 'str')
         self.initialize('post_slides_convert', 'format', request.format)
         ok = False
         try:
@@ -11272,7 +11272,7 @@ class TestSlidesApi(BaseTest):
             self.assert_no_exception('post_slides_convert', 'fonts_folder')
 
     def __prepare_post_slides_convert_request(self):
-        format = self.get_test_value('post_slides_convert', 'format', 'int')
+        format = self.get_test_value('post_slides_convert', 'format', 'str')
         document = self.get_test_value('post_slides_convert', 'document', 'file')
         password = self.get_test_value('post_slides_convert', 'password', 'str')
         fonts_folder = self.get_test_value('post_slides_convert', 'fonts_folder', 'str')
@@ -12434,7 +12434,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_slides_save_as with invalid format
         """
         request = self.__prepare_post_slides_save_as_request()
-        request.format = self.get_invalid_test_value('post_slides_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_slides_save_as', 'format', request.format, 'str')
         self.initialize('post_slides_save_as', 'format', request.format)
         ok = False
         try:
@@ -12534,7 +12534,7 @@ class TestSlidesApi(BaseTest):
 
     def __prepare_post_slides_save_as_request(self):
         name = self.get_test_value('post_slides_save_as', 'name', 'str')
-        format = self.get_test_value('post_slides_save_as', 'format', 'int')
+        format = self.get_test_value('post_slides_save_as', 'format', 'str')
         options = self.get_test_value('post_slides_save_as', 'options', 'ExportOptions')
         password = self.get_test_value('post_slides_save_as', 'password', 'str')
         storage = self.get_test_value('post_slides_save_as', 'storage', 'str')
@@ -12844,7 +12844,7 @@ class TestSlidesApi(BaseTest):
         """Test case for post_slides_split with invalid format
         """
         request = self.__prepare_post_slides_split_request()
-        request.format = self.get_invalid_test_value('post_slides_split', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('post_slides_split', 'format', request.format, 'str')
         self.initialize('post_slides_split', 'format', request.format)
         ok = False
         try:
@@ -13013,7 +13013,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_post_slides_split_request(self):
         name = self.get_test_value('post_slides_split', 'name', 'str')
         options = self.get_test_value('post_slides_split', 'options', 'ExportOptions')
-        format = self.get_test_value('post_slides_split', 'format', 'int')
+        format = self.get_test_value('post_slides_split', 'format', 'str')
         width = self.get_test_value('post_slides_split', 'width', 'int')
         height = self.get_test_value('post_slides_split', 'height', 'int')
         to = self.get_test_value('post_slides_split', 'to', 'int')
@@ -13207,7 +13207,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_notes_slide_shape_save_as with invalid format
         """
         request = self.__prepare_put_notes_slide_shape_save_as_request()
-        request.format = self.get_invalid_test_value('put_notes_slide_shape_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('put_notes_slide_shape_save_as', 'format', request.format, 'str')
         self.initialize('put_notes_slide_shape_save_as', 'format', request.format)
         ok = False
         try:
@@ -13360,7 +13360,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_notes_slide_shape_save_as with invalid bounds
         """
         request = self.__prepare_put_notes_slide_shape_save_as_request()
-        request.bounds = self.get_invalid_test_value('put_notes_slide_shape_save_as', 'bounds', request.bounds, 'int')
+        request.bounds = self.get_invalid_test_value('put_notes_slide_shape_save_as', 'bounds', request.bounds, 'str')
         self.initialize('put_notes_slide_shape_save_as', 'bounds', request.bounds)
         ok = False
         try:
@@ -13394,7 +13394,7 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('put_notes_slide_shape_save_as', 'name', 'str')
         slide_index = self.get_test_value('put_notes_slide_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('put_notes_slide_shape_save_as', 'shape_index', 'int')
-        format = self.get_test_value('put_notes_slide_shape_save_as', 'format', 'int')
+        format = self.get_test_value('put_notes_slide_shape_save_as', 'format', 'str')
         out_path = self.get_test_value('put_notes_slide_shape_save_as', 'out_path', 'str')
         path = self.get_test_value('put_notes_slide_shape_save_as', 'path', 'str')
         options = self.get_test_value('put_notes_slide_shape_save_as', 'options', 'IShapeExportOptions')
@@ -13403,7 +13403,7 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('put_notes_slide_shape_save_as', 'storage', 'str')
         scale_x = self.get_test_value('put_notes_slide_shape_save_as', 'scale_x', 'float')
         scale_y = self.get_test_value('put_notes_slide_shape_save_as', 'scale_y', 'float')
-        bounds = self.get_test_value('put_notes_slide_shape_save_as', 'bounds', 'int')
+        bounds = self.get_test_value('put_notes_slide_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('put_notes_slide_shape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
@@ -13935,7 +13935,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_shape_save_as with invalid format
         """
         request = self.__prepare_put_shape_save_as_request()
-        request.format = self.get_invalid_test_value('put_shape_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('put_shape_save_as', 'format', request.format, 'str')
         self.initialize('put_shape_save_as', 'format', request.format)
         ok = False
         try:
@@ -14088,7 +14088,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_shape_save_as with invalid bounds
         """
         request = self.__prepare_put_shape_save_as_request()
-        request.bounds = self.get_invalid_test_value('put_shape_save_as', 'bounds', request.bounds, 'int')
+        request.bounds = self.get_invalid_test_value('put_shape_save_as', 'bounds', request.bounds, 'str')
         self.initialize('put_shape_save_as', 'bounds', request.bounds)
         ok = False
         try:
@@ -14122,7 +14122,7 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('put_shape_save_as', 'name', 'str')
         slide_index = self.get_test_value('put_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('put_shape_save_as', 'shape_index', 'int')
-        format = self.get_test_value('put_shape_save_as', 'format', 'int')
+        format = self.get_test_value('put_shape_save_as', 'format', 'str')
         out_path = self.get_test_value('put_shape_save_as', 'out_path', 'str')
         path = self.get_test_value('put_shape_save_as', 'path', 'str')
         options = self.get_test_value('put_shape_save_as', 'options', 'IShapeExportOptions')
@@ -14131,7 +14131,7 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('put_shape_save_as', 'storage', 'str')
         scale_x = self.get_test_value('put_shape_save_as', 'scale_x', 'float')
         scale_y = self.get_test_value('put_shape_save_as', 'scale_y', 'float')
-        bounds = self.get_test_value('put_shape_save_as', 'bounds', 'int')
+        bounds = self.get_test_value('put_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('put_shape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
@@ -14592,7 +14592,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_slide_save_as with invalid format
         """
         request = self.__prepare_put_slide_save_as_request()
-        request.format = self.get_invalid_test_value('put_slide_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('put_slide_save_as', 'format', request.format, 'str')
         self.initialize('put_slide_save_as', 'format', request.format)
         ok = False
         try:
@@ -14744,7 +14744,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_put_slide_save_as_request(self):
         name = self.get_test_value('put_slide_save_as', 'name', 'str')
         slide_index = self.get_test_value('put_slide_save_as', 'slide_index', 'int')
-        format = self.get_test_value('put_slide_save_as', 'format', 'int')
+        format = self.get_test_value('put_slide_save_as', 'format', 'str')
         out_path = self.get_test_value('put_slide_save_as', 'out_path', 'str')
         options = self.get_test_value('put_slide_save_as', 'options', 'ExportOptions')
         width = self.get_test_value('put_slide_save_as', 'width', 'int')
@@ -14922,7 +14922,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_slides_convert with invalid format
         """
         request = self.__prepare_put_slides_convert_request()
-        request.format = self.get_invalid_test_value('put_slides_convert', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('put_slides_convert', 'format', request.format, 'str')
         self.initialize('put_slides_convert', 'format', request.format)
         ok = False
         try:
@@ -15004,7 +15004,7 @@ class TestSlidesApi(BaseTest):
             self.assert_no_exception('put_slides_convert', 'fonts_folder')
 
     def __prepare_put_slides_convert_request(self):
-        format = self.get_test_value('put_slides_convert', 'format', 'int')
+        format = self.get_test_value('put_slides_convert', 'format', 'str')
         out_path = self.get_test_value('put_slides_convert', 'out_path', 'str')
         document = self.get_test_value('put_slides_convert', 'document', 'file')
         password = self.get_test_value('put_slides_convert', 'password', 'str')
@@ -15158,7 +15158,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_slides_save_as with invalid format
         """
         request = self.__prepare_put_slides_save_as_request()
-        request.format = self.get_invalid_test_value('put_slides_save_as', 'format', request.format, 'int')
+        request.format = self.get_invalid_test_value('put_slides_save_as', 'format', request.format, 'str')
         self.initialize('put_slides_save_as', 'format', request.format)
         ok = False
         try:
@@ -15259,7 +15259,7 @@ class TestSlidesApi(BaseTest):
     def __prepare_put_slides_save_as_request(self):
         name = self.get_test_value('put_slides_save_as', 'name', 'str')
         out_path = self.get_test_value('put_slides_save_as', 'out_path', 'str')
-        format = self.get_test_value('put_slides_save_as', 'format', 'int')
+        format = self.get_test_value('put_slides_save_as', 'format', 'str')
         options = self.get_test_value('put_slides_save_as', 'options', 'ExportOptions')
         password = self.get_test_value('put_slides_save_as', 'password', 'str')
         storage = self.get_test_value('put_slides_save_as', 'storage', 'str')
@@ -15857,7 +15857,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_slides_slide_size with invalid size_type
         """
         request = self.__prepare_put_slides_slide_size_request()
-        request.size_type = self.get_invalid_test_value('put_slides_slide_size', 'size_type', request.size_type, 'int')
+        request.size_type = self.get_invalid_test_value('put_slides_slide_size', 'size_type', request.size_type, 'str')
         self.initialize('put_slides_slide_size', 'size_type', request.size_type)
         ok = False
         try:
@@ -15874,7 +15874,7 @@ class TestSlidesApi(BaseTest):
         """Test case for put_slides_slide_size with invalid scale_type
         """
         request = self.__prepare_put_slides_slide_size_request()
-        request.scale_type = self.get_invalid_test_value('put_slides_slide_size', 'scale_type', request.scale_type, 'int')
+        request.scale_type = self.get_invalid_test_value('put_slides_slide_size', 'scale_type', request.scale_type, 'str')
         self.initialize('put_slides_slide_size', 'scale_type', request.scale_type)
         ok = False
         try:
@@ -15894,8 +15894,8 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('put_slides_slide_size', 'folder', 'str')
         width = self.get_test_value('put_slides_slide_size', 'width', 'int')
         height = self.get_test_value('put_slides_slide_size', 'height', 'int')
-        size_type = self.get_test_value('put_slides_slide_size', 'size_type', 'int')
-        scale_type = self.get_test_value('put_slides_slide_size', 'scale_type', 'int')
+        size_type = self.get_test_value('put_slides_slide_size', 'size_type', 'str')
+        scale_type = self.get_test_value('put_slides_slide_size', 'scale_type', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutSlidesSlideSizeRequest(name, password, storage, folder, width, height, size_type, scale_type)
 
     def test_put_update_notes_slide(self):

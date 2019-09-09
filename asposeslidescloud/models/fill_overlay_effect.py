@@ -46,7 +46,10 @@ class FillOverlayEffect(object):
     }
 
     attribute_map = {
-        'blend': 'Blend'
+        'blend': 'blend'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, blend=None):  # noqa: E501
@@ -78,6 +81,15 @@ class FillOverlayEffect(object):
         """
         if blend is not None:
             allowed_values = ["Darken", "Lighten", "Multiply", "Overlay", "Screen"]  # noqa: E501
+            if blend.isdigit():
+                int_blend = int(blend)
+                if int_blend < 0 or int_blend >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `blend` ({0}), must be one of {1}"  # noqa: E501
+                        .format(blend, allowed_values)
+                    )
+                self._blend = allowed_values[int_blend]
+                return
             if blend not in allowed_values:
                 raise ValueError(
                     "Invalid value for `blend` ({0}), must be one of {1}"  # noqa: E501

@@ -49,10 +49,13 @@ class SlideComment(object):
     }
 
     attribute_map = {
-        'author': 'Author',
-        'text': 'Text',
-        'created_time': 'CreatedTime',
-        'child_comments': 'ChildComments'
+        'author': 'author',
+        'text': 'text',
+        'created_time': 'createdTime',
+        'child_comments': 'childComments'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, author=None, text=None, created_time=None, child_comments=None):  # noqa: E501

@@ -47,8 +47,11 @@ class MergingSource(object):
     }
 
     attribute_map = {
-        'input': 'Input',
-        'slides': 'Slides'
+        'input': 'input',
+        'slides': 'slides'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, input=None, slides=None):  # noqa: E501

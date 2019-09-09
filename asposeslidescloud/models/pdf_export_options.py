@@ -65,25 +65,29 @@ class PdfExportOptions(ExportOptions):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'text_compression': 'TextCompression',
-        'embed_full_fonts': 'EmbedFullFonts',
-        'compliance': 'Compliance',
-        'sufficient_resolution': 'SufficientResolution',
-        'jpeg_quality': 'JpegQuality',
-        'draw_slides_frame': 'DrawSlidesFrame',
-        'show_hidden_slides': 'ShowHiddenSlides',
-        'save_metafiles_as_png': 'SaveMetafilesAsPng',
-        'password': 'Password',
-        'embed_true_type_fonts_for_ascii': 'EmbedTrueTypeFontsForASCII',
-        'additional_common_font_families': 'AdditionalCommonFontFamilies',
-        'notes_position': 'NotesPosition',
-        'comments_position': 'CommentsPosition',
-        'comments_area_width': 'CommentsAreaWidth',
-        'comments_area_color': 'CommentsAreaColor',
-        'show_comments_by_no_author': 'ShowCommentsByNoAuthor',
-        'image_transparent_color': 'ImageTransparentColor',
-        'apply_image_transparent': 'ApplyImageTransparent'
+        'format': 'format',
+        'text_compression': 'textCompression',
+        'embed_full_fonts': 'embedFullFonts',
+        'compliance': 'compliance',
+        'sufficient_resolution': 'sufficientResolution',
+        'jpeg_quality': 'jpegQuality',
+        'draw_slides_frame': 'drawSlidesFrame',
+        'show_hidden_slides': 'showHiddenSlides',
+        'save_metafiles_as_png': 'saveMetafilesAsPng',
+        'password': 'password',
+        'embed_true_type_fonts_for_ascii': 'embedTrueTypeFontsForAscii',
+        'additional_common_font_families': 'additionalCommonFontFamilies',
+        'notes_position': 'notesPosition',
+        'comments_position': 'commentsPosition',
+        'comments_area_width': 'commentsAreaWidth',
+        'comments_area_color': 'commentsAreaColor',
+        'show_comments_by_no_author': 'showCommentsByNoAuthor',
+        'image_transparent_color': 'imageTransparentColor',
+        'apply_image_transparent': 'applyImageTransparent'
+    }
+
+    type_determiners = {
+        'format': 'pdf',
     }
 
     def __init__(self, format='pdf', text_compression=None, embed_full_fonts=None, compliance=None, sufficient_resolution=None, jpeg_quality=None, draw_slides_frame=None, show_hidden_slides=None, save_metafiles_as_png=None, password=None, embed_true_type_fonts_for_ascii=None, additional_common_font_families=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None, image_transparent_color=None, apply_image_transparent=None):  # noqa: E501
@@ -108,6 +112,7 @@ class PdfExportOptions(ExportOptions):
         self._show_comments_by_no_author = None
         self._image_transparent_color = None
         self._apply_image_transparent = None
+        self.format: 'pdf'
 
         self.text_compression = text_compression
         self.embed_full_fonts = embed_full_fonts
@@ -154,6 +159,15 @@ class PdfExportOptions(ExportOptions):
         """
         if text_compression is not None:
             allowed_values = ["None", "Flate"]  # noqa: E501
+            if text_compression.isdigit():
+                int_text_compression = int(text_compression)
+                if int_text_compression < 0 or int_text_compression >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `text_compression` ({0}), must be one of {1}"  # noqa: E501
+                        .format(text_compression, allowed_values)
+                    )
+                self._text_compression = allowed_values[int_text_compression]
+                return
             if text_compression not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_compression` ({0}), must be one of {1}"  # noqa: E501
@@ -205,6 +219,15 @@ class PdfExportOptions(ExportOptions):
         """
         if compliance is not None:
             allowed_values = ["Pdf15", "PdfA1b"]  # noqa: E501
+            if compliance.isdigit():
+                int_compliance = int(compliance)
+                if int_compliance < 0 or int_compliance >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `compliance` ({0}), must be one of {1}"  # noqa: E501
+                        .format(compliance, allowed_values)
+                    )
+                self._compliance = allowed_values[int_compliance]
+                return
             if compliance not in allowed_values:
                 raise ValueError(
                     "Invalid value for `compliance` ({0}), must be one of {1}"  # noqa: E501
@@ -410,6 +433,15 @@ class PdfExportOptions(ExportOptions):
         """
         if notes_position is not None:
             allowed_values = ["None", "BottomFull", "BottomTruncated"]  # noqa: E501
+            if notes_position.isdigit():
+                int_notes_position = int(notes_position)
+                if int_notes_position < 0 or int_notes_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(notes_position, allowed_values)
+                    )
+                self._notes_position = allowed_values[int_notes_position]
+                return
             if notes_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `notes_position` ({0}), must be one of {1}"  # noqa: E501
@@ -439,6 +471,15 @@ class PdfExportOptions(ExportOptions):
         """
         if comments_position is not None:
             allowed_values = ["None", "Bottom", "Right"]  # noqa: E501
+            if comments_position.isdigit():
+                int_comments_position = int(comments_position)
+                if int_comments_position < 0 or int_comments_position >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501
+                        .format(comments_position, allowed_values)
+                    )
+                self._comments_position = allowed_values[int_comments_position]
+                return
             if comments_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `comments_position` ({0}), must be one of {1}"  # noqa: E501

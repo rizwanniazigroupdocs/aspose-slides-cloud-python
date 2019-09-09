@@ -48,8 +48,12 @@ class RemoveShape(Task):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'shape_path': 'ShapePath'
+        'type': 'type',
+        'shape_path': 'shapePath'
+    }
+
+    type_determiners = {
+        'type': 'RemoveShape',
     }
 
     def __init__(self, type='RemoveShape', shape_path=None):  # noqa: E501
@@ -57,6 +61,7 @@ class RemoveShape(Task):
         super(RemoveShape, self).__init__(type)
 
         self._shape_path = None
+        self.type: 'RemoveShape'
 
         if shape_path is not None:
             self.shape_path = shape_path

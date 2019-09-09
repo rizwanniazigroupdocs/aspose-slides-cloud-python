@@ -46,7 +46,10 @@ class FilesList(object):
     }
 
     attribute_map = {
-        'value': 'Value'
+        'value': 'value'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, value=None):  # noqa: E501

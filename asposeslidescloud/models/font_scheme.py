@@ -51,11 +51,14 @@ class FontScheme(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'major': 'Major',
-        'minor': 'Minor',
-        'name': 'Name'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'major': 'major',
+        'minor': 'minor',
+        'name': 'name'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, major=None, minor=None, name=None):  # noqa: E501

@@ -53,13 +53,16 @@ class Placeholder(ResourceBase):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'index': 'Index',
-        'orientation': 'Orientation',
-        'size': 'Size',
-        'type': 'Type',
-        'shape': 'Shape'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'index': 'index',
+        'orientation': 'orientation',
+        'size': 'size',
+        'type': 'type',
+        'shape': 'shape'
+    }
+
+    type_determiners = {
     }
 
     def __init__(self, self_uri=None, alternate_links=None, index=None, orientation=None, size=None, type=None, shape=None):  # noqa: E501
@@ -123,6 +126,15 @@ class Placeholder(ResourceBase):
         """
         if orientation is not None:
             allowed_values = ["Horizontal", "Vertical"]  # noqa: E501
+            if orientation.isdigit():
+                int_orientation = int(orientation)
+                if int_orientation < 0 or int_orientation >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
+                        .format(orientation, allowed_values)
+                    )
+                self._orientation = allowed_values[int_orientation]
+                return
             if orientation not in allowed_values:
                 raise ValueError(
                     "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
@@ -152,6 +164,15 @@ class Placeholder(ResourceBase):
         """
         if size is not None:
             allowed_values = ["Full", "Half", "Quarter"]  # noqa: E501
+            if size.isdigit():
+                int_size = int(size)
+                if int_size < 0 or int_size >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `size` ({0}), must be one of {1}"  # noqa: E501
+                        .format(size, allowed_values)
+                    )
+                self._size = allowed_values[int_size]
+                return
             if size not in allowed_values:
                 raise ValueError(
                     "Invalid value for `size` ({0}), must be one of {1}"  # noqa: E501
@@ -181,6 +202,15 @@ class Placeholder(ResourceBase):
         """
         if type is not None:
             allowed_values = ["Title", "Body", "CenteredTitle", "Subtitle", "DateAndTime", "SlideNumber", "Footer", "Header", "Object", "Chart", "Table", "ClipArt", "Diagram", "Media", "SlideImage", "Picture"]  # noqa: E501
+            if type.isdigit():
+                int_type = int(type)
+                if int_type < 0 or int_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(type, allowed_values)
+                    )
+                self._type = allowed_values[int_type]
+                return
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

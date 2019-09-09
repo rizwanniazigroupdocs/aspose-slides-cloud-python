@@ -71,31 +71,36 @@ class VideoFrame(GeometryShape):
     }
 
     attribute_map = {
-        'self_uri': 'SelfUri',
-        'alternate_links': 'AlternateLinks',
-        'name': 'Name',
-        'width': 'Width',
-        'height': 'Height',
-        'alternative_text': 'AlternativeText',
-        'alternative_text_title': 'AlternativeTextTitle',
-        'hidden': 'Hidden',
-        'x': 'X',
-        'y': 'Y',
-        'z_order_position': 'ZOrderPosition',
-        'shapes': 'Shapes',
-        'fill_format': 'FillFormat',
-        'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat',
-        'type': 'Type',
-        'shape_type': 'ShapeType',
-        'geometry_shape_type': 'GeometryShapeType',
-        'full_screen_mode': 'FullScreenMode',
-        'hide_at_showing': 'HideAtShowing',
-        'play_loop_mode': 'PlayLoopMode',
-        'play_mode': 'PlayMode',
-        'rewind_video': 'RewindVideo',
-        'volume': 'Volume',
-        'base64_data': 'Base64Data'
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'name': 'name',
+        'width': 'width',
+        'height': 'height',
+        'alternative_text': 'alternativeText',
+        'alternative_text_title': 'alternativeTextTitle',
+        'hidden': 'hidden',
+        'x': 'x',
+        'y': 'y',
+        'z_order_position': 'zOrderPosition',
+        'shapes': 'shapes',
+        'fill_format': 'fillFormat',
+        'effect_format': 'effectFormat',
+        'line_format': 'lineFormat',
+        'type': 'type',
+        'shape_type': 'shapeType',
+        'geometry_shape_type': 'geometryShapeType',
+        'full_screen_mode': 'fullScreenMode',
+        'hide_at_showing': 'hideAtShowing',
+        'play_loop_mode': 'playLoopMode',
+        'play_mode': 'playMode',
+        'rewind_video': 'rewindVideo',
+        'volume': 'volume',
+        'base64_data': 'base64Data'
+    }
+
+    type_determiners = {
+        'type': 'VideoFrame',
+        'shape_type': 'VideoFrame',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='VideoFrame', shape_type='VideoFrame', geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501
@@ -109,6 +114,8 @@ class VideoFrame(GeometryShape):
         self._rewind_video = None
         self._volume = None
         self._base64_data = None
+        self.type: 'VideoFrame'
+        self.shape_type: 'VideoFrame'
 
         if full_screen_mode is not None:
             self.full_screen_mode = full_screen_mode
@@ -213,6 +220,15 @@ class VideoFrame(GeometryShape):
         """
         if play_mode is not None:
             allowed_values = ["Auto", "OnClick", "AllSlides", "Mixed"]  # noqa: E501
+            if play_mode.isdigit():
+                int_play_mode = int(play_mode)
+                if int_play_mode < 0 or int_play_mode >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `play_mode` ({0}), must be one of {1}"  # noqa: E501
+                        .format(play_mode, allowed_values)
+                    )
+                self._play_mode = allowed_values[int_play_mode]
+                return
             if play_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `play_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -264,6 +280,15 @@ class VideoFrame(GeometryShape):
         """
         if volume is not None:
             allowed_values = ["Mute", "Low", "Medium", "Loud", "Mixed"]  # noqa: E501
+            if volume.isdigit():
+                int_volume = int(volume)
+                if int_volume < 0 or int_volume >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `volume` ({0}), must be one of {1}"  # noqa: E501
+                        .format(volume, allowed_values)
+                    )
+                self._volume = allowed_values[int_volume]
+                return
             if volume not in allowed_values:
                 raise ValueError(
                     "Invalid value for `volume` ({0}), must be one of {1}"  # noqa: E501
