@@ -46,6 +46,7 @@ class PlotArea(object):
         'y': 'float',
         'width': 'float',
         'height': 'float',
+        'layout_target_type': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat'
@@ -56,6 +57,7 @@ class PlotArea(object):
         'y': 'y',
         'width': 'width',
         'height': 'height',
+        'layout_target_type': 'layoutTargetType',
         'fill_format': 'fillFormat',
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat'
@@ -64,13 +66,14 @@ class PlotArea(object):
     type_determiners = {
     }
 
-    def __init__(self, x=None, y=None, width=None, height=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, x=None, y=None, width=None, height=None, layout_target_type=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
         """PlotArea - a model defined in Swagger"""  # noqa: E501
 
         self._x = None
         self._y = None
         self._width = None
         self._height = None
+        self._layout_target_type = None
         self._fill_format = None
         self._effect_format = None
         self._line_format = None
@@ -79,6 +82,7 @@ class PlotArea(object):
         self.y = y
         self.width = width
         self.height = height
+        self.layout_target_type = layout_target_type
         if fill_format is not None:
             self.fill_format = fill_format
         if effect_format is not None:
@@ -173,6 +177,44 @@ class PlotArea(object):
         :type: float
         """
         self._height = height
+
+    @property
+    def layout_target_type(self):
+        """Gets the layout_target_type of this PlotArea.  # noqa: E501
+
+        If layout of the plot area is defined manually specifies whether to layout the plot area by its inside (not including axis and axis labels) or outside.  # noqa: E501
+
+        :return: The layout_target_type of this PlotArea.  # noqa: E501
+        :rtype: str
+        """
+        return self._layout_target_type
+
+    @layout_target_type.setter
+    def layout_target_type(self, layout_target_type):
+        """Sets the layout_target_type of this PlotArea.
+
+        If layout of the plot area is defined manually specifies whether to layout the plot area by its inside (not including axis and axis labels) or outside.  # noqa: E501
+
+        :param layout_target_type: The layout_target_type of this PlotArea.  # noqa: E501
+        :type: str
+        """
+        if layout_target_type is not None:
+            allowed_values = ["Inner", "Outer"]  # noqa: E501
+            if layout_target_type.isdigit():
+                int_layout_target_type = int(layout_target_type)
+                if int_layout_target_type < 0 or int_layout_target_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `layout_target_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(layout_target_type, allowed_values)
+                    )
+                self._layout_target_type = allowed_values[int_layout_target_type]
+                return
+            if layout_target_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `layout_target_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(layout_target_type, allowed_values)
+                )
+        self._layout_target_type = layout_target_type
 
     @property
     def fill_format(self):

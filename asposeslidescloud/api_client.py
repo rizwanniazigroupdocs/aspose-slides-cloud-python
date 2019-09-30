@@ -69,7 +69,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.8.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.9.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
        
