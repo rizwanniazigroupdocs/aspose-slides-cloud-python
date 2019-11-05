@@ -40,8 +40,10 @@ class BaseTest(unittest.TestCase):
 
     __test__ = False
     
+    is_initialized = False
     configuration = None
     slides_api = None
+    expected_test_data_version = '1'
     
     def __init__(self, *args, **kwargs):
         super(BaseTest, self).__init__(*args, **kwargs)
@@ -70,6 +72,22 @@ class BaseTest(unittest.TestCase):
             BaseTest.slides_api = asposeslidescloud.apis.slides_api.SlidesApi(self.configuration)  # noqa: E501
 
     def initialize(self, function_name, invalid_parameter_name, invalid_parameter_value):
+        if not BaseTest.is_initialized:
+            download_request = asposeslidescloud.models.requests.slides_api_requests.DownloadFileRequest("TempTests/version.txt", None)
+            version_path = BaseTest.slides_api.download_file(download_request)
+            version = ''
+            with open(version_path) as version_file:
+                version = version_file.read()
+            if version != BaseTest.expected_test_data_version:
+                for file_name in os.listdir('TestData'):
+                    with open(os.path.join('TestData', file_name), 'rb') as f:
+                        file = f.read()
+                    upload_request = asposeslidescloud.models.requests.slides_api_requests.UploadFileRequest(file, "TempTests/" + file_name, None)
+                    BaseTest.slides_api.upload_file(upload_request)
+                upload_request = asposeslidescloud.models.requests.slides_api_requests.UploadFileRequest(
+                    BaseTest.expected_test_data_version, "TempTests/version.txt", None)
+                BaseTest.slides_api.upload_file(upload_request)
+            BaseTest.is_initialized = True
         files = dict()
         for rule in self.get_rules(BaseTest.test_rules['Files'], function_name, invalid_parameter_name):
             actual_name = self.untemplatize(rule['File'], invalid_parameter_value)
@@ -81,11 +99,9 @@ class BaseTest(unittest.TestCase):
             rule['ActualName'] = actual_name
         for path, rule in files.items():
             if rule['Action'] == 'Put':
-                with open(os.path.join(self.test_data_path, rule['ActualName']), 'rb') as f:
-                    file = f.read()
-                upload_request = asposeslidescloud.models.requests.slides_api_requests.UploadFileRequest(file, path, None)
-                BaseTest.slides_api.upload_file(upload_request)
-            elif  rule['Action'] == 'Delete':
+                copy_request = asposeslidescloud.models.requests.slides_api_requests.CopyFileRequest("TempTests/" + rule['ActualName'], path, None)
+                BaseTest.slides_api.copy_file(copy_request)
+            elif rule['Action'] == 'Delete':
                 delete_request = asposeslidescloud.models.requests.slides_api_requests.DeleteFileRequest(path, None, None)
                 BaseTest.slides_api.delete_file(delete_request)
 

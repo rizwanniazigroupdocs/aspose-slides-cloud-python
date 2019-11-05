@@ -61,6 +61,7 @@ class Chart(ShapeBase):
         'type': 'str',
         'shape_type': 'str',
         'chart_type': 'str',
+        'show_data_labels_over_maximum': 'bool',
         'series': 'list[Series]',
         'categories': 'list[str]',
         'title': 'ChartTitle',
@@ -91,6 +92,7 @@ class Chart(ShapeBase):
         'type': 'type',
         'shape_type': 'shapeType',
         'chart_type': 'chartType',
+        'show_data_labels_over_maximum': 'showDataLabelsOverMaximum',
         'series': 'series',
         'categories': 'categories',
         'title': 'title',
@@ -107,11 +109,12 @@ class Chart(ShapeBase):
         'shape_type': 'Chart',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', shape_type='Chart', chart_type=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', shape_type='Chart', chart_type=None, show_data_labels_over_maximum=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
         """Chart - a model defined in Swagger"""  # noqa: E501
         super(Chart, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._chart_type = None
+        self._show_data_labels_over_maximum = None
         self._series = None
         self._categories = None
         self._title = None
@@ -125,6 +128,8 @@ class Chart(ShapeBase):
         self.shape_type: 'Chart'
 
         self.chart_type = chart_type
+        if show_data_labels_over_maximum is not None:
+            self.show_data_labels_over_maximum = show_data_labels_over_maximum
         if series is not None:
             self.series = series
         if categories is not None:
@@ -181,6 +186,28 @@ class Chart(ShapeBase):
                     .format(chart_type, allowed_values)
                 )
         self._chart_type = chart_type
+
+    @property
+    def show_data_labels_over_maximum(self):
+        """Gets the show_data_labels_over_maximum of this Chart.  # noqa: E501
+
+        True if data labels over the maximum of the chart shall be shown.  # noqa: E501
+
+        :return: The show_data_labels_over_maximum of this Chart.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_data_labels_over_maximum
+
+    @show_data_labels_over_maximum.setter
+    def show_data_labels_over_maximum(self, show_data_labels_over_maximum):
+        """Sets the show_data_labels_over_maximum of this Chart.
+
+        True if data labels over the maximum of the chart shall be shown.  # noqa: E501
+
+        :param show_data_labels_over_maximum: The show_data_labels_over_maximum of this Chart.  # noqa: E501
+        :type: bool
+        """
+        self._show_data_labels_over_maximum = show_data_labels_over_maximum
 
     @property
     def series(self):

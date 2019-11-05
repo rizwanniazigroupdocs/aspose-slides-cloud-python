@@ -206,7 +206,7 @@ class RESTClientObject(object):
                         if not body is None:
                             if not isinstance(body, bytes):
                                 body = json.dumps(body)
-                            file_params["pipeline"] = ('pipeline', body)
+                            file_params["pipeline"] = (None, body, "text/json")
                         if not files is None:
                             for file_key in files:
                                 file_params[file_key] = files[file_key]

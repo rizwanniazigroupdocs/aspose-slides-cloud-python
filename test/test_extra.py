@@ -23,6 +23,7 @@ from asposeslidescloud.models.input import Input
 from asposeslidescloud.models.export_format import ExportFormat
 from asposeslidescloud.models.output_file import OutputFile
 from asposeslidescloud.models.pipeline import Pipeline
+from asposeslidescloud.models.chart import Chart
 from asposeslidescloud.models.requests.slides_api_requests import PostSlidesPipelineRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSlideSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlideShapeRequest
@@ -39,7 +40,6 @@ class TestExtra(BaseTest):
         pass
 
     def test_pipeline(self):
-        return
         """Test case for get_slides_api_info
         """
         file1 = RequestInputFile()
@@ -97,6 +97,11 @@ class TestExtra(BaseTest):
         request = GetSlideShapeRequest("test.ppt", 1, 1, "", "password", "TempSlidesSDK", None)
         result = self.api.get_slide_shape(request)
         self.assertEqual("1", result.text)
+
+    def test_chart(self):
+        chart = Chart()
+        self.assertEqual("Chart", chart.type)
+        self.assertEqual("Chart", chart.shape_type)
 
 if __name__ == '__main__':
     unittest.main()

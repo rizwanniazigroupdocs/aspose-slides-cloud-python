@@ -62,27 +62,21 @@ class ApiClient(object):
         "ErrorMessage": getattr(error_message, "ErrorMessage")
     }
 
-    def __init__(self, configuration=None, header_name=None, header_value=None, cookie=None):
+    def __init__(self, configuration=None):
         if configuration is None:
             configuration = Configuration()
         self.configuration = configuration
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.9.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.10.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
-       
-        if header_name is not None:
-            self.default_headers[header_name] = header_value
-        self.cookie = cookie
-    
+        self.default_headers.update(configuration.custom_headers)
+
     def __del__(self):
         self.pool.close()
         self.pool.join()
-
-    def set_default_header(self, header_name, header_value):
-        self.default_headers[header_name] = header_value
 
     def __call_api(self, resource_path, method,
                    path_params=None, query_params=None, header_params=None,
@@ -95,8 +89,6 @@ class ApiClient(object):
         # header parameters
         header_params = header_params or {}
         header_params.update(self.default_headers)
-        if self.cookie:
-            header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
             header_params = dict(self.parameters_to_tuples(header_params,
