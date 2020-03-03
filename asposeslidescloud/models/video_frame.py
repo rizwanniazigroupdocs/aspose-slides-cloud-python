@@ -100,7 +100,7 @@ class VideoFrame(GeometryShape):
 
     type_determiners = {
         'type': 'VideoFrame',
-        'shape_type': 'VideoFrame',
+        'shapeType': 'VideoFrame',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='VideoFrame', shape_type='VideoFrame', geometry_shape_type=None, full_screen_mode=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, rewind_video=None, volume=None, base64_data=None):  # noqa: E501

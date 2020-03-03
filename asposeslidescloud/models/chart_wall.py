@@ -75,8 +75,10 @@ class ChartWall(object):
             self.effect_format = effect_format
         if line_format is not None:
             self.line_format = line_format
-        self.thickness = thickness
-        self.picture_type = picture_type
+        if thickness is not None:
+            self.thickness = thickness
+        if picture_type is not None:
+            self.picture_type = picture_type
 
     @property
     def fill_format(self):

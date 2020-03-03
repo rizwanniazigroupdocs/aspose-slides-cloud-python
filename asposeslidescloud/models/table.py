@@ -104,7 +104,7 @@ class Table(ShapeBase):
 
     type_determiners = {
         'type': 'Table',
-        'shape_type': 'Table',
+        'shapeType': 'Table',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Table', shape_type='Table', style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
@@ -124,18 +124,26 @@ class Table(ShapeBase):
         self.type: 'Table'
         self.shape_type: 'Table'
 
-        self.style = style
+        if style is not None:
+            self.style = style
         if rows is not None:
             self.rows = rows
         if columns is not None:
             self.columns = columns
-        self.first_col = first_col
-        self.first_row = first_row
-        self.horizontal_banding = horizontal_banding
-        self.last_col = last_col
-        self.last_row = last_row
-        self.right_to_left = right_to_left
-        self.vertical_banding = vertical_banding
+        if first_col is not None:
+            self.first_col = first_col
+        if first_row is not None:
+            self.first_row = first_row
+        if horizontal_banding is not None:
+            self.horizontal_banding = horizontal_banding
+        if last_col is not None:
+            self.last_col = last_col
+        if last_row is not None:
+            self.last_row = last_row
+        if right_to_left is not None:
+            self.right_to_left = right_to_left
+        if vertical_banding is not None:
+            self.vertical_banding = vertical_banding
 
     @property
     def style(self):

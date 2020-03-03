@@ -106,7 +106,7 @@ class AudioFrame(GeometryShape):
 
     type_determiners = {
         'type': 'AudioFrame',
-        'shape_type': 'AudioFrame',
+        'shapeType': 'AudioFrame',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='AudioFrame', shape_type='AudioFrame', geometry_shape_type=None, audio_cd_end_track=None, audio_cd_end_track_time=None, audio_cd_start_track=None, audio_cd_start_track_time=None, embedded=None, hide_at_showing=None, play_loop_mode=None, play_mode=None, volume=None, base64_data=None):  # noqa: E501

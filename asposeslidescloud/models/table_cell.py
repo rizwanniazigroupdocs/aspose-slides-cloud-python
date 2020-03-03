@@ -104,14 +104,22 @@ class TableCell(object):
 
         if text is not None:
             self.text = text
-        self.row_span = row_span
-        self.col_span = col_span
-        self.margin_top = margin_top
-        self.margin_right = margin_right
-        self.margin_left = margin_left
-        self.margin_bottom = margin_bottom
-        self.text_anchor_type = text_anchor_type
-        self.text_vertical_type = text_vertical_type
+        if row_span is not None:
+            self.row_span = row_span
+        if col_span is not None:
+            self.col_span = col_span
+        if margin_top is not None:
+            self.margin_top = margin_top
+        if margin_right is not None:
+            self.margin_right = margin_right
+        if margin_left is not None:
+            self.margin_left = margin_left
+        if margin_bottom is not None:
+            self.margin_bottom = margin_bottom
+        if text_anchor_type is not None:
+            self.text_anchor_type = text_anchor_type
+        if text_vertical_type is not None:
+            self.text_vertical_type = text_vertical_type
         if fill_format is not None:
             self.fill_format = fill_format
         if border_top is not None:

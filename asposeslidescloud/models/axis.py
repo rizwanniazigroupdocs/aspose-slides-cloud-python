@@ -162,40 +162,72 @@ class Axis(object):
         self._effect_format = None
         self._line_format = None
 
-        self.is_visible = is_visible
-        self.has_title = has_title
-        self.position = position
-        self.display_unit = display_unit
-        self.base_unit_scale = base_unit_scale
-        self.is_automatic_major_unit = is_automatic_major_unit
-        self.major_unit = major_unit
-        self.major_unit_scale = major_unit_scale
-        self.major_tick_mark = major_tick_mark
-        self.is_automatic_minor_unit = is_automatic_minor_unit
-        self.minor_unit = minor_unit
-        self.minor_unit_scale = minor_unit_scale
-        self.minor_tick_mark = minor_tick_mark
-        self.is_automatic_max_value = is_automatic_max_value
-        self.max_value = max_value
-        self.is_automatic_min_value = is_automatic_min_value
-        self.min_value = min_value
-        self.is_logarithmic = is_logarithmic
-        self.log_base = log_base
-        self.category_axis_type = category_axis_type
-        self.axis_between_categories = axis_between_categories
-        self.label_offset = label_offset
-        self.is_plot_order_reversed = is_plot_order_reversed
-        self.is_number_format_linked_to_source = is_number_format_linked_to_source
+        if is_visible is not None:
+            self.is_visible = is_visible
+        if has_title is not None:
+            self.has_title = has_title
+        if position is not None:
+            self.position = position
+        if display_unit is not None:
+            self.display_unit = display_unit
+        if base_unit_scale is not None:
+            self.base_unit_scale = base_unit_scale
+        if is_automatic_major_unit is not None:
+            self.is_automatic_major_unit = is_automatic_major_unit
+        if major_unit is not None:
+            self.major_unit = major_unit
+        if major_unit_scale is not None:
+            self.major_unit_scale = major_unit_scale
+        if major_tick_mark is not None:
+            self.major_tick_mark = major_tick_mark
+        if is_automatic_minor_unit is not None:
+            self.is_automatic_minor_unit = is_automatic_minor_unit
+        if minor_unit is not None:
+            self.minor_unit = minor_unit
+        if minor_unit_scale is not None:
+            self.minor_unit_scale = minor_unit_scale
+        if minor_tick_mark is not None:
+            self.minor_tick_mark = minor_tick_mark
+        if is_automatic_max_value is not None:
+            self.is_automatic_max_value = is_automatic_max_value
+        if max_value is not None:
+            self.max_value = max_value
+        if is_automatic_min_value is not None:
+            self.is_automatic_min_value = is_automatic_min_value
+        if min_value is not None:
+            self.min_value = min_value
+        if is_logarithmic is not None:
+            self.is_logarithmic = is_logarithmic
+        if log_base is not None:
+            self.log_base = log_base
+        if category_axis_type is not None:
+            self.category_axis_type = category_axis_type
+        if axis_between_categories is not None:
+            self.axis_between_categories = axis_between_categories
+        if label_offset is not None:
+            self.label_offset = label_offset
+        if is_plot_order_reversed is not None:
+            self.is_plot_order_reversed = is_plot_order_reversed
+        if is_number_format_linked_to_source is not None:
+            self.is_number_format_linked_to_source = is_number_format_linked_to_source
         if number_format is not None:
             self.number_format = number_format
-        self.cross_type = cross_type
-        self.cross_at = cross_at
-        self.is_automatic_tick_marks_spacing = is_automatic_tick_marks_spacing
-        self.tick_marks_spacing = tick_marks_spacing
-        self.is_automatic_tick_label_spacing = is_automatic_tick_label_spacing
-        self.tick_label_spacing = tick_label_spacing
-        self.tick_label_position = tick_label_position
-        self.tick_label_rotation_angle = tick_label_rotation_angle
+        if cross_type is not None:
+            self.cross_type = cross_type
+        if cross_at is not None:
+            self.cross_at = cross_at
+        if is_automatic_tick_marks_spacing is not None:
+            self.is_automatic_tick_marks_spacing = is_automatic_tick_marks_spacing
+        if tick_marks_spacing is not None:
+            self.tick_marks_spacing = tick_marks_spacing
+        if is_automatic_tick_label_spacing is not None:
+            self.is_automatic_tick_label_spacing = is_automatic_tick_label_spacing
+        if tick_label_spacing is not None:
+            self.tick_label_spacing = tick_label_spacing
+        if tick_label_position is not None:
+            self.tick_label_position = tick_label_position
+        if tick_label_rotation_angle is not None:
+            self.tick_label_rotation_angle = tick_label_rotation_angle
         if fill_format is not None:
             self.fill_format = fill_format
         if effect_format is not None:

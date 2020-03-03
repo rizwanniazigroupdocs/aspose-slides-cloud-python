@@ -105,15 +105,20 @@ class Series(object):
         self._effect_format = None
         self._line_format = None
 
-        self.type = type
+        if type is not None:
+            self.type = type
         if name is not None:
             self.name = name
-        self.is_color_varied = is_color_varied
+        if is_color_varied is not None:
+            self.is_color_varied = is_color_varied
         if inverted_solid_fill_color is not None:
             self.inverted_solid_fill_color = inverted_solid_fill_color
-        self.smooth = smooth
-        self.plot_on_second_axis = plot_on_second_axis
-        self.order = order
+        if smooth is not None:
+            self.smooth = smooth
+        if plot_on_second_axis is not None:
+            self.plot_on_second_axis = plot_on_second_axis
+        if order is not None:
+            self.order = order
         if number_format_of_y_values is not None:
             self.number_format_of_y_values = number_format_of_y_values
         if number_format_of_x_values is not None:
@@ -122,8 +127,10 @@ class Series(object):
             self.number_format_of_values = number_format_of_values
         if number_format_of_bubble_sizes is not None:
             self.number_format_of_bubble_sizes = number_format_of_bubble_sizes
-        self.invert_if_negative = invert_if_negative
-        self.explosion = explosion
+        if invert_if_negative is not None:
+            self.invert_if_negative = invert_if_negative
+        if explosion is not None:
+            self.explosion = explosion
         if marker is not None:
             self.marker = marker
         if fill_format is not None:

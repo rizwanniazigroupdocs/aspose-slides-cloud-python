@@ -106,7 +106,7 @@ class Chart(ShapeBase):
 
     type_determiners = {
         'type': 'Chart',
-        'shape_type': 'Chart',
+        'shapeType': 'Chart',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', shape_type='Chart', chart_type=None, show_data_labels_over_maximum=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501

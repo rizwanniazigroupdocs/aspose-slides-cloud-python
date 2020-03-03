@@ -81,12 +81,18 @@ class Legend(object):
         self._effect_format = None
         self._line_format = None
 
-        self.position = position
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.overlay = overlay
+        if position is not None:
+            self.position = position
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if overlay is not None:
+            self.overlay = overlay
         if fill_format is not None:
             self.fill_format = fill_format
         if effect_format is not None:

@@ -69,8 +69,10 @@ class SeriesMarker(object):
         self._effect_format = None
         self._line_format = None
 
-        self.size = size
-        self.symbol = symbol
+        if size is not None:
+            self.size = size
+        if symbol is not None:
+            self.symbol = symbol
         if fill_format is not None:
             self.fill_format = fill_format
         if effect_format is not None:

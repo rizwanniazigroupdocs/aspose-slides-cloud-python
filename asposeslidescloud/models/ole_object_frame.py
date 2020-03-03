@@ -88,7 +88,7 @@ class OleObjectFrame(ShapeBase):
 
     type_determiners = {
         'type': 'OleObjectFrame',
-        'shape_type': 'OleObjectFrame',
+        'shapeType': 'OleObjectFrame',
     }
 
     def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', shape_type='OleObjectFrame', is_object_icon=None, substitute_picture_title=None):  # noqa: E501

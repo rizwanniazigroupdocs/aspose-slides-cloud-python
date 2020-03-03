@@ -87,11 +87,16 @@ class LineFormat(object):
         self._miter_limit = None
         self._width = None
 
-        self.alignment = alignment
-        self.cap_style = cap_style
-        self.dash_style = dash_style
-        self.join_style = join_style
-        self.style = style
+        if alignment is not None:
+            self.alignment = alignment
+        if cap_style is not None:
+            self.cap_style = cap_style
+        if dash_style is not None:
+            self.dash_style = dash_style
+        if join_style is not None:
+            self.join_style = join_style
+        if style is not None:
+            self.style = style
         if begin_arrow_head is not None:
             self.begin_arrow_head = begin_arrow_head
         if end_arrow_head is not None:
@@ -100,8 +105,10 @@ class LineFormat(object):
             self.custom_dash_pattern = custom_dash_pattern
         if fill_format is not None:
             self.fill_format = fill_format
-        self.miter_limit = miter_limit
-        self.width = width
+        if miter_limit is not None:
+            self.miter_limit = miter_limit
+        if width is not None:
+            self.width = width
 
     @property
     def alignment(self):

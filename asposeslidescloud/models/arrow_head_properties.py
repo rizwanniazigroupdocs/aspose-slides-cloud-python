@@ -63,9 +63,12 @@ class ArrowHeadProperties(object):
         self._style = None
         self._width = None
 
-        self.length = length
-        self.style = style
-        self.width = width
+        if length is not None:
+            self.length = length
+        if style is not None:
+            self.style = style
+        if width is not None:
+            self.width = width
 
     @property
     def length(self):
