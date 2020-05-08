@@ -41,8 +41,10 @@ from asposeslidescloud.models.arrow_head_properties import ArrowHeadProperties
 from asposeslidescloud.models.axes import Axes
 from asposeslidescloud.models.axis import Axis
 from asposeslidescloud.models.blur_effect import BlurEffect
+from asposeslidescloud.models.chart_category import ChartCategory
 from asposeslidescloud.models.chart_title import ChartTitle
 from asposeslidescloud.models.chart_wall import ChartWall
+from asposeslidescloud.models.common_slide_view_properties import CommonSlideViewProperties
 from asposeslidescloud.models.custom_dash_pattern import CustomDashPattern
 from asposeslidescloud.models.disc_usage import DiscUsage
 from asposeslidescloud.models.effect import Effect
@@ -68,6 +70,7 @@ from asposeslidescloud.models.interactive_sequence import InteractiveSequence
 from asposeslidescloud.models.legend import Legend
 from asposeslidescloud.models.line_format import LineFormat
 from asposeslidescloud.models.merging_source import MergingSource
+from asposeslidescloud.models.normal_view_restored_properties import NormalViewRestoredProperties
 from asposeslidescloud.models.notes_slide_export_format import NotesSlideExportFormat
 from asposeslidescloud.models.object_exist import ObjectExist
 from asposeslidescloud.models.one_value_chart_data_point import OneValueChartDataPoint
@@ -168,7 +171,9 @@ from asposeslidescloud.models.theme import Theme
 from asposeslidescloud.models.tiff_export_options import TiffExportOptions
 from asposeslidescloud.models.update_background import UpdateBackground
 from asposeslidescloud.models.update_shape import UpdateShape
+from asposeslidescloud.models.view_properties import ViewProperties
 from asposeslidescloud.models.xps_export_options import XpsExportOptions
+from asposeslidescloud.models.box_and_whisker_series import BoxAndWhiskerSeries
 from asposeslidescloud.models.chart import Chart
 from asposeslidescloud.models.document_replace_result import DocumentReplaceResult
 from asposeslidescloud.models.geometry_shape import GeometryShape
@@ -179,6 +184,7 @@ from asposeslidescloud.models.slide_replace_result import SlideReplaceResult
 from asposeslidescloud.models.smart_art import SmartArt
 from asposeslidescloud.models.smart_art_shape import SmartArtShape
 from asposeslidescloud.models.table import Table
+from asposeslidescloud.models.waterfall_series import WaterfallSeries
 from asposeslidescloud.models.audio_frame import AudioFrame
 from asposeslidescloud.models.connector import Connector
 from asposeslidescloud.models.picture_frame import PictureFrame
@@ -258,6 +264,7 @@ from asposeslidescloud.models.requests.slides_api_requests import GetSlidesTheme
 from asposeslidescloud.models.requests.slides_api_requests import GetSlidesThemeColorSchemeRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlidesThemeFontSchemeRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlidesThemeFormatSchemeRequest
+from asposeslidescloud.models.requests.slides_api_requests import GetSlidesViewPropertiesRequest
 from asposeslidescloud.models.requests.slides_api_requests import MoveFileRequest
 from asposeslidescloud.models.requests.slides_api_requests import MoveFolderRequest
 from asposeslidescloud.models.requests.slides_api_requests import ObjectExistsRequest
@@ -311,6 +318,7 @@ from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSlide
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSlideBackgroundRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSlideBackgroundColorRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSlideSizeRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutSlidesViewPropertiesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutUpdateNotesSlideRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutUpdateNotesSlideShapeRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutUpdateNotesSlideShapeParagraphRequest

@@ -8145,6 +8145,89 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('get_slides_theme_format_scheme', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetSlidesThemeFormatSchemeRequest(name, slide_index, password, folder, storage)
 
+    def test_get_slides_view_properties(self):
+        """Test case for get_slides_view_properties
+        """
+        request = self.__prepare_get_slides_view_properties_request()
+        self.initialize('get_slides_view_properties', None, None)
+        response = self.api.get_slides_view_properties(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slides_view_properties_invalid_name(self):
+        """Test case for get_slides_view_properties with invalid name
+        """
+        request = self.__prepare_get_slides_view_properties_request()
+        request.name = self.get_invalid_test_value('get_slides_view_properties', 'name', request.name, 'str')
+        self.initialize('get_slides_view_properties', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slides_view_properties', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slides_view_properties', 'name')
+
+    def test_get_slides_view_properties_invalid_password(self):
+        """Test case for get_slides_view_properties with invalid password
+        """
+        request = self.__prepare_get_slides_view_properties_request()
+        request.password = self.get_invalid_test_value('get_slides_view_properties', 'password', request.password, 'str')
+        self.initialize('get_slides_view_properties', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slides_view_properties', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slides_view_properties', 'password')
+
+    def test_get_slides_view_properties_invalid_folder(self):
+        """Test case for get_slides_view_properties with invalid folder
+        """
+        request = self.__prepare_get_slides_view_properties_request()
+        request.folder = self.get_invalid_test_value('get_slides_view_properties', 'folder', request.folder, 'str')
+        self.initialize('get_slides_view_properties', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slides_view_properties', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slides_view_properties', 'folder')
+
+    def test_get_slides_view_properties_invalid_storage(self):
+        """Test case for get_slides_view_properties with invalid storage
+        """
+        request = self.__prepare_get_slides_view_properties_request()
+        request.storage = self.get_invalid_test_value('get_slides_view_properties', 'storage', request.storage, 'str')
+        self.initialize('get_slides_view_properties', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slides_view_properties', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slides_view_properties', 'storage')
+
+    def __prepare_get_slides_view_properties_request(self):
+        name = self.get_test_value('get_slides_view_properties', 'name', 'str')
+        password = self.get_test_value('get_slides_view_properties', 'password', 'str')
+        folder = self.get_test_value('get_slides_view_properties', 'folder', 'str')
+        storage = self.get_test_value('get_slides_view_properties', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlidesViewPropertiesRequest(name, password, folder, storage)
+
     def test_move_file(self):
         """Test case for move_file
         """
@@ -15897,6 +15980,107 @@ class TestSlidesApi(BaseTest):
         size_type = self.get_test_value('put_slides_slide_size', 'size_type', 'str')
         scale_type = self.get_test_value('put_slides_slide_size', 'scale_type', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutSlidesSlideSizeRequest(name, password, storage, folder, width, height, size_type, scale_type)
+
+    def test_put_slides_view_properties(self):
+        """Test case for put_slides_view_properties
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        self.initialize('put_slides_view_properties', None, None)
+        response = self.api.put_slides_view_properties(request)
+        self.assertIsNotNone(response)
+
+    def test_put_slides_view_properties_invalid_name(self):
+        """Test case for put_slides_view_properties with invalid name
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        request.name = self.get_invalid_test_value('put_slides_view_properties', 'name', request.name, 'str')
+        self.initialize('put_slides_view_properties', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_view_properties', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slides_view_properties', 'name')
+
+    def test_put_slides_view_properties_invalid_dto(self):
+        """Test case for put_slides_view_properties with invalid dto
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        request.dto = self.get_invalid_test_value('put_slides_view_properties', 'dto', request.dto, 'ViewProperties')
+        self.initialize('put_slides_view_properties', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_view_properties', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slides_view_properties', 'dto')
+
+    def test_put_slides_view_properties_invalid_password(self):
+        """Test case for put_slides_view_properties with invalid password
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        request.password = self.get_invalid_test_value('put_slides_view_properties', 'password', request.password, 'str')
+        self.initialize('put_slides_view_properties', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_view_properties', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slides_view_properties', 'password')
+
+    def test_put_slides_view_properties_invalid_folder(self):
+        """Test case for put_slides_view_properties with invalid folder
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        request.folder = self.get_invalid_test_value('put_slides_view_properties', 'folder', request.folder, 'str')
+        self.initialize('put_slides_view_properties', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_view_properties', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slides_view_properties', 'folder')
+
+    def test_put_slides_view_properties_invalid_storage(self):
+        """Test case for put_slides_view_properties with invalid storage
+        """
+        request = self.__prepare_put_slides_view_properties_request()
+        request.storage = self.get_invalid_test_value('put_slides_view_properties', 'storage', request.storage, 'str')
+        self.initialize('put_slides_view_properties', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_slides_view_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_view_properties', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slides_view_properties', 'storage')
+
+    def __prepare_put_slides_view_properties_request(self):
+        name = self.get_test_value('put_slides_view_properties', 'name', 'str')
+        dto = self.get_test_value('put_slides_view_properties', 'dto', 'ViewProperties')
+        password = self.get_test_value('put_slides_view_properties', 'password', 'str')
+        folder = self.get_test_value('put_slides_view_properties', 'folder', 'str')
+        storage = self.get_test_value('put_slides_view_properties', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlidesViewPropertiesRequest(name, dto, password, folder, storage)
 
     def test_put_update_notes_slide(self):
         """Test case for put_update_notes_slide

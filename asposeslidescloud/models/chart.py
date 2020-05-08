@@ -63,7 +63,7 @@ class Chart(ShapeBase):
         'chart_type': 'str',
         'show_data_labels_over_maximum': 'bool',
         'series': 'list[Series]',
-        'categories': 'list[str]',
+        'categories': 'list[ChartCategory]',
         'title': 'ChartTitle',
         'back_wall': 'ChartWall',
         'side_wall': 'ChartWall',
@@ -170,7 +170,7 @@ class Chart(ShapeBase):
         :type: str
         """
         if chart_type is not None:
-            allowed_values = ["ClusteredColumn", "StackedColumn", "PercentsStackedColumn", "ClusteredColumn3D", "StackedColumn3D", "PercentsStackedColumn3D", "Column3D", "ClusteredCylinder", "StackedCylinder", "PercentsStackedCylinder", "Cylinder3D", "ClusteredCone", "StackedCone", "PercentsStackedCone", "Cone3D", "ClusteredPyramid", "StackedPyramid", "PercentsStackedPyramid", "Pyramid3D", "Line", "StackedLine", "PercentsStackedLine", "LineWithMarkers", "StackedLineWithMarkers", "PercentsStackedLineWithMarkers", "Line3D", "Pie", "Pie3D", "PieOfPie", "ExplodedPie", "ExplodedPie3D", "BarOfPie", "PercentsStackedBar", "ClusteredBar3D", "ClusteredBar", "StackedBar", "StackedBar3D", "PercentsStackedBar3D", "ClusteredHorizontalCylinder", "StackedHorizontalCylinder", "PercentsStackedHorizontalCylinder", "ClusteredHorizontalCone", "StackedHorizontalCone", "PercentsStackedHorizontalCone", "ClusteredHorizontalPyramid", "StackedHorizontalPyramid", "PercentsStackedHorizontalPyramid", "Area", "StackedArea", "PercentsStackedArea", "Area3D", "StackedArea3D", "PercentsStackedArea3D", "ScatterWithMarkers", "ScatterWithSmoothLinesAndMarkers", "ScatterWithSmoothLines", "ScatterWithStraightLinesAndMarkers", "ScatterWithStraightLines", "HighLowClose", "OpenHighLowClose", "VolumeHighLowClose", "VolumeOpenHighLowClose", "Surface3D", "WireframeSurface3D", "Contour", "WireframeContour", "Doughnut", "ExplodedDoughnut", "Bubble", "BubbleWith3D", "Radar", "RadarWithMarkers", "FilledRadar", "SeriesOfMixedTypes"]  # noqa: E501
+            allowed_values = ["ClusteredColumn", "StackedColumn", "PercentsStackedColumn", "ClusteredColumn3D", "StackedColumn3D", "PercentsStackedColumn3D", "Column3D", "ClusteredCylinder", "StackedCylinder", "PercentsStackedCylinder", "Cylinder3D", "ClusteredCone", "StackedCone", "PercentsStackedCone", "Cone3D", "ClusteredPyramid", "StackedPyramid", "PercentsStackedPyramid", "Pyramid3D", "Line", "StackedLine", "PercentsStackedLine", "LineWithMarkers", "StackedLineWithMarkers", "PercentsStackedLineWithMarkers", "Line3D", "Pie", "Pie3D", "PieOfPie", "ExplodedPie", "ExplodedPie3D", "BarOfPie", "PercentsStackedBar", "ClusteredBar3D", "ClusteredBar", "StackedBar", "StackedBar3D", "PercentsStackedBar3D", "ClusteredHorizontalCylinder", "StackedHorizontalCylinder", "PercentsStackedHorizontalCylinder", "ClusteredHorizontalCone", "StackedHorizontalCone", "PercentsStackedHorizontalCone", "ClusteredHorizontalPyramid", "StackedHorizontalPyramid", "PercentsStackedHorizontalPyramid", "Area", "StackedArea", "PercentsStackedArea", "Area3D", "StackedArea3D", "PercentsStackedArea3D", "ScatterWithMarkers", "ScatterWithSmoothLinesAndMarkers", "ScatterWithSmoothLines", "ScatterWithStraightLinesAndMarkers", "ScatterWithStraightLines", "HighLowClose", "OpenHighLowClose", "VolumeHighLowClose", "VolumeOpenHighLowClose", "Surface3D", "WireframeSurface3D", "Contour", "WireframeContour", "Doughnut", "ExplodedDoughnut", "Bubble", "BubbleWith3D", "Radar", "RadarWithMarkers", "FilledRadar", "SeriesOfMixedTypes", "Treemap", "Sunburst", "Histogram", "ParetoLine", "BoxAndWhisker", "Waterfall", "Funnel"]  # noqa: E501
             if chart_type.isdigit():
                 int_chart_type = int(chart_type)
                 if int_chart_type < 0 or int_chart_type >= len(allowed_values):
@@ -238,7 +238,7 @@ class Chart(ShapeBase):
         Gets or sets the categories for chart data  # noqa: E501
 
         :return: The categories of this Chart.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[ChartCategory]
         """
         return self._categories
 
@@ -249,7 +249,7 @@ class Chart(ShapeBase):
         Gets or sets the categories for chart data  # noqa: E501
 
         :param categories: The categories of this Chart.  # noqa: E501
-        :type: list[str]
+        :type: list[ChartCategory]
         """
         self._categories = categories
 

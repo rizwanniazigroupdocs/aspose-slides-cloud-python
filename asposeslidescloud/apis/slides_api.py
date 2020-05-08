@@ -7854,6 +7854,109 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_slides_view_properties(self, request, **kwargs):  # noqa: E501
+        """Read presentation document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slides_view_properties(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slides_view_propertiesRequest request: get_slides_view_properties request object
+        :return: ViewProperties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slides_view_properties_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slides_view_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slides_view_properties_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read presentation document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slides_view_properties_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slides_view_propertiesRequest request: get_slides_view_properties request object
+        :return: ViewProperties
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slides_view_properties" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slides_view_properties`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/viewProperties', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='ViewProperties',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def move_file(self, request, **kwargs):  # noqa: E501
         """Move file  # noqa: E501
 
@@ -13832,6 +13935,111 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='Document',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_slides_view_properties(self, request, **kwargs):  # noqa: E501
+        """Update presentation document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slides_view_properties(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slides_view_propertiesRequest request: put_slides_view_properties request object
+        :return: DocumentProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_slides_view_properties_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_slides_view_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_slides_view_properties_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Update presentation document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slides_view_properties_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slides_view_propertiesRequest request: put_slides_view_properties request object
+        :return: DocumentProperty
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_slides_view_properties" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_slides_view_properties`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/viewProperties', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='DocumentProperty',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),

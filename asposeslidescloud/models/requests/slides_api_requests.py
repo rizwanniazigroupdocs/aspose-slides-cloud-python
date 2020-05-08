@@ -717,6 +717,14 @@ class GetSlidesThemeFormatSchemeRequest(object):
         self.folder = folder
         self.storage = storage
 
+class GetSlidesViewPropertiesRequest(object):
+
+    def __init__(self, name, password = None, folder = None, storage = None):
+        self.name = name
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class MoveFileRequest(object):
 
     def __init__(self, src_path, dest_path, src_storage_name = None, dest_storage_name = None, version_id = None):
@@ -1326,6 +1334,15 @@ class PutSlidesSlideSizeRequest(object):
         self.height = height
         self.size_type = size_type
         self.scale_type = scale_type
+
+class PutSlidesViewPropertiesRequest(object):
+
+    def __init__(self, name, dto = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.dto = dto
+        self.password = password
+        self.folder = folder
+        self.storage = storage
 
 class PutUpdateNotesSlideRequest(object):
 

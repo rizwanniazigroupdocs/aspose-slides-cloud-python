@@ -30,9 +30,8 @@ import re  # noqa: F401
 
 import six
 
-from asposeslidescloud.models.document import Document
 
-class DocumentReplaceResult(Document):
+class NormalViewRestoredProperties(object):
 
 
     """
@@ -43,61 +42,72 @@ class DocumentReplaceResult(Document):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'self_uri': 'ResourceUri',
-        'alternate_links': 'list[ResourceUri]',
-        'document_properties': 'ResourceUriElement',
-        'view_properties': 'ResourceUriElement',
-        'slides': 'ResourceUriElement',
-        'images': 'ResourceUriElement',
-        'layout_slides': 'ResourceUriElement',
-        'master_slides': 'ResourceUriElement',
-        'matches': 'int'
+        'auto_adjust': 'bool',
+        'dimension_size': 'float'
     }
 
     attribute_map = {
-        'self_uri': 'selfUri',
-        'alternate_links': 'alternateLinks',
-        'document_properties': 'documentProperties',
-        'view_properties': 'viewProperties',
-        'slides': 'slides',
-        'images': 'images',
-        'layout_slides': 'layoutSlides',
-        'master_slides': 'masterSlides',
-        'matches': 'matches'
+        'auto_adjust': 'autoAdjust',
+        'dimension_size': 'dimensionSize'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, document_properties=None, view_properties=None, slides=None, images=None, layout_slides=None, master_slides=None, matches=None):  # noqa: E501
-        """DocumentReplaceResult - a model defined in Swagger"""  # noqa: E501
-        super(DocumentReplaceResult, self).__init__(self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides)
+    def __init__(self, auto_adjust=None, dimension_size=None):  # noqa: E501
+        """NormalViewRestoredProperties - a model defined in Swagger"""  # noqa: E501
 
-        self._matches = None
+        self._auto_adjust = None
+        self._dimension_size = None
 
-        self.matches = matches
+        if auto_adjust is not None:
+            self.auto_adjust = auto_adjust
+        if dimension_size is not None:
+            self.dimension_size = dimension_size
 
     @property
-    def matches(self):
-        """Gets the matches of this DocumentReplaceResult.  # noqa: E501
+    def auto_adjust(self):
+        """Gets the auto_adjust of this NormalViewRestoredProperties.  # noqa: E501
 
-        Gets or sets the number of matches   # noqa: E501
+        True if the size of the side content region should compensate for the new size when resizing the window containing the view within the application.  # noqa: E501
 
-        :return: The matches of this DocumentReplaceResult.  # noqa: E501
-        :rtype: int
+        :return: The auto_adjust of this NormalViewRestoredProperties.  # noqa: E501
+        :rtype: bool
         """
-        return self._matches
+        return self._auto_adjust
 
-    @matches.setter
-    def matches(self, matches):
-        """Sets the matches of this DocumentReplaceResult.
+    @auto_adjust.setter
+    def auto_adjust(self, auto_adjust):
+        """Sets the auto_adjust of this NormalViewRestoredProperties.
 
-        Gets or sets the number of matches   # noqa: E501
+        True if the size of the side content region should compensate for the new size when resizing the window containing the view within the application.  # noqa: E501
 
-        :param matches: The matches of this DocumentReplaceResult.  # noqa: E501
-        :type: int
+        :param auto_adjust: The auto_adjust of this NormalViewRestoredProperties.  # noqa: E501
+        :type: bool
         """
-        self._matches = matches
+        self._auto_adjust = auto_adjust
+
+    @property
+    def dimension_size(self):
+        """Gets the dimension_size of this NormalViewRestoredProperties.  # noqa: E501
+
+        The size of the slide region.  # noqa: E501
+
+        :return: The dimension_size of this NormalViewRestoredProperties.  # noqa: E501
+        :rtype: float
+        """
+        return self._dimension_size
+
+    @dimension_size.setter
+    def dimension_size(self, dimension_size):
+        """Sets the dimension_size of this NormalViewRestoredProperties.
+
+        The size of the slide region.  # noqa: E501
+
+        :param dimension_size: The dimension_size of this NormalViewRestoredProperties.  # noqa: E501
+        :type: float
+        """
+        self._dimension_size = dimension_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -133,7 +143,7 @@ class DocumentReplaceResult(Document):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DocumentReplaceResult):
+        if not isinstance(other, NormalViewRestoredProperties):
             return False
 
         return self.__dict__ == other.__dict__

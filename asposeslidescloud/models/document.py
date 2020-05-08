@@ -46,6 +46,7 @@ class Document(ResourceBase):
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
         'document_properties': 'ResourceUriElement',
+        'view_properties': 'ResourceUriElement',
         'slides': 'ResourceUriElement',
         'images': 'ResourceUriElement',
         'layout_slides': 'ResourceUriElement',
@@ -56,6 +57,7 @@ class Document(ResourceBase):
         'self_uri': 'selfUri',
         'alternate_links': 'alternateLinks',
         'document_properties': 'documentProperties',
+        'view_properties': 'viewProperties',
         'slides': 'slides',
         'images': 'images',
         'layout_slides': 'layoutSlides',
@@ -65,11 +67,12 @@ class Document(ResourceBase):
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, document_properties=None, slides=None, images=None, layout_slides=None, master_slides=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, document_properties=None, view_properties=None, slides=None, images=None, layout_slides=None, master_slides=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
         super(Document, self).__init__(self_uri, alternate_links)
 
         self._document_properties = None
+        self._view_properties = None
         self._slides = None
         self._images = None
         self._layout_slides = None
@@ -77,6 +80,8 @@ class Document(ResourceBase):
 
         if document_properties is not None:
             self.document_properties = document_properties
+        if view_properties is not None:
+            self.view_properties = view_properties
         if slides is not None:
             self.slides = slides
         if images is not None:
@@ -107,6 +112,28 @@ class Document(ResourceBase):
         :type: ResourceUriElement
         """
         self._document_properties = document_properties
+
+    @property
+    def view_properties(self):
+        """Gets the view_properties of this Document.  # noqa: E501
+
+        Link to Document properties.  # noqa: E501
+
+        :return: The view_properties of this Document.  # noqa: E501
+        :rtype: ResourceUriElement
+        """
+        return self._view_properties
+
+    @view_properties.setter
+    def view_properties(self, view_properties):
+        """Sets the view_properties of this Document.
+
+        Link to Document properties.  # noqa: E501
+
+        :param view_properties: The view_properties of this Document.  # noqa: E501
+        :type: ResourceUriElement
+        """
+        self._view_properties = view_properties
 
     @property
     def slides(self):

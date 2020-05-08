@@ -30,11 +30,11 @@ from __future__ import absolute_import
 import json
 import os
 import unittest
-
 import asposeslidescloud
 from asposeslidescloud.api_client import ApiClient
 from asposeslidescloud.apis.slides_api import SlidesApi
 from asposeslidescloud.configuration import Configuration
+from asposeslidescloud.rest import ApiException
 
 class BaseTest(unittest.TestCase):
 
@@ -74,10 +74,13 @@ class BaseTest(unittest.TestCase):
     def initialize(self, function_name, invalid_parameter_name, invalid_parameter_value):
         if not BaseTest.is_initialized:
             download_request = asposeslidescloud.models.requests.slides_api_requests.DownloadFileRequest("TempTests/version.txt", None)
-            version_path = BaseTest.slides_api.download_file(download_request)
             version = ''
-            with open(version_path) as version_file:
-                version = version_file.read()
+            try:
+                version_path = BaseTest.slides_api.download_file(download_request)
+                with open(version_path) as version_file:
+                    version = version_file.read()
+            except ApiException:
+                pass #just try to reupload the files if smth went wrong
             if version != BaseTest.expected_test_data_version:
                 for file_name in os.listdir('TestData'):
                     with open(os.path.join('TestData', file_name), 'rb') as f:

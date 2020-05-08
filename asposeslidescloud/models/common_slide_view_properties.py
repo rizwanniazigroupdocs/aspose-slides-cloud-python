@@ -30,9 +30,8 @@ import re  # noqa: F401
 
 import six
 
-from asposeslidescloud.models.document import Document
 
-class DocumentReplaceResult(Document):
+class CommonSlideViewProperties(object):
 
 
     """
@@ -43,61 +42,72 @@ class DocumentReplaceResult(Document):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'self_uri': 'ResourceUri',
-        'alternate_links': 'list[ResourceUri]',
-        'document_properties': 'ResourceUriElement',
-        'view_properties': 'ResourceUriElement',
-        'slides': 'ResourceUriElement',
-        'images': 'ResourceUriElement',
-        'layout_slides': 'ResourceUriElement',
-        'master_slides': 'ResourceUriElement',
-        'matches': 'int'
+        'scale': 'int',
+        'variable_scale': 'bool'
     }
 
     attribute_map = {
-        'self_uri': 'selfUri',
-        'alternate_links': 'alternateLinks',
-        'document_properties': 'documentProperties',
-        'view_properties': 'viewProperties',
-        'slides': 'slides',
-        'images': 'images',
-        'layout_slides': 'layoutSlides',
-        'master_slides': 'masterSlides',
-        'matches': 'matches'
+        'scale': 'scale',
+        'variable_scale': 'variableScale'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, document_properties=None, view_properties=None, slides=None, images=None, layout_slides=None, master_slides=None, matches=None):  # noqa: E501
-        """DocumentReplaceResult - a model defined in Swagger"""  # noqa: E501
-        super(DocumentReplaceResult, self).__init__(self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides)
+    def __init__(self, scale=None, variable_scale=None):  # noqa: E501
+        """CommonSlideViewProperties - a model defined in Swagger"""  # noqa: E501
 
-        self._matches = None
+        self._scale = None
+        self._variable_scale = None
 
-        self.matches = matches
+        if scale is not None:
+            self.scale = scale
+        if variable_scale is not None:
+            self.variable_scale = variable_scale
 
     @property
-    def matches(self):
-        """Gets the matches of this DocumentReplaceResult.  # noqa: E501
+    def scale(self):
+        """Gets the scale of this CommonSlideViewProperties.  # noqa: E501
 
-        Gets or sets the number of matches   # noqa: E501
+        The view scaling ratio (percentage).  # noqa: E501
 
-        :return: The matches of this DocumentReplaceResult.  # noqa: E501
+        :return: The scale of this CommonSlideViewProperties.  # noqa: E501
         :rtype: int
         """
-        return self._matches
+        return self._scale
 
-    @matches.setter
-    def matches(self, matches):
-        """Sets the matches of this DocumentReplaceResult.
+    @scale.setter
+    def scale(self, scale):
+        """Sets the scale of this CommonSlideViewProperties.
 
-        Gets or sets the number of matches   # noqa: E501
+        The view scaling ratio (percentage).  # noqa: E501
 
-        :param matches: The matches of this DocumentReplaceResult.  # noqa: E501
+        :param scale: The scale of this CommonSlideViewProperties.  # noqa: E501
         :type: int
         """
-        self._matches = matches
+        self._scale = scale
+
+    @property
+    def variable_scale(self):
+        """Gets the variable_scale of this CommonSlideViewProperties.  # noqa: E501
+
+        True if the view content should automatically scale to best fit the current window size.  # noqa: E501
+
+        :return: The variable_scale of this CommonSlideViewProperties.  # noqa: E501
+        :rtype: bool
+        """
+        return self._variable_scale
+
+    @variable_scale.setter
+    def variable_scale(self, variable_scale):
+        """Sets the variable_scale of this CommonSlideViewProperties.
+
+        True if the view content should automatically scale to best fit the current window size.  # noqa: E501
+
+        :param variable_scale: The variable_scale of this CommonSlideViewProperties.  # noqa: E501
+        :type: bool
+        """
+        self._variable_scale = variable_scale
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -133,7 +143,7 @@ class DocumentReplaceResult(Document):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DocumentReplaceResult):
+        if not isinstance(other, CommonSlideViewProperties):
             return False
 
         return self.__dict__ == other.__dict__
