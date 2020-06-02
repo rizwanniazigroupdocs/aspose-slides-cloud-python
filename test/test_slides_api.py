@@ -9461,6 +9461,209 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_copy_master_slide_from_source_presentation', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostCopyMasterSlideFromSourcePresentationRequest(name, clone_from, clone_from_position, clone_from_password, clone_from_storage, apply_to_all, password, folder, storage)
 
+    def test_post_get_notes_slide(self):
+        """Test case for post_get_notes_slide
+        """
+        request = self.__prepare_post_get_notes_slide_request()
+        self.initialize('post_get_notes_slide', None, None)
+        response = self.api.post_get_notes_slide(request)
+        self.assertIsNotNone(response)
+
+    def test_post_get_notes_slide_invalid_slide_index(self):
+        """Test case for post_get_notes_slide with invalid slide_index
+        """
+        request = self.__prepare_post_get_notes_slide_request()
+        request.slide_index = self.get_invalid_test_value('post_get_notes_slide', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_get_notes_slide', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_get_notes_slide(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide', 'slide_index')
+
+    def test_post_get_notes_slide_invalid_document(self):
+        """Test case for post_get_notes_slide with invalid document
+        """
+        request = self.__prepare_post_get_notes_slide_request()
+        request.document = self.get_invalid_test_value('post_get_notes_slide', 'document', request.document, 'file')
+        self.initialize('post_get_notes_slide', 'document', request.document)
+        ok = False
+        try:
+            self.api.post_get_notes_slide(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide', 'document', request.document)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide', 'document')
+
+    def test_post_get_notes_slide_invalid_password(self):
+        """Test case for post_get_notes_slide with invalid password
+        """
+        request = self.__prepare_post_get_notes_slide_request()
+        request.password = self.get_invalid_test_value('post_get_notes_slide', 'password', request.password, 'str')
+        self.initialize('post_get_notes_slide', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_get_notes_slide(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide', 'password')
+
+    def __prepare_post_get_notes_slide_request(self):
+        slide_index = self.get_test_value('post_get_notes_slide', 'slide_index', 'int')
+        document = self.get_test_value('post_get_notes_slide', 'document', 'file')
+        password = self.get_test_value('post_get_notes_slide', 'password', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideRequest(slide_index, document, password)
+
+    def test_post_get_notes_slide_with_format(self):
+        """Test case for post_get_notes_slide_with_format
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        self.initialize('post_get_notes_slide_with_format', None, None)
+        response = self.api.post_get_notes_slide_with_format(request)
+        self.assertTrue(isinstance(response, str))
+        self.assertTrue(len(response) > 0)
+
+    def test_post_get_notes_slide_with_format_invalid_slide_index(self):
+        """Test case for post_get_notes_slide_with_format with invalid slide_index
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.slide_index = self.get_invalid_test_value('post_get_notes_slide_with_format', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_get_notes_slide_with_format', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'slide_index')
+
+    def test_post_get_notes_slide_with_format_invalid_format(self):
+        """Test case for post_get_notes_slide_with_format with invalid format
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.format = self.get_invalid_test_value('post_get_notes_slide_with_format', 'format', request.format, 'str')
+        self.initialize('post_get_notes_slide_with_format', 'format', request.format)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'format', request.format)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'format')
+
+    def test_post_get_notes_slide_with_format_invalid_document(self):
+        """Test case for post_get_notes_slide_with_format with invalid document
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.document = self.get_invalid_test_value('post_get_notes_slide_with_format', 'document', request.document, 'file')
+        self.initialize('post_get_notes_slide_with_format', 'document', request.document)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'document', request.document)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'document')
+
+    def test_post_get_notes_slide_with_format_invalid_width(self):
+        """Test case for post_get_notes_slide_with_format with invalid width
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.width = self.get_invalid_test_value('post_get_notes_slide_with_format', 'width', request.width, 'int')
+        self.initialize('post_get_notes_slide_with_format', 'width', request.width)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'width', request.width)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'width')
+
+    def test_post_get_notes_slide_with_format_invalid_height(self):
+        """Test case for post_get_notes_slide_with_format with invalid height
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.height = self.get_invalid_test_value('post_get_notes_slide_with_format', 'height', request.height, 'int')
+        self.initialize('post_get_notes_slide_with_format', 'height', request.height)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'height', request.height)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'height')
+
+    def test_post_get_notes_slide_with_format_invalid_password(self):
+        """Test case for post_get_notes_slide_with_format with invalid password
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.password = self.get_invalid_test_value('post_get_notes_slide_with_format', 'password', request.password, 'str')
+        self.initialize('post_get_notes_slide_with_format', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'password')
+
+    def test_post_get_notes_slide_with_format_invalid_fonts_folder(self):
+        """Test case for post_get_notes_slide_with_format with invalid fonts_folder
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.fonts_folder = self.get_invalid_test_value('post_get_notes_slide_with_format', 'fonts_folder', request.fonts_folder, 'str')
+        self.initialize('post_get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'fonts_folder')
+
+    def __prepare_post_get_notes_slide_with_format_request(self):
+        slide_index = self.get_test_value('post_get_notes_slide_with_format', 'slide_index', 'int')
+        format = self.get_test_value('post_get_notes_slide_with_format', 'format', 'str')
+        document = self.get_test_value('post_get_notes_slide_with_format', 'document', 'file')
+        width = self.get_test_value('post_get_notes_slide_with_format', 'width', 'int')
+        height = self.get_test_value('post_get_notes_slide_with_format', 'height', 'int')
+        password = self.get_test_value('post_get_notes_slide_with_format', 'password', 'str')
+        fonts_folder = self.get_test_value('post_get_notes_slide_with_format', 'fonts_folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideWithFormatRequest(slide_index, format, document, width, height, password, fonts_folder)
+
     def test_post_notes_slide_add_new_paragraph(self):
         """Test case for post_notes_slide_add_new_paragraph
         """

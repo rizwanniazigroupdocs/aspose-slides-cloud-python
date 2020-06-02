@@ -8964,6 +8964,218 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_get_notes_slide(self, request, **kwargs):  # noqa: E501
+        """Read notes slide info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slideRequest request: post_get_notes_slide request object
+        :return: NotesSlide
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_get_notes_slide_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_get_notes_slide_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_get_notes_slide_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read notes slide info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slideRequest request: post_get_notes_slide request object
+        :return: NotesSlide
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_get_notes_slide" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.document:
+            body_params = request.document
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/octet-stream', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/slides/{slideIndex}/notesSlide', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='NotesSlide',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_get_notes_slide_with_format(self, request, **kwargs):  # noqa: E501
+        """Convert notes slide to the specified image format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide_with_format(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slide_with_formatRequest request: post_get_notes_slide_with_format request object
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_get_notes_slide_with_format_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_get_notes_slide_with_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_get_notes_slide_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Convert notes slide to the specified image format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide_with_format_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slide_with_formatRequest request: post_get_notes_slide_with_format request object
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_get_notes_slide_with_format" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide_with_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not request.format:
+            raise ValueError("Missing the required parameter `request.format` when calling `post_get_notes_slide_with_format`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['format'] = request.format  # noqa: E501
+
+        query_params = []
+        if request.width:
+            query_params.append(('width', request.width))  # noqa: E501
+        if request.height:
+            query_params.append(('height', request.height))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.fonts_folder:
+            query_params.append(('fontsFolder', request.fonts_folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.document:
+            body_params = request.document
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/octet-stream', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/slides/{slideIndex}/notesSlide/{format}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_notes_slide_add_new_paragraph(self, request, **kwargs):  # noqa: E501
         """Creates new paragraph.  # noqa: E501
 
@@ -13952,7 +14164,7 @@ class SlidesApi(ApiBase):
 
         :param is_async bool
         :param put_slides_view_propertiesRequest request: put_slides_view_properties request object
-        :return: DocumentProperty
+        :return: ViewProperties
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -13973,7 +14185,7 @@ class SlidesApi(ApiBase):
 
         :param is_async bool
         :param put_slides_view_propertiesRequest request: put_slides_view_properties request object
-        :return: DocumentProperty
+        :return: ViewProperties
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -14039,7 +14251,7 @@ class SlidesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=files,
-            response_type='DocumentProperty',  # noqa: E501
+            response_type='ViewProperties',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),

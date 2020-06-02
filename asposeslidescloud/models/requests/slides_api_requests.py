@@ -824,6 +824,24 @@ class PostCopyMasterSlideFromSourcePresentationRequest(object):
         self.folder = folder
         self.storage = storage
 
+class PostGetNotesSlideRequest(object):
+
+    def __init__(self, slide_index, document = None, password = None):
+        self.slide_index = slide_index
+        self.document = document
+        self.password = password
+
+class PostGetNotesSlideWithFormatRequest(object):
+
+    def __init__(self, slide_index, format, document = None, width = None, height = None, password = None, fonts_folder = None):
+        self.slide_index = slide_index
+        self.format = format
+        self.document = document
+        self.width = width
+        self.height = height
+        self.password = password
+        self.fonts_folder = fonts_folder
+
 class PostNotesSlideAddNewParagraphRequest(object):
 
     def __init__(self, name, slide_index, shape_index, path = None, dto = None, password = None, folder = None, storage = None, position = None):
