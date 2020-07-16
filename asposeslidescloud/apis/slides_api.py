@@ -722,7 +722,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -754,7 +753,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -835,7 +834,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -869,7 +867,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -956,7 +954,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -989,7 +986,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1073,7 +1070,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -1108,7 +1104,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1189,7 +1185,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -1220,7 +1215,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1298,7 +1293,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
 
         query_params = []
         if request.shapes:
@@ -1331,7 +1325,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1415,7 +1409,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -1447,7 +1440,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1528,7 +1521,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -1562,7 +1554,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1649,7 +1641,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -1682,7 +1673,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1766,7 +1757,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -1801,7 +1791,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2647,7 +2637,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -2678,7 +2667,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}', 'DELETE',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2750,6 +2739,228 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_slide_shapes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.shapes:
+            query_params.append(('shapes', request.shapes))  # noqa: E501
+            collection_formats['shapes'] = ''  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Shapes',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_slide_subshape(self, request, **kwargs):  # noqa: E501
+        """Remove a shape (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_slide_subshape(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_slide_subshapeRequest request: delete_slide_subshape request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_slide_subshape_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_slide_subshape_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_slide_subshape_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a shape (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_slide_subshape_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_slide_subshapeRequest request: delete_slide_subshape request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_slide_subshape" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_slide_subshape`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_slide_subshape`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `delete_slide_subshape`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Shapes',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_slide_subshapes(self, request, **kwargs):  # noqa: E501
+        """Remove a range of shapes (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_slide_subshapes(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_slide_subshapesRequest request: delete_slide_subshapes request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_slide_subshapes_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_slide_subshapes_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_slide_subshapes_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a range of shapes (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_slide_subshapes_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_slide_subshapesRequest request: delete_slide_subshapes request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_slide_subshapes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_slide_subshapes`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_slide_subshapes`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3220,6 +3431,476 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='SlideBackground',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_subshape_paragraph(self, request, **kwargs):  # noqa: E501
+        """Remove a paragraph (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_paragraph(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_paragraphRequest request: delete_subshape_paragraph request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_subshape_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a paragraph (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_paragraph_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_paragraphRequest request: delete_subshape_paragraph request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_subshape_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `delete_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `delete_subshape_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraphs',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_subshape_paragraphs(self, request, **kwargs):  # noqa: E501
+        """Remove a range of paragraphs (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_paragraphs(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_paragraphsRequest request: delete_subshape_paragraphs request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_subshape_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_subshape_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_subshape_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a range of paragraphs (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_paragraphs_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_paragraphsRequest request: delete_subshape_paragraphs request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_subshape_paragraphs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_subshape_paragraphs`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_subshape_paragraphs`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `delete_subshape_paragraphs`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.paragraphs:
+            query_params.append(('paragraphs', request.paragraphs))  # noqa: E501
+            collection_formats['paragraphs'] = ''  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraphs',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_subshape_portion(self, request, **kwargs):  # noqa: E501
+        """Remove a portion (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_portion(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_portionRequest request: delete_subshape_portion request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_subshape_portion_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_subshape_portion_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_subshape_portion_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a portion (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_portion_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_portionRequest request: delete_subshape_portion request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_subshape_portion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `delete_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `delete_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'portion_index' is set
+        if not request.portion_index:
+            raise ValueError("Missing the required parameter `request.portion_index` when calling `delete_subshape_portion`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+        path_params['portionIndex'] = request.portion_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portions',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_subshape_portions(self, request, **kwargs):  # noqa: E501
+        """Remove a range of portions (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_portions(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_portionsRequest request: delete_subshape_portions request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_subshape_portions_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_subshape_portions_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_subshape_portions_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Remove a range of portions (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_subshape_portions_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_subshape_portionsRequest request: delete_subshape_portions request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_subshape_portions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_subshape_portions`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `delete_subshape_portions`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `delete_subshape_portions`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `delete_subshape_portions`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.portions:
+            query_params.append(('portions', request.portions))  # noqa: E501
+            collection_formats['portions'] = ''  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portions',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -4139,6 +4820,113 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_notes_slide_exists(self, request, **kwargs):  # noqa: E501
+        """Get info whether a notes slide exists.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_notes_slide_exists(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_notes_slide_existsRequest request: get_notes_slide_exists request object
+        :return: EntityExists
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_notes_slide_exists_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_notes_slide_exists_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_notes_slide_exists_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Get info whether a notes slide exists.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_notes_slide_exists_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_notes_slide_existsRequest request: get_notes_slide_exists request object
+        :return: EntityExists
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_notes_slide_exists" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_notes_slide_exists`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_notes_slide_exists`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/notesSlide/exist', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='EntityExists',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_notes_slide_shape(self, request, **kwargs):  # noqa: E501
         """Read slide shape info.  # noqa: E501
 
@@ -4205,7 +4993,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -4236,7 +5023,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4320,7 +5107,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -4352,7 +5138,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4433,7 +5219,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -4464,7 +5249,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4551,7 +5336,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -4584,7 +5368,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4668,7 +5452,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -4700,7 +5483,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4778,7 +5561,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
 
         query_params = []
         if request.password:
@@ -4808,7 +5590,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5012,7 +5794,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -5045,7 +5826,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5129,7 +5910,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -5161,7 +5941,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'GET',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5354,7 +6134,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -5385,7 +6164,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5469,7 +6248,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -5501,7 +6279,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'GET',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5582,7 +6360,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -5613,7 +6390,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'GET',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5685,6 +6462,453 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_shapes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Shapes',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_slide_subshape(self, request, **kwargs):  # noqa: E501
+        """Read slide shape info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshapeRequest request: get_slide_subshape request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slide_subshape_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slide_subshape_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slide_subshape_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read slide shape info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshapeRequest request: get_slide_subshape request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slide_subshape" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slide_subshape`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_subshape`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `get_slide_subshape`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='ShapeBase',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_slide_subshape_paragraph(self, request, **kwargs):  # noqa: E501
+        """Read shape paragraph info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape_paragraph(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshape_paragraphRequest request: get_slide_subshape_paragraph request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slide_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slide_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slide_subshape_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read shape paragraph info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape_paragraph_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshape_paragraphRequest request: get_slide_subshape_paragraph request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slide_subshape_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slide_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `get_slide_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `get_slide_subshape_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraph',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_slide_subshape_paragraphs(self, request, **kwargs):  # noqa: E501
+        """Read shape paragraphs info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape_paragraphs(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshape_paragraphsRequest request: get_slide_subshape_paragraphs request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slide_subshape_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slide_subshape_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slide_subshape_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read shape paragraphs info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshape_paragraphs_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshape_paragraphsRequest request: get_slide_subshape_paragraphs request object
+        :return: Paragraphs
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slide_subshape_paragraphs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slide_subshape_paragraphs`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_subshape_paragraphs`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `get_slide_subshape_paragraphs`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraphs',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_slide_subshapes(self, request, **kwargs):  # noqa: E501
+        """Read slide shapes info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshapes(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshapesRequest request: get_slide_subshapes request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slide_subshapes_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slide_subshapes_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slide_subshapes_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read slide shapes info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_subshapes_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_subshapesRequest request: get_slide_subshapes request object
+        :return: Shapes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slide_subshapes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slide_subshapes`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_subshapes`")  # noqa: E501
 
         collection_formats = {}
 
@@ -7957,6 +9181,242 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_subshape_paragraph_portion(self, request, **kwargs):  # noqa: E501
+        """Read paragraph portion info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_subshape_paragraph_portion(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_subshape_paragraph_portionRequest request: get_subshape_paragraph_portion request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_subshape_paragraph_portion_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_subshape_paragraph_portion_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_subshape_paragraph_portion_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read paragraph portion info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_subshape_paragraph_portion_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_subshape_paragraph_portionRequest request: get_subshape_paragraph_portion request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_subshape_paragraph_portion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_subshape_paragraph_portion`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_subshape_paragraph_portion`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `get_subshape_paragraph_portion`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `get_subshape_paragraph_portion`")  # noqa: E501
+        # verify the required parameter 'portion_index' is set
+        if not request.portion_index:
+            raise ValueError("Missing the required parameter `request.portion_index` when calling `get_subshape_paragraph_portion`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+        path_params['portionIndex'] = request.portion_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portion',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_subshape_paragraph_portions(self, request, **kwargs):  # noqa: E501
+        """Read paragraph portions info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_subshape_paragraph_portions(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_subshape_paragraph_portionsRequest request: get_subshape_paragraph_portions request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_subshape_paragraph_portions_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_subshape_paragraph_portions_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_subshape_paragraph_portions_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read paragraph portions info (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_subshape_paragraph_portions_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_subshape_paragraph_portionsRequest request: get_subshape_paragraph_portions request object
+        :return: Portions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_subshape_paragraph_portions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_subshape_paragraph_portions`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_subshape_paragraph_portions`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `get_subshape_paragraph_portions`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `get_subshape_paragraph_portions`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portions',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def move_file(self, request, **kwargs):  # noqa: E501
         """Move file  # noqa: E501
 
@@ -8335,7 +9795,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -8370,7 +9829,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'POST',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs', 'POST',
             path_params,
             query_params,
             header_params,
@@ -8454,7 +9913,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -8490,7 +9948,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'POST',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'POST',
             path_params,
             query_params,
             header_params,
@@ -8568,6 +10026,119 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.shape_to_clone:
+            query_params.append(('shapeToClone', request.shape_to_clone))  # noqa: E501
+        if request.position:
+            query_params.append(('position', request.position))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='ShapeBase',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_add_new_subshape(self, request, **kwargs):  # noqa: E501
+        """Create new shape (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshapeRequest request: post_add_new_subshape request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_add_new_subshape_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_add_new_subshape_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_add_new_subshape_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Create new shape (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshapeRequest request: post_add_new_subshape request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_add_new_subshape" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_add_new_subshape`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_add_new_subshape`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
         path_params['path'] = request.path  # noqa: E501
 
         query_params = []
@@ -8612,6 +10183,242 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='ShapeBase',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_add_new_subshape_paragraph(self, request, **kwargs):  # noqa: E501
+        """Creates new paragraph (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape_paragraph(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshape_paragraphRequest request: post_add_new_subshape_paragraph request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_add_new_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_add_new_subshape_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_add_new_subshape_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Creates new paragraph (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape_paragraph_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshape_paragraphRequest request: post_add_new_subshape_paragraph request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_add_new_subshape_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_add_new_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_add_new_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `post_add_new_subshape_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.position:
+            query_params.append(('position', request.position))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraph',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_add_new_subshape_portion(self, request, **kwargs):  # noqa: E501
+        """Creates new portion (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape_portion(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshape_portionRequest request: post_add_new_subshape_portion request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_add_new_subshape_portion_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_add_new_subshape_portion_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_add_new_subshape_portion_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Creates new portion (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_add_new_subshape_portion_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_add_new_subshape_portionRequest request: post_add_new_subshape_portion request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_add_new_subshape_portion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_add_new_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_add_new_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `post_add_new_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `post_add_new_subshape_portion`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.position:
+            query_params.append(('position', request.position))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portion',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -9065,6 +10872,107 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_get_notes_slide_exists(self, request, **kwargs):  # noqa: E501
+        """Get info whether a notes slide exists.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide_exists(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slide_existsRequest request: post_get_notes_slide_exists request object
+        :return: EntityExists
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_get_notes_slide_exists_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_get_notes_slide_exists_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_get_notes_slide_exists_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Get info whether a notes slide exists.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_get_notes_slide_exists_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_get_notes_slide_existsRequest request: post_get_notes_slide_exists request object
+        :return: EntityExists
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_get_notes_slide_exists" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide_exists`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.document:
+            body_params = request.document
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/slides/{slideIndex}/notesSlide/exist', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='EntityExists',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_get_notes_slide_with_format(self, request, **kwargs):  # noqa: E501
         """Convert notes slide to the specified image format.  # noqa: E501
 
@@ -9242,7 +11150,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -9277,7 +11184,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs', 'POST',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs', 'POST',
             path_params,
             query_params,
             header_params,
@@ -9361,7 +11268,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -9397,7 +11303,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'POST',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions', 'POST',
             path_params,
             query_params,
             header_params,
@@ -9475,7 +11381,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
 
         query_params = []
         if request.password:
@@ -9511,7 +11416,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}', 'POST',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes', 'POST',
             path_params,
             query_params,
             header_params,
@@ -9595,7 +11500,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['format'] = request.format  # noqa: E501
 
@@ -9637,7 +11541,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/{format}', 'POST',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -9826,7 +11730,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['format'] = request.format  # noqa: E501
 
@@ -9868,7 +11771,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}', 'POST',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -11982,6 +13885,132 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_subshape_save_as(self, request, **kwargs):  # noqa: E501
+        """Render shape to specified picture format (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_subshape_save_as(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_subshape_save_asRequest request: post_subshape_save_as request object
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_subshape_save_as_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_subshape_save_as_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_subshape_save_as_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Render shape to specified picture format (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_subshape_save_as_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_subshape_save_asRequest request: post_subshape_save_as request object
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_subshape_save_as" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `post_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not request.format:
+            raise ValueError("Missing the required parameter `request.format` when calling `post_subshape_save_as`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['format'] = request.format  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.scale_x:
+            query_params.append(('scaleX', request.scale_x))  # noqa: E501
+        if request.scale_y:
+            query_params.append(('scaleY', request.scale_y))  # noqa: E501
+        if request.bounds:
+            query_params.append(('bounds', request.bounds))  # noqa: E501
+        if request.fonts_folder:
+            query_params.append(('fontsFolder', request.fonts_folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.options:
+            body_params = request.options
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def put_layout_slide(self, request, **kwargs):  # noqa: E501
         """Update a layoutSlide.  # noqa: E501
 
@@ -12163,7 +14192,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['format'] = request.format  # noqa: E501
 
@@ -12207,7 +14235,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/{format}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -12399,7 +14427,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -12434,7 +14461,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -12512,6 +14539,245 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_set_paragraph_properties`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Paragraph',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_set_subshape_paragraph_portion_properties(self, request, **kwargs):  # noqa: E501
+        """Update portion properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_set_subshape_paragraph_portion_properties(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_set_subshape_paragraph_portion_propertiesRequest request: put_set_subshape_paragraph_portion_properties request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_set_subshape_paragraph_portion_properties_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_set_subshape_paragraph_portion_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_set_subshape_paragraph_portion_properties_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Update portion properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_set_subshape_paragraph_portion_properties_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_set_subshape_paragraph_portion_propertiesRequest request: put_set_subshape_paragraph_portion_properties request object
+        :return: Portion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_set_subshape_paragraph_portion_properties" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'portion_index' is set
+        if not request.portion_index:
+            raise ValueError("Missing the required parameter `request.portion_index` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
+        path_params['portionIndex'] = request.portion_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Portion',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_set_subshape_paragraph_properties(self, request, **kwargs):  # noqa: E501
+        """Update paragraph properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_set_subshape_paragraph_properties(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_set_subshape_paragraph_propertiesRequest request: put_set_subshape_paragraph_properties request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_set_subshape_paragraph_properties_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_set_subshape_paragraph_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_set_subshape_paragraph_properties_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Update paragraph properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_set_subshape_paragraph_properties_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_set_subshape_paragraph_propertiesRequest request: put_set_subshape_paragraph_properties request object
+        :return: Paragraph
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_set_subshape_paragraph_properties" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not request.paragraph_index:
+            raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12639,7 +14905,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['format'] = request.format  # noqa: E501
 
@@ -12683,7 +14948,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -13221,6 +15486,119 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `put_slide_shape_info`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='ShapeBase',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_slide_subshape_info(self, request, **kwargs):  # noqa: E501
+        """Update shape properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slide_subshape_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slide_subshape_infoRequest request: put_slide_subshape_info request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_slide_subshape_info_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_slide_subshape_info_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_slide_subshape_info_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Update shape properties (for smart art and group shapes).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slide_subshape_info_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slide_subshape_infoRequest request: put_slide_subshape_info request object
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_slide_subshape_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_slide_subshape_info`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_slide_subshape_info`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `put_slide_subshape_info`")  # noqa: E501
 
         collection_formats = {}
 
@@ -14259,6 +16637,137 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def put_subshape_save_as(self, request, **kwargs):  # noqa: E501
+        """Render shape to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_subshape_save_as(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_subshape_save_asRequest request: put_subshape_save_as request object
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_subshape_save_as_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_subshape_save_as_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_subshape_save_as_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Render shape to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_subshape_save_as_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_subshape_save_asRequest request: put_subshape_save_as request object
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_subshape_save_as" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not request.shape_index:
+            raise ValueError("Missing the required parameter `request.shape_index` when calling `put_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not request.format:
+            raise ValueError("Missing the required parameter `request.format` when calling `put_subshape_save_as`")  # noqa: E501
+        # verify the required parameter 'out_path' is set
+        if not request.out_path:
+            raise ValueError("Missing the required parameter `request.out_path` when calling `put_subshape_save_as`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+        path_params['path'] = request.path  # noqa: E501
+        path_params['shapeIndex'] = request.shape_index  # noqa: E501
+        path_params['format'] = request.format  # noqa: E501
+
+        query_params = []
+        if request.out_path:
+            query_params.append(('outPath', request.out_path))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.scale_x:
+            query_params.append(('scaleX', request.scale_x))  # noqa: E501
+        if request.scale_y:
+            query_params.append(('scaleY', request.scale_y))  # noqa: E501
+        if request.bounds:
+            query_params.append(('bounds', request.bounds))  # noqa: E501
+        if request.fonts_folder:
+            query_params.append(('fontsFolder', request.fonts_folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.options:
+            body_params = request.options
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def put_update_notes_slide(self, request, **kwargs):  # noqa: E501
         """Update notes slide properties.  # noqa: E501
 
@@ -14434,7 +16943,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
 
         query_params = []
@@ -14467,7 +16975,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -14551,7 +17059,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
 
@@ -14585,7 +17092,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -14672,7 +17179,6 @@ class SlidesApi(ApiBase):
         path_params = {}
         path_params['name'] = request.name  # noqa: E501
         path_params['slideIndex'] = request.slide_index  # noqa: E501
-        path_params['path'] = request.path  # noqa: E501
         path_params['shapeIndex'] = request.shape_index  # noqa: E501
         path_params['paragraphIndex'] = request.paragraph_index  # noqa: E501
         path_params['portionIndex'] = request.portion_index  # noqa: E501
@@ -14707,7 +17213,7 @@ class SlidesApi(ApiBase):
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'PUT',
+            '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}', 'PUT',
             path_params,
             query_params,
             header_params,

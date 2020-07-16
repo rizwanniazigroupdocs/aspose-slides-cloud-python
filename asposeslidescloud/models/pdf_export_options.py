@@ -61,7 +61,8 @@ class PdfExportOptions(ExportOptions):
         'comments_area_color': 'str',
         'show_comments_by_no_author': 'bool',
         'image_transparent_color': 'str',
-        'apply_image_transparent': 'bool'
+        'apply_image_transparent': 'bool',
+        'access_permissions': 'str'
     }
 
     attribute_map = {
@@ -83,14 +84,15 @@ class PdfExportOptions(ExportOptions):
         'comments_area_color': 'commentsAreaColor',
         'show_comments_by_no_author': 'showCommentsByNoAuthor',
         'image_transparent_color': 'imageTransparentColor',
-        'apply_image_transparent': 'applyImageTransparent'
+        'apply_image_transparent': 'applyImageTransparent',
+        'access_permissions': 'accessPermissions'
     }
 
     type_determiners = {
         'format': 'pdf',
     }
 
-    def __init__(self, format='pdf', text_compression=None, embed_full_fonts=None, compliance=None, sufficient_resolution=None, jpeg_quality=None, draw_slides_frame=None, show_hidden_slides=None, save_metafiles_as_png=None, password=None, embed_true_type_fonts_for_ascii=None, additional_common_font_families=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None, image_transparent_color=None, apply_image_transparent=None):  # noqa: E501
+    def __init__(self, format='pdf', text_compression=None, embed_full_fonts=None, compliance=None, sufficient_resolution=None, jpeg_quality=None, draw_slides_frame=None, show_hidden_slides=None, save_metafiles_as_png=None, password=None, embed_true_type_fonts_for_ascii=None, additional_common_font_families=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None, image_transparent_color=None, apply_image_transparent=None, access_permissions=None):  # noqa: E501
         """PdfExportOptions - a model defined in Swagger"""  # noqa: E501
         super(PdfExportOptions, self).__init__(format)
 
@@ -112,6 +114,7 @@ class PdfExportOptions(ExportOptions):
         self._show_comments_by_no_author = None
         self._image_transparent_color = None
         self._apply_image_transparent = None
+        self._access_permissions = None
         self.format: 'pdf'
 
         self.text_compression = text_compression
@@ -136,6 +139,7 @@ class PdfExportOptions(ExportOptions):
         if image_transparent_color is not None:
             self.image_transparent_color = image_transparent_color
         self.apply_image_transparent = apply_image_transparent
+        self.access_permissions = access_permissions
 
     @property
     def text_compression(self):
@@ -218,7 +222,7 @@ class PdfExportOptions(ExportOptions):
         :type: str
         """
         if compliance is not None:
-            allowed_values = ["Pdf15", "PdfA1b"]  # noqa: E501
+            allowed_values = ["Pdf15", "PdfA1b", "PdfA1a", "PdfUa"]  # noqa: E501
             if compliance.isdigit():
                 int_compliance = int(compliance)
                 if int_compliance < 0 or int_compliance >= len(allowed_values):
@@ -596,6 +600,44 @@ class PdfExportOptions(ExportOptions):
         :type: bool
         """
         self._apply_image_transparent = apply_image_transparent
+
+    @property
+    def access_permissions(self):
+        """Gets the access_permissions of this PdfExportOptions.  # noqa: E501
+
+        Access permissions that should be granted when the document is opened with user access.  Default is AccessPermissions.None.               # noqa: E501
+
+        :return: The access_permissions of this PdfExportOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_permissions
+
+    @access_permissions.setter
+    def access_permissions(self, access_permissions):
+        """Sets the access_permissions of this PdfExportOptions.
+
+        Access permissions that should be granted when the document is opened with user access.  Default is AccessPermissions.None.               # noqa: E501
+
+        :param access_permissions: The access_permissions of this PdfExportOptions.  # noqa: E501
+        :type: str
+        """
+        if access_permissions is not None:
+            allowed_values = ["None", "PrintDocument", "ModifyContent", "CopyTextAndGraphics", "AddOrModifyFields", "FillExistingFields", "ExtractTextAndGraphics", "AssembleDocument", "HighQualityPrint"]  # noqa: E501
+            if access_permissions.isdigit():
+                int_access_permissions = int(access_permissions)
+                if int_access_permissions < 0 or int_access_permissions >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `access_permissions` ({0}), must be one of {1}"  # noqa: E501
+                        .format(access_permissions, allowed_values)
+                    )
+                self._access_permissions = allowed_values[int_access_permissions]
+                return
+            if access_permissions not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_permissions` ({0}), must be one of {1}"  # noqa: E501
+                    .format(access_permissions, allowed_values)
+                )
+        self._access_permissions = access_permissions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

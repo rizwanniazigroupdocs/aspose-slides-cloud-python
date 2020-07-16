@@ -31,33 +31,8 @@ import re  # noqa: F401
 import six
 
 
-class ExportFormat(object):
+class EntityExists(object):
 
-    """
-    allowed enum values
-    """
-    PDF = "Pdf"
-    XPS = "Xps"
-    TIFF = "Tiff"
-    PPTX = "Pptx"
-    ODP = "Odp"
-    OTP = "Otp"
-    PPT = "Ppt"
-    PPS = "Pps"
-    PPSX = "Ppsx"
-    PPTM = "Pptm"
-    PPSM = "Ppsm"
-    POT = "Pot"
-    POTX = "Potx"
-    POTM = "Potm"
-    HTML = "Html"
-    SWF = "Swf"
-    SVG = "Svg"
-    JPEG = "Jpeg"
-    PNG = "Png"
-    GIF = "Gif"
-    BMP = "Bmp"
-    FODP = "Fodp"
 
     """
     Attributes:
@@ -67,16 +42,44 @@ class ExportFormat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'exists': 'bool'
     }
 
     attribute_map = {
+        'exists': 'exists'
     }
 
     type_determiners = {
     }
 
-    def __init__(self):  # noqa: E501
-        """ExportFormat - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, exists=None):  # noqa: E501
+        """EntityExists - a model defined in Swagger"""  # noqa: E501
+
+        self._exists = None
+
+        self.exists = exists
+
+    @property
+    def exists(self):
+        """Gets the exists of this EntityExists.  # noqa: E501
+
+        True if the object exists.  # noqa: E501
+
+        :return: The exists of this EntityExists.  # noqa: E501
+        :rtype: bool
+        """
+        return self._exists
+
+    @exists.setter
+    def exists(self, exists):
+        """Sets the exists of this EntityExists.
+
+        True if the object exists.  # noqa: E501
+
+        :param exists: The exists of this EntityExists.  # noqa: E501
+        :type: bool
+        """
+        self._exists = exists
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -112,7 +115,7 @@ class ExportFormat(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ExportFormat):
+        if not isinstance(other, EntityExists):
             return False
 
         return self.__dict__ == other.__dict__

@@ -99,7 +99,7 @@ class TestExtra(BaseTest):
 
     def test_base_shape(self):
         self.initialize('get_slide_shape', None, None)
-        request = GetSlideShapeRequest("test.ppt", 1, 1, "", "password", "TempSlidesSDK", None)
+        request = GetSlideShapeRequest("test.ppt", 1, 1, "password", "TempSlidesSDK", None)
         result = self.api.get_slide_shape(request)
         self.assertEqual("1", result.text)
 
@@ -146,10 +146,10 @@ class TestExtra(BaseTest):
         test_axis.max_value = max1
         test_axes.horizontal_axis = test_axis
         test_dto.axes = test_axes
-        post_request = asposeslidescloud.models.requests.slides_api_requests.PostAddNewShapeRequest(file_name, 1, None, test_dto, password, folder_name, None, None, None)
+        post_request = asposeslidescloud.models.requests.slides_api_requests.PostAddNewShapeRequest(file_name, 1, test_dto, password, folder_name, None, None, None)
         result = BaseTest.slides_api.post_add_new_shape(post_request)
 
-        get_request = asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeRequest(file_name, 1, 4, None, password, folder_name, None)
+        get_request = asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeRequest(file_name, 1, 4, password, folder_name, None)
         result = BaseTest.slides_api.get_slide_shape(get_request)
         self.assertEqual(min1, result.axes.horizontal_axis.min_value)
         self.assertEqual(max1, result.axes.horizontal_axis.max_value)
@@ -160,7 +160,7 @@ class TestExtra(BaseTest):
         test_axis.min_value = min2
         test_axes.horizontal_axis = test_axis
         test_dto.axes = test_axes
-        put_request = asposeslidescloud.models.requests.slides_api_requests.PutSlideShapeInfoRequest(file_name, 1, 4, None, test_dto, password, folder_name)
+        put_request = asposeslidescloud.models.requests.slides_api_requests.PutSlideShapeInfoRequest(file_name, 1, 4, test_dto, password, folder_name)
         result = BaseTest.slides_api.put_slide_shape_info(put_request)
 
         result = BaseTest.slides_api.get_slide_shape(get_request)

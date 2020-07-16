@@ -56,6 +56,7 @@ class SlideExportFormat(object):
     POT = "Pot"
     POTM = "Potm"
     SVG = "Svg"
+    FODP = "Fodp"
 
     """
     Attributes:

@@ -581,23 +581,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'paragraph_index')
 
-    def test_delete_notes_slide_paragraph_invalid_path(self):
-        """Test case for delete_notes_slide_paragraph with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_paragraph_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_paragraph', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_paragraph', 'path')
-
     def test_delete_notes_slide_paragraph_invalid_password(self):
         """Test case for delete_notes_slide_paragraph with invalid password
         """
@@ -654,11 +637,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('delete_notes_slide_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_notes_slide_paragraph', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_notes_slide_paragraph', 'paragraph_index', 'int')
-        path = self.get_test_value('delete_notes_slide_paragraph', 'path', 'str')
         password = self.get_test_value('delete_notes_slide_paragraph', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_paragraph', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_paragraph', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideParagraphRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_delete_notes_slide_paragraphs(self):
         """Test case for delete_notes_slide_paragraphs
@@ -718,23 +700,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'shape_index')
-
-    def test_delete_notes_slide_paragraphs_invalid_path(self):
-        """Test case for delete_notes_slide_paragraphs with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_paragraphs_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_paragraphs', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_paragraphs', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_paragraphs(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_paragraphs', 'path')
 
     def test_delete_notes_slide_paragraphs_invalid_paragraphs(self):
         """Test case for delete_notes_slide_paragraphs with invalid paragraphs
@@ -808,12 +773,11 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('delete_notes_slide_paragraphs', 'name', 'str')
         slide_index = self.get_test_value('delete_notes_slide_paragraphs', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_notes_slide_paragraphs', 'shape_index', 'int')
-        path = self.get_test_value('delete_notes_slide_paragraphs', 'path', 'str')
         paragraphs = self.get_test_value('delete_notes_slide_paragraphs', 'paragraphs', 'list[int]')
         password = self.get_test_value('delete_notes_slide_paragraphs', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_paragraphs', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_paragraphs', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideParagraphsRequest(name, slide_index, shape_index, path, paragraphs, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideParagraphsRequest(name, slide_index, shape_index, paragraphs, password, folder, storage)
 
     def test_delete_notes_slide_portion(self):
         """Test case for delete_notes_slide_portion
@@ -908,23 +872,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'portion_index')
 
-    def test_delete_notes_slide_portion_invalid_path(self):
-        """Test case for delete_notes_slide_portion with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_portion_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_portion', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_portion', 'path')
-
     def test_delete_notes_slide_portion_invalid_password(self):
         """Test case for delete_notes_slide_portion with invalid password
         """
@@ -982,11 +929,10 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('delete_notes_slide_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_notes_slide_portion', 'paragraph_index', 'int')
         portion_index = self.get_test_value('delete_notes_slide_portion', 'portion_index', 'int')
-        path = self.get_test_value('delete_notes_slide_portion', 'path', 'str')
         password = self.get_test_value('delete_notes_slide_portion', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_portion', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_portion', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlidePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlidePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
 
     def test_delete_notes_slide_portions(self):
         """Test case for delete_notes_slide_portions
@@ -1064,23 +1010,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'paragraph_index')
 
-    def test_delete_notes_slide_portions_invalid_path(self):
-        """Test case for delete_notes_slide_portions with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_portions_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_portions', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_portions', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_portions(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_portions', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_portions', 'path')
-
     def test_delete_notes_slide_portions_invalid_portions(self):
         """Test case for delete_notes_slide_portions with invalid portions
         """
@@ -1154,12 +1083,11 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('delete_notes_slide_portions', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_notes_slide_portions', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_notes_slide_portions', 'paragraph_index', 'int')
-        path = self.get_test_value('delete_notes_slide_portions', 'path', 'str')
         portions = self.get_test_value('delete_notes_slide_portions', 'portions', 'list[int]')
         password = self.get_test_value('delete_notes_slide_portions', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_portions', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_portions', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlidePortionsRequest(name, slide_index, shape_index, paragraph_index, path, portions, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlidePortionsRequest(name, slide_index, shape_index, paragraph_index, portions, password, folder, storage)
 
     def test_delete_notes_slide_shape(self):
         """Test case for delete_notes_slide_shape
@@ -1220,23 +1148,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'shape_index')
 
-    def test_delete_notes_slide_shape_invalid_path(self):
-        """Test case for delete_notes_slide_shape with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_shape_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_shape', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_shape', 'path')
-
     def test_delete_notes_slide_shape_invalid_password(self):
         """Test case for delete_notes_slide_shape with invalid password
         """
@@ -1292,11 +1203,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('delete_notes_slide_shape', 'name', 'str')
         slide_index = self.get_test_value('delete_notes_slide_shape', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_notes_slide_shape', 'shape_index', 'int')
-        path = self.get_test_value('delete_notes_slide_shape', 'path', 'str')
         password = self.get_test_value('delete_notes_slide_shape', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_shape', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_shape', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideShapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideShapeRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_delete_notes_slide_shapes(self):
         """Test case for delete_notes_slide_shapes
@@ -1339,23 +1249,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'slide_index')
-
-    def test_delete_notes_slide_shapes_invalid_path(self):
-        """Test case for delete_notes_slide_shapes with invalid path
-        """
-        request = self.__prepare_delete_notes_slide_shapes_request()
-        request.path = self.get_invalid_test_value('delete_notes_slide_shapes', 'path', request.path, 'str')
-        self.initialize('delete_notes_slide_shapes', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_notes_slide_shapes(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_notes_slide_shapes', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_notes_slide_shapes', 'path')
 
     def test_delete_notes_slide_shapes_invalid_shapes(self):
         """Test case for delete_notes_slide_shapes with invalid shapes
@@ -1428,12 +1321,11 @@ class TestSlidesApi(BaseTest):
     def __prepare_delete_notes_slide_shapes_request(self):
         name = self.get_test_value('delete_notes_slide_shapes', 'name', 'str')
         slide_index = self.get_test_value('delete_notes_slide_shapes', 'slide_index', 'int')
-        path = self.get_test_value('delete_notes_slide_shapes', 'path', 'str')
         shapes = self.get_test_value('delete_notes_slide_shapes', 'shapes', 'list[int]')
         password = self.get_test_value('delete_notes_slide_shapes', 'password', 'str')
         folder = self.get_test_value('delete_notes_slide_shapes', 'folder', 'str')
         storage = self.get_test_value('delete_notes_slide_shapes', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideShapesRequest(name, slide_index, path, shapes, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteNotesSlideShapesRequest(name, slide_index, shapes, password, folder, storage)
 
     def test_delete_paragraph(self):
         """Test case for delete_paragraph
@@ -1511,23 +1403,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_paragraph', 'paragraph_index')
 
-    def test_delete_paragraph_invalid_path(self):
-        """Test case for delete_paragraph with invalid path
-        """
-        request = self.__prepare_delete_paragraph_request()
-        request.path = self.get_invalid_test_value('delete_paragraph', 'path', request.path, 'str')
-        self.initialize('delete_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_paragraph', 'path')
-
     def test_delete_paragraph_invalid_password(self):
         """Test case for delete_paragraph with invalid password
         """
@@ -1584,11 +1459,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('delete_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_paragraph', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_paragraph', 'paragraph_index', 'int')
-        path = self.get_test_value('delete_paragraph', 'path', 'str')
         password = self.get_test_value('delete_paragraph', 'password', 'str')
         folder = self.get_test_value('delete_paragraph', 'folder', 'str')
         storage = self.get_test_value('delete_paragraph', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteParagraphRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_delete_paragraphs(self):
         """Test case for delete_paragraphs
@@ -1648,23 +1522,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('delete_paragraphs', 'shape_index')
-
-    def test_delete_paragraphs_invalid_path(self):
-        """Test case for delete_paragraphs with invalid path
-        """
-        request = self.__prepare_delete_paragraphs_request()
-        request.path = self.get_invalid_test_value('delete_paragraphs', 'path', request.path, 'str')
-        self.initialize('delete_paragraphs', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_paragraphs(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_paragraphs', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_paragraphs', 'path')
 
     def test_delete_paragraphs_invalid_paragraphs(self):
         """Test case for delete_paragraphs with invalid paragraphs
@@ -1738,12 +1595,11 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('delete_paragraphs', 'name', 'str')
         slide_index = self.get_test_value('delete_paragraphs', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_paragraphs', 'shape_index', 'int')
-        path = self.get_test_value('delete_paragraphs', 'path', 'str')
         paragraphs = self.get_test_value('delete_paragraphs', 'paragraphs', 'list[int]')
         password = self.get_test_value('delete_paragraphs', 'password', 'str')
         folder = self.get_test_value('delete_paragraphs', 'folder', 'str')
         storage = self.get_test_value('delete_paragraphs', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteParagraphsRequest(name, slide_index, shape_index, path, paragraphs, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteParagraphsRequest(name, slide_index, shape_index, paragraphs, password, folder, storage)
 
     def test_delete_portion(self):
         """Test case for delete_portion
@@ -1838,23 +1694,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_portion', 'portion_index')
 
-    def test_delete_portion_invalid_path(self):
-        """Test case for delete_portion with invalid path
-        """
-        request = self.__prepare_delete_portion_request()
-        request.path = self.get_invalid_test_value('delete_portion', 'path', request.path, 'str')
-        self.initialize('delete_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_portion', 'path')
-
     def test_delete_portion_invalid_password(self):
         """Test case for delete_portion with invalid password
         """
@@ -1912,11 +1751,10 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('delete_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_portion', 'paragraph_index', 'int')
         portion_index = self.get_test_value('delete_portion', 'portion_index', 'int')
-        path = self.get_test_value('delete_portion', 'path', 'str')
         password = self.get_test_value('delete_portion', 'password', 'str')
         folder = self.get_test_value('delete_portion', 'folder', 'str')
         storage = self.get_test_value('delete_portion', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeletePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeletePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
 
     def test_delete_portions(self):
         """Test case for delete_portions
@@ -1994,23 +1832,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_portions', 'paragraph_index')
 
-    def test_delete_portions_invalid_path(self):
-        """Test case for delete_portions with invalid path
-        """
-        request = self.__prepare_delete_portions_request()
-        request.path = self.get_invalid_test_value('delete_portions', 'path', request.path, 'str')
-        self.initialize('delete_portions', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_portions(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_portions', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_portions', 'path')
-
     def test_delete_portions_invalid_portions(self):
         """Test case for delete_portions with invalid portions
         """
@@ -2084,12 +1905,11 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('delete_portions', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_portions', 'shape_index', 'int')
         paragraph_index = self.get_test_value('delete_portions', 'paragraph_index', 'int')
-        path = self.get_test_value('delete_portions', 'path', 'str')
         portions = self.get_test_value('delete_portions', 'portions', 'list[int]')
         password = self.get_test_value('delete_portions', 'password', 'str')
         folder = self.get_test_value('delete_portions', 'folder', 'str')
         storage = self.get_test_value('delete_portions', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeletePortionsRequest(name, slide_index, shape_index, paragraph_index, path, portions, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeletePortionsRequest(name, slide_index, shape_index, paragraph_index, portions, password, folder, storage)
 
     def test_delete_slide_animation(self):
         """Test case for delete_slide_animation
@@ -2929,23 +2749,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('delete_slide_shape', 'shape_index')
 
-    def test_delete_slide_shape_invalid_path(self):
-        """Test case for delete_slide_shape with invalid path
-        """
-        request = self.__prepare_delete_slide_shape_request()
-        request.path = self.get_invalid_test_value('delete_slide_shape', 'path', request.path, 'str')
-        self.initialize('delete_slide_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_slide_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_slide_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_slide_shape', 'path')
-
     def test_delete_slide_shape_invalid_password(self):
         """Test case for delete_slide_shape with invalid password
         """
@@ -3001,11 +2804,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('delete_slide_shape', 'name', 'str')
         slide_index = self.get_test_value('delete_slide_shape', 'slide_index', 'int')
         shape_index = self.get_test_value('delete_slide_shape', 'shape_index', 'int')
-        path = self.get_test_value('delete_slide_shape', 'path', 'str')
         password = self.get_test_value('delete_slide_shape', 'password', 'str')
         folder = self.get_test_value('delete_slide_shape', 'folder', 'str')
         storage = self.get_test_value('delete_slide_shape', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideShapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideShapeRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_delete_slide_shapes(self):
         """Test case for delete_slide_shapes
@@ -3048,23 +2850,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'slide_index')
-
-    def test_delete_slide_shapes_invalid_path(self):
-        """Test case for delete_slide_shapes with invalid path
-        """
-        request = self.__prepare_delete_slide_shapes_request()
-        request.path = self.get_invalid_test_value('delete_slide_shapes', 'path', request.path, 'str')
-        self.initialize('delete_slide_shapes', 'path', request.path)
-        ok = False
-        try:
-            self.api.delete_slide_shapes(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'delete_slide_shapes', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('delete_slide_shapes', 'path')
 
     def test_delete_slide_shapes_invalid_shapes(self):
         """Test case for delete_slide_shapes with invalid shapes
@@ -3137,12 +2922,285 @@ class TestSlidesApi(BaseTest):
     def __prepare_delete_slide_shapes_request(self):
         name = self.get_test_value('delete_slide_shapes', 'name', 'str')
         slide_index = self.get_test_value('delete_slide_shapes', 'slide_index', 'int')
-        path = self.get_test_value('delete_slide_shapes', 'path', 'str')
         shapes = self.get_test_value('delete_slide_shapes', 'shapes', 'list[int]')
         password = self.get_test_value('delete_slide_shapes', 'password', 'str')
         folder = self.get_test_value('delete_slide_shapes', 'folder', 'str')
         storage = self.get_test_value('delete_slide_shapes', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideShapesRequest(name, slide_index, path, shapes, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideShapesRequest(name, slide_index, shapes, password, folder, storage)
+
+    def test_delete_slide_subshape(self):
+        """Test case for delete_slide_subshape
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        self.initialize('delete_slide_subshape', None, None)
+        response = self.api.delete_slide_subshape(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_slide_subshape_invalid_name(self):
+        """Test case for delete_slide_subshape with invalid name
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.name = self.get_invalid_test_value('delete_slide_subshape', 'name', request.name, 'str')
+        self.initialize('delete_slide_subshape', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'name')
+
+    def test_delete_slide_subshape_invalid_slide_index(self):
+        """Test case for delete_slide_subshape with invalid slide_index
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.slide_index = self.get_invalid_test_value('delete_slide_subshape', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_slide_subshape', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'slide_index')
+
+    def test_delete_slide_subshape_invalid_shape_index(self):
+        """Test case for delete_slide_subshape with invalid shape_index
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.shape_index = self.get_invalid_test_value('delete_slide_subshape', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_slide_subshape', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'shape_index')
+
+    def test_delete_slide_subshape_invalid_path(self):
+        """Test case for delete_slide_subshape with invalid path
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.path = self.get_invalid_test_value('delete_slide_subshape', 'path', request.path, 'str')
+        self.initialize('delete_slide_subshape', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'path')
+
+    def test_delete_slide_subshape_invalid_password(self):
+        """Test case for delete_slide_subshape with invalid password
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.password = self.get_invalid_test_value('delete_slide_subshape', 'password', request.password, 'str')
+        self.initialize('delete_slide_subshape', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'password')
+
+    def test_delete_slide_subshape_invalid_folder(self):
+        """Test case for delete_slide_subshape with invalid folder
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.folder = self.get_invalid_test_value('delete_slide_subshape', 'folder', request.folder, 'str')
+        self.initialize('delete_slide_subshape', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'folder')
+
+    def test_delete_slide_subshape_invalid_storage(self):
+        """Test case for delete_slide_subshape with invalid storage
+        """
+        request = self.__prepare_delete_slide_subshape_request()
+        request.storage = self.get_invalid_test_value('delete_slide_subshape', 'storage', request.storage, 'str')
+        self.initialize('delete_slide_subshape', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshape', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshape', 'storage')
+
+    def __prepare_delete_slide_subshape_request(self):
+        name = self.get_test_value('delete_slide_subshape', 'name', 'str')
+        slide_index = self.get_test_value('delete_slide_subshape', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_slide_subshape', 'shape_index', 'int')
+        path = self.get_test_value('delete_slide_subshape', 'path', 'str')
+        password = self.get_test_value('delete_slide_subshape', 'password', 'str')
+        folder = self.get_test_value('delete_slide_subshape', 'folder', 'str')
+        storage = self.get_test_value('delete_slide_subshape', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideSubshapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+
+    def test_delete_slide_subshapes(self):
+        """Test case for delete_slide_subshapes
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        self.initialize('delete_slide_subshapes', None, None)
+        response = self.api.delete_slide_subshapes(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_slide_subshapes_invalid_name(self):
+        """Test case for delete_slide_subshapes with invalid name
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.name = self.get_invalid_test_value('delete_slide_subshapes', 'name', request.name, 'str')
+        self.initialize('delete_slide_subshapes', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'name')
+
+    def test_delete_slide_subshapes_invalid_slide_index(self):
+        """Test case for delete_slide_subshapes with invalid slide_index
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.slide_index = self.get_invalid_test_value('delete_slide_subshapes', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_slide_subshapes', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'slide_index')
+
+    def test_delete_slide_subshapes_invalid_path(self):
+        """Test case for delete_slide_subshapes with invalid path
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.path = self.get_invalid_test_value('delete_slide_subshapes', 'path', request.path, 'str')
+        self.initialize('delete_slide_subshapes', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'path')
+
+    def test_delete_slide_subshapes_invalid_shapes(self):
+        """Test case for delete_slide_subshapes with invalid shapes
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.shapes = self.get_invalid_test_value('delete_slide_subshapes', 'shapes', request.shapes, 'list[int]')
+        self.initialize('delete_slide_subshapes', 'shapes', request.shapes)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'shapes', request.shapes)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'shapes')
+
+    def test_delete_slide_subshapes_invalid_password(self):
+        """Test case for delete_slide_subshapes with invalid password
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.password = self.get_invalid_test_value('delete_slide_subshapes', 'password', request.password, 'str')
+        self.initialize('delete_slide_subshapes', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'password')
+
+    def test_delete_slide_subshapes_invalid_folder(self):
+        """Test case for delete_slide_subshapes with invalid folder
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.folder = self.get_invalid_test_value('delete_slide_subshapes', 'folder', request.folder, 'str')
+        self.initialize('delete_slide_subshapes', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'folder')
+
+    def test_delete_slide_subshapes_invalid_storage(self):
+        """Test case for delete_slide_subshapes with invalid storage
+        """
+        request = self.__prepare_delete_slide_subshapes_request()
+        request.storage = self.get_invalid_test_value('delete_slide_subshapes', 'storage', request.storage, 'str')
+        self.initialize('delete_slide_subshapes', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_slide_subshapes', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_slide_subshapes', 'storage')
+
+    def __prepare_delete_slide_subshapes_request(self):
+        name = self.get_test_value('delete_slide_subshapes', 'name', 'str')
+        slide_index = self.get_test_value('delete_slide_subshapes', 'slide_index', 'int')
+        path = self.get_test_value('delete_slide_subshapes', 'path', 'str')
+        shapes = self.get_test_value('delete_slide_subshapes', 'shapes', 'list[int]')
+        password = self.get_test_value('delete_slide_subshapes', 'password', 'str')
+        folder = self.get_test_value('delete_slide_subshapes', 'folder', 'str')
+        storage = self.get_test_value('delete_slide_subshapes', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSlideSubshapesRequest(name, slide_index, path, shapes, password, folder, storage)
 
     def test_delete_slides_clean_slides_list(self):
         """Test case for delete_slides_clean_slides_list
@@ -3529,6 +3587,662 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('delete_slides_slide_background', 'folder', 'str')
         storage = self.get_test_value('delete_slides_slide_background', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.DeleteSlidesSlideBackgroundRequest(name, slide_index, password, folder, storage)
+
+    def test_delete_subshape_paragraph(self):
+        """Test case for delete_subshape_paragraph
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        self.initialize('delete_subshape_paragraph', None, None)
+        response = self.api.delete_subshape_paragraph(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_subshape_paragraph_invalid_name(self):
+        """Test case for delete_subshape_paragraph with invalid name
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.name = self.get_invalid_test_value('delete_subshape_paragraph', 'name', request.name, 'str')
+        self.initialize('delete_subshape_paragraph', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'name')
+
+    def test_delete_subshape_paragraph_invalid_slide_index(self):
+        """Test case for delete_subshape_paragraph with invalid slide_index
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.slide_index = self.get_invalid_test_value('delete_subshape_paragraph', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_subshape_paragraph', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'slide_index')
+
+    def test_delete_subshape_paragraph_invalid_shape_index(self):
+        """Test case for delete_subshape_paragraph with invalid shape_index
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.shape_index = self.get_invalid_test_value('delete_subshape_paragraph', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_subshape_paragraph', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'shape_index')
+
+    def test_delete_subshape_paragraph_invalid_paragraph_index(self):
+        """Test case for delete_subshape_paragraph with invalid paragraph_index
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.paragraph_index = self.get_invalid_test_value('delete_subshape_paragraph', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('delete_subshape_paragraph', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'paragraph_index')
+
+    def test_delete_subshape_paragraph_invalid_path(self):
+        """Test case for delete_subshape_paragraph with invalid path
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.path = self.get_invalid_test_value('delete_subshape_paragraph', 'path', request.path, 'str')
+        self.initialize('delete_subshape_paragraph', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'path')
+
+    def test_delete_subshape_paragraph_invalid_password(self):
+        """Test case for delete_subshape_paragraph with invalid password
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.password = self.get_invalid_test_value('delete_subshape_paragraph', 'password', request.password, 'str')
+        self.initialize('delete_subshape_paragraph', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'password')
+
+    def test_delete_subshape_paragraph_invalid_folder(self):
+        """Test case for delete_subshape_paragraph with invalid folder
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.folder = self.get_invalid_test_value('delete_subshape_paragraph', 'folder', request.folder, 'str')
+        self.initialize('delete_subshape_paragraph', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'folder')
+
+    def test_delete_subshape_paragraph_invalid_storage(self):
+        """Test case for delete_subshape_paragraph with invalid storage
+        """
+        request = self.__prepare_delete_subshape_paragraph_request()
+        request.storage = self.get_invalid_test_value('delete_subshape_paragraph', 'storage', request.storage, 'str')
+        self.initialize('delete_subshape_paragraph', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraph', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraph', 'storage')
+
+    def __prepare_delete_subshape_paragraph_request(self):
+        name = self.get_test_value('delete_subshape_paragraph', 'name', 'str')
+        slide_index = self.get_test_value('delete_subshape_paragraph', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_subshape_paragraph', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('delete_subshape_paragraph', 'paragraph_index', 'int')
+        path = self.get_test_value('delete_subshape_paragraph', 'path', 'str')
+        password = self.get_test_value('delete_subshape_paragraph', 'password', 'str')
+        folder = self.get_test_value('delete_subshape_paragraph', 'folder', 'str')
+        storage = self.get_test_value('delete_subshape_paragraph', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSubshapeParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+
+    def test_delete_subshape_paragraphs(self):
+        """Test case for delete_subshape_paragraphs
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        self.initialize('delete_subshape_paragraphs', None, None)
+        response = self.api.delete_subshape_paragraphs(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_subshape_paragraphs_invalid_name(self):
+        """Test case for delete_subshape_paragraphs with invalid name
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.name = self.get_invalid_test_value('delete_subshape_paragraphs', 'name', request.name, 'str')
+        self.initialize('delete_subshape_paragraphs', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'name')
+
+    def test_delete_subshape_paragraphs_invalid_slide_index(self):
+        """Test case for delete_subshape_paragraphs with invalid slide_index
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.slide_index = self.get_invalid_test_value('delete_subshape_paragraphs', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_subshape_paragraphs', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'slide_index')
+
+    def test_delete_subshape_paragraphs_invalid_shape_index(self):
+        """Test case for delete_subshape_paragraphs with invalid shape_index
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.shape_index = self.get_invalid_test_value('delete_subshape_paragraphs', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_subshape_paragraphs', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'shape_index')
+
+    def test_delete_subshape_paragraphs_invalid_path(self):
+        """Test case for delete_subshape_paragraphs with invalid path
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.path = self.get_invalid_test_value('delete_subshape_paragraphs', 'path', request.path, 'str')
+        self.initialize('delete_subshape_paragraphs', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'path')
+
+    def test_delete_subshape_paragraphs_invalid_paragraphs(self):
+        """Test case for delete_subshape_paragraphs with invalid paragraphs
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.paragraphs = self.get_invalid_test_value('delete_subshape_paragraphs', 'paragraphs', request.paragraphs, 'list[int]')
+        self.initialize('delete_subshape_paragraphs', 'paragraphs', request.paragraphs)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'paragraphs', request.paragraphs)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'paragraphs')
+
+    def test_delete_subshape_paragraphs_invalid_password(self):
+        """Test case for delete_subshape_paragraphs with invalid password
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.password = self.get_invalid_test_value('delete_subshape_paragraphs', 'password', request.password, 'str')
+        self.initialize('delete_subshape_paragraphs', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'password')
+
+    def test_delete_subshape_paragraphs_invalid_folder(self):
+        """Test case for delete_subshape_paragraphs with invalid folder
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.folder = self.get_invalid_test_value('delete_subshape_paragraphs', 'folder', request.folder, 'str')
+        self.initialize('delete_subshape_paragraphs', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'folder')
+
+    def test_delete_subshape_paragraphs_invalid_storage(self):
+        """Test case for delete_subshape_paragraphs with invalid storage
+        """
+        request = self.__prepare_delete_subshape_paragraphs_request()
+        request.storage = self.get_invalid_test_value('delete_subshape_paragraphs', 'storage', request.storage, 'str')
+        self.initialize('delete_subshape_paragraphs', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_paragraphs', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_paragraphs', 'storage')
+
+    def __prepare_delete_subshape_paragraphs_request(self):
+        name = self.get_test_value('delete_subshape_paragraphs', 'name', 'str')
+        slide_index = self.get_test_value('delete_subshape_paragraphs', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_subshape_paragraphs', 'shape_index', 'int')
+        path = self.get_test_value('delete_subshape_paragraphs', 'path', 'str')
+        paragraphs = self.get_test_value('delete_subshape_paragraphs', 'paragraphs', 'list[int]')
+        password = self.get_test_value('delete_subshape_paragraphs', 'password', 'str')
+        folder = self.get_test_value('delete_subshape_paragraphs', 'folder', 'str')
+        storage = self.get_test_value('delete_subshape_paragraphs', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSubshapeParagraphsRequest(name, slide_index, shape_index, path, paragraphs, password, folder, storage)
+
+    def test_delete_subshape_portion(self):
+        """Test case for delete_subshape_portion
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        self.initialize('delete_subshape_portion', None, None)
+        response = self.api.delete_subshape_portion(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_subshape_portion_invalid_name(self):
+        """Test case for delete_subshape_portion with invalid name
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.name = self.get_invalid_test_value('delete_subshape_portion', 'name', request.name, 'str')
+        self.initialize('delete_subshape_portion', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'name')
+
+    def test_delete_subshape_portion_invalid_slide_index(self):
+        """Test case for delete_subshape_portion with invalid slide_index
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.slide_index = self.get_invalid_test_value('delete_subshape_portion', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_subshape_portion', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'slide_index')
+
+    def test_delete_subshape_portion_invalid_shape_index(self):
+        """Test case for delete_subshape_portion with invalid shape_index
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.shape_index = self.get_invalid_test_value('delete_subshape_portion', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_subshape_portion', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'shape_index')
+
+    def test_delete_subshape_portion_invalid_paragraph_index(self):
+        """Test case for delete_subshape_portion with invalid paragraph_index
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.paragraph_index = self.get_invalid_test_value('delete_subshape_portion', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('delete_subshape_portion', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'paragraph_index')
+
+    def test_delete_subshape_portion_invalid_portion_index(self):
+        """Test case for delete_subshape_portion with invalid portion_index
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.portion_index = self.get_invalid_test_value('delete_subshape_portion', 'portion_index', request.portion_index, 'int')
+        self.initialize('delete_subshape_portion', 'portion_index', request.portion_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'portion_index', request.portion_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'portion_index')
+
+    def test_delete_subshape_portion_invalid_path(self):
+        """Test case for delete_subshape_portion with invalid path
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.path = self.get_invalid_test_value('delete_subshape_portion', 'path', request.path, 'str')
+        self.initialize('delete_subshape_portion', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'path')
+
+    def test_delete_subshape_portion_invalid_password(self):
+        """Test case for delete_subshape_portion with invalid password
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.password = self.get_invalid_test_value('delete_subshape_portion', 'password', request.password, 'str')
+        self.initialize('delete_subshape_portion', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'password')
+
+    def test_delete_subshape_portion_invalid_folder(self):
+        """Test case for delete_subshape_portion with invalid folder
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.folder = self.get_invalid_test_value('delete_subshape_portion', 'folder', request.folder, 'str')
+        self.initialize('delete_subshape_portion', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'folder')
+
+    def test_delete_subshape_portion_invalid_storage(self):
+        """Test case for delete_subshape_portion with invalid storage
+        """
+        request = self.__prepare_delete_subshape_portion_request()
+        request.storage = self.get_invalid_test_value('delete_subshape_portion', 'storage', request.storage, 'str')
+        self.initialize('delete_subshape_portion', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portion', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portion', 'storage')
+
+    def __prepare_delete_subshape_portion_request(self):
+        name = self.get_test_value('delete_subshape_portion', 'name', 'str')
+        slide_index = self.get_test_value('delete_subshape_portion', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_subshape_portion', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('delete_subshape_portion', 'paragraph_index', 'int')
+        portion_index = self.get_test_value('delete_subshape_portion', 'portion_index', 'int')
+        path = self.get_test_value('delete_subshape_portion', 'path', 'str')
+        password = self.get_test_value('delete_subshape_portion', 'password', 'str')
+        folder = self.get_test_value('delete_subshape_portion', 'folder', 'str')
+        storage = self.get_test_value('delete_subshape_portion', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSubshapePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+
+    def test_delete_subshape_portions(self):
+        """Test case for delete_subshape_portions
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        self.initialize('delete_subshape_portions', None, None)
+        response = self.api.delete_subshape_portions(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_subshape_portions_invalid_name(self):
+        """Test case for delete_subshape_portions with invalid name
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.name = self.get_invalid_test_value('delete_subshape_portions', 'name', request.name, 'str')
+        self.initialize('delete_subshape_portions', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'name')
+
+    def test_delete_subshape_portions_invalid_slide_index(self):
+        """Test case for delete_subshape_portions with invalid slide_index
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.slide_index = self.get_invalid_test_value('delete_subshape_portions', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_subshape_portions', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'slide_index')
+
+    def test_delete_subshape_portions_invalid_shape_index(self):
+        """Test case for delete_subshape_portions with invalid shape_index
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.shape_index = self.get_invalid_test_value('delete_subshape_portions', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_subshape_portions', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'shape_index')
+
+    def test_delete_subshape_portions_invalid_paragraph_index(self):
+        """Test case for delete_subshape_portions with invalid paragraph_index
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.paragraph_index = self.get_invalid_test_value('delete_subshape_portions', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('delete_subshape_portions', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'paragraph_index')
+
+    def test_delete_subshape_portions_invalid_path(self):
+        """Test case for delete_subshape_portions with invalid path
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.path = self.get_invalid_test_value('delete_subshape_portions', 'path', request.path, 'str')
+        self.initialize('delete_subshape_portions', 'path', request.path)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'path')
+
+    def test_delete_subshape_portions_invalid_portions(self):
+        """Test case for delete_subshape_portions with invalid portions
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.portions = self.get_invalid_test_value('delete_subshape_portions', 'portions', request.portions, 'list[int]')
+        self.initialize('delete_subshape_portions', 'portions', request.portions)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'portions', request.portions)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'portions')
+
+    def test_delete_subshape_portions_invalid_password(self):
+        """Test case for delete_subshape_portions with invalid password
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.password = self.get_invalid_test_value('delete_subshape_portions', 'password', request.password, 'str')
+        self.initialize('delete_subshape_portions', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'password')
+
+    def test_delete_subshape_portions_invalid_folder(self):
+        """Test case for delete_subshape_portions with invalid folder
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.folder = self.get_invalid_test_value('delete_subshape_portions', 'folder', request.folder, 'str')
+        self.initialize('delete_subshape_portions', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'folder')
+
+    def test_delete_subshape_portions_invalid_storage(self):
+        """Test case for delete_subshape_portions with invalid storage
+        """
+        request = self.__prepare_delete_subshape_portions_request()
+        request.storage = self.get_invalid_test_value('delete_subshape_portions', 'storage', request.storage, 'str')
+        self.initialize('delete_subshape_portions', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_subshape_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_subshape_portions', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_subshape_portions', 'storage')
+
+    def __prepare_delete_subshape_portions_request(self):
+        name = self.get_test_value('delete_subshape_portions', 'name', 'str')
+        slide_index = self.get_test_value('delete_subshape_portions', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_subshape_portions', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('delete_subshape_portions', 'paragraph_index', 'int')
+        path = self.get_test_value('delete_subshape_portions', 'path', 'str')
+        portions = self.get_test_value('delete_subshape_portions', 'portions', 'list[int]')
+        password = self.get_test_value('delete_subshape_portions', 'password', 'str')
+        folder = self.get_test_value('delete_subshape_portions', 'folder', 'str')
+        storage = self.get_test_value('delete_subshape_portions', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSubshapePortionsRequest(name, slide_index, shape_index, paragraph_index, path, portions, password, folder, storage)
 
     def test_download_file(self):
         """Test case for download_file
@@ -4188,6 +4902,107 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('get_notes_slide', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideRequest(name, slide_index, password, folder, storage)
 
+    def test_get_notes_slide_exists(self):
+        """Test case for get_notes_slide_exists
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        self.initialize('get_notes_slide_exists', None, None)
+        response = self.api.get_notes_slide_exists(request)
+        self.assertIsNotNone(response)
+
+    def test_get_notes_slide_exists_invalid_name(self):
+        """Test case for get_notes_slide_exists with invalid name
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        request.name = self.get_invalid_test_value('get_notes_slide_exists', 'name', request.name, 'str')
+        self.initialize('get_notes_slide_exists', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_exists', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_notes_slide_exists', 'name')
+
+    def test_get_notes_slide_exists_invalid_slide_index(self):
+        """Test case for get_notes_slide_exists with invalid slide_index
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        request.slide_index = self.get_invalid_test_value('get_notes_slide_exists', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_notes_slide_exists', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_exists', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_notes_slide_exists', 'slide_index')
+
+    def test_get_notes_slide_exists_invalid_password(self):
+        """Test case for get_notes_slide_exists with invalid password
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        request.password = self.get_invalid_test_value('get_notes_slide_exists', 'password', request.password, 'str')
+        self.initialize('get_notes_slide_exists', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_exists', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_notes_slide_exists', 'password')
+
+    def test_get_notes_slide_exists_invalid_folder(self):
+        """Test case for get_notes_slide_exists with invalid folder
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        request.folder = self.get_invalid_test_value('get_notes_slide_exists', 'folder', request.folder, 'str')
+        self.initialize('get_notes_slide_exists', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_exists', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_notes_slide_exists', 'folder')
+
+    def test_get_notes_slide_exists_invalid_storage(self):
+        """Test case for get_notes_slide_exists with invalid storage
+        """
+        request = self.__prepare_get_notes_slide_exists_request()
+        request.storage = self.get_invalid_test_value('get_notes_slide_exists', 'storage', request.storage, 'str')
+        self.initialize('get_notes_slide_exists', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_exists', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_notes_slide_exists', 'storage')
+
+    def __prepare_get_notes_slide_exists_request(self):
+        name = self.get_test_value('get_notes_slide_exists', 'name', 'str')
+        slide_index = self.get_test_value('get_notes_slide_exists', 'slide_index', 'int')
+        password = self.get_test_value('get_notes_slide_exists', 'password', 'str')
+        folder = self.get_test_value('get_notes_slide_exists', 'folder', 'str')
+        storage = self.get_test_value('get_notes_slide_exists', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideExistsRequest(name, slide_index, password, folder, storage)
+
     def test_get_notes_slide_shape(self):
         """Test case for get_notes_slide_shape
         """
@@ -4247,23 +5062,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'shape_index')
 
-    def test_get_notes_slide_shape_invalid_path(self):
-        """Test case for get_notes_slide_shape with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shape_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shape', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shape', 'path')
-
     def test_get_notes_slide_shape_invalid_password(self):
         """Test case for get_notes_slide_shape with invalid password
         """
@@ -4319,11 +5117,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('get_notes_slide_shape', 'name', 'str')
         slide_index = self.get_test_value('get_notes_slide_shape', 'slide_index', 'int')
         shape_index = self.get_test_value('get_notes_slide_shape', 'shape_index', 'int')
-        path = self.get_test_value('get_notes_slide_shape', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shape', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shape', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shape', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_get_notes_slide_shape_paragraph(self):
         """Test case for get_notes_slide_shape_paragraph
@@ -4401,23 +5198,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'paragraph_index')
 
-    def test_get_notes_slide_shape_paragraph_invalid_path(self):
-        """Test case for get_notes_slide_shape_paragraph with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shape_paragraph_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shape_paragraph', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shape_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shape_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shape_paragraph', 'path')
-
     def test_get_notes_slide_shape_paragraph_invalid_password(self):
         """Test case for get_notes_slide_shape_paragraph with invalid password
         """
@@ -4474,11 +5254,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('get_notes_slide_shape_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('get_notes_slide_shape_paragraph', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_notes_slide_shape_paragraph', 'paragraph_index', 'int')
-        path = self.get_test_value('get_notes_slide_shape_paragraph', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shape_paragraph', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shape_paragraph', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shape_paragraph', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_get_notes_slide_shape_paragraphs(self):
         """Test case for get_notes_slide_shape_paragraphs
@@ -4539,23 +5318,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'shape_index')
 
-    def test_get_notes_slide_shape_paragraphs_invalid_path(self):
-        """Test case for get_notes_slide_shape_paragraphs with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shape_paragraphs_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shape_paragraphs', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shape_paragraphs', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shape_paragraphs(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shape_paragraphs', 'path')
-
     def test_get_notes_slide_shape_paragraphs_invalid_password(self):
         """Test case for get_notes_slide_shape_paragraphs with invalid password
         """
@@ -4611,11 +5373,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('get_notes_slide_shape_paragraphs', 'name', 'str')
         slide_index = self.get_test_value('get_notes_slide_shape_paragraphs', 'slide_index', 'int')
         shape_index = self.get_test_value('get_notes_slide_shape_paragraphs', 'shape_index', 'int')
-        path = self.get_test_value('get_notes_slide_shape_paragraphs', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shape_paragraphs', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shape_paragraphs', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shape_paragraphs', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeParagraphsRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapeParagraphsRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_get_notes_slide_shape_portion(self):
         """Test case for get_notes_slide_shape_portion
@@ -4710,23 +5471,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'portion_index')
 
-    def test_get_notes_slide_shape_portion_invalid_path(self):
-        """Test case for get_notes_slide_shape_portion with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shape_portion_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shape_portion', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shape_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shape_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shape_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shape_portion', 'path')
-
     def test_get_notes_slide_shape_portion_invalid_password(self):
         """Test case for get_notes_slide_shape_portion with invalid password
         """
@@ -4784,11 +5528,10 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('get_notes_slide_shape_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_notes_slide_shape_portion', 'paragraph_index', 'int')
         portion_index = self.get_test_value('get_notes_slide_shape_portion', 'portion_index', 'int')
-        path = self.get_test_value('get_notes_slide_shape_portion', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shape_portion', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shape_portion', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shape_portion', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
 
     def test_get_notes_slide_shape_portions(self):
         """Test case for get_notes_slide_shape_portions
@@ -4866,23 +5609,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'paragraph_index')
 
-    def test_get_notes_slide_shape_portions_invalid_path(self):
-        """Test case for get_notes_slide_shape_portions with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shape_portions_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shape_portions', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shape_portions', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shape_portions(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shape_portions', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shape_portions', 'path')
-
     def test_get_notes_slide_shape_portions_invalid_password(self):
         """Test case for get_notes_slide_shape_portions with invalid password
         """
@@ -4939,11 +5665,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('get_notes_slide_shape_portions', 'slide_index', 'int')
         shape_index = self.get_test_value('get_notes_slide_shape_portions', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_notes_slide_shape_portions', 'paragraph_index', 'int')
-        path = self.get_test_value('get_notes_slide_shape_portions', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shape_portions', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shape_portions', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shape_portions', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapePortionsRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapePortionsRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_get_notes_slide_shapes(self):
         """Test case for get_notes_slide_shapes
@@ -4986,23 +5711,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'slide_index')
-
-    def test_get_notes_slide_shapes_invalid_path(self):
-        """Test case for get_notes_slide_shapes with invalid path
-        """
-        request = self.__prepare_get_notes_slide_shapes_request()
-        request.path = self.get_invalid_test_value('get_notes_slide_shapes', 'path', request.path, 'str')
-        self.initialize('get_notes_slide_shapes', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_notes_slide_shapes(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_notes_slide_shapes', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_notes_slide_shapes', 'path')
 
     def test_get_notes_slide_shapes_invalid_password(self):
         """Test case for get_notes_slide_shapes with invalid password
@@ -5058,11 +5766,10 @@ class TestSlidesApi(BaseTest):
     def __prepare_get_notes_slide_shapes_request(self):
         name = self.get_test_value('get_notes_slide_shapes', 'name', 'str')
         slide_index = self.get_test_value('get_notes_slide_shapes', 'slide_index', 'int')
-        path = self.get_test_value('get_notes_slide_shapes', 'path', 'str')
         password = self.get_test_value('get_notes_slide_shapes', 'password', 'str')
         folder = self.get_test_value('get_notes_slide_shapes', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_shapes', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapesRequest(name, slide_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideShapesRequest(name, slide_index, password, folder, storage)
 
     def test_get_notes_slide_with_format(self):
         """Test case for get_notes_slide_with_format
@@ -5331,23 +6038,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'portion_index')
 
-    def test_get_paragraph_portion_invalid_path(self):
-        """Test case for get_paragraph_portion with invalid path
-        """
-        request = self.__prepare_get_paragraph_portion_request()
-        request.path = self.get_invalid_test_value('get_paragraph_portion', 'path', request.path, 'str')
-        self.initialize('get_paragraph_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_paragraph_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_paragraph_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_paragraph_portion', 'path')
-
     def test_get_paragraph_portion_invalid_password(self):
         """Test case for get_paragraph_portion with invalid password
         """
@@ -5405,11 +6095,10 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('get_paragraph_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_paragraph_portion', 'paragraph_index', 'int')
         portion_index = self.get_test_value('get_paragraph_portion', 'portion_index', 'int')
-        path = self.get_test_value('get_paragraph_portion', 'path', 'str')
         password = self.get_test_value('get_paragraph_portion', 'password', 'str')
         folder = self.get_test_value('get_paragraph_portion', 'folder', 'str')
         storage = self.get_test_value('get_paragraph_portion', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetParagraphPortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetParagraphPortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
 
     def test_get_paragraph_portions(self):
         """Test case for get_paragraph_portions
@@ -5487,23 +6176,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'paragraph_index')
 
-    def test_get_paragraph_portions_invalid_path(self):
-        """Test case for get_paragraph_portions with invalid path
-        """
-        request = self.__prepare_get_paragraph_portions_request()
-        request.path = self.get_invalid_test_value('get_paragraph_portions', 'path', request.path, 'str')
-        self.initialize('get_paragraph_portions', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_paragraph_portions(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_paragraph_portions', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_paragraph_portions', 'path')
-
     def test_get_paragraph_portions_invalid_password(self):
         """Test case for get_paragraph_portions with invalid password
         """
@@ -5560,11 +6232,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('get_paragraph_portions', 'slide_index', 'int')
         shape_index = self.get_test_value('get_paragraph_portions', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_paragraph_portions', 'paragraph_index', 'int')
-        path = self.get_test_value('get_paragraph_portions', 'path', 'str')
         password = self.get_test_value('get_paragraph_portions', 'password', 'str')
         folder = self.get_test_value('get_paragraph_portions', 'folder', 'str')
         storage = self.get_test_value('get_paragraph_portions', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetParagraphPortionsRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetParagraphPortionsRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_get_slide_animation(self):
         """Test case for get_slide_animation
@@ -5744,23 +6415,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_slide_shape', 'shape_index')
 
-    def test_get_slide_shape_invalid_path(self):
-        """Test case for get_slide_shape with invalid path
-        """
-        request = self.__prepare_get_slide_shape_request()
-        request.path = self.get_invalid_test_value('get_slide_shape', 'path', request.path, 'str')
-        self.initialize('get_slide_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_slide_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_slide_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_slide_shape', 'path')
-
     def test_get_slide_shape_invalid_password(self):
         """Test case for get_slide_shape with invalid password
         """
@@ -5816,11 +6470,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('get_slide_shape', 'name', 'str')
         slide_index = self.get_test_value('get_slide_shape', 'slide_index', 'int')
         shape_index = self.get_test_value('get_slide_shape', 'shape_index', 'int')
-        path = self.get_test_value('get_slide_shape', 'path', 'str')
         password = self.get_test_value('get_slide_shape', 'password', 'str')
         folder = self.get_test_value('get_slide_shape', 'folder', 'str')
         storage = self.get_test_value('get_slide_shape', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_get_slide_shape_paragraph(self):
         """Test case for get_slide_shape_paragraph
@@ -5898,23 +6551,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'paragraph_index')
 
-    def test_get_slide_shape_paragraph_invalid_path(self):
-        """Test case for get_slide_shape_paragraph with invalid path
-        """
-        request = self.__prepare_get_slide_shape_paragraph_request()
-        request.path = self.get_invalid_test_value('get_slide_shape_paragraph', 'path', request.path, 'str')
-        self.initialize('get_slide_shape_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_slide_shape_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_slide_shape_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_slide_shape_paragraph', 'path')
-
     def test_get_slide_shape_paragraph_invalid_password(self):
         """Test case for get_slide_shape_paragraph with invalid password
         """
@@ -5971,11 +6607,10 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('get_slide_shape_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('get_slide_shape_paragraph', 'shape_index', 'int')
         paragraph_index = self.get_test_value('get_slide_shape_paragraph', 'paragraph_index', 'int')
-        path = self.get_test_value('get_slide_shape_paragraph', 'path', 'str')
         password = self.get_test_value('get_slide_shape_paragraph', 'password', 'str')
         folder = self.get_test_value('get_slide_shape_paragraph', 'folder', 'str')
         storage = self.get_test_value('get_slide_shape_paragraph', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
 
     def test_get_slide_shape_paragraphs(self):
         """Test case for get_slide_shape_paragraphs
@@ -6036,23 +6671,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'shape_index')
 
-    def test_get_slide_shape_paragraphs_invalid_path(self):
-        """Test case for get_slide_shape_paragraphs with invalid path
-        """
-        request = self.__prepare_get_slide_shape_paragraphs_request()
-        request.path = self.get_invalid_test_value('get_slide_shape_paragraphs', 'path', request.path, 'str')
-        self.initialize('get_slide_shape_paragraphs', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_slide_shape_paragraphs(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_slide_shape_paragraphs', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_slide_shape_paragraphs', 'path')
-
     def test_get_slide_shape_paragraphs_invalid_password(self):
         """Test case for get_slide_shape_paragraphs with invalid password
         """
@@ -6108,11 +6726,10 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('get_slide_shape_paragraphs', 'name', 'str')
         slide_index = self.get_test_value('get_slide_shape_paragraphs', 'slide_index', 'int')
         shape_index = self.get_test_value('get_slide_shape_paragraphs', 'shape_index', 'int')
-        path = self.get_test_value('get_slide_shape_paragraphs', 'path', 'str')
         password = self.get_test_value('get_slide_shape_paragraphs', 'password', 'str')
         folder = self.get_test_value('get_slide_shape_paragraphs', 'folder', 'str')
         storage = self.get_test_value('get_slide_shape_paragraphs', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeParagraphsRequest(name, slide_index, shape_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapeParagraphsRequest(name, slide_index, shape_index, password, folder, storage)
 
     def test_get_slide_shapes(self):
         """Test case for get_slide_shapes
@@ -6155,23 +6772,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('get_slide_shapes', 'slide_index')
-
-    def test_get_slide_shapes_invalid_path(self):
-        """Test case for get_slide_shapes with invalid path
-        """
-        request = self.__prepare_get_slide_shapes_request()
-        request.path = self.get_invalid_test_value('get_slide_shapes', 'path', request.path, 'str')
-        self.initialize('get_slide_shapes', 'path', request.path)
-        ok = False
-        try:
-            self.api.get_slide_shapes(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'get_slide_shapes', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('get_slide_shapes', 'path')
 
     def test_get_slide_shapes_invalid_password(self):
         """Test case for get_slide_shapes with invalid password
@@ -6227,11 +6827,558 @@ class TestSlidesApi(BaseTest):
     def __prepare_get_slide_shapes_request(self):
         name = self.get_test_value('get_slide_shapes', 'name', 'str')
         slide_index = self.get_test_value('get_slide_shapes', 'slide_index', 'int')
-        path = self.get_test_value('get_slide_shapes', 'path', 'str')
         password = self.get_test_value('get_slide_shapes', 'password', 'str')
         folder = self.get_test_value('get_slide_shapes', 'folder', 'str')
         storage = self.get_test_value('get_slide_shapes', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapesRequest(name, slide_index, path, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideShapesRequest(name, slide_index, password, folder, storage)
+
+    def test_get_slide_subshape(self):
+        """Test case for get_slide_subshape
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        self.initialize('get_slide_subshape', None, None)
+        response = self.api.get_slide_subshape(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slide_subshape_invalid_name(self):
+        """Test case for get_slide_subshape with invalid name
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.name = self.get_invalid_test_value('get_slide_subshape', 'name', request.name, 'str')
+        self.initialize('get_slide_subshape', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'name')
+
+    def test_get_slide_subshape_invalid_slide_index(self):
+        """Test case for get_slide_subshape with invalid slide_index
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.slide_index = self.get_invalid_test_value('get_slide_subshape', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_slide_subshape', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'slide_index')
+
+    def test_get_slide_subshape_invalid_shape_index(self):
+        """Test case for get_slide_subshape with invalid shape_index
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.shape_index = self.get_invalid_test_value('get_slide_subshape', 'shape_index', request.shape_index, 'int')
+        self.initialize('get_slide_subshape', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'shape_index')
+
+    def test_get_slide_subshape_invalid_path(self):
+        """Test case for get_slide_subshape with invalid path
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.path = self.get_invalid_test_value('get_slide_subshape', 'path', request.path, 'str')
+        self.initialize('get_slide_subshape', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'path')
+
+    def test_get_slide_subshape_invalid_password(self):
+        """Test case for get_slide_subshape with invalid password
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.password = self.get_invalid_test_value('get_slide_subshape', 'password', request.password, 'str')
+        self.initialize('get_slide_subshape', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'password')
+
+    def test_get_slide_subshape_invalid_folder(self):
+        """Test case for get_slide_subshape with invalid folder
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.folder = self.get_invalid_test_value('get_slide_subshape', 'folder', request.folder, 'str')
+        self.initialize('get_slide_subshape', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'folder')
+
+    def test_get_slide_subshape_invalid_storage(self):
+        """Test case for get_slide_subshape with invalid storage
+        """
+        request = self.__prepare_get_slide_subshape_request()
+        request.storage = self.get_invalid_test_value('get_slide_subshape', 'storage', request.storage, 'str')
+        self.initialize('get_slide_subshape', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slide_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape', 'storage')
+
+    def __prepare_get_slide_subshape_request(self):
+        name = self.get_test_value('get_slide_subshape', 'name', 'str')
+        slide_index = self.get_test_value('get_slide_subshape', 'slide_index', 'int')
+        shape_index = self.get_test_value('get_slide_subshape', 'shape_index', 'int')
+        path = self.get_test_value('get_slide_subshape', 'path', 'str')
+        password = self.get_test_value('get_slide_subshape', 'password', 'str')
+        folder = self.get_test_value('get_slide_subshape', 'folder', 'str')
+        storage = self.get_test_value('get_slide_subshape', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideSubshapeRequest(name, slide_index, shape_index, path, password, folder, storage)
+
+    def test_get_slide_subshape_paragraph(self):
+        """Test case for get_slide_subshape_paragraph
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        self.initialize('get_slide_subshape_paragraph', None, None)
+        response = self.api.get_slide_subshape_paragraph(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slide_subshape_paragraph_invalid_name(self):
+        """Test case for get_slide_subshape_paragraph with invalid name
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.name = self.get_invalid_test_value('get_slide_subshape_paragraph', 'name', request.name, 'str')
+        self.initialize('get_slide_subshape_paragraph', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'name')
+
+    def test_get_slide_subshape_paragraph_invalid_slide_index(self):
+        """Test case for get_slide_subshape_paragraph with invalid slide_index
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.slide_index = self.get_invalid_test_value('get_slide_subshape_paragraph', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_slide_subshape_paragraph', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'slide_index')
+
+    def test_get_slide_subshape_paragraph_invalid_shape_index(self):
+        """Test case for get_slide_subshape_paragraph with invalid shape_index
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.shape_index = self.get_invalid_test_value('get_slide_subshape_paragraph', 'shape_index', request.shape_index, 'int')
+        self.initialize('get_slide_subshape_paragraph', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'shape_index')
+
+    def test_get_slide_subshape_paragraph_invalid_paragraph_index(self):
+        """Test case for get_slide_subshape_paragraph with invalid paragraph_index
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.paragraph_index = self.get_invalid_test_value('get_slide_subshape_paragraph', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('get_slide_subshape_paragraph', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'paragraph_index')
+
+    def test_get_slide_subshape_paragraph_invalid_path(self):
+        """Test case for get_slide_subshape_paragraph with invalid path
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.path = self.get_invalid_test_value('get_slide_subshape_paragraph', 'path', request.path, 'str')
+        self.initialize('get_slide_subshape_paragraph', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'path')
+
+    def test_get_slide_subshape_paragraph_invalid_password(self):
+        """Test case for get_slide_subshape_paragraph with invalid password
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.password = self.get_invalid_test_value('get_slide_subshape_paragraph', 'password', request.password, 'str')
+        self.initialize('get_slide_subshape_paragraph', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'password')
+
+    def test_get_slide_subshape_paragraph_invalid_folder(self):
+        """Test case for get_slide_subshape_paragraph with invalid folder
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.folder = self.get_invalid_test_value('get_slide_subshape_paragraph', 'folder', request.folder, 'str')
+        self.initialize('get_slide_subshape_paragraph', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'folder')
+
+    def test_get_slide_subshape_paragraph_invalid_storage(self):
+        """Test case for get_slide_subshape_paragraph with invalid storage
+        """
+        request = self.__prepare_get_slide_subshape_paragraph_request()
+        request.storage = self.get_invalid_test_value('get_slide_subshape_paragraph', 'storage', request.storage, 'str')
+        self.initialize('get_slide_subshape_paragraph', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraph', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraph', 'storage')
+
+    def __prepare_get_slide_subshape_paragraph_request(self):
+        name = self.get_test_value('get_slide_subshape_paragraph', 'name', 'str')
+        slide_index = self.get_test_value('get_slide_subshape_paragraph', 'slide_index', 'int')
+        shape_index = self.get_test_value('get_slide_subshape_paragraph', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('get_slide_subshape_paragraph', 'paragraph_index', 'int')
+        path = self.get_test_value('get_slide_subshape_paragraph', 'path', 'str')
+        password = self.get_test_value('get_slide_subshape_paragraph', 'password', 'str')
+        folder = self.get_test_value('get_slide_subshape_paragraph', 'folder', 'str')
+        storage = self.get_test_value('get_slide_subshape_paragraph', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideSubshapeParagraphRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+
+    def test_get_slide_subshape_paragraphs(self):
+        """Test case for get_slide_subshape_paragraphs
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        self.initialize('get_slide_subshape_paragraphs', None, None)
+        response = self.api.get_slide_subshape_paragraphs(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slide_subshape_paragraphs_invalid_name(self):
+        """Test case for get_slide_subshape_paragraphs with invalid name
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.name = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'name', request.name, 'str')
+        self.initialize('get_slide_subshape_paragraphs', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'name')
+
+    def test_get_slide_subshape_paragraphs_invalid_slide_index(self):
+        """Test case for get_slide_subshape_paragraphs with invalid slide_index
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.slide_index = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_slide_subshape_paragraphs', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'slide_index')
+
+    def test_get_slide_subshape_paragraphs_invalid_shape_index(self):
+        """Test case for get_slide_subshape_paragraphs with invalid shape_index
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.shape_index = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'shape_index', request.shape_index, 'int')
+        self.initialize('get_slide_subshape_paragraphs', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'shape_index')
+
+    def test_get_slide_subshape_paragraphs_invalid_path(self):
+        """Test case for get_slide_subshape_paragraphs with invalid path
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.path = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'path', request.path, 'str')
+        self.initialize('get_slide_subshape_paragraphs', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'path')
+
+    def test_get_slide_subshape_paragraphs_invalid_password(self):
+        """Test case for get_slide_subshape_paragraphs with invalid password
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.password = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'password', request.password, 'str')
+        self.initialize('get_slide_subshape_paragraphs', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'password')
+
+    def test_get_slide_subshape_paragraphs_invalid_folder(self):
+        """Test case for get_slide_subshape_paragraphs with invalid folder
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.folder = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'folder', request.folder, 'str')
+        self.initialize('get_slide_subshape_paragraphs', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'folder')
+
+    def test_get_slide_subshape_paragraphs_invalid_storage(self):
+        """Test case for get_slide_subshape_paragraphs with invalid storage
+        """
+        request = self.__prepare_get_slide_subshape_paragraphs_request()
+        request.storage = self.get_invalid_test_value('get_slide_subshape_paragraphs', 'storage', request.storage, 'str')
+        self.initialize('get_slide_subshape_paragraphs', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slide_subshape_paragraphs(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshape_paragraphs', 'storage')
+
+    def __prepare_get_slide_subshape_paragraphs_request(self):
+        name = self.get_test_value('get_slide_subshape_paragraphs', 'name', 'str')
+        slide_index = self.get_test_value('get_slide_subshape_paragraphs', 'slide_index', 'int')
+        shape_index = self.get_test_value('get_slide_subshape_paragraphs', 'shape_index', 'int')
+        path = self.get_test_value('get_slide_subshape_paragraphs', 'path', 'str')
+        password = self.get_test_value('get_slide_subshape_paragraphs', 'password', 'str')
+        folder = self.get_test_value('get_slide_subshape_paragraphs', 'folder', 'str')
+        storage = self.get_test_value('get_slide_subshape_paragraphs', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideSubshapeParagraphsRequest(name, slide_index, shape_index, path, password, folder, storage)
+
+    def test_get_slide_subshapes(self):
+        """Test case for get_slide_subshapes
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        self.initialize('get_slide_subshapes', None, None)
+        response = self.api.get_slide_subshapes(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slide_subshapes_invalid_name(self):
+        """Test case for get_slide_subshapes with invalid name
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.name = self.get_invalid_test_value('get_slide_subshapes', 'name', request.name, 'str')
+        self.initialize('get_slide_subshapes', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'name')
+
+    def test_get_slide_subshapes_invalid_slide_index(self):
+        """Test case for get_slide_subshapes with invalid slide_index
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.slide_index = self.get_invalid_test_value('get_slide_subshapes', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_slide_subshapes', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'slide_index')
+
+    def test_get_slide_subshapes_invalid_path(self):
+        """Test case for get_slide_subshapes with invalid path
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.path = self.get_invalid_test_value('get_slide_subshapes', 'path', request.path, 'str')
+        self.initialize('get_slide_subshapes', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'path')
+
+    def test_get_slide_subshapes_invalid_password(self):
+        """Test case for get_slide_subshapes with invalid password
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.password = self.get_invalid_test_value('get_slide_subshapes', 'password', request.password, 'str')
+        self.initialize('get_slide_subshapes', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'password')
+
+    def test_get_slide_subshapes_invalid_folder(self):
+        """Test case for get_slide_subshapes with invalid folder
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.folder = self.get_invalid_test_value('get_slide_subshapes', 'folder', request.folder, 'str')
+        self.initialize('get_slide_subshapes', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'folder')
+
+    def test_get_slide_subshapes_invalid_storage(self):
+        """Test case for get_slide_subshapes with invalid storage
+        """
+        request = self.__prepare_get_slide_subshapes_request()
+        request.storage = self.get_invalid_test_value('get_slide_subshapes', 'storage', request.storage, 'str')
+        self.initialize('get_slide_subshapes', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slide_subshapes(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_subshapes', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_slide_subshapes', 'storage')
+
+    def __prepare_get_slide_subshapes_request(self):
+        name = self.get_test_value('get_slide_subshapes', 'name', 'str')
+        slide_index = self.get_test_value('get_slide_subshapes', 'slide_index', 'int')
+        path = self.get_test_value('get_slide_subshapes', 'path', 'str')
+        password = self.get_test_value('get_slide_subshapes', 'password', 'str')
+        folder = self.get_test_value('get_slide_subshapes', 'folder', 'str')
+        storage = self.get_test_value('get_slide_subshapes', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideSubshapesRequest(name, slide_index, path, password, folder, storage)
 
     def test_get_slides_api_info(self):
         """Test case for get_slides_api_info
@@ -8228,6 +9375,334 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('get_slides_view_properties', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetSlidesViewPropertiesRequest(name, password, folder, storage)
 
+    def test_get_subshape_paragraph_portion(self):
+        """Test case for get_subshape_paragraph_portion
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        self.initialize('get_subshape_paragraph_portion', None, None)
+        response = self.api.get_subshape_paragraph_portion(request)
+        self.assertIsNotNone(response)
+
+    def test_get_subshape_paragraph_portion_invalid_name(self):
+        """Test case for get_subshape_paragraph_portion with invalid name
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.name = self.get_invalid_test_value('get_subshape_paragraph_portion', 'name', request.name, 'str')
+        self.initialize('get_subshape_paragraph_portion', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'name')
+
+    def test_get_subshape_paragraph_portion_invalid_slide_index(self):
+        """Test case for get_subshape_paragraph_portion with invalid slide_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.slide_index = self.get_invalid_test_value('get_subshape_paragraph_portion', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_subshape_paragraph_portion', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'slide_index')
+
+    def test_get_subshape_paragraph_portion_invalid_shape_index(self):
+        """Test case for get_subshape_paragraph_portion with invalid shape_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.shape_index = self.get_invalid_test_value('get_subshape_paragraph_portion', 'shape_index', request.shape_index, 'int')
+        self.initialize('get_subshape_paragraph_portion', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'shape_index')
+
+    def test_get_subshape_paragraph_portion_invalid_paragraph_index(self):
+        """Test case for get_subshape_paragraph_portion with invalid paragraph_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.paragraph_index = self.get_invalid_test_value('get_subshape_paragraph_portion', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('get_subshape_paragraph_portion', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'paragraph_index')
+
+    def test_get_subshape_paragraph_portion_invalid_portion_index(self):
+        """Test case for get_subshape_paragraph_portion with invalid portion_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.portion_index = self.get_invalid_test_value('get_subshape_paragraph_portion', 'portion_index', request.portion_index, 'int')
+        self.initialize('get_subshape_paragraph_portion', 'portion_index', request.portion_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'portion_index', request.portion_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'portion_index')
+
+    def test_get_subshape_paragraph_portion_invalid_path(self):
+        """Test case for get_subshape_paragraph_portion with invalid path
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.path = self.get_invalid_test_value('get_subshape_paragraph_portion', 'path', request.path, 'str')
+        self.initialize('get_subshape_paragraph_portion', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'path')
+
+    def test_get_subshape_paragraph_portion_invalid_password(self):
+        """Test case for get_subshape_paragraph_portion with invalid password
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.password = self.get_invalid_test_value('get_subshape_paragraph_portion', 'password', request.password, 'str')
+        self.initialize('get_subshape_paragraph_portion', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'password')
+
+    def test_get_subshape_paragraph_portion_invalid_folder(self):
+        """Test case for get_subshape_paragraph_portion with invalid folder
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.folder = self.get_invalid_test_value('get_subshape_paragraph_portion', 'folder', request.folder, 'str')
+        self.initialize('get_subshape_paragraph_portion', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'folder')
+
+    def test_get_subshape_paragraph_portion_invalid_storage(self):
+        """Test case for get_subshape_paragraph_portion with invalid storage
+        """
+        request = self.__prepare_get_subshape_paragraph_portion_request()
+        request.storage = self.get_invalid_test_value('get_subshape_paragraph_portion', 'storage', request.storage, 'str')
+        self.initialize('get_subshape_paragraph_portion', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portion', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portion', 'storage')
+
+    def __prepare_get_subshape_paragraph_portion_request(self):
+        name = self.get_test_value('get_subshape_paragraph_portion', 'name', 'str')
+        slide_index = self.get_test_value('get_subshape_paragraph_portion', 'slide_index', 'int')
+        shape_index = self.get_test_value('get_subshape_paragraph_portion', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('get_subshape_paragraph_portion', 'paragraph_index', 'int')
+        portion_index = self.get_test_value('get_subshape_paragraph_portion', 'portion_index', 'int')
+        path = self.get_test_value('get_subshape_paragraph_portion', 'path', 'str')
+        password = self.get_test_value('get_subshape_paragraph_portion', 'password', 'str')
+        folder = self.get_test_value('get_subshape_paragraph_portion', 'folder', 'str')
+        storage = self.get_test_value('get_subshape_paragraph_portion', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSubshapeParagraphPortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+
+    def test_get_subshape_paragraph_portions(self):
+        """Test case for get_subshape_paragraph_portions
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        self.initialize('get_subshape_paragraph_portions', None, None)
+        response = self.api.get_subshape_paragraph_portions(request)
+        self.assertIsNotNone(response)
+
+    def test_get_subshape_paragraph_portions_invalid_name(self):
+        """Test case for get_subshape_paragraph_portions with invalid name
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.name = self.get_invalid_test_value('get_subshape_paragraph_portions', 'name', request.name, 'str')
+        self.initialize('get_subshape_paragraph_portions', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'name')
+
+    def test_get_subshape_paragraph_portions_invalid_slide_index(self):
+        """Test case for get_subshape_paragraph_portions with invalid slide_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.slide_index = self.get_invalid_test_value('get_subshape_paragraph_portions', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_subshape_paragraph_portions', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'slide_index')
+
+    def test_get_subshape_paragraph_portions_invalid_shape_index(self):
+        """Test case for get_subshape_paragraph_portions with invalid shape_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.shape_index = self.get_invalid_test_value('get_subshape_paragraph_portions', 'shape_index', request.shape_index, 'int')
+        self.initialize('get_subshape_paragraph_portions', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'shape_index')
+
+    def test_get_subshape_paragraph_portions_invalid_paragraph_index(self):
+        """Test case for get_subshape_paragraph_portions with invalid paragraph_index
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.paragraph_index = self.get_invalid_test_value('get_subshape_paragraph_portions', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('get_subshape_paragraph_portions', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'paragraph_index')
+
+    def test_get_subshape_paragraph_portions_invalid_path(self):
+        """Test case for get_subshape_paragraph_portions with invalid path
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.path = self.get_invalid_test_value('get_subshape_paragraph_portions', 'path', request.path, 'str')
+        self.initialize('get_subshape_paragraph_portions', 'path', request.path)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'path')
+
+    def test_get_subshape_paragraph_portions_invalid_password(self):
+        """Test case for get_subshape_paragraph_portions with invalid password
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.password = self.get_invalid_test_value('get_subshape_paragraph_portions', 'password', request.password, 'str')
+        self.initialize('get_subshape_paragraph_portions', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'password')
+
+    def test_get_subshape_paragraph_portions_invalid_folder(self):
+        """Test case for get_subshape_paragraph_portions with invalid folder
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.folder = self.get_invalid_test_value('get_subshape_paragraph_portions', 'folder', request.folder, 'str')
+        self.initialize('get_subshape_paragraph_portions', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'folder')
+
+    def test_get_subshape_paragraph_portions_invalid_storage(self):
+        """Test case for get_subshape_paragraph_portions with invalid storage
+        """
+        request = self.__prepare_get_subshape_paragraph_portions_request()
+        request.storage = self.get_invalid_test_value('get_subshape_paragraph_portions', 'storage', request.storage, 'str')
+        self.initialize('get_subshape_paragraph_portions', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_subshape_paragraph_portions(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_subshape_paragraph_portions', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('get_subshape_paragraph_portions', 'storage')
+
+    def __prepare_get_subshape_paragraph_portions_request(self):
+        name = self.get_test_value('get_subshape_paragraph_portions', 'name', 'str')
+        slide_index = self.get_test_value('get_subshape_paragraph_portions', 'slide_index', 'int')
+        shape_index = self.get_test_value('get_subshape_paragraph_portions', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('get_subshape_paragraph_portions', 'paragraph_index', 'int')
+        path = self.get_test_value('get_subshape_paragraph_portions', 'path', 'str')
+        password = self.get_test_value('get_subshape_paragraph_portions', 'password', 'str')
+        folder = self.get_test_value('get_subshape_paragraph_portions', 'folder', 'str')
+        storage = self.get_test_value('get_subshape_paragraph_portions', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSubshapeParagraphPortionsRequest(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+
     def test_move_file(self):
         """Test case for move_file
         """
@@ -8536,23 +10011,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'shape_index')
 
-    def test_post_add_new_paragraph_invalid_path(self):
-        """Test case for post_add_new_paragraph with invalid path
-        """
-        request = self.__prepare_post_add_new_paragraph_request()
-        request.path = self.get_invalid_test_value('post_add_new_paragraph', 'path', request.path, 'str')
-        self.initialize('post_add_new_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_add_new_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_add_new_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_add_new_paragraph', 'path')
-
     def test_post_add_new_paragraph_invalid_dto(self):
         """Test case for post_add_new_paragraph with invalid dto
         """
@@ -8642,13 +10100,12 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_add_new_paragraph', 'name', 'str')
         slide_index = self.get_test_value('post_add_new_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('post_add_new_paragraph', 'shape_index', 'int')
-        path = self.get_test_value('post_add_new_paragraph', 'path', 'str')
         dto = self.get_test_value('post_add_new_paragraph', 'dto', 'Paragraph')
         password = self.get_test_value('post_add_new_paragraph', 'password', 'str')
         folder = self.get_test_value('post_add_new_paragraph', 'folder', 'str')
         storage = self.get_test_value('post_add_new_paragraph', 'storage', 'str')
         position = self.get_test_value('post_add_new_paragraph', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewParagraphRequest(name, slide_index, shape_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewParagraphRequest(name, slide_index, shape_index, dto, password, folder, storage, position)
 
     def test_post_add_new_portion(self):
         """Test case for post_add_new_portion
@@ -8725,23 +10182,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('post_add_new_portion', 'paragraph_index')
-
-    def test_post_add_new_portion_invalid_path(self):
-        """Test case for post_add_new_portion with invalid path
-        """
-        request = self.__prepare_post_add_new_portion_request()
-        request.path = self.get_invalid_test_value('post_add_new_portion', 'path', request.path, 'str')
-        self.initialize('post_add_new_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_add_new_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_add_new_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_add_new_portion', 'path')
 
     def test_post_add_new_portion_invalid_dto(self):
         """Test case for post_add_new_portion with invalid dto
@@ -8833,13 +10273,12 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('post_add_new_portion', 'slide_index', 'int')
         shape_index = self.get_test_value('post_add_new_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('post_add_new_portion', 'paragraph_index', 'int')
-        path = self.get_test_value('post_add_new_portion', 'path', 'str')
         dto = self.get_test_value('post_add_new_portion', 'dto', 'Portion')
         password = self.get_test_value('post_add_new_portion', 'password', 'str')
         folder = self.get_test_value('post_add_new_portion', 'folder', 'str')
         storage = self.get_test_value('post_add_new_portion', 'storage', 'str')
         position = self.get_test_value('post_add_new_portion', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewPortionRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewPortionRequest(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage, position)
 
     def test_post_add_new_shape(self):
         """Test case for post_add_new_shape
@@ -8882,23 +10321,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('post_add_new_shape', 'slide_index')
-
-    def test_post_add_new_shape_invalid_path(self):
-        """Test case for post_add_new_shape with invalid path
-        """
-        request = self.__prepare_post_add_new_shape_request()
-        request.path = self.get_invalid_test_value('post_add_new_shape', 'path', request.path, 'str')
-        self.initialize('post_add_new_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_add_new_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_add_new_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_add_new_shape', 'path')
 
     def test_post_add_new_shape_invalid_dto(self):
         """Test case for post_add_new_shape with invalid dto
@@ -9005,14 +10427,550 @@ class TestSlidesApi(BaseTest):
     def __prepare_post_add_new_shape_request(self):
         name = self.get_test_value('post_add_new_shape', 'name', 'str')
         slide_index = self.get_test_value('post_add_new_shape', 'slide_index', 'int')
-        path = self.get_test_value('post_add_new_shape', 'path', 'str')
         dto = self.get_test_value('post_add_new_shape', 'dto', 'ShapeBase')
         password = self.get_test_value('post_add_new_shape', 'password', 'str')
         folder = self.get_test_value('post_add_new_shape', 'folder', 'str')
         storage = self.get_test_value('post_add_new_shape', 'storage', 'str')
         shape_to_clone = self.get_test_value('post_add_new_shape', 'shape_to_clone', 'int')
         position = self.get_test_value('post_add_new_shape', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewShapeRequest(name, slide_index, path, dto, password, folder, storage, shape_to_clone, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewShapeRequest(name, slide_index, dto, password, folder, storage, shape_to_clone, position)
+
+    def test_post_add_new_subshape(self):
+        """Test case for post_add_new_subshape
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        self.initialize('post_add_new_subshape', None, None)
+        response = self.api.post_add_new_subshape(request)
+        self.assertIsNotNone(response)
+
+    def test_post_add_new_subshape_invalid_name(self):
+        """Test case for post_add_new_subshape with invalid name
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.name = self.get_invalid_test_value('post_add_new_subshape', 'name', request.name, 'str')
+        self.initialize('post_add_new_subshape', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'name')
+
+    def test_post_add_new_subshape_invalid_slide_index(self):
+        """Test case for post_add_new_subshape with invalid slide_index
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.slide_index = self.get_invalid_test_value('post_add_new_subshape', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_add_new_subshape', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'slide_index')
+
+    def test_post_add_new_subshape_invalid_path(self):
+        """Test case for post_add_new_subshape with invalid path
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.path = self.get_invalid_test_value('post_add_new_subshape', 'path', request.path, 'str')
+        self.initialize('post_add_new_subshape', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'path')
+
+    def test_post_add_new_subshape_invalid_dto(self):
+        """Test case for post_add_new_subshape with invalid dto
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.dto = self.get_invalid_test_value('post_add_new_subshape', 'dto', request.dto, 'ShapeBase')
+        self.initialize('post_add_new_subshape', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'dto')
+
+    def test_post_add_new_subshape_invalid_password(self):
+        """Test case for post_add_new_subshape with invalid password
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.password = self.get_invalid_test_value('post_add_new_subshape', 'password', request.password, 'str')
+        self.initialize('post_add_new_subshape', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'password')
+
+    def test_post_add_new_subshape_invalid_folder(self):
+        """Test case for post_add_new_subshape with invalid folder
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.folder = self.get_invalid_test_value('post_add_new_subshape', 'folder', request.folder, 'str')
+        self.initialize('post_add_new_subshape', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'folder')
+
+    def test_post_add_new_subshape_invalid_storage(self):
+        """Test case for post_add_new_subshape with invalid storage
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.storage = self.get_invalid_test_value('post_add_new_subshape', 'storage', request.storage, 'str')
+        self.initialize('post_add_new_subshape', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'storage')
+
+    def test_post_add_new_subshape_invalid_shape_to_clone(self):
+        """Test case for post_add_new_subshape with invalid shape_to_clone
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.shape_to_clone = self.get_invalid_test_value('post_add_new_subshape', 'shape_to_clone', request.shape_to_clone, 'int')
+        self.initialize('post_add_new_subshape', 'shape_to_clone', request.shape_to_clone)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'shape_to_clone', request.shape_to_clone)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'shape_to_clone')
+
+    def test_post_add_new_subshape_invalid_position(self):
+        """Test case for post_add_new_subshape with invalid position
+        """
+        request = self.__prepare_post_add_new_subshape_request()
+        request.position = self.get_invalid_test_value('post_add_new_subshape', 'position', request.position, 'int')
+        self.initialize('post_add_new_subshape', 'position', request.position)
+        ok = False
+        try:
+            self.api.post_add_new_subshape(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape', 'position', request.position)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape', 'position')
+
+    def __prepare_post_add_new_subshape_request(self):
+        name = self.get_test_value('post_add_new_subshape', 'name', 'str')
+        slide_index = self.get_test_value('post_add_new_subshape', 'slide_index', 'int')
+        path = self.get_test_value('post_add_new_subshape', 'path', 'str')
+        dto = self.get_test_value('post_add_new_subshape', 'dto', 'ShapeBase')
+        password = self.get_test_value('post_add_new_subshape', 'password', 'str')
+        folder = self.get_test_value('post_add_new_subshape', 'folder', 'str')
+        storage = self.get_test_value('post_add_new_subshape', 'storage', 'str')
+        shape_to_clone = self.get_test_value('post_add_new_subshape', 'shape_to_clone', 'int')
+        position = self.get_test_value('post_add_new_subshape', 'position', 'int')
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapeRequest(name, slide_index, path, dto, password, folder, storage, shape_to_clone, position)
+
+    def test_post_add_new_subshape_paragraph(self):
+        """Test case for post_add_new_subshape_paragraph
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        self.initialize('post_add_new_subshape_paragraph', None, None)
+        response = self.api.post_add_new_subshape_paragraph(request)
+        self.assertIsNotNone(response)
+
+    def test_post_add_new_subshape_paragraph_invalid_name(self):
+        """Test case for post_add_new_subshape_paragraph with invalid name
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.name = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'name', request.name, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'name')
+
+    def test_post_add_new_subshape_paragraph_invalid_slide_index(self):
+        """Test case for post_add_new_subshape_paragraph with invalid slide_index
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.slide_index = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_add_new_subshape_paragraph', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'slide_index')
+
+    def test_post_add_new_subshape_paragraph_invalid_shape_index(self):
+        """Test case for post_add_new_subshape_paragraph with invalid shape_index
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.shape_index = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_add_new_subshape_paragraph', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'shape_index')
+
+    def test_post_add_new_subshape_paragraph_invalid_path(self):
+        """Test case for post_add_new_subshape_paragraph with invalid path
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.path = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'path', request.path, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'path')
+
+    def test_post_add_new_subshape_paragraph_invalid_dto(self):
+        """Test case for post_add_new_subshape_paragraph with invalid dto
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.dto = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'dto', request.dto, 'Paragraph')
+        self.initialize('post_add_new_subshape_paragraph', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'dto')
+
+    def test_post_add_new_subshape_paragraph_invalid_password(self):
+        """Test case for post_add_new_subshape_paragraph with invalid password
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.password = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'password', request.password, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'password')
+
+    def test_post_add_new_subshape_paragraph_invalid_folder(self):
+        """Test case for post_add_new_subshape_paragraph with invalid folder
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.folder = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'folder', request.folder, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'folder')
+
+    def test_post_add_new_subshape_paragraph_invalid_storage(self):
+        """Test case for post_add_new_subshape_paragraph with invalid storage
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.storage = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'storage', request.storage, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'storage')
+
+    def test_post_add_new_subshape_paragraph_invalid_position(self):
+        """Test case for post_add_new_subshape_paragraph with invalid position
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.position = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'position', request.position, 'int')
+        self.initialize('post_add_new_subshape_paragraph', 'position', request.position)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'position', request.position)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'position')
+
+    def __prepare_post_add_new_subshape_paragraph_request(self):
+        name = self.get_test_value('post_add_new_subshape_paragraph', 'name', 'str')
+        slide_index = self.get_test_value('post_add_new_subshape_paragraph', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_add_new_subshape_paragraph', 'shape_index', 'int')
+        path = self.get_test_value('post_add_new_subshape_paragraph', 'path', 'str')
+        dto = self.get_test_value('post_add_new_subshape_paragraph', 'dto', 'Paragraph')
+        password = self.get_test_value('post_add_new_subshape_paragraph', 'password', 'str')
+        folder = self.get_test_value('post_add_new_subshape_paragraph', 'folder', 'str')
+        storage = self.get_test_value('post_add_new_subshape_paragraph', 'storage', 'str')
+        position = self.get_test_value('post_add_new_subshape_paragraph', 'position', 'int')
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapeParagraphRequest(name, slide_index, shape_index, path, dto, password, folder, storage, position)
+
+    def test_post_add_new_subshape_portion(self):
+        """Test case for post_add_new_subshape_portion
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        self.initialize('post_add_new_subshape_portion', None, None)
+        response = self.api.post_add_new_subshape_portion(request)
+        self.assertIsNotNone(response)
+
+    def test_post_add_new_subshape_portion_invalid_name(self):
+        """Test case for post_add_new_subshape_portion with invalid name
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.name = self.get_invalid_test_value('post_add_new_subshape_portion', 'name', request.name, 'str')
+        self.initialize('post_add_new_subshape_portion', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'name')
+
+    def test_post_add_new_subshape_portion_invalid_slide_index(self):
+        """Test case for post_add_new_subshape_portion with invalid slide_index
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.slide_index = self.get_invalid_test_value('post_add_new_subshape_portion', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_add_new_subshape_portion', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'slide_index')
+
+    def test_post_add_new_subshape_portion_invalid_shape_index(self):
+        """Test case for post_add_new_subshape_portion with invalid shape_index
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.shape_index = self.get_invalid_test_value('post_add_new_subshape_portion', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_add_new_subshape_portion', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'shape_index')
+
+    def test_post_add_new_subshape_portion_invalid_paragraph_index(self):
+        """Test case for post_add_new_subshape_portion with invalid paragraph_index
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.paragraph_index = self.get_invalid_test_value('post_add_new_subshape_portion', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('post_add_new_subshape_portion', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'paragraph_index')
+
+    def test_post_add_new_subshape_portion_invalid_path(self):
+        """Test case for post_add_new_subshape_portion with invalid path
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.path = self.get_invalid_test_value('post_add_new_subshape_portion', 'path', request.path, 'str')
+        self.initialize('post_add_new_subshape_portion', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'path')
+
+    def test_post_add_new_subshape_portion_invalid_dto(self):
+        """Test case for post_add_new_subshape_portion with invalid dto
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.dto = self.get_invalid_test_value('post_add_new_subshape_portion', 'dto', request.dto, 'Portion')
+        self.initialize('post_add_new_subshape_portion', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'dto')
+
+    def test_post_add_new_subshape_portion_invalid_password(self):
+        """Test case for post_add_new_subshape_portion with invalid password
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.password = self.get_invalid_test_value('post_add_new_subshape_portion', 'password', request.password, 'str')
+        self.initialize('post_add_new_subshape_portion', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'password')
+
+    def test_post_add_new_subshape_portion_invalid_folder(self):
+        """Test case for post_add_new_subshape_portion with invalid folder
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.folder = self.get_invalid_test_value('post_add_new_subshape_portion', 'folder', request.folder, 'str')
+        self.initialize('post_add_new_subshape_portion', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'folder')
+
+    def test_post_add_new_subshape_portion_invalid_storage(self):
+        """Test case for post_add_new_subshape_portion with invalid storage
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.storage = self.get_invalid_test_value('post_add_new_subshape_portion', 'storage', request.storage, 'str')
+        self.initialize('post_add_new_subshape_portion', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'storage')
+
+    def test_post_add_new_subshape_portion_invalid_position(self):
+        """Test case for post_add_new_subshape_portion with invalid position
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.position = self.get_invalid_test_value('post_add_new_subshape_portion', 'position', request.position, 'int')
+        self.initialize('post_add_new_subshape_portion', 'position', request.position)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'position', request.position)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'position')
+
+    def __prepare_post_add_new_subshape_portion_request(self):
+        name = self.get_test_value('post_add_new_subshape_portion', 'name', 'str')
+        slide_index = self.get_test_value('post_add_new_subshape_portion', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_add_new_subshape_portion', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('post_add_new_subshape_portion', 'paragraph_index', 'int')
+        path = self.get_test_value('post_add_new_subshape_portion', 'path', 'str')
+        dto = self.get_test_value('post_add_new_subshape_portion', 'dto', 'Portion')
+        password = self.get_test_value('post_add_new_subshape_portion', 'password', 'str')
+        folder = self.get_test_value('post_add_new_subshape_portion', 'folder', 'str')
+        storage = self.get_test_value('post_add_new_subshape_portion', 'storage', 'str')
+        position = self.get_test_value('post_add_new_subshape_portion', 'position', 'int')
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapePortionRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage, position)
 
     def test_post_add_notes_slide(self):
         """Test case for post_add_notes_slide
@@ -9526,6 +11484,71 @@ class TestSlidesApi(BaseTest):
         password = self.get_test_value('post_get_notes_slide', 'password', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideRequest(slide_index, document, password)
 
+    def test_post_get_notes_slide_exists(self):
+        """Test case for post_get_notes_slide_exists
+        """
+        request = self.__prepare_post_get_notes_slide_exists_request()
+        self.initialize('post_get_notes_slide_exists', None, None)
+        response = self.api.post_get_notes_slide_exists(request)
+        self.assertIsNotNone(response)
+
+    def test_post_get_notes_slide_exists_invalid_slide_index(self):
+        """Test case for post_get_notes_slide_exists with invalid slide_index
+        """
+        request = self.__prepare_post_get_notes_slide_exists_request()
+        request.slide_index = self.get_invalid_test_value('post_get_notes_slide_exists', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_get_notes_slide_exists', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_exists', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_exists', 'slide_index')
+
+    def test_post_get_notes_slide_exists_invalid_document(self):
+        """Test case for post_get_notes_slide_exists with invalid document
+        """
+        request = self.__prepare_post_get_notes_slide_exists_request()
+        request.document = self.get_invalid_test_value('post_get_notes_slide_exists', 'document', request.document, 'file')
+        self.initialize('post_get_notes_slide_exists', 'document', request.document)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_exists', 'document', request.document)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_exists', 'document')
+
+    def test_post_get_notes_slide_exists_invalid_password(self):
+        """Test case for post_get_notes_slide_exists with invalid password
+        """
+        request = self.__prepare_post_get_notes_slide_exists_request()
+        request.password = self.get_invalid_test_value('post_get_notes_slide_exists', 'password', request.password, 'str')
+        self.initialize('post_get_notes_slide_exists', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_exists', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_exists', 'password')
+
+    def __prepare_post_get_notes_slide_exists_request(self):
+        slide_index = self.get_test_value('post_get_notes_slide_exists', 'slide_index', 'int')
+        document = self.get_test_value('post_get_notes_slide_exists', 'document', 'file')
+        password = self.get_test_value('post_get_notes_slide_exists', 'password', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideExistsRequest(slide_index, document, password)
+
     def test_post_get_notes_slide_with_format(self):
         """Test case for post_get_notes_slide_with_format
         """
@@ -9723,23 +11746,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'shape_index')
 
-    def test_post_notes_slide_add_new_paragraph_invalid_path(self):
-        """Test case for post_notes_slide_add_new_paragraph with invalid path
-        """
-        request = self.__prepare_post_notes_slide_add_new_paragraph_request()
-        request.path = self.get_invalid_test_value('post_notes_slide_add_new_paragraph', 'path', request.path, 'str')
-        self.initialize('post_notes_slide_add_new_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_notes_slide_add_new_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_notes_slide_add_new_paragraph', 'path')
-
     def test_post_notes_slide_add_new_paragraph_invalid_dto(self):
         """Test case for post_notes_slide_add_new_paragraph with invalid dto
         """
@@ -9829,13 +11835,12 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_notes_slide_add_new_paragraph', 'name', 'str')
         slide_index = self.get_test_value('post_notes_slide_add_new_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('post_notes_slide_add_new_paragraph', 'shape_index', 'int')
-        path = self.get_test_value('post_notes_slide_add_new_paragraph', 'path', 'str')
         dto = self.get_test_value('post_notes_slide_add_new_paragraph', 'dto', 'Paragraph')
         password = self.get_test_value('post_notes_slide_add_new_paragraph', 'password', 'str')
         folder = self.get_test_value('post_notes_slide_add_new_paragraph', 'folder', 'str')
         storage = self.get_test_value('post_notes_slide_add_new_paragraph', 'storage', 'str')
         position = self.get_test_value('post_notes_slide_add_new_paragraph', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewParagraphRequest(name, slide_index, shape_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewParagraphRequest(name, slide_index, shape_index, dto, password, folder, storage, position)
 
     def test_post_notes_slide_add_new_portion(self):
         """Test case for post_notes_slide_add_new_portion
@@ -9912,23 +11917,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'paragraph_index')
-
-    def test_post_notes_slide_add_new_portion_invalid_path(self):
-        """Test case for post_notes_slide_add_new_portion with invalid path
-        """
-        request = self.__prepare_post_notes_slide_add_new_portion_request()
-        request.path = self.get_invalid_test_value('post_notes_slide_add_new_portion', 'path', request.path, 'str')
-        self.initialize('post_notes_slide_add_new_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_notes_slide_add_new_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_notes_slide_add_new_portion', 'path')
 
     def test_post_notes_slide_add_new_portion_invalid_dto(self):
         """Test case for post_notes_slide_add_new_portion with invalid dto
@@ -10020,13 +12008,12 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('post_notes_slide_add_new_portion', 'slide_index', 'int')
         shape_index = self.get_test_value('post_notes_slide_add_new_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('post_notes_slide_add_new_portion', 'paragraph_index', 'int')
-        path = self.get_test_value('post_notes_slide_add_new_portion', 'path', 'str')
         dto = self.get_test_value('post_notes_slide_add_new_portion', 'dto', 'Portion')
         password = self.get_test_value('post_notes_slide_add_new_portion', 'password', 'str')
         folder = self.get_test_value('post_notes_slide_add_new_portion', 'folder', 'str')
         storage = self.get_test_value('post_notes_slide_add_new_portion', 'storage', 'str')
         position = self.get_test_value('post_notes_slide_add_new_portion', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewPortionRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewPortionRequest(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage, position)
 
     def test_post_notes_slide_add_new_shape(self):
         """Test case for post_notes_slide_add_new_shape
@@ -10069,23 +12056,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'slide_index')
-
-    def test_post_notes_slide_add_new_shape_invalid_path(self):
-        """Test case for post_notes_slide_add_new_shape with invalid path
-        """
-        request = self.__prepare_post_notes_slide_add_new_shape_request()
-        request.path = self.get_invalid_test_value('post_notes_slide_add_new_shape', 'path', request.path, 'str')
-        self.initialize('post_notes_slide_add_new_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_notes_slide_add_new_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_notes_slide_add_new_shape', 'path')
 
     def test_post_notes_slide_add_new_shape_invalid_dto(self):
         """Test case for post_notes_slide_add_new_shape with invalid dto
@@ -10192,14 +12162,13 @@ class TestSlidesApi(BaseTest):
     def __prepare_post_notes_slide_add_new_shape_request(self):
         name = self.get_test_value('post_notes_slide_add_new_shape', 'name', 'str')
         slide_index = self.get_test_value('post_notes_slide_add_new_shape', 'slide_index', 'int')
-        path = self.get_test_value('post_notes_slide_add_new_shape', 'path', 'str')
         dto = self.get_test_value('post_notes_slide_add_new_shape', 'dto', 'ShapeBase')
         password = self.get_test_value('post_notes_slide_add_new_shape', 'password', 'str')
         folder = self.get_test_value('post_notes_slide_add_new_shape', 'folder', 'str')
         storage = self.get_test_value('post_notes_slide_add_new_shape', 'storage', 'str')
         shape_to_clone = self.get_test_value('post_notes_slide_add_new_shape', 'shape_to_clone', 'int')
         position = self.get_test_value('post_notes_slide_add_new_shape', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewShapeRequest(name, slide_index, path, dto, password, folder, storage, shape_to_clone, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideAddNewShapeRequest(name, slide_index, dto, password, folder, storage, shape_to_clone, position)
 
     def test_post_notes_slide_shape_save_as(self):
         """Test case for post_notes_slide_shape_save_as
@@ -10277,23 +12246,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'format')
-
-    def test_post_notes_slide_shape_save_as_invalid_path(self):
-        """Test case for post_notes_slide_shape_save_as with invalid path
-        """
-        request = self.__prepare_post_notes_slide_shape_save_as_request()
-        request.path = self.get_invalid_test_value('post_notes_slide_shape_save_as', 'path', request.path, 'str')
-        self.initialize('post_notes_slide_shape_save_as', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_notes_slide_shape_save_as(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_notes_slide_shape_save_as', 'path')
 
     def test_post_notes_slide_shape_save_as_invalid_options(self):
         """Test case for post_notes_slide_shape_save_as with invalid options
@@ -10436,7 +12388,6 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('post_notes_slide_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('post_notes_slide_shape_save_as', 'shape_index', 'int')
         format = self.get_test_value('post_notes_slide_shape_save_as', 'format', 'str')
-        path = self.get_test_value('post_notes_slide_shape_save_as', 'path', 'str')
         options = self.get_test_value('post_notes_slide_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('post_notes_slide_shape_save_as', 'password', 'str')
         folder = self.get_test_value('post_notes_slide_shape_save_as', 'folder', 'str')
@@ -10445,7 +12396,7 @@ class TestSlidesApi(BaseTest):
         scale_y = self.get_test_value('post_notes_slide_shape_save_as', 'scale_y', 'float')
         bounds = self.get_test_value('post_notes_slide_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_notes_slide_shape_save_as', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PostNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
     def test_post_presentation_merge(self):
         """Test case for post_presentation_merge
@@ -10625,23 +12576,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('post_shape_save_as', 'format')
 
-    def test_post_shape_save_as_invalid_path(self):
-        """Test case for post_shape_save_as with invalid path
-        """
-        request = self.__prepare_post_shape_save_as_request()
-        request.path = self.get_invalid_test_value('post_shape_save_as', 'path', request.path, 'str')
-        self.initialize('post_shape_save_as', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_shape_save_as(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_shape_save_as', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_shape_save_as', 'path')
-
     def test_post_shape_save_as_invalid_options(self):
         """Test case for post_shape_save_as with invalid options
         """
@@ -10783,7 +12717,6 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('post_shape_save_as', 'slide_index', 'int')
         shape_index = self.get_test_value('post_shape_save_as', 'shape_index', 'int')
         format = self.get_test_value('post_shape_save_as', 'format', 'str')
-        path = self.get_test_value('post_shape_save_as', 'path', 'str')
         options = self.get_test_value('post_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('post_shape_save_as', 'password', 'str')
         folder = self.get_test_value('post_shape_save_as', 'folder', 'str')
@@ -10792,7 +12725,7 @@ class TestSlidesApi(BaseTest):
         scale_y = self.get_test_value('post_shape_save_as', 'scale_y', 'float')
         bounds = self.get_test_value('post_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_shape_save_as', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostShapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PostShapeSaveAsRequest(name, slide_index, shape_index, format, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
     def test_post_slide_animation_effect(self):
         """Test case for post_slide_animation_effect
@@ -13311,6 +15244,252 @@ class TestSlidesApi(BaseTest):
         fonts_folder = self.get_test_value('post_slides_split', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostSlidesSplitRequest(name, options, format, width, height, to, _from, dest_folder, password, storage, folder, fonts_folder)
 
+    def test_post_subshape_save_as(self):
+        """Test case for post_subshape_save_as
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        self.initialize('post_subshape_save_as', None, None)
+        response = self.api.post_subshape_save_as(request)
+        self.assertTrue(isinstance(response, str))
+        self.assertTrue(len(response) > 0)
+
+    def test_post_subshape_save_as_invalid_name(self):
+        """Test case for post_subshape_save_as with invalid name
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.name = self.get_invalid_test_value('post_subshape_save_as', 'name', request.name, 'str')
+        self.initialize('post_subshape_save_as', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'name')
+
+    def test_post_subshape_save_as_invalid_slide_index(self):
+        """Test case for post_subshape_save_as with invalid slide_index
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.slide_index = self.get_invalid_test_value('post_subshape_save_as', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_subshape_save_as', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'slide_index')
+
+    def test_post_subshape_save_as_invalid_shape_index(self):
+        """Test case for post_subshape_save_as with invalid shape_index
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.shape_index = self.get_invalid_test_value('post_subshape_save_as', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_subshape_save_as', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'shape_index')
+
+    def test_post_subshape_save_as_invalid_format(self):
+        """Test case for post_subshape_save_as with invalid format
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.format = self.get_invalid_test_value('post_subshape_save_as', 'format', request.format, 'str')
+        self.initialize('post_subshape_save_as', 'format', request.format)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'format', request.format)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'format')
+
+    def test_post_subshape_save_as_invalid_path(self):
+        """Test case for post_subshape_save_as with invalid path
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.path = self.get_invalid_test_value('post_subshape_save_as', 'path', request.path, 'str')
+        self.initialize('post_subshape_save_as', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'path')
+
+    def test_post_subshape_save_as_invalid_options(self):
+        """Test case for post_subshape_save_as with invalid options
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.options = self.get_invalid_test_value('post_subshape_save_as', 'options', request.options, 'IShapeExportOptions')
+        self.initialize('post_subshape_save_as', 'options', request.options)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'options', request.options)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'options')
+
+    def test_post_subshape_save_as_invalid_password(self):
+        """Test case for post_subshape_save_as with invalid password
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.password = self.get_invalid_test_value('post_subshape_save_as', 'password', request.password, 'str')
+        self.initialize('post_subshape_save_as', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'password')
+
+    def test_post_subshape_save_as_invalid_folder(self):
+        """Test case for post_subshape_save_as with invalid folder
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.folder = self.get_invalid_test_value('post_subshape_save_as', 'folder', request.folder, 'str')
+        self.initialize('post_subshape_save_as', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'folder')
+
+    def test_post_subshape_save_as_invalid_storage(self):
+        """Test case for post_subshape_save_as with invalid storage
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.storage = self.get_invalid_test_value('post_subshape_save_as', 'storage', request.storage, 'str')
+        self.initialize('post_subshape_save_as', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'storage')
+
+    def test_post_subshape_save_as_invalid_scale_x(self):
+        """Test case for post_subshape_save_as with invalid scale_x
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.scale_x = self.get_invalid_test_value('post_subshape_save_as', 'scale_x', request.scale_x, 'float')
+        self.initialize('post_subshape_save_as', 'scale_x', request.scale_x)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'scale_x', request.scale_x)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'scale_x')
+
+    def test_post_subshape_save_as_invalid_scale_y(self):
+        """Test case for post_subshape_save_as with invalid scale_y
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.scale_y = self.get_invalid_test_value('post_subshape_save_as', 'scale_y', request.scale_y, 'float')
+        self.initialize('post_subshape_save_as', 'scale_y', request.scale_y)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'scale_y', request.scale_y)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'scale_y')
+
+    def test_post_subshape_save_as_invalid_bounds(self):
+        """Test case for post_subshape_save_as with invalid bounds
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.bounds = self.get_invalid_test_value('post_subshape_save_as', 'bounds', request.bounds, 'str')
+        self.initialize('post_subshape_save_as', 'bounds', request.bounds)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'bounds', request.bounds)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'bounds')
+
+    def test_post_subshape_save_as_invalid_fonts_folder(self):
+        """Test case for post_subshape_save_as with invalid fonts_folder
+        """
+        request = self.__prepare_post_subshape_save_as_request()
+        request.fonts_folder = self.get_invalid_test_value('post_subshape_save_as', 'fonts_folder', request.fonts_folder, 'str')
+        self.initialize('post_subshape_save_as', 'fonts_folder', request.fonts_folder)
+        ok = False
+        try:
+            self.api.post_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_subshape_save_as', 'fonts_folder', request.fonts_folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_subshape_save_as', 'fonts_folder')
+
+    def __prepare_post_subshape_save_as_request(self):
+        name = self.get_test_value('post_subshape_save_as', 'name', 'str')
+        slide_index = self.get_test_value('post_subshape_save_as', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_subshape_save_as', 'shape_index', 'int')
+        format = self.get_test_value('post_subshape_save_as', 'format', 'str')
+        path = self.get_test_value('post_subshape_save_as', 'path', 'str')
+        options = self.get_test_value('post_subshape_save_as', 'options', 'IShapeExportOptions')
+        password = self.get_test_value('post_subshape_save_as', 'password', 'str')
+        folder = self.get_test_value('post_subshape_save_as', 'folder', 'str')
+        storage = self.get_test_value('post_subshape_save_as', 'storage', 'str')
+        scale_x = self.get_test_value('post_subshape_save_as', 'scale_x', 'float')
+        scale_y = self.get_test_value('post_subshape_save_as', 'scale_y', 'float')
+        bounds = self.get_test_value('post_subshape_save_as', 'bounds', 'str')
+        fonts_folder = self.get_test_value('post_subshape_save_as', 'fonts_folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSubshapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+
     def test_put_layout_slide(self):
         """Test case for put_layout_slide
         """
@@ -13523,23 +15702,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'out_path')
 
-    def test_put_notes_slide_shape_save_as_invalid_path(self):
-        """Test case for put_notes_slide_shape_save_as with invalid path
-        """
-        request = self.__prepare_put_notes_slide_shape_save_as_request()
-        request.path = self.get_invalid_test_value('put_notes_slide_shape_save_as', 'path', request.path, 'str')
-        self.initialize('put_notes_slide_shape_save_as', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_notes_slide_shape_save_as(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_notes_slide_shape_save_as', 'path')
-
     def test_put_notes_slide_shape_save_as_invalid_options(self):
         """Test case for put_notes_slide_shape_save_as with invalid options
         """
@@ -13682,7 +15844,6 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('put_notes_slide_shape_save_as', 'shape_index', 'int')
         format = self.get_test_value('put_notes_slide_shape_save_as', 'format', 'str')
         out_path = self.get_test_value('put_notes_slide_shape_save_as', 'out_path', 'str')
-        path = self.get_test_value('put_notes_slide_shape_save_as', 'path', 'str')
         options = self.get_test_value('put_notes_slide_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('put_notes_slide_shape_save_as', 'password', 'str')
         folder = self.get_test_value('put_notes_slide_shape_save_as', 'folder', 'str')
@@ -13691,7 +15852,7 @@ class TestSlidesApi(BaseTest):
         scale_y = self.get_test_value('put_notes_slide_shape_save_as', 'scale_y', 'float')
         bounds = self.get_test_value('put_notes_slide_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('put_notes_slide_shape_save_as', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PutNotesSlideShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
     def test_put_presentation_merge(self):
         """Test case for put_presentation_merge
@@ -13887,23 +16048,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'portion_index')
 
-    def test_put_set_paragraph_portion_properties_invalid_path(self):
-        """Test case for put_set_paragraph_portion_properties with invalid path
-        """
-        request = self.__prepare_put_set_paragraph_portion_properties_request()
-        request.path = self.get_invalid_test_value('put_set_paragraph_portion_properties', 'path', request.path, 'str')
-        self.initialize('put_set_paragraph_portion_properties', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_set_paragraph_portion_properties(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_set_paragraph_portion_properties', 'path')
-
     def test_put_set_paragraph_portion_properties_invalid_dto(self):
         """Test case for put_set_paragraph_portion_properties with invalid dto
         """
@@ -13978,12 +16122,11 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('put_set_paragraph_portion_properties', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_set_paragraph_portion_properties', 'paragraph_index', 'int')
         portion_index = self.get_test_value('put_set_paragraph_portion_properties', 'portion_index', 'int')
-        path = self.get_test_value('put_set_paragraph_portion_properties', 'path', 'str')
         dto = self.get_test_value('put_set_paragraph_portion_properties', 'dto', 'Portion')
         password = self.get_test_value('put_set_paragraph_portion_properties', 'password', 'str')
         folder = self.get_test_value('put_set_paragraph_portion_properties', 'folder', 'str')
         storage = self.get_test_value('put_set_paragraph_portion_properties', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSetParagraphPortionPropertiesRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetParagraphPortionPropertiesRequest(name, slide_index, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
 
     def test_put_set_paragraph_properties(self):
         """Test case for put_set_paragraph_properties
@@ -14061,23 +16204,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'paragraph_index')
 
-    def test_put_set_paragraph_properties_invalid_path(self):
-        """Test case for put_set_paragraph_properties with invalid path
-        """
-        request = self.__prepare_put_set_paragraph_properties_request()
-        request.path = self.get_invalid_test_value('put_set_paragraph_properties', 'path', request.path, 'str')
-        self.initialize('put_set_paragraph_properties', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_set_paragraph_properties(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_set_paragraph_properties', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_set_paragraph_properties', 'path')
-
     def test_put_set_paragraph_properties_invalid_dto(self):
         """Test case for put_set_paragraph_properties with invalid dto
         """
@@ -14151,12 +16277,375 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('put_set_paragraph_properties', 'slide_index', 'int')
         shape_index = self.get_test_value('put_set_paragraph_properties', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_set_paragraph_properties', 'paragraph_index', 'int')
-        path = self.get_test_value('put_set_paragraph_properties', 'path', 'str')
         dto = self.get_test_value('put_set_paragraph_properties', 'dto', 'Paragraph')
         password = self.get_test_value('put_set_paragraph_properties', 'password', 'str')
         folder = self.get_test_value('put_set_paragraph_properties', 'folder', 'str')
         storage = self.get_test_value('put_set_paragraph_properties', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSetParagraphPropertiesRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetParagraphPropertiesRequest(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage)
+
+    def test_put_set_subshape_paragraph_portion_properties(self):
+        """Test case for put_set_subshape_paragraph_portion_properties
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        self.initialize('put_set_subshape_paragraph_portion_properties', None, None)
+        response = self.api.put_set_subshape_paragraph_portion_properties(request)
+        self.assertIsNotNone(response)
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_name(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid name
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.name = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'name', request.name, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'name')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_slide_index(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid slide_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.slide_index = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'slide_index')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_shape_index(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid shape_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.shape_index = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'shape_index')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_paragraph_index(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid paragraph_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.paragraph_index = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'paragraph_index')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_portion_index(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid portion_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.portion_index = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'portion_index', request.portion_index, 'int')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'portion_index', request.portion_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'portion_index', request.portion_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'portion_index')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_path(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid path
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'path', request.path, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'path')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_dto(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid dto
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.dto = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'dto', request.dto, 'Portion')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'dto')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_password(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid password
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.password = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'password', request.password, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'password')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_folder(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid folder
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.folder = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'folder', request.folder, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'folder')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_storage(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid storage
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.storage = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'storage', request.storage, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'storage')
+
+    def __prepare_put_set_subshape_paragraph_portion_properties_request(self):
+        name = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'name', 'str')
+        slide_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'paragraph_index', 'int')
+        portion_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'portion_index', 'int')
+        path = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'path', 'str')
+        dto = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'dto', 'Portion')
+        password = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'password', 'str')
+        folder = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'folder', 'str')
+        storage = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPortionPropertiesRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, dto, password, folder, storage)
+
+    def test_put_set_subshape_paragraph_properties(self):
+        """Test case for put_set_subshape_paragraph_properties
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        self.initialize('put_set_subshape_paragraph_properties', None, None)
+        response = self.api.put_set_subshape_paragraph_properties(request)
+        self.assertIsNotNone(response)
+
+    def test_put_set_subshape_paragraph_properties_invalid_name(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid name
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.name = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'name', request.name, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'name')
+
+    def test_put_set_subshape_paragraph_properties_invalid_slide_index(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid slide_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.slide_index = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_set_subshape_paragraph_properties', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'slide_index')
+
+    def test_put_set_subshape_paragraph_properties_invalid_shape_index(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid shape_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.shape_index = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_set_subshape_paragraph_properties', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'shape_index')
+
+    def test_put_set_subshape_paragraph_properties_invalid_paragraph_index(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid paragraph_index
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.paragraph_index = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'paragraph_index', request.paragraph_index, 'int')
+        self.initialize('put_set_subshape_paragraph_properties', 'paragraph_index', request.paragraph_index)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'paragraph_index', request.paragraph_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'paragraph_index')
+
+    def test_put_set_subshape_paragraph_properties_invalid_path(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid path
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'path', request.path, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'path')
+
+    def test_put_set_subshape_paragraph_properties_invalid_dto(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid dto
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.dto = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'dto', request.dto, 'Paragraph')
+        self.initialize('put_set_subshape_paragraph_properties', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'dto')
+
+    def test_put_set_subshape_paragraph_properties_invalid_password(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid password
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.password = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'password', request.password, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'password')
+
+    def test_put_set_subshape_paragraph_properties_invalid_folder(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid folder
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.folder = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'folder', request.folder, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'folder')
+
+    def test_put_set_subshape_paragraph_properties_invalid_storage(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid storage
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.storage = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'storage', request.storage, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'storage')
+
+    def __prepare_put_set_subshape_paragraph_properties_request(self):
+        name = self.get_test_value('put_set_subshape_paragraph_properties', 'name', 'str')
+        slide_index = self.get_test_value('put_set_subshape_paragraph_properties', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_set_subshape_paragraph_properties', 'shape_index', 'int')
+        paragraph_index = self.get_test_value('put_set_subshape_paragraph_properties', 'paragraph_index', 'int')
+        path = self.get_test_value('put_set_subshape_paragraph_properties', 'path', 'str')
+        dto = self.get_test_value('put_set_subshape_paragraph_properties', 'dto', 'Paragraph')
+        password = self.get_test_value('put_set_subshape_paragraph_properties', 'password', 'str')
+        folder = self.get_test_value('put_set_subshape_paragraph_properties', 'folder', 'str')
+        storage = self.get_test_value('put_set_subshape_paragraph_properties', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPropertiesRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage)
 
     def test_put_shape_save_as(self):
         """Test case for put_shape_save_as
@@ -14250,23 +16739,6 @@ class TestSlidesApi(BaseTest):
             pass
         if ok:
             self.assert_no_exception('put_shape_save_as', 'out_path')
-
-    def test_put_shape_save_as_invalid_path(self):
-        """Test case for put_shape_save_as with invalid path
-        """
-        request = self.__prepare_put_shape_save_as_request()
-        request.path = self.get_invalid_test_value('put_shape_save_as', 'path', request.path, 'str')
-        self.initialize('put_shape_save_as', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_shape_save_as(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_shape_save_as', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_shape_save_as', 'path')
 
     def test_put_shape_save_as_invalid_options(self):
         """Test case for put_shape_save_as with invalid options
@@ -14410,7 +16882,6 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('put_shape_save_as', 'shape_index', 'int')
         format = self.get_test_value('put_shape_save_as', 'format', 'str')
         out_path = self.get_test_value('put_shape_save_as', 'out_path', 'str')
-        path = self.get_test_value('put_shape_save_as', 'path', 'str')
         options = self.get_test_value('put_shape_save_as', 'options', 'IShapeExportOptions')
         password = self.get_test_value('put_shape_save_as', 'password', 'str')
         folder = self.get_test_value('put_shape_save_as', 'folder', 'str')
@@ -14419,7 +16890,7 @@ class TestSlidesApi(BaseTest):
         scale_y = self.get_test_value('put_shape_save_as', 'scale_y', 'float')
         bounds = self.get_test_value('put_shape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('put_shape_save_as', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PutShapeSaveAsRequest(name, slide_index, shape_index, format, out_path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
 
     def test_put_slide_animation(self):
         """Test case for put_slide_animation
@@ -15100,23 +17571,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'shape_index')
 
-    def test_put_slide_shape_info_invalid_path(self):
-        """Test case for put_slide_shape_info with invalid path
-        """
-        request = self.__prepare_put_slide_shape_info_request()
-        request.path = self.get_invalid_test_value('put_slide_shape_info', 'path', request.path, 'str')
-        self.initialize('put_slide_shape_info', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_slide_shape_info(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_slide_shape_info', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_slide_shape_info', 'path')
-
     def test_put_slide_shape_info_invalid_dto(self):
         """Test case for put_slide_shape_info with invalid dto
         """
@@ -15189,12 +17643,166 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('put_slide_shape_info', 'name', 'str')
         slide_index = self.get_test_value('put_slide_shape_info', 'slide_index', 'int')
         shape_index = self.get_test_value('put_slide_shape_info', 'shape_index', 'int')
-        path = self.get_test_value('put_slide_shape_info', 'path', 'str')
         dto = self.get_test_value('put_slide_shape_info', 'dto', 'ShapeBase')
         password = self.get_test_value('put_slide_shape_info', 'password', 'str')
         folder = self.get_test_value('put_slide_shape_info', 'folder', 'str')
         storage = self.get_test_value('put_slide_shape_info', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSlideShapeInfoRequest(name, slide_index, shape_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlideShapeInfoRequest(name, slide_index, shape_index, dto, password, folder, storage)
+
+    def test_put_slide_subshape_info(self):
+        """Test case for put_slide_subshape_info
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        self.initialize('put_slide_subshape_info', None, None)
+        response = self.api.put_slide_subshape_info(request)
+        self.assertIsNotNone(response)
+
+    def test_put_slide_subshape_info_invalid_name(self):
+        """Test case for put_slide_subshape_info with invalid name
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.name = self.get_invalid_test_value('put_slide_subshape_info', 'name', request.name, 'str')
+        self.initialize('put_slide_subshape_info', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'name')
+
+    def test_put_slide_subshape_info_invalid_slide_index(self):
+        """Test case for put_slide_subshape_info with invalid slide_index
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.slide_index = self.get_invalid_test_value('put_slide_subshape_info', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_slide_subshape_info', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'slide_index')
+
+    def test_put_slide_subshape_info_invalid_shape_index(self):
+        """Test case for put_slide_subshape_info with invalid shape_index
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.shape_index = self.get_invalid_test_value('put_slide_subshape_info', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_slide_subshape_info', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'shape_index')
+
+    def test_put_slide_subshape_info_invalid_path(self):
+        """Test case for put_slide_subshape_info with invalid path
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.path = self.get_invalid_test_value('put_slide_subshape_info', 'path', request.path, 'str')
+        self.initialize('put_slide_subshape_info', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'path')
+
+    def test_put_slide_subshape_info_invalid_dto(self):
+        """Test case for put_slide_subshape_info with invalid dto
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.dto = self.get_invalid_test_value('put_slide_subshape_info', 'dto', request.dto, 'ShapeBase')
+        self.initialize('put_slide_subshape_info', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'dto', request.dto)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'dto')
+
+    def test_put_slide_subshape_info_invalid_password(self):
+        """Test case for put_slide_subshape_info with invalid password
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.password = self.get_invalid_test_value('put_slide_subshape_info', 'password', request.password, 'str')
+        self.initialize('put_slide_subshape_info', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'password')
+
+    def test_put_slide_subshape_info_invalid_folder(self):
+        """Test case for put_slide_subshape_info with invalid folder
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.folder = self.get_invalid_test_value('put_slide_subshape_info', 'folder', request.folder, 'str')
+        self.initialize('put_slide_subshape_info', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'folder')
+
+    def test_put_slide_subshape_info_invalid_storage(self):
+        """Test case for put_slide_subshape_info with invalid storage
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.storage = self.get_invalid_test_value('put_slide_subshape_info', 'storage', request.storage, 'str')
+        self.initialize('put_slide_subshape_info', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'storage')
+
+    def __prepare_put_slide_subshape_info_request(self):
+        name = self.get_test_value('put_slide_subshape_info', 'name', 'str')
+        slide_index = self.get_test_value('put_slide_subshape_info', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_slide_subshape_info', 'shape_index', 'int')
+        path = self.get_test_value('put_slide_subshape_info', 'path', 'str')
+        dto = self.get_test_value('put_slide_subshape_info', 'dto', 'ShapeBase')
+        password = self.get_test_value('put_slide_subshape_info', 'password', 'str')
+        folder = self.get_test_value('put_slide_subshape_info', 'folder', 'str')
+        storage = self.get_test_value('put_slide_subshape_info', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlideSubshapeInfoRequest(name, slide_index, shape_index, path, dto, password, folder, storage)
 
     def test_put_slides_convert(self):
         """Test case for put_slides_convert
@@ -16285,6 +18893,269 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('put_slides_view_properties', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutSlidesViewPropertiesRequest(name, dto, password, folder, storage)
 
+    def test_put_subshape_save_as(self):
+        """Test case for put_subshape_save_as
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        self.initialize('put_subshape_save_as', None, None)
+        response = self.api.put_subshape_save_as(request)
+        self.assertIsNone(response)
+
+    def test_put_subshape_save_as_invalid_name(self):
+        """Test case for put_subshape_save_as with invalid name
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.name = self.get_invalid_test_value('put_subshape_save_as', 'name', request.name, 'str')
+        self.initialize('put_subshape_save_as', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'name')
+
+    def test_put_subshape_save_as_invalid_slide_index(self):
+        """Test case for put_subshape_save_as with invalid slide_index
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.slide_index = self.get_invalid_test_value('put_subshape_save_as', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_subshape_save_as', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'slide_index')
+
+    def test_put_subshape_save_as_invalid_shape_index(self):
+        """Test case for put_subshape_save_as with invalid shape_index
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.shape_index = self.get_invalid_test_value('put_subshape_save_as', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_subshape_save_as', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'shape_index')
+
+    def test_put_subshape_save_as_invalid_format(self):
+        """Test case for put_subshape_save_as with invalid format
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.format = self.get_invalid_test_value('put_subshape_save_as', 'format', request.format, 'str')
+        self.initialize('put_subshape_save_as', 'format', request.format)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'format', request.format)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'format')
+
+    def test_put_subshape_save_as_invalid_out_path(self):
+        """Test case for put_subshape_save_as with invalid out_path
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.out_path = self.get_invalid_test_value('put_subshape_save_as', 'out_path', request.out_path, 'str')
+        self.initialize('put_subshape_save_as', 'out_path', request.out_path)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'out_path', request.out_path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'out_path')
+
+    def test_put_subshape_save_as_invalid_path(self):
+        """Test case for put_subshape_save_as with invalid path
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.path = self.get_invalid_test_value('put_subshape_save_as', 'path', request.path, 'str')
+        self.initialize('put_subshape_save_as', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'path', request.path)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'path')
+
+    def test_put_subshape_save_as_invalid_options(self):
+        """Test case for put_subshape_save_as with invalid options
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.options = self.get_invalid_test_value('put_subshape_save_as', 'options', request.options, 'IShapeExportOptions')
+        self.initialize('put_subshape_save_as', 'options', request.options)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'options', request.options)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'options')
+
+    def test_put_subshape_save_as_invalid_password(self):
+        """Test case for put_subshape_save_as with invalid password
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.password = self.get_invalid_test_value('put_subshape_save_as', 'password', request.password, 'str')
+        self.initialize('put_subshape_save_as', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'password')
+
+    def test_put_subshape_save_as_invalid_folder(self):
+        """Test case for put_subshape_save_as with invalid folder
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.folder = self.get_invalid_test_value('put_subshape_save_as', 'folder', request.folder, 'str')
+        self.initialize('put_subshape_save_as', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'folder')
+
+    def test_put_subshape_save_as_invalid_storage(self):
+        """Test case for put_subshape_save_as with invalid storage
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.storage = self.get_invalid_test_value('put_subshape_save_as', 'storage', request.storage, 'str')
+        self.initialize('put_subshape_save_as', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'storage')
+
+    def test_put_subshape_save_as_invalid_scale_x(self):
+        """Test case for put_subshape_save_as with invalid scale_x
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.scale_x = self.get_invalid_test_value('put_subshape_save_as', 'scale_x', request.scale_x, 'float')
+        self.initialize('put_subshape_save_as', 'scale_x', request.scale_x)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'scale_x', request.scale_x)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'scale_x')
+
+    def test_put_subshape_save_as_invalid_scale_y(self):
+        """Test case for put_subshape_save_as with invalid scale_y
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.scale_y = self.get_invalid_test_value('put_subshape_save_as', 'scale_y', request.scale_y, 'float')
+        self.initialize('put_subshape_save_as', 'scale_y', request.scale_y)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'scale_y', request.scale_y)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'scale_y')
+
+    def test_put_subshape_save_as_invalid_bounds(self):
+        """Test case for put_subshape_save_as with invalid bounds
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.bounds = self.get_invalid_test_value('put_subshape_save_as', 'bounds', request.bounds, 'str')
+        self.initialize('put_subshape_save_as', 'bounds', request.bounds)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'bounds', request.bounds)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'bounds')
+
+    def test_put_subshape_save_as_invalid_fonts_folder(self):
+        """Test case for put_subshape_save_as with invalid fonts_folder
+        """
+        request = self.__prepare_put_subshape_save_as_request()
+        request.fonts_folder = self.get_invalid_test_value('put_subshape_save_as', 'fonts_folder', request.fonts_folder, 'str')
+        self.initialize('put_subshape_save_as', 'fonts_folder', request.fonts_folder)
+        ok = False
+        try:
+            self.api.put_subshape_save_as(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_subshape_save_as', 'fonts_folder', request.fonts_folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_subshape_save_as', 'fonts_folder')
+
+    def __prepare_put_subshape_save_as_request(self):
+        name = self.get_test_value('put_subshape_save_as', 'name', 'str')
+        slide_index = self.get_test_value('put_subshape_save_as', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_subshape_save_as', 'shape_index', 'int')
+        format = self.get_test_value('put_subshape_save_as', 'format', 'str')
+        out_path = self.get_test_value('put_subshape_save_as', 'out_path', 'str')
+        path = self.get_test_value('put_subshape_save_as', 'path', 'str')
+        options = self.get_test_value('put_subshape_save_as', 'options', 'IShapeExportOptions')
+        password = self.get_test_value('put_subshape_save_as', 'password', 'str')
+        folder = self.get_test_value('put_subshape_save_as', 'folder', 'str')
+        storage = self.get_test_value('put_subshape_save_as', 'storage', 'str')
+        scale_x = self.get_test_value('put_subshape_save_as', 'scale_x', 'float')
+        scale_y = self.get_test_value('put_subshape_save_as', 'scale_y', 'float')
+        bounds = self.get_test_value('put_subshape_save_as', 'bounds', 'str')
+        fonts_folder = self.get_test_value('put_subshape_save_as', 'fonts_folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSubshapeSaveAsRequest(name, slide_index, shape_index, format, out_path, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+
     def test_put_update_notes_slide(self):
         """Test case for put_update_notes_slide
         """
@@ -16463,23 +19334,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'shape_index')
 
-    def test_put_update_notes_slide_shape_invalid_path(self):
-        """Test case for put_update_notes_slide_shape with invalid path
-        """
-        request = self.__prepare_put_update_notes_slide_shape_request()
-        request.path = self.get_invalid_test_value('put_update_notes_slide_shape', 'path', request.path, 'str')
-        self.initialize('put_update_notes_slide_shape', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_update_notes_slide_shape(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_update_notes_slide_shape', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_update_notes_slide_shape', 'path')
-
     def test_put_update_notes_slide_shape_invalid_dto(self):
         """Test case for put_update_notes_slide_shape with invalid dto
         """
@@ -16552,12 +19406,11 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('put_update_notes_slide_shape', 'name', 'str')
         slide_index = self.get_test_value('put_update_notes_slide_shape', 'slide_index', 'int')
         shape_index = self.get_test_value('put_update_notes_slide_shape', 'shape_index', 'int')
-        path = self.get_test_value('put_update_notes_slide_shape', 'path', 'str')
         dto = self.get_test_value('put_update_notes_slide_shape', 'dto', 'ShapeBase')
         password = self.get_test_value('put_update_notes_slide_shape', 'password', 'str')
         folder = self.get_test_value('put_update_notes_slide_shape', 'folder', 'str')
         storage = self.get_test_value('put_update_notes_slide_shape', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapeRequest(name, slide_index, shape_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapeRequest(name, slide_index, shape_index, dto, password, folder, storage)
 
     def test_put_update_notes_slide_shape_paragraph(self):
         """Test case for put_update_notes_slide_shape_paragraph
@@ -16635,23 +19488,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'paragraph_index')
 
-    def test_put_update_notes_slide_shape_paragraph_invalid_path(self):
-        """Test case for put_update_notes_slide_shape_paragraph with invalid path
-        """
-        request = self.__prepare_put_update_notes_slide_shape_paragraph_request()
-        request.path = self.get_invalid_test_value('put_update_notes_slide_shape_paragraph', 'path', request.path, 'str')
-        self.initialize('put_update_notes_slide_shape_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_update_notes_slide_shape_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'path')
-
     def test_put_update_notes_slide_shape_paragraph_invalid_dto(self):
         """Test case for put_update_notes_slide_shape_paragraph with invalid dto
         """
@@ -16725,12 +19561,11 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('put_update_notes_slide_shape_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('put_update_notes_slide_shape_paragraph', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_update_notes_slide_shape_paragraph', 'paragraph_index', 'int')
-        path = self.get_test_value('put_update_notes_slide_shape_paragraph', 'path', 'str')
         dto = self.get_test_value('put_update_notes_slide_shape_paragraph', 'dto', 'Paragraph')
         password = self.get_test_value('put_update_notes_slide_shape_paragraph', 'password', 'str')
         folder = self.get_test_value('put_update_notes_slide_shape_paragraph', 'folder', 'str')
         storage = self.get_test_value('put_update_notes_slide_shape_paragraph', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapeParagraphRequest(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage)
 
     def test_put_update_notes_slide_shape_portion(self):
         """Test case for put_update_notes_slide_shape_portion
@@ -16825,23 +19660,6 @@ class TestSlidesApi(BaseTest):
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'portion_index')
 
-    def test_put_update_notes_slide_shape_portion_invalid_path(self):
-        """Test case for put_update_notes_slide_shape_portion with invalid path
-        """
-        request = self.__prepare_put_update_notes_slide_shape_portion_request()
-        request.path = self.get_invalid_test_value('put_update_notes_slide_shape_portion', 'path', request.path, 'str')
-        self.initialize('put_update_notes_slide_shape_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_update_notes_slide_shape_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_update_notes_slide_shape_portion', 'path')
-
     def test_put_update_notes_slide_shape_portion_invalid_dto(self):
         """Test case for put_update_notes_slide_shape_portion with invalid dto
         """
@@ -16916,12 +19734,11 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('put_update_notes_slide_shape_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_update_notes_slide_shape_portion', 'paragraph_index', 'int')
         portion_index = self.get_test_value('put_update_notes_slide_shape_portion', 'portion_index', 'int')
-        path = self.get_test_value('put_update_notes_slide_shape_portion', 'path', 'str')
         dto = self.get_test_value('put_update_notes_slide_shape_portion', 'dto', 'Portion')
         password = self.get_test_value('put_update_notes_slide_shape_portion', 'password', 'str')
         folder = self.get_test_value('put_update_notes_slide_shape_portion', 'folder', 'str')
         storage = self.get_test_value('put_update_notes_slide_shape_portion', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutUpdateNotesSlideShapePortionRequest(name, slide_index, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
 
     def test_storage_exists(self):
         """Test case for storage_exists
