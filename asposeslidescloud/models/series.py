@@ -58,7 +58,8 @@ class Series(object):
         'marker': 'SeriesMarker',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'data_point_type': 'str'
     }
 
     attribute_map = {
@@ -78,13 +79,14 @@ class Series(object):
         'marker': 'marker',
         'fill_format': 'fillFormat',
         'effect_format': 'effectFormat',
-        'line_format': 'lineFormat'
+        'line_format': 'lineFormat',
+        'data_point_type': 'dataPointType'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type=None):  # noqa: E501
         """Series - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
@@ -104,6 +106,7 @@ class Series(object):
         self._fill_format = None
         self._effect_format = None
         self._line_format = None
+        self._data_point_type = None
 
         if type is not None:
             self.type = type
@@ -139,6 +142,8 @@ class Series(object):
             self.effect_format = effect_format
         if line_format is not None:
             self.line_format = line_format
+        if data_point_type is not None:
+            self.data_point_type = data_point_type
 
     @property
     def type(self):
@@ -529,6 +534,42 @@ class Series(object):
         :type: LineFormat
         """
         self._line_format = line_format
+
+    @property
+    def data_point_type(self):
+        """Gets the data_point_type of this Series.  # noqa: E501
+
+
+        :return: The data_point_type of this Series.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_point_type
+
+    @data_point_type.setter
+    def data_point_type(self, data_point_type):
+        """Sets the data_point_type of this Series.
+
+
+        :param data_point_type: The data_point_type of this Series.  # noqa: E501
+        :type: str
+        """
+        if data_point_type is not None:
+            allowed_values = ["OneValue", "Scatter", "Bubble"]  # noqa: E501
+            if data_point_type.isdigit():
+                int_data_point_type = int(data_point_type)
+                if int_data_point_type < 0 or int_data_point_type >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `data_point_type` ({0}), must be one of {1}"  # noqa: E501
+                        .format(data_point_type, allowed_values)
+                    )
+                self._data_point_type = allowed_values[int_data_point_type]
+                return
+            if data_point_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `data_point_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(data_point_type, allowed_values)
+                )
+        self._data_point_type = data_point_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

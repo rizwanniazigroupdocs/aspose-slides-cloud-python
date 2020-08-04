@@ -89,13 +89,15 @@ class WaterfallSeries(OneValueSeries):
     }
 
     type_determiners = {
+        'dataPointType': 'OneValue',
     }
 
-    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type=None, data_points=None, show_connector_lines=None):  # noqa: E501
+    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type='OneValue', data_points=None, show_connector_lines=None):  # noqa: E501
         """WaterfallSeries - a model defined in Swagger"""  # noqa: E501
         super(WaterfallSeries, self).__init__(type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points)
 
         self._show_connector_lines = None
+        self.data_point_type: 'OneValue'
 
         if show_connector_lines is not None:
             self.show_connector_lines = show_connector_lines

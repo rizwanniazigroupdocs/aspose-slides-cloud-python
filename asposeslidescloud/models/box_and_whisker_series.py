@@ -97,9 +97,10 @@ class BoxAndWhiskerSeries(OneValueSeries):
     }
 
     type_determiners = {
+        'dataPointType': 'OneValue',
     }
 
-    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type=None, data_points=None, quartile_method=None, show_inner_points=None, show_mean_line=None, show_mean_markers=None, show_outlier_points=None):  # noqa: E501
+    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type='OneValue', data_points=None, quartile_method=None, show_inner_points=None, show_mean_line=None, show_mean_markers=None, show_outlier_points=None):  # noqa: E501
         """BoxAndWhiskerSeries - a model defined in Swagger"""  # noqa: E501
         super(BoxAndWhiskerSeries, self).__init__(type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points)
 
@@ -108,6 +109,7 @@ class BoxAndWhiskerSeries(OneValueSeries):
         self._show_mean_line = None
         self._show_mean_markers = None
         self._show_outlier_points = None
+        self.data_point_type: 'OneValue'
 
         if quartile_method is not None:
             self.quartile_method = quartile_method

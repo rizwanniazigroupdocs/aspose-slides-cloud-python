@@ -64,7 +64,7 @@ class Paragraph(ResourceBase):
         'east_asian_line_break': 'str',
         'latin_line_break': 'str',
         'right_to_left': 'str',
-        'portion_list': 'list[ResourceUriElement]'
+        'portion_list': 'list[Portion]'
     }
 
     attribute_map = {
@@ -714,7 +714,7 @@ class Paragraph(ResourceBase):
         List of portion links.  # noqa: E501
 
         :return: The portion_list of this Paragraph.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[Portion]
         """
         return self._portion_list
 
@@ -725,7 +725,7 @@ class Paragraph(ResourceBase):
         List of portion links.  # noqa: E501
 
         :param portion_list: The portion_list of this Paragraph.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[Portion]
         """
         self._portion_list = portion_list
 

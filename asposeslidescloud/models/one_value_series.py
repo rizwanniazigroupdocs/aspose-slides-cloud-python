@@ -87,56 +87,18 @@ class OneValueSeries(Series):
     }
 
     type_determiners = {
+        'dataPointType': 'OneValue',
     }
 
-    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type=None, data_points=None):  # noqa: E501
+    def __init__(self, type=None, name=None, is_color_varied=None, inverted_solid_fill_color=None, smooth=None, plot_on_second_axis=None, order=None, number_format_of_y_values=None, number_format_of_x_values=None, number_format_of_values=None, number_format_of_bubble_sizes=None, invert_if_negative=None, explosion=None, marker=None, fill_format=None, effect_format=None, line_format=None, data_point_type='OneValue', data_points=None):  # noqa: E501
         """OneValueSeries - a model defined in Swagger"""  # noqa: E501
-        super(OneValueSeries, self).__init__(type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format)
+        super(OneValueSeries, self).__init__(type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type)
 
-        self._data_point_type = None
         self._data_points = None
+        self.data_point_type: 'OneValue'
 
-        self.data_point_type = data_point_type
         if data_points is not None:
             self.data_points = data_points
-
-    @property
-    def data_point_type(self):
-        """Gets the data_point_type of this OneValueSeries.  # noqa: E501
-
-        Data point type.  # noqa: E501
-
-        :return: The data_point_type of this OneValueSeries.  # noqa: E501
-        :rtype: str
-        """
-        return self._data_point_type
-
-    @data_point_type.setter
-    def data_point_type(self, data_point_type):
-        """Sets the data_point_type of this OneValueSeries.
-
-        Data point type.  # noqa: E501
-
-        :param data_point_type: The data_point_type of this OneValueSeries.  # noqa: E501
-        :type: str
-        """
-        if data_point_type is not None:
-            allowed_values = ["OneValue", "Scatter", "Bubble"]  # noqa: E501
-            if data_point_type.isdigit():
-                int_data_point_type = int(data_point_type)
-                if int_data_point_type < 0 or int_data_point_type >= len(allowed_values):
-                    raise ValueError(
-                        "Invalid value for `data_point_type` ({0}), must be one of {1}"  # noqa: E501
-                        .format(data_point_type, allowed_values)
-                    )
-                self._data_point_type = allowed_values[int_data_point_type]
-                return
-            if data_point_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `data_point_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(data_point_type, allowed_values)
-                )
-        self._data_point_type = data_point_type
 
     @property
     def data_points(self):

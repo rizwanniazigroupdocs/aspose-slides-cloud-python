@@ -50,6 +50,17 @@ class CreateFolderRequest(object):
         self.path = path
         self.storage_name = storage_name
 
+class DeleteChartSeriesRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series_index, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series_index = series_index
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class DeleteFileRequest(object):
 
     def __init__(self, path = None, storage_name = None, version_id = None):
@@ -556,7 +567,7 @@ class GetParagraphPortionsRequest(object):
 
 class GetSlideAnimationRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index = None, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -962,6 +973,17 @@ class PostAddNotesSlideRequest(object):
         self.folder = folder
         self.storage = storage
 
+class PostChartSeriesRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series = series
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class PostCopyLayoutSlideFromSourcePresentationRequest(object):
 
     def __init__(self, name, clone_from, clone_from_position, clone_from_password = None, clone_from_storage = None, password = None, folder = None, storage = None):
@@ -1310,6 +1332,18 @@ class PostSubshapeSaveAsRequest(object):
         self.scale_y = scale_y
         self.bounds = bounds
         self.fonts_folder = fonts_folder
+
+class PutChartSeriesRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series_index, series = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series_index = series_index
+        self.series = series
+        self.password = password
+        self.folder = folder
+        self.storage = storage
 
 class PutLayoutSlideRequest(object):
 

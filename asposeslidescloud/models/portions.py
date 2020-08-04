@@ -45,48 +45,48 @@ class Portions(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'portion_links': 'list[ResourceUriElement]'
+        'items': 'list[Portion]'
     }
 
     attribute_map = {
         'self_uri': 'selfUri',
         'alternate_links': 'alternateLinks',
-        'portion_links': 'portionLinks'
+        'items': 'items'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, portion_links=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, items=None):  # noqa: E501
         """Portions - a model defined in Swagger"""  # noqa: E501
         super(Portions, self).__init__(self_uri, alternate_links)
 
-        self._portion_links = None
+        self._items = None
 
-        if portion_links is not None:
-            self.portion_links = portion_links
+        if items is not None:
+            self.items = items
 
     @property
-    def portion_links(self):
-        """Gets the portion_links of this Portions.  # noqa: E501
+    def items(self):
+        """Gets the items of this Portions.  # noqa: E501
 
         List of portion links.  # noqa: E501
 
-        :return: The portion_links of this Portions.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :return: The items of this Portions.  # noqa: E501
+        :rtype: list[Portion]
         """
-        return self._portion_links
+        return self._items
 
-    @portion_links.setter
-    def portion_links(self, portion_links):
-        """Sets the portion_links of this Portions.
+    @items.setter
+    def items(self, items):
+        """Sets the items of this Portions.
 
         List of portion links.  # noqa: E501
 
-        :param portion_links: The portion_links of this Portions.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :param items: The items of this Portions.  # noqa: E501
+        :type: list[Portion]
         """
-        self._portion_links = portion_links
+        self._items = items
 
     def to_dict(self):
         """Returns the model properties as a dict"""

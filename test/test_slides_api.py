@@ -274,6 +274,143 @@ class TestSlidesApi(BaseTest):
         storage_name = self.get_test_value('create_folder', 'storage_name', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.CreateFolderRequest(path, storage_name)
 
+    def test_delete_chart_series(self):
+        """Test case for delete_chart_series
+        """
+        request = self.__prepare_delete_chart_series_request()
+        self.initialize('delete_chart_series', None, None)
+        response = self.api.delete_chart_series(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_chart_series_invalid_name(self):
+        """Test case for delete_chart_series with invalid name
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.name = self.get_invalid_test_value('delete_chart_series', 'name', request.name, 'str')
+        self.initialize('delete_chart_series', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'name')
+
+    def test_delete_chart_series_invalid_slide_index(self):
+        """Test case for delete_chart_series with invalid slide_index
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.slide_index = self.get_invalid_test_value('delete_chart_series', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_chart_series', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'slide_index')
+
+    def test_delete_chart_series_invalid_shape_index(self):
+        """Test case for delete_chart_series with invalid shape_index
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.shape_index = self.get_invalid_test_value('delete_chart_series', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_chart_series', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'shape_index')
+
+    def test_delete_chart_series_invalid_series_index(self):
+        """Test case for delete_chart_series with invalid series_index
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.series_index = self.get_invalid_test_value('delete_chart_series', 'series_index', request.series_index, 'int')
+        self.initialize('delete_chart_series', 'series_index', request.series_index)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'series_index', request.series_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'series_index')
+
+    def test_delete_chart_series_invalid_password(self):
+        """Test case for delete_chart_series with invalid password
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.password = self.get_invalid_test_value('delete_chart_series', 'password', request.password, 'str')
+        self.initialize('delete_chart_series', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'password')
+
+    def test_delete_chart_series_invalid_folder(self):
+        """Test case for delete_chart_series with invalid folder
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.folder = self.get_invalid_test_value('delete_chart_series', 'folder', request.folder, 'str')
+        self.initialize('delete_chart_series', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'folder')
+
+    def test_delete_chart_series_invalid_storage(self):
+        """Test case for delete_chart_series with invalid storage
+        """
+        request = self.__prepare_delete_chart_series_request()
+        request.storage = self.get_invalid_test_value('delete_chart_series', 'storage', request.storage, 'str')
+        self.initialize('delete_chart_series', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_series', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_series', 'storage')
+
+    def __prepare_delete_chart_series_request(self):
+        name = self.get_test_value('delete_chart_series', 'name', 'str')
+        slide_index = self.get_test_value('delete_chart_series', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_chart_series', 'shape_index', 'int')
+        series_index = self.get_test_value('delete_chart_series', 'series_index', 'int')
+        password = self.get_test_value('delete_chart_series', 'password', 'str')
+        folder = self.get_test_value('delete_chart_series', 'folder', 'str')
+        storage = self.get_test_value('delete_chart_series', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteChartSeriesRequest(name, slide_index, shape_index, series_index, password, folder, storage)
+
     def test_delete_file(self):
         """Test case for delete_file
         """
@@ -11091,6 +11228,143 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_add_notes_slide', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostAddNotesSlideRequest(name, slide_index, dto, password, folder, storage)
 
+    def test_post_chart_series(self):
+        """Test case for post_chart_series
+        """
+        request = self.__prepare_post_chart_series_request()
+        self.initialize('post_chart_series', None, None)
+        response = self.api.post_chart_series(request)
+        self.assertIsNotNone(response)
+
+    def test_post_chart_series_invalid_name(self):
+        """Test case for post_chart_series with invalid name
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.name = self.get_invalid_test_value('post_chart_series', 'name', request.name, 'str')
+        self.initialize('post_chart_series', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'name')
+
+    def test_post_chart_series_invalid_slide_index(self):
+        """Test case for post_chart_series with invalid slide_index
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.slide_index = self.get_invalid_test_value('post_chart_series', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_chart_series', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'slide_index')
+
+    def test_post_chart_series_invalid_shape_index(self):
+        """Test case for post_chart_series with invalid shape_index
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.shape_index = self.get_invalid_test_value('post_chart_series', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_chart_series', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'shape_index')
+
+    def test_post_chart_series_invalid_series(self):
+        """Test case for post_chart_series with invalid series
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.series = self.get_invalid_test_value('post_chart_series', 'series', request.series, 'Series')
+        self.initialize('post_chart_series', 'series', request.series)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'series', request.series)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'series')
+
+    def test_post_chart_series_invalid_password(self):
+        """Test case for post_chart_series with invalid password
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.password = self.get_invalid_test_value('post_chart_series', 'password', request.password, 'str')
+        self.initialize('post_chart_series', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'password')
+
+    def test_post_chart_series_invalid_folder(self):
+        """Test case for post_chart_series with invalid folder
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.folder = self.get_invalid_test_value('post_chart_series', 'folder', request.folder, 'str')
+        self.initialize('post_chart_series', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'folder')
+
+    def test_post_chart_series_invalid_storage(self):
+        """Test case for post_chart_series with invalid storage
+        """
+        request = self.__prepare_post_chart_series_request()
+        request.storage = self.get_invalid_test_value('post_chart_series', 'storage', request.storage, 'str')
+        self.initialize('post_chart_series', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_series', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_series', 'storage')
+
+    def __prepare_post_chart_series_request(self):
+        name = self.get_test_value('post_chart_series', 'name', 'str')
+        slide_index = self.get_test_value('post_chart_series', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_chart_series', 'shape_index', 'int')
+        series = self.get_test_value('post_chart_series', 'series', 'Series')
+        password = self.get_test_value('post_chart_series', 'password', 'str')
+        folder = self.get_test_value('post_chart_series', 'folder', 'str')
+        storage = self.get_test_value('post_chart_series', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostChartSeriesRequest(name, slide_index, shape_index, series, password, folder, storage)
+
     def test_post_copy_layout_slide_from_source_presentation(self):
         """Test case for post_copy_layout_slide_from_source_presentation
         """
@@ -15489,6 +15763,161 @@ class TestSlidesApi(BaseTest):
         bounds = self.get_test_value('post_subshape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_subshape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostSubshapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+
+    def test_put_chart_series(self):
+        """Test case for put_chart_series
+        """
+        request = self.__prepare_put_chart_series_request()
+        self.initialize('put_chart_series', None, None)
+        response = self.api.put_chart_series(request)
+        self.assertIsNotNone(response)
+
+    def test_put_chart_series_invalid_name(self):
+        """Test case for put_chart_series with invalid name
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.name = self.get_invalid_test_value('put_chart_series', 'name', request.name, 'str')
+        self.initialize('put_chart_series', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'name')
+
+    def test_put_chart_series_invalid_slide_index(self):
+        """Test case for put_chart_series with invalid slide_index
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.slide_index = self.get_invalid_test_value('put_chart_series', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_chart_series', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'slide_index')
+
+    def test_put_chart_series_invalid_shape_index(self):
+        """Test case for put_chart_series with invalid shape_index
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.shape_index = self.get_invalid_test_value('put_chart_series', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_chart_series', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'shape_index')
+
+    def test_put_chart_series_invalid_series_index(self):
+        """Test case for put_chart_series with invalid series_index
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.series_index = self.get_invalid_test_value('put_chart_series', 'series_index', request.series_index, 'int')
+        self.initialize('put_chart_series', 'series_index', request.series_index)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'series_index', request.series_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'series_index')
+
+    def test_put_chart_series_invalid_series(self):
+        """Test case for put_chart_series with invalid series
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.series = self.get_invalid_test_value('put_chart_series', 'series', request.series, 'Series')
+        self.initialize('put_chart_series', 'series', request.series)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'series', request.series)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'series')
+
+    def test_put_chart_series_invalid_password(self):
+        """Test case for put_chart_series with invalid password
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.password = self.get_invalid_test_value('put_chart_series', 'password', request.password, 'str')
+        self.initialize('put_chart_series', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'password')
+
+    def test_put_chart_series_invalid_folder(self):
+        """Test case for put_chart_series with invalid folder
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.folder = self.get_invalid_test_value('put_chart_series', 'folder', request.folder, 'str')
+        self.initialize('put_chart_series', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'folder')
+
+    def test_put_chart_series_invalid_storage(self):
+        """Test case for put_chart_series with invalid storage
+        """
+        request = self.__prepare_put_chart_series_request()
+        request.storage = self.get_invalid_test_value('put_chart_series', 'storage', request.storage, 'str')
+        self.initialize('put_chart_series', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_chart_series(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_series', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_series', 'storage')
+
+    def __prepare_put_chart_series_request(self):
+        name = self.get_test_value('put_chart_series', 'name', 'str')
+        slide_index = self.get_test_value('put_chart_series', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_chart_series', 'shape_index', 'int')
+        series_index = self.get_test_value('put_chart_series', 'series_index', 'int')
+        series = self.get_test_value('put_chart_series', 'series', 'Series')
+        password = self.get_test_value('put_chart_series', 'password', 'str')
+        folder = self.get_test_value('put_chart_series', 'folder', 'str')
+        storage = self.get_test_value('put_chart_series', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutChartSeriesRequest(name, slide_index, shape_index, series_index, series, password, folder, storage)
 
     def test_put_layout_slide(self):
         """Test case for put_layout_slide
