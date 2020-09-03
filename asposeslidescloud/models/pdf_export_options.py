@@ -43,6 +43,7 @@ class PdfExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'text_compression': 'str',
         'embed_full_fonts': 'bool',
@@ -66,6 +67,7 @@ class PdfExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'text_compression': 'textCompression',
         'embed_full_fonts': 'embedFullFonts',
@@ -92,9 +94,9 @@ class PdfExportOptions(ExportOptions):
         'format': 'pdf',
     }
 
-    def __init__(self, format='pdf', text_compression=None, embed_full_fonts=None, compliance=None, sufficient_resolution=None, jpeg_quality=None, draw_slides_frame=None, show_hidden_slides=None, save_metafiles_as_png=None, password=None, embed_true_type_fonts_for_ascii=None, additional_common_font_families=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None, image_transparent_color=None, apply_image_transparent=None, access_permissions=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='pdf', text_compression=None, embed_full_fonts=None, compliance=None, sufficient_resolution=None, jpeg_quality=None, draw_slides_frame=None, show_hidden_slides=None, save_metafiles_as_png=None, password=None, embed_true_type_fonts_for_ascii=None, additional_common_font_families=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None, image_transparent_color=None, apply_image_transparent=None, access_permissions=None):  # noqa: E501
         """PdfExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(PdfExportOptions, self).__init__(format)
+        super(PdfExportOptions, self).__init__(default_regular_font, format)
 
         self._text_compression = None
         self._embed_full_fonts = None

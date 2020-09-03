@@ -39,6 +39,7 @@ from asposeslidescloud.models.chart_title import ChartTitle
 from asposeslidescloud.models.chart_wall import ChartWall
 from asposeslidescloud.models.common_slide_view_properties import CommonSlideViewProperties
 from asposeslidescloud.models.custom_dash_pattern import CustomDashPattern
+from asposeslidescloud.models.data_point import DataPoint
 from asposeslidescloud.models.disc_usage import DiscUsage
 from asposeslidescloud.models.effect import Effect
 from asposeslidescloud.models.effect_format import EffectFormat
@@ -67,7 +68,6 @@ from asposeslidescloud.models.merging_source import MergingSource
 from asposeslidescloud.models.normal_view_restored_properties import NormalViewRestoredProperties
 from asposeslidescloud.models.notes_slide_export_format import NotesSlideExportFormat
 from asposeslidescloud.models.object_exist import ObjectExist
-from asposeslidescloud.models.one_value_chart_data_point import OneValueChartDataPoint
 from asposeslidescloud.models.ordered_merge_request import OrderedMergeRequest
 from asposeslidescloud.models.outer_shadow_effect import OuterShadowEffect
 from asposeslidescloud.models.output_file import OutputFile
@@ -81,7 +81,6 @@ from asposeslidescloud.models.resource_base import ResourceBase
 from asposeslidescloud.models.resource_uri import ResourceUri
 from asposeslidescloud.models.resource_uri_element import ResourceUriElement
 from asposeslidescloud.models.scale_type import ScaleType
-from asposeslidescloud.models.scatter_chart_data_point import ScatterChartDataPoint
 from asposeslidescloud.models.series import Series
 from asposeslidescloud.models.series_marker import SeriesMarker
 from asposeslidescloud.models.shape_export_format import ShapeExportFormat
@@ -104,7 +103,6 @@ from asposeslidescloud.models.add_master_slide import AddMasterSlide
 from asposeslidescloud.models.add_shape import AddShape
 from asposeslidescloud.models.add_slide import AddSlide
 from asposeslidescloud.models.base64_input_file import Base64InputFile
-from asposeslidescloud.models.bubble_chart_data_point import BubbleChartDataPoint
 from asposeslidescloud.models.bubble_series import BubbleSeries
 from asposeslidescloud.models.color_scheme import ColorScheme
 from asposeslidescloud.models.document import Document
@@ -125,6 +123,7 @@ from asposeslidescloud.models.master_slides import MasterSlides
 from asposeslidescloud.models.merge import Merge
 from asposeslidescloud.models.no_fill import NoFill
 from asposeslidescloud.models.notes_slide import NotesSlide
+from asposeslidescloud.models.one_value_chart_data_point import OneValueChartDataPoint
 from asposeslidescloud.models.one_value_series import OneValueSeries
 from asposeslidescloud.models.paragraph import Paragraph
 from asposeslidescloud.models.paragraphs import Paragraphs
@@ -148,6 +147,7 @@ from asposeslidescloud.models.response_output_file import ResponseOutputFile
 from asposeslidescloud.models.save import Save
 from asposeslidescloud.models.save_shape import SaveShape
 from asposeslidescloud.models.save_slide import SaveSlide
+from asposeslidescloud.models.scatter_chart_data_point import ScatterChartDataPoint
 from asposeslidescloud.models.scatter_series import ScatterSeries
 from asposeslidescloud.models.shape_base import ShapeBase
 from asposeslidescloud.models.shapes import Shapes
@@ -168,6 +168,7 @@ from asposeslidescloud.models.update_shape import UpdateShape
 from asposeslidescloud.models.view_properties import ViewProperties
 from asposeslidescloud.models.xps_export_options import XpsExportOptions
 from asposeslidescloud.models.box_and_whisker_series import BoxAndWhiskerSeries
+from asposeslidescloud.models.bubble_chart_data_point import BubbleChartDataPoint
 from asposeslidescloud.models.chart import Chart
 from asposeslidescloud.models.document_replace_result import DocumentReplaceResult
 from asposeslidescloud.models.geometry_shape import GeometryShape
@@ -178,6 +179,7 @@ from asposeslidescloud.models.slide_replace_result import SlideReplaceResult
 from asposeslidescloud.models.smart_art import SmartArt
 from asposeslidescloud.models.smart_art_shape import SmartArtShape
 from asposeslidescloud.models.table import Table
+from asposeslidescloud.models.waterfall_chart_data_point import WaterfallChartDataPoint
 from asposeslidescloud.models.waterfall_series import WaterfallSeries
 from asposeslidescloud.models.audio_frame import AudioFrame
 from asposeslidescloud.models.connector import Connector
@@ -189,6 +191,8 @@ from asposeslidescloud.models.video_frame import VideoFrame
 from asposeslidescloud.models.requests.slides_api_requests import CopyFileRequest
 from asposeslidescloud.models.requests.slides_api_requests import CopyFolderRequest
 from asposeslidescloud.models.requests.slides_api_requests import CreateFolderRequest
+from asposeslidescloud.models.requests.slides_api_requests import DeleteChartCategoryRequest
+from asposeslidescloud.models.requests.slides_api_requests import DeleteChartDataPointRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteChartSeriesRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteFileRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteFolderRequest
@@ -282,6 +286,8 @@ from asposeslidescloud.models.requests.slides_api_requests import PostAddNewSubs
 from asposeslidescloud.models.requests.slides_api_requests import PostAddNewSubshapeParagraphRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostAddNewSubshapePortionRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostAddNotesSlideRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostChartCategoryRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostChartDataPointRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostChartSeriesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostCopyLayoutSlideFromSourcePresentationRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostCopyMasterSlideFromSourcePresentationRequest
@@ -314,6 +320,8 @@ from asposeslidescloud.models.requests.slides_api_requests import PostSlidesSetD
 from asposeslidescloud.models.requests.slides_api_requests import PostSlidesSlideReplaceTextRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSlidesSplitRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSubshapeSaveAsRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutChartCategoryRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutChartDataPointRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutChartSeriesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutLayoutSlideRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutNotesSlideShapeSaveAsRequest

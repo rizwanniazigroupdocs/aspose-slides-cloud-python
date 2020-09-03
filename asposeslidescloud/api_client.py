@@ -69,7 +69,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.7.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk v20.8.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
         self.default_headers.update(configuration.custom_headers)
@@ -154,7 +154,7 @@ class ApiClient(object):
                                      _preload_content=_preload_content,
                                      _request_timeout=_request_timeout)
             except ApiException as ex:
-                if ex.status == 401:
+                if ex.status == 401 or (ex.status == 400 and b" Authority" in ex.body):
                     self.configuration.access_token = None
                     self.__authenticate(header_params, _request_timeout)
                     return self.request(method, url,
@@ -185,12 +185,16 @@ class ApiClient(object):
                 'client_secret': self.configuration.app_key
             }
             config = self.configuration
-            token_response = self.request(
-                'POST', config.auth_base_url + "/connect/token", post_params=post_params, _request_timeout=_request_timeout)
-            token_data = json.loads(token_response.data)
-            token_klass = getattr(oauth_response, "OAuthResponse")
-            token = self.__deserialize_model(token_data, token_klass)
-            config.access_token = token.access_token
+            try:
+                token_response = self.request(
+                    'POST', config.auth_base_url + "/connect/token", post_params=post_params, _request_timeout=_request_timeout)
+                token_data = json.loads(token_response.data)
+                token_klass = getattr(oauth_response, "OAuthResponse")
+                token = self.__deserialize_model(token_data, token_klass)
+                config.access_token = token.access_token
+            except ApiException as ex:
+                ex.status = 401
+                raise
         header_params["Authorization"] = "Bearer " + self.configuration.access_token
 
     def sanitize_for_serialization(self, obj):

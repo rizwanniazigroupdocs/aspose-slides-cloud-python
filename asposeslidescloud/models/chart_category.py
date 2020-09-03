@@ -46,7 +46,8 @@ class ChartCategory(object):
         'value': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
-        'line_format': 'LineFormat'
+        'line_format': 'LineFormat',
+        'data_points': 'list[OneValueChartDataPoint]'
     }
 
     attribute_map = {
@@ -54,13 +55,14 @@ class ChartCategory(object):
         'value': 'value',
         'fill_format': 'fillFormat',
         'effect_format': 'effectFormat',
-        'line_format': 'lineFormat'
+        'line_format': 'lineFormat',
+        'data_points': 'dataPoints'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, categories=None, value=None, fill_format=None, effect_format=None, line_format=None):  # noqa: E501
+    def __init__(self, categories=None, value=None, fill_format=None, effect_format=None, line_format=None, data_points=None):  # noqa: E501
         """ChartCategory - a model defined in Swagger"""  # noqa: E501
 
         self._categories = None
@@ -68,6 +70,7 @@ class ChartCategory(object):
         self._fill_format = None
         self._effect_format = None
         self._line_format = None
+        self._data_points = None
 
         if categories is not None:
             self.categories = categories
@@ -79,6 +82,8 @@ class ChartCategory(object):
             self.effect_format = effect_format
         if line_format is not None:
             self.line_format = line_format
+        if data_points is not None:
+            self.data_points = data_points
 
     @property
     def categories(self):
@@ -189,6 +194,28 @@ class ChartCategory(object):
         :type: LineFormat
         """
         self._line_format = line_format
+
+    @property
+    def data_points(self):
+        """Gets the data_points of this ChartCategory.  # noqa: E501
+
+        Gets or sets the data points for chart data  # noqa: E501
+
+        :return: The data_points of this ChartCategory.  # noqa: E501
+        :rtype: list[OneValueChartDataPoint]
+        """
+        return self._data_points
+
+    @data_points.setter
+    def data_points(self, data_points):
+        """Sets the data_points of this ChartCategory.
+
+        Gets or sets the data points for chart data  # noqa: E501
+
+        :param data_points: The data_points of this ChartCategory.  # noqa: E501
+        :type: list[OneValueChartDataPoint]
+        """
+        self._data_points = data_points
 
     def to_dict(self):
         """Returns the model properties as a dict"""

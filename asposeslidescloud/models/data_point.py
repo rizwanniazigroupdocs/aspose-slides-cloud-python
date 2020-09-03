@@ -30,9 +30,8 @@ import re  # noqa: F401
 
 import six
 
-from asposeslidescloud.models.data_point import DataPoint
 
-class ScatterChartDataPoint(DataPoint):
+class DataPoint(object):
 
 
     """
@@ -43,71 +42,16 @@ class ScatterChartDataPoint(DataPoint):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'x_value': 'float',
-        'y_value': 'float'
     }
 
     attribute_map = {
-        'x_value': 'xValue',
-        'y_value': 'yValue'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, x_value=None, y_value=None):  # noqa: E501
-        """ScatterChartDataPoint - a model defined in Swagger"""  # noqa: E501
-        super(ScatterChartDataPoint, self).__init__()
-
-        self._x_value = None
-        self._y_value = None
-
-        self.x_value = x_value
-        self.y_value = y_value
-
-    @property
-    def x_value(self):
-        """Gets the x_value of this ScatterChartDataPoint.  # noqa: E501
-
-        X-value  # noqa: E501
-
-        :return: The x_value of this ScatterChartDataPoint.  # noqa: E501
-        :rtype: float
-        """
-        return self._x_value
-
-    @x_value.setter
-    def x_value(self, x_value):
-        """Sets the x_value of this ScatterChartDataPoint.
-
-        X-value  # noqa: E501
-
-        :param x_value: The x_value of this ScatterChartDataPoint.  # noqa: E501
-        :type: float
-        """
-        self._x_value = x_value
-
-    @property
-    def y_value(self):
-        """Gets the y_value of this ScatterChartDataPoint.  # noqa: E501
-
-        Y-value  # noqa: E501
-
-        :return: The y_value of this ScatterChartDataPoint.  # noqa: E501
-        :rtype: float
-        """
-        return self._y_value
-
-    @y_value.setter
-    def y_value(self, y_value):
-        """Sets the y_value of this ScatterChartDataPoint.
-
-        Y-value  # noqa: E501
-
-        :param y_value: The y_value of this ScatterChartDataPoint.  # noqa: E501
-        :type: float
-        """
-        self._y_value = y_value
+    def __init__(self):  # noqa: E501
+        """DataPoint - a model defined in Swagger"""  # noqa: E501
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -143,7 +87,7 @@ class ScatterChartDataPoint(DataPoint):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ScatterChartDataPoint):
+        if not isinstance(other, DataPoint):
             return False
 
         return self.__dict__ == other.__dict__

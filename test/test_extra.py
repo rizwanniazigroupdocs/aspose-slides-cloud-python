@@ -177,5 +177,53 @@ class TestExtra(BaseTest):
         self.assertEqual(min2, result.axes.horizontal_axis.min_value)
         self.assertEqual(max2, result.axes.horizontal_axis.max_value)
 
+    def test_good_auth(self):
+        config = Configuration()
+        config.app_sid = self.configuration.app_sid
+        config.app_key = self.configuration.app_key
+        config.base_url = self.configuration.base_url
+        config.auth_base_url = self.configuration.auth_base_url
+        config.debug = self.configuration.debug
+        api = asposeslidescloud.apis.slides_api.SlidesApi(config)
+        api.get_slides_api_info()
+
+    def test_bad_auth(self):
+        config = Configuration()
+        config.app_sid = "invalid"
+        config.app_key = self.configuration.app_key
+        config.base_url = self.configuration.base_url
+        config.auth_base_url = self.configuration.auth_base_url
+        config.debug = self.configuration.debug
+        try:
+            api = asposeslidescloud.apis.slides_api.SlidesApi(config)
+            api.get_slides_api_info()
+            self.fail("Must have failed")
+        except ApiException as ex:
+            self.assertEqual(401, ex.status)
+
+    def test_good_token(self):
+        config = Configuration()
+        config.app_sid = self.configuration.app_sid
+        config.app_key = self.configuration.app_key
+        config.base_url = self.configuration.base_url
+        config.auth_base_url = self.configuration.auth_base_url
+        config.debug = self.configuration.debug
+        api = asposeslidescloud.apis.slides_api.SlidesApi(config)
+        api.get_slides_api_info()
+        config.app_sid = "invalid"
+        api = asposeslidescloud.apis.slides_api.SlidesApi(config)
+        api.get_slides_api_info()
+
+    def test_bad_token(self):
+        config = Configuration()
+        config.app_sid = self.configuration.app_sid
+        config.app_key = self.configuration.app_key
+        config.base_url = self.configuration.base_url
+        config.auth_base_url = self.configuration.auth_base_url
+        config.debug = self.configuration.debug
+        config.access_token = "invalid"
+        api = asposeslidescloud.apis.slides_api.SlidesApi(config)
+        api.get_slides_api_info()
+
 if __name__ == '__main__':
     unittest.main()

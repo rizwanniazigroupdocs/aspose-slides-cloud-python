@@ -50,6 +50,29 @@ class CreateFolderRequest(object):
         self.path = path
         self.storage_name = storage_name
 
+class DeleteChartCategoryRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, category_index, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.category_index = category_index
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class DeleteChartDataPointRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series_index, point_index, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series_index = series_index
+        self.point_index = point_index
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class DeleteChartSeriesRequest(object):
 
     def __init__(self, name, slide_index, shape_index, series_index, password = None, folder = None, storage = None):
@@ -973,6 +996,29 @@ class PostAddNotesSlideRequest(object):
         self.folder = folder
         self.storage = storage
 
+class PostChartCategoryRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, category = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.category = category
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PostChartDataPointRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series_index, data_point = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series_index = series_index
+        self.data_point = data_point
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class PostChartSeriesRequest(object):
 
     def __init__(self, name, slide_index, shape_index, series = None, password = None, folder = None, storage = None):
@@ -1332,6 +1378,31 @@ class PostSubshapeSaveAsRequest(object):
         self.scale_y = scale_y
         self.bounds = bounds
         self.fonts_folder = fonts_folder
+
+class PutChartCategoryRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, category_index, category = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.category_index = category_index
+        self.category = category
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PutChartDataPointRequest(object):
+
+    def __init__(self, name, slide_index, shape_index, series_index, point_index, data_point = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.shape_index = shape_index
+        self.series_index = series_index
+        self.point_index = point_index
+        self.data_point = data_point
+        self.password = password
+        self.folder = folder
+        self.storage = storage
 
 class PutChartSeriesRequest(object):
 

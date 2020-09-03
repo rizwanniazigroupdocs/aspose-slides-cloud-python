@@ -43,6 +43,7 @@ class XpsExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'show_hidden_slides': 'bool',
         'save_metafiles_as_png': 'bool',
@@ -50,6 +51,7 @@ class XpsExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'show_hidden_slides': 'showHiddenSlides',
         'save_metafiles_as_png': 'saveMetafilesAsPng',
@@ -60,9 +62,9 @@ class XpsExportOptions(ExportOptions):
         'format': 'xps',
     }
 
-    def __init__(self, format='xps', show_hidden_slides=None, save_metafiles_as_png=None, draw_slides_frame=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='xps', show_hidden_slides=None, save_metafiles_as_png=None, draw_slides_frame=None):  # noqa: E501
         """XpsExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(XpsExportOptions, self).__init__(format)
+        super(XpsExportOptions, self).__init__(default_regular_font, format)
 
         self._show_hidden_slides = None
         self._save_metafiles_as_png = None

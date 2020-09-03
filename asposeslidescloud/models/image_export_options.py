@@ -43,6 +43,7 @@ class ImageExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'notes_position': 'str',
         'comments_position': 'str',
@@ -51,6 +52,7 @@ class ImageExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'notes_position': 'notesPosition',
         'comments_position': 'commentsPosition',
@@ -62,9 +64,9 @@ class ImageExportOptions(ExportOptions):
         'format': 'image',
     }
 
-    def __init__(self, format='image', notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='image', notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None):  # noqa: E501
         """ImageExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(ImageExportOptions, self).__init__(format)
+        super(ImageExportOptions, self).__init__(default_regular_font, format)
 
         self._notes_position = None
         self._comments_position = None

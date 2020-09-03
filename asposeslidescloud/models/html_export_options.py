@@ -43,6 +43,7 @@ class HtmlExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'save_as_zip': 'bool',
         'sub_directory_name': 'str',
@@ -59,6 +60,7 @@ class HtmlExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'save_as_zip': 'saveAsZip',
         'sub_directory_name': 'subDirectoryName',
@@ -78,9 +80,9 @@ class HtmlExportOptions(ExportOptions):
         'format': 'html',
     }
 
-    def __init__(self, format='html', save_as_zip=None, sub_directory_name=None, show_hidden_slides=None, svg_responsive_layout=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='html', save_as_zip=None, sub_directory_name=None, show_hidden_slides=None, svg_responsive_layout=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
         """HtmlExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(HtmlExportOptions, self).__init__(format)
+        super(HtmlExportOptions, self).__init__(default_regular_font, format)
 
         self._save_as_zip = None
         self._sub_directory_name = None

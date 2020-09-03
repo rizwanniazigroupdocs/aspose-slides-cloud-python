@@ -43,6 +43,7 @@ class SvgExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'vectorize_text': 'bool',
         'metafile_rasterization_dpi': 'int',
@@ -56,6 +57,7 @@ class SvgExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'vectorize_text': 'vectorizeText',
         'metafile_rasterization_dpi': 'metafileRasterizationDpi',
@@ -72,9 +74,9 @@ class SvgExportOptions(ExportOptions):
         'format': 'svg',
     }
 
-    def __init__(self, format='svg', vectorize_text=None, metafile_rasterization_dpi=None, disable3_d_text=None, disable_gradient_split=None, disable_line_end_cropping=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, external_fonts_handling=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='svg', vectorize_text=None, metafile_rasterization_dpi=None, disable3_d_text=None, disable_gradient_split=None, disable_line_end_cropping=None, jpeg_quality=None, pictures_compression=None, delete_pictures_cropped_areas=None, external_fonts_handling=None):  # noqa: E501
         """SvgExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(SvgExportOptions, self).__init__(format)
+        super(SvgExportOptions, self).__init__(default_regular_font, format)
 
         self._vectorize_text = None
         self._metafile_rasterization_dpi = None

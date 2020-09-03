@@ -274,6 +274,298 @@ class TestSlidesApi(BaseTest):
         storage_name = self.get_test_value('create_folder', 'storage_name', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.CreateFolderRequest(path, storage_name)
 
+    def test_delete_chart_category(self):
+        """Test case for delete_chart_category
+        """
+        request = self.__prepare_delete_chart_category_request()
+        self.initialize('delete_chart_category', None, None)
+        response = self.api.delete_chart_category(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_chart_category_invalid_name(self):
+        """Test case for delete_chart_category with invalid name
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.name = self.get_invalid_test_value('delete_chart_category', 'name', request.name, 'str')
+        self.initialize('delete_chart_category', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'name')
+
+    def test_delete_chart_category_invalid_slide_index(self):
+        """Test case for delete_chart_category with invalid slide_index
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.slide_index = self.get_invalid_test_value('delete_chart_category', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_chart_category', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'slide_index')
+
+    def test_delete_chart_category_invalid_shape_index(self):
+        """Test case for delete_chart_category with invalid shape_index
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.shape_index = self.get_invalid_test_value('delete_chart_category', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_chart_category', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'shape_index')
+
+    def test_delete_chart_category_invalid_category_index(self):
+        """Test case for delete_chart_category with invalid category_index
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.category_index = self.get_invalid_test_value('delete_chart_category', 'category_index', request.category_index, 'int')
+        self.initialize('delete_chart_category', 'category_index', request.category_index)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'category_index', request.category_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'category_index')
+
+    def test_delete_chart_category_invalid_password(self):
+        """Test case for delete_chart_category with invalid password
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.password = self.get_invalid_test_value('delete_chart_category', 'password', request.password, 'str')
+        self.initialize('delete_chart_category', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'password')
+
+    def test_delete_chart_category_invalid_folder(self):
+        """Test case for delete_chart_category with invalid folder
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.folder = self.get_invalid_test_value('delete_chart_category', 'folder', request.folder, 'str')
+        self.initialize('delete_chart_category', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'folder')
+
+    def test_delete_chart_category_invalid_storage(self):
+        """Test case for delete_chart_category with invalid storage
+        """
+        request = self.__prepare_delete_chart_category_request()
+        request.storage = self.get_invalid_test_value('delete_chart_category', 'storage', request.storage, 'str')
+        self.initialize('delete_chart_category', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_category', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_category', 'storage')
+
+    def __prepare_delete_chart_category_request(self):
+        name = self.get_test_value('delete_chart_category', 'name', 'str')
+        slide_index = self.get_test_value('delete_chart_category', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_chart_category', 'shape_index', 'int')
+        category_index = self.get_test_value('delete_chart_category', 'category_index', 'int')
+        password = self.get_test_value('delete_chart_category', 'password', 'str')
+        folder = self.get_test_value('delete_chart_category', 'folder', 'str')
+        storage = self.get_test_value('delete_chart_category', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteChartCategoryRequest(name, slide_index, shape_index, category_index, password, folder, storage)
+
+    def test_delete_chart_data_point(self):
+        """Test case for delete_chart_data_point
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        self.initialize('delete_chart_data_point', None, None)
+        response = self.api.delete_chart_data_point(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_chart_data_point_invalid_name(self):
+        """Test case for delete_chart_data_point with invalid name
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.name = self.get_invalid_test_value('delete_chart_data_point', 'name', request.name, 'str')
+        self.initialize('delete_chart_data_point', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'name')
+
+    def test_delete_chart_data_point_invalid_slide_index(self):
+        """Test case for delete_chart_data_point with invalid slide_index
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.slide_index = self.get_invalid_test_value('delete_chart_data_point', 'slide_index', request.slide_index, 'int')
+        self.initialize('delete_chart_data_point', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'slide_index')
+
+    def test_delete_chart_data_point_invalid_shape_index(self):
+        """Test case for delete_chart_data_point with invalid shape_index
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.shape_index = self.get_invalid_test_value('delete_chart_data_point', 'shape_index', request.shape_index, 'int')
+        self.initialize('delete_chart_data_point', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'shape_index')
+
+    def test_delete_chart_data_point_invalid_series_index(self):
+        """Test case for delete_chart_data_point with invalid series_index
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.series_index = self.get_invalid_test_value('delete_chart_data_point', 'series_index', request.series_index, 'int')
+        self.initialize('delete_chart_data_point', 'series_index', request.series_index)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'series_index', request.series_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'series_index')
+
+    def test_delete_chart_data_point_invalid_point_index(self):
+        """Test case for delete_chart_data_point with invalid point_index
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.point_index = self.get_invalid_test_value('delete_chart_data_point', 'point_index', request.point_index, 'int')
+        self.initialize('delete_chart_data_point', 'point_index', request.point_index)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'point_index', request.point_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'point_index')
+
+    def test_delete_chart_data_point_invalid_password(self):
+        """Test case for delete_chart_data_point with invalid password
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.password = self.get_invalid_test_value('delete_chart_data_point', 'password', request.password, 'str')
+        self.initialize('delete_chart_data_point', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'password')
+
+    def test_delete_chart_data_point_invalid_folder(self):
+        """Test case for delete_chart_data_point with invalid folder
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.folder = self.get_invalid_test_value('delete_chart_data_point', 'folder', request.folder, 'str')
+        self.initialize('delete_chart_data_point', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'folder')
+
+    def test_delete_chart_data_point_invalid_storage(self):
+        """Test case for delete_chart_data_point with invalid storage
+        """
+        request = self.__prepare_delete_chart_data_point_request()
+        request.storage = self.get_invalid_test_value('delete_chart_data_point', 'storage', request.storage, 'str')
+        self.initialize('delete_chart_data_point', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_chart_data_point', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('delete_chart_data_point', 'storage')
+
+    def __prepare_delete_chart_data_point_request(self):
+        name = self.get_test_value('delete_chart_data_point', 'name', 'str')
+        slide_index = self.get_test_value('delete_chart_data_point', 'slide_index', 'int')
+        shape_index = self.get_test_value('delete_chart_data_point', 'shape_index', 'int')
+        series_index = self.get_test_value('delete_chart_data_point', 'series_index', 'int')
+        point_index = self.get_test_value('delete_chart_data_point', 'point_index', 'int')
+        password = self.get_test_value('delete_chart_data_point', 'password', 'str')
+        folder = self.get_test_value('delete_chart_data_point', 'folder', 'str')
+        storage = self.get_test_value('delete_chart_data_point', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteChartDataPointRequest(name, slide_index, shape_index, series_index, point_index, password, folder, storage)
+
     def test_delete_chart_series(self):
         """Test case for delete_chart_series
         """
@@ -11228,6 +11520,298 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_add_notes_slide', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostAddNotesSlideRequest(name, slide_index, dto, password, folder, storage)
 
+    def test_post_chart_category(self):
+        """Test case for post_chart_category
+        """
+        request = self.__prepare_post_chart_category_request()
+        self.initialize('post_chart_category', None, None)
+        response = self.api.post_chart_category(request)
+        self.assertIsNotNone(response)
+
+    def test_post_chart_category_invalid_name(self):
+        """Test case for post_chart_category with invalid name
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.name = self.get_invalid_test_value('post_chart_category', 'name', request.name, 'str')
+        self.initialize('post_chart_category', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'name')
+
+    def test_post_chart_category_invalid_slide_index(self):
+        """Test case for post_chart_category with invalid slide_index
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.slide_index = self.get_invalid_test_value('post_chart_category', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_chart_category', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'slide_index')
+
+    def test_post_chart_category_invalid_shape_index(self):
+        """Test case for post_chart_category with invalid shape_index
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.shape_index = self.get_invalid_test_value('post_chart_category', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_chart_category', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'shape_index')
+
+    def test_post_chart_category_invalid_category(self):
+        """Test case for post_chart_category with invalid category
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.category = self.get_invalid_test_value('post_chart_category', 'category', request.category, 'ChartCategory')
+        self.initialize('post_chart_category', 'category', request.category)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'category', request.category)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'category')
+
+    def test_post_chart_category_invalid_password(self):
+        """Test case for post_chart_category with invalid password
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.password = self.get_invalid_test_value('post_chart_category', 'password', request.password, 'str')
+        self.initialize('post_chart_category', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'password')
+
+    def test_post_chart_category_invalid_folder(self):
+        """Test case for post_chart_category with invalid folder
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.folder = self.get_invalid_test_value('post_chart_category', 'folder', request.folder, 'str')
+        self.initialize('post_chart_category', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'folder')
+
+    def test_post_chart_category_invalid_storage(self):
+        """Test case for post_chart_category with invalid storage
+        """
+        request = self.__prepare_post_chart_category_request()
+        request.storage = self.get_invalid_test_value('post_chart_category', 'storage', request.storage, 'str')
+        self.initialize('post_chart_category', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_category', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_category', 'storage')
+
+    def __prepare_post_chart_category_request(self):
+        name = self.get_test_value('post_chart_category', 'name', 'str')
+        slide_index = self.get_test_value('post_chart_category', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_chart_category', 'shape_index', 'int')
+        category = self.get_test_value('post_chart_category', 'category', 'ChartCategory')
+        password = self.get_test_value('post_chart_category', 'password', 'str')
+        folder = self.get_test_value('post_chart_category', 'folder', 'str')
+        storage = self.get_test_value('post_chart_category', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostChartCategoryRequest(name, slide_index, shape_index, category, password, folder, storage)
+
+    def test_post_chart_data_point(self):
+        """Test case for post_chart_data_point
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        self.initialize('post_chart_data_point', None, None)
+        response = self.api.post_chart_data_point(request)
+        self.assertIsNotNone(response)
+
+    def test_post_chart_data_point_invalid_name(self):
+        """Test case for post_chart_data_point with invalid name
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.name = self.get_invalid_test_value('post_chart_data_point', 'name', request.name, 'str')
+        self.initialize('post_chart_data_point', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'name')
+
+    def test_post_chart_data_point_invalid_slide_index(self):
+        """Test case for post_chart_data_point with invalid slide_index
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.slide_index = self.get_invalid_test_value('post_chart_data_point', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_chart_data_point', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'slide_index')
+
+    def test_post_chart_data_point_invalid_shape_index(self):
+        """Test case for post_chart_data_point with invalid shape_index
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.shape_index = self.get_invalid_test_value('post_chart_data_point', 'shape_index', request.shape_index, 'int')
+        self.initialize('post_chart_data_point', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'shape_index')
+
+    def test_post_chart_data_point_invalid_series_index(self):
+        """Test case for post_chart_data_point with invalid series_index
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.series_index = self.get_invalid_test_value('post_chart_data_point', 'series_index', request.series_index, 'int')
+        self.initialize('post_chart_data_point', 'series_index', request.series_index)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'series_index', request.series_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'series_index')
+
+    def test_post_chart_data_point_invalid_data_point(self):
+        """Test case for post_chart_data_point with invalid data_point
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.data_point = self.get_invalid_test_value('post_chart_data_point', 'data_point', request.data_point, 'DataPoint')
+        self.initialize('post_chart_data_point', 'data_point', request.data_point)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'data_point', request.data_point)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'data_point')
+
+    def test_post_chart_data_point_invalid_password(self):
+        """Test case for post_chart_data_point with invalid password
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.password = self.get_invalid_test_value('post_chart_data_point', 'password', request.password, 'str')
+        self.initialize('post_chart_data_point', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'password')
+
+    def test_post_chart_data_point_invalid_folder(self):
+        """Test case for post_chart_data_point with invalid folder
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.folder = self.get_invalid_test_value('post_chart_data_point', 'folder', request.folder, 'str')
+        self.initialize('post_chart_data_point', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'folder')
+
+    def test_post_chart_data_point_invalid_storage(self):
+        """Test case for post_chart_data_point with invalid storage
+        """
+        request = self.__prepare_post_chart_data_point_request()
+        request.storage = self.get_invalid_test_value('post_chart_data_point', 'storage', request.storage, 'str')
+        self.initialize('post_chart_data_point', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_chart_data_point', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('post_chart_data_point', 'storage')
+
+    def __prepare_post_chart_data_point_request(self):
+        name = self.get_test_value('post_chart_data_point', 'name', 'str')
+        slide_index = self.get_test_value('post_chart_data_point', 'slide_index', 'int')
+        shape_index = self.get_test_value('post_chart_data_point', 'shape_index', 'int')
+        series_index = self.get_test_value('post_chart_data_point', 'series_index', 'int')
+        data_point = self.get_test_value('post_chart_data_point', 'data_point', 'DataPoint')
+        password = self.get_test_value('post_chart_data_point', 'password', 'str')
+        folder = self.get_test_value('post_chart_data_point', 'folder', 'str')
+        storage = self.get_test_value('post_chart_data_point', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostChartDataPointRequest(name, slide_index, shape_index, series_index, data_point, password, folder, storage)
+
     def test_post_chart_series(self):
         """Test case for post_chart_series
         """
@@ -15763,6 +16347,334 @@ class TestSlidesApi(BaseTest):
         bounds = self.get_test_value('post_subshape_save_as', 'bounds', 'str')
         fonts_folder = self.get_test_value('post_subshape_save_as', 'fonts_folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostSubshapeSaveAsRequest(name, slide_index, shape_index, format, path, options, password, folder, storage, scale_x, scale_y, bounds, fonts_folder)
+
+    def test_put_chart_category(self):
+        """Test case for put_chart_category
+        """
+        request = self.__prepare_put_chart_category_request()
+        self.initialize('put_chart_category', None, None)
+        response = self.api.put_chart_category(request)
+        self.assertIsNotNone(response)
+
+    def test_put_chart_category_invalid_name(self):
+        """Test case for put_chart_category with invalid name
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.name = self.get_invalid_test_value('put_chart_category', 'name', request.name, 'str')
+        self.initialize('put_chart_category', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'name')
+
+    def test_put_chart_category_invalid_slide_index(self):
+        """Test case for put_chart_category with invalid slide_index
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.slide_index = self.get_invalid_test_value('put_chart_category', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_chart_category', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'slide_index')
+
+    def test_put_chart_category_invalid_shape_index(self):
+        """Test case for put_chart_category with invalid shape_index
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.shape_index = self.get_invalid_test_value('put_chart_category', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_chart_category', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'shape_index')
+
+    def test_put_chart_category_invalid_category_index(self):
+        """Test case for put_chart_category with invalid category_index
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.category_index = self.get_invalid_test_value('put_chart_category', 'category_index', request.category_index, 'int')
+        self.initialize('put_chart_category', 'category_index', request.category_index)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'category_index', request.category_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'category_index')
+
+    def test_put_chart_category_invalid_category(self):
+        """Test case for put_chart_category with invalid category
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.category = self.get_invalid_test_value('put_chart_category', 'category', request.category, 'ChartCategory')
+        self.initialize('put_chart_category', 'category', request.category)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'category', request.category)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'category')
+
+    def test_put_chart_category_invalid_password(self):
+        """Test case for put_chart_category with invalid password
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.password = self.get_invalid_test_value('put_chart_category', 'password', request.password, 'str')
+        self.initialize('put_chart_category', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'password')
+
+    def test_put_chart_category_invalid_folder(self):
+        """Test case for put_chart_category with invalid folder
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.folder = self.get_invalid_test_value('put_chart_category', 'folder', request.folder, 'str')
+        self.initialize('put_chart_category', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'folder')
+
+    def test_put_chart_category_invalid_storage(self):
+        """Test case for put_chart_category with invalid storage
+        """
+        request = self.__prepare_put_chart_category_request()
+        request.storage = self.get_invalid_test_value('put_chart_category', 'storage', request.storage, 'str')
+        self.initialize('put_chart_category', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_chart_category(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_category', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_category', 'storage')
+
+    def __prepare_put_chart_category_request(self):
+        name = self.get_test_value('put_chart_category', 'name', 'str')
+        slide_index = self.get_test_value('put_chart_category', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_chart_category', 'shape_index', 'int')
+        category_index = self.get_test_value('put_chart_category', 'category_index', 'int')
+        category = self.get_test_value('put_chart_category', 'category', 'ChartCategory')
+        password = self.get_test_value('put_chart_category', 'password', 'str')
+        folder = self.get_test_value('put_chart_category', 'folder', 'str')
+        storage = self.get_test_value('put_chart_category', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutChartCategoryRequest(name, slide_index, shape_index, category_index, category, password, folder, storage)
+
+    def test_put_chart_data_point(self):
+        """Test case for put_chart_data_point
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        self.initialize('put_chart_data_point', None, None)
+        response = self.api.put_chart_data_point(request)
+        self.assertIsNotNone(response)
+
+    def test_put_chart_data_point_invalid_name(self):
+        """Test case for put_chart_data_point with invalid name
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.name = self.get_invalid_test_value('put_chart_data_point', 'name', request.name, 'str')
+        self.initialize('put_chart_data_point', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'name', request.name)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'name')
+
+    def test_put_chart_data_point_invalid_slide_index(self):
+        """Test case for put_chart_data_point with invalid slide_index
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.slide_index = self.get_invalid_test_value('put_chart_data_point', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_chart_data_point', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'slide_index', request.slide_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'slide_index')
+
+    def test_put_chart_data_point_invalid_shape_index(self):
+        """Test case for put_chart_data_point with invalid shape_index
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.shape_index = self.get_invalid_test_value('put_chart_data_point', 'shape_index', request.shape_index, 'int')
+        self.initialize('put_chart_data_point', 'shape_index', request.shape_index)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'shape_index', request.shape_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'shape_index')
+
+    def test_put_chart_data_point_invalid_series_index(self):
+        """Test case for put_chart_data_point with invalid series_index
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.series_index = self.get_invalid_test_value('put_chart_data_point', 'series_index', request.series_index, 'int')
+        self.initialize('put_chart_data_point', 'series_index', request.series_index)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'series_index', request.series_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'series_index')
+
+    def test_put_chart_data_point_invalid_point_index(self):
+        """Test case for put_chart_data_point with invalid point_index
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.point_index = self.get_invalid_test_value('put_chart_data_point', 'point_index', request.point_index, 'int')
+        self.initialize('put_chart_data_point', 'point_index', request.point_index)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'point_index', request.point_index)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'point_index')
+
+    def test_put_chart_data_point_invalid_data_point(self):
+        """Test case for put_chart_data_point with invalid data_point
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.data_point = self.get_invalid_test_value('put_chart_data_point', 'data_point', request.data_point, 'DataPoint')
+        self.initialize('put_chart_data_point', 'data_point', request.data_point)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'data_point', request.data_point)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'data_point')
+
+    def test_put_chart_data_point_invalid_password(self):
+        """Test case for put_chart_data_point with invalid password
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.password = self.get_invalid_test_value('put_chart_data_point', 'password', request.password, 'str')
+        self.initialize('put_chart_data_point', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'password', request.password)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'password')
+
+    def test_put_chart_data_point_invalid_folder(self):
+        """Test case for put_chart_data_point with invalid folder
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.folder = self.get_invalid_test_value('put_chart_data_point', 'folder', request.folder, 'str')
+        self.initialize('put_chart_data_point', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'folder', request.folder)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'folder')
+
+    def test_put_chart_data_point_invalid_storage(self):
+        """Test case for put_chart_data_point with invalid storage
+        """
+        request = self.__prepare_put_chart_data_point_request()
+        request.storage = self.get_invalid_test_value('put_chart_data_point', 'storage', request.storage, 'str')
+        self.initialize('put_chart_data_point', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_chart_data_point(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_chart_data_point', 'storage', request.storage)
+        except Exception:
+            pass
+        if ok:
+            self.assert_no_exception('put_chart_data_point', 'storage')
+
+    def __prepare_put_chart_data_point_request(self):
+        name = self.get_test_value('put_chart_data_point', 'name', 'str')
+        slide_index = self.get_test_value('put_chart_data_point', 'slide_index', 'int')
+        shape_index = self.get_test_value('put_chart_data_point', 'shape_index', 'int')
+        series_index = self.get_test_value('put_chart_data_point', 'series_index', 'int')
+        point_index = self.get_test_value('put_chart_data_point', 'point_index', 'int')
+        data_point = self.get_test_value('put_chart_data_point', 'data_point', 'DataPoint')
+        password = self.get_test_value('put_chart_data_point', 'password', 'str')
+        folder = self.get_test_value('put_chart_data_point', 'folder', 'str')
+        storage = self.get_test_value('put_chart_data_point', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutChartDataPointRequest(name, slide_index, shape_index, series_index, point_index, data_point, password, folder, storage)
 
     def test_put_chart_series(self):
         """Test case for put_chart_series

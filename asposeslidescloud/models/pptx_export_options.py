@@ -43,11 +43,13 @@ class PptxExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'conformance': 'str'
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'conformance': 'conformance'
     }
@@ -56,9 +58,9 @@ class PptxExportOptions(ExportOptions):
         'format': 'pptx',
     }
 
-    def __init__(self, format='pptx', conformance=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='pptx', conformance=None):  # noqa: E501
         """PptxExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(PptxExportOptions, self).__init__(format)
+        super(PptxExportOptions, self).__init__(default_regular_font, format)
 
         self._conformance = None
         self.format: 'pptx'

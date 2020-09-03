@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-from asposeslidescloud.models.data_point import DataPoint
+from asposeslidescloud.models.one_value_chart_data_point import OneValueChartDataPoint
 
-class ScatterChartDataPoint(DataPoint):
+class WaterfallChartDataPoint(OneValueChartDataPoint):
 
 
     """
@@ -43,71 +43,48 @@ class ScatterChartDataPoint(DataPoint):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'x_value': 'float',
-        'y_value': 'float'
+        'value': 'float',
+        'set_as_total': 'bool'
     }
 
     attribute_map = {
-        'x_value': 'xValue',
-        'y_value': 'yValue'
+        'value': 'value',
+        'set_as_total': 'setAsTotal'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, x_value=None, y_value=None):  # noqa: E501
-        """ScatterChartDataPoint - a model defined in Swagger"""  # noqa: E501
-        super(ScatterChartDataPoint, self).__init__()
+    def __init__(self, value=None, set_as_total=None):  # noqa: E501
+        """WaterfallChartDataPoint - a model defined in Swagger"""  # noqa: E501
+        super(WaterfallChartDataPoint, self).__init__(value)
 
-        self._x_value = None
-        self._y_value = None
+        self._set_as_total = None
 
-        self.x_value = x_value
-        self.y_value = y_value
-
-    @property
-    def x_value(self):
-        """Gets the x_value of this ScatterChartDataPoint.  # noqa: E501
-
-        X-value  # noqa: E501
-
-        :return: The x_value of this ScatterChartDataPoint.  # noqa: E501
-        :rtype: float
-        """
-        return self._x_value
-
-    @x_value.setter
-    def x_value(self, x_value):
-        """Sets the x_value of this ScatterChartDataPoint.
-
-        X-value  # noqa: E501
-
-        :param x_value: The x_value of this ScatterChartDataPoint.  # noqa: E501
-        :type: float
-        """
-        self._x_value = x_value
+        if set_as_total is not None:
+            self.set_as_total = set_as_total
 
     @property
-    def y_value(self):
-        """Gets the y_value of this ScatterChartDataPoint.  # noqa: E501
+    def set_as_total(self):
+        """Gets the set_as_total of this WaterfallChartDataPoint.  # noqa: E501
 
-        Y-value  # noqa: E501
+        Value.  # noqa: E501
 
-        :return: The y_value of this ScatterChartDataPoint.  # noqa: E501
-        :rtype: float
+        :return: The set_as_total of this WaterfallChartDataPoint.  # noqa: E501
+        :rtype: bool
         """
-        return self._y_value
+        return self._set_as_total
 
-    @y_value.setter
-    def y_value(self, y_value):
-        """Sets the y_value of this ScatterChartDataPoint.
+    @set_as_total.setter
+    def set_as_total(self, set_as_total):
+        """Sets the set_as_total of this WaterfallChartDataPoint.
 
-        Y-value  # noqa: E501
+        Value.  # noqa: E501
 
-        :param y_value: The y_value of this ScatterChartDataPoint.  # noqa: E501
-        :type: float
+        :param set_as_total: The set_as_total of this WaterfallChartDataPoint.  # noqa: E501
+        :type: bool
         """
-        self._y_value = y_value
+        self._set_as_total = set_as_total
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -143,7 +120,7 @@ class ScatterChartDataPoint(DataPoint):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ScatterChartDataPoint):
+        if not isinstance(other, WaterfallChartDataPoint):
             return False
 
         return self.__dict__ == other.__dict__

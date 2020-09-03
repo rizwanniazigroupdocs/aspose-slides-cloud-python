@@ -30,8 +30,9 @@ import re  # noqa: F401
 
 import six
 
+from asposeslidescloud.models.data_point import DataPoint
 
-class OneValueChartDataPoint(object):
+class OneValueChartDataPoint(DataPoint):
 
 
     """
@@ -54,6 +55,7 @@ class OneValueChartDataPoint(object):
 
     def __init__(self, value=None):  # noqa: E501
         """OneValueChartDataPoint - a model defined in Swagger"""  # noqa: E501
+        super(OneValueChartDataPoint, self).__init__()
 
         self._value = None
 

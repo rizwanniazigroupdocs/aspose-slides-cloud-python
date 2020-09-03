@@ -43,6 +43,7 @@ class TiffExportOptions(ExportOptions):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'default_regular_font': 'str',
         'format': 'str',
         'compression': 'str',
         'width': 'int',
@@ -59,6 +60,7 @@ class TiffExportOptions(ExportOptions):
     }
 
     attribute_map = {
+        'default_regular_font': 'defaultRegularFont',
         'format': 'format',
         'compression': 'compression',
         'width': 'width',
@@ -78,9 +80,9 @@ class TiffExportOptions(ExportOptions):
         'format': 'tiff',
     }
 
-    def __init__(self, format='tiff', compression=None, width=None, height=None, dpi_x=None, dpi_y=None, show_hidden_slides=None, pixel_format=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, format='tiff', compression=None, width=None, height=None, dpi_x=None, dpi_y=None, show_hidden_slides=None, pixel_format=None, notes_position=None, comments_position=None, comments_area_width=None, comments_area_color=None, show_comments_by_no_author=None):  # noqa: E501
         """TiffExportOptions - a model defined in Swagger"""  # noqa: E501
-        super(TiffExportOptions, self).__init__(format)
+        super(TiffExportOptions, self).__init__(default_regular_font, format)
 
         self._compression = None
         self._width = None
