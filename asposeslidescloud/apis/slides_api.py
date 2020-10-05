@@ -2155,6 +2155,223 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_section(self, request, **kwargs):  # noqa: E501
+        """Delete a presentation section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_section(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_sectionRequest request: delete_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_section_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Delete a presentation section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_section_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_sectionRequest request: delete_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_section" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_section`")  # noqa: E501
+        # verify the required parameter 'section_index' is set
+        if not request.section_index:
+            raise ValueError("Missing the required parameter `request.section_index` when calling `delete_section`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['sectionIndex'] = request.section_index  # noqa: E501
+
+        query_params = []
+        if request.with_slides:
+            query_params.append(('withSlides', request.with_slides))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections/{sectionIndex}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_sections(self, request, **kwargs):  # noqa: E501
+        """Delete presentation sections.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_sections(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_sectionsRequest request: delete_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_sections_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_sections_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def delete_sections_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Delete presentation sections.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_sections_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param delete_sectionsRequest request: delete_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_sections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `delete_sections`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.sections:
+            query_params.append(('sections', request.sections))  # noqa: E501
+            collection_formats['sections'] = ''  # noqa: E501
+        if request.with_slides:
+            query_params.append(('withSlides', request.with_slides))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_slide_animation(self, request, **kwargs):  # noqa: E501
         """Remove animation from a slide.  # noqa: E501
 
@@ -5276,6 +5493,113 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_notes_slide_header_footer(self, request, **kwargs):  # noqa: E501
+        """Get header/footer info for the notes slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_notes_slide_header_footer(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_notes_slide_header_footerRequest request: get_notes_slide_header_footer request object
+        :return: NotesSlideHeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_notes_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_notes_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_notes_slide_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Get header/footer info for the notes slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_notes_slide_header_footer_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_notes_slide_header_footerRequest request: get_notes_slide_header_footer request object
+        :return: NotesSlideHeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_notes_slide_header_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_notes_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_notes_slide_header_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/notesSlide/headerFooter', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='NotesSlideHeaderFooter',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_notes_slide_shape(self, request, **kwargs):  # noqa: E501
         """Read slide shape info.  # noqa: E501
 
@@ -6305,6 +6629,109 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_sections(self, request, **kwargs):  # noqa: E501
+        """Read presentation sections info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_sections(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_sectionsRequest request: get_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_sections_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Read presentation sections info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_sections_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_sectionsRequest request: get_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_sections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_sections`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_slide_animation(self, request, **kwargs):  # noqa: E501
         """Read slide animation effects.  # noqa: E501
 
@@ -6407,6 +6834,113 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='SlideAnimation',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_slide_header_footer(self, request, **kwargs):  # noqa: E501
+        """Get footer info for the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_header_footer(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_header_footerRequest request: get_slide_header_footer request object
+        :return: HeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def get_slide_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Get footer info for the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_slide_header_footer_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param get_slide_header_footerRequest request: get_slide_header_footer request object
+        :return: HeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_slide_header_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `get_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `get_slide_header_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/headerFooter', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='HeaderFooter',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -10135,6 +10669,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `post_add_new_paragraph`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_add_new_paragraph`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10253,6 +10790,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `post_add_new_portion`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_add_new_portion`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10596,6 +11136,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `post_add_new_subshape_paragraph`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_add_new_subshape_paragraph`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10715,6 +11258,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `post_add_new_subshape_portion`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_add_new_subshape_portion`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10829,6 +11375,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_add_notes_slide`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_add_notes_slide`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10941,6 +11490,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `post_chart_category`")  # noqa: E501
+        # verify the required parameter 'category' is set
+        if not request.category:
+            raise ValueError("Missing the required parameter `request.category` when calling `post_chart_category`")  # noqa: E501
 
         collection_formats = {}
 
@@ -11057,6 +11609,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'series_index' is set
         if not request.series_index:
             raise ValueError("Missing the required parameter `request.series_index` when calling `post_chart_data_point`")  # noqa: E501
+        # verify the required parameter 'data_point' is set
+        if not request.data_point:
+            raise ValueError("Missing the required parameter `request.data_point` when calling `post_chart_data_point`")  # noqa: E501
 
         collection_formats = {}
 
@@ -11171,6 +11726,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `post_chart_series`")  # noqa: E501
+        # verify the required parameter 'series' is set
+        if not request.series:
+            raise ValueError("Missing the required parameter `request.series` when calling `post_chart_series`")  # noqa: E501
 
         collection_formats = {}
 
@@ -11511,6 +12069,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not request.document:
+            raise ValueError("Missing the required parameter `request.document` when calling `post_get_notes_slide`")  # noqa: E501
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide`")  # noqa: E501
@@ -11612,6 +12173,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not request.document:
+            raise ValueError("Missing the required parameter `request.document` when calling `post_get_notes_slide_exists`")  # noqa: E501
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide_exists`")  # noqa: E501
@@ -11713,6 +12277,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not request.document:
+            raise ValueError("Missing the required parameter `request.document` when calling `post_get_notes_slide_with_format`")  # noqa: E501
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_get_notes_slide_with_format`")  # noqa: E501
@@ -11833,6 +12400,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `post_notes_slide_add_new_paragraph`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_notes_slide_add_new_paragraph`")  # noqa: E501
 
         collection_formats = {}
 
@@ -11951,6 +12521,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `post_notes_slide_add_new_portion`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_notes_slide_add_new_portion`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12064,6 +12637,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_notes_slide_add_new_shape`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `post_notes_slide_add_new_shape`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12299,6 +12875,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'name' is set
         if not request.name:
             raise ValueError("Missing the required parameter `request.name` when calling `post_presentation_merge`")  # noqa: E501
+        # verify the required parameter 'request' is set
+        if not request.request:
+            raise ValueError("Missing the required parameter `request.request` when calling `post_presentation_merge`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12343,6 +12922,231 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='Document',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_section(self, request, **kwargs):  # noqa: E501
+        """Create a section starting at a specified slide index.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_section(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_sectionRequest request: post_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_section_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_section_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Create a section starting at a specified slide index.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_section_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_sectionRequest request: post_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_section" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_section`")  # noqa: E501
+        # verify the required parameter 'section_name' is set
+        if not request.section_name:
+            raise ValueError("Missing the required parameter `request.section_name` when calling `post_section`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `post_section`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.section_name:
+            query_params.append(('sectionName', request.section_name))  # noqa: E501
+        if request.slide_index:
+            query_params.append(('slideIndex', request.slide_index))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_section_move(self, request, **kwargs):  # noqa: E501
+        """Move presentation section to a specified position.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_section_move(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_section_moveRequest request: post_section_move request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.post_section_move_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_section_move_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def post_section_move_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Move presentation section to a specified position.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.post_section_move_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param post_section_moveRequest request: post_section_move request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_section_move" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `post_section_move`")  # noqa: E501
+        # verify the required parameter 'section_index' is set
+        if not request.section_index:
+            raise ValueError("Missing the required parameter `request.section_index` when calling `post_section_move`")  # noqa: E501
+        # verify the required parameter 'new_position' is set
+        if not request.new_position:
+            raise ValueError("Missing the required parameter `request.new_position` when calling `post_section_move`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['sectionIndex'] = request.section_index  # noqa: E501
+
+        query_params = []
+        if request.new_position:
+            query_params.append(('newPosition', request.new_position))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections/{sectionIndex}/move', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -12532,6 +13336,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_slide_animation_effect`")  # noqa: E501
+        # verify the required parameter 'effect' is set
+        if not request.effect:
+            raise ValueError("Missing the required parameter `request.effect` when calling `post_slide_animation_effect`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12641,6 +13448,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `post_slide_animation_interactive_sequence`")  # noqa: E501
+        # verify the required parameter 'sequence' is set
+        if not request.sequence:
+            raise ValueError("Missing the required parameter `request.sequence` when calling `post_slide_animation_interactive_sequence`")  # noqa: E501
 
         collection_formats = {}
 
@@ -12753,6 +13563,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'sequence_index' is set
         if not request.sequence_index:
             raise ValueError("Missing the required parameter `request.sequence_index` when calling `post_slide_animation_interactive_sequence_effect`")  # noqa: E501
+        # verify the required parameter 'effect' is set
+        if not request.effect:
+            raise ValueError("Missing the required parameter `request.effect` when calling `post_slide_animation_interactive_sequence_effect`")  # noqa: E501
 
         collection_formats = {}
 
@@ -13083,6 +13896,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not request.document:
+            raise ValueError("Missing the required parameter `request.document` when calling `post_slides_convert`")  # noqa: E501
         # verify the required parameter 'format' is set
         if not request.format:
             raise ValueError("Missing the required parameter `request.format` when calling `post_slides_convert`")  # noqa: E501
@@ -13739,6 +14555,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'pipeline' is set
+        if not request.pipeline:
+            raise ValueError("Missing the required parameter `request.pipeline` when calling `post_slides_pipeline`")  # noqa: E501
 
         collection_formats = {}
 
@@ -14285,6 +15104,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'name' is set
         if not request.name:
             raise ValueError("Missing the required parameter `request.name` when calling `post_slides_set_document_properties`")  # noqa: E501
+        # verify the required parameter 'properties' is set
+        if not request.properties:
+            raise ValueError("Missing the required parameter `request.properties` when calling `post_slides_set_document_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -14763,6 +15585,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'category_index' is set
         if not request.category_index:
             raise ValueError("Missing the required parameter `request.category_index` when calling `put_chart_category`")  # noqa: E501
+        # verify the required parameter 'category' is set
+        if not request.category:
+            raise ValueError("Missing the required parameter `request.category` when calling `put_chart_category`")  # noqa: E501
 
         collection_formats = {}
 
@@ -14883,6 +15708,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'point_index' is set
         if not request.point_index:
             raise ValueError("Missing the required parameter `request.point_index` when calling `put_chart_data_point`")  # noqa: E501
+        # verify the required parameter 'data_point' is set
+        if not request.data_point:
+            raise ValueError("Missing the required parameter `request.data_point` when calling `put_chart_data_point`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15001,6 +15829,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'series_index' is set
         if not request.series_index:
             raise ValueError("Missing the required parameter `request.series_index` when calling `put_chart_series`")  # noqa: E501
+        # verify the required parameter 'series' is set
+        if not request.series:
+            raise ValueError("Missing the required parameter `request.series` when calling `put_chart_series`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15112,6 +15943,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `put_layout_slide`")  # noqa: E501
+        # verify the required parameter 'slide_dto' is set
+        if not request.slide_dto:
+            raise ValueError("Missing the required parameter `request.slide_dto` when calling `put_layout_slide`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15157,6 +15991,118 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='LayoutSlide',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_notes_slide_header_footer(self, request, **kwargs):  # noqa: E501
+        """Set header/footer the notes slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_notes_slide_header_footer(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_notes_slide_header_footerRequest request: put_notes_slide_header_footer request object
+        :return: NotesSlideHeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_notes_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_notes_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_notes_slide_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Set header/footer the notes slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_notes_slide_header_footer_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_notes_slide_header_footerRequest request: put_notes_slide_header_footer request object
+        :return: NotesSlideHeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_notes_slide_header_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_notes_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_notes_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_notes_slide_header_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/notesSlide/headerFooter', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='NotesSlideHeaderFooter',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -15348,6 +16294,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'name' is set
         if not request.name:
             raise ValueError("Missing the required parameter `request.name` when calling `put_presentation_merge`")  # noqa: E501
+        # verify the required parameter 'request' is set
+        if not request.request:
+            raise ValueError("Missing the required parameter `request.request` when calling `put_presentation_merge`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15392,6 +16341,226 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='Document',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_section(self, request, **kwargs):  # noqa: E501
+        """Update section name.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_section(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_sectionRequest request: put_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_section_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_section_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Update section name.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_section_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_sectionRequest request: put_section request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_section" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_section`")  # noqa: E501
+        # verify the required parameter 'section_index' is set
+        if not request.section_index:
+            raise ValueError("Missing the required parameter `request.section_index` when calling `put_section`")  # noqa: E501
+        # verify the required parameter 'section_name' is set
+        if not request.section_name:
+            raise ValueError("Missing the required parameter `request.section_name` when calling `put_section`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['sectionIndex'] = request.section_index  # noqa: E501
+
+        query_params = []
+        if request.section_name:
+            query_params.append(('sectionName', request.section_name))  # noqa: E501
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections/{sectionIndex}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_sections(self, request, **kwargs):  # noqa: E501
+        """Replace existing presentation sections with the ones provided in the sections DTO.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_sections(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_sectionsRequest request: put_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_sections_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_sections_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_sections_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replace existing presentation sections with the ones provided in the sections DTO.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_sections_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_sectionsRequest request: put_sections request object
+        :return: Sections
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_sections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_sections`")  # noqa: E501
+        # verify the required parameter 'sections' is set
+        if not request.sections:
+            raise ValueError("Missing the required parameter `request.sections` when calling `put_sections`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.sections:
+            body_params = request.sections
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/sections', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Sections',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -15465,6 +16634,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'portion_index' is set
         if not request.portion_index:
             raise ValueError("Missing the required parameter `request.portion_index` when calling `put_set_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_set_paragraph_portion_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15583,6 +16755,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_set_paragraph_properties`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_set_paragraph_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15703,6 +16878,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'portion_index' is set
         if not request.portion_index:
             raise ValueError("Missing the required parameter `request.portion_index` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_set_subshape_paragraph_portion_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -15822,6 +17000,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_set_subshape_paragraph_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16064,6 +17245,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `put_slide_animation`")  # noqa: E501
+        # verify the required parameter 'animation' is set
+        if not request.animation:
+            raise ValueError("Missing the required parameter `request.animation` when calling `put_slide_animation`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16176,6 +17360,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'effect_index' is set
         if not request.effect_index:
             raise ValueError("Missing the required parameter `request.effect_index` when calling `put_slide_animation_effect`")  # noqa: E501
+        # verify the required parameter 'effect' is set
+        if not request.effect:
+            raise ValueError("Missing the required parameter `request.effect` when calling `put_slide_animation_effect`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16292,6 +17479,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'effect_index' is set
         if not request.effect_index:
             raise ValueError("Missing the required parameter `request.effect_index` when calling `put_slide_animation_interactive_sequence_effect`")  # noqa: E501
+        # verify the required parameter 'effect' is set
+        if not request.effect:
+            raise ValueError("Missing the required parameter `request.effect` when calling `put_slide_animation_interactive_sequence_effect`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16339,6 +17529,118 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=files,
             response_type='SlideAnimation',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_slide_header_footer(self, request, **kwargs):  # noqa: E501
+        """Set footer the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slide_header_footer(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slide_header_footerRequest request: put_slide_header_footer request object
+        :return: HeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_slide_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_slide_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Set footer the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slide_header_footer_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slide_header_footerRequest request: put_slide_header_footer request object
+        :return: HeaderFooter
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_slide_header_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not request.slide_index:
+            raise ValueError("Missing the required parameter `request.slide_index` when calling `put_slide_header_footer`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_slide_header_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+        path_params['slideIndex'] = request.slide_index  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/headerFooter', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='HeaderFooter',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -16530,6 +17832,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `put_slide_shape_info`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_slide_shape_info`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16643,6 +17948,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `put_slide_subshape_info`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_slide_subshape_info`")  # noqa: E501
 
         collection_formats = {}
 
@@ -16748,6 +18056,9 @@ class SlidesApi(ApiBase):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not request.document:
+            raise ValueError("Missing the required parameter `request.document` when calling `put_slides_convert`")  # noqa: E501
         # verify the required parameter 'format' is set
         if not request.format:
             raise ValueError("Missing the required parameter `request.format` when calling `put_slides_convert`")  # noqa: E501
@@ -16896,6 +18207,114 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/{name}/fromHtml', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=files,
+            response_type='Document',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_slides_header_footer(self, request, **kwargs):  # noqa: E501
+        """Set footers for all slides in a presentation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slides_header_footer(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slides_header_footerRequest request: put_slides_header_footer request object
+        :return: Document
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.put_slides_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.put_slides_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def put_slides_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Set footers for all slides in a presentation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.put_slides_header_footer_with_http_info(request, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param put_slides_header_footerRequest request: put_slides_header_footer request object
+        :return: Document
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_slides_header_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not request.name:
+            raise ValueError("Missing the required parameter `request.name` when calling `put_slides_header_footer`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_slides_header_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = request.name  # noqa: E501
+
+        query_params = []
+        if request.password:
+            query_params.append(('password', request.password))  # noqa: E501
+        if request.storage:
+            query_params.append(('storage', request.storage))  # noqa: E501
+        if request.folder:
+            query_params.append(('folder', request.folder))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        files = {}
+
+        body_params = None
+        if request.dto:
+            body_params = request.dto
+
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/headerFooter', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -17083,6 +18502,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'property_name' is set
         if not request.property_name:
             raise ValueError("Missing the required parameter `request.property_name` when calling `put_slides_set_document_property`")  # noqa: E501
+        # verify the required parameter '_property' is set
+        if not request._property:
+            raise ValueError("Missing the required parameter `request._property` when calling `put_slides_set_document_property`")  # noqa: E501
 
         collection_formats = {}
 
@@ -17192,6 +18614,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `put_slides_slide`")  # noqa: E501
+        # verify the required parameter 'slide_dto' is set
+        if not request.slide_dto:
+            raise ValueError("Missing the required parameter `request.slide_dto` when calling `put_slides_slide`")  # noqa: E501
 
         collection_formats = {}
 
@@ -17301,6 +18726,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `put_slides_slide_background`")  # noqa: E501
+        # verify the required parameter 'background' is set
+        if not request.background:
+            raise ValueError("Missing the required parameter `request.background` when calling `put_slides_slide_background`")  # noqa: E501
 
         collection_formats = {}
 
@@ -17630,6 +19058,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'name' is set
         if not request.name:
             raise ValueError("Missing the required parameter `request.name` when calling `put_slides_view_properties`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_slides_view_properties`")  # noqa: E501
 
         collection_formats = {}
 
@@ -17869,6 +19300,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'slide_index' is set
         if not request.slide_index:
             raise ValueError("Missing the required parameter `request.slide_index` when calling `put_update_notes_slide`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_update_notes_slide`")  # noqa: E501
 
         collection_formats = {}
 
@@ -17981,6 +19415,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'shape_index' is set
         if not request.shape_index:
             raise ValueError("Missing the required parameter `request.shape_index` when calling `put_update_notes_slide_shape`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_update_notes_slide_shape`")  # noqa: E501
 
         collection_formats = {}
 
@@ -18097,6 +19534,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'paragraph_index' is set
         if not request.paragraph_index:
             raise ValueError("Missing the required parameter `request.paragraph_index` when calling `put_update_notes_slide_shape_paragraph`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_update_notes_slide_shape_paragraph`")  # noqa: E501
 
         collection_formats = {}
 
@@ -18217,6 +19657,9 @@ class SlidesApi(ApiBase):
         # verify the required parameter 'portion_index' is set
         if not request.portion_index:
             raise ValueError("Missing the required parameter `request.portion_index` when calling `put_update_notes_slide_shape_portion`")  # noqa: E501
+        # verify the required parameter 'dto' is set
+        if not request.dto:
+            raise ValueError("Missing the required parameter `request.dto` when calling `put_update_notes_slide_shape_portion`")  # noqa: E501
 
         collection_formats = {}
 

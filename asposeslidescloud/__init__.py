@@ -119,6 +119,7 @@ from asposeslidescloud.models.file_version import FileVersion
 from asposeslidescloud.models.font_scheme import FontScheme
 from asposeslidescloud.models.format_scheme import FormatScheme
 from asposeslidescloud.models.gradient_fill import GradientFill
+from asposeslidescloud.models.header_footer import HeaderFooter
 from asposeslidescloud.models.html_export_options import HtmlExportOptions
 from asposeslidescloud.models.image import Image
 from asposeslidescloud.models.image_export_options import ImageExportOptions
@@ -130,6 +131,7 @@ from asposeslidescloud.models.master_slides import MasterSlides
 from asposeslidescloud.models.merge import Merge
 from asposeslidescloud.models.no_fill import NoFill
 from asposeslidescloud.models.notes_slide import NotesSlide
+from asposeslidescloud.models.notes_slide_header_footer import NotesSlideHeaderFooter
 from asposeslidescloud.models.one_value_chart_data_point import OneValueChartDataPoint
 from asposeslidescloud.models.one_value_series import OneValueSeries
 from asposeslidescloud.models.paragraph import Paragraph
@@ -156,6 +158,8 @@ from asposeslidescloud.models.save_shape import SaveShape
 from asposeslidescloud.models.save_slide import SaveSlide
 from asposeslidescloud.models.scatter_chart_data_point import ScatterChartDataPoint
 from asposeslidescloud.models.scatter_series import ScatterSeries
+from asposeslidescloud.models.section import Section
+from asposeslidescloud.models.sections import Sections
 from asposeslidescloud.models.shape_base import ShapeBase
 from asposeslidescloud.models.shapes import Shapes
 from asposeslidescloud.models.slide import Slide
@@ -215,6 +219,8 @@ from asposeslidescloud.models.requests.slides_api_requests import DeleteParagrap
 from asposeslidescloud.models.requests.slides_api_requests import DeleteParagraphsRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeletePortionRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeletePortionsRequest
+from asposeslidescloud.models.requests.slides_api_requests import DeleteSectionRequest
+from asposeslidescloud.models.requests.slides_api_requests import DeleteSectionsRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteSlideAnimationRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteSlideAnimationEffectRequest
 from asposeslidescloud.models.requests.slides_api_requests import DeleteSlideAnimationInteractiveSequenceRequest
@@ -244,6 +250,7 @@ from asposeslidescloud.models.requests.slides_api_requests import GetMasterSlide
 from asposeslidescloud.models.requests.slides_api_requests import GetMasterSlidesListRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideExistsRequest
+from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideHeaderFooterRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideShapeRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideShapeParagraphRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideShapeParagraphsRequest
@@ -253,7 +260,9 @@ from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideS
 from asposeslidescloud.models.requests.slides_api_requests import GetNotesSlideWithFormatRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetParagraphPortionRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetParagraphPortionsRequest
+from asposeslidescloud.models.requests.slides_api_requests import GetSectionsRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlideAnimationRequest
+from asposeslidescloud.models.requests.slides_api_requests import GetSlideHeaderFooterRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlideShapeRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlideShapeParagraphRequest
 from asposeslidescloud.models.requests.slides_api_requests import GetSlideShapeParagraphsRequest
@@ -307,6 +316,8 @@ from asposeslidescloud.models.requests.slides_api_requests import PostNotesSlide
 from asposeslidescloud.models.requests.slides_api_requests import PostNotesSlideAddNewShapeRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostNotesSlideShapeSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostPresentationMergeRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostSectionRequest
+from asposeslidescloud.models.requests.slides_api_requests import PostSectionMoveRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostShapeSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSlideAnimationEffectRequest
 from asposeslidescloud.models.requests.slides_api_requests import PostSlideAnimationInteractiveSequenceRequest
@@ -332,8 +343,11 @@ from asposeslidescloud.models.requests.slides_api_requests import PutChartCatego
 from asposeslidescloud.models.requests.slides_api_requests import PutChartDataPointRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutChartSeriesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutLayoutSlideRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutNotesSlideHeaderFooterRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutNotesSlideShapeSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutPresentationMergeRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutSectionRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutSectionsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSetParagraphPortionPropertiesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSetParagraphPropertiesRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSetSubshapeParagraphPortionPropertiesRequest
@@ -342,11 +356,13 @@ from asposeslidescloud.models.requests.slides_api_requests import PutShapeSaveAs
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideAnimationRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideAnimationEffectRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideAnimationInteractiveSequenceEffectRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutSlideHeaderFooterRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideShapeInfoRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlideSubshapeInfoRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesConvertRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesDocumentFromHtmlRequest
+from asposeslidescloud.models.requests.slides_api_requests import PutSlidesHeaderFooterRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSaveAsRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSetDocumentPropertyRequest
 from asposeslidescloud.models.requests.slides_api_requests import PutSlidesSlideRequest

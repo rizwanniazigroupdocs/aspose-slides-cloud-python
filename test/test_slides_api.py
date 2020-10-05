@@ -63,8 +63,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_file', 'src_path', request.src_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_file', 'src_path', request.src_path)
         if ok:
             self.assert_no_exception('copy_file', 'src_path')
 
@@ -80,8 +80,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_file', 'dest_path', request.dest_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_file', 'dest_path', request.dest_path)
         if ok:
             self.assert_no_exception('copy_file', 'dest_path')
 
@@ -97,8 +97,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_file', 'src_storage_name', request.src_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_file', 'src_storage_name', request.src_storage_name)
         if ok:
             self.assert_no_exception('copy_file', 'src_storage_name')
 
@@ -114,8 +114,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_file', 'dest_storage_name', request.dest_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_file', 'dest_storage_name', request.dest_storage_name)
         if ok:
             self.assert_no_exception('copy_file', 'dest_storage_name')
 
@@ -131,8 +131,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_file', 'version_id', request.version_id)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_file', 'version_id', request.version_id)
         if ok:
             self.assert_no_exception('copy_file', 'version_id')
 
@@ -164,8 +164,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_folder', 'src_path', request.src_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_folder', 'src_path', request.src_path)
         if ok:
             self.assert_no_exception('copy_folder', 'src_path')
 
@@ -181,8 +181,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_folder', 'dest_path', request.dest_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_folder', 'dest_path', request.dest_path)
         if ok:
             self.assert_no_exception('copy_folder', 'dest_path')
 
@@ -198,8 +198,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_folder', 'src_storage_name', request.src_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_folder', 'src_storage_name', request.src_storage_name)
         if ok:
             self.assert_no_exception('copy_folder', 'src_storage_name')
 
@@ -215,8 +215,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'copy_folder', 'dest_storage_name', request.dest_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'copy_folder', 'dest_storage_name', request.dest_storage_name)
         if ok:
             self.assert_no_exception('copy_folder', 'dest_storage_name')
 
@@ -247,8 +247,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'create_folder', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'create_folder', 'path', request.path)
         if ok:
             self.assert_no_exception('create_folder', 'path')
 
@@ -264,8 +264,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'create_folder', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'create_folder', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('create_folder', 'storage_name')
 
@@ -294,8 +294,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_chart_category', 'name')
 
@@ -311,8 +311,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_chart_category', 'slide_index')
 
@@ -328,8 +328,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_chart_category', 'shape_index')
 
@@ -345,8 +345,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'category_index', request.category_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'category_index', request.category_index)
         if ok:
             self.assert_no_exception('delete_chart_category', 'category_index')
 
@@ -362,8 +362,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_chart_category', 'password')
 
@@ -379,8 +379,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_chart_category', 'folder')
 
@@ -396,8 +396,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_category', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_category', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_chart_category', 'storage')
 
@@ -431,8 +431,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'name')
 
@@ -448,8 +448,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'slide_index')
 
@@ -465,8 +465,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'shape_index')
 
@@ -482,8 +482,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'series_index', request.series_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'series_index', request.series_index)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'series_index')
 
@@ -499,8 +499,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'point_index', request.point_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'point_index', request.point_index)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'point_index')
 
@@ -516,8 +516,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'password')
 
@@ -533,8 +533,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'folder')
 
@@ -550,8 +550,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_data_point', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_data_point', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_chart_data_point', 'storage')
 
@@ -586,8 +586,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_chart_series', 'name')
 
@@ -603,8 +603,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_chart_series', 'slide_index')
 
@@ -620,8 +620,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_chart_series', 'shape_index')
 
@@ -637,8 +637,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'series_index', request.series_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'series_index', request.series_index)
         if ok:
             self.assert_no_exception('delete_chart_series', 'series_index')
 
@@ -654,8 +654,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_chart_series', 'password')
 
@@ -671,8 +671,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_chart_series', 'folder')
 
@@ -688,8 +688,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_chart_series', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_chart_series', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_chart_series', 'storage')
 
@@ -723,8 +723,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_file', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_file', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_file', 'path')
 
@@ -740,8 +740,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_file', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_file', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('delete_file', 'storage_name')
 
@@ -757,8 +757,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_file', 'version_id', request.version_id)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_file', 'version_id', request.version_id)
         if ok:
             self.assert_no_exception('delete_file', 'version_id')
 
@@ -788,8 +788,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_folder', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_folder', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_folder', 'path')
 
@@ -805,8 +805,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_folder', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_folder', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('delete_folder', 'storage_name')
 
@@ -822,8 +822,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_folder', 'recursive', request.recursive)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_folder', 'recursive', request.recursive)
         if ok:
             self.assert_no_exception('delete_folder', 'recursive')
 
@@ -853,8 +853,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide', 'name')
 
@@ -870,8 +870,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide', 'slide_index')
 
@@ -887,8 +887,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide', 'password')
 
@@ -904,8 +904,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide', 'folder')
 
@@ -921,8 +921,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide', 'storage')
 
@@ -954,8 +954,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'name')
 
@@ -971,8 +971,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'slide_index')
 
@@ -988,8 +988,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'shape_index')
 
@@ -1005,8 +1005,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'paragraph_index')
 
@@ -1022,8 +1022,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'password')
 
@@ -1039,8 +1039,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'folder')
 
@@ -1056,8 +1056,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraph', 'storage')
 
@@ -1091,8 +1091,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'name')
 
@@ -1108,8 +1108,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'slide_index')
 
@@ -1125,8 +1125,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'shape_index')
 
@@ -1142,8 +1142,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'paragraphs', request.paragraphs)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'paragraphs', request.paragraphs)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'paragraphs')
 
@@ -1159,8 +1159,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'password')
 
@@ -1176,8 +1176,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'folder')
 
@@ -1193,8 +1193,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_paragraphs', 'storage')
 
@@ -1228,8 +1228,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'name')
 
@@ -1245,8 +1245,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'slide_index')
 
@@ -1262,8 +1262,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'shape_index')
 
@@ -1279,8 +1279,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'paragraph_index')
 
@@ -1296,8 +1296,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'portion_index')
 
@@ -1313,8 +1313,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'password')
 
@@ -1330,8 +1330,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'folder')
 
@@ -1347,8 +1347,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_portion', 'storage')
 
@@ -1383,8 +1383,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'name')
 
@@ -1400,8 +1400,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'slide_index')
 
@@ -1417,8 +1417,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'shape_index')
 
@@ -1434,8 +1434,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'paragraph_index')
 
@@ -1451,8 +1451,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'portions', request.portions)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'portions', request.portions)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'portions')
 
@@ -1468,8 +1468,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'password')
 
@@ -1485,8 +1485,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'folder')
 
@@ -1502,8 +1502,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_portions', 'storage')
 
@@ -1538,8 +1538,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'name')
 
@@ -1555,8 +1555,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'slide_index')
 
@@ -1572,8 +1572,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'shape_index')
 
@@ -1589,8 +1589,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'password')
 
@@ -1606,8 +1606,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'folder')
 
@@ -1623,8 +1623,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_shape', 'storage')
 
@@ -1657,8 +1657,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'name')
 
@@ -1674,8 +1674,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'slide_index')
 
@@ -1691,8 +1691,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'shapes', request.shapes)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'shapes', request.shapes)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'shapes')
 
@@ -1708,8 +1708,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'password')
 
@@ -1725,8 +1725,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'folder')
 
@@ -1742,8 +1742,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_notes_slide_shapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_notes_slide_shapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_notes_slide_shapes', 'storage')
 
@@ -1776,8 +1776,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_paragraph', 'name')
 
@@ -1793,8 +1793,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_paragraph', 'slide_index')
 
@@ -1810,8 +1810,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_paragraph', 'shape_index')
 
@@ -1827,8 +1827,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_paragraph', 'paragraph_index')
 
@@ -1844,8 +1844,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_paragraph', 'password')
 
@@ -1861,8 +1861,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_paragraph', 'folder')
 
@@ -1878,8 +1878,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_paragraph', 'storage')
 
@@ -1913,8 +1913,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'name')
 
@@ -1930,8 +1930,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'slide_index')
 
@@ -1947,8 +1947,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'shape_index')
 
@@ -1964,8 +1964,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'paragraphs', request.paragraphs)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'paragraphs', request.paragraphs)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'paragraphs')
 
@@ -1981,8 +1981,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'password')
 
@@ -1998,8 +1998,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'folder')
 
@@ -2015,8 +2015,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_paragraphs', 'storage')
 
@@ -2050,8 +2050,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_portion', 'name')
 
@@ -2067,8 +2067,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_portion', 'slide_index')
 
@@ -2084,8 +2084,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_portion', 'shape_index')
 
@@ -2101,8 +2101,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_portion', 'paragraph_index')
 
@@ -2118,8 +2118,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('delete_portion', 'portion_index')
 
@@ -2135,8 +2135,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_portion', 'password')
 
@@ -2152,8 +2152,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_portion', 'folder')
 
@@ -2169,8 +2169,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_portion', 'storage')
 
@@ -2205,8 +2205,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_portions', 'name')
 
@@ -2222,8 +2222,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_portions', 'slide_index')
 
@@ -2239,8 +2239,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_portions', 'shape_index')
 
@@ -2256,8 +2256,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_portions', 'paragraph_index')
 
@@ -2273,8 +2273,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'portions', request.portions)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'portions', request.portions)
         if ok:
             self.assert_no_exception('delete_portions', 'portions')
 
@@ -2290,8 +2290,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_portions', 'password')
 
@@ -2307,8 +2307,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_portions', 'folder')
 
@@ -2324,8 +2324,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_portions', 'storage')
 
@@ -2339,6 +2339,244 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('delete_portions', 'folder', 'str')
         storage = self.get_test_value('delete_portions', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.DeletePortionsRequest(name, slide_index, shape_index, paragraph_index, portions, password, folder, storage)
+
+    def test_delete_section(self):
+        """Test case for delete_section
+        """
+        request = self.__prepare_delete_section_request()
+        self.initialize('delete_section', None, None)
+        response = self.api.delete_section(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_section_invalid_name(self):
+        """Test case for delete_section with invalid name
+        """
+        request = self.__prepare_delete_section_request()
+        request.name = self.get_invalid_test_value('delete_section', 'name', request.name, 'str')
+        self.initialize('delete_section', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'name', request.name)
+        if ok:
+            self.assert_no_exception('delete_section', 'name')
+
+    def test_delete_section_invalid_section_index(self):
+        """Test case for delete_section with invalid section_index
+        """
+        request = self.__prepare_delete_section_request()
+        request.section_index = self.get_invalid_test_value('delete_section', 'section_index', request.section_index, 'int')
+        self.initialize('delete_section', 'section_index', request.section_index)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'section_index', request.section_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'section_index', request.section_index)
+        if ok:
+            self.assert_no_exception('delete_section', 'section_index')
+
+    def test_delete_section_invalid_with_slides(self):
+        """Test case for delete_section with invalid with_slides
+        """
+        request = self.__prepare_delete_section_request()
+        request.with_slides = self.get_invalid_test_value('delete_section', 'with_slides', request.with_slides, 'bool')
+        self.initialize('delete_section', 'with_slides', request.with_slides)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'with_slides', request.with_slides)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'with_slides', request.with_slides)
+        if ok:
+            self.assert_no_exception('delete_section', 'with_slides')
+
+    def test_delete_section_invalid_password(self):
+        """Test case for delete_section with invalid password
+        """
+        request = self.__prepare_delete_section_request()
+        request.password = self.get_invalid_test_value('delete_section', 'password', request.password, 'str')
+        self.initialize('delete_section', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'password', request.password)
+        if ok:
+            self.assert_no_exception('delete_section', 'password')
+
+    def test_delete_section_invalid_folder(self):
+        """Test case for delete_section with invalid folder
+        """
+        request = self.__prepare_delete_section_request()
+        request.folder = self.get_invalid_test_value('delete_section', 'folder', request.folder, 'str')
+        self.initialize('delete_section', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('delete_section', 'folder')
+
+    def test_delete_section_invalid_storage(self):
+        """Test case for delete_section with invalid storage
+        """
+        request = self.__prepare_delete_section_request()
+        request.storage = self.get_invalid_test_value('delete_section', 'storage', request.storage, 'str')
+        self.initialize('delete_section', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_section', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_section', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('delete_section', 'storage')
+
+    def __prepare_delete_section_request(self):
+        name = self.get_test_value('delete_section', 'name', 'str')
+        section_index = self.get_test_value('delete_section', 'section_index', 'int')
+        with_slides = self.get_test_value('delete_section', 'with_slides', 'bool')
+        password = self.get_test_value('delete_section', 'password', 'str')
+        folder = self.get_test_value('delete_section', 'folder', 'str')
+        storage = self.get_test_value('delete_section', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSectionRequest(name, section_index, with_slides, password, folder, storage)
+
+    def test_delete_sections(self):
+        """Test case for delete_sections
+        """
+        request = self.__prepare_delete_sections_request()
+        self.initialize('delete_sections', None, None)
+        response = self.api.delete_sections(request)
+        self.assertIsNotNone(response)
+
+    def test_delete_sections_invalid_name(self):
+        """Test case for delete_sections with invalid name
+        """
+        request = self.__prepare_delete_sections_request()
+        request.name = self.get_invalid_test_value('delete_sections', 'name', request.name, 'str')
+        self.initialize('delete_sections', 'name', request.name)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'name', request.name)
+        if ok:
+            self.assert_no_exception('delete_sections', 'name')
+
+    def test_delete_sections_invalid_sections(self):
+        """Test case for delete_sections with invalid sections
+        """
+        request = self.__prepare_delete_sections_request()
+        request.sections = self.get_invalid_test_value('delete_sections', 'sections', request.sections, 'list[int]')
+        self.initialize('delete_sections', 'sections', request.sections)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'sections', request.sections)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'sections', request.sections)
+        if ok:
+            self.assert_no_exception('delete_sections', 'sections')
+
+    def test_delete_sections_invalid_with_slides(self):
+        """Test case for delete_sections with invalid with_slides
+        """
+        request = self.__prepare_delete_sections_request()
+        request.with_slides = self.get_invalid_test_value('delete_sections', 'with_slides', request.with_slides, 'bool')
+        self.initialize('delete_sections', 'with_slides', request.with_slides)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'with_slides', request.with_slides)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'with_slides', request.with_slides)
+        if ok:
+            self.assert_no_exception('delete_sections', 'with_slides')
+
+    def test_delete_sections_invalid_password(self):
+        """Test case for delete_sections with invalid password
+        """
+        request = self.__prepare_delete_sections_request()
+        request.password = self.get_invalid_test_value('delete_sections', 'password', request.password, 'str')
+        self.initialize('delete_sections', 'password', request.password)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'password', request.password)
+        if ok:
+            self.assert_no_exception('delete_sections', 'password')
+
+    def test_delete_sections_invalid_folder(self):
+        """Test case for delete_sections with invalid folder
+        """
+        request = self.__prepare_delete_sections_request()
+        request.folder = self.get_invalid_test_value('delete_sections', 'folder', request.folder, 'str')
+        self.initialize('delete_sections', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('delete_sections', 'folder')
+
+    def test_delete_sections_invalid_storage(self):
+        """Test case for delete_sections with invalid storage
+        """
+        request = self.__prepare_delete_sections_request()
+        request.storage = self.get_invalid_test_value('delete_sections', 'storage', request.storage, 'str')
+        self.initialize('delete_sections', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.delete_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'delete_sections', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_sections', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('delete_sections', 'storage')
+
+    def __prepare_delete_sections_request(self):
+        name = self.get_test_value('delete_sections', 'name', 'str')
+        sections = self.get_test_value('delete_sections', 'sections', 'list[int]')
+        with_slides = self.get_test_value('delete_sections', 'with_slides', 'bool')
+        password = self.get_test_value('delete_sections', 'password', 'str')
+        folder = self.get_test_value('delete_sections', 'folder', 'str')
+        storage = self.get_test_value('delete_sections', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.DeleteSectionsRequest(name, sections, with_slides, password, folder, storage)
 
     def test_delete_slide_animation(self):
         """Test case for delete_slide_animation
@@ -2360,8 +2598,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation', 'name')
 
@@ -2377,8 +2615,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation', 'slide_index')
 
@@ -2394,8 +2632,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation', 'password')
 
@@ -2411,8 +2649,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation', 'folder')
 
@@ -2428,8 +2666,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation', 'storage')
 
@@ -2461,8 +2699,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'name')
 
@@ -2478,8 +2716,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'slide_index')
 
@@ -2495,8 +2733,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'effect_index', request.effect_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'effect_index', request.effect_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'effect_index')
 
@@ -2512,8 +2750,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'password')
 
@@ -2529,8 +2767,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'folder')
 
@@ -2546,8 +2784,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation_effect', 'storage')
 
@@ -2580,8 +2818,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'name')
 
@@ -2597,8 +2835,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'slide_index')
 
@@ -2614,8 +2852,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'sequence_index', request.sequence_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'sequence_index', request.sequence_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'sequence_index')
 
@@ -2631,8 +2869,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'password')
 
@@ -2648,8 +2886,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'folder')
 
@@ -2665,8 +2903,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence', 'storage')
 
@@ -2699,8 +2937,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'name')
 
@@ -2716,8 +2954,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'slide_index')
 
@@ -2733,8 +2971,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'sequence_index')
 
@@ -2750,8 +2988,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'effect_index', request.effect_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'effect_index', request.effect_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'effect_index')
 
@@ -2767,8 +3005,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'password')
 
@@ -2784,8 +3022,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'folder')
 
@@ -2801,8 +3039,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequence_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequence_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequence_effect', 'storage')
 
@@ -2836,8 +3074,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequences', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequences', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequences', 'name')
 
@@ -2853,8 +3091,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequences', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequences', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequences', 'slide_index')
 
@@ -2870,8 +3108,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequences', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequences', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequences', 'password')
 
@@ -2887,8 +3125,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequences', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequences', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequences', 'folder')
 
@@ -2904,8 +3142,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_interactive_sequences', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_interactive_sequences', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation_interactive_sequences', 'storage')
 
@@ -2937,8 +3175,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_main_sequence', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_main_sequence', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_animation_main_sequence', 'name')
 
@@ -2954,8 +3192,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_main_sequence', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_main_sequence', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_animation_main_sequence', 'slide_index')
 
@@ -2971,8 +3209,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_main_sequence', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_main_sequence', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_animation_main_sequence', 'password')
 
@@ -2988,8 +3226,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_main_sequence', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_main_sequence', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_animation_main_sequence', 'folder')
 
@@ -3005,8 +3243,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_animation_main_sequence', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_animation_main_sequence', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_animation_main_sequence', 'storage')
 
@@ -3038,8 +3276,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_by_index', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_by_index', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_by_index', 'name')
 
@@ -3055,8 +3293,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_by_index', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_by_index', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_by_index', 'slide_index')
 
@@ -3072,8 +3310,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_by_index', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_by_index', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_by_index', 'password')
 
@@ -3089,8 +3327,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_by_index', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_by_index', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_by_index', 'folder')
 
@@ -3106,8 +3344,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_by_index', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_by_index', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_by_index', 'storage')
 
@@ -3139,8 +3377,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'name')
 
@@ -3156,8 +3394,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'slide_index')
 
@@ -3173,8 +3411,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'shape_index')
 
@@ -3190,8 +3428,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'password')
 
@@ -3207,8 +3445,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'folder')
 
@@ -3224,8 +3462,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_shape', 'storage')
 
@@ -3258,8 +3496,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'name')
 
@@ -3275,8 +3513,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'slide_index')
 
@@ -3292,8 +3530,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'shapes', request.shapes)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'shapes', request.shapes)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'shapes')
 
@@ -3309,8 +3547,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'password')
 
@@ -3326,8 +3564,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'folder')
 
@@ -3343,8 +3581,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_shapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_shapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_shapes', 'storage')
 
@@ -3377,8 +3615,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'name')
 
@@ -3394,8 +3632,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'slide_index')
 
@@ -3411,8 +3649,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'shape_index')
 
@@ -3428,8 +3666,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'path')
 
@@ -3445,8 +3683,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'password')
 
@@ -3462,8 +3700,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'folder')
 
@@ -3479,8 +3717,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_subshape', 'storage')
 
@@ -3514,8 +3752,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'name')
 
@@ -3531,8 +3769,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'slide_index')
 
@@ -3548,8 +3786,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'path')
 
@@ -3565,8 +3803,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'shapes', request.shapes)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'shapes', request.shapes)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'shapes')
 
@@ -3582,8 +3820,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'password')
 
@@ -3599,8 +3837,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'folder')
 
@@ -3616,8 +3854,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slide_subshapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slide_subshapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slide_subshapes', 'storage')
 
@@ -3651,8 +3889,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_clean_slides_list', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_clean_slides_list', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slides_clean_slides_list', 'name')
 
@@ -3668,8 +3906,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_clean_slides_list', 'slides', request.slides)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_clean_slides_list', 'slides', request.slides)
         if ok:
             self.assert_no_exception('delete_slides_clean_slides_list', 'slides')
 
@@ -3685,8 +3923,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_clean_slides_list', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_clean_slides_list', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slides_clean_slides_list', 'password')
 
@@ -3702,8 +3940,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_clean_slides_list', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_clean_slides_list', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slides_clean_slides_list', 'folder')
 
@@ -3719,8 +3957,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_clean_slides_list', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_clean_slides_list', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slides_clean_slides_list', 'storage')
 
@@ -3752,8 +3990,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slides_document_properties', 'name')
 
@@ -3769,8 +4007,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slides_document_properties', 'password')
 
@@ -3786,8 +4024,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slides_document_properties', 'folder')
 
@@ -3803,8 +4041,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slides_document_properties', 'storage')
 
@@ -3835,8 +4073,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_property', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_property', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slides_document_property', 'name')
 
@@ -3852,8 +4090,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_property', 'property_name', request.property_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_property', 'property_name', request.property_name)
         if ok:
             self.assert_no_exception('delete_slides_document_property', 'property_name')
 
@@ -3869,8 +4107,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_property', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_property', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slides_document_property', 'password')
 
@@ -3886,8 +4124,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_property', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_property', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slides_document_property', 'folder')
 
@@ -3903,8 +4141,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_document_property', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_document_property', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slides_document_property', 'storage')
 
@@ -3936,8 +4174,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_slide_background', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_slide_background', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_slides_slide_background', 'name')
 
@@ -3953,8 +4191,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_slide_background', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_slide_background', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_slides_slide_background', 'slide_index')
 
@@ -3970,8 +4208,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_slide_background', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_slide_background', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_slides_slide_background', 'password')
 
@@ -3987,8 +4225,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_slide_background', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_slide_background', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_slides_slide_background', 'folder')
 
@@ -4004,8 +4242,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_slides_slide_background', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_slides_slide_background', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_slides_slide_background', 'storage')
 
@@ -4037,8 +4275,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'name')
 
@@ -4054,8 +4292,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'slide_index')
 
@@ -4071,8 +4309,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'shape_index')
 
@@ -4088,8 +4326,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'paragraph_index')
 
@@ -4105,8 +4343,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'path')
 
@@ -4122,8 +4360,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'password')
 
@@ -4139,8 +4377,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'folder')
 
@@ -4156,8 +4394,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_subshape_paragraph', 'storage')
 
@@ -4192,8 +4430,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'name')
 
@@ -4209,8 +4447,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'slide_index')
 
@@ -4226,8 +4464,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'shape_index')
 
@@ -4243,8 +4481,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'path')
 
@@ -4260,8 +4498,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'paragraphs', request.paragraphs)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'paragraphs', request.paragraphs)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'paragraphs')
 
@@ -4277,8 +4515,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'password')
 
@@ -4294,8 +4532,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'folder')
 
@@ -4311,8 +4549,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_subshape_paragraphs', 'storage')
 
@@ -4347,8 +4585,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'name')
 
@@ -4364,8 +4602,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'slide_index')
 
@@ -4381,8 +4619,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'shape_index')
 
@@ -4398,8 +4636,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'paragraph_index')
 
@@ -4415,8 +4653,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'portion_index')
 
@@ -4432,8 +4670,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'path')
 
@@ -4449,8 +4687,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'password')
 
@@ -4466,8 +4704,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'folder')
 
@@ -4483,8 +4721,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_subshape_portion', 'storage')
 
@@ -4520,8 +4758,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'name')
 
@@ -4537,8 +4775,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'slide_index')
 
@@ -4554,8 +4792,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'shape_index')
 
@@ -4571,8 +4809,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'paragraph_index')
 
@@ -4588,8 +4826,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'path', request.path)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'path')
 
@@ -4605,8 +4843,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'portions', request.portions)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'portions', request.portions)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'portions')
 
@@ -4622,8 +4860,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'password')
 
@@ -4639,8 +4877,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'folder')
 
@@ -4656,8 +4894,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'delete_subshape_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'delete_subshape_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('delete_subshape_portions', 'storage')
 
@@ -4694,8 +4932,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'download_file', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'download_file', 'path', request.path)
         if ok:
             self.assert_no_exception('download_file', 'path')
 
@@ -4711,8 +4949,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'download_file', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'download_file', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('download_file', 'storage_name')
 
@@ -4728,8 +4966,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'download_file', 'version_id', request.version_id)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'download_file', 'version_id', request.version_id)
         if ok:
             self.assert_no_exception('download_file', 'version_id')
 
@@ -4759,8 +4997,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_disc_usage', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_disc_usage', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('get_disc_usage', 'storage_name')
 
@@ -4788,8 +5026,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_file_versions', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_file_versions', 'path', request.path)
         if ok:
             self.assert_no_exception('get_file_versions', 'path')
 
@@ -4805,8 +5043,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_file_versions', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_file_versions', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('get_file_versions', 'storage_name')
 
@@ -4835,8 +5073,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_files_list', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_files_list', 'path', request.path)
         if ok:
             self.assert_no_exception('get_files_list', 'path')
 
@@ -4852,8 +5090,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_files_list', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_files_list', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('get_files_list', 'storage_name')
 
@@ -4882,8 +5120,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('get_layout_slide', 'name')
 
@@ -4899,8 +5137,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_layout_slide', 'slide_index')
 
@@ -4916,8 +5154,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('get_layout_slide', 'password')
 
@@ -4933,8 +5171,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_layout_slide', 'folder')
 
@@ -4950,8 +5188,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_layout_slide', 'storage')
 
@@ -4983,8 +5221,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slides_list', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slides_list', 'name', request.name)
         if ok:
             self.assert_no_exception('get_layout_slides_list', 'name')
 
@@ -5000,8 +5238,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slides_list', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slides_list', 'password', request.password)
         if ok:
             self.assert_no_exception('get_layout_slides_list', 'password')
 
@@ -5017,8 +5255,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slides_list', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slides_list', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_layout_slides_list', 'folder')
 
@@ -5034,8 +5272,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_layout_slides_list', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_layout_slides_list', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_layout_slides_list', 'storage')
 
@@ -5066,8 +5304,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('get_master_slide', 'name')
 
@@ -5083,8 +5321,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_master_slide', 'slide_index')
 
@@ -5100,8 +5338,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('get_master_slide', 'password')
 
@@ -5117,8 +5355,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_master_slide', 'folder')
 
@@ -5134,8 +5372,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_master_slide', 'storage')
 
@@ -5167,8 +5405,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slides_list', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slides_list', 'name', request.name)
         if ok:
             self.assert_no_exception('get_master_slides_list', 'name')
 
@@ -5184,8 +5422,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slides_list', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slides_list', 'password', request.password)
         if ok:
             self.assert_no_exception('get_master_slides_list', 'password')
 
@@ -5201,8 +5439,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slides_list', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slides_list', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_master_slides_list', 'folder')
 
@@ -5218,8 +5456,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_master_slides_list', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_master_slides_list', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_master_slides_list', 'storage')
 
@@ -5250,8 +5488,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide', 'name')
 
@@ -5267,8 +5505,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide', 'slide_index')
 
@@ -5284,8 +5522,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide', 'password')
 
@@ -5301,8 +5539,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide', 'folder')
 
@@ -5318,8 +5556,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide', 'storage')
 
@@ -5351,8 +5589,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_exists', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_exists', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_exists', 'name')
 
@@ -5368,8 +5606,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_exists', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_exists', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_exists', 'slide_index')
 
@@ -5385,8 +5623,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_exists', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_exists', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_exists', 'password')
 
@@ -5402,8 +5640,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_exists', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_exists', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_exists', 'folder')
 
@@ -5419,8 +5657,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_exists', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_exists', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_exists', 'storage')
 
@@ -5431,6 +5669,107 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('get_notes_slide_exists', 'folder', 'str')
         storage = self.get_test_value('get_notes_slide_exists', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideExistsRequest(name, slide_index, password, folder, storage)
+
+    def test_get_notes_slide_header_footer(self):
+        """Test case for get_notes_slide_header_footer
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        self.initialize('get_notes_slide_header_footer', None, None)
+        response = self.api.get_notes_slide_header_footer(request)
+        self.assertIsNotNone(response)
+
+    def test_get_notes_slide_header_footer_invalid_name(self):
+        """Test case for get_notes_slide_header_footer with invalid name
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        request.name = self.get_invalid_test_value('get_notes_slide_header_footer', 'name', request.name, 'str')
+        self.initialize('get_notes_slide_header_footer', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_header_footer', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_header_footer', 'name', request.name)
+        if ok:
+            self.assert_no_exception('get_notes_slide_header_footer', 'name')
+
+    def test_get_notes_slide_header_footer_invalid_slide_index(self):
+        """Test case for get_notes_slide_header_footer with invalid slide_index
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        request.slide_index = self.get_invalid_test_value('get_notes_slide_header_footer', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_notes_slide_header_footer', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_header_footer', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_header_footer', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('get_notes_slide_header_footer', 'slide_index')
+
+    def test_get_notes_slide_header_footer_invalid_password(self):
+        """Test case for get_notes_slide_header_footer with invalid password
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        request.password = self.get_invalid_test_value('get_notes_slide_header_footer', 'password', request.password, 'str')
+        self.initialize('get_notes_slide_header_footer', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_header_footer', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_header_footer', 'password', request.password)
+        if ok:
+            self.assert_no_exception('get_notes_slide_header_footer', 'password')
+
+    def test_get_notes_slide_header_footer_invalid_storage(self):
+        """Test case for get_notes_slide_header_footer with invalid storage
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        request.storage = self.get_invalid_test_value('get_notes_slide_header_footer', 'storage', request.storage, 'str')
+        self.initialize('get_notes_slide_header_footer', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_header_footer', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_header_footer', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('get_notes_slide_header_footer', 'storage')
+
+    def test_get_notes_slide_header_footer_invalid_folder(self):
+        """Test case for get_notes_slide_header_footer with invalid folder
+        """
+        request = self.__prepare_get_notes_slide_header_footer_request()
+        request.folder = self.get_invalid_test_value('get_notes_slide_header_footer', 'folder', request.folder, 'str')
+        self.initialize('get_notes_slide_header_footer', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_notes_slide_header_footer', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_header_footer', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('get_notes_slide_header_footer', 'folder')
+
+    def __prepare_get_notes_slide_header_footer_request(self):
+        name = self.get_test_value('get_notes_slide_header_footer', 'name', 'str')
+        slide_index = self.get_test_value('get_notes_slide_header_footer', 'slide_index', 'int')
+        password = self.get_test_value('get_notes_slide_header_footer', 'password', 'str')
+        storage = self.get_test_value('get_notes_slide_header_footer', 'storage', 'str')
+        folder = self.get_test_value('get_notes_slide_header_footer', 'folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetNotesSlideHeaderFooterRequest(name, slide_index, password, storage, folder)
 
     def test_get_notes_slide_shape(self):
         """Test case for get_notes_slide_shape
@@ -5452,8 +5791,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'name')
 
@@ -5469,8 +5808,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'slide_index')
 
@@ -5486,8 +5825,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'shape_index')
 
@@ -5503,8 +5842,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'password')
 
@@ -5520,8 +5859,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'folder')
 
@@ -5537,8 +5876,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shape', 'storage')
 
@@ -5571,8 +5910,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'name')
 
@@ -5588,8 +5927,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'slide_index')
 
@@ -5605,8 +5944,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'shape_index')
 
@@ -5622,8 +5961,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'paragraph_index')
 
@@ -5639,8 +5978,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'password')
 
@@ -5656,8 +5995,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'folder')
 
@@ -5673,8 +6012,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraph', 'storage')
 
@@ -5708,8 +6047,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'name')
 
@@ -5725,8 +6064,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'slide_index')
 
@@ -5742,8 +6081,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'shape_index')
 
@@ -5759,8 +6098,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'password')
 
@@ -5776,8 +6115,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'folder')
 
@@ -5793,8 +6132,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_paragraphs', 'storage')
 
@@ -5827,8 +6166,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'name')
 
@@ -5844,8 +6183,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'slide_index')
 
@@ -5861,8 +6200,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'shape_index')
 
@@ -5878,8 +6217,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'paragraph_index')
 
@@ -5895,8 +6234,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'portion_index')
 
@@ -5912,8 +6251,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'password')
 
@@ -5929,8 +6268,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'folder')
 
@@ -5946,8 +6285,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portion', 'storage')
 
@@ -5982,8 +6321,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'name')
 
@@ -5999,8 +6338,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'slide_index')
 
@@ -6016,8 +6355,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'shape_index')
 
@@ -6033,8 +6372,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'paragraph_index')
 
@@ -6050,8 +6389,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'password')
 
@@ -6067,8 +6406,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'folder')
 
@@ -6084,8 +6423,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shape_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shape_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shape_portions', 'storage')
 
@@ -6119,8 +6458,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shapes', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'name')
 
@@ -6136,8 +6475,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'slide_index')
 
@@ -6153,8 +6492,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shapes', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'password')
 
@@ -6170,8 +6509,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'folder')
 
@@ -6187,8 +6526,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_shapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_shapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_shapes', 'storage')
 
@@ -6221,8 +6560,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'name', request.name)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'name')
 
@@ -6238,8 +6577,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'slide_index')
 
@@ -6255,8 +6594,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'format', request.format)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'format')
 
@@ -6272,8 +6611,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'width', request.width)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'width')
 
@@ -6289,8 +6628,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'height', request.height)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'height')
 
@@ -6306,8 +6645,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'password', request.password)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'password')
 
@@ -6323,8 +6662,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'folder')
 
@@ -6340,8 +6679,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'storage')
 
@@ -6357,8 +6696,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('get_notes_slide_with_format', 'fonts_folder')
 
@@ -6394,8 +6733,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'name')
 
@@ -6411,8 +6750,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'slide_index')
 
@@ -6428,8 +6767,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'shape_index')
 
@@ -6445,8 +6784,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'paragraph_index')
 
@@ -6462,8 +6801,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'portion_index')
 
@@ -6479,8 +6818,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'password')
 
@@ -6496,8 +6835,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'folder')
 
@@ -6513,8 +6852,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_paragraph_portion', 'storage')
 
@@ -6549,8 +6888,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'name')
 
@@ -6566,8 +6905,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'slide_index')
 
@@ -6583,8 +6922,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'shape_index')
 
@@ -6600,8 +6939,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'paragraph_index')
 
@@ -6617,8 +6956,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'password')
 
@@ -6634,8 +6973,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'folder')
 
@@ -6651,8 +6990,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_paragraph_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_paragraph_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_paragraph_portions', 'storage')
 
@@ -6665,6 +7004,89 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('get_paragraph_portions', 'folder', 'str')
         storage = self.get_test_value('get_paragraph_portions', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetParagraphPortionsRequest(name, slide_index, shape_index, paragraph_index, password, folder, storage)
+
+    def test_get_sections(self):
+        """Test case for get_sections
+        """
+        request = self.__prepare_get_sections_request()
+        self.initialize('get_sections', None, None)
+        response = self.api.get_sections(request)
+        self.assertIsNotNone(response)
+
+    def test_get_sections_invalid_name(self):
+        """Test case for get_sections with invalid name
+        """
+        request = self.__prepare_get_sections_request()
+        request.name = self.get_invalid_test_value('get_sections', 'name', request.name, 'str')
+        self.initialize('get_sections', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_sections', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_sections', 'name', request.name)
+        if ok:
+            self.assert_no_exception('get_sections', 'name')
+
+    def test_get_sections_invalid_password(self):
+        """Test case for get_sections with invalid password
+        """
+        request = self.__prepare_get_sections_request()
+        request.password = self.get_invalid_test_value('get_sections', 'password', request.password, 'str')
+        self.initialize('get_sections', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_sections', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_sections', 'password', request.password)
+        if ok:
+            self.assert_no_exception('get_sections', 'password')
+
+    def test_get_sections_invalid_folder(self):
+        """Test case for get_sections with invalid folder
+        """
+        request = self.__prepare_get_sections_request()
+        request.folder = self.get_invalid_test_value('get_sections', 'folder', request.folder, 'str')
+        self.initialize('get_sections', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_sections', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_sections', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('get_sections', 'folder')
+
+    def test_get_sections_invalid_storage(self):
+        """Test case for get_sections with invalid storage
+        """
+        request = self.__prepare_get_sections_request()
+        request.storage = self.get_invalid_test_value('get_sections', 'storage', request.storage, 'str')
+        self.initialize('get_sections', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_sections', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_sections', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('get_sections', 'storage')
+
+    def __prepare_get_sections_request(self):
+        name = self.get_test_value('get_sections', 'name', 'str')
+        password = self.get_test_value('get_sections', 'password', 'str')
+        folder = self.get_test_value('get_sections', 'folder', 'str')
+        storage = self.get_test_value('get_sections', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSectionsRequest(name, password, folder, storage)
 
     def test_get_slide_animation(self):
         """Test case for get_slide_animation
@@ -6686,8 +7108,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_animation', 'name')
 
@@ -6703,8 +7125,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_animation', 'slide_index')
 
@@ -6720,8 +7142,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_animation', 'shape_index')
 
@@ -6737,8 +7159,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_animation', 'password')
 
@@ -6754,8 +7176,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_animation', 'folder')
 
@@ -6771,8 +7193,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_animation', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_animation', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_animation', 'storage')
 
@@ -6784,6 +7206,107 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('get_slide_animation', 'folder', 'str')
         storage = self.get_test_value('get_slide_animation', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.GetSlideAnimationRequest(name, slide_index, shape_index, password, folder, storage)
+
+    def test_get_slide_header_footer(self):
+        """Test case for get_slide_header_footer
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        self.initialize('get_slide_header_footer', None, None)
+        response = self.api.get_slide_header_footer(request)
+        self.assertIsNotNone(response)
+
+    def test_get_slide_header_footer_invalid_name(self):
+        """Test case for get_slide_header_footer with invalid name
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        request.name = self.get_invalid_test_value('get_slide_header_footer', 'name', request.name, 'str')
+        self.initialize('get_slide_header_footer', 'name', request.name)
+        ok = False
+        try:
+            self.api.get_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_header_footer', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_header_footer', 'name', request.name)
+        if ok:
+            self.assert_no_exception('get_slide_header_footer', 'name')
+
+    def test_get_slide_header_footer_invalid_slide_index(self):
+        """Test case for get_slide_header_footer with invalid slide_index
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        request.slide_index = self.get_invalid_test_value('get_slide_header_footer', 'slide_index', request.slide_index, 'int')
+        self.initialize('get_slide_header_footer', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.get_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_header_footer', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_header_footer', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('get_slide_header_footer', 'slide_index')
+
+    def test_get_slide_header_footer_invalid_password(self):
+        """Test case for get_slide_header_footer with invalid password
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        request.password = self.get_invalid_test_value('get_slide_header_footer', 'password', request.password, 'str')
+        self.initialize('get_slide_header_footer', 'password', request.password)
+        ok = False
+        try:
+            self.api.get_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_header_footer', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_header_footer', 'password', request.password)
+        if ok:
+            self.assert_no_exception('get_slide_header_footer', 'password')
+
+    def test_get_slide_header_footer_invalid_folder(self):
+        """Test case for get_slide_header_footer with invalid folder
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        request.folder = self.get_invalid_test_value('get_slide_header_footer', 'folder', request.folder, 'str')
+        self.initialize('get_slide_header_footer', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.get_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_header_footer', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_header_footer', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('get_slide_header_footer', 'folder')
+
+    def test_get_slide_header_footer_invalid_storage(self):
+        """Test case for get_slide_header_footer with invalid storage
+        """
+        request = self.__prepare_get_slide_header_footer_request()
+        request.storage = self.get_invalid_test_value('get_slide_header_footer', 'storage', request.storage, 'str')
+        self.initialize('get_slide_header_footer', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.get_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'get_slide_header_footer', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_header_footer', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('get_slide_header_footer', 'storage')
+
+    def __prepare_get_slide_header_footer_request(self):
+        name = self.get_test_value('get_slide_header_footer', 'name', 'str')
+        slide_index = self.get_test_value('get_slide_header_footer', 'slide_index', 'int')
+        password = self.get_test_value('get_slide_header_footer', 'password', 'str')
+        folder = self.get_test_value('get_slide_header_footer', 'folder', 'str')
+        storage = self.get_test_value('get_slide_header_footer', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.GetSlideHeaderFooterRequest(name, slide_index, password, folder, storage)
 
     def test_get_slide_shape(self):
         """Test case for get_slide_shape
@@ -6805,8 +7328,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_shape', 'name')
 
@@ -6822,8 +7345,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_shape', 'slide_index')
 
@@ -6839,8 +7362,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_shape', 'shape_index')
 
@@ -6856,8 +7379,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_shape', 'password')
 
@@ -6873,8 +7396,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_shape', 'folder')
 
@@ -6890,8 +7413,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_shape', 'storage')
 
@@ -6924,8 +7447,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'name')
 
@@ -6941,8 +7464,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'slide_index')
 
@@ -6958,8 +7481,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'shape_index')
 
@@ -6975,8 +7498,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'paragraph_index')
 
@@ -6992,8 +7515,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'password')
 
@@ -7009,8 +7532,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'folder')
 
@@ -7026,8 +7549,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraph', 'storage')
 
@@ -7061,8 +7584,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'name')
 
@@ -7078,8 +7601,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'slide_index')
 
@@ -7095,8 +7618,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'shape_index')
 
@@ -7112,8 +7635,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'password')
 
@@ -7129,8 +7652,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'folder')
 
@@ -7146,8 +7669,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shape_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shape_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_shape_paragraphs', 'storage')
 
@@ -7180,8 +7703,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shapes', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_shapes', 'name')
 
@@ -7197,8 +7720,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_shapes', 'slide_index')
 
@@ -7214,8 +7737,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shapes', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_shapes', 'password')
 
@@ -7231,8 +7754,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_shapes', 'folder')
 
@@ -7248,8 +7771,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_shapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_shapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_shapes', 'storage')
 
@@ -7281,8 +7804,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'name')
 
@@ -7298,8 +7821,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'slide_index')
 
@@ -7315,8 +7838,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'shape_index')
 
@@ -7332,8 +7855,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'path', request.path)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'path')
 
@@ -7349,8 +7872,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'password')
 
@@ -7366,8 +7889,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'folder')
 
@@ -7383,8 +7906,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_subshape', 'storage')
 
@@ -7418,8 +7941,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'name')
 
@@ -7435,8 +7958,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'slide_index')
 
@@ -7452,8 +7975,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'shape_index')
 
@@ -7469,8 +7992,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'paragraph_index')
 
@@ -7486,8 +8009,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'path', request.path)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'path')
 
@@ -7503,8 +8026,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'password')
 
@@ -7520,8 +8043,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'folder')
 
@@ -7537,8 +8060,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraph', 'storage')
 
@@ -7573,8 +8096,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'name')
 
@@ -7590,8 +8113,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'slide_index')
 
@@ -7607,8 +8130,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'shape_index')
 
@@ -7624,8 +8147,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'path', request.path)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'path')
 
@@ -7641,8 +8164,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'password')
 
@@ -7658,8 +8181,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'folder')
 
@@ -7675,8 +8198,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshape_paragraphs', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshape_paragraphs', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_subshape_paragraphs', 'storage')
 
@@ -7710,8 +8233,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'name')
 
@@ -7727,8 +8250,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'slide_index')
 
@@ -7744,8 +8267,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'path', request.path)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'path')
 
@@ -7761,8 +8284,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'password')
 
@@ -7778,8 +8301,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'folder')
 
@@ -7795,8 +8318,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slide_subshapes', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slide_subshapes', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slide_subshapes', 'storage')
 
@@ -7838,8 +8361,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_document', 'name')
 
@@ -7855,8 +8378,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_document', 'password')
 
@@ -7872,8 +8395,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_document', 'storage')
 
@@ -7889,8 +8412,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_document', 'folder')
 
@@ -7921,8 +8444,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_document_properties', 'name')
 
@@ -7938,8 +8461,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_document_properties', 'password')
 
@@ -7955,8 +8478,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_document_properties', 'folder')
 
@@ -7972,8 +8495,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_document_properties', 'storage')
 
@@ -8004,8 +8527,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_property', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_property', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_document_property', 'name')
 
@@ -8021,8 +8544,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_property', 'property_name', request.property_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_property', 'property_name', request.property_name)
         if ok:
             self.assert_no_exception('get_slides_document_property', 'property_name')
 
@@ -8038,8 +8561,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_property', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_property', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_document_property', 'password')
 
@@ -8055,8 +8578,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_property', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_property', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_document_property', 'folder')
 
@@ -8072,8 +8595,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_document_property', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_document_property', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_document_property', 'storage')
 
@@ -8106,8 +8629,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_default_format', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_default_format', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_image_with_default_format', 'name')
 
@@ -8123,8 +8646,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_default_format', 'index', request.index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_default_format', 'index', request.index)
         if ok:
             self.assert_no_exception('get_slides_image_with_default_format', 'index')
 
@@ -8140,8 +8663,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_default_format', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_default_format', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_image_with_default_format', 'password')
 
@@ -8157,8 +8680,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_default_format', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_default_format', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_image_with_default_format', 'folder')
 
@@ -8174,8 +8697,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_default_format', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_default_format', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_image_with_default_format', 'storage')
 
@@ -8208,8 +8731,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'name')
 
@@ -8225,8 +8748,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'index', request.index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'index', request.index)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'index')
 
@@ -8242,8 +8765,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'format', request.format)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'format')
 
@@ -8259,8 +8782,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'password')
 
@@ -8276,8 +8799,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'folder')
 
@@ -8293,8 +8816,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_image_with_format', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_image_with_format', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_image_with_format', 'storage')
 
@@ -8327,8 +8850,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_images', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_images', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_images', 'name')
 
@@ -8344,8 +8867,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_images', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_images', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_images', 'password')
 
@@ -8361,8 +8884,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_images', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_images', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_images', 'folder')
 
@@ -8378,8 +8901,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_images', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_images', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_images', 'storage')
 
@@ -8410,8 +8933,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'name')
 
@@ -8427,8 +8950,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'slide_index')
 
@@ -8444,8 +8967,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'placeholder_index', request.placeholder_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'placeholder_index', request.placeholder_index)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'placeholder_index')
 
@@ -8461,8 +8984,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'password')
 
@@ -8478,8 +9001,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'folder')
 
@@ -8495,8 +9018,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholder', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholder', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_placeholder', 'storage')
 
@@ -8529,8 +9052,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholders', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholders', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_placeholders', 'name')
 
@@ -8546,8 +9069,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholders', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholders', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_placeholders', 'slide_index')
 
@@ -8563,8 +9086,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholders', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholders', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_placeholders', 'password')
 
@@ -8580,8 +9103,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholders', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholders', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_placeholders', 'folder')
 
@@ -8597,8 +9120,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_placeholders', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_placeholders', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_placeholders', 'storage')
 
@@ -8630,8 +9153,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_presentation_text_items', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_presentation_text_items', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_presentation_text_items', 'name')
 
@@ -8647,8 +9170,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_presentation_text_items', 'with_empty', request.with_empty)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_presentation_text_items', 'with_empty', request.with_empty)
         if ok:
             self.assert_no_exception('get_slides_presentation_text_items', 'with_empty')
 
@@ -8664,8 +9187,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_presentation_text_items', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_presentation_text_items', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_presentation_text_items', 'password')
 
@@ -8681,8 +9204,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_presentation_text_items', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_presentation_text_items', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_presentation_text_items', 'folder')
 
@@ -8698,8 +9221,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_presentation_text_items', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_presentation_text_items', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_presentation_text_items', 'storage')
 
@@ -8731,8 +9254,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slide', 'name')
 
@@ -8748,8 +9271,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_slide', 'slide_index')
 
@@ -8765,8 +9288,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slide', 'password')
 
@@ -8782,8 +9305,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slide', 'folder')
 
@@ -8799,8 +9322,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slide', 'storage')
 
@@ -8832,8 +9355,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_background', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_background', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slide_background', 'name')
 
@@ -8849,8 +9372,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_background', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_background', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_slide_background', 'slide_index')
 
@@ -8866,8 +9389,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_background', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_background', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slide_background', 'password')
 
@@ -8883,8 +9406,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_background', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_background', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slide_background', 'folder')
 
@@ -8900,8 +9423,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_background', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_background', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slide_background', 'storage')
 
@@ -8933,8 +9456,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_comments', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_comments', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slide_comments', 'name')
 
@@ -8950,8 +9473,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_comments', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_comments', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_slide_comments', 'slide_index')
 
@@ -8967,8 +9490,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_comments', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_comments', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slide_comments', 'password')
 
@@ -8984,8 +9507,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_comments', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_comments', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slide_comments', 'folder')
 
@@ -9001,8 +9524,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_comments', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_comments', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slide_comments', 'storage')
 
@@ -9034,8 +9557,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_images', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_images', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slide_images', 'name')
 
@@ -9051,8 +9574,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_images', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_images', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_slide_images', 'slide_index')
 
@@ -9068,8 +9591,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_images', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_images', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slide_images', 'password')
 
@@ -9085,8 +9608,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_images', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_images', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slide_images', 'folder')
 
@@ -9102,8 +9625,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_images', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_images', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slide_images', 'storage')
 
@@ -9135,8 +9658,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'name')
 
@@ -9152,8 +9675,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'slide_index')
 
@@ -9169,8 +9692,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'with_empty', request.with_empty)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'with_empty', request.with_empty)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'with_empty')
 
@@ -9186,8 +9709,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'password')
 
@@ -9203,8 +9726,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'folder')
 
@@ -9220,8 +9743,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slide_text_items', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slide_text_items', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slide_text_items', 'storage')
 
@@ -9254,8 +9777,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slides_list', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slides_list', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_slides_list', 'name')
 
@@ -9271,8 +9794,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slides_list', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slides_list', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_slides_list', 'password')
 
@@ -9288,8 +9811,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slides_list', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slides_list', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_slides_list', 'folder')
 
@@ -9305,8 +9828,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_slides_list', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_slides_list', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_slides_list', 'storage')
 
@@ -9337,8 +9860,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_theme', 'name')
 
@@ -9354,8 +9877,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_theme', 'slide_index')
 
@@ -9371,8 +9894,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_theme', 'password')
 
@@ -9388,8 +9911,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_theme', 'folder')
 
@@ -9405,8 +9928,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_theme', 'storage')
 
@@ -9438,8 +9961,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_color_scheme', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_color_scheme', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_theme_color_scheme', 'name')
 
@@ -9455,8 +9978,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_color_scheme', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_color_scheme', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_theme_color_scheme', 'slide_index')
 
@@ -9472,8 +9995,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_color_scheme', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_color_scheme', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_theme_color_scheme', 'password')
 
@@ -9489,8 +10012,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_color_scheme', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_color_scheme', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_theme_color_scheme', 'folder')
 
@@ -9506,8 +10029,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_color_scheme', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_color_scheme', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_theme_color_scheme', 'storage')
 
@@ -9539,8 +10062,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_font_scheme', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_font_scheme', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_theme_font_scheme', 'name')
 
@@ -9556,8 +10079,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_font_scheme', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_font_scheme', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_theme_font_scheme', 'slide_index')
 
@@ -9573,8 +10096,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_font_scheme', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_font_scheme', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_theme_font_scheme', 'password')
 
@@ -9590,8 +10113,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_font_scheme', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_font_scheme', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_theme_font_scheme', 'folder')
 
@@ -9607,8 +10130,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_font_scheme', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_font_scheme', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_theme_font_scheme', 'storage')
 
@@ -9640,8 +10163,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_format_scheme', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_format_scheme', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_theme_format_scheme', 'name')
 
@@ -9657,8 +10180,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_format_scheme', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_format_scheme', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_slides_theme_format_scheme', 'slide_index')
 
@@ -9674,8 +10197,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_format_scheme', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_format_scheme', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_theme_format_scheme', 'password')
 
@@ -9691,8 +10214,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_format_scheme', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_format_scheme', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_theme_format_scheme', 'folder')
 
@@ -9708,8 +10231,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_theme_format_scheme', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_theme_format_scheme', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_theme_format_scheme', 'storage')
 
@@ -9741,8 +10264,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_view_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_view_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('get_slides_view_properties', 'name')
 
@@ -9758,8 +10281,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_view_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_view_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('get_slides_view_properties', 'password')
 
@@ -9775,8 +10298,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_view_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_view_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_slides_view_properties', 'folder')
 
@@ -9792,8 +10315,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_slides_view_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_slides_view_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_slides_view_properties', 'storage')
 
@@ -9824,8 +10347,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'name')
 
@@ -9841,8 +10364,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'slide_index')
 
@@ -9858,8 +10381,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'shape_index')
 
@@ -9875,8 +10398,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'paragraph_index')
 
@@ -9892,8 +10415,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'portion_index')
 
@@ -9909,8 +10432,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'path', request.path)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'path')
 
@@ -9926,8 +10449,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'password')
 
@@ -9943,8 +10466,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'folder')
 
@@ -9960,8 +10483,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portion', 'storage')
 
@@ -9997,8 +10520,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'name', request.name)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'name')
 
@@ -10014,8 +10537,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'slide_index')
 
@@ -10031,8 +10554,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'shape_index')
 
@@ -10048,8 +10571,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'paragraph_index')
 
@@ -10065,8 +10588,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'path', request.path)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'path')
 
@@ -10082,8 +10605,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'password', request.password)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'password')
 
@@ -10099,8 +10622,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'folder', request.folder)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'folder')
 
@@ -10116,8 +10639,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'get_subshape_paragraph_portions', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'get_subshape_paragraph_portions', 'storage', request.storage)
         if ok:
             self.assert_no_exception('get_subshape_paragraph_portions', 'storage')
 
@@ -10152,8 +10675,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_file', 'src_path', request.src_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_file', 'src_path', request.src_path)
         if ok:
             self.assert_no_exception('move_file', 'src_path')
 
@@ -10169,8 +10692,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_file', 'dest_path', request.dest_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_file', 'dest_path', request.dest_path)
         if ok:
             self.assert_no_exception('move_file', 'dest_path')
 
@@ -10186,8 +10709,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_file', 'src_storage_name', request.src_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_file', 'src_storage_name', request.src_storage_name)
         if ok:
             self.assert_no_exception('move_file', 'src_storage_name')
 
@@ -10203,8 +10726,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_file', 'dest_storage_name', request.dest_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_file', 'dest_storage_name', request.dest_storage_name)
         if ok:
             self.assert_no_exception('move_file', 'dest_storage_name')
 
@@ -10220,8 +10743,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_file', 'version_id', request.version_id)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_file', 'version_id', request.version_id)
         if ok:
             self.assert_no_exception('move_file', 'version_id')
 
@@ -10253,8 +10776,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_folder', 'src_path', request.src_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_folder', 'src_path', request.src_path)
         if ok:
             self.assert_no_exception('move_folder', 'src_path')
 
@@ -10270,8 +10793,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_folder', 'dest_path', request.dest_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_folder', 'dest_path', request.dest_path)
         if ok:
             self.assert_no_exception('move_folder', 'dest_path')
 
@@ -10287,8 +10810,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_folder', 'src_storage_name', request.src_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_folder', 'src_storage_name', request.src_storage_name)
         if ok:
             self.assert_no_exception('move_folder', 'src_storage_name')
 
@@ -10304,8 +10827,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'move_folder', 'dest_storage_name', request.dest_storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'move_folder', 'dest_storage_name', request.dest_storage_name)
         if ok:
             self.assert_no_exception('move_folder', 'dest_storage_name')
 
@@ -10336,8 +10859,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'object_exists', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'object_exists', 'path', request.path)
         if ok:
             self.assert_no_exception('object_exists', 'path')
 
@@ -10353,8 +10876,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'object_exists', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'object_exists', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('object_exists', 'storage_name')
 
@@ -10370,8 +10893,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'object_exists', 'version_id', request.version_id)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'object_exists', 'version_id', request.version_id)
         if ok:
             self.assert_no_exception('object_exists', 'version_id')
 
@@ -10401,8 +10924,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'name')
 
@@ -10418,8 +10941,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'slide_index')
 
@@ -10435,8 +10958,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'shape_index')
 
@@ -10452,8 +10975,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'dto')
 
@@ -10469,8 +10992,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'password')
 
@@ -10486,8 +11009,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'folder')
 
@@ -10503,8 +11026,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'storage')
 
@@ -10520,8 +11043,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_paragraph', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_paragraph', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_paragraph', 'position')
 
@@ -10556,8 +11079,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'name')
 
@@ -10573,8 +11096,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'slide_index')
 
@@ -10590,8 +11113,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'shape_index')
 
@@ -10607,8 +11130,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'paragraph_index')
 
@@ -10624,8 +11147,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'dto')
 
@@ -10641,8 +11164,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'password')
 
@@ -10658,8 +11181,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'folder')
 
@@ -10675,8 +11198,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'storage')
 
@@ -10692,8 +11215,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_portion', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_portion', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_portion', 'position')
 
@@ -10729,8 +11252,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'name')
 
@@ -10746,8 +11269,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'slide_index')
 
@@ -10763,8 +11286,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'dto')
 
@@ -10780,8 +11303,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'password')
 
@@ -10797,8 +11320,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'folder')
 
@@ -10814,8 +11337,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'storage')
 
@@ -10831,8 +11354,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'shape_to_clone', request.shape_to_clone)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'shape_to_clone', request.shape_to_clone)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'shape_to_clone')
 
@@ -10848,8 +11371,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_shape', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_shape', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_shape', 'position')
 
@@ -10884,8 +11407,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'name')
 
@@ -10901,8 +11424,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'slide_index')
 
@@ -10918,8 +11441,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'path', request.path)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'path')
 
@@ -10935,8 +11458,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'dto')
 
@@ -10952,8 +11475,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'password')
 
@@ -10969,8 +11492,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'folder')
 
@@ -10986,8 +11509,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'storage')
 
@@ -11003,8 +11526,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'shape_to_clone', request.shape_to_clone)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'shape_to_clone', request.shape_to_clone)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'shape_to_clone')
 
@@ -11020,8 +11543,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_subshape', 'position')
 
@@ -11057,8 +11580,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'name')
 
@@ -11074,8 +11597,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'slide_index')
 
@@ -11091,27 +11614,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'shape_index')
-
-    def test_post_add_new_subshape_paragraph_invalid_path(self):
-        """Test case for post_add_new_subshape_paragraph with invalid path
-        """
-        request = self.__prepare_post_add_new_subshape_paragraph_request()
-        request.path = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'path', request.path, 'str')
-        self.initialize('post_add_new_subshape_paragraph', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_add_new_subshape_paragraph(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_add_new_subshape_paragraph', 'path')
 
     def test_post_add_new_subshape_paragraph_invalid_dto(self):
         """Test case for post_add_new_subshape_paragraph with invalid dto
@@ -11125,10 +11631,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'dto')
+
+    def test_post_add_new_subshape_paragraph_invalid_path(self):
+        """Test case for post_add_new_subshape_paragraph with invalid path
+        """
+        request = self.__prepare_post_add_new_subshape_paragraph_request()
+        request.path = self.get_invalid_test_value('post_add_new_subshape_paragraph', 'path', request.path, 'str')
+        self.initialize('post_add_new_subshape_paragraph', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_paragraph(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'path', request.path)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'path', request.path)
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_paragraph', 'path')
 
     def test_post_add_new_subshape_paragraph_invalid_password(self):
         """Test case for post_add_new_subshape_paragraph with invalid password
@@ -11142,8 +11665,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'password')
 
@@ -11159,8 +11682,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'folder')
 
@@ -11176,8 +11699,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'storage')
 
@@ -11193,8 +11716,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_paragraph', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_paragraph', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_subshape_paragraph', 'position')
 
@@ -11202,13 +11725,13 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('post_add_new_subshape_paragraph', 'name', 'str')
         slide_index = self.get_test_value('post_add_new_subshape_paragraph', 'slide_index', 'int')
         shape_index = self.get_test_value('post_add_new_subshape_paragraph', 'shape_index', 'int')
-        path = self.get_test_value('post_add_new_subshape_paragraph', 'path', 'str')
         dto = self.get_test_value('post_add_new_subshape_paragraph', 'dto', 'Paragraph')
+        path = self.get_test_value('post_add_new_subshape_paragraph', 'path', 'str')
         password = self.get_test_value('post_add_new_subshape_paragraph', 'password', 'str')
         folder = self.get_test_value('post_add_new_subshape_paragraph', 'folder', 'str')
         storage = self.get_test_value('post_add_new_subshape_paragraph', 'storage', 'str')
         position = self.get_test_value('post_add_new_subshape_paragraph', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapeParagraphRequest(name, slide_index, shape_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapeParagraphRequest(name, slide_index, shape_index, dto, path, password, folder, storage, position)
 
     def test_post_add_new_subshape_portion(self):
         """Test case for post_add_new_subshape_portion
@@ -11230,8 +11753,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'name')
 
@@ -11247,8 +11770,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'slide_index')
 
@@ -11264,8 +11787,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'shape_index')
 
@@ -11281,27 +11804,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'paragraph_index')
-
-    def test_post_add_new_subshape_portion_invalid_path(self):
-        """Test case for post_add_new_subshape_portion with invalid path
-        """
-        request = self.__prepare_post_add_new_subshape_portion_request()
-        request.path = self.get_invalid_test_value('post_add_new_subshape_portion', 'path', request.path, 'str')
-        self.initialize('post_add_new_subshape_portion', 'path', request.path)
-        ok = False
-        try:
-            self.api.post_add_new_subshape_portion(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_add_new_subshape_portion', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_add_new_subshape_portion', 'path')
 
     def test_post_add_new_subshape_portion_invalid_dto(self):
         """Test case for post_add_new_subshape_portion with invalid dto
@@ -11315,10 +11821,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'dto')
+
+    def test_post_add_new_subshape_portion_invalid_path(self):
+        """Test case for post_add_new_subshape_portion with invalid path
+        """
+        request = self.__prepare_post_add_new_subshape_portion_request()
+        request.path = self.get_invalid_test_value('post_add_new_subshape_portion', 'path', request.path, 'str')
+        self.initialize('post_add_new_subshape_portion', 'path', request.path)
+        ok = False
+        try:
+            self.api.post_add_new_subshape_portion(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_add_new_subshape_portion', 'path', request.path)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'path', request.path)
+        if ok:
+            self.assert_no_exception('post_add_new_subshape_portion', 'path')
 
     def test_post_add_new_subshape_portion_invalid_password(self):
         """Test case for post_add_new_subshape_portion with invalid password
@@ -11332,8 +11855,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'password')
 
@@ -11349,8 +11872,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'folder')
 
@@ -11366,8 +11889,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'storage')
 
@@ -11383,8 +11906,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_new_subshape_portion', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_new_subshape_portion', 'position', request.position)
         if ok:
             self.assert_no_exception('post_add_new_subshape_portion', 'position')
 
@@ -11393,13 +11916,13 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('post_add_new_subshape_portion', 'slide_index', 'int')
         shape_index = self.get_test_value('post_add_new_subshape_portion', 'shape_index', 'int')
         paragraph_index = self.get_test_value('post_add_new_subshape_portion', 'paragraph_index', 'int')
-        path = self.get_test_value('post_add_new_subshape_portion', 'path', 'str')
         dto = self.get_test_value('post_add_new_subshape_portion', 'dto', 'Portion')
+        path = self.get_test_value('post_add_new_subshape_portion', 'path', 'str')
         password = self.get_test_value('post_add_new_subshape_portion', 'password', 'str')
         folder = self.get_test_value('post_add_new_subshape_portion', 'folder', 'str')
         storage = self.get_test_value('post_add_new_subshape_portion', 'storage', 'str')
         position = self.get_test_value('post_add_new_subshape_portion', 'position', 'int')
-        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapePortionRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage, position)
+        return asposeslidescloud.models.requests.slides_api_requests.PostAddNewSubshapePortionRequest(name, slide_index, shape_index, paragraph_index, dto, path, password, folder, storage, position)
 
     def test_post_add_notes_slide(self):
         """Test case for post_add_notes_slide
@@ -11421,8 +11944,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'name')
 
@@ -11438,8 +11961,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'slide_index')
 
@@ -11455,8 +11978,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'dto')
 
@@ -11472,8 +11995,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'password')
 
@@ -11489,8 +12012,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'folder')
 
@@ -11506,8 +12029,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_add_notes_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_add_notes_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_add_notes_slide', 'storage')
 
@@ -11540,8 +12063,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'name', request.name)
         if ok:
             self.assert_no_exception('post_chart_category', 'name')
 
@@ -11557,8 +12080,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_chart_category', 'slide_index')
 
@@ -11574,8 +12097,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_chart_category', 'shape_index')
 
@@ -11591,8 +12114,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'category', request.category)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'category', request.category)
         if ok:
             self.assert_no_exception('post_chart_category', 'category')
 
@@ -11608,8 +12131,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'password', request.password)
         if ok:
             self.assert_no_exception('post_chart_category', 'password')
 
@@ -11625,8 +12148,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_chart_category', 'folder')
 
@@ -11642,8 +12165,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_category', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_category', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_chart_category', 'storage')
 
@@ -11677,8 +12200,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'name', request.name)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'name')
 
@@ -11694,8 +12217,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'slide_index')
 
@@ -11711,8 +12234,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'shape_index')
 
@@ -11728,8 +12251,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'series_index', request.series_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'series_index', request.series_index)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'series_index')
 
@@ -11745,8 +12268,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'data_point', request.data_point)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'data_point', request.data_point)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'data_point')
 
@@ -11762,8 +12285,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'password', request.password)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'password')
 
@@ -11779,8 +12302,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'folder')
 
@@ -11796,8 +12319,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_data_point', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_data_point', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_chart_data_point', 'storage')
 
@@ -11832,8 +12355,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'name', request.name)
         if ok:
             self.assert_no_exception('post_chart_series', 'name')
 
@@ -11849,8 +12372,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_chart_series', 'slide_index')
 
@@ -11866,8 +12389,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_chart_series', 'shape_index')
 
@@ -11883,8 +12406,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'series', request.series)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'series', request.series)
         if ok:
             self.assert_no_exception('post_chart_series', 'series')
 
@@ -11900,8 +12423,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'password', request.password)
         if ok:
             self.assert_no_exception('post_chart_series', 'password')
 
@@ -11917,8 +12440,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_chart_series', 'folder')
 
@@ -11934,8 +12457,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_chart_series', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_chart_series', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_chart_series', 'storage')
 
@@ -11969,8 +12492,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'name', request.name)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'name')
 
@@ -11986,8 +12509,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from', request.clone_from)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from', request.clone_from)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'clone_from')
 
@@ -12003,8 +12526,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_position', request.clone_from_position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_position', request.clone_from_position)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'clone_from_position')
 
@@ -12020,8 +12543,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_password', request.clone_from_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_password', request.clone_from_password)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'clone_from_password')
 
@@ -12037,8 +12560,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_storage', request.clone_from_storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'clone_from_storage', request.clone_from_storage)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'clone_from_storage')
 
@@ -12054,8 +12577,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'password', request.password)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'password')
 
@@ -12071,8 +12594,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'folder')
 
@@ -12088,8 +12611,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_layout_slide_from_source_presentation', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_layout_slide_from_source_presentation', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_copy_layout_slide_from_source_presentation', 'storage')
 
@@ -12124,8 +12647,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'name', request.name)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'name')
 
@@ -12141,8 +12664,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from', request.clone_from)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from', request.clone_from)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'clone_from')
 
@@ -12158,8 +12681,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_position', request.clone_from_position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_position', request.clone_from_position)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'clone_from_position')
 
@@ -12175,8 +12698,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_password', request.clone_from_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_password', request.clone_from_password)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'clone_from_password')
 
@@ -12192,8 +12715,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_storage', request.clone_from_storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'clone_from_storage', request.clone_from_storage)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'clone_from_storage')
 
@@ -12209,8 +12732,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'apply_to_all', request.apply_to_all)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'apply_to_all', request.apply_to_all)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'apply_to_all')
 
@@ -12226,8 +12749,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'password', request.password)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'password')
 
@@ -12243,8 +12766,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'folder')
 
@@ -12260,8 +12783,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_copy_master_slide_from_source_presentation', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_copy_master_slide_from_source_presentation', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_copy_master_slide_from_source_presentation', 'storage')
 
@@ -12285,23 +12808,6 @@ class TestSlidesApi(BaseTest):
         response = self.api.post_get_notes_slide(request)
         self.assertIsNotNone(response)
 
-    def test_post_get_notes_slide_invalid_slide_index(self):
-        """Test case for post_get_notes_slide with invalid slide_index
-        """
-        request = self.__prepare_post_get_notes_slide_request()
-        request.slide_index = self.get_invalid_test_value('post_get_notes_slide', 'slide_index', request.slide_index, 'int')
-        self.initialize('post_get_notes_slide', 'slide_index', request.slide_index)
-        ok = False
-        try:
-            self.api.post_get_notes_slide(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_get_notes_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_get_notes_slide', 'slide_index')
-
     def test_post_get_notes_slide_invalid_document(self):
         """Test case for post_get_notes_slide with invalid document
         """
@@ -12314,10 +12820,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide', 'document', request.document)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide', 'document', request.document)
         if ok:
             self.assert_no_exception('post_get_notes_slide', 'document')
+
+    def test_post_get_notes_slide_invalid_slide_index(self):
+        """Test case for post_get_notes_slide with invalid slide_index
+        """
+        request = self.__prepare_post_get_notes_slide_request()
+        request.slide_index = self.get_invalid_test_value('post_get_notes_slide', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_get_notes_slide', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_get_notes_slide(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('post_get_notes_slide', 'slide_index')
 
     def test_post_get_notes_slide_invalid_password(self):
         """Test case for post_get_notes_slide with invalid password
@@ -12331,16 +12854,16 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('post_get_notes_slide', 'password')
 
     def __prepare_post_get_notes_slide_request(self):
-        slide_index = self.get_test_value('post_get_notes_slide', 'slide_index', 'int')
         document = self.get_test_value('post_get_notes_slide', 'document', 'file')
+        slide_index = self.get_test_value('post_get_notes_slide', 'slide_index', 'int')
         password = self.get_test_value('post_get_notes_slide', 'password', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideRequest(slide_index, document, password)
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideRequest(document, slide_index, password)
 
     def test_post_get_notes_slide_exists(self):
         """Test case for post_get_notes_slide_exists
@@ -12349,23 +12872,6 @@ class TestSlidesApi(BaseTest):
         self.initialize('post_get_notes_slide_exists', None, None)
         response = self.api.post_get_notes_slide_exists(request)
         self.assertIsNotNone(response)
-
-    def test_post_get_notes_slide_exists_invalid_slide_index(self):
-        """Test case for post_get_notes_slide_exists with invalid slide_index
-        """
-        request = self.__prepare_post_get_notes_slide_exists_request()
-        request.slide_index = self.get_invalid_test_value('post_get_notes_slide_exists', 'slide_index', request.slide_index, 'int')
-        self.initialize('post_get_notes_slide_exists', 'slide_index', request.slide_index)
-        ok = False
-        try:
-            self.api.post_get_notes_slide_exists(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_get_notes_slide_exists', 'slide_index', request.slide_index)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_get_notes_slide_exists', 'slide_index')
 
     def test_post_get_notes_slide_exists_invalid_document(self):
         """Test case for post_get_notes_slide_exists with invalid document
@@ -12379,10 +12885,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_exists', 'document', request.document)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_exists', 'document', request.document)
         if ok:
             self.assert_no_exception('post_get_notes_slide_exists', 'document')
+
+    def test_post_get_notes_slide_exists_invalid_slide_index(self):
+        """Test case for post_get_notes_slide_exists with invalid slide_index
+        """
+        request = self.__prepare_post_get_notes_slide_exists_request()
+        request.slide_index = self.get_invalid_test_value('post_get_notes_slide_exists', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_get_notes_slide_exists', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_exists(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_exists', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_exists', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_exists', 'slide_index')
 
     def test_post_get_notes_slide_exists_invalid_password(self):
         """Test case for post_get_notes_slide_exists with invalid password
@@ -12396,16 +12919,16 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_exists', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_exists', 'password', request.password)
         if ok:
             self.assert_no_exception('post_get_notes_slide_exists', 'password')
 
     def __prepare_post_get_notes_slide_exists_request(self):
-        slide_index = self.get_test_value('post_get_notes_slide_exists', 'slide_index', 'int')
         document = self.get_test_value('post_get_notes_slide_exists', 'document', 'file')
+        slide_index = self.get_test_value('post_get_notes_slide_exists', 'slide_index', 'int')
         password = self.get_test_value('post_get_notes_slide_exists', 'password', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideExistsRequest(slide_index, document, password)
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideExistsRequest(document, slide_index, password)
 
     def test_post_get_notes_slide_with_format(self):
         """Test case for post_get_notes_slide_with_format
@@ -12415,6 +12938,23 @@ class TestSlidesApi(BaseTest):
         response = self.api.post_get_notes_slide_with_format(request)
         self.assertTrue(isinstance(response, str))
         self.assertTrue(len(response) > 0)
+
+    def test_post_get_notes_slide_with_format_invalid_document(self):
+        """Test case for post_get_notes_slide_with_format with invalid document
+        """
+        request = self.__prepare_post_get_notes_slide_with_format_request()
+        request.document = self.get_invalid_test_value('post_get_notes_slide_with_format', 'document', request.document, 'file')
+        self.initialize('post_get_notes_slide_with_format', 'document', request.document)
+        ok = False
+        try:
+            self.api.post_get_notes_slide_with_format(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'document', request.document)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'document', request.document)
+        if ok:
+            self.assert_no_exception('post_get_notes_slide_with_format', 'document')
 
     def test_post_get_notes_slide_with_format_invalid_slide_index(self):
         """Test case for post_get_notes_slide_with_format with invalid slide_index
@@ -12428,8 +12968,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'slide_index')
 
@@ -12445,27 +12985,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'format', request.format)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'format')
-
-    def test_post_get_notes_slide_with_format_invalid_document(self):
-        """Test case for post_get_notes_slide_with_format with invalid document
-        """
-        request = self.__prepare_post_get_notes_slide_with_format_request()
-        request.document = self.get_invalid_test_value('post_get_notes_slide_with_format', 'document', request.document, 'file')
-        self.initialize('post_get_notes_slide_with_format', 'document', request.document)
-        ok = False
-        try:
-            self.api.post_get_notes_slide_with_format(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_get_notes_slide_with_format', 'document', request.document)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_get_notes_slide_with_format', 'document')
 
     def test_post_get_notes_slide_with_format_invalid_width(self):
         """Test case for post_get_notes_slide_with_format with invalid width
@@ -12479,8 +13002,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'width', request.width)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'width')
 
@@ -12496,8 +13019,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'height', request.height)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'height')
 
@@ -12513,8 +13036,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'password', request.password)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'password')
 
@@ -12530,20 +13053,20 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_get_notes_slide_with_format', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_get_notes_slide_with_format', 'fonts_folder')
 
     def __prepare_post_get_notes_slide_with_format_request(self):
+        document = self.get_test_value('post_get_notes_slide_with_format', 'document', 'file')
         slide_index = self.get_test_value('post_get_notes_slide_with_format', 'slide_index', 'int')
         format = self.get_test_value('post_get_notes_slide_with_format', 'format', 'str')
-        document = self.get_test_value('post_get_notes_slide_with_format', 'document', 'file')
         width = self.get_test_value('post_get_notes_slide_with_format', 'width', 'int')
         height = self.get_test_value('post_get_notes_slide_with_format', 'height', 'int')
         password = self.get_test_value('post_get_notes_slide_with_format', 'password', 'str')
         fonts_folder = self.get_test_value('post_get_notes_slide_with_format', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideWithFormatRequest(slide_index, format, document, width, height, password, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PostGetNotesSlideWithFormatRequest(document, slide_index, format, width, height, password, fonts_folder)
 
     def test_post_notes_slide_add_new_paragraph(self):
         """Test case for post_notes_slide_add_new_paragraph
@@ -12565,8 +13088,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'name')
 
@@ -12582,8 +13105,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'slide_index')
 
@@ -12599,8 +13122,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'shape_index')
 
@@ -12616,8 +13139,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'dto')
 
@@ -12633,8 +13156,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'password')
 
@@ -12650,8 +13173,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'folder')
 
@@ -12667,8 +13190,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'storage')
 
@@ -12684,8 +13207,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_paragraph', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_paragraph', 'position', request.position)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_paragraph', 'position')
 
@@ -12720,8 +13243,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'name')
 
@@ -12737,8 +13260,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'slide_index')
 
@@ -12754,8 +13277,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'shape_index')
 
@@ -12771,8 +13294,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'paragraph_index')
 
@@ -12788,8 +13311,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'dto')
 
@@ -12805,8 +13328,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'password')
 
@@ -12822,8 +13345,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'folder')
 
@@ -12839,8 +13362,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'storage')
 
@@ -12856,8 +13379,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_portion', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_portion', 'position', request.position)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_portion', 'position')
 
@@ -12893,8 +13416,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'name')
 
@@ -12910,8 +13433,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'slide_index')
 
@@ -12927,8 +13450,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'dto', request.dto)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'dto')
 
@@ -12944,8 +13467,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'password')
 
@@ -12961,8 +13484,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'folder')
 
@@ -12978,8 +13501,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'storage')
 
@@ -12995,8 +13518,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'shape_to_clone', request.shape_to_clone)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'shape_to_clone', request.shape_to_clone)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'shape_to_clone')
 
@@ -13012,8 +13535,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_add_new_shape', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_add_new_shape', 'position', request.position)
         if ok:
             self.assert_no_exception('post_notes_slide_add_new_shape', 'position')
 
@@ -13049,8 +13572,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'name')
 
@@ -13066,8 +13589,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'slide_index')
 
@@ -13083,8 +13606,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'shape_index')
 
@@ -13100,8 +13623,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'format')
 
@@ -13117,8 +13640,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'options')
 
@@ -13134,8 +13657,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'password')
 
@@ -13151,8 +13674,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'folder')
 
@@ -13168,8 +13691,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'storage')
 
@@ -13185,8 +13708,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'scale_x')
 
@@ -13202,8 +13725,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'scale_y')
 
@@ -13219,8 +13742,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'bounds')
 
@@ -13236,8 +13759,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_notes_slide_shape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_notes_slide_shape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_notes_slide_shape_save_as', 'fonts_folder')
 
@@ -13276,8 +13799,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_presentation_merge', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_presentation_merge', 'name', request.name)
         if ok:
             self.assert_no_exception('post_presentation_merge', 'name')
 
@@ -13293,8 +13816,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_presentation_merge', 'request', request.request)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_presentation_merge', 'request', request.request)
         if ok:
             self.assert_no_exception('post_presentation_merge', 'request')
 
@@ -13310,8 +13833,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_presentation_merge', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_presentation_merge', 'password', request.password)
         if ok:
             self.assert_no_exception('post_presentation_merge', 'password')
 
@@ -13327,8 +13850,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_presentation_merge', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_presentation_merge', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_presentation_merge', 'storage')
 
@@ -13344,8 +13867,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_presentation_merge', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_presentation_merge', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_presentation_merge', 'folder')
 
@@ -13356,6 +13879,244 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('post_presentation_merge', 'storage', 'str')
         folder = self.get_test_value('post_presentation_merge', 'folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PostPresentationMergeRequest(name, request, password, storage, folder)
+
+    def test_post_section(self):
+        """Test case for post_section
+        """
+        request = self.__prepare_post_section_request()
+        self.initialize('post_section', None, None)
+        response = self.api.post_section(request)
+        self.assertIsNotNone(response)
+
+    def test_post_section_invalid_name(self):
+        """Test case for post_section with invalid name
+        """
+        request = self.__prepare_post_section_request()
+        request.name = self.get_invalid_test_value('post_section', 'name', request.name, 'str')
+        self.initialize('post_section', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_section', 'name')
+
+    def test_post_section_invalid_section_name(self):
+        """Test case for post_section with invalid section_name
+        """
+        request = self.__prepare_post_section_request()
+        request.section_name = self.get_invalid_test_value('post_section', 'section_name', request.section_name, 'str')
+        self.initialize('post_section', 'section_name', request.section_name)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'section_name', request.section_name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'section_name', request.section_name)
+        if ok:
+            self.assert_no_exception('post_section', 'section_name')
+
+    def test_post_section_invalid_slide_index(self):
+        """Test case for post_section with invalid slide_index
+        """
+        request = self.__prepare_post_section_request()
+        request.slide_index = self.get_invalid_test_value('post_section', 'slide_index', request.slide_index, 'int')
+        self.initialize('post_section', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('post_section', 'slide_index')
+
+    def test_post_section_invalid_password(self):
+        """Test case for post_section with invalid password
+        """
+        request = self.__prepare_post_section_request()
+        request.password = self.get_invalid_test_value('post_section', 'password', request.password, 'str')
+        self.initialize('post_section', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_section', 'password')
+
+    def test_post_section_invalid_folder(self):
+        """Test case for post_section with invalid folder
+        """
+        request = self.__prepare_post_section_request()
+        request.folder = self.get_invalid_test_value('post_section', 'folder', request.folder, 'str')
+        self.initialize('post_section', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_section', 'folder')
+
+    def test_post_section_invalid_storage(self):
+        """Test case for post_section with invalid storage
+        """
+        request = self.__prepare_post_section_request()
+        request.storage = self.get_invalid_test_value('post_section', 'storage', request.storage, 'str')
+        self.initialize('post_section', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_section', 'storage')
+
+    def __prepare_post_section_request(self):
+        name = self.get_test_value('post_section', 'name', 'str')
+        section_name = self.get_test_value('post_section', 'section_name', 'str')
+        slide_index = self.get_test_value('post_section', 'slide_index', 'int')
+        password = self.get_test_value('post_section', 'password', 'str')
+        folder = self.get_test_value('post_section', 'folder', 'str')
+        storage = self.get_test_value('post_section', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSectionRequest(name, section_name, slide_index, password, folder, storage)
+
+    def test_post_section_move(self):
+        """Test case for post_section_move
+        """
+        request = self.__prepare_post_section_move_request()
+        self.initialize('post_section_move', None, None)
+        response = self.api.post_section_move(request)
+        self.assertIsNotNone(response)
+
+    def test_post_section_move_invalid_name(self):
+        """Test case for post_section_move with invalid name
+        """
+        request = self.__prepare_post_section_move_request()
+        request.name = self.get_invalid_test_value('post_section_move', 'name', request.name, 'str')
+        self.initialize('post_section_move', 'name', request.name)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'name', request.name)
+        if ok:
+            self.assert_no_exception('post_section_move', 'name')
+
+    def test_post_section_move_invalid_section_index(self):
+        """Test case for post_section_move with invalid section_index
+        """
+        request = self.__prepare_post_section_move_request()
+        request.section_index = self.get_invalid_test_value('post_section_move', 'section_index', request.section_index, 'int')
+        self.initialize('post_section_move', 'section_index', request.section_index)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'section_index', request.section_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'section_index', request.section_index)
+        if ok:
+            self.assert_no_exception('post_section_move', 'section_index')
+
+    def test_post_section_move_invalid_new_position(self):
+        """Test case for post_section_move with invalid new_position
+        """
+        request = self.__prepare_post_section_move_request()
+        request.new_position = self.get_invalid_test_value('post_section_move', 'new_position', request.new_position, 'int')
+        self.initialize('post_section_move', 'new_position', request.new_position)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'new_position', request.new_position)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'new_position', request.new_position)
+        if ok:
+            self.assert_no_exception('post_section_move', 'new_position')
+
+    def test_post_section_move_invalid_password(self):
+        """Test case for post_section_move with invalid password
+        """
+        request = self.__prepare_post_section_move_request()
+        request.password = self.get_invalid_test_value('post_section_move', 'password', request.password, 'str')
+        self.initialize('post_section_move', 'password', request.password)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'password', request.password)
+        if ok:
+            self.assert_no_exception('post_section_move', 'password')
+
+    def test_post_section_move_invalid_folder(self):
+        """Test case for post_section_move with invalid folder
+        """
+        request = self.__prepare_post_section_move_request()
+        request.folder = self.get_invalid_test_value('post_section_move', 'folder', request.folder, 'str')
+        self.initialize('post_section_move', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('post_section_move', 'folder')
+
+    def test_post_section_move_invalid_storage(self):
+        """Test case for post_section_move with invalid storage
+        """
+        request = self.__prepare_post_section_move_request()
+        request.storage = self.get_invalid_test_value('post_section_move', 'storage', request.storage, 'str')
+        self.initialize('post_section_move', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.post_section_move(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_section_move', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_section_move', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('post_section_move', 'storage')
+
+    def __prepare_post_section_move_request(self):
+        name = self.get_test_value('post_section_move', 'name', 'str')
+        section_index = self.get_test_value('post_section_move', 'section_index', 'int')
+        new_position = self.get_test_value('post_section_move', 'new_position', 'int')
+        password = self.get_test_value('post_section_move', 'password', 'str')
+        folder = self.get_test_value('post_section_move', 'folder', 'str')
+        storage = self.get_test_value('post_section_move', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PostSectionMoveRequest(name, section_index, new_position, password, folder, storage)
 
     def test_post_shape_save_as(self):
         """Test case for post_shape_save_as
@@ -13378,8 +14139,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'name')
 
@@ -13395,8 +14156,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'slide_index')
 
@@ -13412,8 +14173,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'shape_index')
 
@@ -13429,8 +14190,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'format')
 
@@ -13446,8 +14207,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'options')
 
@@ -13463,8 +14224,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'password')
 
@@ -13480,8 +14241,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'folder')
 
@@ -13497,8 +14258,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'storage')
 
@@ -13514,8 +14275,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'scale_x')
 
@@ -13531,8 +14292,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'scale_y')
 
@@ -13548,8 +14309,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'bounds')
 
@@ -13565,8 +14326,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_shape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_shape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_shape_save_as', 'fonts_folder')
 
@@ -13605,8 +14366,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'name')
 
@@ -13622,8 +14383,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'slide_index')
 
@@ -13639,8 +14400,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'effect', request.effect)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'effect', request.effect)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'effect')
 
@@ -13656,8 +14417,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'password')
 
@@ -13673,8 +14434,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'folder')
 
@@ -13690,8 +14451,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slide_animation_effect', 'storage')
 
@@ -13724,8 +14485,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'name')
 
@@ -13741,8 +14502,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'slide_index')
 
@@ -13758,8 +14519,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'sequence', request.sequence)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'sequence', request.sequence)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'sequence')
 
@@ -13775,8 +14536,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'password')
 
@@ -13792,8 +14553,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'folder')
 
@@ -13809,8 +14570,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence', 'storage')
 
@@ -13843,8 +14604,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'name')
 
@@ -13860,8 +14621,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'slide_index')
 
@@ -13877,8 +14638,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'sequence_index')
 
@@ -13894,8 +14655,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'effect', request.effect)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'effect', request.effect)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'effect')
 
@@ -13911,8 +14672,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'password')
 
@@ -13928,8 +14689,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'folder')
 
@@ -13945,8 +14706,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_animation_interactive_sequence_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_animation_interactive_sequence_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slide_animation_interactive_sequence_effect', 'storage')
 
@@ -13981,8 +14742,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'name')
 
@@ -13998,8 +14759,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'slide_index')
 
@@ -14015,8 +14776,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'format')
 
@@ -14032,8 +14793,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'options')
 
@@ -14049,8 +14810,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'width', request.width)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'width')
 
@@ -14066,8 +14827,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'height', request.height)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'height')
 
@@ -14083,8 +14844,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'password')
 
@@ -14100,8 +14861,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'folder')
 
@@ -14117,8 +14878,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'storage')
 
@@ -14134,8 +14895,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slide_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slide_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_slide_save_as', 'fonts_folder')
 
@@ -14172,8 +14933,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_add', 'name')
 
@@ -14189,8 +14950,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'position', request.position)
         if ok:
             self.assert_no_exception('post_slides_add', 'position')
 
@@ -14206,8 +14967,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_add', 'password')
 
@@ -14223,8 +14984,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_add', 'folder')
 
@@ -14240,8 +15001,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_add', 'storage')
 
@@ -14257,8 +15018,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_add', 'layout_alias', request.layout_alias)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_add', 'layout_alias', request.layout_alias)
         if ok:
             self.assert_no_exception('post_slides_add', 'layout_alias')
 
@@ -14280,23 +15041,6 @@ class TestSlidesApi(BaseTest):
         self.assertTrue(isinstance(response, str))
         self.assertTrue(len(response) > 0)
 
-    def test_post_slides_convert_invalid_format(self):
-        """Test case for post_slides_convert with invalid format
-        """
-        request = self.__prepare_post_slides_convert_request()
-        request.format = self.get_invalid_test_value('post_slides_convert', 'format', request.format, 'str')
-        self.initialize('post_slides_convert', 'format', request.format)
-        ok = False
-        try:
-            self.api.post_slides_convert(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'post_slides_convert', 'format', request.format)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('post_slides_convert', 'format')
-
     def test_post_slides_convert_invalid_document(self):
         """Test case for post_slides_convert with invalid document
         """
@@ -14309,10 +15053,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_convert', 'document', request.document)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_convert', 'document', request.document)
         if ok:
             self.assert_no_exception('post_slides_convert', 'document')
+
+    def test_post_slides_convert_invalid_format(self):
+        """Test case for post_slides_convert with invalid format
+        """
+        request = self.__prepare_post_slides_convert_request()
+        request.format = self.get_invalid_test_value('post_slides_convert', 'format', request.format, 'str')
+        self.initialize('post_slides_convert', 'format', request.format)
+        ok = False
+        try:
+            self.api.post_slides_convert(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'post_slides_convert', 'format', request.format)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_convert', 'format', request.format)
+        if ok:
+            self.assert_no_exception('post_slides_convert', 'format')
 
     def test_post_slides_convert_invalid_password(self):
         """Test case for post_slides_convert with invalid password
@@ -14326,8 +15087,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_convert', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_convert', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_convert', 'password')
 
@@ -14343,17 +15104,17 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_convert', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_convert', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_slides_convert', 'fonts_folder')
 
     def __prepare_post_slides_convert_request(self):
-        format = self.get_test_value('post_slides_convert', 'format', 'str')
         document = self.get_test_value('post_slides_convert', 'document', 'file')
+        format = self.get_test_value('post_slides_convert', 'format', 'str')
         password = self.get_test_value('post_slides_convert', 'password', 'str')
         fonts_folder = self.get_test_value('post_slides_convert', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesConvertRequest(format, document, password, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PostSlidesConvertRequest(document, format, password, fonts_folder)
 
     def test_post_slides_copy(self):
         """Test case for post_slides_copy
@@ -14375,8 +15136,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_copy', 'name')
 
@@ -14392,8 +15153,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'slide_to_copy', request.slide_to_copy)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'slide_to_copy', request.slide_to_copy)
         if ok:
             self.assert_no_exception('post_slides_copy', 'slide_to_copy')
 
@@ -14409,8 +15170,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'position', request.position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'position', request.position)
         if ok:
             self.assert_no_exception('post_slides_copy', 'position')
 
@@ -14426,8 +15187,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'source', request.source)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'source', request.source)
         if ok:
             self.assert_no_exception('post_slides_copy', 'source')
 
@@ -14443,8 +15204,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'source_password', request.source_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'source_password', request.source_password)
         if ok:
             self.assert_no_exception('post_slides_copy', 'source_password')
 
@@ -14460,8 +15221,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'source_storage', request.source_storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'source_storage', request.source_storage)
         if ok:
             self.assert_no_exception('post_slides_copy', 'source_storage')
 
@@ -14477,8 +15238,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_copy', 'password')
 
@@ -14494,8 +15255,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_copy', 'folder')
 
@@ -14511,8 +15272,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_copy', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_copy', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_copy', 'storage')
 
@@ -14548,8 +15309,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_document', 'name')
 
@@ -14565,8 +15326,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'data', request.data)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'data', request.data)
         if ok:
             self.assert_no_exception('post_slides_document', 'data')
 
@@ -14582,8 +15343,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'input_password', request.input_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'input_password', request.input_password)
         if ok:
             self.assert_no_exception('post_slides_document', 'input_password')
 
@@ -14599,8 +15360,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_document', 'password')
 
@@ -14616,8 +15377,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_document', 'storage')
 
@@ -14633,8 +15394,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_document', 'folder')
 
@@ -14667,8 +15428,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_html', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_html', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_document_from_html', 'name')
 
@@ -14684,8 +15445,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_html', 'html', request.html)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_html', 'html', request.html)
         if ok:
             self.assert_no_exception('post_slides_document_from_html', 'html')
 
@@ -14701,8 +15462,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_html', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_html', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_document_from_html', 'password')
 
@@ -14718,8 +15479,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_html', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_html', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_document_from_html', 'storage')
 
@@ -14735,8 +15496,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_html', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_html', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_document_from_html', 'folder')
 
@@ -14768,8 +15529,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'name')
 
@@ -14785,8 +15546,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'source_path', request.source_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'source_path', request.source_path)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'source_path')
 
@@ -14802,8 +15563,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'source_password', request.source_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'source_password', request.source_password)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'source_password')
 
@@ -14819,8 +15580,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'source_storage', request.source_storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'source_storage', request.source_storage)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'source_storage')
 
@@ -14836,8 +15597,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'password')
 
@@ -14853,8 +15614,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'storage')
 
@@ -14870,8 +15631,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_source', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_source', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_document_from_source', 'folder')
 
@@ -14905,8 +15666,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'name')
 
@@ -14922,8 +15683,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'template_path', request.template_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'template_path', request.template_path)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'template_path')
 
@@ -14939,8 +15700,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'data', request.data)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'data', request.data)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'data')
 
@@ -14956,8 +15717,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'template_password', request.template_password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'template_password', request.template_password)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'template_password')
 
@@ -14973,8 +15734,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'template_storage', request.template_storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'template_storage', request.template_storage)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'template_storage')
 
@@ -14990,8 +15751,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'is_image_data_embedded', request.is_image_data_embedded)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'is_image_data_embedded', request.is_image_data_embedded)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'is_image_data_embedded')
 
@@ -15007,8 +15768,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'password')
 
@@ -15024,8 +15785,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'storage')
 
@@ -15041,8 +15802,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_document_from_template', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_document_from_template', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_document_from_template', 'folder')
 
@@ -15079,8 +15840,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_pipeline', 'pipeline', request.pipeline)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_pipeline', 'pipeline', request.pipeline)
         if ok:
             self.assert_no_exception('post_slides_pipeline', 'pipeline')
 
@@ -15096,8 +15857,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_pipeline', 'files', request.files)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_pipeline', 'files', request.files)
         if ok:
             self.assert_no_exception('post_slides_pipeline', 'files')
 
@@ -15126,8 +15887,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'name')
 
@@ -15143,8 +15904,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'old_value', request.old_value)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'old_value', request.old_value)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'old_value')
 
@@ -15160,8 +15921,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'new_value', request.new_value)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'new_value', request.new_value)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'new_value')
 
@@ -15177,8 +15938,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'ignore_case', request.ignore_case)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'ignore_case', request.ignore_case)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'ignore_case')
 
@@ -15194,8 +15955,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'password')
 
@@ -15211,8 +15972,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'folder')
 
@@ -15228,8 +15989,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_presentation_replace_text', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_presentation_replace_text', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_presentation_replace_text', 'storage')
 
@@ -15263,8 +16024,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'name')
 
@@ -15280,8 +16041,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'slide_index')
 
@@ -15297,8 +16058,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'new_position', request.new_position)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'new_position', request.new_position)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'new_position')
 
@@ -15314,8 +16075,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'password')
 
@@ -15331,8 +16092,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'folder')
 
@@ -15348,8 +16109,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_reorder', 'storage')
 
@@ -15382,8 +16143,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'name')
 
@@ -15399,8 +16160,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'old_positions', request.old_positions)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'old_positions', request.old_positions)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'old_positions')
 
@@ -15416,8 +16177,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'new_positions', request.new_positions)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'new_positions', request.new_positions)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'new_positions')
 
@@ -15433,8 +16194,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'password')
 
@@ -15450,8 +16211,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'folder')
 
@@ -15467,8 +16228,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_reorder_many', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_reorder_many', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_reorder_many', 'storage')
 
@@ -15502,8 +16263,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'name')
 
@@ -15519,8 +16280,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'format')
 
@@ -15536,8 +16297,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'options')
 
@@ -15553,8 +16314,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'password')
 
@@ -15570,8 +16331,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'storage')
 
@@ -15587,8 +16348,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'folder')
 
@@ -15604,8 +16365,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_slides_save_as', 'fonts_folder')
 
@@ -15639,8 +16400,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_set_document_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_set_document_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_set_document_properties', 'name')
 
@@ -15656,8 +16417,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_set_document_properties', 'properties', request.properties)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_set_document_properties', 'properties', request.properties)
         if ok:
             self.assert_no_exception('post_slides_set_document_properties', 'properties')
 
@@ -15673,8 +16434,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_set_document_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_set_document_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_set_document_properties', 'password')
 
@@ -15690,8 +16451,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_set_document_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_set_document_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_set_document_properties', 'folder')
 
@@ -15707,8 +16468,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_set_document_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_set_document_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_set_document_properties', 'storage')
 
@@ -15740,8 +16501,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'name')
 
@@ -15757,8 +16518,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'slide_index')
 
@@ -15774,8 +16535,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'old_value', request.old_value)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'old_value', request.old_value)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'old_value')
 
@@ -15791,8 +16552,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'new_value', request.new_value)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'new_value', request.new_value)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'new_value')
 
@@ -15808,8 +16569,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'ignore_case', request.ignore_case)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'ignore_case', request.ignore_case)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'ignore_case')
 
@@ -15825,8 +16586,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'password')
 
@@ -15842,8 +16603,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'folder')
 
@@ -15859,8 +16620,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_slide_replace_text', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_slide_replace_text', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_slide_replace_text', 'storage')
 
@@ -15895,8 +16656,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'name', request.name)
         if ok:
             self.assert_no_exception('post_slides_split', 'name')
 
@@ -15912,8 +16673,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'options', request.options)
         if ok:
             self.assert_no_exception('post_slides_split', 'options')
 
@@ -15929,8 +16690,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'format', request.format)
         if ok:
             self.assert_no_exception('post_slides_split', 'format')
 
@@ -15946,8 +16707,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'width', request.width)
         if ok:
             self.assert_no_exception('post_slides_split', 'width')
 
@@ -15963,8 +16724,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'height', request.height)
         if ok:
             self.assert_no_exception('post_slides_split', 'height')
 
@@ -15980,8 +16741,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'to', request.to)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'to', request.to)
         if ok:
             self.assert_no_exception('post_slides_split', 'to')
 
@@ -15997,8 +16758,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', '_from', request._from)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', '_from', request._from)
         if ok:
             self.assert_no_exception('post_slides_split', '_from')
 
@@ -16014,8 +16775,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'dest_folder', request.dest_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'dest_folder', request.dest_folder)
         if ok:
             self.assert_no_exception('post_slides_split', 'dest_folder')
 
@@ -16031,8 +16792,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'password', request.password)
         if ok:
             self.assert_no_exception('post_slides_split', 'password')
 
@@ -16048,8 +16809,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_slides_split', 'storage')
 
@@ -16065,8 +16826,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_slides_split', 'folder')
 
@@ -16082,8 +16843,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_slides_split', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_slides_split', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_slides_split', 'fonts_folder')
 
@@ -16123,8 +16884,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'name')
 
@@ -16140,8 +16901,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'slide_index')
 
@@ -16157,8 +16918,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'shape_index')
 
@@ -16174,8 +16935,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'format')
 
@@ -16191,8 +16952,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'path', request.path)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'path')
 
@@ -16208,8 +16969,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'options')
 
@@ -16225,8 +16986,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'password')
 
@@ -16242,8 +17003,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'folder')
 
@@ -16259,8 +17020,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'storage')
 
@@ -16276,8 +17037,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'scale_x')
 
@@ -16293,8 +17054,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'scale_y')
 
@@ -16310,8 +17071,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'bounds')
 
@@ -16327,8 +17088,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'post_subshape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'post_subshape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('post_subshape_save_as', 'fonts_folder')
 
@@ -16368,8 +17129,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'name', request.name)
         if ok:
             self.assert_no_exception('put_chart_category', 'name')
 
@@ -16385,8 +17146,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_chart_category', 'slide_index')
 
@@ -16402,8 +17163,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_chart_category', 'shape_index')
 
@@ -16419,8 +17180,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'category_index', request.category_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'category_index', request.category_index)
         if ok:
             self.assert_no_exception('put_chart_category', 'category_index')
 
@@ -16436,8 +17197,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'category', request.category)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'category', request.category)
         if ok:
             self.assert_no_exception('put_chart_category', 'category')
 
@@ -16453,8 +17214,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'password', request.password)
         if ok:
             self.assert_no_exception('put_chart_category', 'password')
 
@@ -16470,8 +17231,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_chart_category', 'folder')
 
@@ -16487,8 +17248,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_category', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_category', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_chart_category', 'storage')
 
@@ -16523,8 +17284,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'name', request.name)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'name')
 
@@ -16540,8 +17301,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'slide_index')
 
@@ -16557,8 +17318,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'shape_index')
 
@@ -16574,8 +17335,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'series_index', request.series_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'series_index', request.series_index)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'series_index')
 
@@ -16591,8 +17352,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'point_index', request.point_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'point_index', request.point_index)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'point_index')
 
@@ -16608,8 +17369,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'data_point', request.data_point)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'data_point', request.data_point)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'data_point')
 
@@ -16625,8 +17386,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'password', request.password)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'password')
 
@@ -16642,8 +17403,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'folder')
 
@@ -16659,8 +17420,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_data_point', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_data_point', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_chart_data_point', 'storage')
 
@@ -16696,8 +17457,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'name', request.name)
         if ok:
             self.assert_no_exception('put_chart_series', 'name')
 
@@ -16713,8 +17474,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_chart_series', 'slide_index')
 
@@ -16730,8 +17491,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_chart_series', 'shape_index')
 
@@ -16747,8 +17508,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'series_index', request.series_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'series_index', request.series_index)
         if ok:
             self.assert_no_exception('put_chart_series', 'series_index')
 
@@ -16764,8 +17525,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'series', request.series)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'series', request.series)
         if ok:
             self.assert_no_exception('put_chart_series', 'series')
 
@@ -16781,8 +17542,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'password', request.password)
         if ok:
             self.assert_no_exception('put_chart_series', 'password')
 
@@ -16798,8 +17559,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_chart_series', 'folder')
 
@@ -16815,8 +17576,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_chart_series', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_chart_series', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_chart_series', 'storage')
 
@@ -16851,8 +17612,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('put_layout_slide', 'name')
 
@@ -16868,8 +17629,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_layout_slide', 'slide_index')
 
@@ -16885,8 +17646,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'slide_dto', request.slide_dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'slide_dto', request.slide_dto)
         if ok:
             self.assert_no_exception('put_layout_slide', 'slide_dto')
 
@@ -16902,8 +17663,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('put_layout_slide', 'password')
 
@@ -16919,8 +17680,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_layout_slide', 'folder')
 
@@ -16936,8 +17697,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_layout_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_layout_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_layout_slide', 'storage')
 
@@ -16949,6 +17710,125 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('put_layout_slide', 'folder', 'str')
         storage = self.get_test_value('put_layout_slide', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutLayoutSlideRequest(name, slide_index, slide_dto, password, folder, storage)
+
+    def test_put_notes_slide_header_footer(self):
+        """Test case for put_notes_slide_header_footer
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        self.initialize('put_notes_slide_header_footer', None, None)
+        response = self.api.put_notes_slide_header_footer(request)
+        self.assertIsNotNone(response)
+
+    def test_put_notes_slide_header_footer_invalid_name(self):
+        """Test case for put_notes_slide_header_footer with invalid name
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.name = self.get_invalid_test_value('put_notes_slide_header_footer', 'name', request.name, 'str')
+        self.initialize('put_notes_slide_header_footer', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'name', request.name)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'name')
+
+    def test_put_notes_slide_header_footer_invalid_slide_index(self):
+        """Test case for put_notes_slide_header_footer with invalid slide_index
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.slide_index = self.get_invalid_test_value('put_notes_slide_header_footer', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_notes_slide_header_footer', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'slide_index')
+
+    def test_put_notes_slide_header_footer_invalid_dto(self):
+        """Test case for put_notes_slide_header_footer with invalid dto
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.dto = self.get_invalid_test_value('put_notes_slide_header_footer', 'dto', request.dto, 'NotesSlideHeaderFooter')
+        self.initialize('put_notes_slide_header_footer', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'dto', request.dto)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'dto', request.dto)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'dto')
+
+    def test_put_notes_slide_header_footer_invalid_password(self):
+        """Test case for put_notes_slide_header_footer with invalid password
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.password = self.get_invalid_test_value('put_notes_slide_header_footer', 'password', request.password, 'str')
+        self.initialize('put_notes_slide_header_footer', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'password', request.password)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'password')
+
+    def test_put_notes_slide_header_footer_invalid_storage(self):
+        """Test case for put_notes_slide_header_footer with invalid storage
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.storage = self.get_invalid_test_value('put_notes_slide_header_footer', 'storage', request.storage, 'str')
+        self.initialize('put_notes_slide_header_footer', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'storage')
+
+    def test_put_notes_slide_header_footer_invalid_folder(self):
+        """Test case for put_notes_slide_header_footer with invalid folder
+        """
+        request = self.__prepare_put_notes_slide_header_footer_request()
+        request.folder = self.get_invalid_test_value('put_notes_slide_header_footer', 'folder', request.folder, 'str')
+        self.initialize('put_notes_slide_header_footer', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_notes_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_notes_slide_header_footer', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_header_footer', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('put_notes_slide_header_footer', 'folder')
+
+    def __prepare_put_notes_slide_header_footer_request(self):
+        name = self.get_test_value('put_notes_slide_header_footer', 'name', 'str')
+        slide_index = self.get_test_value('put_notes_slide_header_footer', 'slide_index', 'int')
+        dto = self.get_test_value('put_notes_slide_header_footer', 'dto', 'NotesSlideHeaderFooter')
+        password = self.get_test_value('put_notes_slide_header_footer', 'password', 'str')
+        storage = self.get_test_value('put_notes_slide_header_footer', 'storage', 'str')
+        folder = self.get_test_value('put_notes_slide_header_footer', 'folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutNotesSlideHeaderFooterRequest(name, slide_index, dto, password, storage, folder)
 
     def test_put_notes_slide_shape_save_as(self):
         """Test case for put_notes_slide_shape_save_as
@@ -16970,8 +17850,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'name')
 
@@ -16987,8 +17867,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'slide_index')
 
@@ -17004,8 +17884,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'shape_index')
 
@@ -17021,8 +17901,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'format')
 
@@ -17038,8 +17918,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'out_path')
 
@@ -17055,8 +17935,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'options')
 
@@ -17072,8 +17952,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'password')
 
@@ -17089,8 +17969,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'folder')
 
@@ -17106,8 +17986,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'storage')
 
@@ -17123,8 +18003,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'scale_x')
 
@@ -17140,8 +18020,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'scale_y')
 
@@ -17157,8 +18037,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'bounds')
 
@@ -17174,8 +18054,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_notes_slide_shape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_notes_slide_shape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_notes_slide_shape_save_as', 'fonts_folder')
 
@@ -17215,8 +18095,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_presentation_merge', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_presentation_merge', 'name', request.name)
         if ok:
             self.assert_no_exception('put_presentation_merge', 'name')
 
@@ -17232,8 +18112,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_presentation_merge', 'request', request.request)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_presentation_merge', 'request', request.request)
         if ok:
             self.assert_no_exception('put_presentation_merge', 'request')
 
@@ -17249,8 +18129,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_presentation_merge', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_presentation_merge', 'password', request.password)
         if ok:
             self.assert_no_exception('put_presentation_merge', 'password')
 
@@ -17266,8 +18146,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_presentation_merge', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_presentation_merge', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_presentation_merge', 'storage')
 
@@ -17283,8 +18163,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_presentation_merge', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_presentation_merge', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_presentation_merge', 'folder')
 
@@ -17295,6 +18175,226 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('put_presentation_merge', 'storage', 'str')
         folder = self.get_test_value('put_presentation_merge', 'folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutPresentationMergeRequest(name, request, password, storage, folder)
+
+    def test_put_section(self):
+        """Test case for put_section
+        """
+        request = self.__prepare_put_section_request()
+        self.initialize('put_section', None, None)
+        response = self.api.put_section(request)
+        self.assertIsNotNone(response)
+
+    def test_put_section_invalid_name(self):
+        """Test case for put_section with invalid name
+        """
+        request = self.__prepare_put_section_request()
+        request.name = self.get_invalid_test_value('put_section', 'name', request.name, 'str')
+        self.initialize('put_section', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'name', request.name)
+        if ok:
+            self.assert_no_exception('put_section', 'name')
+
+    def test_put_section_invalid_section_index(self):
+        """Test case for put_section with invalid section_index
+        """
+        request = self.__prepare_put_section_request()
+        request.section_index = self.get_invalid_test_value('put_section', 'section_index', request.section_index, 'int')
+        self.initialize('put_section', 'section_index', request.section_index)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'section_index', request.section_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'section_index', request.section_index)
+        if ok:
+            self.assert_no_exception('put_section', 'section_index')
+
+    def test_put_section_invalid_section_name(self):
+        """Test case for put_section with invalid section_name
+        """
+        request = self.__prepare_put_section_request()
+        request.section_name = self.get_invalid_test_value('put_section', 'section_name', request.section_name, 'str')
+        self.initialize('put_section', 'section_name', request.section_name)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'section_name', request.section_name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'section_name', request.section_name)
+        if ok:
+            self.assert_no_exception('put_section', 'section_name')
+
+    def test_put_section_invalid_password(self):
+        """Test case for put_section with invalid password
+        """
+        request = self.__prepare_put_section_request()
+        request.password = self.get_invalid_test_value('put_section', 'password', request.password, 'str')
+        self.initialize('put_section', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'password', request.password)
+        if ok:
+            self.assert_no_exception('put_section', 'password')
+
+    def test_put_section_invalid_folder(self):
+        """Test case for put_section with invalid folder
+        """
+        request = self.__prepare_put_section_request()
+        request.folder = self.get_invalid_test_value('put_section', 'folder', request.folder, 'str')
+        self.initialize('put_section', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('put_section', 'folder')
+
+    def test_put_section_invalid_storage(self):
+        """Test case for put_section with invalid storage
+        """
+        request = self.__prepare_put_section_request()
+        request.storage = self.get_invalid_test_value('put_section', 'storage', request.storage, 'str')
+        self.initialize('put_section', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_section(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_section', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_section', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('put_section', 'storage')
+
+    def __prepare_put_section_request(self):
+        name = self.get_test_value('put_section', 'name', 'str')
+        section_index = self.get_test_value('put_section', 'section_index', 'int')
+        section_name = self.get_test_value('put_section', 'section_name', 'str')
+        password = self.get_test_value('put_section', 'password', 'str')
+        folder = self.get_test_value('put_section', 'folder', 'str')
+        storage = self.get_test_value('put_section', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSectionRequest(name, section_index, section_name, password, folder, storage)
+
+    def test_put_sections(self):
+        """Test case for put_sections
+        """
+        request = self.__prepare_put_sections_request()
+        self.initialize('put_sections', None, None)
+        response = self.api.put_sections(request)
+        self.assertIsNotNone(response)
+
+    def test_put_sections_invalid_name(self):
+        """Test case for put_sections with invalid name
+        """
+        request = self.__prepare_put_sections_request()
+        request.name = self.get_invalid_test_value('put_sections', 'name', request.name, 'str')
+        self.initialize('put_sections', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_sections', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_sections', 'name', request.name)
+        if ok:
+            self.assert_no_exception('put_sections', 'name')
+
+    def test_put_sections_invalid_sections(self):
+        """Test case for put_sections with invalid sections
+        """
+        request = self.__prepare_put_sections_request()
+        request.sections = self.get_invalid_test_value('put_sections', 'sections', request.sections, 'Sections')
+        self.initialize('put_sections', 'sections', request.sections)
+        ok = False
+        try:
+            self.api.put_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_sections', 'sections', request.sections)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_sections', 'sections', request.sections)
+        if ok:
+            self.assert_no_exception('put_sections', 'sections')
+
+    def test_put_sections_invalid_password(self):
+        """Test case for put_sections with invalid password
+        """
+        request = self.__prepare_put_sections_request()
+        request.password = self.get_invalid_test_value('put_sections', 'password', request.password, 'str')
+        self.initialize('put_sections', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_sections', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_sections', 'password', request.password)
+        if ok:
+            self.assert_no_exception('put_sections', 'password')
+
+    def test_put_sections_invalid_folder(self):
+        """Test case for put_sections with invalid folder
+        """
+        request = self.__prepare_put_sections_request()
+        request.folder = self.get_invalid_test_value('put_sections', 'folder', request.folder, 'str')
+        self.initialize('put_sections', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_sections', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_sections', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('put_sections', 'folder')
+
+    def test_put_sections_invalid_storage(self):
+        """Test case for put_sections with invalid storage
+        """
+        request = self.__prepare_put_sections_request()
+        request.storage = self.get_invalid_test_value('put_sections', 'storage', request.storage, 'str')
+        self.initialize('put_sections', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_sections(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_sections', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_sections', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('put_sections', 'storage')
+
+    def __prepare_put_sections_request(self):
+        name = self.get_test_value('put_sections', 'name', 'str')
+        sections = self.get_test_value('put_sections', 'sections', 'Sections')
+        password = self.get_test_value('put_sections', 'password', 'str')
+        folder = self.get_test_value('put_sections', 'folder', 'str')
+        storage = self.get_test_value('put_sections', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSectionsRequest(name, sections, password, folder, storage)
 
     def test_put_set_paragraph_portion_properties(self):
         """Test case for put_set_paragraph_portion_properties
@@ -17316,8 +18416,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'name')
 
@@ -17333,8 +18433,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'slide_index')
 
@@ -17350,8 +18450,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'shape_index')
 
@@ -17367,8 +18467,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'paragraph_index')
 
@@ -17384,8 +18484,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'portion_index')
 
@@ -17401,8 +18501,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'dto')
 
@@ -17418,8 +18518,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'password')
 
@@ -17435,8 +18535,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'folder')
 
@@ -17452,8 +18552,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_portion_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_portion_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_set_paragraph_portion_properties', 'storage')
 
@@ -17489,8 +18589,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'name')
 
@@ -17506,8 +18606,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'slide_index')
 
@@ -17523,8 +18623,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'shape_index')
 
@@ -17540,8 +18640,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'paragraph_index')
 
@@ -17557,8 +18657,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'dto')
 
@@ -17574,8 +18674,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'password')
 
@@ -17591,8 +18691,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'folder')
 
@@ -17608,8 +18708,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_paragraph_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_paragraph_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_set_paragraph_properties', 'storage')
 
@@ -17644,8 +18744,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'name')
 
@@ -17661,8 +18761,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'slide_index')
 
@@ -17678,8 +18778,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'shape_index')
 
@@ -17695,8 +18795,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'paragraph_index')
 
@@ -17712,27 +18812,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'portion_index')
-
-    def test_put_set_subshape_paragraph_portion_properties_invalid_path(self):
-        """Test case for put_set_subshape_paragraph_portion_properties with invalid path
-        """
-        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
-        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'path', request.path, 'str')
-        self.initialize('put_set_subshape_paragraph_portion_properties', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_set_subshape_paragraph_portion_properties(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'path')
 
     def test_put_set_subshape_paragraph_portion_properties_invalid_dto(self):
         """Test case for put_set_subshape_paragraph_portion_properties with invalid dto
@@ -17746,10 +18829,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'dto')
+
+    def test_put_set_subshape_paragraph_portion_properties_invalid_path(self):
+        """Test case for put_set_subshape_paragraph_portion_properties with invalid path
+        """
+        request = self.__prepare_put_set_subshape_paragraph_portion_properties_request()
+        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_portion_properties', 'path', request.path, 'str')
+        self.initialize('put_set_subshape_paragraph_portion_properties', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_portion_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'path', request.path)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'path', request.path)
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'path')
 
     def test_put_set_subshape_paragraph_portion_properties_invalid_password(self):
         """Test case for put_set_subshape_paragraph_portion_properties with invalid password
@@ -17763,8 +18863,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'password')
 
@@ -17780,8 +18880,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'folder')
 
@@ -17797,8 +18897,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_portion_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_portion_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_portion_properties', 'storage')
 
@@ -17808,12 +18908,12 @@ class TestSlidesApi(BaseTest):
         shape_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'paragraph_index', 'int')
         portion_index = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'portion_index', 'int')
-        path = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'path', 'str')
         dto = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'dto', 'Portion')
+        path = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'path', 'str')
         password = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'password', 'str')
         folder = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'folder', 'str')
         storage = self.get_test_value('put_set_subshape_paragraph_portion_properties', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPortionPropertiesRequest(name, slide_index, shape_index, paragraph_index, portion_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPortionPropertiesRequest(name, slide_index, shape_index, paragraph_index, portion_index, dto, path, password, folder, storage)
 
     def test_put_set_subshape_paragraph_properties(self):
         """Test case for put_set_subshape_paragraph_properties
@@ -17835,8 +18935,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'name')
 
@@ -17852,8 +18952,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'slide_index')
 
@@ -17869,8 +18969,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'shape_index')
 
@@ -17886,27 +18986,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'paragraph_index')
-
-    def test_put_set_subshape_paragraph_properties_invalid_path(self):
-        """Test case for put_set_subshape_paragraph_properties with invalid path
-        """
-        request = self.__prepare_put_set_subshape_paragraph_properties_request()
-        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'path', request.path, 'str')
-        self.initialize('put_set_subshape_paragraph_properties', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_set_subshape_paragraph_properties(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_set_subshape_paragraph_properties', 'path')
 
     def test_put_set_subshape_paragraph_properties_invalid_dto(self):
         """Test case for put_set_subshape_paragraph_properties with invalid dto
@@ -17920,10 +19003,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'dto')
+
+    def test_put_set_subshape_paragraph_properties_invalid_path(self):
+        """Test case for put_set_subshape_paragraph_properties with invalid path
+        """
+        request = self.__prepare_put_set_subshape_paragraph_properties_request()
+        request.path = self.get_invalid_test_value('put_set_subshape_paragraph_properties', 'path', request.path, 'str')
+        self.initialize('put_set_subshape_paragraph_properties', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_set_subshape_paragraph_properties(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'path', request.path)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'path', request.path)
+        if ok:
+            self.assert_no_exception('put_set_subshape_paragraph_properties', 'path')
 
     def test_put_set_subshape_paragraph_properties_invalid_password(self):
         """Test case for put_set_subshape_paragraph_properties with invalid password
@@ -17937,8 +19037,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'password')
 
@@ -17954,8 +19054,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'folder')
 
@@ -17971,8 +19071,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_set_subshape_paragraph_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_set_subshape_paragraph_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_set_subshape_paragraph_properties', 'storage')
 
@@ -17981,12 +19081,12 @@ class TestSlidesApi(BaseTest):
         slide_index = self.get_test_value('put_set_subshape_paragraph_properties', 'slide_index', 'int')
         shape_index = self.get_test_value('put_set_subshape_paragraph_properties', 'shape_index', 'int')
         paragraph_index = self.get_test_value('put_set_subshape_paragraph_properties', 'paragraph_index', 'int')
-        path = self.get_test_value('put_set_subshape_paragraph_properties', 'path', 'str')
         dto = self.get_test_value('put_set_subshape_paragraph_properties', 'dto', 'Paragraph')
+        path = self.get_test_value('put_set_subshape_paragraph_properties', 'path', 'str')
         password = self.get_test_value('put_set_subshape_paragraph_properties', 'password', 'str')
         folder = self.get_test_value('put_set_subshape_paragraph_properties', 'folder', 'str')
         storage = self.get_test_value('put_set_subshape_paragraph_properties', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPropertiesRequest(name, slide_index, shape_index, paragraph_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSetSubshapeParagraphPropertiesRequest(name, slide_index, shape_index, paragraph_index, dto, path, password, folder, storage)
 
     def test_put_shape_save_as(self):
         """Test case for put_shape_save_as
@@ -18008,8 +19108,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'name')
 
@@ -18025,8 +19125,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'slide_index')
 
@@ -18042,8 +19142,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'shape_index')
 
@@ -18059,8 +19159,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'format')
 
@@ -18076,8 +19176,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'out_path')
 
@@ -18093,8 +19193,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'options')
 
@@ -18110,8 +19210,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'password')
 
@@ -18127,8 +19227,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'folder')
 
@@ -18144,8 +19244,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'storage')
 
@@ -18161,8 +19261,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'scale_x')
 
@@ -18178,8 +19278,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'scale_y')
 
@@ -18195,8 +19295,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'bounds')
 
@@ -18212,8 +19312,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_shape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_shape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_shape_save_as', 'fonts_folder')
 
@@ -18253,8 +19353,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_animation', 'name')
 
@@ -18270,8 +19370,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_animation', 'slide_index')
 
@@ -18287,8 +19387,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'animation', request.animation)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'animation', request.animation)
         if ok:
             self.assert_no_exception('put_slide_animation', 'animation')
 
@@ -18304,8 +19404,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_animation', 'password')
 
@@ -18321,8 +19421,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_animation', 'folder')
 
@@ -18338,8 +19438,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_animation', 'storage')
 
@@ -18372,8 +19472,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'name')
 
@@ -18389,8 +19489,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'slide_index')
 
@@ -18406,8 +19506,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'effect_index', request.effect_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'effect_index', request.effect_index)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'effect_index')
 
@@ -18423,8 +19523,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'effect', request.effect)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'effect', request.effect)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'effect')
 
@@ -18440,8 +19540,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'password')
 
@@ -18457,8 +19557,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'folder')
 
@@ -18474,8 +19574,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_animation_effect', 'storage')
 
@@ -18509,8 +19609,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'name')
 
@@ -18526,8 +19626,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'slide_index')
 
@@ -18543,8 +19643,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'sequence_index', request.sequence_index)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'sequence_index')
 
@@ -18560,8 +19660,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'effect_index', request.effect_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'effect_index', request.effect_index)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'effect_index')
 
@@ -18577,8 +19677,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'effect', request.effect)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'effect', request.effect)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'effect')
 
@@ -18594,8 +19694,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'password')
 
@@ -18611,8 +19711,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'folder')
 
@@ -18628,8 +19728,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_animation_interactive_sequence_effect', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_animation_interactive_sequence_effect', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_animation_interactive_sequence_effect', 'storage')
 
@@ -18643,6 +19743,125 @@ class TestSlidesApi(BaseTest):
         folder = self.get_test_value('put_slide_animation_interactive_sequence_effect', 'folder', 'str')
         storage = self.get_test_value('put_slide_animation_interactive_sequence_effect', 'storage', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutSlideAnimationInteractiveSequenceEffectRequest(name, slide_index, sequence_index, effect_index, effect, password, folder, storage)
+
+    def test_put_slide_header_footer(self):
+        """Test case for put_slide_header_footer
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        self.initialize('put_slide_header_footer', None, None)
+        response = self.api.put_slide_header_footer(request)
+        self.assertIsNotNone(response)
+
+    def test_put_slide_header_footer_invalid_name(self):
+        """Test case for put_slide_header_footer with invalid name
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.name = self.get_invalid_test_value('put_slide_header_footer', 'name', request.name, 'str')
+        self.initialize('put_slide_header_footer', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'name', request.name)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'name')
+
+    def test_put_slide_header_footer_invalid_slide_index(self):
+        """Test case for put_slide_header_footer with invalid slide_index
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.slide_index = self.get_invalid_test_value('put_slide_header_footer', 'slide_index', request.slide_index, 'int')
+        self.initialize('put_slide_header_footer', 'slide_index', request.slide_index)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'slide_index', request.slide_index)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'slide_index', request.slide_index)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'slide_index')
+
+    def test_put_slide_header_footer_invalid_dto(self):
+        """Test case for put_slide_header_footer with invalid dto
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.dto = self.get_invalid_test_value('put_slide_header_footer', 'dto', request.dto, 'HeaderFooter')
+        self.initialize('put_slide_header_footer', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'dto', request.dto)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'dto', request.dto)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'dto')
+
+    def test_put_slide_header_footer_invalid_password(self):
+        """Test case for put_slide_header_footer with invalid password
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.password = self.get_invalid_test_value('put_slide_header_footer', 'password', request.password, 'str')
+        self.initialize('put_slide_header_footer', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'password', request.password)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'password')
+
+    def test_put_slide_header_footer_invalid_folder(self):
+        """Test case for put_slide_header_footer with invalid folder
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.folder = self.get_invalid_test_value('put_slide_header_footer', 'folder', request.folder, 'str')
+        self.initialize('put_slide_header_footer', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'folder')
+
+    def test_put_slide_header_footer_invalid_storage(self):
+        """Test case for put_slide_header_footer with invalid storage
+        """
+        request = self.__prepare_put_slide_header_footer_request()
+        request.storage = self.get_invalid_test_value('put_slide_header_footer', 'storage', request.storage, 'str')
+        self.initialize('put_slide_header_footer', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_slide_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_header_footer', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_header_footer', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('put_slide_header_footer', 'storage')
+
+    def __prepare_put_slide_header_footer_request(self):
+        name = self.get_test_value('put_slide_header_footer', 'name', 'str')
+        slide_index = self.get_test_value('put_slide_header_footer', 'slide_index', 'int')
+        dto = self.get_test_value('put_slide_header_footer', 'dto', 'HeaderFooter')
+        password = self.get_test_value('put_slide_header_footer', 'password', 'str')
+        folder = self.get_test_value('put_slide_header_footer', 'folder', 'str')
+        storage = self.get_test_value('put_slide_header_footer', 'storage', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlideHeaderFooterRequest(name, slide_index, dto, password, folder, storage)
 
     def test_put_slide_save_as(self):
         """Test case for put_slide_save_as
@@ -18664,8 +19883,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'name')
 
@@ -18681,8 +19900,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'slide_index')
 
@@ -18698,8 +19917,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'format')
 
@@ -18715,8 +19934,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'out_path')
 
@@ -18732,8 +19951,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'options')
 
@@ -18749,8 +19968,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'width', request.width)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'width')
 
@@ -18766,8 +19985,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'height', request.height)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'height')
 
@@ -18783,8 +20002,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'password')
 
@@ -18800,8 +20019,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'folder')
 
@@ -18817,8 +20036,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'storage')
 
@@ -18834,8 +20053,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_slide_save_as', 'fonts_folder')
 
@@ -18873,8 +20092,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'name')
 
@@ -18890,8 +20109,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'slide_index')
 
@@ -18907,8 +20126,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'shape_index')
 
@@ -18924,8 +20143,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'dto')
 
@@ -18941,8 +20160,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'password')
 
@@ -18958,8 +20177,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'folder')
 
@@ -18975,8 +20194,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_shape_info', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_shape_info', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_shape_info', 'storage')
 
@@ -19010,8 +20229,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'name')
 
@@ -19027,8 +20246,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'slide_index')
 
@@ -19044,27 +20263,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'shape_index')
-
-    def test_put_slide_subshape_info_invalid_path(self):
-        """Test case for put_slide_subshape_info with invalid path
-        """
-        request = self.__prepare_put_slide_subshape_info_request()
-        request.path = self.get_invalid_test_value('put_slide_subshape_info', 'path', request.path, 'str')
-        self.initialize('put_slide_subshape_info', 'path', request.path)
-        ok = False
-        try:
-            self.api.put_slide_subshape_info(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_slide_subshape_info', 'path', request.path)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_slide_subshape_info', 'path')
 
     def test_put_slide_subshape_info_invalid_dto(self):
         """Test case for put_slide_subshape_info with invalid dto
@@ -19078,10 +20280,27 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'dto')
+
+    def test_put_slide_subshape_info_invalid_path(self):
+        """Test case for put_slide_subshape_info with invalid path
+        """
+        request = self.__prepare_put_slide_subshape_info_request()
+        request.path = self.get_invalid_test_value('put_slide_subshape_info', 'path', request.path, 'str')
+        self.initialize('put_slide_subshape_info', 'path', request.path)
+        ok = False
+        try:
+            self.api.put_slide_subshape_info(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slide_subshape_info', 'path', request.path)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'path', request.path)
+        if ok:
+            self.assert_no_exception('put_slide_subshape_info', 'path')
 
     def test_put_slide_subshape_info_invalid_password(self):
         """Test case for put_slide_subshape_info with invalid password
@@ -19095,8 +20314,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'password')
 
@@ -19112,8 +20331,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'folder')
 
@@ -19129,8 +20348,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slide_subshape_info', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slide_subshape_info', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slide_subshape_info', 'storage')
 
@@ -19138,12 +20357,12 @@ class TestSlidesApi(BaseTest):
         name = self.get_test_value('put_slide_subshape_info', 'name', 'str')
         slide_index = self.get_test_value('put_slide_subshape_info', 'slide_index', 'int')
         shape_index = self.get_test_value('put_slide_subshape_info', 'shape_index', 'int')
-        path = self.get_test_value('put_slide_subshape_info', 'path', 'str')
         dto = self.get_test_value('put_slide_subshape_info', 'dto', 'ShapeBase')
+        path = self.get_test_value('put_slide_subshape_info', 'path', 'str')
         password = self.get_test_value('put_slide_subshape_info', 'password', 'str')
         folder = self.get_test_value('put_slide_subshape_info', 'folder', 'str')
         storage = self.get_test_value('put_slide_subshape_info', 'storage', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSlideSubshapeInfoRequest(name, slide_index, shape_index, path, dto, password, folder, storage)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlideSubshapeInfoRequest(name, slide_index, shape_index, dto, path, password, folder, storage)
 
     def test_put_slides_convert(self):
         """Test case for put_slides_convert
@@ -19152,6 +20371,23 @@ class TestSlidesApi(BaseTest):
         self.initialize('put_slides_convert', None, None)
         response = self.api.put_slides_convert(request)
         self.assertIsNone(response)
+
+    def test_put_slides_convert_invalid_document(self):
+        """Test case for put_slides_convert with invalid document
+        """
+        request = self.__prepare_put_slides_convert_request()
+        request.document = self.get_invalid_test_value('put_slides_convert', 'document', request.document, 'file')
+        self.initialize('put_slides_convert', 'document', request.document)
+        ok = False
+        try:
+            self.api.put_slides_convert(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_convert', 'document', request.document)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_convert', 'document', request.document)
+        if ok:
+            self.assert_no_exception('put_slides_convert', 'document')
 
     def test_put_slides_convert_invalid_format(self):
         """Test case for put_slides_convert with invalid format
@@ -19165,8 +20401,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_convert', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_convert', 'format', request.format)
         if ok:
             self.assert_no_exception('put_slides_convert', 'format')
 
@@ -19182,27 +20418,10 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_convert', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_convert', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_slides_convert', 'out_path')
-
-    def test_put_slides_convert_invalid_document(self):
-        """Test case for put_slides_convert with invalid document
-        """
-        request = self.__prepare_put_slides_convert_request()
-        request.document = self.get_invalid_test_value('put_slides_convert', 'document', request.document, 'file')
-        self.initialize('put_slides_convert', 'document', request.document)
-        ok = False
-        try:
-            self.api.put_slides_convert(request)
-            ok = True
-        except ApiException as ex:
-            self.assert_exception(ex, 'put_slides_convert', 'document', request.document)
-        except Exception:
-            pass
-        if ok:
-            self.assert_no_exception('put_slides_convert', 'document')
 
     def test_put_slides_convert_invalid_password(self):
         """Test case for put_slides_convert with invalid password
@@ -19216,8 +20435,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_convert', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_convert', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_convert', 'password')
 
@@ -19233,18 +20452,18 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_convert', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_convert', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_slides_convert', 'fonts_folder')
 
     def __prepare_put_slides_convert_request(self):
+        document = self.get_test_value('put_slides_convert', 'document', 'file')
         format = self.get_test_value('put_slides_convert', 'format', 'str')
         out_path = self.get_test_value('put_slides_convert', 'out_path', 'str')
-        document = self.get_test_value('put_slides_convert', 'document', 'file')
         password = self.get_test_value('put_slides_convert', 'password', 'str')
         fonts_folder = self.get_test_value('put_slides_convert', 'fonts_folder', 'str')
-        return asposeslidescloud.models.requests.slides_api_requests.PutSlidesConvertRequest(format, out_path, document, password, fonts_folder)
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlidesConvertRequest(document, format, out_path, password, fonts_folder)
 
     def test_put_slides_document_from_html(self):
         """Test case for put_slides_document_from_html
@@ -19266,8 +20485,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_document_from_html', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_document_from_html', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_document_from_html', 'name')
 
@@ -19283,8 +20502,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_document_from_html', 'html', request.html)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_document_from_html', 'html', request.html)
         if ok:
             self.assert_no_exception('put_slides_document_from_html', 'html')
 
@@ -19300,8 +20519,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_document_from_html', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_document_from_html', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_document_from_html', 'password')
 
@@ -19317,8 +20536,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_document_from_html', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_document_from_html', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_document_from_html', 'storage')
 
@@ -19334,8 +20553,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_document_from_html', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_document_from_html', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_document_from_html', 'folder')
 
@@ -19346,6 +20565,107 @@ class TestSlidesApi(BaseTest):
         storage = self.get_test_value('put_slides_document_from_html', 'storage', 'str')
         folder = self.get_test_value('put_slides_document_from_html', 'folder', 'str')
         return asposeslidescloud.models.requests.slides_api_requests.PutSlidesDocumentFromHtmlRequest(name, html, password, storage, folder)
+
+    def test_put_slides_header_footer(self):
+        """Test case for put_slides_header_footer
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        self.initialize('put_slides_header_footer', None, None)
+        response = self.api.put_slides_header_footer(request)
+        self.assertIsNotNone(response)
+
+    def test_put_slides_header_footer_invalid_name(self):
+        """Test case for put_slides_header_footer with invalid name
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        request.name = self.get_invalid_test_value('put_slides_header_footer', 'name', request.name, 'str')
+        self.initialize('put_slides_header_footer', 'name', request.name)
+        ok = False
+        try:
+            self.api.put_slides_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_header_footer', 'name', request.name)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_header_footer', 'name', request.name)
+        if ok:
+            self.assert_no_exception('put_slides_header_footer', 'name')
+
+    def test_put_slides_header_footer_invalid_dto(self):
+        """Test case for put_slides_header_footer with invalid dto
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        request.dto = self.get_invalid_test_value('put_slides_header_footer', 'dto', request.dto, 'HeaderFooter')
+        self.initialize('put_slides_header_footer', 'dto', request.dto)
+        ok = False
+        try:
+            self.api.put_slides_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_header_footer', 'dto', request.dto)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_header_footer', 'dto', request.dto)
+        if ok:
+            self.assert_no_exception('put_slides_header_footer', 'dto')
+
+    def test_put_slides_header_footer_invalid_password(self):
+        """Test case for put_slides_header_footer with invalid password
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        request.password = self.get_invalid_test_value('put_slides_header_footer', 'password', request.password, 'str')
+        self.initialize('put_slides_header_footer', 'password', request.password)
+        ok = False
+        try:
+            self.api.put_slides_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_header_footer', 'password', request.password)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_header_footer', 'password', request.password)
+        if ok:
+            self.assert_no_exception('put_slides_header_footer', 'password')
+
+    def test_put_slides_header_footer_invalid_storage(self):
+        """Test case for put_slides_header_footer with invalid storage
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        request.storage = self.get_invalid_test_value('put_slides_header_footer', 'storage', request.storage, 'str')
+        self.initialize('put_slides_header_footer', 'storage', request.storage)
+        ok = False
+        try:
+            self.api.put_slides_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_header_footer', 'storage', request.storage)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_header_footer', 'storage', request.storage)
+        if ok:
+            self.assert_no_exception('put_slides_header_footer', 'storage')
+
+    def test_put_slides_header_footer_invalid_folder(self):
+        """Test case for put_slides_header_footer with invalid folder
+        """
+        request = self.__prepare_put_slides_header_footer_request()
+        request.folder = self.get_invalid_test_value('put_slides_header_footer', 'folder', request.folder, 'str')
+        self.initialize('put_slides_header_footer', 'folder', request.folder)
+        ok = False
+        try:
+            self.api.put_slides_header_footer(request)
+            ok = True
+        except ApiException as ex:
+            self.assert_exception(ex, 'put_slides_header_footer', 'folder', request.folder)
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_header_footer', 'folder', request.folder)
+        if ok:
+            self.assert_no_exception('put_slides_header_footer', 'folder')
+
+    def __prepare_put_slides_header_footer_request(self):
+        name = self.get_test_value('put_slides_header_footer', 'name', 'str')
+        dto = self.get_test_value('put_slides_header_footer', 'dto', 'HeaderFooter')
+        password = self.get_test_value('put_slides_header_footer', 'password', 'str')
+        storage = self.get_test_value('put_slides_header_footer', 'storage', 'str')
+        folder = self.get_test_value('put_slides_header_footer', 'folder', 'str')
+        return asposeslidescloud.models.requests.slides_api_requests.PutSlidesHeaderFooterRequest(name, dto, password, storage, folder)
 
     def test_put_slides_save_as(self):
         """Test case for put_slides_save_as
@@ -19367,8 +20687,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'name')
 
@@ -19384,8 +20704,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'out_path')
 
@@ -19401,8 +20721,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'format')
 
@@ -19418,8 +20738,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'options')
 
@@ -19435,8 +20755,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'password')
 
@@ -19452,8 +20772,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'storage')
 
@@ -19469,8 +20789,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'folder')
 
@@ -19486,8 +20806,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_slides_save_as', 'fonts_folder')
 
@@ -19522,8 +20842,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', 'name')
 
@@ -19539,8 +20859,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', 'property_name', request.property_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', 'property_name', request.property_name)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', 'property_name')
 
@@ -19556,8 +20876,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', '_property', request._property)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', '_property', request._property)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', '_property')
 
@@ -19573,8 +20893,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', 'password')
 
@@ -19590,8 +20910,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', 'folder')
 
@@ -19607,8 +20927,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_set_document_property', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_set_document_property', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_set_document_property', 'storage')
 
@@ -19641,8 +20961,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_slide', 'name')
 
@@ -19658,8 +20978,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slides_slide', 'slide_index')
 
@@ -19675,8 +20995,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'slide_dto', request.slide_dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'slide_dto', request.slide_dto)
         if ok:
             self.assert_no_exception('put_slides_slide', 'slide_dto')
 
@@ -19692,8 +21012,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_slide', 'password')
 
@@ -19709,8 +21029,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_slide', 'folder')
 
@@ -19726,8 +21046,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_slide', 'storage')
 
@@ -19760,8 +21080,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'name')
 
@@ -19777,8 +21097,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'slide_index')
 
@@ -19794,8 +21114,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'background', request.background)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'background', request.background)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'background')
 
@@ -19811,8 +21131,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'folder')
 
@@ -19828,8 +21148,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'password')
 
@@ -19845,8 +21165,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_slide_background', 'storage')
 
@@ -19879,8 +21199,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'name')
 
@@ -19896,8 +21216,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'slide_index')
 
@@ -19913,8 +21233,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'color', request.color)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'color', request.color)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'color')
 
@@ -19930,8 +21250,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'folder')
 
@@ -19947,8 +21267,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'password')
 
@@ -19964,8 +21284,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_background_color', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_background_color', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_slide_background_color', 'storage')
 
@@ -19998,8 +21318,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'name')
 
@@ -20015,8 +21335,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'password')
 
@@ -20032,8 +21352,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'storage')
 
@@ -20049,8 +21369,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'folder')
 
@@ -20066,8 +21386,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'width', request.width)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'width', request.width)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'width')
 
@@ -20083,8 +21403,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'height', request.height)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'height', request.height)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'height')
 
@@ -20100,8 +21420,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'size_type', request.size_type)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'size_type', request.size_type)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'size_type')
 
@@ -20117,8 +21437,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_slide_size', 'scale_type', request.scale_type)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_slide_size', 'scale_type', request.scale_type)
         if ok:
             self.assert_no_exception('put_slides_slide_size', 'scale_type')
 
@@ -20153,8 +21473,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_view_properties', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_view_properties', 'name', request.name)
         if ok:
             self.assert_no_exception('put_slides_view_properties', 'name')
 
@@ -20170,8 +21490,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_view_properties', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_view_properties', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_slides_view_properties', 'dto')
 
@@ -20187,8 +21507,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_view_properties', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_view_properties', 'password', request.password)
         if ok:
             self.assert_no_exception('put_slides_view_properties', 'password')
 
@@ -20204,8 +21524,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_view_properties', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_view_properties', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_slides_view_properties', 'folder')
 
@@ -20221,8 +21541,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_slides_view_properties', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_slides_view_properties', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_slides_view_properties', 'storage')
 
@@ -20254,8 +21574,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'name', request.name)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'name')
 
@@ -20271,8 +21591,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'slide_index')
 
@@ -20288,8 +21608,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'shape_index')
 
@@ -20305,8 +21625,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'format', request.format)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'format', request.format)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'format')
 
@@ -20322,8 +21642,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'out_path', request.out_path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'out_path', request.out_path)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'out_path')
 
@@ -20339,8 +21659,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'path', request.path)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'path')
 
@@ -20356,8 +21676,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'options', request.options)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'options', request.options)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'options')
 
@@ -20373,8 +21693,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'password', request.password)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'password')
 
@@ -20390,8 +21710,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'folder')
 
@@ -20407,8 +21727,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'storage')
 
@@ -20424,8 +21744,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'scale_x', request.scale_x)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'scale_x', request.scale_x)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'scale_x')
 
@@ -20441,8 +21761,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'scale_y', request.scale_y)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'scale_y', request.scale_y)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'scale_y')
 
@@ -20458,8 +21778,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'bounds', request.bounds)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'bounds', request.bounds)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'bounds')
 
@@ -20475,8 +21795,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_subshape_save_as', 'fonts_folder', request.fonts_folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_subshape_save_as', 'fonts_folder', request.fonts_folder)
         if ok:
             self.assert_no_exception('put_subshape_save_as', 'fonts_folder')
 
@@ -20517,8 +21837,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'name', request.name)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'name')
 
@@ -20534,8 +21854,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'slide_index')
 
@@ -20551,8 +21871,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'dto')
 
@@ -20568,8 +21888,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'password', request.password)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'password')
 
@@ -20585,8 +21905,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'folder')
 
@@ -20602,8 +21922,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_update_notes_slide', 'storage')
 
@@ -20636,8 +21956,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'name', request.name)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'name')
 
@@ -20653,8 +21973,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'slide_index')
 
@@ -20670,8 +21990,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'shape_index')
 
@@ -20687,8 +22007,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'dto')
 
@@ -20704,8 +22024,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'password', request.password)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'password')
 
@@ -20721,8 +22041,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'folder')
 
@@ -20738,8 +22058,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape', 'storage')
 
@@ -20773,8 +22093,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'name', request.name)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'name')
 
@@ -20790,8 +22110,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'slide_index')
 
@@ -20807,8 +22127,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'shape_index')
 
@@ -20824,8 +22144,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'paragraph_index')
 
@@ -20841,8 +22161,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'dto')
 
@@ -20858,8 +22178,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'password', request.password)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'password')
 
@@ -20875,8 +22195,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'folder')
 
@@ -20892,8 +22212,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_paragraph', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_paragraph', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_paragraph', 'storage')
 
@@ -20928,8 +22248,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'name', request.name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'name', request.name)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'name')
 
@@ -20945,8 +22265,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'slide_index', request.slide_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'slide_index', request.slide_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'slide_index')
 
@@ -20962,8 +22282,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'shape_index', request.shape_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'shape_index', request.shape_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'shape_index')
 
@@ -20979,8 +22299,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'paragraph_index', request.paragraph_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'paragraph_index', request.paragraph_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'paragraph_index')
 
@@ -20996,8 +22316,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'portion_index', request.portion_index)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'portion_index', request.portion_index)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'portion_index')
 
@@ -21013,8 +22333,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'dto', request.dto)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'dto', request.dto)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'dto')
 
@@ -21030,8 +22350,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'password', request.password)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'password', request.password)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'password')
 
@@ -21047,8 +22367,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'folder', request.folder)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'folder', request.folder)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'folder')
 
@@ -21064,8 +22384,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'put_update_notes_slide_shape_portion', 'storage', request.storage)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'put_update_notes_slide_shape_portion', 'storage', request.storage)
         if ok:
             self.assert_no_exception('put_update_notes_slide_shape_portion', 'storage')
 
@@ -21101,8 +22421,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'storage_exists', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'storage_exists', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('storage_exists', 'storage_name')
 
@@ -21130,8 +22450,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'upload_file', 'file', request.file)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'upload_file', 'file', request.file)
         if ok:
             self.assert_no_exception('upload_file', 'file')
 
@@ -21147,8 +22467,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'upload_file', 'path', request.path)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'upload_file', 'path', request.path)
         if ok:
             self.assert_no_exception('upload_file', 'path')
 
@@ -21164,8 +22484,8 @@ class TestSlidesApi(BaseTest):
             ok = True
         except ApiException as ex:
             self.assert_exception(ex, 'upload_file', 'storage_name', request.storage_name)
-        except Exception:
-            pass
+        except ValueError as ex:
+            self.assert_value_error(ex, 'upload_file', 'storage_name', request.storage_name)
         if ok:
             self.assert_no_exception('upload_file', 'storage_name')
 

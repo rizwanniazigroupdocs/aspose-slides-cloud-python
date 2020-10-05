@@ -139,7 +139,21 @@ class BaseTest(unittest.TestCase):
             if 'Message' in rule:
                 message = rule['Message']
         self.assertEqual(code, ex.status)
-        self.assertTrue(self.untemplatize(message, field_value) in ex.body)
+        exbody = ex.body
+        if not isinstance(exbody, str):
+            exbody = ex.body.decode("utf-8")
+        self.assertTrue(self.untemplatize(message, field_value) in exbody)
+
+    def assert_value_error(self, ex, function_name, field_name, field_value):
+        code = 0
+        message = "Unexpeceted message"
+        for rule in self.get_rules(BaseTest.test_rules['Results'], function_name, field_name):
+            if 'Code' in rule:
+                code = rule['Code']
+            if 'Message' in rule:
+                message = rule['Message']
+        self.assertEqual(code, 400)
+        self.assertTrue(self.untemplatize(message, field_value) in str(ex))
 
     def assert_no_exception(self, function_name, field_name):
         failed = True

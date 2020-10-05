@@ -30,8 +30,9 @@ import re  # noqa: F401
 
 import six
 
+from asposeslidescloud.models.resource_base import ResourceBase
 
-class IShapeExportOptions(object):
+class Sections(ResourceBase):
 
 
     """
@@ -42,16 +43,50 @@ class IShapeExportOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'self_uri': 'ResourceUri',
+        'alternate_links': 'list[ResourceUri]',
+        'section_list': 'list[Section]'
     }
 
     attribute_map = {
+        'self_uri': 'selfUri',
+        'alternate_links': 'alternateLinks',
+        'section_list': 'sectionList'
     }
 
     type_determiners = {
     }
 
-    def __init__(self):  # noqa: E501
-        """IShapeExportOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, section_list=None):  # noqa: E501
+        """Sections - a model defined in Swagger"""  # noqa: E501
+        super(Sections, self).__init__(self_uri, alternate_links)
+
+        self._section_list = None
+
+        if section_list is not None:
+            self.section_list = section_list
+
+    @property
+    def section_list(self):
+        """Gets the section_list of this Sections.  # noqa: E501
+
+        List of slide links.  # noqa: E501
+
+        :return: The section_list of this Sections.  # noqa: E501
+        :rtype: list[Section]
+        """
+        return self._section_list
+
+    @section_list.setter
+    def section_list(self, section_list):
+        """Sets the section_list of this Sections.
+
+        List of slide links.  # noqa: E501
+
+        :param section_list: The section_list of this Sections.  # noqa: E501
+        :type: list[Section]
+        """
+        self._section_list = section_list
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -87,7 +122,7 @@ class IShapeExportOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, IShapeExportOptions):
+        if not isinstance(other, Sections):
             return False
 
         return self.__dict__ == other.__dict__

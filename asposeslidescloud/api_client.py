@@ -69,7 +69,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk v20.8.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk v20.9.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
         self.default_headers.update(configuration.custom_headers)
@@ -154,7 +154,7 @@ class ApiClient(object):
                                      _preload_content=_preload_content,
                                      _request_timeout=_request_timeout)
             except ApiException as ex:
-                if ex.status == 401 or (ex.status == 400 and b" Authority" in ex.body):
+                if ex.status == 401 or (ex.status == 500 and len(ex.body) == 0):
                     self.configuration.access_token = None
                     self.__authenticate(header_params, _request_timeout)
                     return self.request(method, url,

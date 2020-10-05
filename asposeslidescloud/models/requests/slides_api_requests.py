@@ -219,6 +219,26 @@ class DeletePortionsRequest(object):
         self.folder = folder
         self.storage = storage
 
+class DeleteSectionRequest(object):
+
+    def __init__(self, name, section_index, with_slides = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.section_index = section_index
+        self.with_slides = with_slides
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class DeleteSectionsRequest(object):
+
+    def __init__(self, name, sections = None, with_slides = None, password = None, folder = None, storage = None):
+        self.name = name
+        self.sections = sections
+        self.with_slides = with_slides
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class DeleteSlideAnimationRequest(object):
 
     def __init__(self, name, slide_index, password = None, folder = None, storage = None):
@@ -489,6 +509,15 @@ class GetNotesSlideExistsRequest(object):
         self.folder = folder
         self.storage = storage
 
+class GetNotesSlideHeaderFooterRequest(object):
+
+    def __init__(self, name, slide_index, password = None, storage = None, folder = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.password = password
+        self.storage = storage
+        self.folder = folder
+
 class GetNotesSlideShapeRequest(object):
 
     def __init__(self, name, slide_index, shape_index, password = None, folder = None, storage = None):
@@ -588,12 +617,29 @@ class GetParagraphPortionsRequest(object):
         self.folder = folder
         self.storage = storage
 
+class GetSectionsRequest(object):
+
+    def __init__(self, name, password = None, folder = None, storage = None):
+        self.name = name
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class GetSlideAnimationRequest(object):
 
     def __init__(self, name, slide_index, shape_index = None, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class GetSlideHeaderFooterRequest(object):
+
+    def __init__(self, name, slide_index, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
         self.password = password
         self.folder = folder
         self.storage = storage
@@ -911,7 +957,7 @@ class ObjectExistsRequest(object):
 
 class PostAddNewParagraphRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, dto, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -923,7 +969,7 @@ class PostAddNewParagraphRequest(object):
 
 class PostAddNewPortionRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -961,12 +1007,12 @@ class PostAddNewSubshapeRequest(object):
 
 class PostAddNewSubshapeParagraphRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, path = None, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, dto, path = None, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
-        self.path = path
         self.dto = dto
+        self.path = path
         self.password = password
         self.folder = folder
         self.storage = storage
@@ -974,13 +1020,13 @@ class PostAddNewSubshapeParagraphRequest(object):
 
 class PostAddNewSubshapePortionRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, path = None, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, path = None, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
         self.paragraph_index = paragraph_index
-        self.path = path
         self.dto = dto
+        self.path = path
         self.password = password
         self.folder = folder
         self.storage = storage
@@ -988,7 +1034,7 @@ class PostAddNewSubshapePortionRequest(object):
 
 class PostAddNotesSlideRequest(object):
 
-    def __init__(self, name, slide_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.dto = dto
@@ -998,7 +1044,7 @@ class PostAddNotesSlideRequest(object):
 
 class PostChartCategoryRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, category = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, category, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1009,7 +1055,7 @@ class PostChartCategoryRequest(object):
 
 class PostChartDataPointRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, series_index, data_point = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, series_index, data_point, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1021,7 +1067,7 @@ class PostChartDataPointRequest(object):
 
 class PostChartSeriesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, series = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, series, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1057,24 +1103,24 @@ class PostCopyMasterSlideFromSourcePresentationRequest(object):
 
 class PostGetNotesSlideRequest(object):
 
-    def __init__(self, slide_index, document = None, password = None):
-        self.slide_index = slide_index
+    def __init__(self, document, slide_index, password = None):
         self.document = document
+        self.slide_index = slide_index
         self.password = password
 
 class PostGetNotesSlideExistsRequest(object):
 
-    def __init__(self, slide_index, document = None, password = None):
-        self.slide_index = slide_index
+    def __init__(self, document, slide_index, password = None):
         self.document = document
+        self.slide_index = slide_index
         self.password = password
 
 class PostGetNotesSlideWithFormatRequest(object):
 
-    def __init__(self, slide_index, format, document = None, width = None, height = None, password = None, fonts_folder = None):
+    def __init__(self, document, slide_index, format, width = None, height = None, password = None, fonts_folder = None):
+        self.document = document
         self.slide_index = slide_index
         self.format = format
-        self.document = document
         self.width = width
         self.height = height
         self.password = password
@@ -1082,7 +1128,7 @@ class PostGetNotesSlideWithFormatRequest(object):
 
 class PostNotesSlideAddNewParagraphRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, dto, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1094,7 +1140,7 @@ class PostNotesSlideAddNewParagraphRequest(object):
 
 class PostNotesSlideAddNewPortionRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, dto = None, password = None, folder = None, storage = None, position = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, password = None, folder = None, storage = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1107,7 +1153,7 @@ class PostNotesSlideAddNewPortionRequest(object):
 
 class PostNotesSlideAddNewShapeRequest(object):
 
-    def __init__(self, name, slide_index, dto = None, password = None, folder = None, storage = None, shape_to_clone = None, position = None):
+    def __init__(self, name, slide_index, dto, password = None, folder = None, storage = None, shape_to_clone = None, position = None):
         self.name = name
         self.slide_index = slide_index
         self.dto = dto
@@ -1135,12 +1181,32 @@ class PostNotesSlideShapeSaveAsRequest(object):
 
 class PostPresentationMergeRequest(object):
 
-    def __init__(self, name, request = None, password = None, storage = None, folder = None):
+    def __init__(self, name, request, password = None, storage = None, folder = None):
         self.name = name
         self.request = request
         self.password = password
         self.storage = storage
         self.folder = folder
+
+class PostSectionRequest(object):
+
+    def __init__(self, name, section_name, slide_index, password = None, folder = None, storage = None):
+        self.name = name
+        self.section_name = section_name
+        self.slide_index = slide_index
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PostSectionMoveRequest(object):
+
+    def __init__(self, name, section_index, new_position, password = None, folder = None, storage = None):
+        self.name = name
+        self.section_index = section_index
+        self.new_position = new_position
+        self.password = password
+        self.folder = folder
+        self.storage = storage
 
 class PostShapeSaveAsRequest(object):
 
@@ -1160,7 +1226,7 @@ class PostShapeSaveAsRequest(object):
 
 class PostSlideAnimationEffectRequest(object):
 
-    def __init__(self, name, slide_index, effect = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, effect, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.effect = effect
@@ -1170,7 +1236,7 @@ class PostSlideAnimationEffectRequest(object):
 
 class PostSlideAnimationInteractiveSequenceRequest(object):
 
-    def __init__(self, name, slide_index, sequence = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, sequence, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.sequence = sequence
@@ -1180,7 +1246,7 @@ class PostSlideAnimationInteractiveSequenceRequest(object):
 
 class PostSlideAnimationInteractiveSequenceEffectRequest(object):
 
-    def __init__(self, name, slide_index, sequence_index, effect = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, sequence_index, effect, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.sequence_index = sequence_index
@@ -1215,9 +1281,9 @@ class PostSlidesAddRequest(object):
 
 class PostSlidesConvertRequest(object):
 
-    def __init__(self, format, document = None, password = None, fonts_folder = None):
-        self.format = format
+    def __init__(self, document, format, password = None, fonts_folder = None):
         self.document = document
+        self.format = format
         self.password = password
         self.fonts_folder = fonts_folder
 
@@ -1279,7 +1345,7 @@ class PostSlidesDocumentFromTemplateRequest(object):
 
 class PostSlidesPipelineRequest(object):
 
-    def __init__(self, pipeline = None, files = None):
+    def __init__(self, pipeline, files = None):
         self.pipeline = pipeline
         self.files = files
 
@@ -1327,7 +1393,7 @@ class PostSlidesSaveAsRequest(object):
 
 class PostSlidesSetDocumentPropertiesRequest(object):
 
-    def __init__(self, name, properties = None, password = None, folder = None, storage = None):
+    def __init__(self, name, properties, password = None, folder = None, storage = None):
         self.name = name
         self.properties = properties
         self.password = password
@@ -1381,7 +1447,7 @@ class PostSubshapeSaveAsRequest(object):
 
 class PutChartCategoryRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, category_index, category = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, category_index, category, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1393,7 +1459,7 @@ class PutChartCategoryRequest(object):
 
 class PutChartDataPointRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, series_index, point_index, data_point = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, series_index, point_index, data_point, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1406,7 +1472,7 @@ class PutChartDataPointRequest(object):
 
 class PutChartSeriesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, series_index, series = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, series_index, series, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1418,13 +1484,23 @@ class PutChartSeriesRequest(object):
 
 class PutLayoutSlideRequest(object):
 
-    def __init__(self, name, slide_index, slide_dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, slide_dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.slide_dto = slide_dto
         self.password = password
         self.folder = folder
         self.storage = storage
+
+class PutNotesSlideHeaderFooterRequest(object):
+
+    def __init__(self, name, slide_index, dto, password = None, storage = None, folder = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.dto = dto
+        self.password = password
+        self.storage = storage
+        self.folder = folder
 
 class PutNotesSlideShapeSaveAsRequest(object):
 
@@ -1445,16 +1521,35 @@ class PutNotesSlideShapeSaveAsRequest(object):
 
 class PutPresentationMergeRequest(object):
 
-    def __init__(self, name, request = None, password = None, storage = None, folder = None):
+    def __init__(self, name, request, password = None, storage = None, folder = None):
         self.name = name
         self.request = request
         self.password = password
         self.storage = storage
         self.folder = folder
 
+class PutSectionRequest(object):
+
+    def __init__(self, name, section_index, section_name, password = None, folder = None, storage = None):
+        self.name = name
+        self.section_index = section_index
+        self.section_name = section_name
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PutSectionsRequest(object):
+
+    def __init__(self, name, sections, password = None, folder = None, storage = None):
+        self.name = name
+        self.sections = sections
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
 class PutSetParagraphPortionPropertiesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1467,7 +1562,7 @@ class PutSetParagraphPortionPropertiesRequest(object):
 
 class PutSetParagraphPropertiesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1479,27 +1574,27 @@ class PutSetParagraphPropertiesRequest(object):
 
 class PutSetSubshapeParagraphPortionPropertiesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, path = None, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, dto, path = None, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
         self.paragraph_index = paragraph_index
         self.portion_index = portion_index
-        self.path = path
         self.dto = dto
+        self.path = path
         self.password = password
         self.folder = folder
         self.storage = storage
 
 class PutSetSubshapeParagraphPropertiesRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, path = None, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, path = None, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
         self.paragraph_index = paragraph_index
-        self.path = path
         self.dto = dto
+        self.path = path
         self.password = password
         self.folder = folder
         self.storage = storage
@@ -1523,7 +1618,7 @@ class PutShapeSaveAsRequest(object):
 
 class PutSlideAnimationRequest(object):
 
-    def __init__(self, name, slide_index, animation = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, animation, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.animation = animation
@@ -1533,7 +1628,7 @@ class PutSlideAnimationRequest(object):
 
 class PutSlideAnimationEffectRequest(object):
 
-    def __init__(self, name, slide_index, effect_index, effect = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, effect_index, effect, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.effect_index = effect_index
@@ -1544,12 +1639,22 @@ class PutSlideAnimationEffectRequest(object):
 
 class PutSlideAnimationInteractiveSequenceEffectRequest(object):
 
-    def __init__(self, name, slide_index, sequence_index, effect_index, effect = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, sequence_index, effect_index, effect, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.sequence_index = sequence_index
         self.effect_index = effect_index
         self.effect = effect
+        self.password = password
+        self.folder = folder
+        self.storage = storage
+
+class PutSlideHeaderFooterRequest(object):
+
+    def __init__(self, name, slide_index, dto, password = None, folder = None, storage = None):
+        self.name = name
+        self.slide_index = slide_index
+        self.dto = dto
         self.password = password
         self.folder = folder
         self.storage = storage
@@ -1571,7 +1676,7 @@ class PutSlideSaveAsRequest(object):
 
 class PutSlideShapeInfoRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1582,22 +1687,22 @@ class PutSlideShapeInfoRequest(object):
 
 class PutSlideSubshapeInfoRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, path = None, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, dto, path = None, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
-        self.path = path
         self.dto = dto
+        self.path = path
         self.password = password
         self.folder = folder
         self.storage = storage
 
 class PutSlidesConvertRequest(object):
 
-    def __init__(self, format, out_path, document = None, password = None, fonts_folder = None):
+    def __init__(self, document, format, out_path, password = None, fonts_folder = None):
+        self.document = document
         self.format = format
         self.out_path = out_path
-        self.document = document
         self.password = password
         self.fonts_folder = fonts_folder
 
@@ -1606,6 +1711,15 @@ class PutSlidesDocumentFromHtmlRequest(object):
     def __init__(self, name, html = None, password = None, storage = None, folder = None):
         self.name = name
         self.html = html
+        self.password = password
+        self.storage = storage
+        self.folder = folder
+
+class PutSlidesHeaderFooterRequest(object):
+
+    def __init__(self, name, dto, password = None, storage = None, folder = None):
+        self.name = name
+        self.dto = dto
         self.password = password
         self.storage = storage
         self.folder = folder
@@ -1624,7 +1738,7 @@ class PutSlidesSaveAsRequest(object):
 
 class PutSlidesSetDocumentPropertyRequest(object):
 
-    def __init__(self, name, property_name, _property = None, password = None, folder = None, storage = None):
+    def __init__(self, name, property_name, _property, password = None, folder = None, storage = None):
         self.name = name
         self.property_name = property_name
         self._property = _property
@@ -1634,7 +1748,7 @@ class PutSlidesSetDocumentPropertyRequest(object):
 
 class PutSlidesSlideRequest(object):
 
-    def __init__(self, name, slide_index, slide_dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, slide_dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.slide_dto = slide_dto
@@ -1644,7 +1758,7 @@ class PutSlidesSlideRequest(object):
 
 class PutSlidesSlideBackgroundRequest(object):
 
-    def __init__(self, name, slide_index, background = None, folder = None, password = None, storage = None):
+    def __init__(self, name, slide_index, background, folder = None, password = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.background = background
@@ -1676,7 +1790,7 @@ class PutSlidesSlideSizeRequest(object):
 
 class PutSlidesViewPropertiesRequest(object):
 
-    def __init__(self, name, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, dto, password = None, folder = None, storage = None):
         self.name = name
         self.dto = dto
         self.password = password
@@ -1703,7 +1817,7 @@ class PutSubshapeSaveAsRequest(object):
 
 class PutUpdateNotesSlideRequest(object):
 
-    def __init__(self, name, slide_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.dto = dto
@@ -1713,7 +1827,7 @@ class PutUpdateNotesSlideRequest(object):
 
 class PutUpdateNotesSlideShapeRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1724,7 +1838,7 @@ class PutUpdateNotesSlideShapeRequest(object):
 
 class PutUpdateNotesSlideShapeParagraphRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index
@@ -1736,7 +1850,7 @@ class PutUpdateNotesSlideShapeParagraphRequest(object):
 
 class PutUpdateNotesSlideShapePortionRequest(object):
 
-    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, dto = None, password = None, folder = None, storage = None):
+    def __init__(self, name, slide_index, shape_index, paragraph_index, portion_index, dto, password = None, folder = None, storage = None):
         self.name = name
         self.slide_index = slide_index
         self.shape_index = shape_index

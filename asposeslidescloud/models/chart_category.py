@@ -42,7 +42,8 @@ class ChartCategory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'categories': 'list[ChartCategory]',
+        'parent_categories': 'list[str]',
+        'level': 'int',
         'value': 'str',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
@@ -51,7 +52,8 @@ class ChartCategory(object):
     }
 
     attribute_map = {
-        'categories': 'categories',
+        'parent_categories': 'parentCategories',
+        'level': 'level',
         'value': 'value',
         'fill_format': 'fillFormat',
         'effect_format': 'effectFormat',
@@ -62,18 +64,21 @@ class ChartCategory(object):
     type_determiners = {
     }
 
-    def __init__(self, categories=None, value=None, fill_format=None, effect_format=None, line_format=None, data_points=None):  # noqa: E501
+    def __init__(self, parent_categories=None, level=None, value=None, fill_format=None, effect_format=None, line_format=None, data_points=None):  # noqa: E501
         """ChartCategory - a model defined in Swagger"""  # noqa: E501
 
-        self._categories = None
+        self._parent_categories = None
+        self._level = None
         self._value = None
         self._fill_format = None
         self._effect_format = None
         self._line_format = None
         self._data_points = None
 
-        if categories is not None:
-            self.categories = categories
+        if parent_categories is not None:
+            self.parent_categories = parent_categories
+        if level is not None:
+            self.level = level
         if value is not None:
             self.value = value
         if fill_format is not None:
@@ -86,26 +91,48 @@ class ChartCategory(object):
             self.data_points = data_points
 
     @property
-    def categories(self):
-        """Gets the categories of this ChartCategory.  # noqa: E501
+    def parent_categories(self):
+        """Gets the parent_categories of this ChartCategory.  # noqa: E501
 
-        Gets or sets the categories for chart data  # noqa: E501
+        Gets or sets the parent categories. Used with Sunburst &amp; treemap categories; ignored for other chart types.  # noqa: E501
 
-        :return: The categories of this ChartCategory.  # noqa: E501
-        :rtype: list[ChartCategory]
+        :return: The parent_categories of this ChartCategory.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._categories
+        return self._parent_categories
 
-    @categories.setter
-    def categories(self, categories):
-        """Sets the categories of this ChartCategory.
+    @parent_categories.setter
+    def parent_categories(self, parent_categories):
+        """Sets the parent_categories of this ChartCategory.
 
-        Gets or sets the categories for chart data  # noqa: E501
+        Gets or sets the parent categories. Used with Sunburst &amp; treemap categories; ignored for other chart types.  # noqa: E501
 
-        :param categories: The categories of this ChartCategory.  # noqa: E501
-        :type: list[ChartCategory]
+        :param parent_categories: The parent_categories of this ChartCategory.  # noqa: E501
+        :type: list[str]
         """
-        self._categories = categories
+        self._parent_categories = parent_categories
+
+    @property
+    def level(self):
+        """Gets the level of this ChartCategory.  # noqa: E501
+
+        Gets or sets the grouping level for the category. Used with Sunburst &amp; treemap categories; ignored for other chart types.  # noqa: E501
+
+        :return: The level of this ChartCategory.  # noqa: E501
+        :rtype: int
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """Sets the level of this ChartCategory.
+
+        Gets or sets the grouping level for the category. Used with Sunburst &amp; treemap categories; ignored for other chart types.  # noqa: E501
+
+        :param level: The level of this ChartCategory.  # noqa: E501
+        :type: int
+        """
+        self._level = level
 
     @property
     def value(self):
