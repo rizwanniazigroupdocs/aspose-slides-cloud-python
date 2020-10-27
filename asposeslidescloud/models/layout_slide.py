@@ -47,8 +47,8 @@ class LayoutSlide(ResourceBase):
         'alternate_links': 'list[ResourceUri]',
         'name': 'str',
         'type': 'str',
-        'master_slide': 'ResourceUriElement',
-        'depending_slides': 'list[ResourceUriElement]'
+        'master_slide': 'ResourceUri',
+        'depending_slides': 'list[ResourceUri]'
     }
 
     attribute_map = {
@@ -147,7 +147,7 @@ class LayoutSlide(ResourceBase):
         Master slide link.  # noqa: E501
 
         :return: The master_slide of this LayoutSlide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._master_slide
 
@@ -158,7 +158,7 @@ class LayoutSlide(ResourceBase):
         Master slide link.  # noqa: E501
 
         :param master_slide: The master_slide of this LayoutSlide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._master_slide = master_slide
 
@@ -169,7 +169,7 @@ class LayoutSlide(ResourceBase):
         List of depending slides.  # noqa: E501
 
         :return: The depending_slides of this LayoutSlide.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[ResourceUri]
         """
         return self._depending_slides
 
@@ -180,7 +180,7 @@ class LayoutSlide(ResourceBase):
         List of depending slides.  # noqa: E501
 
         :param depending_slides: The depending_slides of this LayoutSlide.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[ResourceUri]
         """
         self._depending_slides = depending_slides
 

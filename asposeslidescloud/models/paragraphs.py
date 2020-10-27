@@ -45,7 +45,7 @@ class Paragraphs(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'paragraph_links': 'list[ResourceUriElement]'
+        'paragraph_links': 'list[ResourceUri]'
     }
 
     attribute_map = {
@@ -73,7 +73,7 @@ class Paragraphs(ResourceBase):
         List of paragraph links.  # noqa: E501
 
         :return: The paragraph_links of this Paragraphs.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[ResourceUri]
         """
         return self._paragraph_links
 
@@ -84,7 +84,7 @@ class Paragraphs(ResourceBase):
         List of paragraph links.  # noqa: E501
 
         :param paragraph_links: The paragraph_links of this Paragraphs.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[ResourceUri]
         """
         self._paragraph_links = paragraph_links
 

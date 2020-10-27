@@ -54,13 +54,12 @@ class Connector(GeometryShape):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
         'shape_type': 'str',
-        'geometry_shape_type': 'str',
         'start_shape_connected_to': 'ResourceUri',
         'start_shape_connected_to_index': 'int',
         'end_shape_connected_to': 'ResourceUri',
@@ -85,7 +84,6 @@ class Connector(GeometryShape):
         'line_format': 'lineFormat',
         'type': 'type',
         'shape_type': 'shapeType',
-        'geometry_shape_type': 'geometryShapeType',
         'start_shape_connected_to': 'startShapeConnectedTo',
         'start_shape_connected_to_index': 'startShapeConnectedToIndex',
         'end_shape_connected_to': 'endShapeConnectedTo',
@@ -96,9 +94,9 @@ class Connector(GeometryShape):
         'type': 'Connector',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Connector', shape_type=None, geometry_shape_type=None, start_shape_connected_to=None, start_shape_connected_to_index=None, end_shape_connected_to=None, end_shape_connected_to_index=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Connector', shape_type=None, start_shape_connected_to=None, start_shape_connected_to_index=None, end_shape_connected_to=None, end_shape_connected_to_index=None):  # noqa: E501
         """Connector - a model defined in Swagger"""  # noqa: E501
-        super(Connector, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
+        super(Connector, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._start_shape_connected_to = None
         self._start_shape_connected_to_index = None

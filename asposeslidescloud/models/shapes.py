@@ -45,7 +45,7 @@ class Shapes(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'shapes_links': 'list[ResourceUriElement]'
+        'shapes_links': 'list[ResourceUri]'
     }
 
     attribute_map = {
@@ -73,7 +73,7 @@ class Shapes(ResourceBase):
         List of shape links.  # noqa: E501
 
         :return: The shapes_links of this Shapes.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[ResourceUri]
         """
         return self._shapes_links
 
@@ -84,7 +84,7 @@ class Shapes(ResourceBase):
         List of shape links.  # noqa: E501
 
         :param shapes_links: The shapes_links of this Shapes.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[ResourceUri]
         """
         self._shapes_links = shapes_links
 

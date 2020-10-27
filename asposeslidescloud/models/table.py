@@ -54,12 +54,11 @@ class Table(ShapeBase):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
-        'shape_type': 'str',
         'style': 'str',
         'rows': 'list[TableRow]',
         'columns': 'list[TableColumn]',
@@ -89,7 +88,6 @@ class Table(ShapeBase):
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat',
         'type': 'type',
-        'shape_type': 'shapeType',
         'style': 'style',
         'rows': 'rows',
         'columns': 'columns',
@@ -104,12 +102,11 @@ class Table(ShapeBase):
 
     type_determiners = {
         'type': 'Table',
-        'shapeType': 'Table',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Table', shape_type='Table', style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Table', style=None, rows=None, columns=None, first_col=None, first_row=None, horizontal_banding=None, last_col=None, last_row=None, right_to_left=None, vertical_banding=None):  # noqa: E501
         """Table - a model defined in Swagger"""  # noqa: E501
-        super(Table, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        super(Table, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type)
 
         self._style = None
         self._rows = None
@@ -122,7 +119,6 @@ class Table(ShapeBase):
         self._right_to_left = None
         self._vertical_banding = None
         self.type: 'Table'
-        self.shape_type: 'Table'
 
         if style is not None:
             self.style = style

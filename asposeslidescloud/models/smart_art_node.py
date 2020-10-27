@@ -43,7 +43,7 @@ class SmartArtNode(object):
     """
     swagger_types = {
         'nodes': 'list[SmartArtNode]',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'is_assistant': 'bool',
         'text': 'str',
         'org_chart_layout': 'str'
@@ -107,7 +107,7 @@ class SmartArtNode(object):
         Gets or sets the link to shapes.  # noqa: E501
 
         :return: The shapes of this SmartArtNode.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._shapes
 
@@ -118,7 +118,7 @@ class SmartArtNode(object):
         Gets or sets the link to shapes.  # noqa: E501
 
         :param shapes: The shapes of this SmartArtNode.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._shapes = shapes
 

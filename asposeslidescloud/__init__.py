@@ -86,7 +86,6 @@ from asposeslidescloud.models.preset_shadow_effect import PresetShadowEffect
 from asposeslidescloud.models.reflection_effect import ReflectionEffect
 from asposeslidescloud.models.resource_base import ResourceBase
 from asposeslidescloud.models.resource_uri import ResourceUri
-from asposeslidescloud.models.resource_uri_element import ResourceUriElement
 from asposeslidescloud.models.scale_type import ScaleType
 from asposeslidescloud.models.series import Series
 from asposeslidescloud.models.series_marker import SeriesMarker
@@ -188,7 +187,6 @@ from asposeslidescloud.models.group_shape import GroupShape
 from asposeslidescloud.models.ole_object_frame import OleObjectFrame
 from asposeslidescloud.models.slide_replace_result import SlideReplaceResult
 from asposeslidescloud.models.smart_art import SmartArt
-from asposeslidescloud.models.smart_art_shape import SmartArtShape
 from asposeslidescloud.models.table import Table
 from asposeslidescloud.models.waterfall_chart_data_point import WaterfallChartDataPoint
 from asposeslidescloud.models.waterfall_series import WaterfallSeries
@@ -196,6 +194,7 @@ from asposeslidescloud.models.audio_frame import AudioFrame
 from asposeslidescloud.models.connector import Connector
 from asposeslidescloud.models.picture_frame import PictureFrame
 from asposeslidescloud.models.shape import Shape
+from asposeslidescloud.models.smart_art_shape import SmartArtShape
 from asposeslidescloud.models.video_frame import VideoFrame
 
 

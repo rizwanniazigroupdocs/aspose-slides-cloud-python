@@ -54,13 +54,12 @@ class PictureFrame(GeometryShape):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
         'shape_type': 'str',
-        'geometry_shape_type': 'str',
         'picture_fill_format': 'PictureFill'
     }
 
@@ -82,22 +81,19 @@ class PictureFrame(GeometryShape):
         'line_format': 'lineFormat',
         'type': 'type',
         'shape_type': 'shapeType',
-        'geometry_shape_type': 'geometryShapeType',
         'picture_fill_format': 'pictureFillFormat'
     }
 
     type_determiners = {
         'type': 'PictureFrame',
-        'shapeType': 'PictureFrame',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='PictureFrame', shape_type='PictureFrame', geometry_shape_type=None, picture_fill_format=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='PictureFrame', shape_type=None, picture_fill_format=None):  # noqa: E501
         """PictureFrame - a model defined in Swagger"""  # noqa: E501
-        super(PictureFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type)
+        super(PictureFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
 
         self._picture_fill_format = None
         self.type: 'PictureFrame'
-        self.shape_type: 'PictureFrame'
 
         if picture_fill_format is not None:
             self.picture_fill_format = picture_fill_format

@@ -48,14 +48,14 @@ class Slide(ResourceBase):
         'width': 'float',
         'height': 'float',
         'show_master_shapes': 'bool',
-        'layout_slide': 'ResourceUriElement',
-        'shapes': 'ResourceUriElement',
-        'theme': 'ResourceUriElement',
-        'placeholders': 'ResourceUriElement',
-        'images': 'ResourceUriElement',
-        'comments': 'ResourceUriElement',
-        'background': 'ResourceUriElement',
-        'notes_slide': 'ResourceUriElement'
+        'layout_slide': 'ResourceUri',
+        'shapes': 'ResourceUri',
+        'theme': 'ResourceUri',
+        'placeholders': 'ResourceUri',
+        'images': 'ResourceUri',
+        'comments': 'ResourceUri',
+        'background': 'ResourceUri',
+        'notes_slide': 'ResourceUri'
     }
 
     attribute_map = {
@@ -186,7 +186,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to the layout slide.  # noqa: E501
 
         :return: The layout_slide of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._layout_slide
 
@@ -197,7 +197,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to the layout slide.  # noqa: E501
 
         :param layout_slide: The layout_slide of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._layout_slide = layout_slide
 
@@ -208,7 +208,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to list of top-level shapes.  # noqa: E501
 
         :return: The shapes of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._shapes
 
@@ -219,7 +219,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to list of top-level shapes.  # noqa: E501
 
         :param shapes: The shapes of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._shapes = shapes
 
@@ -230,7 +230,7 @@ class Slide(ResourceBase):
         Gets or sets the link to theme.  # noqa: E501
 
         :return: The theme of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._theme
 
@@ -241,7 +241,7 @@ class Slide(ResourceBase):
         Gets or sets the link to theme.  # noqa: E501
 
         :param theme: The theme of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._theme = theme
 
@@ -252,7 +252,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to placeholders.  # noqa: E501
 
         :return: The placeholders of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._placeholders
 
@@ -263,7 +263,7 @@ class Slide(ResourceBase):
         Gets or sets the  link to placeholders.  # noqa: E501
 
         :param placeholders: The placeholders of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._placeholders = placeholders
 
@@ -274,7 +274,7 @@ class Slide(ResourceBase):
         Gets or sets the link to images.  # noqa: E501
 
         :return: The images of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._images
 
@@ -285,7 +285,7 @@ class Slide(ResourceBase):
         Gets or sets the link to images.  # noqa: E501
 
         :param images: The images of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._images = images
 
@@ -296,7 +296,7 @@ class Slide(ResourceBase):
         Gets or sets the link to comments.  # noqa: E501
 
         :return: The comments of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._comments
 
@@ -307,7 +307,7 @@ class Slide(ResourceBase):
         Gets or sets the link to comments.  # noqa: E501
 
         :param comments: The comments of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._comments = comments
 
@@ -318,7 +318,7 @@ class Slide(ResourceBase):
         Get or sets the link to slide's background  # noqa: E501
 
         :return: The background of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._background
 
@@ -329,7 +329,7 @@ class Slide(ResourceBase):
         Get or sets the link to slide's background  # noqa: E501
 
         :param background: The background of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._background = background
 
@@ -340,7 +340,7 @@ class Slide(ResourceBase):
         Get or sets the link to notes slide.  # noqa: E501
 
         :return: The notes_slide of this Slide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._notes_slide
 
@@ -351,7 +351,7 @@ class Slide(ResourceBase):
         Get or sets the link to notes slide.  # noqa: E501
 
         :param notes_slide: The notes_slide of this Slide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._notes_slide = notes_slide
 

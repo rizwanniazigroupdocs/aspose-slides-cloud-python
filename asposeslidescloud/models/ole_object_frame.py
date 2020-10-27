@@ -54,12 +54,11 @@ class OleObjectFrame(ShapeBase):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
-        'shape_type': 'str',
         'is_object_icon': 'bool',
         'substitute_picture_title': 'str'
     }
@@ -81,24 +80,21 @@ class OleObjectFrame(ShapeBase):
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat',
         'type': 'type',
-        'shape_type': 'shapeType',
         'is_object_icon': 'isObjectIcon',
         'substitute_picture_title': 'substitutePictureTitle'
     }
 
     type_determiners = {
         'type': 'OleObjectFrame',
-        'shapeType': 'OleObjectFrame',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', shape_type='OleObjectFrame', is_object_icon=None, substitute_picture_title=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='OleObjectFrame', is_object_icon=None, substitute_picture_title=None):  # noqa: E501
         """OleObjectFrame - a model defined in Swagger"""  # noqa: E501
-        super(OleObjectFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        super(OleObjectFrame, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type)
 
         self._is_object_icon = None
         self._substitute_picture_title = None
         self.type: 'OleObjectFrame'
-        self.shape_type: 'OleObjectFrame'
 
         self.is_object_icon = is_object_icon
         if substitute_picture_title is not None:

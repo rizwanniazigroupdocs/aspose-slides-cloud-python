@@ -54,12 +54,11 @@ class ShapeBase(ResourceBase):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
-        'type': 'str',
-        'shape_type': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
@@ -78,14 +77,13 @@ class ShapeBase(ResourceBase):
         'fill_format': 'fillFormat',
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat',
-        'type': 'type',
-        'shape_type': 'shapeType'
+        'type': 'type'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None, shape_type=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type=None):  # noqa: E501
         """ShapeBase - a model defined in Swagger"""  # noqa: E501
         super(ShapeBase, self).__init__(self_uri, alternate_links)
 
@@ -103,7 +101,6 @@ class ShapeBase(ResourceBase):
         self._effect_format = None
         self._line_format = None
         self._type = None
-        self._shape_type = None
 
         if name is not None:
             self.name = name
@@ -132,8 +129,6 @@ class ShapeBase(ResourceBase):
             self.line_format = line_format
         if type is not None:
             self.type = type
-        if shape_type is not None:
-            self.shape_type = shape_type
 
     @property
     def name(self):
@@ -340,7 +335,7 @@ class ShapeBase(ResourceBase):
         Gets or sets the link to shapes.  # noqa: E501
 
         :return: The shapes of this ShapeBase.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._shapes
 
@@ -351,7 +346,7 @@ class ShapeBase(ResourceBase):
         Gets or sets the link to shapes.  # noqa: E501
 
         :param shapes: The shapes of this ShapeBase.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._shapes = shapes
 
@@ -456,42 +451,6 @@ class ShapeBase(ResourceBase):
                     .format(type, allowed_values)
                 )
         self._type = type
-
-    @property
-    def shape_type(self):
-        """Gets the shape_type of this ShapeBase.  # noqa: E501
-
-
-        :return: The shape_type of this ShapeBase.  # noqa: E501
-        :rtype: str
-        """
-        return self._shape_type
-
-    @shape_type.setter
-    def shape_type(self, shape_type):
-        """Sets the shape_type of this ShapeBase.
-
-
-        :param shape_type: The shape_type of this ShapeBase.  # noqa: E501
-        :type: str
-        """
-        if shape_type is not None:
-            allowed_values = ["Custom", "Line", "LineInverse", "Triangle", "RightTriangle", "Rectangle", "Diamond", "Parallelogram", "Trapezoid", "NonIsoscelesTrapezoid", "Pentagon", "Hexagon", "Heptagon", "Octagon", "Decagon", "Dodecagon", "FourPointedStar", "FivePointedStar", "SixPointedStar", "SevenPointedStar", "EightPointedStar", "TenPointedStar", "TwelvePointedStar", "SixteenPointedStar", "TwentyFourPointedStar", "ThirtyTwoPointedStar", "RoundCornerRectangle", "OneRoundCornerRectangle", "TwoSamesideRoundCornerRectangle", "TwoDiagonalRoundCornerRectangle", "OneSnipOneRoundCornerRectangle", "OneSnipCornerRectangle", "TwoSamesideSnipCornerRectangle", "TwoDiagonalSnipCornerRectangle", "Plaque", "Ellipse", "Teardrop", "HomePlate", "Chevron", "PieWedge", "Pie", "BlockArc", "Donut", "NoSmoking", "RightArrow", "LeftArrow", "UpArrow", "DownArrow", "StripedRightArrow", "NotchedRightArrow", "BentUpArrow", "LeftRightArrow", "UpDownArrow", "LeftUpArrow", "LeftRightUpArrow", "QuadArrow", "CalloutLeftArrow", "CalloutRightArrow", "CalloutUpArrow", "CalloutDownArrow", "CalloutLeftRightArrow", "CalloutUpDownArrow", "CalloutQuadArrow", "BentArrow", "UTurnArrow", "CircularArrow", "LeftCircularArrow", "LeftRightCircularArrow", "CurvedRightArrow", "CurvedLeftArrow", "CurvedUpArrow", "CurvedDownArrow", "SwooshArrow", "Cube", "Can", "LightningBolt", "Heart", "Sun", "Moon", "SmileyFace", "IrregularSeal1", "IrregularSeal2", "FoldedCorner", "Bevel", "Frame", "HalfFrame", "Corner", "DiagonalStripe", "Chord", "CurvedArc", "LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "BracketPair", "BracePair", "StraightConnector1", "BentConnector2", "BentConnector3", "BentConnector4", "BentConnector5", "CurvedConnector2", "CurvedConnector3", "CurvedConnector4", "CurvedConnector5", "Callout1", "Callout2", "Callout3", "Callout1WithAccent", "Callout2WithAccent", "Callout3WithAccent", "Callout1WithBorder", "Callout2WithBorder", "Callout3WithBorder", "Callout1WithBorderAndAccent", "Callout2WithBorderAndAccent", "Callout3WithBorderAndAccent", "CalloutWedgeRectangle", "CalloutWedgeRoundRectangle", "CalloutWedgeEllipse", "CalloutCloud", "Cloud", "Ribbon", "Ribbon2", "EllipseRibbon", "EllipseRibbon2", "LeftRightRibbon", "VerticalScroll", "HorizontalScroll", "Wave", "DoubleWave", "Plus", "ProcessFlow", "DecisionFlow", "InputOutputFlow", "PredefinedProcessFlow", "InternalStorageFlow", "DocumentFlow", "MultiDocumentFlow", "TerminatorFlow", "PreparationFlow", "ManualInputFlow", "ManualOperationFlow", "ConnectorFlow", "PunchedCardFlow", "PunchedTapeFlow", "SummingJunctionFlow", "OrFlow", "CollateFlow", "SortFlow", "ExtractFlow", "MergeFlow", "OfflineStorageFlow", "OnlineStorageFlow", "MagneticTapeFlow", "MagneticDiskFlow", "MagneticDrumFlow", "DisplayFlow", "DelayFlow", "AlternateProcessFlow", "OffPageConnectorFlow", "BlankButton", "HomeButton", "HelpButton", "InformationButton", "ForwardOrNextButton", "BackOrPreviousButton", "EndButton", "BeginningButton", "ReturnButton", "DocumentButton", "SoundButton", "MovieButton", "Gear6", "Gear9", "Funnel", "PlusMath", "MinusMath", "MultiplyMath", "DivideMath", "EqualMath", "NotEqualMath", "CornerTabs", "SquareTabs", "PlaqueTabs", "ChartX", "ChartStar", "ChartPlus", "Chart", "Table", "PictureFrame", "VideoFrame", "AudioFrame", "Diagram", "OleObjectFrame", "GroupShape", "GraphicalObject", "NotDefined"]  # noqa: E501
-            if shape_type.isdigit():
-                int_shape_type = int(shape_type)
-                if int_shape_type < 0 or int_shape_type >= len(allowed_values):
-                    raise ValueError(
-                        "Invalid value for `shape_type` ({0}), must be one of {1}"  # noqa: E501
-                        .format(shape_type, allowed_values)
-                    )
-                self._shape_type = allowed_values[int_shape_type]
-                return
-            if shape_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `shape_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(shape_type, allowed_values)
-                )
-        self._shape_type = shape_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -49,7 +49,7 @@ class Placeholder(ResourceBase):
         'orientation': 'str',
         'size': 'str',
         'type': 'str',
-        'shape': 'ResourceUriElement'
+        'shape': 'ResourceUri'
     }
 
     attribute_map = {
@@ -225,7 +225,7 @@ class Placeholder(ResourceBase):
         Shape link.  # noqa: E501
 
         :return: The shape of this Placeholder.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._shape
 
@@ -236,7 +236,7 @@ class Placeholder(ResourceBase):
         Shape link.  # noqa: E501
 
         :param shape: The shape of this Placeholder.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._shape = shape
 

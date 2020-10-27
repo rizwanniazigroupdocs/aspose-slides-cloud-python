@@ -69,7 +69,7 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk v20.9.0'}
+        self.default_headers = {'x-aspose-client': 'python sdk v20.10.0'}
         if configuration.timeout:
             self.default_headers['x-aspose-timeout'] = configuration.timeout
         self.default_headers.update(configuration.custom_headers)
@@ -545,7 +545,7 @@ class ApiClient(object):
         :param filename:  file name.
         :return: file path.
         """
-        filenames = os.path.splitext(filename)
+        filenames = os.path.splitext(filename.replace(";", ""))
         index = 0
         postfix = ""
         while True:

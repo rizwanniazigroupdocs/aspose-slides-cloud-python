@@ -54,12 +54,11 @@ class SmartArt(ShapeBase):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
-        'shape_type': 'str',
         'layout': 'str',
         'quick_style': 'str',
         'color_style': 'str',
@@ -84,7 +83,6 @@ class SmartArt(ShapeBase):
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat',
         'type': 'type',
-        'shape_type': 'shapeType',
         'layout': 'layout',
         'quick_style': 'quickStyle',
         'color_style': 'colorStyle',
@@ -94,12 +92,11 @@ class SmartArt(ShapeBase):
 
     type_determiners = {
         'type': 'SmartArt',
-        'shapeType': 'Diagram',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='SmartArt', shape_type='Diagram', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='SmartArt', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
         """SmartArt - a model defined in Swagger"""  # noqa: E501
-        super(SmartArt, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        super(SmartArt, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type)
 
         self._layout = None
         self._quick_style = None
@@ -107,7 +104,6 @@ class SmartArt(ShapeBase):
         self._nodes = None
         self._is_reversed = None
         self.type: 'SmartArt'
-        self.shape_type: 'Diagram'
 
         self.layout = layout
         self.quick_style = quick_style

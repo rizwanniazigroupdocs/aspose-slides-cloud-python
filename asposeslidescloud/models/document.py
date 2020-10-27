@@ -45,12 +45,12 @@ class Document(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'document_properties': 'ResourceUriElement',
-        'view_properties': 'ResourceUriElement',
-        'slides': 'ResourceUriElement',
-        'images': 'ResourceUriElement',
-        'layout_slides': 'ResourceUriElement',
-        'master_slides': 'ResourceUriElement'
+        'document_properties': 'ResourceUri',
+        'view_properties': 'ResourceUri',
+        'slides': 'ResourceUri',
+        'images': 'ResourceUri',
+        'layout_slides': 'ResourceUri',
+        'master_slides': 'ResourceUri'
     }
 
     attribute_map = {
@@ -98,7 +98,7 @@ class Document(ResourceBase):
         Link to Document properties.  # noqa: E501
 
         :return: The document_properties of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._document_properties
 
@@ -109,7 +109,7 @@ class Document(ResourceBase):
         Link to Document properties.  # noqa: E501
 
         :param document_properties: The document_properties of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._document_properties = document_properties
 
@@ -120,7 +120,7 @@ class Document(ResourceBase):
         Link to Document properties.  # noqa: E501
 
         :return: The view_properties of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._view_properties
 
@@ -131,7 +131,7 @@ class Document(ResourceBase):
         Link to Document properties.  # noqa: E501
 
         :param view_properties: The view_properties of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._view_properties = view_properties
 
@@ -142,7 +142,7 @@ class Document(ResourceBase):
         Link to slides collection.  # noqa: E501
 
         :return: The slides of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._slides
 
@@ -153,7 +153,7 @@ class Document(ResourceBase):
         Link to slides collection.  # noqa: E501
 
         :param slides: The slides of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._slides = slides
 
@@ -164,7 +164,7 @@ class Document(ResourceBase):
         Link to images collection.  # noqa: E501
 
         :return: The images of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._images
 
@@ -175,7 +175,7 @@ class Document(ResourceBase):
         Link to images collection.  # noqa: E501
 
         :param images: The images of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._images = images
 
@@ -186,7 +186,7 @@ class Document(ResourceBase):
         Link to layout slides collection.  # noqa: E501
 
         :return: The layout_slides of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._layout_slides
 
@@ -197,7 +197,7 @@ class Document(ResourceBase):
         Link to layout slides collection.  # noqa: E501
 
         :param layout_slides: The layout_slides of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._layout_slides = layout_slides
 
@@ -208,7 +208,7 @@ class Document(ResourceBase):
         Link to master slides collection.  # noqa: E501
 
         :return: The master_slides of this Document.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._master_slides
 
@@ -219,7 +219,7 @@ class Document(ResourceBase):
         Link to master slides collection.  # noqa: E501
 
         :param master_slides: The master_slides of this Document.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._master_slides = master_slides
 

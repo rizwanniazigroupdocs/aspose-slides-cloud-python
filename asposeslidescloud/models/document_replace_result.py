@@ -45,12 +45,12 @@ class DocumentReplaceResult(Document):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'document_properties': 'ResourceUriElement',
-        'view_properties': 'ResourceUriElement',
-        'slides': 'ResourceUriElement',
-        'images': 'ResourceUriElement',
-        'layout_slides': 'ResourceUriElement',
-        'master_slides': 'ResourceUriElement',
+        'document_properties': 'ResourceUri',
+        'view_properties': 'ResourceUri',
+        'slides': 'ResourceUri',
+        'images': 'ResourceUri',
+        'layout_slides': 'ResourceUri',
+        'master_slides': 'ResourceUri',
         'matches': 'int'
     }
 

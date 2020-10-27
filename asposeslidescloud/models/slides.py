@@ -45,7 +45,7 @@ class Slides(ResourceBase):
     swagger_types = {
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
-        'slide_list': 'list[ResourceUriElement]'
+        'slide_list': 'list[ResourceUri]'
     }
 
     attribute_map = {
@@ -73,7 +73,7 @@ class Slides(ResourceBase):
         List of slide links.  # noqa: E501
 
         :return: The slide_list of this Slides.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[ResourceUri]
         """
         return self._slide_list
 
@@ -84,7 +84,7 @@ class Slides(ResourceBase):
         List of slide links.  # noqa: E501
 
         :param slide_list: The slide_list of this Slides.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[ResourceUri]
         """
         self._slide_list = slide_list
 

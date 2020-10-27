@@ -106,7 +106,6 @@ class TestExtra(BaseTest):
     def test_chart(self):
         chart = Chart()
         self.assertEqual("Chart", chart.type)
-        self.assertEqual("Chart", chart.shape_type)
 
     def test_nullable_properties(self):
         folder_name = "TempSlidesSDK";

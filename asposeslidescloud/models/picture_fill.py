@@ -49,7 +49,7 @@ class PictureFill(FillFormat):
         'crop_right': 'float',
         'crop_top': 'float',
         'dpi': 'int',
-        'image': 'ResourceUriElement',
+        'image': 'ResourceUri',
         'base64_data': 'str',
         'svg_data': 'str',
         'picture_fill_mode': 'str'
@@ -217,7 +217,7 @@ class PictureFill(FillFormat):
         Internal image link.  # noqa: E501
 
         :return: The image of this PictureFill.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._image
 
@@ -228,7 +228,7 @@ class PictureFill(FillFormat):
         Internal image link.  # noqa: E501
 
         :param image: The image of this PictureFill.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._image = image
 

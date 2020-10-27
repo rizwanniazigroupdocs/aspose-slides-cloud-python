@@ -54,12 +54,11 @@ class Chart(ShapeBase):
         'x': 'float',
         'y': 'float',
         'z_order_position': 'int',
-        'shapes': 'ResourceUriElement',
+        'shapes': 'ResourceUri',
         'fill_format': 'FillFormat',
         'effect_format': 'EffectFormat',
         'line_format': 'LineFormat',
         'type': 'str',
-        'shape_type': 'str',
         'chart_type': 'str',
         'show_data_labels_over_maximum': 'bool',
         'series': 'list[Series]',
@@ -90,7 +89,6 @@ class Chart(ShapeBase):
         'effect_format': 'effectFormat',
         'line_format': 'lineFormat',
         'type': 'type',
-        'shape_type': 'shapeType',
         'chart_type': 'chartType',
         'show_data_labels_over_maximum': 'showDataLabelsOverMaximum',
         'series': 'series',
@@ -106,12 +104,11 @@ class Chart(ShapeBase):
 
     type_determiners = {
         'type': 'Chart',
-        'shapeType': 'Chart',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', shape_type='Chart', chart_type=None, show_data_labels_over_maximum=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, x=None, y=None, z_order_position=None, shapes=None, fill_format=None, effect_format=None, line_format=None, type='Chart', chart_type=None, show_data_labels_over_maximum=None, series=None, categories=None, title=None, back_wall=None, side_wall=None, floor=None, legend=None, axes=None, plot_area=None):  # noqa: E501
         """Chart - a model defined in Swagger"""  # noqa: E501
-        super(Chart, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type)
+        super(Chart, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type)
 
         self._chart_type = None
         self._show_data_labels_over_maximum = None
@@ -125,7 +122,6 @@ class Chart(ShapeBase):
         self._axes = None
         self._plot_area = None
         self.type: 'Chart'
-        self.shape_type: 'Chart'
 
         self.chart_type = chart_type
         if show_data_labels_over_maximum is not None:

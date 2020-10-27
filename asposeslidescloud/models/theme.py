@@ -46,9 +46,9 @@ class Theme(ResourceBase):
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
         'name': 'str',
-        'color_scheme': 'ResourceUriElement',
-        'font_scheme': 'ResourceUriElement',
-        'format_scheme': 'ResourceUriElement'
+        'color_scheme': 'ResourceUri',
+        'font_scheme': 'ResourceUri',
+        'format_scheme': 'ResourceUri'
     }
 
     attribute_map = {
@@ -110,7 +110,7 @@ class Theme(ResourceBase):
         Color scheme.  # noqa: E501
 
         :return: The color_scheme of this Theme.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._color_scheme
 
@@ -121,7 +121,7 @@ class Theme(ResourceBase):
         Color scheme.  # noqa: E501
 
         :param color_scheme: The color_scheme of this Theme.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._color_scheme = color_scheme
 
@@ -132,7 +132,7 @@ class Theme(ResourceBase):
         Font scheme.  # noqa: E501
 
         :return: The font_scheme of this Theme.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._font_scheme
 
@@ -143,7 +143,7 @@ class Theme(ResourceBase):
         Font scheme.  # noqa: E501
 
         :param font_scheme: The font_scheme of this Theme.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._font_scheme = font_scheme
 
@@ -154,7 +154,7 @@ class Theme(ResourceBase):
         Format scheme.  # noqa: E501
 
         :return: The format_scheme of this Theme.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._format_scheme
 
@@ -165,7 +165,7 @@ class Theme(ResourceBase):
         Format scheme.  # noqa: E501
 
         :param format_scheme: The format_scheme of this Theme.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._format_scheme = format_scheme
 

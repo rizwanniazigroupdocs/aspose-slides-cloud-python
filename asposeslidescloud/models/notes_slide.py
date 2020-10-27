@@ -46,7 +46,7 @@ class NotesSlide(ResourceBase):
         'self_uri': 'ResourceUri',
         'alternate_links': 'list[ResourceUri]',
         'text': 'str',
-        'shapes': 'ResourceUriElement'
+        'shapes': 'ResourceUri'
     }
 
     attribute_map = {
@@ -100,7 +100,7 @@ class NotesSlide(ResourceBase):
         Get or sets the  link to list notes slide shapes.  # noqa: E501
 
         :return: The shapes of this NotesSlide.  # noqa: E501
-        :rtype: ResourceUriElement
+        :rtype: ResourceUri
         """
         return self._shapes
 
@@ -111,7 +111,7 @@ class NotesSlide(ResourceBase):
         Get or sets the  link to list notes slide shapes.  # noqa: E501
 
         :param shapes: The shapes of this NotesSlide.  # noqa: E501
-        :type: ResourceUriElement
+        :type: ResourceUri
         """
         self._shapes = shapes
 

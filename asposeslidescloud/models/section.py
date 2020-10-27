@@ -47,7 +47,7 @@ class Section(ResourceBase):
         'alternate_links': 'list[ResourceUri]',
         'name': 'str',
         'first_slide_index': 'int',
-        'slide_list': 'list[ResourceUriElement]'
+        'slide_list': 'list[ResourceUri]'
     }
 
     attribute_map = {
@@ -126,7 +126,7 @@ class Section(ResourceBase):
         Links to the shapes contained in the section.  # noqa: E501
 
         :return: The slide_list of this Section.  # noqa: E501
-        :rtype: list[ResourceUriElement]
+        :rtype: list[ResourceUri]
         """
         return self._slide_list
 
@@ -137,7 +137,7 @@ class Section(ResourceBase):
         Links to the shapes contained in the section.  # noqa: E501
 
         :param slide_list: The slide_list of this Section.  # noqa: E501
-        :type: list[ResourceUriElement]
+        :type: list[ResourceUri]
         """
         self._slide_list = slide_list
 
